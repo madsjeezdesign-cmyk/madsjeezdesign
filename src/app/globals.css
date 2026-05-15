@@ -50,7 +50,7 @@ html.dark {
   --color-surface: var(--surface);
   --color-inverse-bg: var(--inverse-bg);
   --color-inverse-fg: var(--inverse-fg);
-  --font-sans: var(--font-dm-sans);
+  --font-sans: var(--font-plus-jakarta);
   --font-display: var(--font-instrument);
 }
 
@@ -150,4 +150,38 @@ html.dark .gradient-text {
 
 html.dark .glow-accent {
   box-shadow: 0 0 90px -25px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+/* Hyperlabs (particle landing) */
+@keyframes hyper-float-key {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+.hyper-float {
+  animation: hyper-float-key 6s ease-in-out infinite;
+}
+
+.hyper-glow {
+  text-shadow: 0 0 30px rgba(29, 224, 177, 0.4);
+}
+
+.hyper-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hyper-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(29, 224, 177, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }

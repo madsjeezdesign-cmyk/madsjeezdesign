@@ -1,14 +1,24 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { DM_Sans, Instrument_Serif } from "next/font/google";
+import {
+  Instrument_Serif,
+  JetBrains_Mono,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { THEME_INIT_SCRIPT } from "@/lib/theme-script";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["200", "400", "600", "800"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 const instrumentSerif = Instrument_Serif({
@@ -18,20 +28,20 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "MadsJeez Design | Desarrollo web para comercios y empresas",
+  title: "MadsJeez Hyperlabs | Sistemas web de alto rendimiento",
   description:
-    "Landing pages, e-commerce, portfolios y aplicaciones web. Estudio de desarrollo en Córdoba, Argentina. Sitios rápidos, profesionales y orientados a ventas.",
+    "MadsJeez Design — desarrollo full stack, cloud y experiencias digitales. Córdoba, Argentina.",
   keywords: [
     "desarrollo web",
-    "landing page",
-    "e-commerce",
+    "full stack",
     "MadsJeez Design",
+    "Hyperlabs",
     "Córdoba Argentina",
   ],
   openGraph: {
-    title: "MadsJeez Design — Sitios web que venden",
+    title: "MadsJeez Hyperlabs",
     description:
-      "Desarrollo web profesional para comercios y empresas. Proyectos con Next.js, Supabase y deploy en Railway.",
+      "Sistemas web, rendimiento y diseño. Next.js, TypeScript, despliegue profesional.",
     type: "website",
     locale: "es_AR",
   },
@@ -42,12 +52,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const fontVars = `${plusJakarta.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`;
+
   return (
-    <html
-      lang="es"
-      className={`${dmSans.variable} ${instrumentSerif.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="es" className={fontVars} suppressHydrationWarning>
       <body className="antialiased transition-colors duration-200">
         <Script id="theme-init" strategy="beforeInteractive">
           {THEME_INIT_SCRIPT}

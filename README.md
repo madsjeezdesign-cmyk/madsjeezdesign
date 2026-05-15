@@ -1,11 +1,11 @@
 # MadsJeez Design — Landing
 
-Landing corporativa del estudio **MadsJeez Design**: desarrollo web para comercios y empresas.
+Landing **Hyperlabs** (partículas, terminal, tipografía Plus Jakarta / JetBrains Mono) para **MadsJeez Design**. Formulario **Nexo** conectado a `/api/contact` y datos en `src/lib/data.ts`.
 
 - **GitHub:** [madsjeezdesign-cmyk/madsjeezdesign](https://github.com/madsjeezdesign-cmyk/madsjeezdesign)
 - **Supabase:** `https://fhvlvuncymvzardotkfd.supabase.co`
 - **Deploy:** [Railway](https://railway.app) (Dockerfile + migración opcional al iniciar)
-- **Tema:** modo claro / oscuro / sistema (persistencia en `localStorage`)
+- **Tema global:** el layout sigue soportando claro/oscuro vía `ThemeProvider`; la página principal es siempre estética oscura Hyperlabs.
 
 ## Inicio rápido
 
