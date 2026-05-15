@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { THEME_INIT_SCRIPT } from "@/lib/theme-script";
+import { site, yearsExperience } from "@/lib/data";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -27,21 +28,28 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
 });
 
+const titleBase = `${site.name} · ${site.experienceLabel} · ${yearsExperience} años`;
+const description = `${site.name} — ${site.foundedYear}–${site.activeYear}: páginas web, e-commerce y sistemas a medida. ${site.address.locality}, ${site.address.partido}, ${site.address.province}. ${site.hours}.`;
+
 export const metadata: Metadata = {
-  title: "MadsJeez Hyperlabs | Sistemas web de alto rendimiento",
-  description:
-    "MadsJeez Design — desarrollo full stack, cloud y experiencias digitales. Córdoba, Argentina.",
+  title: {
+    default: titleBase,
+    template: `%s · ${site.name}`,
+  },
+  description,
   keywords: [
     "desarrollo web",
-    "full stack",
+    "páginas web",
+    "Ezeiza",
+    "Carlos Spegazzini",
+    "Buenos Aires",
     "MadsJeez Design",
-    "Hyperlabs",
-    "Córdoba Argentina",
+    "tienda online",
+    "Next.js",
   ],
   openGraph: {
-    title: "MadsJeez Hyperlabs",
-    description:
-      "Sistemas web, rendimiento y diseño. Next.js, TypeScript, despliegue profesional.",
+    title: titleBase,
+    description,
     type: "website",
     locale: "es_AR",
   },

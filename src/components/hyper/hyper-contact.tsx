@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, Mail, MessageCircle, Phone, Send } from "lucide-react";
-import { site } from "@/lib/data";
+import { Loader2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { site, websiteModels } from "@/lib/data";
+
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address.mapsQuery)}`;
 
 export function HyperContact() {
   const [sent, setSent] = useState(false);
@@ -53,7 +55,8 @@ export function HyperContact() {
             NEXO<span className="text-[#1de0b1]">.</span>
           </h2>
           <p className="max-w-xl font-[family-name:var(--font-jetbrains)] text-sm text-zinc-500">
-            Canal directo con el equipo. Respuesta en menos de 24 h hábiles.
+            Escribinos o pasá por el estudio. {site.hours}. Zona Carlos Spegazzini,
+            Partido de Ezeiza (GBA Sur). Respondemos en menos de 24 h hábiles.
           </p>
           <div className="h-1 w-20 bg-[#1de0b1]" />
         </div>
@@ -70,14 +73,36 @@ export function HyperContact() {
               </span>
             </a>
             <a
-              href={`tel:${site.phone.replace(/\s/g, "")}`}
+              href={`tel:${site.phoneTel}`}
               className="flex items-center gap-4 text-zinc-400 transition-colors hover:text-[#1de0b1]"
             >
               <Phone className="h-5 w-5 shrink-0 text-[#1de0b1]" />
               <span className="font-[family-name:var(--font-jetbrains)] text-sm font-bold uppercase tracking-widest">
-                {site.phone}
+                {site.phoneDisplay}
               </span>
             </a>
+            <div className="space-y-2 border-l border-white/10 pl-4">
+              <div className="flex items-start gap-3 text-zinc-400">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#1de0b1]" />
+                <div className="font-[family-name:var(--font-jetbrains)] text-sm font-bold uppercase leading-relaxed tracking-wide text-zinc-400">
+                  <span className="block">{site.address.street}</span>
+                  <span className="block text-zinc-500">
+                    {site.address.locality}, {site.address.partido}
+                  </span>
+                  <span className="block text-zinc-500">
+                    {site.address.province}, {site.address.country}
+                  </span>
+                </div>
+              </div>
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 pl-8 text-xs font-bold uppercase tracking-widest text-[#1de0b1] transition-colors hover:text-white"
+              >
+                Abrir en Google Maps
+              </a>
+            </div>
             <a
               href={site.whatsapp}
               target="_blank"
@@ -153,11 +178,12 @@ export function HyperContact() {
                     name="service"
                     className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-[#1de0b1]/50 disabled:opacity-60"
                   >
-                    <option>Landing page</option>
-                    <option>Sitio corporativo</option>
-                    <option>Tienda online</option>
-                    <option>Aplicación web</option>
-                    <option>Otro</option>
+                    {websiteModels.map((m) => (
+                      <option key={m.id} value={m.name}>
+                        {m.name} — {m.subtitle}
+                      </option>
+                    ))}
+                    <option value="Otro / integración">Otro / integración</option>
                   </select>
                 </label>
                 <label className="block">

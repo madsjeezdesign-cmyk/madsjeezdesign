@@ -1,56 +1,197 @@
 export const site = {
   name: "MadsJeez Design",
-  tagline: "Desarrollo web para comercios y empresas que quieren crecer",
+  tagline:
+    "Páginas web, tiendas online, sistemas a medida y mantenimiento. Zona Sur y todo el país.",
   email: "hola@madsjeezdesign.com",
-  phone: "+54 351 555 0142",
-  location: "Córdoba, Argentina · Remoto en LATAM",
-  whatsapp: "https://wa.me/543515550142",
+  /** Para WhatsApp: 549 + área sin 0 + número */
+  phoneDisplay: "11 2181-6064",
+  phoneTel: "+541121816064",
+  whatsapp: "https://wa.me/5491121816064",
   siteUrl: "https://madsjeezdesign.com",
+  /** Trayectoria (mostrada en layout y sitio) */
+  foundedYear: 2009,
+  activeYear: 2026,
+  experienceLabel: "2009—2026",
+  address: {
+    street: "Vigil 150",
+    locality: "Carlos Spegazzini",
+    partido: "Partido de Ezeiza",
+    province: "Buenos Aires",
+    country: "Argentina",
+    /** Referencia aproximada para mapas */
+    mapsQuery: "Vigil 150, Carlos Spegazzini, Buenos Aires",
+  },
+  hours: "Lunes a sábado · 10:00 a 20:00 hs",
 };
 
+export const yearsExperience = site.activeYear - site.foundedYear;
+
+/** Qué hacemos: texto claro para la landing (Hyperlabs) */
+export const whatWeDo = {
+  headline:
+    "Somos un estudio que programa y diseña tu presencia digital de punta a punta.",
+  paragraphs: [
+    "Hacemos sitios profesionales que explican bien tu negocio y generan consultas: landings, webs corporativas, catálogos, portfolios y tiendas online con pagos (Mercado Pago, Stripe u otros).",
+    "También desarrollamos paneles de administración, turneros, integraciones con WhatsApp, ERPs y automatizaciones para que vendas y gestiones sin depender solo de planillas o redes sociales.",
+    "Te acompañamos con dominio, hosting, SEO técnico básico y soporte cuando lo necesités. Laburamos con código moderno para que tu web cargue rápido y sea fácil de mantener.",
+  ],
+};
+
+export const portfolioSites = [
+  {
+    title: "Landing promocional",
+    category: "Landing",
+    description:
+      "Página de campaña con formulario, CTA y seguimiento. Lista para ads y redes.",
+    tag: "Next.js",
+    href: "#trabajos",
+    status: "disponible" as const,
+  },
+  {
+    title: "Sitio corporativo servicios",
+    category: "Corporativo",
+    description:
+      "Secciones de servicios, equipo y contacto. Diseño sobrio y carga veloz.",
+    tag: "React · SEO",
+    href: "#trabajos",
+    status: "consultar" as const,
+  },
+  {
+    title: "Catálogo + WhatsApp",
+    category: "Comercio",
+    description:
+      "Listado de productos con filtros y botón directo a WhatsApp para pedidos.",
+    tag: "Mobile-first",
+    href: "#trabajos",
+    status: "disponible" as const,
+  },
+  {
+    title: "Tienda con checkout",
+    category: "E-commerce",
+    description:
+      "Carrito, pagos y panel de pedidos. Integración Mercado Pago / Stripe según proyecto.",
+    tag: "E-commerce",
+    href: "#trabajos",
+    status: "consultar" as const,
+  },
+  {
+    title: "Portfolio creativo",
+    category: "Portfolio",
+    description:
+      "Galerías y casos para fotógrafos, estudios o profesionales independientes.",
+    tag: "UI · Motion",
+    href: "#trabajos",
+    status: "disponible" as const,
+  },
+  {
+    title: "Reservas y turnos",
+    category: "Sistema",
+    description:
+      "Agenda online con confirmaciones. Ideal para servicios y consultorios.",
+    tag: "Full stack",
+    href: "#trabajos",
+    status: "consultar" as const,
+  },
+];
+
+export const websiteModels = [
+  {
+    id: "presencia",
+    name: "Presencia",
+    subtitle: "Empezá bien en internet",
+    priceNote: "Consultar presupuesto",
+    features: [
+      "Hasta 5 secciones (inicio, servicios, nosotros, galería, contacto)",
+      "Formulario de contacto y enlaces a WhatsApp / redes",
+      "Diseño responsive y optimización básica de velocidad",
+      "Dominio y puesta online asesorados",
+    ],
+    idealFor: "Profesionales, rubros locales y marcas que recién empiezan.",
+  },
+  {
+    id: "negocio",
+    name: "Negocio",
+    subtitle: "Convertir visitas en clientes",
+    priceNote: "Consultar presupuesto",
+    features: [
+      "Todo lo del modelo Presencia + más páginas o integraciones",
+      "Blog o noticias, multi-idioma a pedido",
+      "SEO técnico ampliado, analytics y objetivos de conversión",
+      "CMS o panel liviano para que actualices textos e imágenes",
+    ],
+    idealFor: "Pymes, estudio de servicios y comercios que ya venden offline.",
+  },
+  {
+    id: "tienda",
+    name: "Tienda",
+    subtitle: "Vendé online con carrito y pagos",
+    priceNote: "Consultar presupuesto",
+    features: [
+      "Catálogo, carrito, stock y órdenes",
+      "Pasarelas: Mercado Pago, Stripe u otras según necesidad",
+      "Envíos y descuentos según alcance del proyecto",
+      "Capacitación breve para cargar productos",
+    ],
+    idealFor: "Retail, mayoristas y emprendimientos con volumen de pedidos.",
+  },
+  {
+    id: "a-medida",
+    name: "A medida",
+    subtitle: "Sistemas y aplicaciones web",
+    priceNote: "Presupuesto por alcance",
+    features: [
+      "Dashboards, reportes, roles de usuario y APIs",
+      "Integraciones: facturación, CRM, Mercado Libre, etc.",
+      "Base de datos, deploy y mantenimiento acordado",
+      "Documentación y entregas por etapas",
+    ],
+    idealFor: "Empresas que necesitan software propio, no solo una web estática.",
+  },
+];
+
 export const stats = [
-  { value: "87+", label: "Proyectos entregados" },
-  { value: "96%", label: "Clientes que nos recomiendan" },
-  { value: "<1.2s", label: "Tiempo de carga promedio" },
-  { value: "6", label: "Especialistas en el equipo" },
+  { value: `${site.activeYear - site.foundedYear}+`, label: "Años de experiencia" },
+  { value: "100%", label: "Código y diseño a medida" },
+  { value: "Lun—Sáb", label: "10—20 hs atención" },
+  { value: "GBA Sur", label: "Carlos Spegazzini · Ezeiza" },
 ];
 
 export const services = [
   {
-    title: "Landing pages",
+    title: "Páginas y landings",
     description:
-      "Páginas de conversión para campañas, lanzamientos y captación de leads. Diseño claro, copy orientado a venta y formularios que funcionan.",
-    highlights: ["SEO técnico", "Mobile-first", "Analytics integrado"],
+      "Webs que cuentan qué ofrecés y llevan al cliente a escribirte o comprar. Ideal para campañas y lanzamientos.",
+    highlights: ["Rápidas", "Mobile-first", "Formularios y WhatsApp"],
   },
   {
     title: "Sitios corporativos",
     description:
-      "Presencia profesional para empresas y estudios. Transmití confianza desde el primer scroll con una web rápida, accesible y fácil de actualizar.",
-    highlights: ["CMS editable", "Multi-idioma", "Hosting incluido"],
+      "Presencia seria para tu empresa: servicios, casos, equipo y contacto claro.",
+    highlights: ["SEO", "Mantenimiento", "Dominio y hosting"],
   },
   {
-    title: "E-commerce & tiendas",
+    title: "Tiendas online",
     description:
-      "Tiendas online con catálogo, carrito, pagos y envíos. Conectamos Mercado Pago, Stripe y tus canales de venta actuales.",
-    highlights: ["Mercado Pago", "Inventario", "Panel de pedidos"],
+      "E-commerce con carrito, pagos con Mercado Pago u otros y gestión de pedidos.",
+    highlights: ["Catálogo", "Pagos", "Panel de ventas"],
   },
   {
-    title: "Portfolios & marcas",
+    title: "Portfolios y marcas",
     description:
-      "Mostrá tu trabajo con impacto visual. Ideal para creativos, arquitectos, fotógrafos y profesionales que venden por reputación.",
-    highlights: ["Galerías", "Animaciones", "Dominio propio"],
+      "Mostrá trabajos, proyectos o catálogo visual con una estética alineada a tu marca.",
+    highlights: ["Galerías", "Branding web", "Velocidad"],
   },
   {
-    title: "Aplicaciones web",
+    title: "Sistemas y apps web",
     description:
-      "Dashboards, paneles de administración, reservas online y herramientas internas. Software a medida que resuelve procesos reales.",
-    highlights: ["Auth seguro", "APIs", "Base de datos"],
+      "Reservas, turneros, paneles internos, reportes y lo que tu operación necesite en el navegador.",
+    highlights: ["TypeScript", "APIs", "Bases de datos"],
   },
   {
-    title: "Integraciones & automatización",
+    title: "Integraciones",
     description:
-      "Conectamos tu web con WhatsApp, CRM, facturación, Mercado Libre y más. Menos trabajo manual, más tiempo para vender.",
-    highlights: ["Webhooks", "Sincronización", "Reportes"],
+      "Conectamos tu web con herramientas que ya usás: envíos, facturación, stock, redes.",
+    highlights: ["Webhooks", "Automatización", "Soporte"],
   },
 ];
 
@@ -58,26 +199,24 @@ export const technologies = [
   { name: "TypeScript", category: "Lenguaje" },
   { name: "JavaScript", category: "Lenguaje" },
   { name: "Python", category: "Lenguaje" },
+  { name: "HTML / CSS", category: "Web" },
   { name: "React", category: "Frontend" },
   { name: "Next.js", category: "Frontend" },
   { name: "Vue.js", category: "Frontend" },
   { name: "Tailwind CSS", category: "Frontend" },
   { name: "Node.js", category: "Backend" },
-  { name: "PostgreSQL", category: "Base de datos" },
-  { name: "MongoDB", category: "Base de datos" },
-  { name: "Supabase", category: "Backend" },
-  { name: "Prisma", category: "Backend" },
-  { name: "GraphQL", category: "API" },
-  { name: "REST APIs", category: "API" },
-  { name: "Stripe", category: "Pagos" },
+  { name: "PostgreSQL", category: "Datos" },
+  { name: "MongoDB", category: "Datos" },
+  { name: "Supabase", category: "Backend / BaaS" },
+  { name: "Prisma", category: "ORM" },
+  { name: "REST & GraphQL", category: "APIs" },
   { name: "Mercado Pago", category: "Pagos" },
-  { name: "AWS", category: "Cloud" },
-  { name: "Vercel", category: "Cloud" },
-  { name: "Docker", category: "DevOps" },
-  { name: "React Native", category: "Mobile" },
-  { name: "Flutter", category: "Mobile" },
+  { name: "Stripe", category: "Pagos" },
+  { name: "Docker", category: "Deploy" },
+  { name: "Railway / Vercel", category: "Cloud" },
   { name: "WordPress", category: "CMS" },
   { name: "Shopify", category: "E-commerce" },
+  { name: "React Native", category: "Mobile" },
 ];
 
 export const process = [
@@ -85,25 +224,25 @@ export const process = [
     step: "01",
     title: "Escuchamos",
     description:
-      "Una llamada de 30 minutos para entender tu negocio, tu cliente ideal y qué necesitás que haga la web.",
+      "Nos contás qué vendés, a quién y qué querés lograr con la web o el sistema.",
   },
   {
     step: "02",
-    title: "Propuesta clara",
+    title: "Propuesta",
     description:
-      "Te enviamos alcance, plazos y presupuesto sin letra chica. Sabés exactamente qué vas a recibir.",
+      "Te pasamos alcance, tiempos y presupuesto claro antes de arrancar.",
   },
   {
     step: "03",
-    title: "Diseño & desarrollo",
+    title: "Diseño y desarrollo",
     description:
-      "Iteramos contigo en prototipos antes de codear. Ves avances reales cada semana, no sorpresas al final.",
+      "Implementamos con revisiones; ves avances reales durante el proyecto.",
   },
   {
     step: "04",
-    title: "Lanzamiento & soporte",
+    title: "Publicación y soporte",
     description:
-      "Publicamos, configuramos dominio y analytics. Te capacitamos y quedamos disponibles post-lanzamiento.",
+      "Te dejamos online, capacitamos si hace falta y damos soporte acordado.",
   },
 ];
 
@@ -119,7 +258,7 @@ export const cases = [
       { label: "Consultas/mes", before: "42", after: "118" },
       { label: "Tasa rebote", before: "68%", after: "31%" },
     ],
-    tags: ["Next.js", "SEO local", "WhatsApp API"],
+    tags: ["Next.js", "SEO local", "WhatsApp"],
   },
   {
     client: "Boutique Alma",
@@ -145,7 +284,7 @@ export const cases = [
       { label: "Turnos online", before: "0%", after: "72%" },
       { label: "No-shows", before: "18%", after: "9%" },
     ],
-    tags: ["React", "PostgreSQL", "Resend"],
+    tags: ["React", "PostgreSQL", "Email"],
   },
   {
     client: "Distribuidora Norte",
@@ -165,7 +304,7 @@ export const cases = [
 export const testimonials = [
   {
     quote:
-      "No entendíamos nada de páginas web. Velora nos explicó todo en castellano, sin tecnicismos, y en dos meses ya estábamos vendiendo online.",
+      "No entendíamos nada de páginas web. MadsJeez nos explicó todo en castellano, sin tecnicismos, y en dos meses ya estábamos vendiendo online.",
     author: "Marcelo Gutiérrez",
     role: "Dueño, Ferretería El Tornillo",
   },
@@ -223,18 +362,18 @@ export const team = [
 ];
 
 export const story = {
-  title: "Cómo empezó MadsJeez Design",
+  title: "MadsJeez desde 2009",
   paragraphs: [
-    "MadsJeez nació en 2019 cuando ayudamos a la ferretería de un vecino a armar una página simple con WhatsApp. No era un proyecto ambicioso: era un comerciante que perdía ventas porque no aparecía en Google. Cuando en tres meses las consultas se triplicaron, entendimos que había un vacío enorme: miles de negocios locales con buen producto y cero presencia digital.",
-    "Durante la pandemia trabajamos noches y fines de semana. Cada cliente llegaba por referido de otro. No teníamos oficina ni logo pulido; teníamos compromiso de responder el mismo día y de entregar algo que funcionara de verdad, no solo que se viera bien en una captura.",
-    "En 2022 sumamos diseño y backend al equipo. Ese año cerramos nuestro primer marketplace y portal B2B. Fue el momento en que dejamos de ser 'los que hacen páginas' y pasamos a construir productos digitales completos.",
-    "Hoy somos un estudio en Córdoba con clientes en Argentina y la región. Seguimos siendo un equipo chico, pero con estándares grandes: código revisado, deploys en Railway, bases en Supabase y soporte humano después del lanzamiento. Porque una web que nadie mantiene, muere.",
+    "MadsJeez Design arrancó en 2009 con un enfoque simple: que los comercios y profesionales de la zona y de todo el país tengan una web que funcione de verdad, no solo una tarjeta digital sin visitas.",
+    "Con el tiempo fuimos sumando tiendas online, sistemas de turnos, integraciones con pagos y herramientas internas para empresas que necesitaban dejar de depender solo del teléfono o del Excel.",
+    "Hoy atendemos desde Carlos Spegazzini (Partido de Ezeiza, Buenos Aires), con horario de lunes a sábado de 10 a 20 hs, y seguimos trabajando con stack moderno: TypeScript, React, Next.js, bases de datos y deploy profesional.",
+    "Si buscás alguien que te explique el proceso sin vueltas y te entregue código mantenible, estamos para charlar.",
   ],
   milestones: [
-    { year: "2019", event: "Primer proyecto: ferretería de barrio" },
-    { year: "2021", event: "20 comercios online en plena pandemia" },
-    { year: "2022", event: "Equipo de 4 · Primer cliente B2B" },
-    { year: "2024", event: "87 proyectos · Presencia en 3 países" },
+    { year: "2009", event: "Inicio del estudio — webs para pymes y comercios" },
+    { year: "2015", event: "E-commerce e integraciones con pagos" },
+    { year: "2020", event: "Sistemas a medida, paneles y automatización" },
+    { year: "2026", event: "Stack actual: Next.js, Supabase, cloud, mobile-ready" },
   ],
 };
 

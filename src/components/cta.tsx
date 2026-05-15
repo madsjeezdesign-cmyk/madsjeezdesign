@@ -73,11 +73,14 @@ export function Cta() {
                 </li>
                 <li className="flex items-center gap-3 text-sm">
                   <Phone className="h-5 w-5 shrink-0 text-teal-400" />
-                  <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+                  <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
                 </li>
                 <li className="flex items-center gap-3 text-sm">
                   <MapPin className="h-5 w-5 shrink-0 text-teal-400" />
-                  {site.location}
+                  <span>
+                    {site.address.street}, {site.address.locality},{" "}
+                    {site.address.partido}, {site.address.province}
+                  </span>
                 </li>
                 <li>
                   <a
