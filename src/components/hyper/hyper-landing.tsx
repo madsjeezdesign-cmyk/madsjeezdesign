@@ -461,24 +461,33 @@ export function HyperLanding() {
 
       <section
         id="protocolos"
-        className="relative overflow-hidden scroll-mt-24 border-y border-white/5 bg-[#0a0c10] py-16 md:py-24"
+        className="relative scroll-mt-24 border-y border-white/5 bg-[#05070a] py-12 md:py-16"
       >
-        <div className="flex gap-10 overflow-x-auto py-8 opacity-25 scrollbar-none transition-opacity duration-700 hover:opacity-100 md:gap-12 md:overflow-hidden md:whitespace-nowrap md:py-10">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className="flex shrink-0 gap-6 font-[family-name:var(--font-jetbrains)] text-2xl font-black italic tracking-tighter text-white md:gap-12 md:text-4xl lg:text-6xl"
-            >
-              {technologies.map((t, j) => (
-                <span
-                  key={`${i}-${t.name}-${j}`}
-                  className={j % 3 === 1 ? "text-[#1de0b1]" : ""}
-                >
-                  {t.name}
-                </span>
-              ))}
-            </div>
-          ))}
+        <p className="sr-only">
+          Lenguajes y tecnologías que usamos:{" "}
+          {technologies.map((t) => t.name).join(", ")}.
+        </p>
+        <div className="relative overflow-hidden">
+          <div className="hyper-tech-marquee-track">
+            {[0, 1].map((copy) => (
+              <div
+                key={copy}
+                className="flex shrink-0 items-center gap-8 pr-8 md:gap-14 md:pr-14 lg:gap-16 lg:pr-16"
+                aria-hidden={copy === 1}
+              >
+                {technologies.map((t, j) => (
+                  <span
+                    key={`${copy}-${t.name}-${j}`}
+                    className={`font-[family-name:var(--font-jetbrains)] text-2xl font-black italic tracking-tighter md:text-4xl lg:text-6xl ${
+                      j % 2 === 1 ? "text-[#1de0b1]" : "text-white"
+                    }`}
+                  >
+                    {t.name}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

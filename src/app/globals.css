@@ -185,3 +185,25 @@ html.dark .glow-accent {
   border-color: rgba(29, 224, 177, 0.4);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
+
+@keyframes hyper-tech-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hyper-tech-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: hyper-tech-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hyper-tech-marquee-track {
+    animation: none;
+  }
+}

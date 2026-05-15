@@ -2,7 +2,7 @@ export const site = {
   name: "MadsJeez Design",
   tagline:
     "Páginas web, tiendas online, sistemas a medida y mantenimiento. Zona Sur y todo el país.",
-  email: "hola@madsjeezdesign.com",
+  email: "madsjeezdesign@gmail.com",
   /** Para WhatsApp: 549 + área sin 0 + número */
   phoneDisplay: "11 2181-6064",
   phoneTel: "+541121816064",
