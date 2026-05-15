@@ -68,7 +68,7 @@ export function Hero() {
 function HeroVisual() {
   return (
     <div className="animate-fade-up delay-300 relative mt-16 md:mt-20">
-      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-slate-200/60">
+      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-slate-200/50 dark:shadow-black/50">
         <div className="flex items-center gap-2 border-b border-border bg-surface px-4 py-3">
           <span className="h-3 w-3 rounded-full bg-red-400" />
           <span className="h-3 w-3 rounded-full bg-amber-400" />

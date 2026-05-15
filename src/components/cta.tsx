@@ -52,7 +52,7 @@ export function Cta() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-xl">
           <div className="grid lg:grid-cols-2">
-            <div className="bg-foreground p-10 text-background md:p-14">
+            <div className="bg-inverse-bg p-10 text-inverse-fg md:p-14">
               <SectionHeading
                 eyebrow="Contacto"
                 title="Hablemos de tu proyecto"

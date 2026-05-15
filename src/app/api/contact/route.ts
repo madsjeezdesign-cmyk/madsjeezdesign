@@ -53,6 +53,23 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("[contact] Supabase insert:", error.message);
+      const msg = error.message?.toLowerCase() ?? "";
+      const code = "code" in error ? String((error as { code?: string }).code) : "";
+      const missingTable =
+        code === "42P01" ||
+        (msg.includes("contact_inquiries") &&
+          (msg.includes("does not exist") ||
+            msg.includes("could not find") ||
+            msg.includes("no existe")));
+      if (missingTable) {
+        return NextResponse.json(
+          {
+            error:
+              "Falta crear la tabla en la base de datos. En Railway agregá DATABASE_URL (URI Session de Supabase) y redeploy, o ejecutá supabase/schema.sql en el SQL Editor.",
+          },
+          { status: 503 },
+        );
+      }
       return NextResponse.json(
         { error: "No pudimos guardar tu consulta. Intentá de nuevo." },
         { status: 500 },

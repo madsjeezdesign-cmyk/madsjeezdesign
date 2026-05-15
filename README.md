@@ -4,24 +4,26 @@ Landing corporativa del estudio **MadsJeez Design**: desarrollo web para comerci
 
 - **GitHub:** [madsjeezdesign-cmyk/madsjeezdesign](https://github.com/madsjeezdesign-cmyk/madsjeezdesign)
 - **Supabase:** `https://fhvlvuncymvzardotkfd.supabase.co`
-- **Deploy:** Railway (Docker + Next.js standalone)
+- **Deploy:** [Railway](https://railway.app) (Dockerfile + migración opcional al iniciar)
+- **Tema:** modo claro / oscuro / sistema (persistencia en `localStorage`)
 
 ## Inicio rápido
 
 ```bash
 npm install
 cp .env.example .env.local
-# Completar SUPABASE_SERVICE_ROLE_KEY y anon key en .env.local
+# Completar keys; opcional: DATABASE_URL y npm run db:ensure
 npm run dev
 ```
 
 ## Supabase (formulario de contacto)
 
-Ejecutá `supabase/schema.sql` en el SQL Editor de tu proyecto Supabase antes de usar el formulario.
+- **Automático:** definí `DATABASE_URL` (URI Session pooler) y en Docker se ejecuta `ensure-schema` al arrancar; o local: `npm run db:ensure`.
+- **Manual:** ejecutá `supabase/schema.sql` en el SQL Editor.
 
 ## Deploy Railway
 
-Guía paso a paso: [`docs/deploy-railway.md`](docs/deploy-railway.md)
+Guía: [`docs/deploy-railway.md`](docs/deploy-railway.md)
 
 ## Contenido editable
 

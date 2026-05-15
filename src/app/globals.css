@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
   --background: #f8f7f4;
   --foreground: #0f172a;
   --muted: #64748b;
@@ -12,6 +15,25 @@
   --warm: #d97706;
   --warm-light: #fef3c7;
   --surface: #f1f5f9;
+  --inverse-bg: #0f172a;
+  --inverse-fg: #f8fafc;
+}
+
+html.dark {
+  color-scheme: dark;
+  --background: #0a0f1a;
+  --foreground: #e8eef3;
+  --muted: #94a3b8;
+  --card: #121a2b;
+  --border: #2a3650;
+  --accent: #2dd4bf;
+  --accent-light: rgba(45, 212, 191, 0.12);
+  --accent-dark: #14b8a6;
+  --warm: #fbbf24;
+  --warm-light: rgba(251, 191, 36, 0.12);
+  --surface: #161f33;
+  --inverse-bg: #020617;
+  --inverse-fg: #e2e8f0;
 }
 
 @theme inline {
@@ -26,6 +48,8 @@
   --color-warm: var(--warm);
   --color-warm-light: var(--warm-light);
   --color-surface: var(--surface);
+  --color-inverse-bg: var(--inverse-bg);
+  --color-inverse-fg: var(--inverse-fg);
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-instrument);
 }
@@ -42,7 +66,12 @@ body {
 
 ::selection {
   background: var(--accent-light);
-  color: var(--accent-dark);
+  color: var(--foreground);
+}
+
+html.dark ::selection {
+  background: rgba(45, 212, 191, 0.25);
+  color: var(--foreground);
 }
 
 @keyframes fade-up {
@@ -102,6 +131,13 @@ body {
   background-clip: text;
 }
 
+html.dark .gradient-text {
+  background: linear-gradient(135deg, #5eead4 0%, #2dd4bf 45%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .grid-pattern {
   background-image: linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
@@ -110,4 +146,8 @@ body {
 
 .glow-accent {
   box-shadow: 0 0 80px -20px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+html.dark .glow-accent {
+  box-shadow: 0 0 90px -25px color-mix(in srgb, var(--accent) 55%, transparent);
 }

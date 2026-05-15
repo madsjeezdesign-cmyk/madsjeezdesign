@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { THEME_INIT_SCRIPT } from "@/lib/theme-script";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -40,8 +43,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
-      <body className="antialiased">{children}</body>
+    <html
+      lang="es"
+      className={`${dmSans.variable} ${instrumentSerif.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="antialiased transition-colors duration-200">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {THEME_INIT_SCRIPT}
+        </Script>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

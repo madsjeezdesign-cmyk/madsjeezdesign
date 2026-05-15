@@ -4,7 +4,7 @@ import { SectionHeading } from "./section-heading";
 
 export function Cases() {
   return (
-    <section id="casos" className="bg-foreground py-24 text-background md:py-32">
+    <section id="casos" className="bg-inverse-bg py-24 text-inverse-fg md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Casos de éxito"

@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
+    "db:ensure": "node scripts/ensure-schema.mjs",
     "lint": "eslint"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.4",
+    "pg": "^8.16.0",
     "lucide-react": "^1.16.0",
     "next": "16.2.6",
     "react": "19.2.4",

@@ -1,0 +1,16 @@
+---
+description: Tras cambios de código en esta repo, hacer commit y push a origin.
+globs: "**/*"
+alwaysApply: true
+---
+
+# Git: commit y push
+
+Cuando completes tareas que modifiquen archivos del proyecto **MadsJeez Design** (`velora-digital` / `madsjeezdesign`):
+
+1. `git status`, `git diff`, revisar que no entren secretos (`.env`, `.env.local`, keys).
+2. `git add` los archivos pertinentes.
+3. Un **commit** con mensaje claro (por qué del cambio).
+4. **`git push`** a `origin` (rama actual, habitualmente `main`).
+
+Si el usuario pidió solo cambios locales y explícitamente no publicar, respetar eso; si no dice lo contrario, asumir push tras el commit.
