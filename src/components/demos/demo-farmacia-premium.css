@@ -23,6 +23,10 @@
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.farm-premium .farm-product-card img {
+  object-fit: cover;
+}
+
 .farm-premium .farm-product-card:hover {
   transform: translateY(-4px);
 }

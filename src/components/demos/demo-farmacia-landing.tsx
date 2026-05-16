@@ -44,23 +44,28 @@ type Product = {
   discount?: number;
 };
 
+const productImage = (photoId: string) =>
+  `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=800&q=82&ixlib=rb-4.0.3`;
+
 type CartLine = { id: string; name: string; price: number; qty: number };
 
 const NAV_ITEMS = ["Medicamentos", "Belleza", "Nutrición", "Consultas", "Ofertas"] as const;
 
-const PRODUCT_SEED: Omit<Product, "image">[] = [
+const PRODUCTS: Product[] = [
   {
     id: "mv60",
     name: "Suplemento Multivitamínico Premium — 60 cápsulas",
     price: 24990,
     category: "Nutrición",
     discount: 15,
+    image: productImage("photo-1550572017-edd75baa1b8f"),
   },
   {
     id: "serum",
     name: "Serum facial ácido hialurónico Pure Hydra",
     price: 38500,
     category: "Dermocosmética",
+    image: productImage("photo-1556228578-0d85b1a4d571"),
   },
   {
     id: "tensi",
@@ -68,18 +73,21 @@ const PRODUCT_SEED: Omit<Product, "image">[] = [
     price: 85000,
     category: "Equipamiento",
     discount: 20,
+    image: productImage("photo-1616540809701-d29f6a21bc6d"),
   },
   {
     id: "whey",
     name: "Proteína isolatada Whey Premium chocolate",
     price: 54900,
     category: "Deportiva",
+    image: productImage("photo-1593095948074-1bb9fd47b8e5"),
   },
   {
     id: "pañales",
     name: "Pack pañales premium M x72",
     price: 31500,
     category: "Bebés",
+    image: productImage("photo-1515488042361-ee00e28a2271"),
   },
   {
     id: "fps50",
@@ -87,18 +95,21 @@ const PRODUCT_SEED: Omit<Product, "image">[] = [
     price: 23800,
     category: "Dermocosmética",
     discount: 10,
+    image: productImage("photo-1620916566398-39f1143ab7be"),
   },
   {
     id: "electro",
     name: "Electrolitos hidratación x12 sobres",
     price: 7200,
     category: "OTC",
+    image: productImage("photo-1584308666744-24d5c474f2ae"),
   },
   {
     id: "termo",
     name: "Termómetro digital infrarrojo sin contacto",
     price: 18900,
     category: "Equipamiento",
+    image: productImage("photo-1584984541648-6d0c9f3699fcc"),
   },
 ];
 
@@ -129,7 +140,7 @@ function ProductCard({
   onAdd: (p: Product) => void;
 }) {
   return (
-    <article className="farm-product-card group relative overflow-hidden rounded-2xl border border-slate-100 bg-white hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/10">
+    <article className="farm-product-card group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/10">
       {product.discount ? (
         <div className="absolute left-4 top-4 z-10 rounded bg-rose-500 px-2 py-1 text-[10px] font-black text-white">
           -{product.discount}%
@@ -142,16 +153,16 @@ function ProductCard({
       >
         <Heart size={16} />
       </button>
-      <div className="flex aspect-square w-full items-center justify-center overflow-hidden bg-slate-50 p-8">
+      <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-slate-50">
         <Image
           src={product.image}
           alt={product.name}
-          width={400}
-          height={400}
-          className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-110"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
-      <div className="p-5">
+      <div className="flex flex-1 flex-col p-5">
         <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-cyan-600">{product.category}</p>
         <h3 className="mb-3 min-h-[40px] line-clamp-2 text-sm font-semibold leading-snug text-slate-800">
           {product.name}
@@ -205,15 +216,6 @@ export function DemoFarmaciaLanding() {
   const [cartOpen, setCartOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
-
-  const products: Product[] = useMemo(
-    () =>
-      PRODUCT_SEED.map((p, i) => ({
-        ...p,
-        image: [v.cover, v.a, v.b, v.c, v.d, v.e, v.a, v.b][i] ?? v.cover,
-      })),
-    [v],
-  );
 
   const cartCount = useMemo(() => cart.reduce((s, i) => s + i.qty, 0), [cart]);
   const cartTotal = useMemo(() => cart.reduce((s, i) => s + i.price * i.qty, 0), [cart]);
@@ -535,8 +537,8 @@ export function DemoFarmaciaLanding() {
                 Ver servicios <ChevronRight size={18} />
               </a>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {products.map((product) => (
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:items-stretch">
+              {PRODUCTS.map((product) => (
                 <ProductCard key={product.id} product={product} onAdd={addToCart} />
               ))}
             </div>
