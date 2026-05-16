@@ -1,0 +1,124 @@
+/* Horizonte Propiedades — VANGUARDIA real estate */
+.van-premium {
+  --van-bronze: #a68966;
+  --van-cream: #f5f2ed;
+  --van-obsidian: #0d0d0d;
+  --van-mocha: #2d241e;
+}
+
+.van-premium .van-glass-header {
+  background: rgba(13, 13, 13, 0.7);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(166, 137, 102, 0.1);
+}
+
+.van-premium .van-cursor-main {
+  width: 10px;
+  height: 10px;
+  background: var(--van-bronze);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+.van-premium .van-cursor-aura {
+  width: 50px;
+  height: 50px;
+  border: 0.5px solid rgba(166, 137, 102, 0.3);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.van-premium .van-cursor-aura.is-hover {
+  width: 72px;
+  height: 72px;
+  background: rgba(166, 137, 102, 0.06);
+  border-color: var(--van-bronze);
+}
+
+.van-premium .van-ken-burns {
+  animation: van-slow-zoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes van-slow-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.van-premium .van-btn-vanguard {
+  position: relative;
+  padding: 1.25rem 2.5rem;
+  border: 1px solid var(--van-bronze);
+  color: var(--van-bronze);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.van-premium .van-btn-vanguard:hover {
+  color: var(--van-obsidian);
+  background: var(--van-bronze);
+}
+
+.van-premium .van-property-frame {
+  position: relative;
+  background: var(--van-mocha);
+  border: 1px solid rgba(166, 137, 102, 0.05);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.van-premium .van-property-frame:hover {
+  transform: translateY(-20px);
+}
+
+.van-premium .van-scroll-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background: var(--van-bronze);
+  z-index: 101;
+  width: 0%;
+}
+
+.van-premium .van-scroll-reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.van-premium .van-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.van-premium .van-vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.van-premium ::-webkit-scrollbar {
+  width: 4px;
+}
+.van-premium ::-webkit-scrollbar-track {
+  background: var(--van-obsidian);
+}
+.van-premium ::-webkit-scrollbar-thumb {
+  background: var(--van-bronze);
+}

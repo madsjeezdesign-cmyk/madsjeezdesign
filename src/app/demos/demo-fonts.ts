@@ -126,14 +126,15 @@ const bVeterinaria = Plus_Jakarta_Sans({
   variable: "--font-demo-b-veterinaria",
 });
 
-const hInmobiliaria = Cinzel({
+const hInmobiliaria = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["300", "400", "600"],
+  style: ["normal", "italic"],
   variable: "--font-demo-h-inmobiliaria",
 });
-const bInmobiliaria = Lora({
+const bInmobiliaria = Inter({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["100", "300", "400", "600"],
   variable: "--font-demo-b-inmobiliaria",
 });
 
