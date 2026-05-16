@@ -124,6 +124,12 @@ export function CreatorLanding({ slug }: Props) {
             <a href="#faq" className="hover:text-[color:var(--cr-accent)]">
               FAQ
             </a>
+            <a href="#demo-capacidades" className="hover:text-[color:var(--cr-accent)]">
+              Módulos
+            </a>
+            <a href="#demo-contacto" className="hover:text-[color:var(--cr-accent)]">
+              Contacto
+            </a>
           </nav>
           <button type="button" onClick={toggleBooking} className="cr-btn-primary px-5 py-2.5 text-[10px] md:px-6">
             Reservar
@@ -387,14 +393,16 @@ export function CreatorLanding({ slug }: Props) {
         </div>
       </section>
 
-      <DemoLeadForm
-        slug={slug}
-        brandLabel={`${config.brand} · ${config.platformLabel}`}
-        theme={v.lead}
-        kicker="Brief de proyecto"
-        title="Contanos tu canal o programa"
-        sub="Te respondemos con propuesta, timeline y mockups en menos de 24 h."
-      />
+      <div id="demo-contacto">
+        <DemoLeadForm
+          slug={slug}
+          brandLabel={`${config.brand} · ${config.platformLabel}`}
+          theme={v.lead}
+          kicker="Brief de proyecto"
+          title="Contanos tu canal o programa"
+          sub="Te respondemos con propuesta, timeline y mockups en menos de 24 h."
+        />
+      </div>
 
       <footer className="border-t border-white/5 px-4 py-12 text-center text-[10px] uppercase tracking-[0.4em] text-slate-600 md:px-10">
         © {new Date().getFullYear()} {config.brand} · Demo {config.industryLabel} · Marcas de terceros son referencia

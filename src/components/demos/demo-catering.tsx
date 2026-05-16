@@ -2,6 +2,7 @@ import { ChefHat, Flame, Salad, Utensils } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoDetailGrid, DemoFaqList, DemoStatsStrip } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -14,15 +15,13 @@ export function DemoCateringLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="flex items-center justify-end gap-4 px-4 py-4 md:px-10">
-        <span className={`mr-auto ${h} text-2xl text-red-100`}>Origen</span>
-        <button type="button" className={`hidden md:inline ${art.secondaryCta}`}>
-          Catálogo temporada
-        </button>
-        <button type="button" className={art.primaryCta}>
-          Brief online
-        </button>
-      </nav>
+      <DemoBrandNav
+        slug={SLUG}
+        brand="Origen"
+        iconKey="ChefHat"
+        primaryCta="Brief online"
+        primaryCtaClass={art.primaryCta}
+      />
 
       <DemoThemedHero
         variant={art.heroVariant}

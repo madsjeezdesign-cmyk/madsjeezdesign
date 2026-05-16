@@ -13,6 +13,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -25,14 +26,15 @@ export function DemoPanaderiaLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="flex w-full justify-end border-b border-amber-700/40 px-4 py-4 md:px-10">
-        <div className="flex w-full max-w-6xl items-center justify-between">
-          <span className={`text-2xl font-semibold text-amber-100 ${h}`}>El Horno de Raíz</span>
-          <button type="button" className={art.primaryCta}>
-            Pedir encargue
-          </button>
-        </div>
-      </nav>
+      <DemoBrandNav
+        slug="panaderia"
+        brand="Masa Madre"
+        iconKey="Croissant"
+        variant="light"
+        primaryCta="Pedir pan"
+        primaryCtaClass={art.primaryCta}
+      />
+
 
       <DemoThemedHero
         variant={art.heroVariant}

@@ -2,6 +2,7 @@ import { CalendarHeart, Flower2, Moon, Wind } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoFaqList, DemoLongStory, DemoTestimonials } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -14,17 +15,14 @@ export function DemoYogaLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 md:px-10">
-        <span className={`${h} text-2xl text-violet-950`}>Mat Lumen</span>
-        <div className="hidden gap-8 text-xs font-semibold uppercase tracking-widest text-violet-600/80 md:flex">
-          <span>Horarios</span>
-          <span>Profes</span>
-          <span>Empresas</span>
-        </div>
-        <button type="button" className={art.primaryCta}>
-          Probar clase
-        </button>
-      </nav>
+      <DemoBrandNav
+        slug={SLUG}
+        brand="Mat Lumen"
+        iconKey="Flower2"
+        variant="light"
+        primaryCta="Probar clase"
+        primaryCtaClass={art.primaryCta}
+      />
 
       <DemoThemedHero
         variant={art.heroVariant}

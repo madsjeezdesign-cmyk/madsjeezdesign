@@ -24,7 +24,8 @@ const fallback: ShowcaseCardMeta = {
   color: "from-zinc-600/30",
   accent: "text-zinc-400",
   border: "group-hover:border-zinc-500/50",
-  pitch: "Modelo de landing optimizado para tu rubro con contenido demo listo para adaptar.",
+  pitch:
+    "Landing demo con módulos de conversión, galería, video, tienda y formulario — listos para adaptar a tu marca y rubro.",
 };
 
 type ShowcaseStyleMeta = Omit<ShowcaseCardMeta, "features">;

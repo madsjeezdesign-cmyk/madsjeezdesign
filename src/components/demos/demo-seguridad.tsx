@@ -1,10 +1,11 @@
 "use client";
 
-import { Activity, Bell, Camera, Lock, Radio } from "lucide-react";
+import { Activity, Bell, Camera, Lock, Radio, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoDetailGrid, DemoLongStory, DemoProcessSteps } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -17,20 +18,15 @@ export function DemoSeguridadLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="flex items-center justify-between border-b border-emerald-800/40 px-4 py-3 md:px-10">
-        <div className="flex items-center gap-3">
-          <Lock className="h-6 w-6 text-emerald-400" />
-          <span className={`${h} text-xl tracking-tight text-white`}>
-            VIGILUM<span className="text-emerald-400">.</span>
-          </span>
-        </div>
-        <span className="rounded border border-emerald-500/40 px-2 py-1 text-[9px] font-bold uppercase tracking-widest text-emerald-300">
-          Normas ABIN demo
-        </span>
-        <button type="button" className={art.primaryCta}>
-          Auditoría express
-        </button>
-      </nav>
+      <DemoBrandNav
+        slug="seguridad"
+        brand="BUNKER"
+        iconKey="Shield"
+        variant="dark"
+        primaryCta="Auditoría gratis"
+        primaryCtaClass={art.primaryCta}
+      />
+
 
       <DemoThemedHero
         variant={art.heroVariant}

@@ -4,6 +4,7 @@ import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoFaqList, DemoLongStory, DemoProcessSteps } from "./demo-common-sections";
 import { demoContainer, demoSectionTight } from "./demo-layout";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -16,17 +17,13 @@ export function DemoPaisajismoLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="border-b border-green-800/50 px-4 py-4 md:px-10">
-        <div className="mx-auto flex max-w-6xl items-baseline justify-between">
-          <div>
-            <p className="text-[9px] font-bold uppercase tracking-[0.5em] text-lime-400">Estudio</p>
-            <span className={`${h} text-3xl text-lime-50`}>Verde Horizonte</span>
-          </div>
-          <button type="button" className={art.primaryCta}>
-            Visita técnica
-          </button>
-        </div>
-      </nav>
+      <DemoBrandNav
+        slug={SLUG}
+        brand="Verde Horizonte"
+        iconKey="Leaf"
+        primaryCta="Visita técnica"
+        primaryCtaClass={art.primaryCta}
+      />
 
       <DemoThemedHero
         variant={art.heroVariant}

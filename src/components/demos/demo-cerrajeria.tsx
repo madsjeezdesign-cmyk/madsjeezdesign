@@ -2,6 +2,7 @@ import { Key, PhoneCall, ScanLine, Timer } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoLongStory, DemoProcessSteps, DemoTestimonials } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -18,14 +19,15 @@ export function DemoCerrajeriaLanding() {
         <Timer className="mx-auto mb-1 h-4 w-4 md:inline md:mr-2" />
         Urgencias 24 h — promedio llegada 35 min (radio demo)
       </div>
-      <nav className="flex items-center justify-between px-4 py-4 md:px-10">
-        <span className={`flex items-center gap-2 ${h} text-2xl text-yellow-50`}>
-          <Key className="h-7 w-7 text-yellow-400" /> Llaves 24 Sur
-        </span>
-        <button type="button" className={art.primaryCta}>
-          Llamar móvil
-        </button>
-      </nav>
+      <DemoBrandNav
+        slug="cerrajeria"
+        brand="LLAVE 24"
+        iconKey="Key"
+        variant="dark"
+        primaryCta="Urgencias"
+        primaryCtaClass={art.primaryCta}
+      />
+
 
       <DemoThemedHero
         variant={art.heroVariant}

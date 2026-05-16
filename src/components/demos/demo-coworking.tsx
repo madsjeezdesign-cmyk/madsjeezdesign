@@ -2,6 +2,7 @@ import { Coffee, EthernetPort, Users, Wifi } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoDetailGrid, DemoFaqList, DemoStatsStrip } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -14,18 +15,13 @@ export function DemoCoworkingLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="sticky top-0 z-30 flex items-center justify-between border-b border-sky-500/20 bg-slate-950/90 px-4 py-3 backdrop-blur md:px-10">
-        <div className="flex flex-col">
-          <span className="text-[8px] font-bold uppercase tracking-[0.45em] text-sky-400">Muelle</span>
-          <span className={`${h} text-xl text-sky-50`}>Hub</span>
-        </div>
-        <div className="hidden text-[10px] font-bold uppercase tracking-widest text-slate-500 md:block">
-          Ocupación live demo
-        </div>
-        <button type="button" className={art.primaryCta}>
-          Day pass
-        </button>
-      </nav>
+      <DemoBrandNav
+        slug={SLUG}
+        brand="Muelle Hub"
+        iconKey="Wifi"
+        primaryCta="Day pass"
+        primaryCtaClass={art.primaryCta}
+      />
 
       <DemoThemedHero
         variant={art.heroVariant}

@@ -13,6 +13,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -25,12 +26,15 @@ export function DemoDetailingLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="flex items-center justify-between border-b border-sky-500/30 px-4 py-4 md:px-10">
-        <span className={`text-2xl tracking-widest text-sky-400 ${h}`}>SHINE</span>
-        <button type="button" className={art.primaryCta}>
-          Reservar slot
-        </button>
-      </nav>
+      <DemoBrandNav
+        slug="detailing"
+        brand="SHINE"
+        iconKey="Sparkles"
+        variant="dark"
+        primaryCta="Reservar slot"
+        primaryCtaClass={art.primaryCta}
+      />
+
 
       <DemoThemedHero
         variant={art.heroVariant}

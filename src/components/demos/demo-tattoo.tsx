@@ -3,6 +3,7 @@ import { Clock, Pen, ShieldAlert } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoDetailGrid, DemoFaqList, DemoLongStory } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -15,18 +16,13 @@ export function DemoTattooLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="grid grid-cols-[1fr_auto] items-center gap-4 px-4 py-4 md:grid-cols-[auto_1fr_auto] md:px-10">
-        <span className={`${h} text-xl tracking-tighter text-rose-100`}>INK · ORÁCULO</span>
-        <div className="col-span-2 flex flex-wrap justify-center gap-3 text-[9px] font-bold uppercase tracking-[0.35em] text-rose-400/80 md:col-span-1">
-          <span>Manga</span>
-          <span>Flash</span>
-          <span>Piercing</span>
-        </div>
-        <button type="button" className={`justify-self-end ${art.primaryCta}`}>
-          Lista espera
-        </button>
-      </nav>
-
+      <DemoBrandNav
+        slug={SLUG}
+        brand="INK · ORÁCULO"
+        iconKey="Pen"
+        primaryCta="Lista espera"
+        primaryCtaClass={art.primaryCta}
+      />
       <DemoThemedHero
         variant={art.heroVariant}
         imageSrc={v.cover}

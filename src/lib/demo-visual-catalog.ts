@@ -515,12 +515,12 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     e: id("photo-1438032673153-3bb514b3654b"),
   },
   albanil: {
-    cover: id("photo-1541974247859-004447a4b93d"),
-    a: id("photo-1504917595217-d0024f06ce79"),
-    b: id("photo-1590859651225-92e35fd71ca8"),
-    c: id("photo-1589939707313-9dc202256a01"),
-    d: id("photo-1590649837877-78513ad8d0e8"),
-    e: id("photo-1600585154526-990cf4a259a0"),
+    cover: id("photo-1503387762-592deb58ef4a"),
+    a: id("photo-1581094797793-5e9c06e9e6a0"),
+    b: id("photo-1541888946425-d81bb19240f5"),
+    c: id("photo-1590649837877-78513ad8d0e8"),
+    d: id("photo-1600585154526-990cf4a259a0"),
+    e: id("photo-1600607687920-4e2a09cf159d"),
   },
   arquitectos: {
     cover: id("photo-1513699879411-d49034e9eb58"),

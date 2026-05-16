@@ -111,7 +111,7 @@ export function CommerceLanding({ slug }: Props) {
               <p className="text-[9px] uppercase tracking-[0.35em] text-slate-500">{config.tradeLabel}</p>
             </div>
           </div>
-          <nav className="hidden items-center gap-8 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 lg:flex">
+          <nav className="hidden items-center gap-6 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 lg:flex xl:gap-8">
             <a href="#planes" className="hover:text-[color:var(--cm-accent)]">
               Servicios
             </a>
@@ -123,6 +123,12 @@ export function CommerceLanding({ slug }: Props) {
             </a>
             <a href="#faq" className="hover:text-[color:var(--cm-accent)]">
               FAQ
+            </a>
+            <a href="#demo-capacidades" className="hover:text-[color:var(--cm-accent)]">
+              Módulos
+            </a>
+            <a href="#demo-contacto" className="hover:text-[color:var(--cm-accent)]">
+              Contacto
             </a>
           </nav>
           <button type="button" onClick={toggleQuote} className="cm-btn-primary px-5 py-2.5 text-[10px] md:px-6">
@@ -387,14 +393,16 @@ export function CommerceLanding({ slug }: Props) {
         </div>
       </section>
 
-      <DemoLeadForm
-        slug={slug}
-        brandLabel={`${config.brand} · ${config.tradeLabel}`}
-        theme={v.lead}
-        kicker="Consulta comercial"
-        title="Contanos tu negocio"
-        sub="Te respondemos con presupuesto, plazos y mockups en menos de 24 h."
-      />
+      <div id="demo-contacto">
+        <DemoLeadForm
+          slug={slug}
+          brandLabel={`${config.brand} · ${config.tradeLabel}`}
+          theme={v.lead}
+          kicker="Consulta comercial"
+          title="Contanos tu negocio"
+          sub="Te respondemos con presupuesto, plazos y mockups en menos de 24 h."
+        />
+      </div>
 
       <footer className="border-t border-white/5 px-4 py-12 text-center text-[10px] uppercase tracking-[0.4em] text-slate-600 md:px-10">
         © {new Date().getFullYear()} {config.brand} · Demo {config.industryLabel} · Demo ilustrativa son referencia

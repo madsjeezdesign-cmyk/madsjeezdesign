@@ -13,6 +13,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -25,15 +26,15 @@ export function DemoOpticaLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="flex items-center justify-between px-4 py-4 md:px-10">
-        <span className={`flex items-center gap-2 font-bold text-white ${h}`}>
-          <Glasses className="h-7 w-7 text-sky-400" />
-          Visión Clara
-        </span>
-        <button type="button" className={art.primaryCta}>
-          Turno online
-        </button>
-      </nav>
+      <DemoBrandNav
+        slug="optica"
+        brand="VISIÓN+"
+        iconKey="Glasses"
+        variant="dark"
+        primaryCta="Turno online"
+        primaryCtaClass={art.primaryCta}
+      />
+
       <div className="mx-4 h-px bg-gradient-to-r from-transparent via-sky-500/50 to-transparent md:mx-10" />
 
       <DemoThemedHero

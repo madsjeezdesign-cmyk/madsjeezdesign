@@ -9,6 +9,7 @@ import {
   DemoProcessSteps,
   DemoStatsStrip,
 } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -21,26 +22,13 @@ export function DemoHeladeriaLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="sticky top-0 z-40 border-b border-fuchsia-500/20 bg-black/55 px-4 py-3 backdrop-blur-xl md:px-10">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3">
-          <span className={`${h} bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-2xl text-transparent`}>
-            Alborada
-          </span>
-          <div className="flex flex-wrap gap-2">
-            {["Carta de sabores", "Eventos", "Franquicia demo"].map((x) => (
-              <span
-                key={x}
-                className="rounded-full border border-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-cyan-100/80"
-              >
-                {x}
-              </span>
-            ))}
-          </div>
-          <button type="button" className={art.primaryCta}>
-            Pedir ahora
-          </button>
-        </div>
-      </nav>
+      <DemoBrandNav
+        slug={SLUG}
+        brand="Alborada"
+        iconKey="IceCream"
+        primaryCta="Pedir ahora"
+        primaryCtaClass={art.primaryCta}
+      />
 
       <DemoThemedHero
         variant={art.heroVariant}

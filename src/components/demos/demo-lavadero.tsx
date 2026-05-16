@@ -2,6 +2,7 @@ import { Clock, Droplets, MapPin, ShieldCheck, Waves } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoFaqList, DemoTestimonials } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -14,16 +15,13 @@ export function DemoLavaderoLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <header className="border-b border-cyan-500/20 px-4 py-4 text-center md:px-10">
-        <p className={`inline-block border-b-2 border-cyan-400 pb-1 text-[10px] font-bold uppercase tracking-[0.45em] text-cyan-300`}>
-          Spin & Gloss
-        </p>
-        <nav className="mt-4 flex flex-wrap justify-center gap-6 text-[11px] font-bold uppercase tracking-widest text-slate-400">
-          <span className="cursor-default hover:text-cyan-300">Membresías</span>
-          <span className="cursor-default hover:text-cyan-300">Detailing rápido</span>
-          <span className="cursor-default hover:text-cyan-300">Flota PyME</span>
-        </nav>
-      </header>
+      <DemoBrandNav
+        slug={SLUG}
+        brand="Spin & Gloss"
+        iconKey="Droplets"
+        primaryCta="Elegir plan"
+        primaryCtaClass={art.primaryCta}
+      />
 
       <DemoThemedHero
         variant={art.heroVariant}

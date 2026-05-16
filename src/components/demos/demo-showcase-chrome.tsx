@@ -23,11 +23,15 @@ type ShowcaseNavProps = {
   sticky?: boolean;
   /** En `/demos/[slug]`: enlace explícito al listado de demos. */
   showDemosIndexLink?: boolean;
+  industry?: string;
+  demoTitle?: string;
 };
 
 export function ShowcaseSiteNav({
   sticky = false,
   showDemosIndexLink = false,
+  industry,
+  demoTitle,
 }: ShowcaseNavProps) {
   const base =
     "relative z-50 flex items-center justify-between px-6 py-8 md:px-12 lg:px-16";
@@ -39,16 +43,29 @@ export function ShowcaseSiteNav({
     <nav className={`${base} ${stickyCls}`}>
       <Link
         href="/demos"
-        className="flex flex-col transition-opacity hover:opacity-90"
+        className="flex min-w-0 flex-col transition-opacity hover:opacity-90"
       >
         <span className="text-[11px] font-black uppercase tracking-[0.45em] text-white md:text-xs">
           MADSJEEZ
         </span>
         <span className="text-[8px] uppercase tracking-[0.35em] text-zinc-500 md:text-[9px]">
-          Design Studio
+          {demoTitle ? `${demoTitle.slice(0, 28)}${demoTitle.length > 28 ? "…" : ""}` : "Design Studio"}
         </span>
+        {industry ? (
+          <span className="mt-0.5 hidden truncate text-[8px] uppercase tracking-[0.25em] text-zinc-600 sm:block">
+            {industry}
+          </span>
+        ) : null}
       </Link>
       <div className="flex flex-wrap items-center justify-end gap-2 md:gap-3">
+        {showDemosIndexLink ? (
+          <a
+            href="#demo-capacidades"
+            className="hidden rounded-full border border-white/10 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-400 backdrop-blur-md transition-all hover:border-white/20 hover:text-white lg:inline-flex"
+          >
+            Módulos
+          </a>
+        ) : null}
         {showDemosIndexLink ? (
           <Link
             href="/demos"

@@ -1,12 +1,14 @@
 import Image from "next/image";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { demoSectionHeadingClass } from "@/lib/demo-art-direction";
+import { getDemoBySlug } from "@/lib/demos-registry";
 import { getShowcaseMeta } from "@/lib/demos-showcase-meta";
 import { DEMO_LEAD_COPY } from "@/lib/demo-visual-catalog";
 import { demoContainer, demoSectionTight } from "./demo-layout";
 import { DemoLeadForm } from "./demo-lead-form";
 import { DemoShopFlow } from "./demo-shop-flow";
 import { DemoTestimonials } from "./demo-common-sections";
+import { DemoSiteValueBlocks } from "./demo-rich-sections";
 
 type Props = {
   slug: string;
@@ -38,11 +40,13 @@ export function DemoEnhancements({
   sectionClass = "bg-zinc-950/40",
 }: Props) {
   const v = getDemoVisuals(slug);
-  const galleryImages = [v.a, v.b, v.c, v.d, v.e].filter(
-    (src): src is string => Boolean(src),
-  ).filter((src, i, arr) => arr.indexOf(src) === i);
+  const demo = getDemoBySlug(slug);
+  const galleryImages = [v.a, v.b, v.c, v.d, v.e]
+    .filter((src): src is string => Boolean(src))
+    .filter((src, i, arr) => arr.indexOf(src) === i);
   const meta = getShowcaseMeta(slug);
   const leadCopy = DEMO_LEAD_COPY[slug];
+  const industry = demo?.industry ?? "referencia del rubro";
   const resolvedShopCard =
     shopCardClass ?? (v.lead.invert ? "border border-stone-200 bg-white shadow-sm" : undefined);
   const resolvedShopAccent =
@@ -52,6 +56,13 @@ export function DemoEnhancements({
 
   return (
     <>
+      <DemoSiteValueBlocks
+        slug={slug}
+        brandLabel={brandLabel}
+        headingClass={demoSectionHeadingClass(slug)}
+        sectionClass={sectionClass}
+      />
+
       {!omitCoverBanner ? (
         <section className={`${demoSectionTight} ${sectionClass}`}>
           <div className={demoContainer}>
@@ -59,7 +70,7 @@ export function DemoEnhancements({
               <div className="relative aspect-[21/9] w-full min-h-[200px]">
                 <Image
                   src={v.cover}
-                  alt=""
+                  alt={`${brandLabel} — imagen principal · ${industry}`}
                   fill
                   className="object-cover opacity-90 grayscale transition-all duration-1000 group-hover:scale-[1.03] group-hover:opacity-100 group-hover:grayscale-0"
                   sizes="(max-width: 768px) 100vw, 1152px"
@@ -69,7 +80,7 @@ export function DemoEnhancements({
                   className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${meta.color} to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-50`}
                 />
                 <p className="absolute bottom-3 left-4 right-4 text-[10px] font-bold uppercase tracking-widest text-white/90 md:bottom-4">
-                  Referencia visual del rubro · demo
+                  Referencia visual · {industry}
                 </p>
               </div>
             </div>
@@ -77,15 +88,18 @@ export function DemoEnhancements({
         </section>
       ) : null}
 
-      <section className={demoSectionTight}>
+      <section id="demo-galeria" className={demoSectionTight}>
         <div className={demoContainer}>
+          <p className="mb-6 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
+            Galería de trabajos y ambientes
+          </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {galleryImages.map((src, idx) => (
               <div key={`${slug}-gal-${idx}`} className={cardChrome}>
                 <div className="relative aspect-[4/5] w-full">
                   <Image
                     src={src}
-                    alt=""
+                    alt={`${brandLabel} — foto ${idx + 1} · ${industry}`}
                     fill
                     className="object-cover opacity-90 grayscale transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
                     sizes="(max-width: 640px) 45vw, 220px"
@@ -99,7 +113,7 @@ export function DemoEnhancements({
             ))}
           </div>
           <p className="mt-4 text-center text-[11px] text-zinc-500">
-            Galería demostrativa. En tu sitio usamos fotografía propia o licenciada.
+            En tu sitio usamos fotografía propia o licenciada. Estas imágenes son referencia del rubro.
           </p>
         </div>
       </section>
@@ -147,14 +161,16 @@ export function DemoEnhancements({
         />
       ) : null}
 
-      <DemoLeadForm
-        slug={slug}
-        brandLabel={brandLabel}
-        theme={v.lead}
-        kicker={leadCopy?.kicker}
-        title={leadCopy?.title}
-        sub={leadCopy?.sub}
-      />
+      <div id="demo-contacto">
+        <DemoLeadForm
+          slug={slug}
+          brandLabel={brandLabel}
+          theme={v.lead}
+          kicker={leadCopy?.kicker}
+          title={leadCopy?.title}
+          sub={leadCopy?.sub}
+        />
+      </div>
     </>
   );
 }

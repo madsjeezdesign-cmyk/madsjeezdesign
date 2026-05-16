@@ -172,6 +172,7 @@ export default async function DemoPage({
 
   return (
     <DemoSlugPageShell
+      slug={slug}
       industry={d.industry}
       title={d.title}
       tagline={d.tagline}

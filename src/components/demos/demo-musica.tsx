@@ -13,6 +13,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -25,12 +26,15 @@ export function DemoMusicaLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <nav className="sticky top-0 z-30 flex items-center justify-between border-b border-fuchsia-500/30 bg-violet-950/90 px-4 py-4 backdrop-blur-md md:px-10">
-        <span className={`text-2xl tracking-wider text-fuchsia-400 ${h}`}>PENTAGRAMA</span>
-        <button type="button" className={art.primaryCta}>
-          Inscripción 2026
-        </button>
-      </nav>
+      <DemoBrandNav
+        slug="musica"
+        brand="PENTAGRAMA"
+        iconKey="Music"
+        variant="dark"
+        primaryCta="Inscripción 2026"
+        primaryCtaClass={art.primaryCta}
+      />
+
 
       <DemoThemedHero
         variant={art.heroVariant}

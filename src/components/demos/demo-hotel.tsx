@@ -2,6 +2,7 @@ import { Bath, Sparkles, UtensilsCrossed, Wine } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoLongStory, DemoProcessSteps, DemoTestimonials } from "./demo-common-sections";
+import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -14,19 +15,13 @@ export function DemoHotelLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <div className="border-b border-amber-900/50 bg-stone-900/80 px-4 py-3 md:px-10">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-amber-200/90">
-          <span>Posada 9 Luces · Villa demo</span>
-          <div className="flex flex-wrap gap-4 text-amber-100/70">
-            <span>Check-in 15:00</span>
-            <span>Spa 11–21 h</span>
-            <span>MICE 12 pax</span>
-          </div>
-          <button type="button" className="rounded-sm border border-amber-600/60 px-4 py-2 text-amber-100 hover:bg-amber-900/40">
-            Reservar suite
-          </button>
-        </div>
-      </div>
+      <DemoBrandNav
+        slug={SLUG}
+        brand="Posada 9 Luces"
+        iconKey="Wine"
+        primaryCta="Reservar suite"
+        primaryCtaClass="rounded-sm border border-amber-600/60 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-amber-100 hover:bg-amber-900/40"
+      />
 
       <DemoThemedHero
         variant={art.heroVariant}
