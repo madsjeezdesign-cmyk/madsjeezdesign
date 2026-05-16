@@ -87,11 +87,11 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
   },
   floreria: {
 
-    color: "from-fuchsia-600/30",
-    accent: "text-fuchsia-400",
-    border: "group-hover:border-fuchsia-500/50",
+    color: "from-emerald-600/25",
+    accent: "text-emerald-600",
+    border: "group-hover:border-emerald-500/50",
     pitch:
-      "Venta emocional con temporadas, bundles y delivery: storytelling floral de alto impacto.",
+      "Jardín Ensueño: tienda editorial, talleres botánicos, carrito demo y storytelling de vivero premium.",
   },
   taller: {
 
