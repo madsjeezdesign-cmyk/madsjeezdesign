@@ -27,7 +27,7 @@ const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">
   tech: { badge: "Vanguardia OS", subtitle: "Infra & IA soberana" },
   floreria: { badge: "Jardín Ensueño", subtitle: "Florería & vivero" },
   taller: { badge: "Motor Dynamics", subtitle: "Tuning & diagnóstico" },
-  abogados: { badge: "Legal Firm", subtitle: "Captación institucional" },
+  abogados: { badge: "Varela & Asoc.", subtitle: "Estudio jurídico elite" },
   farmacia: { badge: "Health Retail", subtitle: "Salud accesible" },
   odontologia: { badge: "Dental Pro", subtitle: "Primera visita" },
   contadores: { badge: "Finance Hub", subtitle: "PyME sin fricción" },

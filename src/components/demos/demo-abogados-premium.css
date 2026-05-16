@@ -1,0 +1,30 @@
+/* Varela & Asociados — estudio jurídico premium */
+.va-premium {
+  --va-amber: #d97706;
+  --va-bg: #0a0f18;
+}
+
+.va-premium .va-cubes-bg {
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  opacity: 0.2;
+}
+
+.va-premium .va-scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.va-premium .va-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.va-premium .font-serif-display {
+  font-family: var(--font-demo-h-abogados), ui-serif, Georgia, serif;
+}
+
+.va-premium ::selection {
+  background: var(--va-amber);
+  color: #fff;
+}

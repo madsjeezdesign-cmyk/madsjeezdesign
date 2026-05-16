@@ -87,11 +87,11 @@ export const DEMOS: DemoMeta[] = [
   },
   {
     slug: "abogados",
-    title: "Bravo & Asociados",
+    title: "Varela & Asociados",
     industry: "Estudio jurídico",
-    tagline: "Áreas de práctica y consulta inicial",
-    accent: "#e2c77c",
-    previewClass: "from-neutral-950 to-amber-950/30",
+    tagline: "Defensa integral con prestigio y ética",
+    accent: "#d97706",
+    previewClass: "from-slate-950 to-amber-950/35",
   },
   {
     slug: "farmacia",

@@ -103,11 +103,11 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
   },
   abogados: {
 
-    color: "from-yellow-600/25",
-    accent: "text-yellow-500/90",
-    border: "group-hover:border-yellow-500/50",
+    color: "from-amber-600/25",
+    accent: "text-amber-500",
+    border: "group-hover:border-amber-500/50",
     pitch:
-      "Estudio con tono institucional, jerarquía de servicios y captación seria de leads.",
+      "Varela & Asociados: prestigio jurídico, áreas elite, equipo, publicaciones y consulta confidencial.",
   },
   farmacia: {
 

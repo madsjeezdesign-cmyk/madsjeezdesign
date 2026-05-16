@@ -91,12 +91,12 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     e: id("photo-1619643277878-aa2e9d1a6aaf"),
   },
   abogados: {
-    cover: id("photo-1758310999515-645097b709db"),
-    a: id("photo-1758518731462-d091b0b4ed0d"),
-    b: id("photo-1775144657626-29ff0a46ca90"),
-    c: id("photo-1775144657610-9a6f171e522f"),
-    d: id("photo-1762151662378-f40e20901824"),
-    e: id("photo-1775144657566-e5b093073baf"),
+    cover: id("photo-1589829545856-d10d557cf95f"),
+    a: id("photo-1505664194779-8beaceb93744"),
+    b: id("photo-1453723490680-798aa0ed62bd"),
+    c: id("photo-1473186578172-c141e6798ea4"),
+    d: id("photo-1450101499163-c8848c66ca85"),
+    e: id("photo-1521791134365-74f25c2a5c3e"),
   },
   farmacia: {
     cover: id("photo-1607619056574-7b8d3ee536b2"),
