@@ -180,7 +180,7 @@ export function HyperContact() {
                   >
                     {websiteModels.map((m) => (
                       <option key={m.id} value={m.name}>
-                        {m.name} — {m.subtitle}
+                        {m.name} ({m.priceNote}) — {m.subtitle}
                       </option>
                     ))}
                     <option value="Otro / integración">Otro / integración</option>

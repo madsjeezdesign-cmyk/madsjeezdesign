@@ -128,23 +128,24 @@ export function DemosIndexShowcase({ items }: { items: DemosShowcaseItem[] }) {
       <CinematicBackdrop />
       <ShowcaseSiteNav />
 
-      <header className="relative z-10 mx-auto max-w-[1400px] px-6 pb-16 pt-8 text-center md:px-12 md:pb-20 md:text-left lg:px-16">
+      <header className="relative z-10 mx-auto max-w-[1400px] px-6 pb-16 pt-8 text-left md:px-12 md:pb-20 lg:px-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.85 }}
         >
-          <div className="mb-6 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start">
-            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-500">
+          <div className="mb-8 flex w-full items-center gap-4 md:mb-10">
+            <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.42em] text-zinc-500">
               Showroom {year}
             </span>
-            <div className="hidden h-px flex-1 bg-white/10 md:block" />
+            <div className="h-px flex-1 bg-white/15" aria-hidden />
           </div>
 
-          <h1 className="mb-10 font-[family-name:var(--font-demo-bebas)] text-[4.5rem] uppercase leading-[0.85] tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[11rem]">
-            Landing
-            <br />
-            <span className="font-[family-name:var(--font-demo-playfair)] text-4xl font-light lowercase not-italic tracking-normal text-zinc-500 sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mb-10 flex w-full flex-col items-start leading-[0.82]">
+            <span className="font-[family-name:var(--font-demo-bebas)] text-[clamp(3.4rem,14vw,11rem)] uppercase tracking-[-0.02em] text-white">
+              Landing
+            </span>
+            <span className="-mt-2 font-[family-name:var(--font-demo-playfair)] text-[clamp(2.25rem,9vw,6.75rem)] font-normal italic leading-none tracking-tight text-zinc-400 md:-mt-4 md:-ml-[0.08em] lg:-ml-[0.12em]">
               demo
             </span>
           </h1>
@@ -160,7 +161,7 @@ export function DemosIndexShowcase({ items }: { items: DemosShowcaseItem[] }) {
                 que tu sitio principal.
               </p>
             </div>
-            <div className="flex flex-col items-center gap-3 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-500 md:items-end md:text-[10px]">
+            <div className="flex flex-col items-start gap-3 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-500 md:items-end md:text-[10px]">
               <div className="flex items-center gap-2">
                 <Zap size={14} className="text-yellow-500" />
                 Core Web Vitals aware

@@ -92,7 +92,7 @@ export function HyperLanding() {
             <a href="#que-hacemos" className="transition-all hover:text-[#1de0b1]">Qué hacemos</a>
             <a href="#sistemas" className="transition-all hover:text-[#1de0b1]">Servicios</a>
             <a href="#trabajos" className="transition-all hover:text-[#1de0b1]">Trabajos</a>
-            <a href="#modelos" className="transition-all hover:text-[#1de0b1]">Modelos</a>
+            <a href="#modelos" className="transition-all hover:text-[#1de0b1]">Planes</a>
             <a href="#stack" className="transition-all hover:text-[#1de0b1]">Stack</a>
             <a href="#protocolos" className="transition-all hover:text-[#1de0b1]">Código</a>
             <a href="#nexo" className="transition-all hover:text-[#1de0b1]">Nexo</a>
@@ -126,7 +126,7 @@ export function HyperLanding() {
               <a href="#que-hacemos" onClick={() => setMobileOpen(false)}>Qué hacemos</a>
               <a href="#sistemas" onClick={() => setMobileOpen(false)}>Servicios</a>
               <a href="#trabajos" onClick={() => setMobileOpen(false)}>Trabajos</a>
-              <a href="#modelos" onClick={() => setMobileOpen(false)}>Modelos</a>
+              <a href="#modelos" onClick={() => setMobileOpen(false)}>Planes</a>
               <a href="#stack" onClick={() => setMobileOpen(false)}>Stack</a>
               <a href="#protocolos" onClick={() => setMobileOpen(false)}>Código</a>
               <a href="#nexo" onClick={() => setMobileOpen(false)}>Nexo</a>
@@ -377,14 +377,15 @@ export function HyperLanding() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-2xl space-y-4 text-left md:mb-16">
             <h2 className="text-4xl font-black tracking-tighter md:text-5xl">
-              MODELOS
+              PLANES
               <br />
-              <span className="text-[#1de0b1]">DISPONIBLES.</span>
+              <span className="text-[#1de0b1]">REFERENCIA ARS.</span>
             </h2>
             <div className="h-1 w-20 bg-[#1de0b1]" />
             <p className="font-[family-name:var(--font-jetbrains)] text-sm text-zinc-500">
-              Paquetes de arranque para ordenar expectativas. El precio final se
-              define según alcance y contenidos.
+              Valores de referencia en pesos argentinos (ARS). Incluyen diseño y
+              desarrollo según cada plan; el presupuesto final se confirma con tu
+              briefing. Proyectos con más desarrollo: cotización a medida.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
@@ -552,7 +553,7 @@ export function HyperLanding() {
                 </li>
                 <li>
                   <a href="#modelos" className="transition-colors hover:text-white">
-                    Modelos
+                    Planes
                   </a>
                 </li>
                 <li>
