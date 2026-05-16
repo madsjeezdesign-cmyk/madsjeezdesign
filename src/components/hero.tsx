@@ -17,7 +17,8 @@ export function Hero() {
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm text-muted shadow-sm">
           <Sparkles className="h-4 w-4 text-accent" />
-          Estudio de desarrollo web · Córdoba, Argentina
+          Estudio de desarrollo web · {site.address.locality},{" "}
+          {site.address.province}
         </div>
 
         <h1 className="animate-fade-up delay-100 max-w-4xl font-[family-name:var(--font-instrument)] text-4xl leading-[1.1] tracking-tight text-foreground md:text-6xl lg:text-7xl">
@@ -74,7 +75,7 @@ function HeroVisual() {
           <span className="h-3 w-3 rounded-full bg-amber-400" />
           <span className="h-3 w-3 rounded-full bg-emerald-400" />
           <span className="ml-4 flex-1 rounded-md bg-background px-3 py-1 text-xs text-muted">
-            madsjeezdesign.com — preview
+            {new URL(site.siteUrl).hostname}
           </span>
         </div>
 

@@ -48,7 +48,25 @@ En la web pública, enviá un mensaje de prueba en **Contacto**.
 
 En Supabase → **Table Editor** → `contact_inquiries` debería aparecer la fila.
 
-## 5. Desarrollo local
+## 5. Panel admin (leads)
+
+1. Variables en Railway (o `.env.local`):
+
+| Variable | Descripción |
+|----------|-------------|
+| `ADMIN_EMAIL` | Email que inicia sesión en `/admin/login` |
+| `ADMIN_PASSWORD` | Contraseña (solo servidor) |
+| `ADMIN_SESSION_SECRET` | Secreto largo; generar con `openssl rand -base64 32` |
+
+2. Si la tabla `contact_inquiries` ya existía, ejecutá en SQL Editor las líneas `alter table ... add column` de `supabase/schema.sql` (o redeploy con `DATABASE_URL` para correr `ensure-schema`).
+
+3. Entrá a `https://madsjeezdesign.com/admin/login` (o la URL de Railway hasta que apuntes el DNS), luego `/admin` lista los mensajes.
+
+4. **Dominio:** configurá `madsjeezdesign.com` en Railway → **Networking** → Custom domain, y en tu registrador apuntá el registro **CNAME** (o **A**) según indique Railway. El sitio ya usa `site.siteUrl` en `src/lib/data.ts` como `https://madsjeezdesign.com` para metadata y enlaces.
+
+5. **No** pongas la contraseña del panel en el código ni en Git; rotala si la compartiste por chat o mail.
+
+## 6. Desarrollo local
 
 ```bash
 cp .env.example .env.local

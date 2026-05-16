@@ -1,6 +1,6 @@
 # MadsJeez Design — Landing
 
-Landing **Hyperlabs** (partículas, terminal, tipografía Plus Jakarta / JetBrains Mono) para **MadsJeez Design**. Formulario **Nexo** conectado a `/api/contact` y datos en `src/lib/data.ts`.
+Landing **Hyperlabs** (partículas, terminal, tipografía Plus Jakarta / JetBrains Mono) para **MadsJeez Design**. Dominio de producción: **https://madsjeezdesign.com** (`site.siteUrl` en `src/lib/data.ts`). Formulario **Nexo** conectado a `/api/contact` y datos en `src/lib/data.ts`.
 
 - **GitHub:** [madsjeezdesign-cmyk/madsjeezdesign](https://github.com/madsjeezdesign-cmyk/madsjeezdesign)
 - **Supabase:** `https://fhvlvuncymvzardotkfd.supabase.co`
@@ -20,6 +20,10 @@ npm run dev
 
 - **Automático:** definí `DATABASE_URL` (URI Session pooler) y en Docker se ejecuta `ensure-schema` al arrancar; o local: `npm run db:ensure`.
 - **Manual:** ejecutá `supabase/schema.sql` en el SQL Editor.
+
+## Panel admin (leads)
+
+Rutas: `/admin/login` → `/admin`. Requiere en el servidor `ADMIN_EMAIL`, `ADMIN_PASSWORD` y `ADMIN_SESSION_SECRET` (ver `.env.example` y `docs/deploy-railway.md`).
 
 ## Deploy Railway
 

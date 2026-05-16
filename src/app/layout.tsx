@@ -32,6 +32,7 @@ const titleBase = `${site.name} · ${site.experienceLabel} · ${yearsExperience}
 const description = `${site.name} — ${site.foundedYear}–${site.activeYear}: páginas web, e-commerce y sistemas a medida. ${site.address.locality}, ${site.address.partido}, ${site.address.province}. ${site.hours}.`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.siteUrl),
   title: {
     default: titleBase,
     template: `%s · ${site.name}`,
@@ -47,11 +48,16 @@ export const metadata: Metadata = {
     "tienda online",
     "Next.js",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: titleBase,
     description,
     type: "website",
     locale: "es_AR",
+    url: site.siteUrl,
+    siteName: site.name,
   },
 };
 
