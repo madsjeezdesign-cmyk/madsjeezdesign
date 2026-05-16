@@ -165,13 +165,13 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     b: u("photo-1490645935967-10de6ba17061", "ixlib=rb-4.0.3"),
     c: u("photo-1517836357463-d25dfeac3438", "ixlib=rb-4.0.3"),
     lead: {
-      section: "border-y border-lime-500/20 bg-zinc-950",
-      card: "rounded-2xl border border-zinc-800 bg-black p-6 md:p-8",
-      label: "text-[10px] font-bold uppercase tracking-widest text-zinc-600",
+      section: "border-y border-white/5 bg-[#0e0e0e]",
+      card: "border border-white/10 bg-[#050505] p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-[#dfff00]/80",
       input:
-        "mt-1 w-full rounded-xl border border-zinc-800 bg-zinc-900/80 px-4 py-3 text-sm text-white outline-none",
-      button: "w-full rounded-xl bg-lime-400 py-3.5 text-sm font-black text-black",
-      focus: "focus:border-lime-400/60",
+        "mt-1 w-full border-b border-white/10 bg-transparent px-0 py-3 text-sm text-white outline-none",
+      button: "iron-btn-triple-a w-full py-3.5 text-[10px] font-black uppercase tracking-[0.3em]",
+      focus: "focus:border-[#dfff00]/60",
     },
     shop: {
       headline: "Shop & suplementos (demo)",

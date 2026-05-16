@@ -98,14 +98,19 @@ const bEstetica = Quicksand({
   variable: "--font-demo-b-estetica",
 });
 
-const hGimnasio = Oswald({
+const hGimnasio = Archivo_Black({
+  weight: "400",
   subsets: ["latin"],
-  weight: ["500", "700"],
   variable: "--font-demo-h-gimnasio",
 });
-const bGimnasio = Karla({
+const subGimnasio = Oswald({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: "700",
+  variable: "--font-demo-sub-gimnasio",
+});
+const bGimnasio = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
   variable: "--font-demo-b-gimnasio",
 });
 
@@ -404,6 +409,7 @@ export const demoFontsClassName = [
   hEstetica.variable,
   bEstetica.variable,
   hGimnasio.variable,
+  subGimnasio.variable,
   bGimnasio.variable,
   hVeterinaria.variable,
   bVeterinaria.variable,

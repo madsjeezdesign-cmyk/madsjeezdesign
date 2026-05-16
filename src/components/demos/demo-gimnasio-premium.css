@@ -1,0 +1,102 @@
+/* Pulse Cross — IRON DEPOT Triple A */
+.iron-premium {
+  --iron-neon: #dfff00;
+  --iron-bg: #050505;
+  --iron-surface: #0e0e0e;
+  --iron-accent-muted: rgba(223, 255, 0, 0.1);
+}
+
+.iron-premium .iron-giant-text {
+  font-size: clamp(4rem, 15vw, 18rem);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  position: absolute;
+  z-index: 0;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+.iron-premium .iron-glass {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.iron-premium .iron-program-card {
+  position: relative;
+  height: 600px;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.iron-premium .iron-program-card img,
+.iron-premium .iron-program-card .iron-program-img {
+  transition: transform 0.8s ease;
+}
+
+.iron-premium .iron-program-card:hover img,
+.iron-premium .iron-program-card:hover .iron-program-img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.iron-premium .iron-program-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.9) 10%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.iron-premium .iron-btn-triple-a {
+  padding: 1.25rem 2.5rem;
+  background: var(--iron-neon);
+  color: #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  transition: all 0.3s ease;
+}
+
+.iron-premium .iron-btn-triple-a:hover {
+  transform: scale(1.05) skewX(-5deg);
+  box-shadow: 0 0 30px var(--iron-accent-muted);
+}
+
+@keyframes iron-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.iron-premium .iron-marquee {
+  display: flex;
+  animation: iron-marquee 20s linear infinite;
+}
+
+.iron-premium .iron-scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.iron-premium .iron-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.iron-premium ::-webkit-scrollbar {
+  width: 4px;
+}
+.iron-premium ::-webkit-scrollbar-track {
+  background: var(--iron-bg);
+}
+.iron-premium ::-webkit-scrollbar-thumb {
+  background: var(--iron-neon);
+}
