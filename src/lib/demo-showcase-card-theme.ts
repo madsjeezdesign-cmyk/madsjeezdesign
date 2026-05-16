@@ -48,6 +48,16 @@ const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">
   tattoo: { badge: "Ink Studio", subtitle: "Galería creativa" },
   cerrajeria: { badge: "Access Tech", subtitle: "Urgencias 24 h" },
   coworking: { badge: "Flex Space", subtitle: "Equipos híbridos" },
+  minecraft: { badge: "Game Host", subtitle: "Modpacks & Java" },
+  roblox: { badge: "Experience", subtitle: "Escalado RP" },
+  cs2: { badge: "128 Tick", subtitle: "Competitivo" },
+  fivem: { badge: "FiveM RP", subtitle: "Economía seria" },
+  muonline: { badge: "Legacy MMORPG", subtitle: "Season custom" },
+  lineage2: { badge: "Chronicle", subtitle: "Mid-rate estable" },
+  rust: { badge: "Survival", subtitle: "Wipes & Oxide" },
+  ark: { badge: "Cluster", subtitle: "Workshop ASA" },
+  terraria: { badge: "tModLoader", subtitle: "Co-op worlds" },
+  palworld: { badge: "Dedicated", subtitle: "Co-op pals" },
 };
 
 export function getShowcaseCardTheme(slug: string, accentHex: string): ShowcaseCardTheme {

@@ -36,6 +36,16 @@ import {
   DemoVeterinaria,
   DemoViajes,
   DemoYoga,
+  DemoMinecraft,
+  DemoRoblox,
+  DemoCs2,
+  DemoFivem,
+  DemoMuonline,
+  DemoLineage2,
+  DemoRust,
+  DemoArk,
+  DemoTerraria,
+  DemoPalworld,
 } from "@/components/demos";
 
 const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
@@ -69,6 +79,16 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   tattoo: DemoTattoo,
   cerrajeria: DemoCerrajeria,
   coworking: DemoCoworking,
+  minecraft: DemoMinecraft,
+  roblox: DemoRoblox,
+  cs2: DemoCs2,
+  fivem: DemoFivem,
+  muonline: DemoMuonline,
+  lineage2: DemoLineage2,
+  rust: DemoRust,
+  ark: DemoArk,
+  terraria: DemoTerraria,
+  palworld: DemoPalworld,
 };
 
 export function generateStaticParams() {

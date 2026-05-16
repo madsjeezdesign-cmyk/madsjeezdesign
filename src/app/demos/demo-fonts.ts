@@ -402,6 +402,17 @@ const bCoworking = Epilogue({
   variable: "--font-demo-b-coworking",
 });
 
+const hGameserver = Chakra_Petch({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-demo-h-gameserver",
+});
+const bGameserver = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  variable: "--font-demo-b-gameserver",
+});
+
 /** Concatenar en el layout de /demos para definir todas las variables CSS. */
 export const demoFontsClassName = [
   hFerreteria.variable,
@@ -465,4 +476,6 @@ export const demoFontsClassName = [
   bCerrajeria.variable,
   hCoworking.variable,
   bCoworking.variable,
+  hGameserver.variable,
+  bGameserver.variable,
 ].join(" ");

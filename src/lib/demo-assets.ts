@@ -83,6 +83,20 @@ export type DemoVisualsResolved = DemoVisualPack & {
 const u = (id: string, sig: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=82&${sig}`;
 
+function gameServerLead(accent: string): DemoLeadTheme {
+  return {
+    section: "border-y border-white/5 bg-[#030712]",
+    card: "rounded-2xl border border-white/10 bg-[#0b1220]/90 p-6 md:p-8",
+    label: `text-[10px] font-bold uppercase tracking-widest text-[${accent}]/80`,
+    input:
+      "mt-1 w-full border-b border-white/10 bg-transparent px-0 py-3 text-sm text-white outline-none",
+    button: `w-full rounded-xl bg-[${accent}] py-3.5 text-sm font-bold text-[#030712]`,
+    focus: `focus:border-[${accent}]/50`,
+  };
+}
+
+const GS_PLACEHOLDER = u("photo-1542751374-adc38448a05e", "ixlib=rb-4.0.3");
+
 /** Cobertura por slug — mismas claves que DEMOS */
 const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   ferreteria: {
@@ -823,6 +837,86 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
         { id: "co3", name: "Sala 8 pax · proyector 4K", price: "$28.000", note: "IVA incl. demo" },
       ],
     },
+  },
+  minecraft: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#22c55e"),
+    shop: null,
+  },
+  roblox: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#f43f5e"),
+    shop: null,
+  },
+  cs2: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#f59e0b"),
+    shop: null,
+  },
+  fivem: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#a855f7"),
+    shop: null,
+  },
+  muonline: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#eab308"),
+    shop: null,
+  },
+  lineage2: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#6366f1"),
+    shop: null,
+  },
+  rust: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#cd412b"),
+    shop: null,
+  },
+  ark: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#14b8a6"),
+    shop: null,
+  },
+  terraria: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#a78bfa"),
+    shop: null,
+  },
+  palworld: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: gameServerLead("#06b6d4"),
+    shop: null,
   },
 };
 

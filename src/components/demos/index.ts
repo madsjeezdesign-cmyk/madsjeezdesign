@@ -28,3 +28,15 @@ export { DemoTech } from "./demo-tech";
 export { DemoVeterinaria } from "./demo-veterinaria";
 export { DemoViajes } from "./demo-viajes";
 export { DemoYoga } from "./demo-yoga";
+export {
+  DemoMinecraft,
+  DemoRoblox,
+  DemoCs2,
+  DemoFivem,
+  DemoMuonline,
+  DemoLineage2,
+  DemoRust,
+  DemoArk,
+  DemoTerraria,
+  DemoPalworld,
+} from "./game-server/create-game-server-demo";

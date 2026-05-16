@@ -269,6 +269,76 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     pitch:
       "Espacio flexible con ocupación en tiempo real, add-ons de tecnología y propuesta clara para equipos remotos.",
   },
+  minecraft: {
+    color: "from-emerald-600/30",
+    accent: "text-emerald-400",
+    border: "group-hover:border-emerald-500/50",
+    pitch:
+      "Hosting gamer con planes RAM/slots, modpacks en un click y señales de uptime para convertir clanes y comunidades.",
+  },
+  roblox: {
+    color: "from-rose-600/30",
+    accent: "text-rose-400",
+    border: "group-hover:border-rose-500/50",
+    pitch:
+      "Infra para experiences privadas: escalado, métricas y moderación pensados para estudios y creadores.",
+  },
+  cs2: {
+    color: "from-amber-600/30",
+    accent: "text-amber-400",
+    border: "group-hover:border-amber-500/50",
+    pitch:
+      "Servidores competitivos 128 tick con narrativa de hitreg, plugins de scrim y embudo de deploy inmediato.",
+  },
+  fivem: {
+    color: "from-purple-600/30",
+    accent: "text-purple-400",
+    border: "group-hover:border-purple-500/50",
+    pitch:
+      "RP serio con stack ESX/QBCore visible, txAdmin y planes por slots para ciudades que escalan.",
+  },
+  muonline: {
+    color: "from-yellow-600/25",
+    accent: "text-yellow-400",
+    border: "group-hover:border-yellow-500/50",
+    pitch:
+      "Season clásica con anti-hack, launcher y cash shop: lenguaje nostálgico con infra moderna.",
+  },
+  lineage2: {
+    color: "from-indigo-600/30",
+    accent: "text-indigo-400",
+    border: "group-hover:border-indigo-500/50",
+    pitch:
+      "Chronicles y siege con geodata, rates claros y captación de GMs que buscan estabilidad.",
+  },
+  rust: {
+    color: "from-red-600/30",
+    accent: "text-red-400",
+    border: "group-hover:border-red-500/50",
+    pitch:
+      "Wipes programados, Oxide y alertas Discord: conversión para comunidades survival exigentes.",
+  },
+  ark: {
+    color: "from-teal-600/30",
+    accent: "text-teal-400",
+    border: "group-hover:border-teal-500/50",
+    pitch:
+      "Clusters y Workshop con backups de save: ideal para tribus PvE/PvP y admins de mods pesados.",
+  },
+  terraria: {
+    color: "from-violet-600/30",
+    accent: "text-violet-400",
+    border: "group-hover:border-violet-500/50",
+    pitch:
+      "Co-op y tModLoader con worlds en la nube: tono accesible para grupos de amigos y streamers.",
+  },
+  palworld: {
+    color: "from-cyan-600/30",
+    accent: "text-cyan-400",
+    border: "group-hover:border-cyan-500/50",
+    pitch:
+      "Dedicated co-op con saves protegidos y restarts: captación para comunidades Pal activas post-launch.",
+  },
 };
 
 export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
