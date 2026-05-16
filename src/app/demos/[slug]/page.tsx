@@ -2,7 +2,10 @@ import type { ComponentType } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDemoBySlug, DEMO_SLUGS } from "@/lib/demos-registry";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import { getShowcaseMeta } from "@/lib/demos-showcase-meta";
 import { site } from "@/lib/data";
+import { DemoSlugPageShell } from "@/components/demos/demo-slug-page-shell";
 import {
   DemoAbogados,
   DemoContadores,
@@ -76,5 +79,20 @@ export default async function DemoPage({
   const { slug } = await params;
   const Demo = BY_SLUG[slug as keyof typeof BY_SLUG];
   if (!Demo) notFound();
-  return <Demo />;
+  const d = getDemoBySlug(slug);
+  if (!d) notFound();
+  const showcase = getShowcaseMeta(slug);
+  const cover = getDemoVisuals(slug).cover;
+
+  return (
+    <DemoSlugPageShell
+      industry={d.industry}
+      title={d.title}
+      tagline={d.tagline}
+      coverSrc={cover}
+      showcase={showcase}
+    >
+      <Demo />
+    </DemoSlugPageShell>
+  );
 }

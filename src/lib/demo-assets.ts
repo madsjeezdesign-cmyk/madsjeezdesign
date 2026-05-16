@@ -6,6 +6,7 @@
 import { DEMO_SLUGS } from "@/lib/demos-registry";
 
 export const DEMO_VIDEO_POOL = [
+  "https://filesamples.com/samples/video/mp4/sample_640x360.mp4",
   "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
   "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
   "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
@@ -15,13 +16,19 @@ export const DEMO_VIDEO_POOL = [
   "https://storage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
   "https://storage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
   "https://storage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
-  "https://www.w3schools.com/html/mov_bbb.mp4",
 ] as const;
 
 function pickDemoVideo(slug: string): string {
   const i = DEMO_SLUGS.indexOf(slug as (typeof DEMO_SLUGS)[number]);
   const idx = i >= 0 ? i % DEMO_VIDEO_POOL.length : 0;
   return DEMO_VIDEO_POOL[idx]!;
+}
+
+function pickDemoVideoFallback(slug: string): string {
+  const i = DEMO_SLUGS.indexOf(slug as (typeof DEMO_SLUGS)[number]);
+  const idx = i >= 0 ? i % DEMO_VIDEO_POOL.length : 0;
+  const alt = (idx + 3) % DEMO_VIDEO_POOL.length;
+  return DEMO_VIDEO_POOL[alt]!;
 }
 
 export type DemoLeadTheme = {
@@ -57,7 +64,11 @@ export type DemoVisualPack = {
   shop: DemoShopConfig | null;
 };
 
-export type DemoVisualsResolved = DemoVisualPack & { videoSrc: string };
+export type DemoVisualsResolved = DemoVisualPack & {
+  videoSrc: string;
+  /** Segunda fuente MP4 por si la CDN principal bloquea embeds en algunas redes. */
+  videoFallbackSrc: string;
+};
 
 const u = (id: string, sig: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=82&${sig}`;
@@ -66,8 +77,8 @@ const u = (id: string, sig: string) =>
 const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   ferreteria: {
     cover: u("photo-1504148455328-c376907d081c", "ixlib=rb-4.0.3"),
-    a: u("photo-1581147036324-c1a02b59f7cc", "ixlib=rb-4.0.3"),
-    b: u("photo-1530124566582-ebe8050830cc", "ixlib=rb-4.0.3"),
+    a: u("photo-1625047509168-a7026f36de04", "ixlib=rb-4.0.3"),
+    b: u("photo-1492144534655-ae79c964c9d7", "ixlib=rb-4.0.3"),
     c: u("photo-1504328345606-18bbc8c9d7d1", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-orange-500/20 bg-zinc-950",
@@ -115,8 +126,8 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   estetica: {
     cover: u("photo-1560066984-138dadb4c035", "ixlib=rb-4.0.3"),
     a: u("photo-1522337360788-8b13dee7a37e", "ixlib=rb-4.0.3"),
-    b: u("photo-1519415943484-9b1873b0cf59", "ixlib=rb-4.0.3"),
-    c: u("photo-1596178060811-6c74949b5a0c", "ixlib=rb-4.0.3"),
+    b: u("photo-1511499767150-a48a237f0083", "ixlib=rb-4.0.3"),
+    c: u("photo-1600607687939-ce8a6c25118c", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-stone-300 bg-[#f5f0e8]",
       card: "rounded-2xl border border-stone-300 bg-white p-6 shadow-sm md:p-8",
@@ -162,8 +173,8 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   veterinaria: {
-    cover: u("photo-1450778868360-46186e893a46", "ixlib=rb-4.0.3"),
-    a: u("photo-1583337130417-3346a1be7fa6", "ixlib=rb-4.0.3"),
+    cover: u("photo-1548199973-03cce0bbc87b", "ixlib=rb-4.0.3"),
+    a: u("photo-1583337130417-3346a1be7dee", "ixlib=rb-4.0.3"),
     b: u("photo-1548199973-03cce0bbc87b", "ixlib=rb-4.0.3"),
     c: u("photo-1601758228041-f3b2795255f1", "ixlib=rb-4.0.3"),
     lead: {
@@ -226,9 +237,9 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   floreria: {
-    cover: u("photo-1455659777274-85fd066e501a", "ixlib=rb-4.0.3"),
-    a: u("photo-1490750967868-88aa4486c946", "ixlib=rb-4.0.3"),
-    b: u("photo-1487530821177-197fdd56168a", "ixlib=rb-4.0.3"),
+    cover: u("photo-1490750967868-88aa4486c946", "ixlib=rb-4.0.3"),
+    a: u("photo-1522337360788-8b13dee7a37e", "ixlib=rb-4.0.3"),
+    b: u("photo-1561181286-d3fee7d55364", "ixlib=rb-4.0.3"),
     c: u("photo-1561181286-d3fee7d55364", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-pink-500/20 bg-emerald-950",
@@ -250,8 +261,8 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   taller: {
-    cover: u("photo-1487754180451ce576e121762", "ixlib=rb-4.0.3"),
-    a: u("photo-1486262715619-67b852e7d7b0", "ixlib=rb-4.0.3"),
+    cover: u("photo-1619405399517-d7fce0f13302", "ixlib=rb-4.0.3"),
+    a: u("photo-1503376780353-7e6692767b70", "ixlib=rb-4.0.3"),
     b: u("photo-1625047509168-a7026f36de04", "ixlib=rb-4.0.3"),
     c: u("photo-1492144534655-ae79c964c9d7", "ixlib=rb-4.0.3"),
     lead: {
@@ -274,10 +285,10 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   abogados: {
-    cover: u("photo-1589829547916-fb3d85a1cd75", "ixlib=rb-4.0.3"),
+    cover: u("photo-1507679799987-c73779587ccf", "ixlib=rb-4.0.3"),
     a: u("photo-1450101499163-c8848c66ca85", "ixlib=rb-4.0.3"),
-    b: u("photo-1589994963528-7b2fe8a8e3a4", "ixlib=rb-4.0.3"),
-    c: u("photo-1505664194779-8beacebdb937", "ixlib=rb-4.0.3"),
+    b: u("photo-1454165804606-c3d57bc86b40", "ixlib=rb-4.0.3"),
+    c: u("photo-1554224155-6726b3ff858f", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-amber-900/30 bg-[#0d0d0d]",
       card: "rounded-2xl border border-amber-900/30 bg-neutral-950 p-6 md:p-8",
@@ -290,7 +301,7 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     shop: null,
   },
   farmacia: {
-    cover: u("photo-1584308666744-24d5c474e36e", "ixlib=rb-4.0.3"),
+    cover: u("photo-1587854692152-cbe660dbde88", "ixlib=rb-4.0.3"),
     a: u("photo-1576091160399-112ba8d25d1d", "ixlib=rb-4.0.3"),
     b: u("photo-1587854692152-cbe660dbde88", "ixlib=rb-4.0.3"),
     c: u("photo-1555633514-abcee6ab92e1", "ixlib=rb-4.0.3"),
@@ -314,10 +325,10 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   odontologia: {
-    cover: u("photo-1606811971618-4486abc44679", "ixlib=rb-4.0.3"),
-    a: u("photo-1629909613654-28e377c37b09", "ixlib=rb-4.0.3"),
-    b: u("photo-1599818816645-f2575c7ee69d", "ixlib=rb-4.0.3"),
-    c: u("photo-1588776814546-1ffcf4724a3a", "ixlib=rb-4.0.3"),
+    cover: u("photo-1629909613654-28e377c37b09", "ixlib=rb-4.0.3"),
+    a: u("photo-1576091160399-112ba8d25d1d", "ixlib=rb-4.0.3"),
+    b: u("photo-1587854692152-cbe660dbde88", "ixlib=rb-4.0.3"),
+    c: u("photo-1555633514-abcee6ab92e1", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-sky-500/30 bg-sky-950",
       card: "rounded-2xl border border-white/10 bg-sky-900/30 p-6 backdrop-blur md:p-8",
@@ -340,7 +351,7 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   contadores: {
     cover: u("photo-1454165804606-c3d57bc86b40", "ixlib=rb-4.0.3"),
     a: u("photo-1554224155-6726b3ff858f", "ixlib=rb-4.0.3"),
-    b: u("photo-1551288049-bebda4e38c71", "ixlib=rb-4.0.3"),
+    b: u("photo-1460925895917-afdab827c52f", "ixlib=rb-4.0.3"),
     c: u("photo-1507679799987-c73779587ccf", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-slate-700 bg-slate-950",
@@ -378,8 +389,8 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   detailing: {
-    cover: u("photo-1607860108855-64acf4208ae9", "ixlib=rb-4.0.3"),
-    a: u("photo-1610647742845-bfbcb3c4b633", "ixlib=rb-4.0.3"),
+    cover: u("photo-1503376780353-7e6692767b70", "ixlib=rb-4.0.3"),
+    a: u("photo-1492144534655-ae79c964c9d7", "ixlib=rb-4.0.3"),
     b: u("photo-1619405399517-d7fce0f13302", "ixlib=rb-4.0.3"),
     c: u("photo-1503376780353-7e6692767b70", "ixlib=rb-4.0.3"),
     lead: {
@@ -403,7 +414,7 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   },
   panaderia: {
     cover: u("photo-1509440159596-0249088772ff", "ixlib=rb-4.0.3"),
-    a: u("photo-1549931310-a3806d2d0728", "ixlib=rb-4.0.3"),
+    a: u("photo-1414235077428-338989a2e8c0", "ixlib=rb-4.0.3"),
     b: u("photo-1555507036-ab1f4038808a", "ixlib=rb-4.0.3"),
     c: u("photo-1509440159596-0249088772ff", "ixlib=rb-4.0.3"),
     lead: {
@@ -428,8 +439,8 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   viajes: {
     cover: u("photo-1488646953014-85cb44e25828", "ixlib=rb-4.0.3"),
     a: u("photo-1436491865332-7a61a109cc05", "ixlib=rb-4.0.3"),
-    b: u("photo-1464817739643-57592b433148", "ixlib=rb-4.0.3"),
-    c: u("photo-1473625247510-8ceb09580548", "ixlib=rb-4.0.3"),
+    b: u("photo-1600596542815-ffad4c1539a9", "ixlib=rb-4.0.3"),
+    c: u("photo-1504639725590-34d0984388bd", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-teal-500/30 bg-teal-950",
       card: "rounded-2xl border border-teal-800 bg-teal-900/40 p-6 md:p-8",
@@ -451,9 +462,9 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   },
   limpieza: {
     cover: u("photo-1581578731548-c64695cc6952", "ixlib=rb-4.0.3"),
-    a: u("photo-1628177142897-132293272448", "ixlib=rb-4.0.3"),
-    b: u("photo-1558317374-067fb3f85ccb", "ixlib=rb-4.0.3"),
-    c: u("photo-1584622650111-993a426f1d51", "ixlib=rb-4.0.3"),
+    a: u("photo-1554224155-6726b3ff858f", "ixlib=rb-4.0.3"),
+    b: u("photo-1557683316-973673baf926", "ixlib=rb-4.0.3"),
+    c: u("photo-1517836357463-d25dfeac3438", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-indigo-500/30 bg-slate-950",
       card: "rounded-2xl border border-indigo-900/50 bg-slate-900/60 p-6 md:p-8",
@@ -499,8 +510,8 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   },
   optica: {
     cover: u("photo-1574258495973-f010dfbb5371", "ixlib=rb-4.0.3"),
-    a: u("photo-1577803643013-c76443b37436", "ixlib=rb-4.0.3"),
-    b: u("photo-1511499767150-a48a237f0083", "ixlib=rb-4.0.3"),
+    a: u("photo-1511499767150-a48a237f0083", "ixlib=rb-4.0.3"),
+    b: u("photo-1600607687939-ce8a6c25118c", "ixlib=rb-4.0.3"),
     c: u("photo-1574258495973-f010dfbb5371", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-sky-600/30 bg-slate-950",
@@ -541,5 +552,9 @@ export function getDemoVisuals(slug: string): DemoVisualsResolved {
       },
       shop: null,
     };
-  return { ...pack, videoSrc: pickDemoVideo(slug) };
+  return {
+    ...pack,
+    videoSrc: pickDemoVideo(slug),
+    videoFallbackSrc: pickDemoVideoFallback(slug),
+  };
 }
