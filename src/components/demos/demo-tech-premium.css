@@ -1,0 +1,76 @@
+/* Vanguardia Tech — demo SaaS / infra premium */
+.vt-premium {
+  --vt-cyan: #22d3ee;
+  --vt-cyan-dim: rgba(34, 211, 238, 0.15);
+}
+
+.vt-premium .vt-carbon-bg {
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  opacity: 0.2;
+}
+
+.vt-premium .vt-btn-primary {
+  background: var(--vt-cyan);
+  border-color: #67e8f9;
+  color: #020617;
+}
+
+.vt-premium .vt-btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--vt-cyan);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.vt-premium .vt-btn-ghost:hover {
+  border-color: var(--vt-cyan);
+}
+
+.vt-premium .vt-scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vt-premium .vt-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vt-premium .vt-hero-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: vt-hero-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.vt-premium .vt-hero-reveal:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.vt-premium .vt-hero-reveal:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.vt-premium .vt-hero-reveal:nth-child(3) {
+  animation-delay: 0.35s;
+}
+.vt-premium .vt-hero-reveal:nth-child(4) {
+  animation-delay: 0.5s;
+}
+.vt-premium .vt-hero-reveal:nth-child(5) {
+  animation-delay: 0.65s;
+}
+
+@keyframes vt-hero-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vt-premium .vt-bar {
+  background: linear-gradient(to top, rgba(8, 145, 178, 0.4), rgba(34, 211, 238, 0.6));
+  transition: height 1s ease;
+}
+
+.vt-premium ::selection {
+  background: var(--vt-cyan);
+  color: #020617;
+}

@@ -238,18 +238,18 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     shop: null,
   },
   tech: {
-    cover: u("photo-1517694712202-14dd9538aa97", "ixlib=rb-4.0.3"),
+    cover: u("photo-1451187580459-43490279c0fa", "ixlib=rb-4.0.3"),
     a: u("photo-1555949963-aa79dcee981c", "ixlib=rb-4.0.3"),
     b: u("photo-1460925895917-afdab827c52f", "ixlib=rb-4.0.3"),
     c: u("photo-1504639725590-34d0984388bd", "ixlib=rb-4.0.3"),
     lead: {
-      section: "border-y border-violet-500/20 bg-slate-950",
-      card: "rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur md:p-8",
-      label: "text-[10px] font-bold uppercase tracking-widest text-slate-500",
+      section: "border-y border-cyan-500/20 bg-slate-950",
+      card: "rounded-2xl border border-white/10 bg-slate-900/60 p-6 backdrop-blur-xl md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-cyan-400/80",
       input:
-        "mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white outline-none",
-      button: "w-full rounded-xl bg-violet-600 py-3.5 text-sm font-bold text-white",
-      focus: "focus:border-violet-400/50",
+        "mt-1 w-full border-b border-white/10 bg-transparent px-0 py-3 font-mono text-sm text-white outline-none",
+      button: "w-full bg-cyan-500 py-3.5 text-sm font-bold text-slate-950",
+      focus: "focus:border-cyan-400/50",
     },
     shop: {
       headline: "Add-ons & seats (demo)",

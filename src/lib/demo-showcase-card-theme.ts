@@ -24,7 +24,7 @@ const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">
   gimnasio: { badge: "Performance", subtitle: "Conversión deportiva" },
   veterinaria: { badge: "Pet Care", subtitle: "Clínica + retail" },
   inmobiliaria: { badge: "Luxury RE", subtitle: "Portfolio premium" },
-  tech: { badge: "SaaS Scale", subtitle: "Product-led growth" },
+  tech: { badge: "Vanguardia OS", subtitle: "Infra & IA soberana" },
   floreria: { badge: "Bloom OS", subtitle: "Venta emocional" },
   taller: { badge: "Auto Service", subtitle: "Confianza mecánica" },
   abogados: { badge: "Legal Firm", subtitle: "Captación institucional" },

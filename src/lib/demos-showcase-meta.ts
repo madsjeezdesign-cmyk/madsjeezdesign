@@ -79,11 +79,11 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
   },
   tech: {
 
-    color: "from-violet-600/30",
-    accent: "text-violet-400",
-    border: "group-hover:border-violet-500/50",
+    color: "from-cyan-600/30",
+    accent: "text-cyan-400",
+    border: "group-hover:border-cyan-500/50",
     pitch:
-      "Landing SaaS con narrativa de producto, prueba social técnica y embudo de signup claro.",
+      "Vanguardia cyber: métricas en vivo, terminal de comando, protocolos IA y embudo de auditoría Alpha.",
   },
   floreria: {
 

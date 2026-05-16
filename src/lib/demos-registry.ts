@@ -63,11 +63,11 @@ export const DEMOS: DemoMeta[] = [
   },
   {
     slug: "tech",
-    title: "NexoLab Software",
+    title: "Vanguardia Tech",
     industry: "SaaS & tecnología",
-    tagline: "Producto digital con trial y demos",
-    accent: "#a78bfa",
-    previewClass: "from-slate-950 via-violet-950/40 to-slate-950",
+    tagline: "Infraestructura, IA soberana y sistemas distribuidos",
+    accent: "#22d3ee",
+    previewClass: "from-slate-950 via-cyan-950/25 to-slate-950",
   },
   {
     slug: "floreria",

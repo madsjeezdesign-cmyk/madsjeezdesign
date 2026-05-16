@@ -67,7 +67,7 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     e: id("photo-1646987916641-1f3c8992daa2"),
   },
   tech: {
-    cover: id("photo-1606857521015-7f9fcf423740"),
+    cover: id("photo-1451187580459-43490279c0fa"),
     a: id("photo-1551434678-e076c223a692"),
     b: id("photo-1541746972996-4e0b0f43e02a"),
     c: id("photo-1556761175-4b46a572b786"),
