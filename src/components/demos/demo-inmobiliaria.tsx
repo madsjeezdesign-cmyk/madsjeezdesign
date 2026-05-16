@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoInmobiliariaLanding() {
   return (
@@ -179,6 +180,22 @@ export function DemoInmobiliariaLanding() {
           </button>
         </div>
       </section>
+
+      <DemoEnhancements
+        slug="inmobiliaria"
+        brandLabel="Horizonte Propiedades"
+        sectionClass="border-y border-slate-800 bg-slate-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"
+        quoteClass="text-sm italic text-slate-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-500"
+        extraTestimonialsTitle="Compradores y vendedores"
+        extraTestimonials={[
+          { text: "Tour 360 filtró curiosos; solo vinieron cash-out listos.", author: "Martín", role: "Inversor demo" },
+          { text: "Vendimos en el precio publicado sin bajar en 90 días.", author: "Clara B.", role: "Vendedora PH" },
+          { text: "Data room impecable para due diligence del fondo.", author: "Analyst", role: "Family office" },
+        ]}
+      />
 
       <footer className="py-10 text-center text-xs text-slate-600">
         Demo visual · MadsJeez Design

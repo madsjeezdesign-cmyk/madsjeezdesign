@@ -15,6 +15,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoFerreteriaLanding() {
   return (
@@ -190,6 +191,19 @@ export function DemoFerreteriaLanding() {
         itemBodyClass="mt-2 text-sm leading-relaxed text-zinc-500"
       />
 
+      <DemoLongStory
+        kicker="Operación y datos"
+        title="Catálogo conectado al depósito: menos promesas, más remitos limpios"
+        paragraphs={[
+          "Integración demo entre ERP y vitrina: cada SKU muestra ubicación de picking, lote cuando aplica normativa y tiempo estimado de armado. Si el sistema detecta divergencia de inventario, el cliente ve la unidad reservable real o la alternativa equivalente aprobada por compras.",
+          "Para pinturería, el módulo tintométrico guarda fórmulas por cliente y envía alerta cuando cambia la base química del fabricante. Los EPP y elementos de altura se venden con checklist de tallas y capacidad de carga visible en ficha técnica en PDF descargable.",
+        ]}
+        kickerClass="text-orange-400"
+        titleClass="text-white"
+        pClass="mt-4 text-sm leading-relaxed text-zinc-400 md:text-base"
+        sectionClass="bg-zinc-900/60"
+      />
+
       <DemoTestimonials
         title="Lo que dicen nuestros clientes"
         quotes={[
@@ -242,6 +256,36 @@ export function DemoFerreteriaLanding() {
           </button>
         </div>
       </section>
+
+      <DemoEnhancements
+        slug="ferreteria"
+        brandLabel="Ferretería del Oeste"
+        shopCardClass="border border-orange-500/25 bg-zinc-950/90"
+        shopAccentClass="bg-orange-600 font-bold text-white"
+        sectionClass="border-y border-orange-500/20 bg-zinc-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-orange-500/20 bg-zinc-950/80 p-6"
+        quoteClass="text-sm italic text-zinc-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-orange-400"
+        extraTestimonialsTitle="Más testimonios verificados"
+        extraTestimonials={[
+          {
+            text: "El catálogo online ordenó las compras de obra: menos idas en vano al local.",
+            author: "Ing. Correa",
+            role: "Loteo Lomas demo",
+          },
+          {
+            text: "Me dejaron lista curada con recambios de marcas cuando no había Milwaukee.",
+            author: "Taller 8",
+            role: "Metalúrgica",
+          },
+          {
+            text: "Mostrador mayorista me carga el camión sin hacer fila con chicos.",
+            author: "Román",
+            role: "Gasista matriculado",
+          },
+        ]}
+      />
 
       <footer className="border-t border-white/10 px-4 py-10 text-center text-xs text-zinc-600 md:px-10">
         Demo visual · MadsJeez Design · Contenido ficticio para presentación comercial

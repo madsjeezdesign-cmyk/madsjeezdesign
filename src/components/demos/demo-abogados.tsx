@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoAbogadosLanding() {
   return (
@@ -190,6 +191,34 @@ export function DemoAbogadosLanding() {
           Solicitar llamado
         </button>
       </section>
+
+      <DemoEnhancements
+        slug="abogados"
+        brandLabel="Bravo y Asociados"
+        sectionClass="border-y border-amber-900/25 bg-[#0a0a0a]"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-amber-900/30 bg-neutral-950 p-6"
+        quoteClass="text-sm italic text-neutral-400"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-600"
+        extraTestimonialsTitle="Más clientes"
+        extraTestimonials={[
+          {
+            text: "El informe semanal para directorio fue claro y sin jerga innecesaria.",
+            author: "Mariana Solís",
+            role: "GC · retail demo",
+          },
+          {
+            text: "Negociaron la indemnización sin ir a juicio en 6 semanas.",
+            author: "Héctor V.",
+            role: "RRHH industrial",
+          },
+          {
+            text: "Respuesta en menos de 24 h cuando apareció la carta documento.",
+            author: "StartLab",
+            role: "Cofounder",
+          },
+        ]}
+      />
 
       <footer className="border-t border-neutral-900 py-8 text-center text-xs text-neutral-700">
         Demo visual · MadsJeez Design · Contenido ficticio

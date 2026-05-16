@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoViajesLanding() {
   return (
@@ -111,6 +112,24 @@ export function DemoViajesLanding() {
           { q: "¿EMD por equipaje?", a: "Incluido en tabla comparativa antes de pagar." },
           { q: "¿COVID?", a: "Restricciones según fuente oficial actualizada semanalmente demo." },
           { q: "¿Grupos?", a: "Negociación naming rights en micros privados según disponibilidad." },
+        ]}
+      />
+
+      <DemoEnhancements
+        slug="viajes"
+        brandLabel="Atlas Experiencias"
+        shopCardClass="border border-teal-600/35 bg-teal-950/50"
+        shopAccentClass="bg-teal-500 font-bold text-teal-950"
+        sectionClass="border-y border-teal-800/35 bg-teal-950/80"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-teal-800/40 bg-teal-900/40 p-6"
+        quoteClass="text-sm italic text-teal-100/88"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-teal-400"
+        extraTestimonialsTitle="Viajeros"
+        extraTestimonials={[
+          { text: "Reacomodación de vuelo en 40 min por WhatsApp — salvadores.", author: "Pato & Lu", role: "Luna de miel demo" },
+          { text: "Crucero igual al folleto; camarote mejor por overbooking.", author: "Familia Rivas", role: "Caribe" },
+          { text: "Evento MICE sin sobrecostos ocultos en AV.", author: "SteelBlue", role: "Marketing B2B" },
         ]}
       />
 

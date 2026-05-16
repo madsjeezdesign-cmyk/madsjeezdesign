@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoGimnasioLanding() {
   return (
@@ -34,9 +35,12 @@ export function DemoGimnasioLanding() {
             <br />
             tu récord
           </h1>
-          <p className="mt-8 max-w-md text-sm font-medium text-zinc-500">
-            Clases 05:30 a 22:00. Coaches certificados. App para reservar WOD y
-            ver tu progreso de levantamiento.
+          <p className="mt-8 max-w-2xl text-sm font-medium leading-relaxed text-zinc-400 md:text-base">
+            Clases 05:30 a 22:00 con cupos controlados por calidad de coaching. Sala de pesas con plataformas
+            certificadas, cinta curve, SkiErg y zona de accesorios. App propia para reservar WOD, registrar
+            RM y ver micro-videos de técnica antes de la clase. Hidratación con electrolitos en dispenser y
+            café de filtro para el post sin costo en plan full. Si venís de otro box, te hacemos onboarding en
+            dos sesiones para alinear escalas y movimientos olímpicos.
           </p>
           <div className="mt-10 grid grid-cols-3 gap-2 sm:max-w-lg">
             {[
@@ -170,6 +174,20 @@ export function DemoGimnasioLanding() {
         ]}
       />
 
+      <DemoLongStory
+        kicker="Salud y performance"
+        title="Medimos descanso, no solo kilos: adhesión real con semanas de descompresión"
+        paragraphs={[
+          "Cada trimestre renovemos porcentajes de esfuerzo en levantamientos según test de repetición en fatiga controlada. Integración opcional con wearables demo para correlación sueño–HRV y ajuste de volumen cuando el sistema inmune se deprime por sobreentrenamiento.",
+          "Ciclo femenino y menopausia: coaches capacitados en modulación de intensidad; sala femenina con accesorios adicionales y franja solo mujeres martes 20 h. Nutrición deportiva referida con dietista que habla de rendimiento, no de moda.",
+          "Hyrox y endurance: sesiones extracurriculares en parque al aire libre con cronometraje y foto finish. Compartimos planilla de carrera para quien corre su primera 10 k o media maratón sin renunciar al box.",
+        ]}
+        kickerClass="text-lime-500"
+        titleClass="text-white"
+        pClass="mt-4 text-sm leading-relaxed text-zinc-500"
+        sectionClass="bg-zinc-950 border-y border-zinc-800"
+      />
+
       <DemoTestimonials
         title="Atletas"
         sectionClass="bg-zinc-950 border-y border-zinc-800"
@@ -204,6 +222,24 @@ export function DemoGimnasioLanding() {
         <Zap className="h-8 w-8 text-lime-400" />
         <Trophy className="h-8 w-8 text-amber-400" />
       </section>
+
+      <DemoEnhancements
+        slug="gimnasio"
+        brandLabel="Pulse Cross"
+        shopCardClass="border border-lime-500/25 bg-black/80"
+        shopAccentClass="bg-lime-400 font-black text-black"
+        sectionClass="border-y border-lime-500/15 bg-zinc-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-zinc-800 bg-black/60 p-6"
+        quoteClass="text-sm italic text-zinc-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-lime-400"
+        extraTestimonialsTitle="Comunidad Pulse"
+        extraTestimonials={[
+          { text: "El open gym tiene discos competición — raro en la zona.", author: "Pablo", role: "Levantamiento" },
+          { text: "Coach me frenó cuando vi la tendinitis venir; eso no tiene precio.", author: "Flor", role: "RX athlete" },
+          { text: "CrossFit Kids los sábados — mis hijas duermen rendidas.", author: "Marce", role: "Padre" },
+        ]}
+      />
 
       <footer className="py-8 text-center text-xs text-zinc-700">
         Demo visual · MadsJeez Design

@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoTechLanding() {
   return (
@@ -182,6 +183,24 @@ export function DemoTechLanding() {
           { q: "¿Self-host?", a: "K8s helm chart GA; soporte enterprise con ventana P1 30 min." },
           { q: "¿GDPR-like?", a: "DPA estándar + sub-processors publicados." },
           { q: "¿Capacitación?", a: "Workshop live inicial + certificación interna para partners." },
+        ]}
+      />
+
+      <DemoEnhancements
+        slug="tech"
+        brandLabel="NexoLab Software"
+        shopCardClass="border border-violet-500/25 bg-slate-900/60"
+        shopAccentClass="bg-violet-600 font-bold text-white"
+        sectionClass="relative z-10 border-y border-violet-500/15 bg-slate-950/80"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-slate-800 bg-slate-900/50 p-6"
+        quoteClass="text-sm italic text-slate-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-violet-400"
+        extraTestimonialsTitle="Equipos de ingeniería"
+        extraTestimonials={[
+          { text: "El SDK nos ahorró 3 sprints de wrappers HTTP.", author: "Staff Eng", role: "Pagos" },
+          { text: "SLO publicado y alertas que no spamean.", author: "SRE Lead", role: "Adtech demo" },
+          { text: "Onboarding en menos de lo prometido.", author: "VP Eng", role: "Logística" },
         ]}
       />
 

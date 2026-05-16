@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoOpticaLanding() {
   return (
@@ -114,6 +115,24 @@ export function DemoOpticaLanding() {
           { q: "¿Stock de armazones?", a: "Más de 2.000 referencias entre titanium, acetato y rimless." },
           { q: "¿Turnos urgentes?", a: "Guardia visión los sábados AM en sucursal cabecera demo." },
           { q: "¿Garantía?", a: "Antirreflejo 12 meses contra decapado por defecto de fabricación." },
+        ]}
+      />
+
+      <DemoEnhancements
+        slug="optica"
+        brandLabel="Visión Clara"
+        shopCardClass="border border-sky-500/30 bg-slate-900/65"
+        shopAccentClass="bg-sky-500 font-bold text-slate-950"
+        sectionClass="border-y border-sky-900/35 bg-slate-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-slate-800 bg-slate-900/55 p-6"
+        quoteClass="text-sm italic text-sky-100/88"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400"
+        extraTestimonialsTitle="Pacientes"
+        extraTestimonials={[
+          { text: "Progresivos que no me marean al bajar la escalera.", author: "Laura Q.", role: "Contadora" },
+          { text: "Autorización obra social en el acto — milagro.", author: "Seba P.", role: "Jubilado demo" },
+          { text: "Audífono Bluetooth sin whistles en reuniones.", author: "Ing. Roldán", role: "Tech lead" },
         ]}
       />
 

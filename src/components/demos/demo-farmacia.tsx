@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoFarmaciaLanding() {
   return (
@@ -167,6 +168,24 @@ export function DemoFarmaciaLanding() {
           </button>
         </div>
       </section>
+
+      <DemoEnhancements
+        slug="farmacia"
+        brandLabel="Farmacia Del Parque"
+        shopCardClass="border border-emerald-500/30 bg-emerald-950/70"
+        shopAccentClass="bg-green-500 font-bold text-emerald-950"
+        sectionClass="border-y border-emerald-800/30 bg-emerald-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-white/10 bg-emerald-900/40 p-6"
+        quoteClass="text-sm italic text-emerald-50/90"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-green-400"
+        extraTestimonialsTitle="Pacientes y tutores"
+        extraTestimonials={[
+          { text: "Turno web sin cola y medicamentos fraccionados sin drama.", author: "Abuela Lila", role: "Jubilada demo" },
+          { text: "Recordatorio WhatsApp de la vacuna del bebé.", author: "Flor", role: "Mamá primeriza" },
+          { text: "Bioequivalente explicado por la farmacéutica, no por Google.", author: "Tom R.", role: "Obra social" },
+        ]}
+      />
 
       <footer className="px-4 py-10 text-center text-xs text-emerald-800 md:px-10">
         Demo visual · MadsJeez Design · Contenido ficticio

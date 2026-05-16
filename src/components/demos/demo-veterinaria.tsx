@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoVeterinariaLanding() {
   return (
@@ -169,6 +170,36 @@ export function DemoVeterinariaLanding() {
           { q: "¿Planes preventivos?", a: "Wellness senior con descuentos en estudios de rutina y grooming incluido 1 vez al año." },
           { q: "¿Exóticos?", a: "Conejos y aves pequeñas viernes AM con turno especial; reptiles derivamos." },
           { q: "¿Alimentos?", a: "Si abrís bolsa en el acto y no gustó, crédito store dentro de 7 días demo." },
+        ]}
+      />
+
+      <DemoEnhancements
+        slug="veterinaria"
+        brandLabel="Patitas Sanas"
+        shopCardClass="border border-teal-500/25 bg-teal-950/50"
+        shopAccentClass="bg-orange-400 font-bold text-teal-950"
+        sectionClass="border-y border-teal-800/40 bg-teal-950/60"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+        quoteClass="text-sm italic text-teal-100/90"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-orange-300"
+        extraTestimonialsTitle="Familias y criadores"
+        extraTestimonials={[
+          {
+            text: "El plan senior de mi rottie incluye analítica con descuento — súper útil.",
+            author: "Gaby N.",
+            role: "Dos perros",
+          },
+          {
+            text: "Guardia de sábado nos salvó cuando vomitó el hilo dental.",
+            author: "Nico",
+            role: "Gato europeo",
+          },
+          {
+            text: "Trajeron alimento urinary sin que se los pidiera; conocen al paciente.",
+            author: "Vet Sur",
+            role: "Criadero demo",
+          },
         ]}
       />
 

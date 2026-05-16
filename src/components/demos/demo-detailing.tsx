@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoDetailingLanding() {
   return (
@@ -111,6 +112,24 @@ export function DemoDetailingLanding() {
         <Car className="h-8 w-8 text-white" />
         <p className="font-bold text-white">Combo cerámica + interior 15% off demo · junio</p>
       </section>
+
+      <DemoEnhancements
+        slug="detailing"
+        brandLabel="Shine Autodetail"
+        shopCardClass="border border-sky-500/25 bg-slate-900/70"
+        shopAccentClass="bg-sky-500 font-bold text-slate-950"
+        sectionClass="border-y border-slate-800 bg-slate-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-slate-800 bg-slate-900/50 p-6"
+        quoteClass="text-sm italic text-slate-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400"
+        extraTestimonialsTitle="Dueños de auto"
+        extraTestimonials={[
+          { text: "PPF sin burbujas ni suciedad bajo el film.", author: "Fede K.", role: "SUV premium demo" },
+          { text: "Interior crema que parecía nuevo después del detailing.", author: "Martín", role: "Pick up" },
+          { text: "Nos pasaron técnica de lavado en casa sin vendernos kit caro.", author: "Lucía", role: "Hatch" },
+        ]}
+      />
 
       <footer className="py-8 text-center text-xs text-slate-600">Demo · MadsJeez Design</footer>
     </div>

@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoFloreriaLanding() {
   return (
@@ -173,6 +174,24 @@ export function DemoFloreriaLanding() {
           )}
         </div>
       </section>
+
+      <DemoEnhancements
+        slug="floreria"
+        brandLabel="Jardín Urbano"
+        shopCardClass="border border-pink-500/25 bg-emerald-950/60"
+        shopAccentClass="bg-pink-500 font-bold text-white"
+        sectionClass="border-y border-emerald-800/40 bg-emerald-950/50"
+        titleClass="text-pink-100"
+        cardClass="rounded-2xl border border-pink-500/20 bg-emerald-950/40 p-6"
+        quoteClass="text-sm italic text-emerald-50/90"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-pink-400"
+        extraTestimonialsTitle="Eventos & regalos"
+        extraTestimonials={[
+          { text: "Centro de mesa idéntico al moodboard, impecable.", author: "Lu & Tomi", role: "Civil demo" },
+          { text: "Suscripción oficina — llegan frescas los lunes.", author: "Ops Lead", role: "Scale-up" },
+          { text: "Salvaron el casamiento con reposición express de peonías.", author: "Wedding Pro", role: "Planner" },
+        ]}
+      />
 
       <footer className="py-10 text-center text-xs text-emerald-800">
         Demo visual · MadsJeez Design

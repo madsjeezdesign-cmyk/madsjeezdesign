@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoTallerLanding() {
   return (
@@ -171,6 +172,24 @@ export function DemoTallerLanding() {
           “Lo dejamos listo para la ruta”
         </p>
       </section>
+
+      <DemoEnhancements
+        slug="taller"
+        brandLabel="Garage 27"
+        shopCardClass="border border-red-600/30 bg-zinc-900/70"
+        shopAccentClass="bg-red-600 font-bold text-white"
+        sectionClass="border-y border-red-900/30 bg-zinc-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6"
+        quoteClass="text-sm italic text-zinc-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-red-500"
+        extraTestimonialsTitle="Conductores"
+        extraTestimonials={[
+          { text: "Presupuesto cerrado antes de tocar nada — cumplieron.", author: "Diego M.", role: "SUV turbo" },
+          { text: "Me guardaron piezas viejas en bolsa etiquetada.", author: "Verónica", role: "Utilitario demo" },
+          { text: "Flota empresa con facturación sin vueltas.", author: "Logística Sur", role: "Transporte" },
+        ]}
+      />
 
       <footer className="py-8 text-center text-xs text-zinc-700">
         Demo visual · MadsJeez Design

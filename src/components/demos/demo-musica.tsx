@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoMusicaLanding() {
   return (
@@ -124,6 +125,24 @@ export function DemoMusicaLanding() {
         <Users className="h-10 w-10 text-white" />
         <p className="font-[family-name:var(--font-demo-bebas)] text-2xl uppercase text-white">Open day sábado demo · cupo 40 familias</p>
       </section>
+
+      <DemoEnhancements
+        slug="musica"
+        brandLabel="Pentagrama"
+        shopCardClass="border border-violet-500/30 bg-black/50"
+        shopAccentClass="bg-fuchsia-500 font-bold text-white"
+        sectionClass="border-y border-violet-500/20 bg-violet-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-violet-500/25 bg-violet-950/40 p-6"
+        quoteClass="text-sm italic text-violet-100/85"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-fuchsia-400"
+        extraTestimonialsTitle="Alumnos y padres"
+        extraTestimonials={[
+          { text: "Mi hijo practicó Trinity sin sentir examen de tortura.", author: "Caro P.", role: "Madre demo" },
+          { text: "Sala de ensayo con backline lista para la muestra anual.", author: "Tomi", role: "Batería" },
+          { text: "Profes de rock sin snobismo con los clásicos.", author: "Leo", role: "Adulto iniciante" },
+        ]}
+      />
 
       <footer className="py-8 text-center text-xs text-violet-800">Demo · MadsJeez Design</footer>
     </div>

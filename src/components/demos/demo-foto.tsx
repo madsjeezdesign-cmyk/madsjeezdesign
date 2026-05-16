@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoFotoLanding() {
   return (
@@ -113,6 +114,24 @@ export function DemoFotoLanding() {
           { q: "¿Locales?", a: "Alquiler de estudio incluido o locación con permisos gestionados." },
           { q: "¿Raw?", a: "Disponible con fee adicional y acuerdo de archivo 90 días." },
           { q: "¿Uso internacional?", a: "Extensión de licencia facturada por mercado demo." },
+        ]}
+      />
+
+      <DemoEnhancements
+        slug="foto"
+        brandLabel="Lúmenes Estudio"
+        shopCardClass="border border-amber-500/25 bg-zinc-900/60"
+        shopAccentClass="bg-amber-500 font-bold text-zinc-950"
+        sectionClass="border-y border-amber-900/20 bg-zinc-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-zinc-800 bg-black/40 p-6"
+        quoteClass="text-sm italic text-zinc-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-500"
+        extraTestimonialsTitle="Marcas & productoras"
+        extraTestimonials={[
+          { text: "Color grading fiel a nuestra guía de marca offline.", author: "Brand Mgr", role: "Cosmética demo" },
+          { text: "Misma crew para packshot y lifestyle — ahorramos briefing.", author: "Euge", role: "E-commerce" },
+          { text: "Highlight del evento en el día — cumplieron horario de keynote.", author: "Comms", role: "Enterprise" },
         ]}
       />
 

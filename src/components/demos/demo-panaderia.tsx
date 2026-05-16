@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoPanaderiaLanding() {
   return (
@@ -107,6 +108,24 @@ export function DemoPanaderiaLanding() {
           { q: "¿Veganos?", a: "Focaccia aceite y ciabatta sin derivados lácteos en vitrina marcada." },
           { q: "¿Parking?", a: "15 minutos en descarga frente; cocheras a 80 m." },
           { q: "¿Menú lunch?", a: "12–15 h focaccia + bebida combo demo." },
+        ]}
+      />
+
+      <DemoEnhancements
+        slug="panaderia"
+        brandLabel="El Horno de Raíz"
+        shopCardClass="border border-amber-700/40 bg-black/30"
+        shopAccentClass="bg-amber-500 font-bold text-amber-950"
+        sectionClass="border-y border-amber-900/30 bg-amber-950/70"
+        titleClass="text-amber-50"
+        cardClass="rounded-2xl border border-amber-800/40 bg-amber-950/50 p-6"
+        quoteClass="text-sm italic text-amber-100/90"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-400"
+        extraTestimonialsTitle="Vecinos & chefs"
+        extraTestimonials={[
+          { text: "Medialunas como en Europa — finas y mantecosas.", author: "Chef guest", role: "Pop-up demo" },
+          { text: "Encargue corporativo puntual con etiquetas personalizadas.", author: "RRHH", role: "Evento anual" },
+          { text: "Línea sin TACC con sabor real, no cartón.", author: "Sole M.", role: "Celíaca" },
         ]}
       />
 

@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoRestauranteLanding() {
   return (
@@ -213,6 +214,22 @@ export function DemoRestauranteLanding() {
           { q: "¿Niños?", a: "Sí, menú junior y horario temprano 19 h con sillitas altas limitadas." },
           { q: "¿Estacionamiento?", a: "Cortesía 2 h en garage acuerdo en recepción; vouchers escaneables demo." },
           { q: "Gift card", a: "Digital con fecha abierta 12 meses y mensaje personalizado." },
+        ]}
+      />
+
+      <DemoEnhancements
+        slug="restaurante"
+        brandLabel="La Mesa Norteña"
+        sectionClass="border-y border-rose-900/25 bg-[#12080c]"
+        titleClass="text-amber-100"
+        cardClass="rounded-2xl border border-rose-800/40 bg-black/40 p-6"
+        quoteClass="text-sm italic text-rose-100/90"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-500"
+        extraTestimonialsTitle="Más experiencias"
+        extraTestimonials={[
+          { text: "Reservamos desde el celular con seña y llegamos con la mesa lista.", author: "Ceci Manu", role: "Aniversario demo" },
+          { text: "La cata de malbec sin pretensión nos enamoró del terruño.", author: "Guido P.", role: "Enólogo visitante" },
+          { text: "Traen pan sin TACC caliente, raro en fine dining.", author: "Lucas", role: "Celíaco" },
         ]}
       />
 

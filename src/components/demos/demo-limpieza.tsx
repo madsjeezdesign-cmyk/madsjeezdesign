@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoLimpiezaLanding() {
   return (
@@ -118,6 +119,24 @@ export function DemoLimpiezaLanding() {
           { q: "¿Seguro ART?", a: "Cobertura al día y póliza de responsabilidad civil copiable." },
           { q: "¿Insumos incluidos?", a: "Pack estándar o te facturamos solo consumibles si preferís surtir vos." },
           { q: "¿Green seal?", a: "Línea ecológica opcional con certificados demo." },
+        ]}
+      />
+
+      <DemoEnhancements
+        slug="limpieza"
+        brandLabel="ProLimpio"
+        shopCardClass="border border-indigo-500/30 bg-slate-900/65"
+        shopAccentClass="bg-indigo-500 font-bold text-white"
+        sectionClass="border-y border-indigo-900/35 bg-slate-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-indigo-900/40 bg-slate-900/50 p-6"
+        quoteClass="text-sm italic text-indigo-100/85"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-indigo-400"
+        extraTestimonialsTitle="Facility & operaciones"
+        extraTestimonials={[
+          { text: "Auditoría hospitalaria sin observaciones en limpieza.", author: "BioRisk", role: "Clínica demo" },
+          { text: "Dashboard por sucursal — comparábamos reclamos reales.", author: "COO", role: "Retail" },
+          { text: "Sustituyeron químicos sin recargo cuando falló un lote.", author: "HSE", role: "Planta" },
         ]}
       />
 

@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoOdontologiaLanding() {
   return (
@@ -135,6 +136,24 @@ export function DemoOdontologiaLanding() {
           Valoración + radiografía demo incluida en agosto
         </p>
       </section>
+
+      <DemoEnhancements
+        slug="odontologia"
+        brandLabel="Sonrisa Studio Dental"
+        shopCardClass="border border-sky-500/30 bg-sky-950/50"
+        shopAccentClass="bg-sky-500 font-bold text-sky-950"
+        sectionClass="border-y border-sky-800/30 bg-sky-950/70"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-white/10 bg-sky-900/30 p-6"
+        quoteClass="text-sm italic text-sky-100/85"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400"
+        extraTestimonialsTitle="Pacientes"
+        extraTestimonials={[
+          { text: "Financiación sin letra chica — cuotas claras en pantalla.", author: "Pablo K.", role: "Implantes demo" },
+          { text: "Radios digitales en el acto; me mostraron la caries en grande.", author: "Mili", role: "Primera visita" },
+          { text: "Blanqueamiento sin sensibilidad extrema como en otros lados.", author: "Agus", role: "Comunicadora" },
+        ]}
+      />
 
       <footer className="py-10 text-center text-xs text-sky-800">Demo visual · MadsJeez Design</footer>
     </div>

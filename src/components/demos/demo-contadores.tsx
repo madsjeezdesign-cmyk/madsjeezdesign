@@ -7,6 +7,7 @@ import {
   DemoStatsStrip,
   DemoTestimonials,
 } from "./demo-common-sections";
+import { DemoEnhancements } from "./demo-enhancements";
 
 export function DemoContadoresLanding() {
   return (
@@ -122,6 +123,22 @@ export function DemoContadoresLanding() {
         <Scale className="h-8 w-8" />
         <span className="font-bold text-white">Primera consulta 30 min sin costo demo · cupos mayo</span>
       </section>
+
+      <DemoEnhancements
+        slug="contadores"
+        brandLabel="Número Exacto"
+        sectionClass="border-y border-slate-700 bg-slate-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-slate-700 bg-slate-900/60 p-6"
+        quoteClass="text-sm italic text-slate-400"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-slate-300"
+        extraTestimonialsTitle="PyMEs y profesionales"
+        extraTestimonials={[
+          { text: "Pasamos monotributo a responsable inscripto sin estrés en enero.", author: "Damián", role: "Servicios IT" },
+          { text: "Dashboard que entiendo desde el teléfono.", author: "Laura", role: "Retail demo" },
+          { text: "Cierre listo 48 h antes del estatuto societario.", author: "HoldCo", role: "CFO family" },
+        ]}
+      />
 
       <footer className="py-8 text-center text-xs text-slate-600">Demo · MadsJeez Design</footer>
     </div>

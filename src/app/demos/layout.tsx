@@ -39,22 +39,30 @@ export default function DemosLayout({
 }) {
   return (
     <div
-      className={`${bebas.variable} ${playfair.variable} ${montserrat.variable} min-h-screen bg-[#0c0c0e] text-white`}
+      className={`${bebas.variable} ${playfair.variable} ${montserrat.variable} min-h-screen bg-black text-white`}
     >
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0c0c0e]/85 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+      <header className="sticky top-0 z-[60] border-b border-white/5 bg-black/75 backdrop-blur-lg">
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 py-3 md:px-8 lg:px-12">
           <Link
             href="/demos"
-            className="font-[family-name:var(--font-demo-montserrat)] text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 transition-colors hover:text-white"
+            className="font-[family-name:var(--font-demo-montserrat)] text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-400 transition-colors hover:text-white md:text-[11px]"
           >
             Demos · {site.name}
           </Link>
-          <Link
-            href="/demos"
-            className="text-xs font-semibold text-[#1de0b1] hover:underline"
-          >
-            Volver a demos
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/#nexo"
+              className="hidden text-[10px] font-semibold uppercase tracking-wider text-zinc-500 hover:text-[#1de0b1] sm:inline"
+            >
+              Contacto
+            </Link>
+            <Link
+              href="/demos"
+              className="text-[10px] font-semibold text-[#1de0b1] hover:underline md:text-xs"
+            >
+              Índice
+            </Link>
+          </div>
         </div>
       </header>
       {children}
