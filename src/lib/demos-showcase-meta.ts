@@ -182,6 +182,86 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseCardMeta> = {
     pitch:
       "Salud visual y auditiva con educación del paciente y upsell ético de productos.",
   },
+  heladeria: {
+    features: ["Sabores rotativos", "Delivery & eventos", "Traceability demo"],
+    color: "from-fuchsia-600/30",
+    accent: "text-fuchsia-400",
+    border: "group-hover:border-fuchsia-500/50",
+    pitch:
+      "Marca sensorial con estaciones, packs para fiestas y narrativa de ingredientes reales — el tipo de storytelling que buscan heladerías artesanales.",
+  },
+  lavadero: {
+    features: ["Turno & membresía", "Túnel express", "Add-ons detailing"],
+    color: "from-cyan-600/30",
+    accent: "text-cyan-400",
+    border: "group-hover:border-cyan-500/50",
+    pitch:
+      "Operación de alto volumen con control de filas, planes recurrentes y cross-sell de detailing sin ensuciar la propuesta.",
+  },
+  seguridad: {
+    features: ["CCTV & alarma", "Monitoreo 24/7", "Integraciones IoT"],
+    color: "from-emerald-600/30",
+    accent: "text-emerald-400",
+    border: "group-hover:border-emerald-500/50",
+    pitch:
+      "Confianza técnica: diagramas de cobertura, SLA de respuesta y bundles claros para hogar y PyME.",
+  },
+  yoga: {
+    features: ["Studio híbrido", "Profes certificados", "B2B wellness"],
+    color: "from-violet-600/25",
+    accent: "text-violet-500",
+    border: "group-hover:border-violet-400/50",
+    pitch:
+      "Espacio calmado que prioriza agenda, claridad de estilos y conversión mobile-first para alumnos corporativos.",
+  },
+  hotel: {
+    features: ["Booking engine", "Experiencias", "MICE boutique"],
+    color: "from-amber-600/30",
+    accent: "text-amber-400",
+    border: "group-hover:border-amber-500/50",
+    pitch:
+      "Hospitalidad con tono editorial, upsells de experiencia y señales de confianza para visitantes internacionales.",
+  },
+  catering: {
+    features: ["Briefing chef", "Logística en sitio", "Branding mesa"],
+    color: "from-red-600/30",
+    accent: "text-red-400",
+    border: "group-hover:border-red-500/50",
+    pitch:
+      "Propuestas B2B con menús por persona, requisitos dietéticos visibles y demostración de producción en vivo.",
+  },
+  paisajismo: {
+    features: ["Diseño nativo", "Riego smart", "SLA mantenimiento"],
+    color: "from-green-600/30",
+    accent: "text-green-400",
+    border: "group-hover:border-green-500/50",
+    pitch:
+      "Portafolio de obra y mantenimiento con foco en sostenibilidad hídrica y contratos anuales transparentes.",
+  },
+  tattoo: {
+    features: ["Reservas & seña", "Aftercare", "Merch artista"],
+    color: "from-rose-600/30",
+    accent: "text-rose-400",
+    border: "group-hover:border-rose-500/50",
+    pitch:
+      "Estudio con tono galería: calendario claro, políticas visibles y storytelling del proceso creativo.",
+  },
+  cerrajeria: {
+    features: ["Urgencias 24 h", "Control de acceso", "Duplicados certificados"],
+    color: "from-yellow-600/25",
+    accent: "text-yellow-400",
+    border: "group-hover:border-yellow-500/50",
+    pitch:
+      "Servicio de confianza con geolocalización de móviles, garantías explícitas y catálogo técnico sin jerga innecesaria.",
+  },
+  coworking: {
+    features: ["Day pass", "Cabinas fono", "Salas híbridas"],
+    color: "from-sky-600/30",
+    accent: "text-sky-400",
+    border: "group-hover:border-sky-500/50",
+    pitch:
+      "Espacio flexible con ocupación en tiempo real, add-ons de tecnología y propuesta clara para equipos remotos.",
+  },
 };
 
 export function getShowcaseMeta(slug: string): ShowcaseCardMeta {

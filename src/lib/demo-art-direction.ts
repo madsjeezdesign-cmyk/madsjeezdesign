@@ -3,7 +3,7 @@ import { DEMO_SLUGS } from "@/lib/demos-registry";
 
 type DemoSlug = (typeof DEMO_SLUGS)[number];
 
-/** Variante visual del hero temático (0–19 layouts distintos). */
+/** Variante visual del hero temático (0–29 layouts distintos). */
 export const DEMO_HERO_VARIANT: Record<DemoSlug, number> = {
   ferreteria: 0,
   restaurante: 1,
@@ -25,6 +25,16 @@ export const DEMO_HERO_VARIANT: Record<DemoSlug, number> = {
   limpieza: 17,
   foto: 18,
   optica: 19,
+  heladeria: 20,
+  lavadero: 21,
+  seguridad: 22,
+  yoga: 23,
+  hotel: 24,
+  catering: 25,
+  paisajismo: 26,
+  tattoo: 27,
+  cerrajeria: 28,
+  coworking: 29,
 };
 
 /** Clases Tailwind para títulos (families únicas; expuesto literal para el JIT). */
@@ -49,6 +59,16 @@ export const DEMO_HEADING_CLASS: Record<DemoSlug, string> = {
   limpieza: "font-[family-name:var(--font-demo-h-limpieza)]",
   foto: "font-[family-name:var(--font-demo-h-foto)]",
   optica: "font-[family-name:var(--font-demo-h-optica)]",
+  heladeria: "font-[family-name:var(--font-demo-h-heladeria)]",
+  lavadero: "font-[family-name:var(--font-demo-h-lavadero)]",
+  seguridad: "font-[family-name:var(--font-demo-h-seguridad)]",
+  yoga: "font-[family-name:var(--font-demo-h-yoga)]",
+  hotel: "font-[family-name:var(--font-demo-h-hotel)]",
+  catering: "font-[family-name:var(--font-demo-h-catering)]",
+  paisajismo: "font-[family-name:var(--font-demo-h-paisajismo)]",
+  tattoo: "font-[family-name:var(--font-demo-h-tattoo)]",
+  cerrajeria: "font-[family-name:var(--font-demo-h-cerrajeria)]",
+  coworking: "font-[family-name:var(--font-demo-h-coworking)]",
 };
 
 /** Clase Tailwind de título de sección (misma familia display que el rubro). */
@@ -275,6 +295,106 @@ const ART: Record<DemoSlug, Omit<DemoArtDirection, "slug" | "heroVariant">> = {
       "rounded-full bg-sky-500 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-950",
     secondaryCta:
       "rounded-full border border-slate-500 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-200",
+  },
+  heladeria: {
+    pageRoot:
+      "min-h-screen bg-gradient-to-br from-[#1a0b18] via-[#0f172a] to-[#042f2e] text-cyan-50 antialiased selection:bg-fuchsia-500/30",
+    cardShell:
+      "rounded-[2rem] border border-fuchsia-500/30 bg-black/35 backdrop-blur-md",
+    primaryCta:
+      "rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white shadow-lg shadow-fuchsia-900/40",
+    secondaryCta:
+      "rounded-full border border-cyan-400/40 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-cyan-100",
+  },
+  lavadero: {
+    pageRoot:
+      "min-h-screen bg-[#070d12] text-cyan-50 antialiased selection:bg-cyan-400/25",
+    cardShell:
+      "rounded-xl border border-cyan-500/25 bg-slate-900/70 shadow-[0_0_50px_-20px_rgba(34,211,238,0.35)]",
+    primaryCta:
+      "rounded-lg bg-cyan-400 px-8 py-3.5 text-xs font-black uppercase tracking-widest text-slate-950",
+    secondaryCta:
+      "rounded-lg border border-slate-600 px-8 py-3.5 text-xs font-black uppercase tracking-widest text-slate-300",
+  },
+  seguridad: {
+    pageRoot:
+      "min-h-screen bg-[#050a08] text-emerald-50 antialiased selection:bg-emerald-400/30",
+    cardShell:
+      "rounded-lg border border-emerald-800/40 bg-emerald-950/40",
+    primaryCta:
+      "rounded-md bg-emerald-400 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-emerald-950",
+    secondaryCta:
+      "rounded-md border border-emerald-500/40 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-emerald-100",
+  },
+  yoga: {
+    pageRoot:
+      "min-h-screen bg-[#f4f1ff] text-violet-950 antialiased selection:bg-violet-300/40",
+    cardShell:
+      "rounded-3xl border border-violet-200 bg-white/85 shadow-[0_24px_60px_-24px_rgba(109,40,217,0.35)]",
+    primaryCta:
+      "rounded-2xl bg-violet-600 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white",
+    secondaryCta:
+      "rounded-2xl border-2 border-violet-300 bg-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-violet-800",
+  },
+  hotel: {
+    pageRoot:
+      "min-h-screen bg-[#1c1410] text-amber-50 antialiased selection:bg-amber-500/25",
+    cardShell:
+      "rounded-sm border border-amber-800/40 bg-stone-900/55",
+    primaryCta:
+      "rounded-sm bg-amber-600 px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-stone-950",
+    secondaryCta:
+      "rounded-sm border border-amber-200/30 px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-amber-100",
+  },
+  catering: {
+    pageRoot:
+      "min-h-screen bg-gradient-to-b from-[#140808] to-black text-red-50 antialiased selection:bg-red-500/25",
+    cardShell:
+      "rounded-2xl border border-red-900/45 bg-red-950/25 backdrop-blur",
+    primaryCta:
+      "rounded-xl bg-red-600 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white",
+    secondaryCta:
+      "rounded-xl border border-red-400/40 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-red-100",
+  },
+  paisajismo: {
+    pageRoot:
+      "min-h-screen bg-green-950 text-lime-50 antialiased selection:bg-lime-400/25",
+    cardShell:
+      "rounded-2xl border border-green-800/50 bg-green-900/35",
+    primaryCta:
+      "rounded-full bg-lime-500 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-green-950",
+    secondaryCta:
+      "rounded-full border border-lime-400/40 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-lime-100",
+  },
+  tattoo: {
+    pageRoot:
+      "min-h-screen bg-[#0a0508] text-rose-50 antialiased selection:bg-rose-600/30",
+    cardShell:
+      "rounded-lg border border-rose-900/50 bg-black/55",
+    primaryCta:
+      "rounded-lg bg-rose-600 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white",
+    secondaryCta:
+      "rounded-lg border border-rose-500/40 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-rose-100",
+  },
+  cerrajeria: {
+    pageRoot:
+      "min-h-screen bg-neutral-950 text-yellow-50 antialiased selection:bg-yellow-400/20",
+    cardShell:
+      "rounded-2xl border border-yellow-700/35 bg-zinc-900/75",
+    primaryCta:
+      "rounded-xl bg-yellow-400 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-black",
+    secondaryCta:
+      "rounded-xl border border-yellow-500/50 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-yellow-100",
+  },
+  coworking: {
+    pageRoot:
+      "min-h-screen bg-slate-950 text-sky-50 antialiased selection:bg-sky-400/25",
+    cardShell:
+      "rounded-[2rem] border border-sky-500/20 bg-slate-900/55",
+    primaryCta:
+      "rounded-2xl bg-sky-500 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-950",
+    secondaryCta:
+      "rounded-2xl border border-sky-400/35 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-sky-100",
   },
 };
 

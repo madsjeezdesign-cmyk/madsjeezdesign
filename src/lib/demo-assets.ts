@@ -49,10 +49,16 @@ export type DemoShopProduct = {
   note?: string;
 };
 
+/** Presentación del bloque de compra demo (cada layout es visualmente distinto). */
+export type DemoShopFlowLayout = "grid" | "list" | "featured" | "minimal" | "bento";
+
 export type DemoShopConfig = {
   headline: string;
   sub: string;
   products: DemoShopProduct[];
+  layout?: DemoShopFlowLayout;
+  /** Reemplaza la etiqueta superior “E-commerce demo”. */
+  eyebrow?: string;
 };
 
 export type DemoVisualPack = {
@@ -60,6 +66,9 @@ export type DemoVisualPack = {
   a: string;
   b: string;
   c: string;
+  /** Imágenes extra para galería ampliada (5 fotos cuando ambas existen). */
+  d?: string;
+  e?: string;
   lead: DemoLeadTheme;
   shop: DemoShopConfig | null;
 };
@@ -529,6 +538,287 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
         { id: "op1", name: "Armazón titanio ultraliviano", price: "$118.000" },
         { id: "op2", name: "Cristales antirreflejo full", price: "$154.000", note: "Con formula demo" },
         { id: "op3", name: "Estuche rígido premium", price: "$12.900" },
+      ],
+    },
+  },
+  heladeria: {
+    cover: u("photo-1563805042-76840396a842", "ixlib=rb-4.0.3"),
+    a: u("photo-1497034825420-c936a79e04da", "ixlib=rb-4.0.3"),
+    b: u("photo-1578985545062-69928b1d9587", "ixlib=rb-4.0.3"),
+    c: u("photo-1556679343-c7306c1976bc", "ixlib=rb-4.0.3"),
+    d: u("photo-1580915411954-282cb1b99deb", "ixlib=rb-4.0.3"),
+    e: u("photo-1501447529947-6299e75df4aa", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-fuchsia-500/25 bg-[#1a0b18]",
+      card: "rounded-[2rem] border border-fuchsia-500/25 bg-gradient-to-br from-fuchsia-950/50 to-cyan-950/30 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-fuchsia-200/70",
+      input:
+        "mt-1 w-full rounded-2xl border border-fuchsia-500/30 bg-black/40 px-4 py-3 text-sm text-fuchsia-50 outline-none",
+      button: "w-full rounded-2xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 py-3.5 text-sm font-bold text-white",
+      focus: "focus:border-cyan-400/50",
+    },
+    shop: {
+      eyebrow: "Heladería · pedidos de mostrador",
+      headline: "Potes, cucuruchos y fiestas (demo)",
+      sub: "Sabores de estación con trazabilidad de leche y fruta. Reservá torta helada o catering en carrito simulado.",
+      layout: "featured",
+      products: [
+        { id: "he1", name: "Caja degustación 6 sabores", price: "$18.500", note: "Retiro 2 h" },
+        { id: "he2", name: "Pote 1 L · pistacchio Sicilia", price: "$14.200" },
+        { id: "he3", name: "Barra movil 50 cucuruchos", price: "$210.000", note: "Evento +30 km" },
+      ],
+    },
+  },
+  lavadero: {
+    cover: u("photo-1520340351874-b922bb932d21", "ixlib=rb-4.0.3"),
+    a: u("photo-1489824904134-891ab64532f1", "ixlib=rb-4.0.3"),
+    b: u("photo-1503376780353-7e6692767b70", "ixlib=rb-4.0.3"),
+    c: u("photo-1619405399517-d7fce0f13302", "ixlib=rb-4.0.3"),
+    d: u("photo-1492144534655-ae79c964c9d7", "ixlib=rb-4.0.3"),
+    e: u("photo-1486262715619-67b85e0a08d3", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-cyan-500/30 bg-slate-950",
+      card: "rounded-xl border border-cyan-500/20 bg-slate-900/70 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-cyan-300/80",
+      input:
+        "mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white outline-none",
+      button: "w-full rounded-xl bg-cyan-500 py-3.5 text-sm font-bold text-slate-950",
+      focus: "focus:border-cyan-300/50",
+    },
+    shop: {
+      eyebrow: "Planes & membresía autolavado",
+      headline: "Pagá el paquete y entrá sin fila (demo)",
+      sub: "Suscripción con RFID o QR en parabrisas. Muestra de carrito para ceras rápidas y ozono.",
+      layout: "list",
+      products: [
+        { id: "la1", name: "Wash Express + secado", price: "$8.900" },
+        { id: "la2", name: "Membership ilimitado SUV", price: "$44.900 / mes", note: "1 vehículo" },
+        { id: "la3", name: "Detailing mini interior", price: "$31.500", note: "Sillones + tablero" },
+      ],
+    },
+  },
+  seguridad: {
+    cover: u("photo-1557597774-9d63fd9ecffc", "ixlib=rb-4.0.3"),
+    a: u("photo-1507679799987-c73779587ccf", "ixlib=rb-4.0.3"),
+    b: u("photo-1451187580459-43490279c0fa", "ixlib=rb-4.0.3"),
+    c: u("photo-1510511459019-5dda772513fd", "ixlib=rb-4.0.3"),
+    d: u("photo-1563986768609-322da13575f3", "ixlib=rb-4.0.3"),
+    e: u("photo-1584433144859-1fc3ab64a978", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-emerald-500/30 bg-[#050a08]",
+      card: "rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-emerald-300/70",
+      input:
+        "mt-1 w-full rounded-xl border border-emerald-900 bg-black/50 px-4 py-3 text-sm text-white outline-none",
+      button: "w-full rounded-xl bg-emerald-500 py-3.5 text-sm font-bold text-emerald-950",
+      focus: "focus:border-emerald-300/50",
+    },
+    shop: {
+      eyebrow: "Kit demo de expansión",
+      headline: "Sumá nodos sin mudar el cableado (demo)",
+      sub: "Checkout simulado para packs IoT listos. Instalación certificada en sitio real.",
+      layout: "bento",
+      products: [
+        { id: "se1", name: "Kit 4 cámaras 4K + NVR 2 TB", price: "$389.000" },
+        { id: "se2", name: "Central monitoreo 12 m + app", price: "$15.400 / mes" },
+        { id: "se3", name: "Sensor perimetral triple tech", price: "$42.000", note: "Incluye sirena" },
+      ],
+    },
+  },
+  yoga: {
+    cover: u("photo-1544367567-0f2fcb009e0b", "ixlib=rb-4.0.3"),
+    a: u("photo-1506126613408-eca07ce68773", "ixlib=rb-4.0.3"),
+    b: u("photo-1599901860904-17e6ed7083a0", "ixlib=rb-4.0.3"),
+    c: u("photo-1545205597-3d9d02c29597", "ixlib=rb-4.0.3"),
+    d: u("photo-1575052814086-42aed8426e4d", "ixlib=rb-4.0.3"),
+    e: u("photo-1599447421410-3410dfe0c871", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-violet-300/25 bg-[#f4f1ff]",
+      card: "rounded-3xl border border-violet-200 bg-white p-6 shadow-lg md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-violet-500",
+      input:
+        "mt-1 w-full rounded-2xl border border-violet-200 bg-violet-50/60 px-4 py-3 text-sm text-violet-950 outline-none",
+      button: "w-full rounded-2xl bg-violet-600 py-3.5 text-sm font-bold text-white",
+      focus: "focus:border-violet-500/50",
+      invert: true,
+    },
+    shop: {
+      eyebrow: "Passes & talleres",
+      headline: "Comprá créditos y reservá mat (demo)",
+      sub: "Ideal para corporativos con budget wellness. Activación automática en tu perfil demo.",
+      layout: "minimal",
+      products: [
+        { id: "yo1", name: "Pack 10 clases mix", price: "$58.000", note: "90 días" },
+        { id: "yo2", name: "Retiro breathwork finde", price: "$112.000" },
+        { id: "yo3", name: "Mat mandukaPro · sala", price: "$18.500", note: "Retiro o envío" },
+      ],
+    },
+  },
+  hotel: {
+    cover: u("photo-1566073771259-6a8506099945", "ixlib=rb-4.0.3"),
+    a: u("photo-1631049307264-da0a9d8b57a2", "ixlib=rb-4.0.3"),
+    b: u("photo-1611892440504-42a792ae8649", "ixlib=rb-4.0.3"),
+    c: u("photo-1582719478250-c89cae4dc85b", "ixlib=rb-4.0.3"),
+    d: u("photo-1520250497591-112f2f40a3f4", "ixlib=rb-4.0.3"),
+    e: u("photo-1566662587733-51f80924b7a6", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-amber-800/40 bg-[#1c1410]",
+      card: "rounded-sm border border-amber-700/40 bg-stone-900/70 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-amber-200/70",
+      input:
+        "mt-1 w-full rounded-sm border border-stone-600 bg-black/40 px-4 py-3 text-sm text-amber-50 outline-none",
+      button: "w-full rounded-sm bg-amber-600 py-3.5 text-sm font-bold text-stone-950",
+      focus: "focus:border-amber-400/50",
+    },
+    shop: {
+      eyebrow: "Reservas & experiencias",
+      headline: "Extras hospedaje · simulación de carrito",
+      sub: "Degustación, picnics en viñedo y traslado — lo que buscan hoteles boutique para subir ticket medio.",
+      layout: "grid",
+      products: [
+        { id: "ho1", name: "Cena maridaje 5 pasos x2", price: "$98.000" },
+        { id: "ho2", name: "Late checkout hasta 16 h", price: "$24.000", note: "Sujeto a ocupación" },
+        { id: "ho3", name: "Picnic canasto + manta", price: "$36.500" },
+      ],
+    },
+  },
+  catering: {
+    cover: u("photo-1555244162-80383440eb97", "ixlib=rb-4.0.3"),
+    a: u("photo-1414235077428-338989a2e8c0", "ixlib=rb-4.0.3"),
+    b: u("photo-1466978913421-dad61cffa3a8", "ixlib=rb-4.0.3"),
+    c: u("photo-1517248135467-4c7edcad34c4", "ixlib=rb-4.0.3"),
+    d: u("photo-1551218808-94e220e084d2", "ixlib=rb-4.0.3"),
+    e: u("photo-1559339352-11d035aa65de", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-red-900/40 bg-[#140808]",
+      card: "rounded-2xl border border-red-900/50 bg-red-950/30 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-red-300/70",
+      input:
+        "mt-1 w-full rounded-xl border border-red-900/60 bg-black/40 px-4 py-3 text-sm text-red-50 outline-none",
+      button: "w-full rounded-xl bg-red-600 py-3.5 text-sm font-bold text-white",
+      focus: "focus:border-red-400/50",
+    },
+    shop: {
+      eyebrow: "Brief corporativo",
+      headline: "Menús por persona · demo de compra",
+      sub: "Cotización final pasa por chef ejecutivo; acá mostramos ítems típicos con carrito simulado.",
+      layout: "featured",
+      products: [
+        { id: "ca1", name: "Cóctel canapés premium (50 pax)", price: "$285.000" },
+        { id: "ca2", name: "Coffee break plant based", price: "$8.400 / pax" },
+        { id: "ca3", name: "Asado ritual + vinos selección", price: "$62.000 / pax", note: "4 h servicio" },
+      ],
+    },
+  },
+  paisajismo: {
+    cover: u("photo-1416879595882-3373a0480b7e", "ixlib=rb-4.0.3"),
+    a: u("photo-1598901963450-c1a0e05f97b8", "ixlib=rb-4.0.3"),
+    b: u("photo-1558618666-fcd25c85cd64", "ixlib=rb-4.0.3"),
+    c: u("photo-1464226184922-a912d6707e4d", "ixlib=rb-4.0.3"),
+    d: u("photo-1585320806297-9794b3e644ee", "ixlib=rb-4.0.3"),
+    e: u("photo-1591857177580-dc82b24ee6e7", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-green-700/35 bg-green-950",
+      card: "rounded-2xl border border-green-800/50 bg-green-900/35 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-green-200/70",
+      input:
+        "mt-1 w-full rounded-xl border border-green-800 bg-green-950/60 px-4 py-3 text-sm text-white outline-none",
+      button: "w-full rounded-xl bg-lime-500 py-3.5 text-sm font-bold text-green-950",
+      focus: "focus:border-lime-300/50",
+    },
+    shop: {
+      eyebrow: "Mantenimiento & plantas",
+      headline: "Contratos y pack de riego (demo)",
+      sub: "Ideal para consorcios que buscan presupuesto anual claro y SLA de poda.",
+      layout: "list",
+      products: [
+        { id: "pa1", name: "Mantenimiento jardín 200 m²", price: "$92.000 / mes" },
+        { id: "pa2", name: "Instalación smart irrigation", price: "$310.000", note: "Insumos incl." },
+        { id: "pa3", name: "Poda alta certificada", price: "$148.000", note: "Hasta 8 m" },
+      ],
+    },
+  },
+  tattoo: {
+    cover: u("photo-1611501275019-9b5cda994e1d", "ixlib=rb-4.0.3"),
+    a: u("photo-1590246814889-5791e37fe980", "ixlib=rb-4.0.3"),
+    b: u("photo-1611348586804-61bf6c080496", "ixlib=rb-4.0.3"),
+    c: u("photo-1568515048389-1d5da43f0424", "ixlib=rb-4.0.3"),
+    d: u("photo-1598373181952-e1a05a1a5d4e", "ixlib=rb-4.0.3"),
+    e: u("photo-1522337360788-8b13dee7a37e", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-rose-600/30 bg-[#12050a]",
+      card: "rounded-xl border border-rose-900/50 bg-black/50 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-rose-400/80",
+      input:
+        "mt-1 w-full rounded-lg border border-rose-900/60 bg-zinc-950 px-4 py-3 text-sm text-rose-50 outline-none",
+      button: "w-full rounded-lg bg-rose-600 py-3.5 text-sm font-bold text-white",
+      focus: "focus:border-rose-400/50",
+    },
+    shop: {
+      eyebrow: "Sesiones & merch",
+      headline: "Depósito seña + care post (demo)",
+      sub: "Flujo típico de estudios con lista de espera: acá simulamos compra de bloques y productos.",
+      layout: "minimal",
+      products: [
+        { id: "ta1", name: "Sesión blackwork 6 h", price: "$220.000", note: "Seña 40%" },
+        { id: "ta2", name: "Pack aftercare film + jabón", price: "$14.200" },
+        { id: "ta3", name: "Flash day cupo prioritario", price: "$8.000", note: "Descuento en pieza" },
+      ],
+    },
+  },
+  cerrajeria: {
+    cover: u("photo-1589756824025-6bb2a6cf8fa1", "ixlib=rb-4.0.3"),
+    a: u("photo-1454165804606-c3d57bc86b40", "ixlib=rb-4.0.3"),
+    b: u("photo-1581149787766-e32f0e58e3e2", "ixlib=rb-4.0.3"),
+    c: u("photo-1621905252507-b35492cc74b4", "ixlib=rb-4.0.3"),
+    d: u("photo-1504384308090-c894fdcc538d", "ixlib=rb-4.0.3"),
+    e: u("photo-1453222714902-292970d40d78", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-yellow-600/30 bg-neutral-950",
+      card: "rounded-2xl border border-yellow-700/40 bg-zinc-900/80 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-yellow-500/90",
+      input:
+        "mt-1 w-full rounded-xl border border-zinc-700 bg-black px-4 py-3 text-sm text-yellow-50 outline-none",
+      button: "w-full rounded-xl bg-yellow-500 py-3.5 text-sm font-bold text-black",
+      focus: "focus:border-yellow-300/50",
+    },
+    shop: {
+      eyebrow: "Tienda & duplicados",
+      headline: "Cilindros, tags y controles (demo)",
+      sub: "Checkout simulado para pick-up en taller o envío certificado.",
+      layout: "grid",
+      products: [
+        { id: "ce1", name: "Cilindro europeo antibumping", price: "$68.000" },
+        { id: "ce2", name: "Duplicado llave tubular codificada", price: "$12.500", note: "Con credencial" },
+        { id: "ce3", name: "Kit RFID consorcio 10 unidades", price: "$184.000" },
+      ],
+    },
+  },
+  coworking: {
+    cover: u("photo-1527195091313-076d671660de", "ixlib=rb-4.0.3"),
+    a: u("photo-1497366212358-3750bf24b38a", "ixlib=rb-4.0.3"),
+    b: u("photo-1497366754035-f200968a6e72", "ixlib=rb-4.0.3"),
+    c: u("photo-1524758631624-e2822e304c36", "ixlib=rb-4.0.3"),
+    d: u("photo-1522071820081-009f0129c71c", "ixlib=rb-4.0.3"),
+    e: u("photo-1519389950473-47ba0277781c", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-sky-500/25 bg-slate-950",
+      card: "rounded-3xl border border-sky-500/20 bg-slate-900/60 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-sky-300/80",
+      input:
+        "mt-1 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white outline-none",
+      button: "w-full rounded-2xl bg-sky-500 py-3.5 text-sm font-bold text-slate-950",
+      focus: "focus:border-sky-300/50",
+    },
+    shop: {
+      eyebrow: "Passes & salas",
+      headline: "Reservá franjas en vivo (demo)",
+      sub: "Modelo SaaS-ligero para espacios flex: day pass, cabinas y salas de equipo.",
+      layout: "bento",
+      products: [
+        { id: "co1", name: "Day pass hot desk", price: "$9.500" },
+        { id: "co2", name: "Cabina acústica 3 h", price: "$11.200" },
+        { id: "co3", name: "Sala 8 pax · proyector 4K", price: "$28.000", note: "IVA incl. demo" },
       ],
     },
   },

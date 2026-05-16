@@ -23,6 +23,8 @@ export function DemoShopFlow({
   const [qty, setQty] = useState<Record<string, number>>(() =>
     Object.fromEntries(shop.products.map((p) => [p.id, 0])),
   );
+  const layout = shop.layout ?? "grid";
+  const shopEyebrow = shop.eyebrow ?? "E-commerce demo";
   const [step, setStep] = useState<"browse" | "cart" | "done">("browse");
 
   const lineItems = useMemo(() => {
@@ -59,13 +61,127 @@ export function DemoShopFlow({
   const countBg = light ? "border border-stone-200 bg-white" : "border border-white/10 bg-black/30";
   const cartUl = light ? "border-y border-stone-200" : "border-y border-white/10";
 
+  const productChrome = (p: DemoShopProduct) => (
+    <>
+      <p className={`font-bold ${productTitle}`}>{p.name}</p>
+      <p className={`mt-1 text-sm font-semibold ${priceCol}`}>{p.price}</p>
+      {p.note ? <p className={`mt-1 text-xs ${noteCol}`}>{p.note}</p> : null}
+      <div className="mt-4 flex items-center justify-between gap-3">
+        <div className={`flex items-center gap-2 rounded-lg p-1 ${countBg}`}>
+          <button
+            type="button"
+            aria-label="Menos"
+            className={`rounded-md p-1.5 ${innerBtn}`}
+            onClick={() => bump(p.id, -1)}
+          >
+            <Minus className="h-4 w-4" />
+          </button>
+          <span className={`min-w-[2ch] text-center text-sm font-bold ${productTitle}`}>{qty[p.id] ?? 0}</span>
+          <button
+            type="button"
+            aria-label="Más"
+            className={`rounded-md p-1.5 ${innerBtn}`}
+            onClick={() => bump(p.id, 1)}
+          >
+            <Plus className="h-4 w-4" />
+          </button>
+        </div>
+        <button
+          type="button"
+          onClick={() => bump(p.id, 1)}
+          className={`rounded-lg px-3 py-2 text-[10px] font-black uppercase tracking-wide ${accentClass}`}
+        >
+          Agregar
+        </button>
+      </div>
+    </>
+  );
+
+  const browseGrid = (
+    <div className="mt-10 grid gap-4 md:grid-cols-3">
+      {shop.products.map((p) => (
+        <div key={p.id} className={`rounded-2xl p-6 ${cardClass}`}>
+          {productChrome(p)}
+        </div>
+      ))}
+    </div>
+  );
+
+  const browseList = (
+    <div className="mt-10 space-y-4">
+      {shop.products.map((p) => (
+        <div
+          key={p.id}
+          className={`flex flex-col gap-5 rounded-2xl p-5 md:flex-row md:items-stretch ${cardClass}`}
+        >
+          <div
+            className={`h-3 w-full shrink-0 rounded-lg md:h-auto md:w-3 ${light ? "bg-stone-200" : "bg-gradient-to-b from-white/20 to-white/5"}`}
+          />
+          <div className="min-w-0 flex-1">{productChrome(p)}</div>
+        </div>
+      ))}
+    </div>
+  );
+
+  const browseFeatured =
+    shop.products.length >= 1 ? (
+      <div className="mt-10 grid gap-4 md:grid-cols-2 md:grid-rows-2">
+        <div className={`rounded-2xl p-8 md:row-span-2 ${cardClass}`}>
+          <p className={`text-[10px] font-bold uppercase tracking-widest ${sub}`}>Destacado</p>
+          {productChrome(shop.products[0]!)}
+        </div>
+        {shop.products.slice(1).map((p) => (
+          <div key={p.id} className={`rounded-2xl p-6 ${cardClass}`}>
+            {productChrome(p)}
+          </div>
+        ))}
+      </div>
+    ) : (
+      browseGrid
+    );
+
+  const browseMinimal = (
+    <div className="mx-auto mt-10 max-w-md space-y-4">
+      {shop.products.map((p) => (
+        <div key={p.id} className={`rounded-3xl px-5 py-5 ${cardClass}`}>
+          {productChrome(p)}
+        </div>
+      ))}
+    </div>
+  );
+
+  const browseBento = (
+    <div className="mt-10 grid gap-3 sm:grid-cols-4 sm:grid-rows-2">
+      {shop.products.map((p, i) => {
+        const span =
+          i === 0 ? "sm:col-span-2 sm:row-span-2" : i === 1 ? "sm:col-span-2" : "sm:col-span-2";
+        return (
+          <div key={p.id} className={`rounded-2xl p-6 ${span} ${cardClass}`}>
+            {productChrome(p)}
+          </div>
+        );
+      })}
+    </div>
+  );
+
+  const browseUi =
+    layout === "list"
+      ? browseList
+      : layout === "featured"
+        ? browseFeatured
+        : layout === "minimal"
+          ? browseMinimal
+          : layout === "bento"
+            ? browseBento
+            : browseGrid;
+
   return (
     <section className={`px-4 py-16 md:px-10 ${light ? "bg-[#f5f0e8]" : ""}`} id={`shop-${slug}`}>
       <div className="mx-auto max-w-5xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${light ? "text-stone-500" : "text-zinc-500"}`}>
-              E-commerce demo
+              {shopEyebrow}
             </p>
             <h2
               className={`mt-2 font-[family-name:var(--font-demo-bebas)] text-4xl uppercase tracking-wide md:text-5xl ${h}`}
@@ -108,43 +224,7 @@ export function DemoShopFlow({
             </button>
           </div>
         ) : step === "browse" ? (
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {shop.products.map((p) => (
-              <div key={p.id} className={`rounded-2xl p-6 ${cardClass}`}>
-                <p className={`font-bold ${productTitle}`}>{p.name}</p>
-                <p className={`mt-1 text-sm font-semibold ${priceCol}`}>{p.price}</p>
-                {p.note ? <p className={`mt-1 text-xs ${noteCol}`}>{p.note}</p> : null}
-                <div className="mt-4 flex items-center justify-between gap-3">
-                  <div className={`flex items-center gap-2 rounded-lg p-1 ${countBg}`}>
-                    <button
-                      type="button"
-                      aria-label="Menos"
-                      className={`rounded-md p-1.5 ${innerBtn}`}
-                      onClick={() => bump(p.id, -1)}
-                    >
-                      <Minus className="h-4 w-4" />
-                    </button>
-                    <span className={`min-w-[2ch] text-center text-sm font-bold ${productTitle}`}>{qty[p.id] ?? 0}</span>
-                    <button
-                      type="button"
-                      aria-label="Más"
-                      className={`rounded-md p-1.5 ${innerBtn}`}
-                      onClick={() => bump(p.id, 1)}
-                    >
-                      <Plus className="h-4 w-4" />
-                    </button>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => bump(p.id, 1)}
-                    className={`rounded-lg px-3 py-2 text-[10px] font-black uppercase tracking-wide ${accentClass}`}
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+          browseUi
         ) : (
           <div className={`mt-10 rounded-2xl p-6 md:p-8 ${cardClass}`}>
             <h3 className={`font-bold ${h}`}>Tu carrito (demo)</h3>

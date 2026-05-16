@@ -1,34 +1,51 @@
 import {
+  Alegreya,
+  Anton,
+  Archivo_Black,
   Barlow,
   Bebas_Neue,
+  Bitter,
+  Black_Ops_One,
   Cabin,
+  Chakra_Petch,
   Cinzel,
   Cormorant_Garamond,
   DM_Sans,
   DM_Serif_Display,
+  Epilogue,
   Exo_2,
   Figtree,
   Fraunces,
+  Hind,
   IBM_Plex_Sans,
   Inter,
+  Instrument_Serif,
   JetBrains_Mono,
+  Jost,
   Karla,
   Lexend,
   Libre_Baskerville,
+  Lato,
   Lora,
   Manrope,
+  Montserrat,
   Merriweather,
   Mulish,
   Nunito,
   Noto_Sans,
+  Open_Sans,
+  Orbitron,
   Oswald,
   Outfit,
   Playfair_Display,
+  Prata,
   Plus_Jakarta_Sans,
   PT_Serif,
   Quicksand,
+  Raleway,
   Rajdhani,
   Red_Hat_Text,
+  Roboto,
   Rubik,
   Source_Sans_3,
   Space_Grotesk,
@@ -36,9 +53,12 @@ import {
   Syne,
   Sora,
   Teko,
+  Tenor_Sans,
   Unbounded,
   Urbanist,
   Work_Sans,
+  Yeseva_One,
+  Zilla_Slab,
 } from "next/font/google";
 
 /** Tipografías únicas por demo: cada rubro tiene pareja display + cuerpo sin repetir familia entre sí. */
@@ -262,6 +282,116 @@ const bOptica = Cabin({
   variable: "--font-demo-b-optica",
 });
 
+const hHeladeria = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-demo-h-heladeria",
+});
+const bHeladeria = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-demo-b-heladeria",
+});
+
+const hLavadero = Archivo_Black({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-demo-h-lavadero",
+});
+const bLavadero = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-demo-b-lavadero",
+});
+
+const hSeguridad = Orbitron({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-demo-h-seguridad",
+});
+const bSeguridad = Chakra_Petch({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-demo-b-seguridad",
+});
+
+const hYoga = Tenor_Sans({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-demo-h-yoga",
+});
+const bYoga = Jost({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-demo-b-yoga",
+});
+
+const hHotel = Yeseva_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-demo-h-hotel",
+});
+const bHotel = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-demo-b-hotel",
+});
+
+const hCatering = Prata({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-demo-h-catering",
+});
+const bCatering = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-demo-b-catering",
+});
+
+const hPaisajismo = Alegreya({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-demo-h-paisajismo",
+});
+const bPaisajismo = Bitter({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-demo-b-paisajismo",
+});
+
+const hTattoo = Black_Ops_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-demo-h-tattoo",
+});
+const bTattoo = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-demo-b-tattoo",
+});
+
+const hCerrajeria = Zilla_Slab({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-demo-h-cerrajeria",
+});
+const bCerrajeria = Hind({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-demo-b-cerrajeria",
+});
+
+const hCoworking = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-demo-h-coworking",
+});
+const bCoworking = Epilogue({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-demo-b-coworking",
+});
+
 /** Concatenar en el layout de /demos para definir todas las variables CSS. */
 export const demoFontsClassName = [
   hFerreteria.variable,
@@ -304,4 +434,24 @@ export const demoFontsClassName = [
   bFoto.variable,
   hOptica.variable,
   bOptica.variable,
+  hHeladeria.variable,
+  bHeladeria.variable,
+  hLavadero.variable,
+  bLavadero.variable,
+  hSeguridad.variable,
+  bSeguridad.variable,
+  hYoga.variable,
+  bYoga.variable,
+  hHotel.variable,
+  bHotel.variable,
+  hCatering.variable,
+  bCatering.variable,
+  hPaisajismo.variable,
+  bPaisajismo.variable,
+  hTattoo.variable,
+  bTattoo.variable,
+  hCerrajeria.variable,
+  bCerrajeria.variable,
+  hCoworking.variable,
+  bCoworking.variable,
 ].join(" ");

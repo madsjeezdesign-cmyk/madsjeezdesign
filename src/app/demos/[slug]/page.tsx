@@ -7,7 +7,10 @@ import { site } from "@/lib/data";
 import { DemoSlugPageShell } from "@/components/demos/demo-slug-page-shell";
 import {
   DemoAbogados,
+  DemoCatering,
+  DemoCerrajeria,
   DemoContadores,
+  DemoCoworking,
   DemoDetailing,
   DemoEstetica,
   DemoFarmacia,
@@ -15,17 +18,24 @@ import {
   DemoFloreria,
   DemoFoto,
   DemoGimnasio,
+  DemoHeladeria,
+  DemoHotel,
   DemoInmobiliaria,
+  DemoLavadero,
   DemoLimpieza,
   DemoMusica,
   DemoOdontologia,
   DemoOptica,
+  DemoPaisajismo,
   DemoPanaderia,
   DemoRestaurante,
+  DemoSeguridad,
   DemoTaller,
+  DemoTattoo,
   DemoTech,
   DemoVeterinaria,
   DemoViajes,
+  DemoYoga,
 } from "@/components/demos";
 
 const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
@@ -49,6 +59,16 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   limpieza: DemoLimpieza,
   foto: DemoFoto,
   optica: DemoOptica,
+  heladeria: DemoHeladeria,
+  lavadero: DemoLavadero,
+  seguridad: DemoSeguridad,
+  yoga: DemoYoga,
+  hotel: DemoHotel,
+  catering: DemoCatering,
+  paisajismo: DemoPaisajismo,
+  tattoo: DemoTattoo,
+  cerrajeria: DemoCerrajeria,
+  coworking: DemoCoworking,
 };
 
 export function generateStaticParams() {

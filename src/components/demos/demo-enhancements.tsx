@@ -39,6 +39,7 @@ export function DemoEnhancements({
   sectionClass = "bg-zinc-950/40",
 }: Props) {
   const v = getDemoVisuals(slug);
+  const galleryImages = [v.a, v.b, v.c, ...(v.d ? [v.d] : []), ...(v.e ? [v.e] : [])];
   const meta = getShowcaseMeta(slug);
   const resolvedShopCard =
     shopCardClass ?? (v.lead.invert ? "border border-stone-200 bg-white shadow-sm" : undefined);
@@ -76,25 +77,53 @@ export function DemoEnhancements({
       ) : null}
 
       <section className="px-4 py-8 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-3 sm:grid-cols-3 md:gap-4">
-          {[v.a, v.b, v.c].map((src) => (
-            <div key={src} className={cardChrome}>
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src={src}
-                  alt=""
-                  fill
-                  className="object-cover opacity-90 grayscale transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/70 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-40" />
-                <div
-                  className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${meta.color} to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-40`}
-                />
+        {galleryImages.length >= 5 ? (
+          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 md:grid-cols-12 md:grid-rows-[repeat(4,minmax(0,1fr))] md:gap-4">
+            {[
+              { src: galleryImages[0], className: "col-span-2 aspect-[4/5] md:col-span-7 md:row-span-4 md:aspect-auto md:min-h-[320px]" },
+              { src: galleryImages[1], className: "aspect-[3/2] md:col-span-5 md:row-span-2 md:aspect-auto md:min-h-[140px]" },
+              { src: galleryImages[2], className: "aspect-[3/2] md:col-span-5 md:row-span-2 md:aspect-auto md:min-h-[140px]" },
+              { src: galleryImages[3], className: "aspect-video md:col-span-6 md:row-span-2 md:aspect-auto md:min-h-[120px]" },
+              { src: galleryImages[4], className: "aspect-video md:col-span-6 md:row-span-2 md:aspect-auto md:min-h-[120px]" },
+            ].map(({ src, className }, idx) => (
+              <div key={`${src}-${idx}`} className={`${className} ${cardChrome}`}>
+                <div className="relative h-full min-h-[140px]">
+                  <Image
+                    src={src}
+                    alt=""
+                    fill
+                    className="object-cover opacity-90 grayscale transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0"
+                    sizes="(max-width: 768px) 50vw, 380px"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/70 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-40" />
+                  <div
+                    className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${meta.color} to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-40`}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="mx-auto grid max-w-6xl gap-3 sm:grid-cols-3 md:gap-4">
+            {galleryImages.map((src) => (
+              <div key={src} className={cardChrome}>
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={src}
+                    alt=""
+                    fill
+                    className="object-cover opacity-90 grayscale transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0"
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/70 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-40" />
+                  <div
+                    className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${meta.color} to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-40`}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
         <p className="mx-auto mt-4 max-w-6xl text-center text-[11px] text-zinc-500">
           Galería demostrativa (stock). En tu sitio usamos fotografía propia o licenciada.
         </p>

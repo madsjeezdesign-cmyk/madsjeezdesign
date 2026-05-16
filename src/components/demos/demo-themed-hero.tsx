@@ -53,7 +53,7 @@ export function DemoThemedHero({
     />
   );
 
-  switch (variant % 20) {
+  switch (((variant % 30) + 30) % 30) {
     case 0:
       return (
         <header className="relative px-4 pb-16 pt-6 md:px-10 md:pt-10">
@@ -449,7 +449,249 @@ export function DemoThemedHero({
         </header>
       );
 
+    case 20:
+      return (
+        <header className="relative overflow-hidden px-4 pb-20 pt-6 md:px-8">
+          <div className="relative mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, scale: 1.03 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
+              className="relative aspect-[16/10] w-full overflow-hidden rounded-[2.5rem] md:aspect-[2.2/1]"
+              style={{ clipPath: "polygon(0 8%, 100% 0, 100% 100%, 0 92%)" }}
+            >
+              {img}
+              <div className="absolute inset-0 bg-gradient-to-tr from-fuchsia-900/50 via-transparent to-cyan-900/30" />
+            </motion.div>
+            <motion.div
+              initial={{ y: 26, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              className="absolute bottom-4 right-4 left-4 max-w-xl rounded-2xl border border-white/15 bg-black/75 p-6 shadow-2xl backdrop-blur-xl md:bottom-8 md:right-10 md:left-auto md:p-8"
+            >
+              {kicker}
+              <div className={`mt-3 ${headingClass} ${titleColorClass} text-3xl leading-[1.05] md:text-5xl`}>{title}</div>
+              <div className={`mt-3 text-sm ${leadColorClass}`}>{lead}</div>
+              {ctas && <div className="mt-6 flex flex-wrap gap-3">{ctas}</div>}
+            </motion.div>
+          </div>
+        </header>
+      );
+
+    case 21:
+      return (
+        <header className="px-4 pb-16 md:px-10">
+          <div className="mx-auto max-w-6xl">
+            <div className="relative h-32 w-full overflow-hidden rounded-t-3xl md:h-40">
+              {img}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70" />
+            </div>
+            <div className="relative z-10 -mt-12 rounded-b-3xl border border-white/10 bg-zinc-950/90 px-6 py-10 shadow-2xl backdrop-blur-xl md:-mt-16 md:px-12 md:py-14">
+              <FadeIn>
+                {kicker}
+                <div className={`mt-4 max-w-3xl ${headingClass} ${titleColorClass} text-4xl md:text-6xl`}>{title}</div>
+                <div className={`mt-6 max-w-2xl text-sm leading-relaxed md:text-base ${leadColorClass}`}>{lead}</div>
+                {ctas && <div className="mt-10 flex flex-wrap gap-3">{ctas}</div>}
+              </FadeIn>
+            </div>
+          </div>
+        </header>
+      );
+
+    case 22:
+      return (
+        <header className="px-4 pb-16 pt-4 md:px-10">
+          <div className="mx-auto flex max-w-6xl flex-col gap-0 rounded-3xl border border-white/10 bg-white/[0.02] md:flex-row md:overflow-hidden">
+            <div className="relative min-h-[220px] md:w-[38%] md:min-h-[380px]">
+              {img}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/40" />
+            </div>
+            <div className="flex flex-1 flex-col justify-center border-t border-white/10 px-6 py-10 md:border-l md:border-t-0 md:px-10">
+              <FadeIn>
+                {kicker}
+                <div className={`mt-4 ${headingClass} ${titleColorClass} text-3xl md:text-5xl`}>{title}</div>
+                <div className={`mt-5 max-w-lg text-sm md:text-base ${leadColorClass}`}>{lead}</div>
+                {ctas && <div className="mt-8 flex flex-wrap gap-3">{ctas}</div>}
+              </FadeIn>
+            </div>
+          </div>
+        </header>
+      );
+
+    case 23:
+      return (
+        <header className="relative px-4 pb-20 pt-8 md:px-10">
+          <div className="pointer-events-none absolute left-1/2 top-24 hidden text-[clamp(6rem,18vw,14rem)] font-black leading-none text-white/[0.04] md:block md:-translate-x-1/2">
+            01
+          </div>
+          <div className="mx-auto max-w-5xl">
+            {kicker}
+            <div className={`mt-4 ${headingClass} ${titleColorClass} text-[clamp(2.2rem,5.5vw,4rem)] leading-[1]`}>{title}</div>
+            <div className={`mt-6 max-w-2xl text-sm md:text-base ${leadColorClass}`}>{lead}</div>
+            {ctas && <div className="mt-8 flex flex-wrap gap-3">{ctas}</div>}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.12 }}
+              className="relative mt-12 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10"
+            >
+              {img}
+            </motion.div>
+          </div>
+        </header>
+      );
+
+    case 24:
+      return (
+        <header className="px-4 pb-16 md:px-8">
+          <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1fr_1.15fr] lg:items-center">
+            <div className="order-2 lg:order-1">
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+                className="relative aspect-square max-w-md overflow-hidden rounded-3xl border border-white/10"
+              >
+                {img}
+              </motion.div>
+            </div>
+            <div className="order-1 space-y-4 lg:order-2 lg:pl-4">
+              {kicker}
+              <div className={`${headingClass} ${titleColorClass} text-4xl md:text-5xl`}>{title}</div>
+              <p className={`max-w-prose text-sm md:text-base ${leadColorClass}`}>{lead}</p>
+              {ctas && <div className="flex flex-wrap gap-3 pt-2">{ctas}</div>}
+            </div>
+          </div>
+        </header>
+      );
+
+    case 25:
+      return (
+        <header className="relative px-0 pb-20">
+          <div className="relative aspect-[21/12] min-h-[260px] w-full md:aspect-[21/9]">
+            {img}
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/55 to-transparent" />
+            <div className="absolute bottom-0 left-0 top-0 flex w-full max-w-lg flex-col justify-center px-6 md:px-12">
+              <FadeIn>
+                {kicker}
+                <div className={`mt-3 ${headingClass} ${titleColorClass} text-3xl md:text-5xl`}>{title}</div>
+                <div className={`mt-4 max-w-sm text-sm ${leadColorClass}`}>{lead}</div>
+                {ctas && <div className="mt-8 flex flex-wrap gap-3">{ctas}</div>}
+              </FadeIn>
+            </div>
+          </div>
+        </header>
+      );
+
+    case 26:
+      return (
+        <header className="px-4 pb-20 pt-6 md:px-10">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,340px)_minmax(0,1fr)] md:items-stretch">
+            <div className="relative hidden min-h-[200px] overflow-hidden rounded-2xl border border-white/10 md:block">
+              {img}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+            </div>
+            <div className="flex flex-col justify-center rounded-2xl border border-white/10 bg-black/30 p-6 text-center backdrop-blur-xl md:p-8">
+              {kicker}
+              <div className={`mt-4 ${headingClass} ${titleColorClass} text-3xl md:text-4xl`}>{title}</div>
+              <div className={`mt-4 text-sm ${leadColorClass}`}>{lead}</div>
+              {ctas && <div className="mt-8 flex flex-col items-center gap-3">{ctas}</div>}
+            </div>
+            <div className="relative min-h-[280px] overflow-hidden rounded-2xl border border-white/10 md:min-h-0">
+              <div className="absolute inset-0 md:hidden">{img}</div>
+              <div className="absolute inset-0 hidden bg-gradient-to-l from-transparent to-black/30 md:block" />
+              <div className="relative flex h-full min-h-[280px] items-center justify-center p-6 md:min-h-0">
+                <div className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-xl border border-white/10 md:absolute md:inset-4 md:h-auto md:w-auto">
+                  {img}
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      );
+
+    case 27:
+      return (
+        <header className="px-4 pb-16 md:px-10">
+          <div className="mx-auto max-w-6xl overflow-hidden rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 md:px-6">
+            <div className="flex justify-center">{kicker}</div>
+          </div>
+          <div className="mx-auto mt-8 max-w-6xl lg:flex lg:gap-10">
+            <div className="lg:w-1/2">
+              <div className={`${headingClass} ${titleColorClass} text-4xl md:text-[3.25rem] lg:sticky lg:top-24 lg:pt-4`}>{title}</div>
+            </div>
+            <div className="mt-8 lg:mt-0 lg:w-1/2">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10">
+                {img}
+              </div>
+              <div className={`mt-6 text-sm md:text-base ${leadColorClass}`}>{lead}</div>
+              {ctas && <div className="mt-8 flex flex-wrap gap-3">{ctas}</div>}
+            </div>
+          </div>
+        </header>
+      );
+
+    case 28:
+      return (
+        <header className="px-4 pb-16 pt-10 md:px-12">
+          <div className="mx-auto max-w-4xl text-center">
+            {kicker}
+            <div className={`mx-auto mt-6 max-w-none ${headingClass} ${titleColorClass} text-4xl leading-none md:text-6xl`}>{title}</div>
+          </div>
+          <div className="relative mx-auto mt-12 max-w-5xl">
+            <div className="relative mx-auto aspect-[16/10] w-[88%] overflow-hidden rounded-b-[3rem] rounded-t-md border-x border-t border-white/10 shadow-[0_40px_80px_-40px_rgba(0,0,0,0.9)]">
+              {img}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
+            </div>
+            <div className={`mx-auto -mt-6 max-w-2xl px-4 text-center text-sm md:text-base ${leadColorClass}`}>{lead}</div>
+            {ctas && <div className="mt-10 flex flex-wrap justify-center gap-3">{ctas}</div>}
+          </div>
+        </header>
+      );
+
+    case 29:
+      return (
+        <header className="px-4 pb-16 md:px-10">
+          <div className="mx-auto max-w-6xl lg:flex lg:items-start lg:gap-8">
+            <div className="lg:sticky lg:top-20 lg:w-[42%]">
+              <FadeIn>
+                {kicker}
+                <div className={`mt-4 ${headingClass} ${titleColorClass} text-3xl md:text-4xl`}>{title}</div>
+                <div className={`mt-5 text-sm md:text-base ${leadColorClass}`}>{lead}</div>
+                {ctas && <div className="mt-8 hidden flex-wrap gap-3 lg:flex">{ctas}</div>}
+              </FadeIn>
+            </div>
+            <div className="mt-10 lg:mt-0 lg:w-[58%]">
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/10 lg:aspect-[4/5]"
+              >
+                {img}
+              </motion.div>
+              {ctas && <div className="mt-8 flex flex-wrap gap-3 lg:hidden">{ctas}</div>}
+            </div>
+          </div>
+        </header>
+      );
+
     case 19:
+      return (
+        <header className="px-4 pb-16 pt-8 md:px-10">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-12 lg:gap-6">
+            <div className="lg:col-span-7">
+              <div className="relative aspect-[16/11] overflow-hidden rounded-[2rem] lg:aspect-auto lg:min-h-[400px]">
+                {img}
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/50 to-transparent" />
+              </div>
+            </div>
+            <div className="flex flex-col justify-center lg:col-span-5">
+              {kicker}
+              <div className={`mt-4 ${headingClass} ${titleColorClass} text-3xl md:text-4xl`}>{title}</div>
+              <div className={`mt-4 text-sm md:text-base ${leadColorClass}`}>{lead}</div>
+              {ctas && <div className="mt-8 flex flex-col gap-3 sm:flex-row">{ctas}</div>}
+            </div>
+          </div>
+        </header>
+      );
+
     default:
       return (
         <header className="px-4 pb-16 pt-8 md:px-10">
