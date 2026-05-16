@@ -1,16 +1,31 @@
 ---
-description: Tras cambios de código en esta repo, hacer commit y push a origin.
+description: Tras tareas de implementación, commit y push automático a origin (sin pedir autorización salvo excepciones).
 globs: "**/*"
 alwaysApply: true
 ---
 
-# Git: commit y push
+# Git: commit y push automático (MadsJeez Design)
 
-Cuando completes tareas que modifiquen archivos del proyecto **MadsJeez Design** (`velora-digital` / `madsjeezdesign`):
+**Por defecto**, cuando completes una **tarea de implementación** en esta repo (`velora-digital` / `madsjeezdesign`) que haya **modificado archivos del proyecto**:
 
-1. `git status`, `git diff`, revisar que no entren secretos (`.env`, `.env.local`, keys).
-2. `git add` los archivos pertinentes.
-3. Un **commit** con mensaje claro (por qué del cambio).
-4. **`git push`** a `origin` (rama actual, habitualmente `main`).
+1. **No pidas autorización** para commitear o pushear por separado: seguí con el flujo de git al cerrar la tarea.
+2. Ejecutá (o equivalente): `git status`, `git diff` — revisá que **no** entren secretos (`.env`, `.env.local`, keys, tokens).
+3. `git add` solo los archivos pertinentes al cambio (no adjuntar artefactos de build salvo que correspondan).
+4. **Commit** con mensaje claro en español (el “por qué”, 1–2 oraciones). En PowerShell podés usar un here-string para el mensaje multi línea.
+5. **`git push`** a `origin` en la **rama actual** (habitualmente `main`).
 
-Si el usuario pidió solo cambios locales y explícitamente no publicar, respetar eso; si no dice lo contrario, asumir push tras el commit.
+## Cuándo **no** hacer commit/push automático
+
+- El usuario dijo explícitamente: *no subas*, *solo local*, *no hagas push*, *revertí el commit*, etc.
+- **No hay cambios** en el working tree (nada que commitear).
+- La tarea fue **solo consulta / lectura / plan** sin edits.
+- El commit fallaría por hooks: **arreglá el problema y hacé un commit nuevo** (no pedir amend a menos que las reglas del usuario lo permitan).
+- **Nunca** commitear archivos que suelen llevar secretos (`.env`, credenciales). Avisá si el usuario los pidió.
+
+## Seguridad (respetar reglas globales del usuario)
+
+- No `git push --force` a `main`/`master` salvo pedido explícito y advertencia.
+- No tocar `git config`.
+- No `--no-verify` salvo pedido explícito del usuario.
+
+Si el usuario en un mensaje pide **solo** implementar sin publicar, esa petición **anula** el push automático para esa tarea.
