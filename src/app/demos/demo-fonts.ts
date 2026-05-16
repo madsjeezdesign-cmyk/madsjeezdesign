@@ -424,6 +424,17 @@ const bCreator = DM_Sans({
   variable: "--font-demo-b-creator",
 });
 
+const hCommerce = Work_Sans({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-demo-h-commerce",
+});
+const bCommerce = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-demo-b-commerce",
+});
+
 /** Concatenar en el layout de /demos para definir todas las variables CSS. */
 export const demoFontsClassName = [
   hFerreteria.variable,
@@ -491,4 +502,6 @@ export const demoFontsClassName = [
   bGameserver.variable,
   hCreator.variable,
   bCreator.variable,
+  hCommerce.variable,
+  bCommerce.variable,
 ].join(" ");
