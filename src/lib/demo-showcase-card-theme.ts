@@ -19,6 +19,7 @@ function glow(hex: string, alpha = 0.12): string {
 
 const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">> = {
   ferreteria: { badge: "Retail Pro", subtitle: "Arquitectura de alta carga", primaryBtnDarkText: true },
+  herreria: { badge: "Forja Premium", subtitle: "Obras y presupuesto online", primaryBtnDarkText: true },
   restaurante: { badge: "Gourmet Tech", subtitle: "Experiencia de elite" },
   estetica: { badge: "Beauty Cloud", subtitle: "Minimalismo de lujo" },
   gimnasio: { badge: "Performance", subtitle: "Conversión deportiva" },

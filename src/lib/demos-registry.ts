@@ -22,6 +22,14 @@ export const DEMOS: DemoMeta[] = [
     previewClass: "from-zinc-900 to-orange-950",
   },
   {
+    slug: "herreria",
+    title: "Forja Norte",
+    industry: "Herrería & metalurgia",
+    tagline: "Portones, estructuras y obra a medida",
+    accent: "#f59e0b",
+    previewClass: "from-stone-950 via-amber-950/40 to-stone-950",
+  },
+  {
     slug: "restaurante",
     title: "La Mesa Norteña",
     industry: "Restaurante & bar",

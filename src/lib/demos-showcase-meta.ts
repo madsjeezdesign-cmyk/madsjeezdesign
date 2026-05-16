@@ -37,6 +37,13 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     pitch:
       "Plataforma robusta para catálogos extensos, disponibilidad creíble y coordinación de entregas sin fricción.",
   },
+  herreria: {
+    color: "from-amber-600/30",
+    accent: "text-amber-400",
+    border: "group-hover:border-amber-500/50",
+    pitch:
+      "Forja Norte: portfolio de obras, servicios de herrería integral, proceso en taller y presupuesto con visita técnica demo.",
+  },
   restaurante: {
 
     color: "from-red-600/30",

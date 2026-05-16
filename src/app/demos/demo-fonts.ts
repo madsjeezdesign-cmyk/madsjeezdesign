@@ -435,6 +435,17 @@ const bCommerce = Source_Sans_3({
   variable: "--font-demo-b-commerce",
 });
 
+const hHerreria = Lora({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-demo-h-herreria",
+});
+const bHerreria = Karla({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-demo-b-herreria",
+});
+
 /** Concatenar en el layout de /demos para definir todas las variables CSS. */
 export const demoFontsClassName = [
   hFerreteria.variable,
@@ -504,4 +515,6 @@ export const demoFontsClassName = [
   bCreator.variable,
   hCommerce.variable,
   bCommerce.variable,
+  hHerreria.variable,
+  bHerreria.variable,
 ].join(" ");

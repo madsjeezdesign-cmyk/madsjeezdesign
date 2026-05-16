@@ -26,6 +26,14 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     d: id("photo-1715322554946-1b22a9800aec"),
     e: id("photo-1767188949854-b67a5f83beda"),
   },
+  herreria: {
+    cover: id("photo-1535557902630-e21b31a26548"),
+    a: id("photo-1504917595217-d0024f06ce79"),
+    b: id("photo-1590859651225-92e35fd71ca8"),
+    c: id("photo-1541974247859-004447a4b93d"),
+    d: id("photo-1513828583688-cf77e2f7aeeb"),
+    e: id("photo-1589939707313-9dc202256a01"),
+  },
   restaurante: {
     cover: id("photo-1414235077428-338989a2e8c0"),
     a: id("photo-1466978913421-dad2ebd01d17"),
@@ -833,6 +841,11 @@ export const DEMO_LEAD_COPY: Record<string, { kicker: string; title: string; sub
     kicker: "¿Listo para vender online?",
     title: "Pedinos tu propuesta digital",
     sub: "Catálogo, envíos y cuenta corriente en un sitio que convierte visitas en pedidos.",
+  },
+  herreria: {
+    kicker: "Tu próxima obra",
+    title: "Pedí presupuesto de herrería",
+    sub: "Portfolio de trabajos, proceso en 4 pasos y formulario con visita técnica demo en 48 h.",
   },
   restaurante: {
     kicker: "Más reservas y delivery",

@@ -23,6 +23,17 @@ export const SHOWCASE_FEATURES: Record<string, ShowcaseFeatures> = {
     "WhatsApp pedidos",
     "SEO local rubro",
   ],
+  herreria: [
+    "Portfolio de obras",
+    "Presupuesto online",
+    "Galería antes/después",
+    "Proceso en 4 pasos",
+    "Garantía visible",
+    "Servicios por rubro",
+    "Formulario con fotos",
+    "WhatsApp obra",
+    "SEO local taller",
+  ],
   restaurante: [
     "Reservas online",
     "Carta y delivery",

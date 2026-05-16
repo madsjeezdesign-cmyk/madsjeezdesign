@@ -7,6 +7,7 @@ export { DemoDetailing } from "./demo-detailing";
 export { DemoEstetica } from "./demo-estetica";
 export { DemoFarmacia } from "./demo-farmacia";
 export { DemoFerreteria } from "./demo-ferreteria";
+export { DemoHerreria } from "./demo-herreria";
 export { DemoFloreria } from "./demo-floreria";
 export { DemoFoto } from "./demo-foto";
 export { DemoGimnasio } from "./demo-gimnasio";

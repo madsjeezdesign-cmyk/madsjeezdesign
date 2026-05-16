@@ -15,6 +15,7 @@ import {
   DemoEstetica,
   DemoFarmacia,
   DemoFerreteria,
+  DemoHerreria,
   DemoFloreria,
   DemoFoto,
   DemoGimnasio,
@@ -73,6 +74,7 @@ import {
 
 const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   ferreteria: DemoFerreteria,
+  herreria: DemoHerreria,
   restaurante: DemoRestaurante,
   estetica: DemoEstetica,
   gimnasio: DemoGimnasio,

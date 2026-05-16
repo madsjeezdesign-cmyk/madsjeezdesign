@@ -102,6 +102,22 @@ const GS_PLACEHOLDER = u("photo-1542751374-adc38448a05e", "ixlib=rb-4.0.3");
 
 /** Cobertura por slug — mismas claves que DEMOS */
 const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
+  herreria: {
+    cover: u("photo-1535557902630-e21b31a26548", "ixlib=rb-4.0.3"),
+    a: u("photo-1504917595217-d0024f06ce79", "ixlib=rb-4.0.3"),
+    b: u("photo-1590859651225-92e35fd71ca8", "ixlib=rb-4.0.3"),
+    c: u("photo-1541974247859-004447a4b93d", "ixlib=rb-4.0.3"),
+    lead: {
+      section: "border-y border-amber-500/20 bg-stone-950",
+      card: "rounded-2xl border border-stone-700 bg-stone-900/80 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-amber-500/80",
+      input:
+        "mt-1 w-full rounded-xl border border-stone-600 bg-stone-950 px-4 py-3 text-sm text-white outline-none",
+      button: "w-full rounded-xl bg-amber-500 py-3.5 text-sm font-bold text-stone-950",
+      focus: "focus:border-amber-500/50",
+    },
+    shop: null,
+  },
   ferreteria: {
     cover: u("photo-1504148455328-c376907d081c", "ixlib=rb-4.0.3"),
     a: u("photo-1625047509168-a7026f36de04", "ixlib=rb-4.0.3"),
