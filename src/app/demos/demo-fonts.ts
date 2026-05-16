@@ -63,24 +63,26 @@ import {
 
 /** Tipografías únicas por demo: cada rubro tiene pareja display + cuerpo sin repetir familia entre sí. */
 
-const hFerreteria = Bebas_Neue({
-  weight: "400",
+const hFerreteria = Outfit({
   subsets: ["latin"],
+  weight: ["600", "800", "900"],
   variable: "--font-demo-h-ferreteria",
 });
-const bFerreteria = Inter({
+const bFerreteria = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  weight: ["300", "400", "600"],
   variable: "--font-demo-b-ferreteria",
 });
 
 const hRestaurante = Playfair_Display({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-demo-h-restaurante",
 });
-const bRestaurante = Source_Sans_3({
+const bRestaurante = Inter({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["200", "400", "600"],
   variable: "--font-demo-b-restaurante",
 });
 

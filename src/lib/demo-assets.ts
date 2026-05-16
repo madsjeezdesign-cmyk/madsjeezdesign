@@ -115,13 +115,14 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     b: u("photo-1555396273-367ea4eb4db5", "ixlib=rb-4.0.3"),
     c: u("photo-1559339352-11d035aa65de", "ixlib=rb-4.0.3"),
     lead: {
-      section: "border-y border-rose-900/40 bg-[#12080c]",
-      card: "rounded-2xl border border-rose-900/40 bg-black/40 p-6 md:p-8",
-      label: "text-[10px] font-bold uppercase tracking-widest text-rose-400/80",
+      section: "border-y border-white/5 bg-[#050505]",
+      card: "border border-[#c29d5f]/20 bg-[#121212] p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-[#c29d5f]/80",
       input:
-        "mt-1 w-full rounded-xl border border-rose-900/50 bg-rose-950/40 px-4 py-3 text-sm text-amber-50 outline-none",
-      button: "w-full rounded-xl bg-rose-700 py-3.5 text-sm font-bold text-white",
-      focus: "focus:border-amber-500/50",
+        "mt-1 w-full border-b border-white/10 bg-transparent px-0 py-3 text-sm font-light text-white outline-none",
+      button:
+        "lumina-btn-signature w-full py-3.5 text-[10px] font-black uppercase tracking-[0.3em]",
+      focus: "focus:border-[#c29d5f]/50",
     },
     shop: {
       headline: "Pedí delivery (demo)",
