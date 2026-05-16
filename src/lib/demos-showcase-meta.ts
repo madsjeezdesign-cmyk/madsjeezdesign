@@ -39,11 +39,11 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
       "Plataforma robusta para catálogos extensos, disponibilidad creíble y coordinación de entregas sin fricción.",
   },
   herreria: {
-    color: "from-amber-600/30",
-    accent: "text-amber-400",
-    border: "group-hover:border-amber-500/50",
+    color: "from-orange-600/35",
+    accent: "text-orange-400",
+    border: "group-hover:border-orange-500/50",
     pitch:
-      "Forja Norte: portfolio de obras, servicios de herrería integral, proceso en taller y presupuesto con visita técnica demo.",
+      "Forja Norte: fusión de hierro, madera noble y aluminio. Portones automatizados, parrillas integrales, mesas industriales y presupuesto con visita técnica en 48 h.",
   },
   restaurante: {
 

@@ -27,12 +27,12 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     e: id("photo-1767188949854-b67a5f83beda"),
   },
   herreria: {
-    cover: id("photo-1535557902630-e21b31a26548"),
-    a: id("photo-1504917595217-d0024f06ce79"),
-    b: id("photo-1590859651225-92e35fd71ca8"),
-    c: id("photo-1541974247859-004447a4b93d"),
-    d: id("photo-1513828583688-cf77e2f7aeeb"),
-    e: id("photo-1589939707313-9dc202256a01"),
+    cover: id("photo-1504328345606-18bbc8c9d7d1"),
+    a: id("photo-1600566753086-00f18efc2297"),
+    b: id("photo-1598514982205-f36b96d1e8d4"),
+    c: id("photo-1577140917170-285929fb55b7"),
+    d: id("photo-1504198458649-3128b932f49e"),
+    e: id("photo-1535557902630-e21b31a26548"),
   },
   restaurante: {
     cover: id("photo-1414235077428-338989a2e8c0"),
@@ -843,9 +843,9 @@ export const DEMO_LEAD_COPY: Record<string, { kicker: string; title: string; sub
     sub: "Catálogo, envíos y cuenta corriente en un sitio que convierte visitas en pedidos.",
   },
   herreria: {
-    kicker: "Tu próxima obra",
-    title: "Pedí presupuesto de herrería",
-    sub: "Portfolio de trabajos, proceso en 4 pasos y formulario con visita técnica demo en 48 h.",
+    kicker: "Hierro · madera · aluminio",
+    title: "Pedí presupuesto de fusión industrial",
+    sub: "Portones, parrillas y mesas a medida. Visitá el taller demo, adjuntá fotos de tu espacio y recibí presupuesto PDF en 48 h.",
   },
   restaurante: {
     kicker: "Más reservas y delivery",

@@ -1,14 +1,15 @@
-/* Forja Norte — herrería & metalurgia premium */
+/* Forja Norte — herrería industrial premium (fusión hierro · madera · aluminio) */
 .herr-premium {
-  --herr-amber: #f59e0b;
-  --herr-ember: #ea580c;
-  --herr-coal: #0c0a09;
-  --herr-iron: #1c1917;
+  --herr-orange: #ff4d00;
+  --herr-orange-soft: #ff8000;
+  --herr-coal: #0a0a0a;
+  --herr-panel: #121212;
+  --herr-card: #1a1a1a;
 }
 
 .herr-premium ::selection {
-  background: var(--herr-amber);
-  color: #0c0a09;
+  background: var(--herr-orange);
+  color: #fff;
 }
 
 .herr-premium .herr-grain {
@@ -16,12 +17,13 @@
   position: fixed;
   inset: 0;
   z-index: 1;
-  opacity: 0.04;
+  opacity: 0.045;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .herr-premium .herr-ember-glow {
-  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(245, 158, 11, 0.18), transparent 70%);
+  background: radial-gradient(ellipse 55% 45% at 20% 0%, rgba(255, 77, 0, 0.22), transparent 65%),
+    radial-gradient(ellipse 40% 35% at 90% 20%, rgba(255, 128, 0, 0.08), transparent 60%);
 }
 
 .herr-premium .herr-scroll-reveal {
@@ -37,34 +39,68 @@
   transform: translateY(0);
 }
 
-.herr-premium .herr-work-card {
+.herr-premium .herr-forge-card {
   transition:
     transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.55s ease,
     border-color 0.4s ease;
 }
 
-.herr-premium .herr-work-card:hover {
+.herr-premium .herr-forge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 56px -16px rgba(255, 77, 0, 0.25);
+}
+
+.herr-premium .herr-specialty-card {
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.5s ease;
+}
+
+.herr-premium .herr-specialty-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px -12px rgba(245, 158, 11, 0.15);
+  box-shadow: 0 32px 64px -20px rgba(0, 0, 0, 0.6);
 }
 
 .herr-premium .herr-title-line {
-  background: linear-gradient(90deg, var(--herr-amber), var(--herr-ember));
+  background: linear-gradient(90deg, var(--herr-orange), var(--herr-orange-soft));
   height: 3px;
   width: 64px;
 }
 
+.herr-premium .herr-gradient-text {
+  background: linear-gradient(90deg, #ff4d00, #ff8000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.herr-premium .herr-float-cta {
+  animation: herr-float 4s ease-in-out infinite;
+}
+
+@keyframes herr-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 .herr-premium ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 .herr-premium ::-webkit-scrollbar-track {
-  background: #1c1917;
+  background: var(--herr-coal);
 }
 .herr-premium ::-webkit-scrollbar-thumb {
-  background: #44403c;
+  background: var(--herr-card);
+  border: 2px solid var(--herr-coal);
   border-radius: 10px;
 }
 .herr-premium ::-webkit-scrollbar-thumb:hover {
-  background: #f59e0b;
+  background: var(--herr-orange);
 }
