@@ -1,4 +1,12 @@
 import { Building2, KeyRound, Landmark, MapPin } from "lucide-react";
+import {
+  DemoDetailGrid,
+  DemoFaqList,
+  DemoLongStory,
+  DemoProcessSteps,
+  DemoStatsStrip,
+  DemoTestimonials,
+} from "./demo-common-sections";
 
 export function DemoInmobiliariaLanding() {
   return (
@@ -50,6 +58,95 @@ export function DemoInmobiliariaLanding() {
           ))}
         </div>
       </header>
+
+      <DemoLongStory
+        kicker="Curaduría"
+        title="Ficha limpia o no publicamos: tiempo perdido es reputación perdida"
+        paragraphs={[
+          "Verificamos inhibiciones, deudas de expensas y estado de planos municipales antes de subir el aviso. Fotografía twilight y tour matterport incluidos en comisión premium sin sorpresas demo.",
+          "Para compradores institucionales armamos data room con PDF indexado y calls de due diligence coordinados con escribanía de confianza.",
+        ]}
+        kickerClass="text-amber-600"
+        titleClass="text-white"
+        pClass="mt-4 text-sm text-slate-400"
+        sectionClass="bg-slate-900/50"
+      />
+
+      <DemoStatsStrip
+        stats={[
+          { value: "USD 42M", label: "Transado 2025", hint: "Pipeline acumulado demo" },
+          { value: "11 días", label: "Promedio visita", hint: "Agenda digital" },
+          { value: "98 %", label: "Operaciones cerradas", hint: "Ofertas aceptadas" },
+          { value: "6", label: "Asesores senior", hint: "Zona norte" },
+        ]}
+        sectionClass="border-y border-slate-800 bg-slate-950"
+        cardClass="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"
+        valueClass="text-3xl font-black text-amber-400"
+        labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-slate-500"
+        hintClass="mt-1 text-xs text-slate-600"
+      />
+
+      <DemoProcessSteps
+        title="Vender con nosotros"
+        subtitle="Comisión progresiva si el precio acordado se respeta 60 días."
+        steps={[
+          { n: "01", t: "Tasación", d: "Comparables reales + stress test de retasación bajista." },
+          { n: "02", t: "Staging", d: "Proveedores homologados con fee deducible de venta demo." },
+          { n: "03", t: "Marketing", d: "Media social + base inversores internacional." },
+          { n: "04", t: "Cierre", d: "Coordinación banco, escritura y posesión sin idas extras al estudio." },
+        ]}
+        sectionClass="bg-slate-900/80"
+        titleClass="text-white"
+        subtitleClass="text-slate-500"
+        stepNumClass="text-amber-500"
+        cardClass="rounded-2xl border border-slate-800 bg-slate-950/80 p-6"
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-slate-400"
+      />
+
+      <DemoDetailGrid
+        title="Verticales"
+        sectionClass="bg-slate-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
+        itemTitleClass="font-bold text-amber-400"
+        itemBodyClass="mt-2 text-sm text-slate-400"
+        items={[
+          { title: "Country & golf", body: "Lotes y casas llave en mano; membership transfer con asesor club incluido." },
+          { title: "Developers", body: "Preventa off-plan con esquema de pagos constructores homologados demo." },
+          { title: "Renta corporativa", body: "Triple net y fit-out allowance negociado con abogado tenant side aliado." },
+          { title: "Repatriación", body: "Clientes del exterior con cuenta local y asesoría cambiaria prudencial." },
+        ]}
+      />
+
+      <DemoTestimonials
+        title="Clientes"
+        sectionClass="border-y border-slate-800 bg-slate-900/30"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-slate-800 bg-slate-950/60 p-6"
+        quoteClass="text-sm italic text-slate-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-500"
+        quotes={[
+          { text: "Vendimos en el rango alto sin bajar precio en panfleto.", author: "Familia Azcuénaga", role: "PH recoleta demo" },
+          { text: "El tour 360 filtró curiosos; solo vinieron qualified cash.", author: "VC Founder", role: "Inversor" },
+          { text: "Compré alquiler en una sola visita gracias al data room.", author: "Family office", role: "Regional" },
+        ]}
+      />
+
+      <DemoFaqList
+        title="FAQ"
+        sectionClass="bg-slate-950 border-t border-slate-800"
+        titleClass="text-white"
+        qClass="font-bold text-slate-200"
+        aClass="mt-2 text-sm text-slate-500"
+        rowClass="border-b border-slate-800 py-6 last:border-0"
+        items={[
+          { q: "¿Solo zona norte?", a: "Core norte; selectively microcentro boutique para penthouse." },
+          { q: "¿Alquiler temporal?", a: "Gestión Airbnb premium con revenue management demo." },
+          { q: "¿Fees comprador?", a: "Transparentes en boleto; no cobramos doble representación oculta." },
+          { q: "¿Tasación online?", a: "Ballpark gratis; presencial con costo descontable si listás." },
+        ]}
+      />
 
       <section className="grid md:grid-cols-2">
         <div className="flex min-h-[360px] flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-900/80 to-slate-800 p-8 md:p-12">

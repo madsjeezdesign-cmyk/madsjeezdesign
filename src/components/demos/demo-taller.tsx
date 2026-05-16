@@ -1,4 +1,12 @@
 import { Car, Cog, Gauge, Wrench } from "lucide-react";
+import {
+  DemoDetailGrid,
+  DemoFaqList,
+  DemoLongStory,
+  DemoProcessSteps,
+  DemoStatsStrip,
+  DemoTestimonials,
+} from "./demo-common-sections";
 
 export function DemoTallerLanding() {
   return (
@@ -49,6 +57,95 @@ export function DemoTallerLanding() {
           </div>
         </div>
       </header>
+
+      <DemoLongStory
+        kicker="Taller honesto"
+        title="Diagnóstico pago si seguís con la reparación; fotos antes de desarmar"
+        paragraphs={[
+          "Te mostramos piezas defectuosas al banco de armado y guardamos las viejas en bolsa sellada por si querés auditoría externa. Alineación en rampa con cámara 3D calibrada semanalmente y torque wrench digital logueado demo.",
+          "Stock de repuestos OEM y alternativas homologadas con diferencia de precio explicada — nunca cambiamos silenciosamente marca sin OK escrito.",
+        ]}
+        kickerClass="text-red-500"
+        titleClass="text-white"
+        pClass="mt-4 text-sm text-zinc-500"
+        sectionClass="bg-zinc-950"
+      />
+
+      <DemoStatsStrip
+        stats={[
+          { value: "11", label: "Elevadores", hint: "2 alineación" },
+          { value: "27", label: "Marcas", hint: "Scaner compatible demo" },
+          { value: "45'", label: "Diagnóstico", hint: "Promedio" },
+          { value: "24 meses", label: "Garantía mano obra", hint: "Repuestos según fábrica" },
+        ]}
+        sectionClass="border-y border-zinc-800 bg-black/30"
+        cardClass="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6"
+        valueClass="text-3xl font-black text-red-500"
+        labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-zinc-500"
+        hintClass="mt-1 text-xs text-zinc-600"
+      />
+
+      <DemoProcessSteps
+        title="Service programado"
+        subtitle="Recordatorio WhatsApp con checklist de fluidos y correa según km reales."
+        steps={[
+          { n: "01", t: "Recepción", d: "Fotos 360 y lectura códigos fallas históricas." },
+          { n: "02", t: "Presupuesto", d: "Ítem part por part con urgencia etiquetada demo." },
+          { n: "03", t: "Ejecución", d: "Torque log + fluidos nuevos mostrados en envases sellados." },
+          { n: "04", t: "Prueba ruta", d: "5 km con monitoreo parámetros OBD si hubo intervención motor." },
+        ]}
+        sectionClass="bg-zinc-900"
+        titleClass="text-white"
+        subtitleClass="text-zinc-500"
+        stepNumClass="text-red-500"
+        cardClass="rounded-2xl border border-zinc-800 bg-black/40 p-6"
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-zinc-500"
+      />
+
+      <DemoDetailGrid
+        title="Especialidades"
+        sectionClass="bg-zinc-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6"
+        itemTitleClass="font-bold text-red-400"
+        itemBodyClass="mt-2 text-sm text-zinc-500"
+        items={[
+          { title: "Diesel common rail", body: "Inyectores, alta presión y reprogramación fabricante demo." },
+          { title: "Híbridos livianos", body: "Aislación HV certificada y fluido inverter OEM." },
+          { title: "Chapa y pintura rápida", body: "Cabina cerrada con barniz base agua bajo VOC." },
+          { title: "Movilidad", body: "Auto sustituto cortesía 24 h si la reparación supera 8 h de taller." },
+        ]}
+      />
+
+      <DemoTestimonials
+        title="Clientes"
+        sectionClass="border-y border-zinc-800 bg-black/25"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6"
+        quoteClass="text-sm italic text-zinc-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-red-500"
+        quotes={[
+          { text: "Me enseñaron el rolo gastado vs el repuesto nuevo sin apuro.", author: "Hernán P.", role: "Pick up demo" },
+          { text: "La alineación dejó de tironear a los 300 km como dijeron.", author: "Lucía R.", role: "SUV" },
+          { text: "Factura electrónica y seguro sin drama.", author: "Flete Norte SA", role: "Flota" },
+        ]}
+      />
+
+      <DemoFaqList
+        title="FAQ"
+        sectionClass="bg-zinc-950 border-t border-zinc-800"
+        titleClass="text-white"
+        qClass="font-bold text-zinc-200"
+        aClass="mt-2 text-sm text-zinc-500"
+        rowClass="border-b border-zinc-800 py-6 last:border-0"
+        items={[
+          { q: "¿Turnos sábado?", a: "Previa carga; no atendemos domingos para descanso del equipo." },
+          { q: "¿Garantía repuesto?", a: "Igual que importador; registramos número de serie en factura demo." },
+          { q: "¿Uber?", a: "Te acercamos al metro si la quedada supera 3 h." },
+          { q: "¿Financiación?", a: "3 cuotas sin interés con bancos seleccionados sobre mano de obra." },
+        ]}
+      />
 
       <section className="px-4 py-16 md:px-10">
         <div className="mx-auto grid max-w-4xl gap-4 md:grid-cols-3">

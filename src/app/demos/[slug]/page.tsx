@@ -1,21 +1,32 @@
+import type { ComponentType } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDemoBySlug, DEMO_SLUGS } from "@/lib/demos-registry";
 import { site } from "@/lib/data";
 import {
   DemoAbogados,
+  DemoContadores,
+  DemoDetailing,
   DemoEstetica,
+  DemoFarmacia,
   DemoFerreteria,
   DemoFloreria,
+  DemoFoto,
   DemoGimnasio,
   DemoInmobiliaria,
+  DemoLimpieza,
+  DemoMusica,
+  DemoOdontologia,
+  DemoOptica,
+  DemoPanaderia,
   DemoRestaurante,
   DemoTaller,
   DemoTech,
   DemoVeterinaria,
+  DemoViajes,
 } from "@/components/demos";
 
-const BY_SLUG = {
+const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   ferreteria: DemoFerreteria,
   restaurante: DemoRestaurante,
   estetica: DemoEstetica,
@@ -26,9 +37,17 @@ const BY_SLUG = {
   floreria: DemoFloreria,
   taller: DemoTaller,
   abogados: DemoAbogados,
-} as const;
-
-type Slug = keyof typeof BY_SLUG;
+  farmacia: DemoFarmacia,
+  odontologia: DemoOdontologia,
+  contadores: DemoContadores,
+  musica: DemoMusica,
+  detailing: DemoDetailing,
+  panaderia: DemoPanaderia,
+  viajes: DemoViajes,
+  limpieza: DemoLimpieza,
+  foto: DemoFoto,
+  optica: DemoOptica,
+};
 
 export function generateStaticParams() {
   return DEMO_SLUGS.map((slug) => ({ slug }));
@@ -55,7 +74,7 @@ export default async function DemoPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  if (!(slug in BY_SLUG)) notFound();
-  const Demo = BY_SLUG[slug as Slug];
+  const Demo = BY_SLUG[slug as keyof typeof BY_SLUG];
+  if (!Demo) notFound();
   return <Demo />;
 }

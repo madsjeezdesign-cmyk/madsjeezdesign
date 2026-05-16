@@ -100,7 +100,7 @@ export function HyperLanding() {
               href="/demos"
               className="rounded-full border-2 border-amber-400/80 bg-gradient-to-r from-amber-500/25 to-orange-500/20 px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-amber-200 shadow-[0_0_22px_rgba(251,191,36,0.45)] transition-all hover:scale-105 hover:border-amber-300 hover:from-amber-400/35 hover:to-orange-400/30 hover:text-white hover:shadow-[0_0_28px_rgba(251,191,36,0.55)]"
             >
-              10 demos
+              DEMOS
             </Link>
             <a
               href="#nexo"
@@ -135,7 +135,7 @@ export function HyperLanding() {
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center rounded-full border-2 border-amber-400/80 bg-gradient-to-r from-amber-500/25 to-orange-500/20 py-3 text-amber-200 shadow-[0_0_20px_rgba(251,191,36,0.4)] transition-all hover:text-white"
               >
-                10 demos por rubro
+                DEMOS
               </Link>
               <a
                 href="#nexo"

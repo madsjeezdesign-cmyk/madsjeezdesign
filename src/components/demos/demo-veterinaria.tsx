@@ -1,4 +1,12 @@
 import { Heart, PawPrint, Scissors, Stethoscope, Syringe } from "lucide-react";
+import {
+  DemoDetailGrid,
+  DemoFaqList,
+  DemoLongStory,
+  DemoProcessSteps,
+  DemoStatsStrip,
+  DemoTestimonials,
+} from "./demo-common-sections";
 
 export function DemoVeterinariaLanding() {
   return (
@@ -74,6 +82,95 @@ export function DemoVeterinariaLanding() {
           ))}
         </div>
       </section>
+
+      <DemoLongStory
+        kicker="Medicina basada en evidencia"
+        title="Historia clínica digital, dolor escala y planes que el humano puede seguir"
+        paragraphs={[
+          "Cada ingreso genera hoja de ruta con signos vitales, score de dolor canino/felino traducido y fotos de lesión para comparar evolución. Usamos antibióticos solo con cultivo o guiados por protocolo ID cuando la fisiología del paciente lo permite demo.",
+          "Pet shop rotativo con lotes trazables y alimento veterinars recetado; grooming con sedación monitorizada en box con oxímetro cuando el temperamento lo exige.",
+        ]}
+        kickerClass="text-orange-300"
+        titleClass="text-white"
+        pClass="mt-4 text-sm text-teal-100/75"
+        sectionClass="bg-teal-950/80"
+      />
+
+      <DemoStatsStrip
+        stats={[
+          { value: "09:00", label: "Guardia sáb", hint: "Hasta 21 h" },
+          { value: "6", label: "Veterinarios", hint: "Rotación guardia" },
+          { value: "350m²", label: "Clínica", hint: "Quirófano y RX demo" },
+          { value: "24 h", label: "Internación", hint: "Casos estables" },
+        ]}
+        sectionClass="border-y border-teal-800/50 bg-cyan-950/40"
+        cardClass="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+        valueClass="text-3xl font-black text-orange-200"
+        labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-teal-200/70"
+        hintClass="mt-1 text-xs text-teal-200/60"
+      />
+
+      <DemoProcessSteps
+        title="Primera visita cachorro"
+        subtitle="Vacunas, desparasitación y socialización sana desde el inicio."
+        steps={[
+          { n: "01", t: "Pesar", d: "Curva de crecimiento por raza mixta si aplica." },
+          { n: "02", t: "Vacunar", d: "Esquema adaptado si vive en edificio vs quinta demo." },
+          { n: "03", t: "Chip", d: "Registro nacional y pegatina en carnet." },
+          { n: "04", t: "Educar", d: "Charla mordida jug y horarios de comida." },
+        ]}
+        sectionClass="bg-teal-900/30"
+        titleClass="text-white"
+        subtitleClass="text-teal-200/70"
+        stepNumClass="text-orange-300"
+        cardClass="rounded-2xl border border-white/10 bg-white/5 p-6"
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-teal-100/70"
+      />
+
+      <DemoDetailGrid
+        title="Especialidades"
+        sectionClass="bg-gradient-to-b from-teal-950 to-cyan-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-white/10 bg-black/20 p-6"
+        itemTitleClass="font-bold text-orange-200"
+        itemBodyClass="mt-2 text-sm text-teal-100/70"
+        items={[
+          { title: "Odontología", body: "Extracciones con tacos loco-regionales y lavado bajo sedación supervisada." },
+          { title: "Dermatitis alérgicas", body: "Intradermoreacción o dieta eliminación con seguimiento fotográfico demo." },
+          { title: "Geriatría", body: "Manejo dolor crónico multimodal sin sobre opioidar." },
+          { title: "Travel certificate", body: "Certificados internacionales con vacunas y desparasitación al día." },
+        ]}
+      />
+
+      <DemoTestimonials
+        title="Familias"
+        sectionClass="border-y border-teal-800/40 bg-teal-950/50"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-white/10 bg-white/5 p-6"
+        quoteClass="text-sm italic text-teal-50/90"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-orange-300"
+        quotes={[
+          { text: "Me explicaron la ecografía sin tecnicismos imposibles.", author: "Paula M.", role: "Gata persa demo" },
+          { text: "Respetan cuando digo que mi perro odia la balanza.", author: "Seba K.", role: "Border collie" },
+          { text: "Recordatorios de vacuna por WhatsApp.", author: "Vicky L.", role: "Dos caniches" },
+        ]}
+      />
+
+      <DemoFaqList
+        title="FAQ"
+        sectionClass="bg-cyan-950/60"
+        titleClass="text-white"
+        qClass="font-bold text-teal-100"
+        aClass="mt-2 text-sm text-teal-200/70"
+        rowClass="border-b border-white/10 py-6 last:border-0"
+        items={[
+          { q: "¿Urgencias domingo?", a: "Derivación a centro aliado con ambulancia propia hasta medianoche demo." },
+          { q: "¿Planes preventivos?", a: "Wellness senior con descuentos en estudios de rutina y grooming incluido 1 vez al año." },
+          { q: "¿Exóticos?", a: "Conejos y aves pequeñas viernes AM con turno especial; reptiles derivamos." },
+          { q: "¿Alimentos?", a: "Si abrís bolsa en el acto y no gustó, crédito store dentro de 7 días demo." },
+        ]}
+      />
 
       <footer className="px-5 py-10 text-center text-xs text-teal-700 md:px-12">
         Demo visual · MadsJeez Design

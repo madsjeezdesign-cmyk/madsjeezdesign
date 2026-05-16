@@ -1,4 +1,12 @@
 import { BookOpen, Briefcase, Scale, Shield } from "lucide-react";
+import {
+  DemoDetailGrid,
+  DemoFaqList,
+  DemoLongStory,
+  DemoProcessSteps,
+  DemoStatsStrip,
+  DemoTestimonials,
+} from "./demo-common-sections";
 
 export function DemoAbogadosLanding() {
   return (
@@ -77,6 +85,95 @@ export function DemoAbogadosLanding() {
           ))}
         </div>
       </section>
+
+      <DemoLongStory
+        kicker="Metodología"
+        title="Estrategia procesal con lectura de negocio, no solo de expediente"
+        paragraphs={[
+          "Armamos cronogramas con hitos probabilísticos y escenarios alternativos para que tomes decisiones con números claros, no con misticismo jurídico. Hacemos diligence express cuando la contraparte apura firmas y documentamos cada variable en tabla comparativa demo.",
+          "Trabajo híbrido: reuniones presenciales para cierre de acuerdos sensibles y seguimiento digital con carpeta encriptada para adjuntos que no deben circular por mail personal.",
+        ]}
+        kickerClass="text-amber-600"
+        titleClass="text-white"
+        pClass="mt-4 text-sm text-neutral-500"
+        sectionClass="bg-neutral-950"
+      />
+
+      <DemoStatsStrip
+        stats={[
+          { value: "15+", label: "Años", hint: "Equipo fundador" },
+          { value: "38", label: "Profesionales", hint: "Áreas cruzadas demo" },
+          { value: "240", label: "Casos activos", hint: "Promedio trimestral" },
+          { value: "92 %", label: "Éxito mediación", hint: "Último año" },
+        ]}
+        sectionClass="border-y border-neutral-900 bg-[#0a0a0a]"
+        cardClass="rounded-2xl border border-amber-900/20 bg-neutral-950/80 p-6"
+        valueClass="text-3xl font-black text-amber-500"
+        labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
+        hintClass="mt-1 text-xs text-neutral-600"
+      />
+
+      <DemoProcessSteps
+        title="Consulta inicial"
+        subtitle="Evaluamos viabilidad y costos antes de avanzar a etapas caras."
+        steps={[
+          { n: "01", t: "Brief", d: "Contás hechos cronológicos y entregás documentación base por canal seguro." },
+          { n: "02", t: "Diagnóstico", d: "Te devolvemos mapa de riesgos con alternativas extrajudiciales cuando conviene." },
+          { n: "03", t: "Propuesta", d: "Fee híbrido o capped hours con hitos firmados demo." },
+          { n: "04", t: "Ejecución", d: "Responsable único de cuenta y reporting quincenal al equipo interno." },
+        ]}
+        sectionClass="bg-neutral-950/80"
+        titleClass="text-white"
+        subtitleClass="text-neutral-500"
+        stepNumClass="text-amber-600"
+        cardClass="rounded-2xl border border-neutral-800 bg-black/40 p-6"
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-neutral-500"
+      />
+
+      <DemoDetailGrid
+        title="Industrias que acompañamos"
+        sectionClass="bg-[#0f0f0f]"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6"
+        itemTitleClass="font-bold text-amber-500"
+        itemBodyClass="mt-2 text-sm text-neutral-500"
+        items={[
+          { title: "Fintech", body: "Contratos con PSP, políticas AML y disputas con procesadores; coordinación con compliance externo." },
+          { title: "Agro export", body: "Litigios por calidad FOB, cauciones y ejecuciones prendarias con asesor fiscal aliado demo." },
+          { title: "Salud privada", body: "Responsabilidad civil profesional, convenios con obras sociales y acuerdos de no divulgación." },
+          { title: "Real estate", body: "Desalojos, usucapión acelerada y negociación con desarrolladores en obra." },
+        ]}
+      />
+
+      <DemoTestimonials
+        title="Referencias"
+        sectionClass="bg-neutral-950"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-neutral-800 bg-black/30 p-6"
+        quoteClass="text-sm italic text-neutral-400"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-600"
+        quotes={[
+          { text: "Nos salvaron un juicio laboral grupal sin llegar a mediación pública.", author: "COO Retail", role: "Confidencial demo" },
+          { text: "Cerraron la adquisición en tiempo cuando el vendor apuraba wire.", author: "CFO SaaS", role: "Serie B" },
+          { text: "Informes claros para directorio no abogado.", author: "Presidencia", role: "Industrial" },
+        ]}
+      />
+
+      <DemoFaqList
+        title="FAQ"
+        sectionClass="border-t border-neutral-900 bg-black/40"
+        titleClass="text-white"
+        qClass="font-bold text-neutral-200"
+        aClass="mt-2 text-sm text-neutral-500"
+        rowClass="border-b border-neutral-800 py-6 last:border-0"
+        items={[
+          { q: "¿Atienden otras jurisdicciones?", a: "Red de corresponsales en Brasil, Chile y Estados Unidos con fees transparentes." },
+          { q: "¿Idiomas?", a: "Inglés y portugués para contratos; traductor público cuando hace falta." },
+          { q: "¿Cuotas?", a: "Plan empresa anual con franja de horas y descuento en litigios derivados." },
+          { q: "¿Pro bono?", a: "Un caso trimestral seleccionado con impacto social demo." },
+        ]}
+      />
 
       <section className="px-6 py-16 text-center md:px-16">
         <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-amber-700">

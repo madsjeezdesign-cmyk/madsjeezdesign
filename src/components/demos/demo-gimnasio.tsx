@@ -1,4 +1,12 @@
 import { Dumbbell, Flame, Trophy, Zap } from "lucide-react";
+import {
+  DemoDetailGrid,
+  DemoFaqList,
+  DemoLongStory,
+  DemoProcessSteps,
+  DemoStatsStrip,
+  DemoTestimonials,
+} from "./demo-common-sections";
 
 export function DemoGimnasioLanding() {
   return (
@@ -101,6 +109,95 @@ export function DemoGimnasioLanding() {
           ))}
         </div>
       </section>
+
+      <DemoLongStory
+        kicker="Entrenamiento inteligente"
+        title="No solo sudor: periodización que respeta tu sueño y tu agenda laboral"
+        paragraphs={[
+          "Nuestros head coaches rotan bloques de fuerza, capacidad aeróbica y velocity en microciclos de 3 semanas con semana de descompresión. Tracking de RPE y vídeos de técnica obligatorios antes de subir carga en movimientos olímpicos demo.",
+          "Nutrición deportiva opcional con dietas flexibles y focus en recuperación; franja de movilidad diaria 15 min guiada en piso caliente.",
+        ]}
+        kickerClass="text-lime-400"
+        titleClass="text-white"
+        pClass="mt-4 text-sm text-zinc-500"
+        sectionClass="bg-black"
+      />
+
+      <DemoStatsStrip
+        stats={[
+          { value: "32", label: "Clases / semana", hint: "Vivos + grabados" },
+          { value: "18", label: "Racks", hint: "Eleiko demo" },
+          { value: "8", label: "Coaches", hint: "Cred. internacional" },
+          { value: "4:30", label: "Primer WOD", hint: "Turno madrugadores" },
+        ]}
+        sectionClass="border-y border-lime-500/20 bg-zinc-950"
+        cardClass="rounded-2xl border border-zinc-800 bg-black/50 p-6"
+        valueClass="text-3xl font-black text-lime-400"
+        labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-zinc-500"
+        hintClass="mt-1 text-xs text-zinc-600"
+      />
+
+      <DemoProcessSteps
+        title="Onboarding"
+        subtitle="Todos pasan por assessment inicial aunque vengas avanzado: queremos baselines reales."
+        steps={[
+          { n: "01", t: "Movilidad", d: "Screen FMS adaptado y límites articulares documentados." },
+          { n: "02", t: "Strength", d: "RM estimada sin quemar CNS; plan de acceso a zona pesos libres." },
+          { n: "03", t: "Objetivo", d: "Hyrox, estética, salud metabólica o rendimiento mixto demo." },
+          { n: "04", t: "Check-in 30 d", d: "Ajuste de volumen según adhesión real a clases." },
+        ]}
+        sectionClass="bg-zinc-950"
+        titleClass="text-white"
+        subtitleClass="text-zinc-500"
+        stepNumClass="text-lime-400"
+        cardClass="rounded-2xl border border-zinc-800 bg-black/40 p-6"
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-zinc-500"
+      />
+
+      <DemoDetailGrid
+        title="Programas especiales"
+        sectionClass="bg-black"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-6"
+        itemTitleClass="font-bold text-lime-300"
+        itemBodyClass="mt-2 text-sm text-zinc-500"
+        items={[
+          { title: "Teens athletic", body: "Énfasis en coordinación y educación postural; padres reciben reporte quincenal." },
+          { title: "Corporate pack", body: "Facturación empresa + charlas ergonomía y micro pausas activas en oficina demo." },
+          { title: "Return to train", body: "Puente con fisio externo para lesiones de hombro y rodilla con clearances." },
+          { title: "Competencia interna", body: "Festival trimestral con categorías scaled y RX, jueces propios." },
+        ]}
+      />
+
+      <DemoTestimonials
+        title="Atletas"
+        sectionClass="bg-zinc-950 border-y border-zinc-800"
+        titleClass="text-white"
+        cardClass="rounded-2xl border border-zinc-800 bg-black/50 p-6"
+        quoteClass="text-sm italic text-zinc-300"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-lime-400"
+        quotes={[
+          { text: "Bajé 40 s mi 2 k remo en 10 semanas sin lesionarme hombro.", author: "Agu C.", role: "Hyrox demo" },
+          { text: "Las clases 05:30 existen de verdad y el coach llega antes.", author: "Mel R.", role: "Medicina" },
+          { text: "App con WOD y % programados — no adivinás cargas.", author: "Lucho V.", role: "Dev" },
+        ]}
+      />
+
+      <DemoFaqList
+        title="FAQ"
+        sectionClass="bg-black"
+        titleClass="text-white"
+        qClass="font-bold text-zinc-200"
+        aClass="mt-2 text-sm text-zinc-500"
+        rowClass="border-b border-zinc-800 py-6 last:border-0"
+        items={[
+          { q: "¿Lockers?", a: "Smart lock gratis; toalla premium en plan full." },
+          { q: "¿Invitado?", a: "Un pase mensual para probar otra disciplina demo." },
+          { q: "¿Parking?", a: "200 m cochera convenio 2 h." },
+          { q: "Congelación", a: "30 días / año fraccionados con aviso 7 días." },
+        ]}
+      />
 
       <section className="flex items-center justify-center gap-4 border-t border-lime-500/20 px-4 py-14 md:gap-10">
         <Flame className="h-8 w-8 text-orange-500" />

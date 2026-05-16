@@ -1,4 +1,12 @@
 import { Heart, Leaf, Sparkles, Sun, Wind } from "lucide-react";
+import {
+  DemoDetailGrid,
+  DemoFaqList,
+  DemoLongStory,
+  DemoProcessSteps,
+  DemoStatsStrip,
+  DemoTestimonials,
+} from "./demo-common-sections";
 
 export function DemoEsteticaLanding() {
   return (
@@ -80,6 +88,95 @@ export function DemoEsteticaLanding() {
           </div>
         </div>
       </section>
+
+      <DemoLongStory
+        kicker="Ciencia suave"
+        title="Leemos tu piel como mapa, no como catálogo de promesas imposibles"
+        paragraphs={[
+          "Usamos analizador de hidratación y fotografía de superficie para registrar mejora objetiva entre sesiones. Los planes combinan activos con ventana de penetración real (vitamina estabilizada, péptidos de señal, niacinamida en dosis prudente) y siempre SPF diario reforzado demo.",
+          "Cabinas insonorizadas con circulación HEPA y camillas térmicas. Política anti upsell: si un tratamiento no suma te lo decimos antes de agendar la siguiente visita.",
+        ]}
+        kickerClass="text-amber-700"
+        titleClass="text-stone-900"
+        pClass="mt-4 text-sm text-stone-600"
+        sectionClass="bg-white"
+      />
+
+      <DemoStatsStrip
+        stats={[
+          { value: "18", label: "Años", hint: "Equipo fundador" },
+          { value: "3", label: "Cabinas", hint: "Sin apelotonar" },
+          { value: "92 %", label: "Retención", hint: "Planes 6 meses demo" },
+          { value: "0", label: "Presión kits", hint: "Política escrita" },
+        ]}
+        sectionClass="border-y border-stone-200 bg-[#faf7f2]"
+        cardClass="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
+        valueClass="text-3xl font-black text-amber-700"
+        labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-stone-500"
+        hintClass="mt-1 text-xs text-stone-400"
+      />
+
+      <DemoProcessSteps
+        title="Primera visita"
+        subtitle="45 minutos de evaluación + plan sin obligación de compra."
+        steps={[
+          { n: "01", t: "Anamnesis", d: "Historial, medicación y objetivos reales (social vs laboral)." },
+          { n: "02", t: "Scan", d: "Fotos comparables y niveles TEWL demo." },
+          { n: "03", t: "Demo express", d: "Mini facial con productos que usarás en casa." },
+          { n: "04", t: "Plan", d: "Cronograma de sesiones + rutina AM/PM con presupuesto cerrado." },
+        ]}
+        sectionClass="bg-stone-100"
+        titleClass="text-stone-900"
+        subtitleClass="text-stone-500"
+        stepNumClass="text-amber-700"
+        cardClass="rounded-2xl border border-stone-200 bg-white p-6"
+        stepTitleClass="font-bold text-stone-900"
+        stepDescClass="mt-2 text-sm text-stone-600"
+      />
+
+      <DemoDetailGrid
+        title="Protocolos destacados"
+        sectionClass="bg-[#faf7f2]"
+        titleClass="text-stone-900"
+        cardClass="rounded-2xl border border-stone-200 bg-white p-6"
+        itemTitleClass="font-bold text-amber-800"
+        itemBodyClass="mt-2 text-sm text-stone-600"
+        items={[
+          { title: "Glow reductor manchas", body: "Serie de 4 con ácido mandélico progresivo y sellado con antioxidantes liposomados." },
+          { title: "Detox urbano", body: "Masaje linfático + oxigenación fría para pieles expuestas a aire acondicionado agresivo." },
+          { title: "Color vegano", body: "Patch test 48 h, decapación suave argán y gloss sin amoníaco demo." },
+          { title: "Ayur prenatal", body: "Posiciones laterales seguras, aceites hipolergénicos y stretch care posterior." },
+        ]}
+      />
+
+      <DemoTestimonials
+        title="Clientas"
+        sectionClass="bg-white"
+        titleClass="text-stone-900"
+        cardClass="rounded-2xl border border-stone-200 bg-stone-50 p-6"
+        quoteClass="text-sm italic text-stone-700"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-700"
+        quotes={[
+          { text: "Por fin un lugar donde no te venden una crema cara solo porque sí.", author: "Martu L.", role: "Diseñadora" },
+          { text: "Balayage sin straw hair; explicaron cada paso.", author: "Nico G.", role: "Búsqueda laboral demo" },
+          { text: "La cabina silenciosa vale oro.", author: "Lu P.", role: "Remote PM" },
+        ]}
+      />
+
+      <DemoFaqList
+        title="FAQ"
+        sectionClass="border-t border-stone-200 bg-[#faf7f2]"
+        titleClass="text-stone-900"
+        qClass="font-bold text-stone-800"
+        aClass="mt-2 text-sm text-stone-600"
+        rowClass="border-b border-stone-200 py-6 last:border-0"
+        items={[
+          { q: "¿Depilación láser?", a: "Módulo aliado en piso 2 con misma recepción; turno coordinado." },
+          { q: "¿Pagos?", a: "QR, transfer y 3 cuotas sin interés con bancos seleccionados demo." },
+          { q: "¿Regalos?", a: "Gift card física con diseño floral y digital instantánea." },
+          { q: "¿Cancelaciones?", a: "Gratis hasta 12 h antes; después se retiene 30 % para cobertura therapist." },
+        ]}
+      />
 
       <footer className="px-6 py-10 text-center text-xs text-stone-500 md:px-14">
         Demo visual · MadsJeez Design

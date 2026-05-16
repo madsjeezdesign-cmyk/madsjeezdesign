@@ -9,17 +9,17 @@ export default function DemosIndexPage() {
         <p className="font-[family-name:var(--font-demo-montserrat)] text-[10px] font-bold uppercase tracking-[0.35em] text-[#1de0b1]">
           Showroom · no publicado en home
         </p>
-        <h1 className="mt-4 font-[family-name:var(--font-demo-bebas)] text-5xl uppercase tracking-wide text-white md:text-7xl">
-          10 landings demo
+        <h1 className="mt-4 font-[family-name:var(--font-demo-bebas)] text-6xl uppercase tracking-wide text-white md:text-[5.5rem] md:leading-none">
+          DEMOS
         </h1>
         <p className="mt-4 font-[family-name:var(--font-demo-montserrat)] text-sm leading-relaxed text-zinc-400 md:text-base">
-          Modelos listos para adaptar a tu marca: cada uno con layout, copy de
-          ejemplo y estética propia. Compartí el enlace directo del rubro que
-          quieras mostrar.
+          Showroom de landings por rubro: contenido extenso de ejemplo (servicios,
+          proceso, métricas, testimonios y FAQ) listo para adaptar a cada marca.
+          Cada demo tiene estética propia. Compartí el enlace directo del sector.
         </p>
       </div>
 
-      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
+      <ul className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {DEMOS.map((d) => (
           <li key={d.slug}>
             <Link

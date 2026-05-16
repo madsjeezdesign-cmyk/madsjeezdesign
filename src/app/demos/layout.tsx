@@ -50,10 +50,10 @@ export default function DemosLayout({
             Demos · {site.name}
           </Link>
           <Link
-            href="/"
+            href="/demos"
             className="text-xs font-semibold text-[#1de0b1] hover:underline"
           >
-            Volver al sitio
+            Volver a demos
           </Link>
         </div>
       </header>
