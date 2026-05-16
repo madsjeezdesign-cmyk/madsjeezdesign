@@ -1,0 +1,138 @@
+/* Patitas Sanas — PAW PALACE luxury */
+.paw-premium {
+  --paw-gold: #c5a059;
+  --paw-gold-light: #e2c792;
+  --paw-bg: #080808;
+  --paw-card: #111111;
+  --paw-muted: #888888;
+}
+
+.paw-premium .paw-gold-gradient {
+  background: linear-gradient(135deg, #8a6e2f 0%, #c5a059 50%, #8a6e2f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paw-premium .paw-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--paw-gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+.paw-premium .paw-cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--paw-gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.paw-premium .paw-cursor-ring.is-hover {
+  width: 48px;
+  height: 48px;
+  background: rgba(197, 160, 89, 0.12);
+  border-color: transparent;
+}
+
+.paw-premium .paw-reveal-mask {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.paw-premium .paw-reveal-mask.is-active {
+  clip-path: inset(0 0 0 0);
+}
+
+.paw-premium .paw-luxe-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.5s ease;
+}
+
+.paw-premium .paw-luxe-card:hover {
+  border-color: var(--paw-gold);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.paw-premium .paw-title-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--paw-gold), transparent);
+  width: 100%;
+  max-width: 200px;
+  margin: 2rem auto;
+}
+
+.paw-premium .paw-btn-gold {
+  background: var(--paw-gold);
+  color: #000;
+  transition: all 0.4s ease;
+}
+
+.paw-premium .paw-btn-gold:hover {
+  background: #fff;
+}
+
+.paw-premium .paw-btn-outline {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--paw-gold);
+  color: var(--paw-gold);
+}
+
+.paw-premium .paw-btn-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--paw-gold);
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+.paw-premium .paw-btn-outline:hover::before {
+  transform: translateY(0);
+}
+
+.paw-premium .paw-btn-outline span {
+  position: relative;
+  z-index: 1;
+}
+
+.paw-premium .paw-btn-outline:hover span {
+  color: #000;
+}
+
+.paw-premium .paw-scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.paw-premium .paw-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.paw-premium ::-webkit-scrollbar {
+  width: 4px;
+}
+.paw-premium ::-webkit-scrollbar-track {
+  background: #000;
+}
+.paw-premium ::-webkit-scrollbar-thumb {
+  background: var(--paw-gold);
+}

@@ -114,14 +114,15 @@ const bGimnasio = Inter({
   variable: "--font-demo-b-gimnasio",
 });
 
-const hVeterinaria = Nunito({
+const hVeterinaria = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["800", "900"],
+  weight: ["300", "400", "600"],
+  style: ["normal", "italic"],
   variable: "--font-demo-h-veterinaria",
 });
-const bVeterinaria = Quicksand({
+const bVeterinaria = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["200", "300", "400", "600"],
   variable: "--font-demo-b-veterinaria",
 });
 

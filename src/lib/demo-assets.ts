@@ -189,13 +189,13 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     b: u("photo-1548199973-03cce0bbc87b", "ixlib=rb-4.0.3"),
     c: u("photo-1601758228041-f3b2795255f1", "ixlib=rb-4.0.3"),
     lead: {
-      section: "border-y border-teal-500/30 bg-teal-950/80",
-      card: "rounded-2xl border border-white/10 bg-teal-900/40 p-6 backdrop-blur md:p-8",
-      label: "text-[10px] font-bold uppercase tracking-widest text-teal-200/70",
+      section: "border-y border-white/5 bg-[#050505]",
+      card: "border border-[#c5a059]/15 bg-[#111111] p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-[#c5a059]/80",
       input:
-        "mt-1 w-full rounded-xl border border-white/15 bg-teal-950/60 px-4 py-3 text-sm text-white outline-none",
-      button: "w-full rounded-xl bg-orange-400 py-3.5 text-sm font-bold text-teal-950",
-      focus: "focus:border-orange-300/50",
+        "mt-1 w-full border-b border-white/10 bg-transparent px-0 py-3 text-sm text-white outline-none",
+      button: "paw-btn-gold w-full rounded-sm py-3.5 text-[10px] font-bold tracking-[0.2em]",
+      focus: "focus:border-[#c5a059]/50",
     },
     shop: {
       headline: "Pet shop online (demo)",
