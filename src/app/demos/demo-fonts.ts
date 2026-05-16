@@ -88,12 +88,13 @@ const bRestaurante = Inter({
 
 const hEstetica = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["300", "500", "600"],
+  style: ["normal", "italic"],
   variable: "--font-demo-h-estetica",
 });
-const bEstetica = Work_Sans({
+const bEstetica = Quicksand({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-demo-b-estetica",
 });
 

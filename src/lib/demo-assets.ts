@@ -140,13 +140,13 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     b: u("photo-1511499767150-a48a237f0083", "ixlib=rb-4.0.3"),
     c: u("photo-1600607687939-ce8a6c25118c", "ixlib=rb-4.0.3"),
     lead: {
-      section: "border-y border-stone-300 bg-[#f5f0e8]",
-      card: "rounded-2xl border border-stone-300 bg-white p-6 shadow-sm md:p-8",
-      label: "text-[10px] font-bold uppercase tracking-widest text-stone-500",
+      section: "border-y border-gray-100 bg-[#faf7f4]",
+      card: "border border-[#c48e58]/10 bg-white p-6 shadow-sm md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-[#c48e58]",
       input:
-        "mt-1 w-full rounded-xl border border-stone-300 bg-stone-50 px-4 py-3 text-sm text-stone-900 outline-none",
-      button: "w-full rounded-xl bg-stone-900 py-3.5 text-sm font-bold text-amber-50",
-      focus: "focus:border-amber-700/50",
+        "mt-1 w-full border-b border-gray-200 bg-transparent px-0 py-3 text-sm text-[#3d3d3d] outline-none",
+      button: "aura-btn w-full py-3.5 text-[10px] font-black uppercase tracking-[0.3em]",
+      focus: "focus:border-[#c48e58]/50",
       invert: true,
     },
     shop: {

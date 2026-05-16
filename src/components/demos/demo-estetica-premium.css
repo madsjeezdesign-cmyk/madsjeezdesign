@@ -1,0 +1,100 @@
+/* Aura Estética — Skin & Wellness */
+.aura-premium {
+  --aura-nude-light: #faf7f4;
+  --aura-nude-dark: #f2ebe4;
+  --aura-sage: #94a38e;
+  --aura-text: #3d3d3d;
+  --aura-accent: #c48e58;
+}
+
+@keyframes aura-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aura-premium .aura-reveal {
+  animation: aura-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.aura-premium .aura-nav {
+  background: rgba(250, 247, 244, 0.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(196, 142, 88, 0.08);
+  transition: all 0.5s ease;
+}
+
+.aura-premium .aura-nav.is-scrolled {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.aura-premium .aura-premium-card {
+  background: white;
+  transition: all 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+  border: 1px solid rgba(196, 142, 88, 0.05);
+}
+
+.aura-premium .aura-premium-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(196, 142, 88, 0.08);
+  border-color: var(--aura-accent);
+}
+
+.aura-premium .aura-btn {
+  background: var(--aura-accent);
+  color: white;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.aura-premium .aura-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.aura-premium .aura-btn:hover::before {
+  width: 100%;
+}
+
+.aura-premium .aura-blob {
+  position: absolute;
+  filter: blur(120px);
+  z-index: 0;
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.aura-premium .aura-img-mask {
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M44.7,-76.4C58.1,-69.2,69.2,-58.1,76.4,-44.7C83.7,-31.3,87.1,-15.7,86.1,-0.6C85,14.5,79.6,29,71.4,41.4C63.2,53.8,52.2,64.1,39.3,71.2C26.4,78.3,13.2,82.3,-0.7,83.5C-14.6,84.7,-29.2,83.2,-42.6,76.8C-56,70.4,-68.2,59.1,-76.1,45.4C-84,31.7,-87.6,15.8,-86.3,0.7C-85.1,-14.4,-78.9,-28.8,-70.2,-41.2C-61.4,-53.6,-50.1,-64.1,-37.1,-71.5C-24.1,-78.9,-12.1,-83.2,0.6,-84.3C13.3,-85.4,26.6,-83.3,44.7,-76.4Z' transform='translate(100 100)'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+}
+
+.aura-premium ::-webkit-scrollbar {
+  width: 4px;
+}
+.aura-premium ::-webkit-scrollbar-track {
+  background: var(--aura-nude-light);
+}
+.aura-premium ::-webkit-scrollbar-thumb {
+  background: var(--aura-accent);
+}
