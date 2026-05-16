@@ -110,12 +110,11 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
       "Varela & Asociados: prestigio jurídico, áreas elite, equipo, publicaciones y consulta confidencial.",
   },
   farmacia: {
-
-    color: "from-emerald-600/30",
-    accent: "text-emerald-400",
-    border: "group-hover:border-emerald-500/50",
+    color: "from-cyan-600/30",
+    accent: "text-cyan-500",
+    border: "group-hover:border-cyan-500/50",
     pitch:
-      "Salud accesible: información útil, canales de contacto y estructura para e-farmacia.",
+      "Medical Hub premium: catálogo e-commerce, telemedicina 24/7, laboratorio y carrito con estética clínica moderna.",
   },
   odontologia: {
 

@@ -28,7 +28,7 @@ const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">
   floreria: { badge: "Jardín Ensueño", subtitle: "Florería & vivero" },
   taller: { badge: "Motor Dynamics", subtitle: "Tuning & diagnóstico" },
   abogados: { badge: "Varela & Asoc.", subtitle: "Estudio jurídico elite" },
-  farmacia: { badge: "Health Retail", subtitle: "Salud accesible" },
+  farmacia: { badge: "Medical Hub", subtitle: "Galénica 24/7" },
   odontologia: { badge: "Dental Pro", subtitle: "Primera visita" },
   contadores: { badge: "Finance Hub", subtitle: "PyME sin fricción" },
   musica: { badge: "Academy", subtitle: "Inscripción digital" },

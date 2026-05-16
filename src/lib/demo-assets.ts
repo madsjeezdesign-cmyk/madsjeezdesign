@@ -335,13 +335,14 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     b: u("photo-1587854692152-cbe660dbde88", "ixlib=rb-4.0.3"),
     c: u("photo-1555633514-abcee6ab92e1", "ixlib=rb-4.0.3"),
     lead: {
-      section: "border-y border-emerald-500/25 bg-emerald-950",
-      card: "rounded-2xl border border-white/10 bg-emerald-900/40 p-6 md:p-8",
-      label: "text-[10px] font-bold uppercase tracking-widest text-emerald-200/70",
+      section: "border-y border-slate-200 bg-slate-50",
+      card: "rounded-2xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/40 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-cyan-600",
       input:
-        "mt-1 w-full rounded-xl border border-emerald-800 bg-emerald-950/70 px-4 py-3 text-sm text-white outline-none",
-      button: "w-full rounded-xl bg-green-500 py-3.5 text-sm font-bold text-emerald-950",
-      focus: "focus:border-green-400/50",
+        "mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none",
+      button: "w-full rounded-xl bg-cyan-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-cyan-600/25",
+      focus: "focus:border-cyan-500/50",
+      invert: true,
     },
     shop: {
       headline: "Farmacia online (demo)",

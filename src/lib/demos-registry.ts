@@ -95,11 +95,11 @@ export const DEMOS: DemoMeta[] = [
   },
   {
     slug: "farmacia",
-    title: "Farmacia Del Parque",
-    industry: "Farmacia & salud",
-    tagline: "Turno electrónico, obras sociales y delivery",
-    accent: "#22c55e",
-    previewClass: "from-emerald-950 to-green-900",
+    title: "Galénica",
+    industry: "Farmacia & salud · Medical Hub",
+    tagline: "Tu salud, nuestra ciencia · 24/7",
+    accent: "#0891b2",
+    previewClass: "from-slate-50 to-cyan-100",
   },
   {
     slug: "odontologia",

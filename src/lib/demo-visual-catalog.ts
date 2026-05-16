@@ -99,12 +99,12 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     e: id("photo-1521791134365-74f25c2a5c3e"),
   },
   farmacia: {
-    cover: id("photo-1607619056574-7b8d3ee536b2"),
-    a: id("photo-1628771065518-0d82f1938462"),
-    b: id("photo-1576602976047-174e57a47881"),
-    c: id("photo-1587854692152-cbe660dbde88"),
-    d: id("photo-1642055514517-7b52288890ec"),
-    e: id("photo-1580281657527-47f249e8f4df"),
+    cover: id("photo-1576091160550-2173dba999ef"),
+    a: id("photo-1579684385127-1ef15d508118"),
+    b: id("photo-1526733169359-ab1142275411"),
+    c: id("photo-1584308666744-24d5c474f2ae"),
+    d: id("photo-1620916566398-39f1143ab7be"),
+    e: id("photo-1631549916768-4119b2e5f926"),
   },
   odontologia: {
     cover: id("photo-1629909613654-28e377c37b09"),
@@ -880,9 +880,9 @@ export const DEMO_LEAD_COPY: Record<string, { kicker: string; title: string; sub
     sub: "Áreas de práctica claras y captación institucional.",
   },
   farmacia: {
-    kicker: "Farmacia digital",
-    title: "Consultá e-commerce",
-    sub: "OTC, obras sociales y delivery con información útil.",
+    kicker: "Medical Hub",
+    title: "Pedí turno o cotizá online",
+    sub: "Catálogo, telemedicina y laboratorio en un solo hub de salud.",
   },
   odontologia: {
     kicker: "Primera visita",
