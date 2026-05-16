@@ -403,7 +403,7 @@ export function HyperLanding() {
                       {m.subtitle}
                     </p>
                   </div>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 font-[family-name:var(--font-jetbrains)] text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+                  <span className="shrink-0 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 font-[family-name:var(--font-jetbrains)] text-[10px] font-bold uppercase tracking-widest text-amber-400">
                     {m.priceNote}
                   </span>
                 </div>
