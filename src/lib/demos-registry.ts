@@ -103,11 +103,11 @@ export const DEMOS: DemoMeta[] = [
   },
   {
     slug: "odontologia",
-    title: "Sonrisa Studio Dental",
-    industry: "Odontología & implantes",
-    tagline: "Diagnóstico digital, financiación y urgencias",
-    accent: "#38bdf8",
-    previewClass: "from-sky-950 to-cyan-950",
+    title: "Galénica Dental",
+    industry: "Odontología · Dental Elite",
+    tagline: "Odontología digital de precisión",
+    accent: "#2563eb",
+    previewClass: "from-slate-50 to-blue-100",
   },
   {
     slug: "contadores",

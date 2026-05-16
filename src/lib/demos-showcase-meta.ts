@@ -117,12 +117,11 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
       "Medical Hub premium: catálogo e-commerce, telemedicina 24/7, laboratorio y carrito con estética clínica moderna.",
   },
   odontologia: {
-
-    color: "from-sky-600/30",
-    accent: "text-sky-400",
-    border: "group-hover:border-sky-500/50",
+    color: "from-blue-600/30",
+    accent: "text-blue-500",
+    border: "group-hover:border-blue-500/50",
     pitch:
-      "Clínica con foco en diagnóstico digital, confianza y conversión de primera visita.",
+      "Galénica Dental Elite: smile design, grid de especialidades, tecnología sin miedo y conversión de primera visita.",
   },
   contadores: {
 

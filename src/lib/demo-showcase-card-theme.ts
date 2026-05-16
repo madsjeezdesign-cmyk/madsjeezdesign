@@ -29,7 +29,7 @@ const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">
   taller: { badge: "Motor Dynamics", subtitle: "Tuning & diagnóstico" },
   abogados: { badge: "Varela & Asoc.", subtitle: "Estudio jurídico elite" },
   farmacia: { badge: "Medical Hub", subtitle: "Galénica 24/7" },
-  odontologia: { badge: "Dental Pro", subtitle: "Primera visita" },
+  odontologia: { badge: "Dental Elite", subtitle: "Galénica" },
   contadores: { badge: "Finance Hub", subtitle: "PyME sin fricción" },
   musica: { badge: "Academy", subtitle: "Inscripción digital" },
   detailing: { badge: "Auto Spa", subtitle: "Alto valor percibido" },

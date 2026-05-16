@@ -193,14 +193,14 @@ const bFarmacia = DM_Sans({
   variable: "--font-demo-b-farmacia",
 });
 
-const hOdontologia = Merriweather({
+const hOdontologia = Unbounded({
   subsets: ["latin"],
-  weight: ["700", "900"],
+  weight: ["400", "700", "900"],
   variable: "--font-demo-h-odontologia",
 });
-const bOdontologia = Noto_Sans({
+const bOdontologia = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["300", "400", "600", "800"],
   variable: "--font-demo-b-odontologia",
 });
 

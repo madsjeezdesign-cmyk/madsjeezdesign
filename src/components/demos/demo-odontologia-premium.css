@@ -1,0 +1,29 @@
+/* Galénica Dental Elite — odontología premium */
+.dent-premium {
+  --dent-blue: #2563eb;
+  --dent-blue-dim: rgba(37, 99, 235, 0.12);
+}
+
+.dent-premium ::selection {
+  background: var(--dent-blue);
+  color: white;
+}
+
+.dent-premium .dent-service-card {
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dent-premium .dent-service-card:hover {
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.15);
+}
+
+.dent-premium ::-webkit-scrollbar {
+  width: 8px;
+}
+.dent-premium ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.dent-premium ::-webkit-scrollbar-thumb {
+  background: #0f172a;
+  border-radius: 10px;
+}

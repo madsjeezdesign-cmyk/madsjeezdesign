@@ -107,12 +107,12 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     e: id("photo-1631549916768-4119b2e5f926"),
   },
   odontologia: {
-    cover: id("photo-1629909613654-28e377c37b09"),
-    a: id("photo-1606811971618-4486d14f3f99"),
-    b: id("photo-1598256989800-fe5f95da9787"),
-    c: id("photo-1606811841689-23dfddce3e95"),
-    d: id("photo-1489278353717-f64c6ee8a4d2"),
-    e: id("photo-1593022356769-11f762e25ed9"),
+    cover: id("photo-1606811971618-4486d14f3f99"),
+    a: id("photo-1598256989800-fe5f95da9787"),
+    b: id("photo-1588776814546-1ffcf47267a5"),
+    c: id("photo-1629909613654-28e377c37b09"),
+    d: id("photo-1579684385127-1ef15d508118"),
+    e: id("photo-1606811841689-23dfddce3e95"),
   },
   contadores: {
     cover: id("photo-1511376868136-742c0de8c9a8"),
@@ -885,9 +885,9 @@ export const DEMO_LEAD_COPY: Record<string, { kicker: string; title: string; sub
     sub: "Catálogo, telemedicina y laboratorio en un solo hub de salud.",
   },
   odontologia: {
-    kicker: "Primera visita",
-    title: "Reservá evaluación",
-    sub: "Tratamientos, financiación y urgencias bien explicados.",
+    kicker: "Dental Elite",
+    title: "Reservá evaluación digital",
+    sub: "Smile design, implantología 3D y sedación consciente en un solo hub.",
   },
   contadores: {
     kicker: "PyME y monotributo",

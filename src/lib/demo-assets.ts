@@ -360,13 +360,14 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     b: u("photo-1587854692152-cbe660dbde88", "ixlib=rb-4.0.3"),
     c: u("photo-1555633514-abcee6ab92e1", "ixlib=rb-4.0.3"),
     lead: {
-      section: "border-y border-sky-500/30 bg-sky-950",
-      card: "rounded-2xl border border-white/10 bg-sky-900/30 p-6 backdrop-blur md:p-8",
-      label: "text-[10px] font-bold uppercase tracking-widest text-sky-200/70",
+      section: "border-y border-slate-200 bg-slate-50",
+      card: "rounded-2xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/40 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-blue-600",
       input:
-        "mt-1 w-full rounded-xl border border-sky-700 bg-sky-950/60 px-4 py-3 text-sm text-white outline-none",
-      button: "w-full rounded-xl bg-sky-500 py-3.5 text-sm font-bold text-sky-950",
-      focus: "focus:border-sky-300/50",
+        "mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none",
+      button: "w-full rounded-xl bg-blue-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/25",
+      focus: "focus:border-blue-500/50",
+      invert: true,
     },
     shop: {
       headline: "Higiene & blanqueamiento (demo)",
