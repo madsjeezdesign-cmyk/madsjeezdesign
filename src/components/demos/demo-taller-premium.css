@@ -1,0 +1,71 @@
+/* Motor Dynamics — taller premium */
+.md-premium {
+  --md-orange: #ea580c;
+  --md-orange-glow: rgba(234, 88, 12, 0.35);
+}
+
+.md-premium .md-carbon {
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  opacity: 0.2;
+}
+
+.md-premium .md-scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.md-premium .md-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.md-premium .md-hero-in {
+  animation: md-slide-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateX(-24px);
+}
+
+.md-premium .md-hero-in-delay {
+  animation: md-zoom-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+@keyframes md-slide-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes md-zoom-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.md-premium .md-scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(234, 88, 12, 0.45);
+  animation: md-scan 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes md-scan {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+.md-premium ::selection {
+  background: var(--md-orange);
+  color: #000;
+}

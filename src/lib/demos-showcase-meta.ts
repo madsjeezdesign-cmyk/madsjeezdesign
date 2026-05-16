@@ -95,11 +95,11 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
   },
   taller: {
 
-    color: "from-red-600/30",
-    accent: "text-red-400",
-    border: "group-hover:border-red-500/50",
+    color: "from-orange-600/30",
+    accent: "text-orange-400",
+    border: "group-hover:border-orange-500/50",
     pitch:
-      "Oferta de servicios clara, urgencias y transparencia antes de levantar el capó.",
+      "Motor Dynamics: hero industrial, servicios pro, galería de 6 fotos y turnos con estética racing.",
   },
   abogados: {
 

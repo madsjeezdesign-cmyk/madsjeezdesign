@@ -83,12 +83,12 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     e: id("photo-1591854265821-657e0347814b"),
   },
   taller: {
-    cover: id("photo-1618312980096-873bd19759a0"),
-    a: id("photo-1676018366904-c083ed678e60"),
-    b: id("photo-1702146713858-8e7d1cc29fe8"),
-    c: id("photo-1591278169757-deac26e49555"),
-    d: id("photo-1702146713922-613313be011d"),
-    e: id("photo-1610092708835-af669294f3f3"),
+    cover: id("photo-1530046339160-ce3e5b0c7a2f"),
+    a: id("photo-1486262715619-67b85e0b08d3"),
+    b: id("photo-1542282088-fe8426682e8f"),
+    c: id("photo-1613214149174-da7a397738b0"),
+    d: id("photo-1581092162384-ef8b1f2a6bb7"),
+    e: id("photo-1619643277878-aa2e9d1a6aaf"),
   },
   abogados: {
     cover: id("photo-1758310999515-645097b709db"),

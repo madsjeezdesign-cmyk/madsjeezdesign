@@ -287,18 +287,18 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   taller: {
-    cover: u("photo-1619405399517-d7fce0f13302", "ixlib=rb-4.0.3"),
-    a: u("photo-1503376780353-7e6692767b70", "ixlib=rb-4.0.3"),
-    b: u("photo-1625047509168-a7026f36de04", "ixlib=rb-4.0.3"),
-    c: u("photo-1492144534655-ae79c964c9d7", "ixlib=rb-4.0.3"),
+    cover: u("photo-1530046339160-ce3e5b0c7a2f", "ixlib=rb-4.0.3"),
+    a: u("photo-1486262715619-67b85e0b08d3", "ixlib=rb-4.0.3"),
+    b: u("photo-1542282088-fe8426682e8f", "ixlib=rb-4.0.3"),
+    c: u("photo-1613214149174-da7a397738b0", "ixlib=rb-4.0.3"),
     lead: {
-      section: "border-y border-red-900/40 bg-zinc-950",
-      card: "rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 md:p-8",
-      label: "text-[10px] font-bold uppercase tracking-widest text-zinc-500",
+      section: "border-y border-orange-600/20 bg-zinc-950",
+      card: "rounded-sm border border-zinc-800 bg-zinc-900/80 p-6 md:p-8",
+      label: "text-[10px] font-bold uppercase tracking-widest text-orange-500/80",
       input:
-        "mt-1 w-full rounded-xl border border-zinc-800 bg-black px-4 py-3 text-sm text-white outline-none",
-      button: "w-full rounded-xl bg-red-600 py-3.5 text-sm font-bold text-white",
-      focus: "focus:border-red-500/50",
+        "mt-1 w-full rounded-sm border border-zinc-700 bg-black px-4 py-3 text-sm text-white outline-none",
+      button: "w-full rounded-sm bg-orange-600 py-3.5 text-sm font-bold text-white hover:bg-orange-500",
+      focus: "focus:border-orange-500/50",
     },
     shop: {
       headline: "Repuestos & aceites (demo)",

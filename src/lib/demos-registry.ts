@@ -79,11 +79,11 @@ export const DEMOS: DemoMeta[] = [
   },
   {
     slug: "taller",
-    title: "Garage 27",
-    industry: "Taller mecánico",
-    tagline: "Turnos, diagnóstico y presupuesto",
-    accent: "#ef4444",
-    previewClass: "from-zinc-950 to-red-950/60",
+    title: "Motor Dynamics",
+    industry: "Taller mecánico & tuning",
+    tagline: "Ingeniería de precisión y diagnóstico 4.0",
+    accent: "#ea580c",
+    previewClass: "from-zinc-950 to-orange-950/40",
   },
   {
     slug: "abogados",

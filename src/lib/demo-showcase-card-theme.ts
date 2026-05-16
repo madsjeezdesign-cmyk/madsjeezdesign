@@ -26,7 +26,7 @@ const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">
   inmobiliaria: { badge: "Luxury RE", subtitle: "Portfolio premium" },
   tech: { badge: "Vanguardia OS", subtitle: "Infra & IA soberana" },
   floreria: { badge: "Jardín Ensueño", subtitle: "Florería & vivero" },
-  taller: { badge: "Auto Service", subtitle: "Confianza mecánica" },
+  taller: { badge: "Motor Dynamics", subtitle: "Tuning & diagnóstico" },
   abogados: { badge: "Legal Firm", subtitle: "Captación institucional" },
   farmacia: { badge: "Health Retail", subtitle: "Salud accesible" },
   odontologia: { badge: "Dental Pro", subtitle: "Primera visita" },
