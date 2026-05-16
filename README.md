@@ -25,6 +25,10 @@ npm run dev
 
 Rutas: `/admin/login` → `/admin`. Requiere en el servidor `ADMIN_EMAIL`, `ADMIN_PASSWORD` y `ADMIN_SESSION_SECRET` (ver `.env.example` y `docs/deploy-railway.md`).
 
+## Demos por rubro (showroom)
+
+Índice **`/demos`** — 10 landings de ejemplo (ferretería, restaurante, estética, gimnasio, veterinaria, inmobiliaria, SaaS, florería, taller, abogados). **No está enlazado desde la home**; compartí el link directo. Metadatos `noindex` para que no compitan con la landing principal. Rutas: `/demos/ferreteria`, `/demos/restaurante`, etc.
+
 ## Deploy Railway
 
 Guía: [`docs/deploy-railway.md`](docs/deploy-railway.md)

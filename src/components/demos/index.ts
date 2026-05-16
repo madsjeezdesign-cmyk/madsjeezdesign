@@ -1,0 +1,10 @@
+export { DemoAbogados } from "./demo-abogados";
+export { DemoEstetica } from "./demo-estetica";
+export { DemoFerreteria } from "./demo-ferreteria";
+export { DemoFloreria } from "./demo-floreria";
+export { DemoGimnasio } from "./demo-gimnasio";
+export { DemoInmobiliaria } from "./demo-inmobiliaria";
+export { DemoRestaurante } from "./demo-restaurante";
+export { DemoTaller } from "./demo-taller";
+export { DemoTech } from "./demo-tech";
+export { DemoVeterinaria } from "./demo-veterinaria";
