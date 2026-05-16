@@ -7,6 +7,12 @@ import {
   Truck,
   Wrench,
 } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -16,64 +22,67 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "ferreteria" as const;
 
 export function DemoFerreteriaLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-zinc-950 font-[family-name:var(--font-demo-montserrat)] text-zinc-100">
-      <nav className="flex items-center justify-between border-b border-orange-500/20 px-4 py-4 md:px-10">
-        <span className="font-[family-name:var(--font-demo-bebas)] text-2xl tracking-wide text-orange-500">
-          FDO
-        </span>
-        <div className="hidden gap-8 text-xs font-bold uppercase tracking-widest text-zinc-500 md:flex">
-          <span className="cursor-default hover:text-orange-400">Catálogo online</span>
-          <span className="cursor-default hover:text-orange-400">Marcas líder</span>
-          <span className="cursor-default hover:text-orange-400">Cuenta corriente</span>
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
+      <nav className="sticky top-0 z-40 flex items-center justify-between border-b-4 border-orange-600 bg-[#0c0a09]/95 px-4 py-3 backdrop-blur-md md:px-10">
+        <span className={`${h} text-2xl tracking-wide text-orange-500`}>FDO</span>
+        <div className="hidden flex-1 justify-center gap-10 md:flex">
+          {["Catálogo online", "Marcas líder", "Cuenta corriente"].map((l) => (
+            <span
+              key={l}
+              className="cursor-default text-xs font-bold uppercase tracking-[0.35em] text-zinc-500 hover:text-orange-400"
+            >
+              {l}
+            </span>
+          ))}
         </div>
-        <button
-          type="button"
-          className="rounded-full bg-orange-600 px-5 py-2 text-xs font-bold uppercase text-white"
-        >
+        <button type="button" className={art.primaryCta}>
           Pedido express
         </button>
       </nav>
 
-      <header className="relative overflow-hidden px-4 pb-20 pt-16 md:px-10 md:pt-24">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-600/25 via-transparent to-transparent" />
-        <div className="absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full border border-orange-500/10 md:block" />
-        <div className="relative mx-auto max-w-4xl">
-          <p className="flex items-center gap-2 font-[family-name:var(--font-jetbrains)] text-[10px] font-bold uppercase tracking-[0.3em] text-orange-400">
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-zinc-400"
+        kicker={
+          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-orange-400">
             <HardHat className="h-4 w-4" /> Stock sincronizado · obras y retail
           </p>
-          <h1 className="mt-4 font-[family-name:var(--font-demo-bebas)] text-5xl uppercase leading-none tracking-wide text-white md:text-8xl">
+        }
+        title={
+          <>
             La ferretería
             <br />
             <span className="text-orange-500">que te manda el camión</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-zinc-400 md:text-base">
-            Herramientas eléctricas, bulonería indexada, pinturas al agua y
-            solvente, electricidad industrial y ferretería de obra seca. Atendemos
-            comercios, constructoras y vecinos: podés chequear disponibilidad,
-            reservar materiales para el día siguiente o coordinar entrega con
-            hidráulica en horario extendido.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <button
-              type="button"
-              className="rounded-xl bg-orange-600 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-orange-600/30"
-            >
+          </>
+        }
+        lead="Herramientas eléctricas, bulonería indexada, pinturas al agua y solvente, electricidad industrial y ferretería de obra seca. Atendemos comercios, constructoras y vecinos: podés chequear disponibilidad, reservar materiales para el día siguiente o coordinar entrega con hidráulica en horario extendido."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
               Ver stock destacado
             </button>
-            <button
-              type="button"
-              className="rounded-xl border border-zinc-700 px-8 py-4 text-sm font-bold text-zinc-300"
-            >
+            <button type="button" className={art.secondaryCta}>
               Lista mayorista PDF
             </button>
-          </div>
-        </div>
-      </header>
+          </>
+        }
+      />
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Por qué elegirnos"
         title="Proveedor que entiende obra, stock y plazos"
         paragraphs={[
@@ -104,12 +113,9 @@ export function DemoFerreteriaLanding() {
               d: "Pedido armado en mécano con número de remito. Mostrador mayorista acceso lateral para camiones chicos.",
             },
           ].map(({ icon: I, t, d }) => (
-            <div
-              key={t}
-              className="rounded-2xl border border-white/10 bg-zinc-950/80 p-6"
-            >
+            <div key={t} className={`p-6 ${art.cardShell}`}>
               <I className="h-8 w-8 text-orange-500" />
-              <h3 className="mt-4 font-bold text-white">{t}</h3>
+              <h3 className={`mt-4 font-bold text-white ${h}`}>{t}</h3>
               <p className="mt-2 text-sm text-zinc-500">{d}</p>
             </div>
           ))}
@@ -125,20 +131,17 @@ export function DemoFerreteriaLanding() {
           { value: "4,8", label: "Valoración clientes", hint: "Encuestas post-venta demo" },
         ]}
         sectionClass="border-y border-white/5 bg-zinc-900/30"
-        cardClass="rounded-2xl border border-white/10 bg-zinc-950/90 p-6"
-        valueClass="text-3xl font-black text-orange-500"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-orange-500 ${h}`}
         labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-zinc-400"
         hintClass="mt-1 text-xs text-zinc-600"
       />
 
       <section className="px-4 py-20 md:px-10">
-        <h2 className="font-[family-name:var(--font-demo-bebas)] text-4xl uppercase text-white md:text-5xl">
-          Rubros del salón
-        </h2>
+        <h2 className={`${h} text-4xl uppercase text-white md:text-5xl`}>Rubros del salón</h2>
         <p className="mt-4 max-w-2xl text-sm text-zinc-500">
-          Ampliamos catálogo según temporada de construcción: en invierno más
-          impermeabilizantes y calefacción; en verano pinturas exteriores y
-          riego automático.
+          Ampliamos catálogo según temporada de construcción: en invierno más impermeabilizantes y calefacción; en
+          verano pinturas exteriores y riego automático.
         </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
@@ -149,7 +152,7 @@ export function DemoFerreteriaLanding() {
           ].map(({ icon: I, label }) => (
             <div
               key={label}
-              className="group cursor-default rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 p-6 transition-colors hover:border-orange-500/40"
+              className={`group cursor-default p-6 transition-colors hover:border-orange-500/40 ${art.cardShell}`}
             >
               <I className="h-6 w-6 text-orange-500 transition-transform group-hover:scale-110" />
               <p className="mt-4 text-sm font-bold text-white">{label}</p>
@@ -160,6 +163,7 @@ export function DemoFerreteriaLanding() {
       </section>
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Cómo comprar"
         subtitle="Flujo simple para profesionales y particulares que necesitan certeza de stock."
         steps={[
@@ -172,12 +176,13 @@ export function DemoFerreteriaLanding() {
         titleClass="text-white"
         subtitleClass="text-zinc-500"
         stepNumClass="text-orange-500"
-        cardClass="rounded-2xl border border-white/10 bg-zinc-950/70 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         stepTitleClass="font-bold text-white"
         stepDescClass="mt-2 text-sm leading-relaxed text-zinc-500"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Soluciones por tipo de cliente"
         items={[
           { title: "Constructoras y refacciones", body: "Listas maestras por obra con entregas parciales. Facturación B2B, remitos consolidados y contacto dedicado demo para urgencias de fin de semana." },
@@ -186,12 +191,13 @@ export function DemoFerreteriaLanding() {
           { title: "Instaladores matriculados", body: "Precio convenio en electricidad y sanitaria. Préstamo de burlete para pruebas de presión en obra gris (sujeto a disponibilidad demo)." },
         ]}
         titleClass="text-white"
-        cardClass="rounded-2xl border border-white/10 bg-zinc-900/50 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         itemTitleClass="font-bold text-orange-400"
         itemBodyClass="mt-2 text-sm leading-relaxed text-zinc-500"
       />
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Operación y datos"
         title="Catálogo conectado al depósito: menos promesas, más remitos limpios"
         paragraphs={[
@@ -205,6 +211,7 @@ export function DemoFerreteriaLanding() {
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Lo que dicen nuestros clientes"
         quotes={[
           { text: "Nunca más perdí una jornada esperando que me traigan bulones equivocados. El remito coincide con lo pedido.", author: "Mariano Quinteros", role: "Jefe de obra · Ampliación Norte" },
@@ -213,12 +220,13 @@ export function DemoFerreteriaLanding() {
         ]}
         sectionClass="bg-orange-950/20"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-orange-500/20 bg-zinc-950/70 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic leading-relaxed text-zinc-300"
-        authorClass="font-[family-name:var(--font-demo-montserrat)] mt-4 text-xs font-bold uppercase tracking-wider text-orange-400/80"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-orange-400/80"
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="Preguntas frecuentes"
         items={[
           { q: "¿Trabajan con cuenta corriente y orden de compra?", a: "Sí para clientes con línea aprobada demo: enviás OC firmada y coordinamos entrega contra remito. El circuito exacto se define con tu comercial asignado." },
@@ -236,15 +244,11 @@ export function DemoFerreteriaLanding() {
       <section className="bg-gradient-to-r from-orange-600 to-orange-800 px-4 py-16 md:px-10">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-8 md:flex-row">
           <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-orange-100/90">
-              Mesa de ayuda técnica
-            </p>
-            <p className="mt-2 font-[family-name:var(--font-demo-bebas)] text-4xl uppercase text-white">
-              ¿Pedido grande o urgencia?
-            </p>
+            <p className="text-sm font-bold uppercase tracking-widest text-orange-100/90">Mesa de ayuda técnica</p>
+            <p className={`mt-2 text-4xl uppercase text-white ${h}`}>¿Pedido grande o urgencia?</p>
             <p className="mt-2 max-w-md text-sm text-orange-100/80">
-              Dejanos número de obra y lista preliminar: un vendedor te confirma
-              ventanas de entrega y alternativas de marca equivalente.
+              Dejanos número de obra y lista preliminar: un vendedor te confirma ventanas de entrega y alternativas
+              de marca equivalente.
             </p>
           </div>
           <button
@@ -258,32 +262,21 @@ export function DemoFerreteriaLanding() {
       </section>
 
       <DemoEnhancements
-        slug="ferreteria"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Ferretería del Oeste"
         shopCardClass="border border-orange-500/25 bg-zinc-950/90"
         shopAccentClass="bg-orange-600 font-bold text-white"
         sectionClass="border-y border-orange-500/20 bg-zinc-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-orange-500/20 bg-zinc-950/80 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-zinc-300"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-orange-400"
         extraTestimonialsTitle="Más testimonios verificados"
         extraTestimonials={[
-          {
-            text: "El catálogo online ordenó las compras de obra: menos idas en vano al local.",
-            author: "Ing. Correa",
-            role: "Loteo Lomas demo",
-          },
-          {
-            text: "Me dejaron lista curada con recambios de marcas cuando no había Milwaukee.",
-            author: "Taller 8",
-            role: "Metalúrgica",
-          },
-          {
-            text: "Mostrador mayorista me carga el camión sin hacer fila con chicos.",
-            author: "Román",
-            role: "Gasista matriculado",
-          },
+          { text: "El catálogo online ordenó las compras de obra: menos idas en vano al local.", author: "Ing. Correa", role: "Loteo Lomas demo" },
+          { text: "Me dejaron lista curada con recambios de marcas cuando no había Milwaukee.", author: "Taller 8", role: "Metalúrgica" },
+          { text: "Mostrador mayorista me carga el camión sin hacer fila con chicos.", author: "Román", role: "Gasista matriculado" },
         ]}
       />
 

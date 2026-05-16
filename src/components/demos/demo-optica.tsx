@@ -1,4 +1,10 @@
 import { Eye, Glasses, HeartPulse, Scan, Volume2 } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,35 +14,59 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "optica" as const;
 
 export function DemoOpticaLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-slate-950 font-[family-name:var(--font-demo-montserrat)] text-sky-50">
-      <nav className="flex items-center justify-between border-b border-sky-500/30 px-4 py-4 md:px-10">
-        <span className="flex items-center gap-2 font-bold text-white">
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
+      <nav className="flex items-center justify-between px-4 py-4 md:px-10">
+        <span className={`flex items-center gap-2 font-bold text-white ${h}`}>
           <Glasses className="h-7 w-7 text-sky-400" />
           Visión Clara
         </span>
-        <button type="button" className="rounded-full bg-sky-500 px-5 py-2 text-xs font-bold text-slate-950">
+        <button type="button" className={art.primaryCta}>
           Turno online
         </button>
       </nav>
+      <div className="mx-4 h-px bg-gradient-to-r from-transparent via-sky-500/50 to-transparent md:mx-10" />
 
-      <header className="px-4 pb-14 pt-14 md:px-10 md:pt-20">
-        <h1 className="font-[family-name:var(--font-demo-playfair)] text-4xl font-medium leading-tight text-white md:text-6xl">
-          Salud visual y auditiva en{" "}
-          <span className="text-sky-400">un mismo lugar</span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-sky-100/70 md:text-base">
-          Examen optométrico computerizado, adaptación de lentes progresivos
-          digitales demo, lentes de contacto especializados y gabinete de
-          baja visión. Audiometría en cabina insonorizada y audífonos con
-          Bluetooth rechargeable. Stock de armazones de diseñador y línea
-          económica con garantía de adaptación 30 días.
-        </p>
-      </header>
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-sky-100/70"
+        kicker={
+          <p className={`flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-sky-400 ${h}`}>
+            <Eye className="h-4 w-4" /> Optometría · audición · obras sociales
+          </p>
+        }
+        title={
+          <>
+            Salud visual y auditiva en <span className="text-sky-400">un mismo lugar</span>
+          </>
+        }
+        lead="Examen optométrico computerizado, adaptación de lentes progresivos digitales demo, lentes de contacto especializados y gabinete de baja visión. Audiometría en cabina insonorizada y audífonos con Bluetooth rechargeable. Stock de armazones de diseñador y línea económica con garantía de adaptación 30 días."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Reservar examen
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              Ver armazones
+            </button>
+          </>
+        }
+      />
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Cuidado integral"
         title="Protocolos clínicos y taller de montaje en el local"
         paragraphs={[
@@ -56,9 +86,9 @@ export function DemoOpticaLanding() {
           { icon: Volume2, t: "Audio", d: "Programación fina por audiólogo matriculado." },
           { icon: HeartPulse, t: "Obras sociales", d: "Autorizaciones online y facturación directa demo." },
         ].map(({ icon: I, t, d }) => (
-          <div key={t} className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5">
+          <div key={t} className={`p-5 ${art.cardShell}`}>
             <I className="h-6 w-6 text-sky-400" />
-            <p className="mt-2 font-bold">{t}</p>
+            <p className={`mt-2 font-bold text-white ${h}`}>{t}</p>
             <p className="mt-1 text-xs text-sky-200/60">{d}</p>
           </div>
         ))}
@@ -71,10 +101,13 @@ export function DemoOpticaLanding() {
           { value: "4.9", label: "NPS", hint: "Último trimestre" },
           { value: "12", label: "Laboratorios", hint: "Prioridad surtido" },
         ]}
-        valueClass="text-3xl font-black text-sky-400"
+        valueClass={`text-3xl font-black text-sky-400 ${h}`}
+        cardClass={`p-6 ${art.cardShell}`}
+        sectionClass="border-y border-slate-800 bg-slate-900/30"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Tu primer visita"
         steps={[
           { n: "01", t: "Recepción", d: "Carga de obra social y antecedentes oculares." },
@@ -83,9 +116,14 @@ export function DemoOpticaLanding() {
           { n: "04", t: "Entrega", d: "Ajuste biomecánico y educación de limpieza de lentes." },
         ]}
         stepNumClass="text-sky-400"
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-sky-200/70"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Soluciones"
         items={[
           { title: "Miodesopsias", body: "Educación paciente y seguimiento; derivación a retinólogo de red si corresponde demo." },
@@ -96,19 +134,28 @@ export function DemoOpticaLanding() {
           { title: "Niños", body: "Control cada 6 meses, filtros para recreo y lentes fotochromáticos." },
           { title: "Audífonos", body: "Préstamos demo 15 días y app de afinado remoto." },
         ]}
-        itemTitleClass="text-sky-300"
+        itemTitleClass="font-bold text-sky-300"
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        itemBodyClass="mt-2 text-sm text-sky-100/80"
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Pacientes"
         quotes={[
           { text: "Por fin entendí por qué los progresivos anteriores me mareaban.", author: "Laura Q.", role: "Contadora" },
           { text: "Me aprobaron la orden de obras sociales en el acto.", author: "Seba Pérez", role: "Jubilado demo" },
           { text: "El audífono con Bluetooth cambió mis reuniones.", author: "Ing. Roldán", role: "Tech" },
         ]}
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        quoteClass="text-sm italic text-sky-100/88"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400"
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ"
         items={[
           { q: "¿Traigo receta?", a: "Sí, o realizamos examen completo si está vencida." },
@@ -116,16 +163,20 @@ export function DemoOpticaLanding() {
           { q: "¿Turnos urgentes?", a: "Guardia visión los sábados AM en sucursal cabecera demo." },
           { q: "¿Garantía?", a: "Antirreflejo 12 meses contra decapado por defecto de fabricación." },
         ]}
+        titleClass="text-white"
+        qClass="font-bold text-slate-200"
+        aClass="mt-2 text-sm text-sky-200/75"
       />
 
       <DemoEnhancements
-        slug="optica"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Visión Clara"
         shopCardClass="border border-sky-500/30 bg-slate-900/65"
         shopAccentClass="bg-sky-500 font-bold text-slate-950"
         sectionClass="border-y border-sky-900/35 bg-slate-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-900/55 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-sky-100/88"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400"
         extraTestimonialsTitle="Pacientes"
@@ -136,9 +187,7 @@ export function DemoOpticaLanding() {
         ]}
       />
 
-      <footer className="py-10 text-center text-xs text-slate-700">
-        Demo · MadsJeez Design
-      </footer>
+      <footer className="py-10 text-center text-xs text-slate-700">Demo · MadsJeez Design</footer>
     </div>
   );
 }

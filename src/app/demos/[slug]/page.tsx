@@ -2,7 +2,6 @@ import type { ComponentType } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDemoBySlug, DEMO_SLUGS } from "@/lib/demos-registry";
-import { getDemoVisuals } from "@/lib/demo-assets";
 import { getShowcaseMeta } from "@/lib/demos-showcase-meta";
 import { site } from "@/lib/data";
 import { DemoSlugPageShell } from "@/components/demos/demo-slug-page-shell";
@@ -82,14 +81,12 @@ export default async function DemoPage({
   const d = getDemoBySlug(slug);
   if (!d) notFound();
   const showcase = getShowcaseMeta(slug);
-  const cover = getDemoVisuals(slug).cover;
 
   return (
     <DemoSlugPageShell
       industry={d.industry}
       title={d.title}
       tagline={d.tagline}
-      coverSrc={cover}
       showcase={showcase}
     >
       <Demo />

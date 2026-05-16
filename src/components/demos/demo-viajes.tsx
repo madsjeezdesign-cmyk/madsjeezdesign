@@ -1,4 +1,10 @@
 import { Compass, Globe, Luggage, Plane, Ship } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,36 +14,60 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "viajes" as const;
 
 export function DemoViajesLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-teal-950 font-[family-name:var(--font-demo-montserrat)] text-teal-50">
-      <nav className="flex items-center justify-between border-b border-teal-500/30 px-4 py-4 md:px-10">
-        <span className="flex items-center gap-2 font-bold text-white">
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
+      <nav className="flex items-center justify-between px-4 py-4 md:px-10">
+        <span className={`flex items-center gap-2 font-bold text-white ${h}`}>
           <Globe className="h-6 w-6 text-teal-400" />
           Atlas Experiencias
         </span>
-        <button type="button" className="rounded-full bg-teal-500 px-5 py-2 text-xs font-bold text-teal-950">
+        <button type="button" className={art.primaryCta}>
           Planificar viaje
         </button>
       </nav>
 
-      <header className="px-4 pb-14 pt-14 md:px-10 md:pt-20">
-        <h1 className="font-[family-name:var(--font-demo-bebas)] text-6xl uppercase text-white md:text-8xl">
-          Viajes
-          <br />
-          <span className="text-teal-400">a tu medida</span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-sm text-teal-200/80 md:text-base">
-          Aéreos consolidados, cruceros con bebidas premium, circuitos en Europa
-          y escapes domestic premium demo. Armamos itinerarios con buffers de
-          tiempo, seguro asistencial con cobertura COVID legacy y soporte
-          WhatsApp en destino 12/7. Eventos corporativos e incentivos con ROI
-          medible.
-        </p>
-      </header>
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-teal-200/80"
+        kicker={
+          <p className={`flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-teal-400 ${h}`}>
+            <Plane className="h-4 w-4" /> IATA · cruceros · MICE
+          </p>
+        }
+        title={
+          <>
+            Viajes
+            <br />
+            <span className="text-teal-400">a tu medida</span>
+          </>
+        }
+        lead="Aéreos consolidados, cruceros con bebidas premium, circuitos en Europa y escapes domestic premium demo. Armamos itinerarios con buffers de tiempo, seguro asistencial con cobertura COVID legacy y soporte WhatsApp en destino 12/7. Eventos corporativos e incentivos con ROI medible."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Cotizar itinerario
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              Newsletter rutas
+            </button>
+          </>
+        }
+      />
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Consultoras certificadas"
         title="Menos improvisación en conexiones y visas"
         paragraphs={[
@@ -56,9 +86,9 @@ export function DemoViajesLanding() {
           { icon: Luggage, t: "Micromovilidad", d: "Transfers VIP y maleteros hotel." },
           { icon: Compass, t: "Terrestre", d: "Tren Eurail y autos con exceso cero demo." },
         ].map(({ icon: I, t, d }) => (
-          <div key={t} className="rounded-2xl border border-teal-600/30 bg-teal-900/40 p-5">
+          <div key={t} className={`p-5 ${art.cardShell}`}>
             <I className="h-6 w-6 text-teal-400" />
-            <p className="mt-2 font-bold">{t}</p>
+            <p className={`mt-2 font-bold text-white ${h}`}>{t}</p>
             <p className="mt-1 text-xs text-teal-200/65">{d}</p>
           </div>
         ))}
@@ -71,10 +101,13 @@ export function DemoViajesLanding() {
           { value: "42", label: "Destinos top", hint: "Circuitos armados" },
           { value: "97%", label: "Recompra", hint: "Encuesta 2025 demo" },
         ]}
-        valueClass="text-3xl font-black text-teal-400"
+        valueClass={`text-3xl font-black text-teal-400 ${h}`}
+        cardClass={`p-6 ${art.cardShell}`}
+        sectionClass="border-y border-teal-800/40 bg-teal-950/30"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Cómo cotizamos"
         steps={[
           { n: "01", t: "Brief", d: "Fechas flexibles, presupuesto holgado y restricciones dietéticas." },
@@ -83,9 +116,14 @@ export function DemoViajesLanding() {
           { n: "04", t: "Pre viaje", d: "Checklist documentación y alertas de huelgas aéreas demo." },
         ]}
         stepNumClass="text-teal-400"
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-teal-200/70"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Productos"
         items={[
           { title: "Luna de miel", body: "Islas + ciudad con upgrade habitación y cena aniversario gestionada." },
@@ -93,19 +131,28 @@ export function DemoViajesLanding() {
           { title: "Educational", body: "Grupos escolares con seguro colectivo y acompañante docente gratis 15+ pax." },
           { title: "Slow travel", body: "Tren + bicicleta eléctrica con logística de equipaje día a día." },
         ]}
-        itemTitleClass="text-teal-300"
+        itemTitleClass="font-bold text-teal-300"
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        itemBodyClass="mt-2 text-sm text-teal-100/80"
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Historias"
         quotes={[
           { text: "Cuando cancelling el vuelo, nos reacomodaron en 40 minutos desde WhatsApp.", author: "Pato y Lu", role: "Honey moon demo" },
           { text: "El crucero quedó igual que el PDF pero con camarote mejor por overbooking línea.", author: "Grupo Rivas", role: "Familia" },
-          { text: "Factura empresa sin drama.", author: " CFO SteelBlue", role: "Corporativo" },
+          { text: "Factura empresa sin drama.", author: "CFO SteelBlue", role: "Corporativo" },
         ]}
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        quoteClass="text-sm italic text-teal-100/88"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-teal-400"
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ"
         items={[
           { q: "¿Cobran fee de servicio?", a: "Transparente en cotización; comparás contra emisión directa si querés." },
@@ -113,16 +160,20 @@ export function DemoViajesLanding() {
           { q: "¿COVID?", a: "Restricciones según fuente oficial actualizada semanalmente demo." },
           { q: "¿Grupos?", a: "Negociación naming rights en micros privados según disponibilidad." },
         ]}
+        titleClass="text-white"
+        qClass="font-bold text-teal-100"
+        aClass="mt-2 text-sm text-teal-200/75"
       />
 
       <DemoEnhancements
-        slug="viajes"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Atlas Experiencias"
         shopCardClass="border border-teal-600/35 bg-teal-950/50"
         shopAccentClass="bg-teal-500 font-bold text-teal-950"
         sectionClass="border-y border-teal-800/35 bg-teal-950/80"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-teal-800/40 bg-teal-900/40 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-teal-100/88"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-teal-400"
         extraTestimonialsTitle="Viajeros"

@@ -1,4 +1,10 @@
 import { Building2, KeyRound, Landmark, MapPin } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,59 +14,76 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "inmobiliaria" as const;
 
 export function DemoInmobiliariaLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-slate-950 font-[family-name:var(--font-demo-montserrat)] text-slate-100">
-      <nav className="flex items-center justify-between border-b border-amber-900/30 px-6 py-5 md:px-14">
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
+      <nav className="flex flex-col gap-3 border-b border-amber-900/30 px-6 py-4 md:flex-row md:items-center md:justify-between md:px-14">
         <div className="flex items-center gap-3">
           <Landmark className="h-7 w-7 text-amber-500" />
-          <span className="text-sm font-light tracking-[0.3em] uppercase text-amber-100/90">
-            Horizonte
-          </span>
+          <span className={`text-xs tracking-[0.35em] text-amber-100/90 ${h}`}>HORIZONTE</span>
         </div>
-        <button
-          type="button"
-          className="border border-amber-600/50 px-6 py-2 text-xs font-semibold uppercase tracking-widest text-amber-200"
-        >
-          Tasación
-        </button>
+        <div className="flex items-center gap-4">
+          <span className="hidden text-[10px] uppercase tracking-widest text-slate-500 md:inline">Norte · boutique</span>
+          <button type="button" className={art.secondaryCta}>
+            Tasación
+          </button>
+        </div>
       </nav>
 
-      <header className="relative px-6 pb-20 pt-12 md:px-14 md:pt-20">
-        <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-amber-600/40 to-transparent" />
-        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-amber-600">
-          Propiedades premium
-        </p>
-        <h1 className="mt-6 max-w-3xl font-[family-name:var(--font-demo-playfair)] text-4xl font-medium leading-tight text-white md:text-6xl">
-          Espacios que marcan{" "}
-          <span className="text-amber-400">distinción</span>
-        </h1>
-        <p className="mt-6 max-w-xl text-sm leading-relaxed text-slate-400">
-          Portfolio curado en zona norte y proyectos llave en mano. Acompañamiento
-          legal y financiero con socios de confianza.
-        </p>
-        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-slate-400"
+        kicker={
+          <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-amber-600">Propiedades premium</p>
+        }
+        title={
+          <>
+            Espacios que marcan{" "}
+            <span className="text-amber-400">distinción</span>
+          </>
+        }
+        lead="Portfolio curado en zona norte y proyectos llave en mano. Acompañamiento legal y financiero con socios de confianza."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Ver portfolio
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              Newsletter inversores
+            </button>
+          </>
+        }
+      />
+
+      <section className="px-6 py-12 md:px-14">
+        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
           {[
             { label: "En venta", n: "24", icon: Building2 },
             { label: "En alquiler", n: "11", icon: KeyRound },
             { label: "USD / ARS", n: "Flexible", icon: MapPin },
           ].map(({ label, n, icon: I }) => (
-            <div
-              key={label}
-              className="border border-slate-800 bg-slate-900/50 p-5 transition-colors hover:border-amber-700/30"
-            >
+            <div key={label} className={`p-5 transition-colors hover:border-amber-700/40 ${art.cardShell}`}>
               <I className="h-5 w-5 text-amber-600" />
-              <p className="mt-3 text-2xl font-light text-white">{n}</p>
-              <p className="text-[10px] uppercase tracking-wider text-slate-500">
-                {label}
-              </p>
+              <p className={`mt-3 text-2xl font-light text-white ${h}`}>{n}</p>
+              <p className="text-[10px] uppercase tracking-wider text-slate-500">{label}</p>
             </div>
           ))}
         </div>
-      </header>
+      </section>
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Curaduría"
         title="Ficha limpia o no publicamos: tiempo perdido es reputación perdida"
         paragraphs={[
@@ -81,13 +104,14 @@ export function DemoInmobiliariaLanding() {
           { value: "6", label: "Asesores senior", hint: "Zona norte" },
         ]}
         sectionClass="border-y border-slate-800 bg-slate-950"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"
-        valueClass="text-3xl font-black text-amber-400"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-amber-400 ${h}`}
         labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-slate-500"
         hintClass="mt-1 text-xs text-slate-600"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Vender con nosotros"
         subtitle="Comisión progresiva si el precio acordado se respeta 60 días."
         steps={[
@@ -100,16 +124,17 @@ export function DemoInmobiliariaLanding() {
         titleClass="text-white"
         subtitleClass="text-slate-500"
         stepNumClass="text-amber-500"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-950/80 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         stepTitleClass="font-bold text-white"
         stepDescClass="mt-2 text-sm text-slate-400"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Verticales"
         sectionClass="bg-slate-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         itemTitleClass="font-bold text-amber-400"
         itemBodyClass="mt-2 text-sm text-slate-400"
         items={[
@@ -121,10 +146,11 @@ export function DemoInmobiliariaLanding() {
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Clientes"
         sectionClass="border-y border-slate-800 bg-slate-900/30"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-950/60 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-slate-300"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-500"
         quotes={[
@@ -135,8 +161,9 @@ export function DemoInmobiliariaLanding() {
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ"
-        sectionClass="bg-slate-950 border-t border-slate-800"
+        sectionClass="border-t border-slate-800 bg-slate-950"
         titleClass="text-white"
         qClass="font-bold text-slate-200"
         aClass="mt-2 text-sm text-slate-500"
@@ -152,41 +179,29 @@ export function DemoInmobiliariaLanding() {
       <section className="grid md:grid-cols-2">
         <div className="flex min-h-[360px] flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-900/80 to-slate-800 p-8 md:p-12">
           <p className="text-xs text-amber-600">Destacado demo</p>
-          <h2 className="mt-2 font-[family-name:var(--font-demo-playfair)] text-3xl text-white">
-            Penthouse con terraza · 320 m²
-          </h2>
+          <h2 className={`mt-2 text-3xl text-white ${h}`}>Penthouse con terraza · 320 m²</h2>
           <p className="mt-2 text-sm text-slate-500">Cocheras · sum · norte libre</p>
         </div>
         <div className="border-t border-slate-800 p-8 md:border-l md:border-t-0 md:p-12">
-          <h3 className="text-xs font-semibold uppercase tracking-widest text-amber-600">
-            Por qué elegirnos
-          </h3>
+          <h3 className={`text-xs font-semibold uppercase tracking-widest text-amber-600 ${h}`}>Por qué elegirnos</h3>
           <ul className="mt-8 space-y-6 text-sm text-slate-400">
-            <li className="border-l border-amber-600/50 pl-4">
-              Fotografía profesional y tour 360° en cada publicación.
-            </li>
-            <li className="border-l border-amber-600/50 pl-4">
-              Ficha técnica con escritura y consorcio verificados.
-            </li>
-            <li className="border-l border-amber-600/50 pl-4">
-              Newsletter mensual solo para inversores calificados.
-            </li>
+            <li className="border-l border-amber-600/50 pl-4">Fotografía profesional y tour 360° en cada publicación.</li>
+            <li className="border-l border-amber-600/50 pl-4">Ficha técnica con escritura y consorcio verificados.</li>
+            <li className="border-l border-amber-600/50 pl-4">Newsletter mensual solo para inversores calificados.</li>
           </ul>
-          <button
-            type="button"
-            className="mt-10 w-full bg-amber-600 py-4 text-sm font-bold uppercase tracking-wider text-slate-950"
-          >
+          <button type="button" className={`mt-10 w-full ${art.primaryCta}`}>
             Agendar visita privada
           </button>
         </div>
       </section>
 
       <DemoEnhancements
-        slug="inmobiliaria"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Horizonte Propiedades"
         sectionClass="border-y border-slate-800 bg-slate-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-slate-300"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-500"
         extraTestimonialsTitle="Compradores y vendedores"

@@ -1,4 +1,10 @@
 import { Dumbbell, Flame, Trophy, Zap } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,63 +14,87 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "gimnasio" as const;
 
 export function DemoGimnasioLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-black font-[family-name:var(--font-demo-montserrat)] text-lime-50">
-      <nav className="flex items-center justify-between border-b border-lime-500/20 px-4 py-4 md:px-10">
-        <span className="font-[family-name:var(--font-demo-bebas)] text-3xl tracking-wider text-lime-400">
-          PULSE
-        </span>
-        <button
-          type="button"
-          className="bg-lime-400 px-6 py-2 text-xs font-black uppercase tracking-wider text-black"
-        >
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
+      <nav className="flex items-center justify-between gap-4 border-b-8 border-double border-lime-500/35 px-5 py-4 md:px-12">
+        <span className={`${h} text-2xl tracking-tighter text-lime-400 md:text-3xl`}>PULSE</span>
+        <div className="hidden flex-1 justify-center gap-8 md:flex">
+          {["WOD", "Open gym", "Hyrox"].map((l) => (
+            <span key={l} className="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-600">
+              {l}
+            </span>
+          ))}
+        </div>
+        <button type="button" className={art.primaryCta}>
           Prueba gratis
         </button>
       </nav>
 
-      <header className="relative px-4 py-16 md:px-10 md:py-24">
-        <div className="pointer-events-none absolute left-4 top-20 h-64 w-64 skew-x-12 border-4 border-lime-500/20 md:block" />
-        <div className="relative mx-auto max-w-4xl">
-          <p className="font-[family-name:var(--font-jetbrains)] text-[10px] font-bold uppercase tracking-[0.4em] text-lime-500">
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-zinc-400"
+        kicker={
+          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-lime-500">
             Cross · Hyrox · Funcional
           </p>
-          <h1 className="mt-4 font-[family-name:var(--font-demo-bebas)] text-6xl uppercase leading-[0.9] tracking-wide text-white md:text-9xl">
+        }
+        title={
+          <>
             Rompé
             <br />
-            tu récord
-          </h1>
-          <p className="mt-8 max-w-2xl text-sm font-medium leading-relaxed text-zinc-400 md:text-base">
+            <span className="text-lime-400">tu récord</span>
+          </>
+        }
+        lead={
+          <>
             Clases 05:30 a 22:00 con cupos controlados por calidad de coaching. Sala de pesas con plataformas
-            certificadas, cinta curve, SkiErg y zona de accesorios. App propia para reservar WOD, registrar
-            RM y ver micro-videos de técnica antes de la clase. Hidratación con electrolitos en dispenser y
-            café de filtro para el post sin costo en plan full. Si venís de otro box, te hacemos onboarding en
-            dos sesiones para alinear escalas y movimientos olímpicos.
-          </p>
-          <div className="mt-10 grid grid-cols-3 gap-2 sm:max-w-lg">
-            {[
-              { n: "24", l: "clases / semana" },
-              { n: "400m²", l: "sala + peso" },
-              { n: "12", l: "máquinas cardio" },
-            ].map((s) => (
-              <div key={s.l} className="border border-lime-500/30 bg-lime-500/5 p-4">
-                <p className="font-[family-name:var(--font-demo-bebas)] text-2xl text-lime-400">
-                  {s.n}
-                </p>
-                <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-600">
-                  {s.l}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </header>
+            certificadas, cinta curve, SkiErg y zona de accesorios. App propia para reservar WOD, registrar RM y ver
+            micro-videos de técnica antes de la clase. Hidratación con electrolitos en dispenser y café de filtro para
+            el post sin costo en plan full. Si venís de otro box, te hacemos onboarding en dos sesiones para alinear
+            escalas y movimientos olímpicos.
+          </>
+        }
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Reservar clase
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              Ver horarios
+            </button>
+          </>
+        }
+      />
 
-      <section className="bg-zinc-950 px-4 py-16 md:px-10">
-        <h2 className="font-[family-name:var(--font-demo-bebas)] text-4xl uppercase text-white md:text-5xl">
-          Planes demo
-        </h2>
+      <section className="px-5 py-12 md:px-12">
+        <div className="mx-auto grid max-w-4xl gap-3 sm:max-w-lg sm:grid-cols-3 md:max-w-4xl">
+          {[
+            { n: "24", l: "clases / semana" },
+            { n: "400m²", l: "sala + peso" },
+            { n: "12", l: "máquinas cardio" },
+          ].map((s) => (
+            <div key={s.l} className={`border border-lime-500/25 p-4 ${art.cardShell}`}>
+              <p className={`${h} text-2xl text-lime-400`}>{s.n}</p>
+              <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-zinc-500">{s.l}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-zinc-950 px-5 py-16 md:px-12">
+        <h2 className={`${h} text-4xl uppercase text-white md:text-5xl`}>Planes demo</h2>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {[
             {
@@ -86,10 +116,8 @@ export function DemoGimnasioLanding() {
           ].map((p) => (
             <div
               key={p.name}
-              className={`relative border p-6 ${
-                p.hot
-                  ? "border-lime-400 bg-lime-400/10"
-                  : "border-zinc-800 bg-black"
+              className={`relative p-6 ${art.cardShell} ${
+                p.hot ? "ring-2 ring-lime-400/50" : ""
               }`}
             >
               {p.hot && (
@@ -98,9 +126,7 @@ export function DemoGimnasioLanding() {
                 </span>
               )}
               <Dumbbell className="h-6 w-6 text-lime-400" />
-              <p className="mt-4 font-[family-name:var(--font-demo-bebas)] text-2xl uppercase">
-                {p.name}
-              </p>
+              <p className={`mt-4 text-2xl uppercase text-white ${h}`}>{p.name}</p>
               <p className="mt-2 text-2xl font-black text-lime-400">{p.price}</p>
               <ul className="mt-4 space-y-2">
                 {p.feats.map((f) => (
@@ -115,6 +141,7 @@ export function DemoGimnasioLanding() {
       </section>
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Entrenamiento inteligente"
         title="No solo sudor: periodización que respeta tu sueño y tu agenda laboral"
         paragraphs={[
@@ -135,13 +162,14 @@ export function DemoGimnasioLanding() {
           { value: "4:30", label: "Primer WOD", hint: "Turno madrugadores" },
         ]}
         sectionClass="border-y border-lime-500/20 bg-zinc-950"
-        cardClass="rounded-2xl border border-zinc-800 bg-black/50 p-6"
-        valueClass="text-3xl font-black text-lime-400"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-lime-400 ${h}`}
         labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-zinc-500"
         hintClass="mt-1 text-xs text-zinc-600"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Onboarding"
         subtitle="Todos pasan por assessment inicial aunque vengas avanzado: queremos baselines reales."
         steps={[
@@ -154,16 +182,17 @@ export function DemoGimnasioLanding() {
         titleClass="text-white"
         subtitleClass="text-zinc-500"
         stepNumClass="text-lime-400"
-        cardClass="rounded-2xl border border-zinc-800 bg-black/40 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         stepTitleClass="font-bold text-white"
         stepDescClass="mt-2 text-sm text-zinc-500"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Programas especiales"
         sectionClass="bg-black"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         itemTitleClass="font-bold text-lime-300"
         itemBodyClass="mt-2 text-sm text-zinc-500"
         items={[
@@ -175,6 +204,7 @@ export function DemoGimnasioLanding() {
       />
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Salud y performance"
         title="Medimos descanso, no solo kilos: adhesión real con semanas de descompresión"
         paragraphs={[
@@ -185,14 +215,15 @@ export function DemoGimnasioLanding() {
         kickerClass="text-lime-500"
         titleClass="text-white"
         pClass="mt-4 text-sm leading-relaxed text-zinc-500"
-        sectionClass="bg-zinc-950 border-y border-zinc-800"
+        sectionClass="border-y border-zinc-800 bg-zinc-950"
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Atletas"
-        sectionClass="bg-zinc-950 border-y border-zinc-800"
+        sectionClass="border-y border-zinc-800 bg-zinc-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-zinc-800 bg-black/50 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-zinc-300"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-lime-400"
         quotes={[
@@ -203,6 +234,7 @@ export function DemoGimnasioLanding() {
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ"
         sectionClass="bg-black"
         titleClass="text-white"
@@ -217,20 +249,21 @@ export function DemoGimnasioLanding() {
         ]}
       />
 
-      <section className="flex items-center justify-center gap-4 border-t border-lime-500/20 px-4 py-14 md:gap-10">
+      <section className="flex items-center justify-center gap-4 border-t border-lime-500/20 px-5 py-14 md:gap-10">
         <Flame className="h-8 w-8 text-orange-500" />
         <Zap className="h-8 w-8 text-lime-400" />
         <Trophy className="h-8 w-8 text-amber-400" />
       </section>
 
       <DemoEnhancements
-        slug="gimnasio"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Pulse Cross"
         shopCardClass="border border-lime-500/25 bg-black/80"
         shopAccentClass="bg-lime-400 font-black text-black"
         sectionClass="border-y border-lime-500/15 bg-zinc-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-zinc-800 bg-black/60 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-zinc-300"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-lime-400"
         extraTestimonialsTitle="Comunidad Pulse"

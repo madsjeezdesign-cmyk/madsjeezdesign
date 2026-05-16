@@ -1,4 +1,10 @@
 import { Heart, Leaf, Sparkles, Sun, Wind } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,62 +14,62 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "estetica" as const;
 
 export function DemoEsteticaLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-[#faf7f2] font-[family-name:var(--font-demo-montserrat)] text-stone-800">
-      <nav className="flex items-center justify-between px-6 py-6 md:px-14">
-        <span className="font-[family-name:var(--font-demo-playfair)] text-2xl tracking-tight text-stone-900">
-          Aura<span className="text-amber-700">.</span>
-        </span>
-        <button
-          type="button"
-          className="rounded-full border border-stone-300 bg-white px-6 py-2 text-xs font-bold uppercase tracking-widest text-stone-700"
-        >
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
+      <nav className="flex flex-row-reverse items-center justify-between gap-4 px-6 py-5 md:px-14">
+        <button type="button" className={art.primaryCta}>
           Reservar turno
         </button>
+        <span className={`${h} text-2xl tracking-tight text-stone-900`}>
+          Aura<span className="text-amber-700">.</span>
+        </span>
       </nav>
 
-      <header className="relative px-6 pb-20 pt-4 md:px-14">
-        <div className="mx-auto max-w-3xl text-center">
-          <Sparkles className="mx-auto h-6 w-6 text-amber-600" />
-          <h1 className="mt-6 font-[family-name:var(--font-demo-playfair)] text-4xl font-medium leading-tight text-stone-900 md:text-6xl">
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-stone-900"
+        leadColorClass="text-stone-600"
+        kicker={
+          <div className="flex justify-center">
+            <Sparkles className="h-6 w-6 text-amber-600" />
+          </div>
+        }
+        title={
+          <>
             Belleza calmada,
             <br />
             <span className="italic text-stone-600">resultados reales</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-stone-600 md:text-base">
-            Tratamientos faciales con escalada de activos, coloración vegana con diagnóstico de porosidad y
-            masajes con aromaterapia de grado terapéutico. Espacio boutique con sólo tres cabinas insonorizadas,
-            playlist binaural opcional y temperatura regulada por estación. Agenda con buffer de 15 min entre
-            turnos para que nunca te sientas apurada. Membresía facial trimestral con check-in fotográfico
-            privado y recordatorios de reaplicación de SPF.
-          </p>
+          </>
+        }
+        lead="Tratamientos faciales con escalada de activos, coloración vegana con diagnóstico de porosidad y masajes con aromaterapia de grado terapéutico. Espacio boutique con sólo tres cabinas insonorizadas, playlist binaural opcional y temperatura regulada por estación."
+      />
+
+      <section className="px-6 pb-20 md:px-14">
+        <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3">
+          {["Facial glow", "Color & balayage", "Masaje ayurvédico"].map((title, i) => (
+            <div key={title} className={`relative overflow-hidden p-8 text-left ${art.cardShell}`}>
+              <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-amber-200/40 blur-2xl" />
+              <p className="text-[10px] font-bold uppercase tracking-widest text-amber-800/80">Tratamiento 0{i + 1}</p>
+              <p className={`mt-3 text-xl text-stone-900 ${h}`}>{title}</p>
+              <p className="mt-2 text-xs text-stone-600">Sesión demo 60 min · incluye infusión</p>
+            </div>
+          ))}
         </div>
-        <div className="mx-auto mt-14 grid max-w-5xl gap-4 md:grid-cols-3">
-          {["Facial glow", "Color & balayage", "Masaje ayurvédico"].map(
-            (title, i) => (
-              <div
-                key={title}
-                className="relative overflow-hidden rounded-2xl bg-stone-200/60 p-8 text-left"
-              >
-                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-amber-200/40 blur-2xl" />
-                <p className="text-[10px] font-bold uppercase tracking-widest text-amber-800/80">
-                  Tratamiento 0{i + 1}
-                </p>
-                <p className="mt-3 font-[family-name:var(--font-demo-playfair)] text-xl text-stone-900">
-                  {title}
-                </p>
-                <p className="mt-2 text-xs text-stone-600">
-                  Sesión demo 60 min · incluye infusión
-                </p>
-              </div>
-            ),
-          )}
-        </div>
-      </header>
+      </section>
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Experiencia sensorial"
         title="Cabinas amplias, aire limpio y narrativa clara en cada sesión"
         paragraphs={[
@@ -79,12 +85,9 @@ export function DemoEsteticaLanding() {
       <section className="bg-stone-900 px-6 py-16 text-stone-100 md:px-14">
         <div className="mx-auto grid max-w-4xl items-center gap-10 md:grid-cols-2">
           <div>
-            <h2 className="font-[family-name:var(--font-demo-playfair)] text-3xl md:text-4xl">
-              Protocolos con luz LED y productos cruelty-free
-            </h2>
+            <h2 className={`text-3xl md:text-4xl ${h}`}>Protocolos con luz LED y productos cruelty-free</h2>
             <p className="mt-4 text-sm leading-relaxed text-stone-400">
-              Evaluación gratuita de piel en primera visita. Armamos un plan
-              mensual sin presión de paquetes eternos.
+              Evaluación gratuita de piel en primera visita. Armamos un plan mensual sin presión de paquetes eternos.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -94,10 +97,7 @@ export function DemoEsteticaLanding() {
               { icon: Leaf, l: "Extractos botánicos" },
               { icon: Heart, l: "Bienestar" },
             ].map(({ icon: I, l }) => (
-              <div
-                key={l}
-                className="rounded-xl border border-stone-700 bg-stone-800/50 p-4"
-              >
+              <div key={l} className="rounded-xl border border-stone-700 bg-stone-800/50 p-4">
                 <I className="h-5 w-5 text-amber-500" />
                 <p className="mt-2 text-xs font-bold">{l}</p>
               </div>
@@ -107,6 +107,7 @@ export function DemoEsteticaLanding() {
       </section>
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Ciencia suave"
         title="Leemos tu piel como mapa, no como catálogo de promesas imposibles"
         paragraphs={[
@@ -127,13 +128,14 @@ export function DemoEsteticaLanding() {
           { value: "0", label: "Presión kits", hint: "Política escrita" },
         ]}
         sectionClass="border-y border-stone-200 bg-[#faf7f2]"
-        cardClass="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
-        valueClass="text-3xl font-black text-amber-700"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-amber-700 ${h}`}
         labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-stone-500"
         hintClass="mt-1 text-xs text-stone-400"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Primera visita"
         subtitle="45 minutos de evaluación + plan sin obligación de compra."
         steps={[
@@ -146,16 +148,17 @@ export function DemoEsteticaLanding() {
         titleClass="text-stone-900"
         subtitleClass="text-stone-500"
         stepNumClass="text-amber-700"
-        cardClass="rounded-2xl border border-stone-200 bg-white p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         stepTitleClass="font-bold text-stone-900"
         stepDescClass="mt-2 text-sm text-stone-600"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Protocolos destacados"
         sectionClass="bg-[#faf7f2]"
         titleClass="text-stone-900"
-        cardClass="rounded-2xl border border-stone-200 bg-white p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         itemTitleClass="font-bold text-amber-800"
         itemBodyClass="mt-2 text-sm text-stone-600"
         items={[
@@ -167,10 +170,11 @@ export function DemoEsteticaLanding() {
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Clientas"
         sectionClass="bg-white"
         titleClass="text-stone-900"
-        cardClass="rounded-2xl border border-stone-200 bg-stone-50 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-stone-700"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-700"
         quotes={[
@@ -181,6 +185,7 @@ export function DemoEsteticaLanding() {
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ"
         sectionClass="border-t border-stone-200 bg-[#faf7f2]"
         titleClass="text-stone-900"
@@ -196,11 +201,12 @@ export function DemoEsteticaLanding() {
       />
 
       <DemoEnhancements
-        slug="estetica"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Aura Estética"
         sectionClass="border-y border-stone-200 bg-[#faf7f2]"
         titleClass="text-stone-900"
-        cardClass="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-stone-700"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-800"
         extraTestimonialsTitle="Más reseñas"

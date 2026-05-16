@@ -1,4 +1,10 @@
 import { Car, Cog, Gauge, Wrench } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,58 +14,74 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "taller" as const;
 
 export function DemoTallerLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-zinc-900 font-[family-name:var(--font-demo-montserrat)] text-zinc-100">
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <div
         className="h-2 w-full bg-[repeating-linear-gradient(-45deg,#dc2626_0px,#dc2626_12px,#18181b_12px,#18181b_24px)]"
         aria-hidden
       />
 
-      <nav className="flex items-center justify-between px-4 py-4 md:px-10">
-        <span className="font-[family-name:var(--font-demo-bebas)] text-3xl tracking-wide text-red-500">
-          GARAGE 27
-        </span>
-        <button
-          type="button"
-          className="border-2 border-red-600 bg-red-600/10 px-5 py-2 text-xs font-black uppercase text-red-500"
-        >
+      <nav className="flex flex-wrap items-center justify-between gap-3 px-4 py-4 md:px-10">
+        <span className={`${h} text-3xl tracking-wide text-red-500`}>GARAGE 27</span>
+        <button type="button" className={art.primaryCta}>
           Pedir turno
         </button>
       </nav>
 
-      <header className="border-b border-zinc-800 px-4 py-14 md:px-10 md:py-20">
-        <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="font-[family-name:var(--font-jetbrains)] text-[10px] font-bold uppercase tracking-[0.3em] text-red-500">
-              Multimarca · scanner OBD
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-zinc-500"
+        kicker={
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-red-500">
+            Multimarca · scanner OBD
+          </p>
+        }
+        title={
+          <>
+            Mecánica
+            <br />
+            <span className="text-red-500">sin vueltas</span>
+          </>
+        }
+        lead="Frenos, tren delantero, service con aceites viscosidad OEM y alineación digital. Presupuesto antes de tocar un tornillo."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Diagnóstico
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              WhatsApp
+            </button>
+          </>
+        }
+      />
+
+      <section className="px-4 py-8 md:px-10">
+        <div className={`relative mx-auto max-w-5xl overflow-hidden p-6 md:p-8 ${art.cardShell}`}>
+          <Gauge className="absolute right-4 top-4 h-32 w-48 text-red-600/15 md:h-40 md:w-64" strokeWidth={0.25} />
+          <div className="relative flex items-center gap-6">
+            <p className={`text-4xl font-black text-red-500 ${h}`}>15%</p>
+            <p className={`max-w-xs text-xs uppercase tracking-wider text-zinc-500 ${h}`}>
+              Off primer service demo · presupuesto sin letra chica
             </p>
-            <h1 className="mt-4 font-[family-name:var(--font-demo-bebas)] text-5xl uppercase leading-none text-white md:text-7xl">
-              Mecánica
-              <br />
-              <span className="text-red-500">sin vueltas</span>
-            </h1>
-            <p className="mt-6 text-sm text-zinc-500">
-              Frenos, tren delantero, service con aceites viscosidad OEM y
-              alineación digital. Presupuesto antes de tocar un tornillo.
-            </p>
-          </div>
-          <div className="relative rounded-2xl border border-zinc-800 bg-zinc-950 p-8">
-            <Gauge className="h-40 w-full text-red-600/20" strokeWidth={0.25} />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="rounded-xl border border-red-600/40 bg-black/80 px-6 py-4 text-center">
-                <p className="text-3xl font-black text-red-500">15%</p>
-                <p className="text-[10px] uppercase tracking-wider text-zinc-500">
-                  Off primer service demo
-                </p>
-              </div>
-            </div>
           </div>
         </div>
-      </header>
+      </section>
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Taller honesto"
         title="Diagnóstico pago si seguís con la reparación; fotos antes de desarmar"
         paragraphs={[
@@ -80,13 +102,14 @@ export function DemoTallerLanding() {
           { value: "24 meses", label: "Garantía mano obra", hint: "Repuestos según fábrica" },
         ]}
         sectionClass="border-y border-zinc-800 bg-black/30"
-        cardClass="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6"
-        valueClass="text-3xl font-black text-red-500"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-red-500 ${h}`}
         labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-zinc-500"
         hintClass="mt-1 text-xs text-zinc-600"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Service programado"
         subtitle="Recordatorio WhatsApp con checklist de fluidos y correa según km reales."
         steps={[
@@ -99,16 +122,17 @@ export function DemoTallerLanding() {
         titleClass="text-white"
         subtitleClass="text-zinc-500"
         stepNumClass="text-red-500"
-        cardClass="rounded-2xl border border-zinc-800 bg-black/40 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         stepTitleClass="font-bold text-white"
         stepDescClass="mt-2 text-sm text-zinc-500"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Especialidades"
         sectionClass="bg-zinc-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         itemTitleClass="font-bold text-red-400"
         itemBodyClass="mt-2 text-sm text-zinc-500"
         items={[
@@ -120,10 +144,11 @@ export function DemoTallerLanding() {
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Clientes"
         sectionClass="border-y border-zinc-800 bg-black/25"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-zinc-300"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-red-500"
         quotes={[
@@ -134,8 +159,9 @@ export function DemoTallerLanding() {
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ"
-        sectionClass="bg-zinc-950 border-t border-zinc-800"
+        sectionClass="border-t border-zinc-800 bg-zinc-950"
         titleClass="text-white"
         qClass="font-bold text-zinc-200"
         aClass="mt-2 text-sm text-zinc-500"
@@ -155,12 +181,9 @@ export function DemoTallerLanding() {
             { icon: Car, t: "Diagnóstico", d: "Scanner + informe PDF" },
             { icon: Cog, t: "Suspensión", d: "Amortiguadores y tren" },
           ].map(({ icon: I, t, d }) => (
-            <div
-              key={t}
-              className="border border-zinc-800 bg-zinc-950 p-6 transition-colors hover:border-red-600/40"
-            >
+            <div key={t} className={`p-6 transition-colors hover:border-red-600/40 ${art.cardShell}`}>
               <I className="h-7 w-7 text-red-500" />
-              <p className="mt-4 font-bold text-white">{t}</p>
+              <p className={`mt-4 font-bold text-white ${h}`}>{t}</p>
               <p className="mt-2 text-xs text-zinc-600">{d}</p>
             </div>
           ))}
@@ -168,19 +191,20 @@ export function DemoTallerLanding() {
       </section>
 
       <section className="bg-red-600 px-4 py-12 md:px-10">
-        <p className="mx-auto max-w-3xl text-center font-[family-name:var(--font-demo-bebas)] text-3xl uppercase text-black md:text-4xl">
+        <p className={`mx-auto max-w-3xl text-center text-3xl uppercase text-black md:text-4xl ${h}`}>
           “Lo dejamos listo para la ruta”
         </p>
       </section>
 
       <DemoEnhancements
-        slug="taller"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Garage 27"
         shopCardClass="border border-red-600/30 bg-zinc-900/70"
         shopAccentClass="bg-red-600 font-bold text-white"
         sectionClass="border-y border-red-900/30 bg-zinc-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-zinc-300"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-red-500"
         extraTestimonialsTitle="Conductores"

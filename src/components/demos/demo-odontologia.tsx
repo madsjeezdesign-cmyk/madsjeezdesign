@@ -1,4 +1,10 @@
 import { Calendar, Microscope, Smile, Sparkles, Stethoscope } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,39 +14,59 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "odontologia" as const;
 
 export function DemoOdontologiaLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-sky-950 font-[family-name:var(--font-demo-montserrat)] text-sky-50">
-      <nav className="flex items-center justify-between border-b border-sky-500/30 px-4 py-4 md:px-10">
-        <span className="font-[family-name:var(--font-demo-playfair)] text-xl font-semibold text-white">
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
+      <nav className="flex flex-col gap-3 border-b border-sky-500/30 px-4 py-4 sm:flex-row sm:items-center sm:justify-between md:px-10">
+        <span className={`text-center text-xl font-semibold text-white sm:text-left ${h}`}>
           Sonrisa <span className="text-sky-400">Studio</span> Dental
         </span>
-        <button type="button" className="rounded-full bg-sky-500 px-5 py-2 text-xs font-bold text-sky-950">
+        <button type="button" className={art.primaryCta}>
           Reservar valoración
         </button>
       </nav>
 
-      <header className="px-4 pb-16 pt-14 md:px-10 md:pt-20">
-        <div className="mx-auto max-w-4xl">
-          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-sky-400">
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-sky-200/75"
+        kicker={
+          <p className="flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-sky-400 sm:justify-start">
             <Smile className="h-4 w-4" /> Odontología integral · diagnóstico digital
           </p>
-          <h1 className="mt-4 font-[family-name:var(--font-demo-bebas)] text-5xl uppercase text-white md:text-7xl">
+        }
+        title={
+          <>
             Sonrisas
             <br />
             <span className="text-sky-400">con ciencia y estética</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-sky-200/75 md:text-base">
-            Implantes, ortodoncia invisible demo, blanqueamiento supervisado y
-            rehabilitaciones sobre dientes y implantes. Radiografías intraorales y
-            tomografía convexa en el mismo turno de evaluación. Financiación en
-            cuotas con tarjetas y planes acordes a tratamiento.
-          </p>
-        </div>
-      </header>
+          </>
+        }
+        lead="Implantes, ortodoncia invisible demo, blanqueamiento supervisado y rehabilitaciones sobre dientes y implantes. Radiografías intraorales y tomografía convexa en el mismo turno de evaluación. Financiación en cuotas con tarjetas y planes acordes a tratamiento."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Primera visita
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              Ver financiación
+            </button>
+          </>
+        }
+      />
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Protocolo clínico"
         title="Bioseguridad y seguimiento post-tratamiento"
         paragraphs={[
@@ -60,9 +86,9 @@ export function DemoOdontologiaLanding() {
             { icon: Sparkles, t: "Estética dental", d: "Carillas mínimamente invasivas y diseño digital de sonrisa antes de tocar el diente." },
             { icon: Calendar, t: "Ortodoncia", d: "Alineadores y brackets auto-ligables; app de seguimiento de uso." },
           ].map(({ icon: I, t, d }) => (
-            <div key={t} className="rounded-2xl border border-sky-500/30 bg-sky-900/40 p-6">
+            <div key={t} className={`p-6 ${art.cardShell}`}>
               <I className="h-7 w-7 text-sky-400" />
-              <h3 className="mt-3 font-bold text-white">{t}</h3>
+              <h3 className={`mt-3 font-bold text-white ${h}`}>{t}</h3>
               <p className="mt-2 text-sm text-sky-200/65">{d}</p>
             </div>
           ))}
@@ -77,13 +103,14 @@ export function DemoOdontologiaLanding() {
           { value: "24h", label: "Guardia demo", hint: "Trauma dentario agudo" },
         ]}
         sectionClass="bg-sky-900/30"
-        cardClass="rounded-2xl border border-sky-500/20 bg-sky-950/70 p-6"
-        valueClass="text-3xl font-black text-sky-400"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-sky-400 ${h}`}
         labelClass="mt-2 text-[11px] font-bold uppercase text-sky-200/70"
         hintClass="mt-1 text-xs text-sky-300/50"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Primera visita"
         subtitle="Evaluación sin compromiso con plan de tratamiento por etapas."
         steps={[
@@ -93,9 +120,16 @@ export function DemoOdontologiaLanding() {
           { n: "04", t: "Inicio o derivación", d: "Coordinamos con anestesista si hace falta sedación consciente demo." },
         ]}
         sectionClass="bg-sky-950/80"
+        titleClass="text-white"
+        subtitleClass="text-sky-200/70"
+        stepNumClass="text-sky-400"
+        cardClass={`p-6 ${art.cardShell}`}
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-sky-200/70"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Tratamientos destacados"
         items={[
           { title: "Implantes carga inmediata", body: "Protocolo All-on-X demo para arcos edéntulos: provisional fijo el mismo día de cirugía con controles nutricionales." },
@@ -104,12 +138,13 @@ export function DemoOdontologiaLanding() {
           { title: "Urgencias", body: "Luxaciones, luxaciones alvéolo-dentarias y abscesos drenados con antibiótico según protocolo." },
         ]}
         titleClass="text-white"
-        cardClass="rounded-2xl border border-sky-500/25 bg-sky-900/35 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         itemTitleClass="font-bold text-sky-300"
         itemBodyClass="mt-2 text-sm text-sky-100/70"
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Opiniones"
         quotes={[
           { text: "Me explicaron cada fase del implante con simulación 3D. Sin sorpresas en el presupuesto.", author: "Diego Coria", role: "Ingeniero" },
@@ -117,9 +152,14 @@ export function DemoOdontologiaLanding() {
           { text: "Los niños tienen stickers y la doctora habla su idioma.", author: "Familia Benavídez", role: "Pacientes frecuentes" },
         ]}
         sectionClass="bg-sky-900/25"
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        quoteClass="text-sm italic text-sky-100/85"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400"
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ"
         items={[
           { q: "¿Atienden obras sociales?", a: "Convenios rotativos demo; pedí lista actualizada por WhatsApp antes del turno." },
@@ -128,23 +168,25 @@ export function DemoOdontologiaLanding() {
           { q: "¿Blanqueamiento en consultorio?", a: "Sí, con aislamiento de encía y lámpara LED; casa complementaria solo bajo supervisión." },
         ]}
         sectionClass="border-t border-sky-800/40 bg-black/20"
+        titleClass="text-white"
+        qClass="font-bold text-sky-100"
+        aClass="mt-2 text-sm text-sky-200/70"
       />
 
-      <section className="flex items-center justify-center gap-3 bg-sky-600 px-4 py-12">
-        <Stethoscope className="h-10 w-10 text-white/90" />
-        <p className="font-[family-name:var(--font-demo-bebas)] text-2xl uppercase text-white md:text-3xl">
-          Valoración + radiografía demo incluida en agosto
-        </p>
+      <section className="flex flex-col items-center justify-center gap-3 bg-sky-600 px-4 py-12 sm:flex-row">
+        <Stethoscope className="h-10 w-10 shrink-0 text-white/90" />
+        <p className={`text-center text-2xl uppercase text-white md:text-3xl ${h}`}>Valoración + radiografía demo incluida en agosto</p>
       </section>
 
       <DemoEnhancements
-        slug="odontologia"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Sonrisa Studio Dental"
         shopCardClass="border border-sky-500/30 bg-sky-950/50"
         shopAccentClass="bg-sky-500 font-bold text-sky-950"
         sectionClass="border-y border-sky-800/30 bg-sky-950/70"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-white/10 bg-sky-900/30 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-sky-100/85"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400"
         extraTestimonialsTitle="Pacientes"

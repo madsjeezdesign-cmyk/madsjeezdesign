@@ -1,6 +1,7 @@
 /**
  * Bloques de contenido reutilizables para landings demo (texto denso, FAQ, etc.).
- * Cada demo pasa clases Tailwind acordes a su paleta.
+ * Cada demo pasa `sectionHeadingClass` (p. ej. DEMO_HEADING_CLASS[slug]) para que
+ * los h2 no dependan de Bebas/Playfair compartidos.
  */
 
 export function DemoStatsStrip({
@@ -46,6 +47,7 @@ export function DemoProcessSteps({
   title,
   subtitle,
   steps,
+  sectionHeadingClass,
   sectionClass = "bg-zinc-950/50",
   titleClass = "text-white",
   subtitleClass = "text-zinc-500",
@@ -57,6 +59,8 @@ export function DemoProcessSteps({
   title: string;
   subtitle?: string;
   steps: { n: string; t: string; d: string }[];
+  /** Familia display del rubro (p. ej. DEMO_HEADING_CLASS[slug]). */
+  sectionHeadingClass: string;
   sectionClass?: string;
   titleClass?: string;
   subtitleClass?: string;
@@ -68,7 +72,9 @@ export function DemoProcessSteps({
   return (
     <section className={`px-4 py-16 md:px-10 ${sectionClass}`}>
       <div className="mx-auto max-w-5xl">
-        <h2 className={`font-[family-name:var(--font-demo-bebas)] text-4xl uppercase tracking-wide md:text-5xl ${titleClass}`}>
+        <h2
+          className={`text-4xl font-semibold uppercase tracking-wide md:text-5xl ${sectionHeadingClass} ${titleClass}`}
+        >
           {title}
         </h2>
         {subtitle ? (
@@ -79,7 +85,7 @@ export function DemoProcessSteps({
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {steps.map((s) => (
             <div key={s.n} className={cardClass}>
-              <span className={`font-[family-name:var(--font-jetbrains)] text-xs font-bold ${stepNumClass}`}>
+              <span className={`text-xs font-bold tabular-nums ${stepNumClass}`}>
                 {s.n}
               </span>
               <h3 className={`mt-2 ${stepTitleClass}`}>{s.t}</h3>
@@ -95,6 +101,7 @@ export function DemoProcessSteps({
 export function DemoDetailGrid({
   title,
   items,
+  sectionHeadingClass,
   sectionClass = "",
   titleClass = "text-white",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-900/30 p-6",
@@ -103,6 +110,7 @@ export function DemoDetailGrid({
 }: {
   title: string;
   items: { title: string; body: string }[];
+  sectionHeadingClass: string;
   sectionClass?: string;
   titleClass?: string;
   cardClass?: string;
@@ -112,7 +120,9 @@ export function DemoDetailGrid({
   return (
     <section className={`px-4 py-16 md:px-10 ${sectionClass}`}>
       <div className="mx-auto max-w-5xl">
-        <h2 className={`font-[family-name:var(--font-demo-bebas)] text-4xl uppercase tracking-wide md:text-5xl ${titleClass}`}>
+        <h2
+          className={`text-4xl font-semibold uppercase tracking-wide md:text-5xl ${sectionHeadingClass} ${titleClass}`}
+        >
           {title}
         </h2>
         <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -131,6 +141,7 @@ export function DemoDetailGrid({
 export function DemoFaqList({
   title,
   items,
+  sectionHeadingClass,
   sectionClass = "border-t border-white/5 bg-black/20",
   titleClass = "text-white",
   qClass = "font-bold text-white",
@@ -139,6 +150,7 @@ export function DemoFaqList({
 }: {
   title: string;
   items: { q: string; a: string }[];
+  sectionHeadingClass: string;
   sectionClass?: string;
   titleClass?: string;
   qClass?: string;
@@ -148,7 +160,9 @@ export function DemoFaqList({
   return (
     <section className={`px-4 py-16 md:px-10 ${sectionClass}`}>
       <div className="mx-auto max-w-3xl">
-        <h2 className={`font-[family-name:var(--font-demo-bebas)] text-4xl uppercase tracking-wide ${titleClass}`}>
+        <h2
+          className={`text-4xl font-semibold uppercase tracking-wide ${sectionHeadingClass} ${titleClass}`}
+        >
           {title}
         </h2>
         <div className="mt-8">
@@ -167,14 +181,16 @@ export function DemoFaqList({
 export function DemoTestimonials({
   title,
   quotes,
+  sectionHeadingClass,
   sectionClass = "bg-zinc-900/25",
   titleClass = "text-white",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-950/60 p-6",
   quoteClass = "text-sm italic leading-relaxed text-zinc-300",
-  authorClass = "font-[family-name:var(--font-demo-montserrat)] mt-4 text-xs font-bold uppercase tracking-wider text-zinc-500",
+  authorClass = "mt-4 text-xs font-bold uppercase tracking-wider text-zinc-500",
 }: {
   title: string;
   quotes: { text: string; author: string; role: string }[];
+  sectionHeadingClass: string;
   sectionClass?: string;
   titleClass?: string;
   cardClass?: string;
@@ -184,7 +200,7 @@ export function DemoTestimonials({
   return (
     <section className={`px-4 py-16 md:px-10 ${sectionClass}`}>
       <div className="mx-auto max-w-5xl">
-        <h2 className={`font-[family-name:var(--font-demo-playfair)] text-3xl md:text-4xl ${titleClass}`}>
+        <h2 className={`text-3xl font-semibold leading-tight md:text-4xl ${sectionHeadingClass} ${titleClass}`}>
           {title}
         </h2>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -206,6 +222,7 @@ export function DemoLongStory({
   kicker,
   title,
   paragraphs,
+  sectionHeadingClass,
   sectionClass = "",
   kickerClass = "text-orange-400",
   titleClass = "text-white",
@@ -214,6 +231,7 @@ export function DemoLongStory({
   kicker?: string;
   title: string;
   paragraphs: string[];
+  sectionHeadingClass: string;
   sectionClass?: string;
   kickerClass?: string;
   titleClass?: string;
@@ -227,7 +245,9 @@ export function DemoLongStory({
             {kicker}
           </p>
         ) : null}
-        <h2 className={`mt-4 font-[family-name:var(--font-demo-playfair)] text-3xl font-semibold md:text-4xl ${titleClass}`}>
+        <h2
+          className={`mt-4 text-3xl font-semibold leading-tight md:text-4xl ${sectionHeadingClass} ${titleClass}`}
+        >
           {title}
         </h2>
         {paragraphs.map((p, i) => (

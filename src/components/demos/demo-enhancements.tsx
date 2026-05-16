@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getDemoVisuals } from "@/lib/demo-assets";
+import { demoSectionHeadingClass } from "@/lib/demo-art-direction";
 import { getShowcaseMeta } from "@/lib/demos-showcase-meta";
 import { DemoLeadForm } from "./demo-lead-form";
 import { DemoShopFlow } from "./demo-shop-flow";
@@ -8,6 +9,8 @@ import { DemoTestimonials } from "./demo-common-sections";
 type Props = {
   slug: string;
   brandLabel: string;
+  /** Oculta el banner superior si el hero del demo ya usa la misma portada temática. */
+  omitCoverBanner?: boolean;
   /** Estilos opcionales del bloque shop para acordar con la paleta */
   shopCardClass?: string;
   shopAccentClass?: string;
@@ -24,6 +27,7 @@ type Props = {
 export function DemoEnhancements({
   slug,
   brandLabel,
+  omitCoverBanner = false,
   shopCardClass,
   shopAccentClass,
   extraTestimonials,
@@ -45,29 +49,31 @@ export function DemoEnhancements({
 
   return (
     <>
-      <section className="px-4 pb-6 pt-4 md:px-10">
-        <div
-          className={`mx-auto max-w-6xl shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${cardChrome}`}
-        >
-          <div className="relative aspect-[16/7] w-full min-h-[180px] md:aspect-[21/8] md:min-h-[240px]">
-            <Image
-              src={v.cover}
-              alt=""
-              fill
-              className="object-cover opacity-90 grayscale transition-all duration-1000 group-hover:scale-[1.04] group-hover:opacity-100 group-hover:grayscale-0"
-              sizes="(max-width: 768px) 100vw, 1152px"
-              priority={false}
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/20 to-transparent" />
-            <div
-              className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${meta.color} to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-60`}
-            />
-            <p className="absolute bottom-3 left-4 right-4 text-[10px] font-bold uppercase tracking-widest text-white/90 md:bottom-4 md:left-6">
-              Imagen demo · referencia visual del rubro
-            </p>
+      {!omitCoverBanner ? (
+        <section className="px-4 pb-6 pt-4 md:px-10">
+          <div
+            className={`mx-auto max-w-6xl shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${cardChrome}`}
+          >
+            <div className="relative aspect-[16/7] w-full min-h-[180px] md:aspect-[21/8] md:min-h-[240px]">
+              <Image
+                src={v.cover}
+                alt=""
+                fill
+                className="object-cover opacity-90 grayscale transition-all duration-1000 group-hover:scale-[1.04] group-hover:opacity-100 group-hover:grayscale-0"
+                sizes="(max-width: 768px) 100vw, 1152px"
+                priority={false}
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/20 to-transparent" />
+              <div
+                className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${meta.color} to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-60`}
+              />
+              <p className="absolute bottom-3 left-4 right-4 text-[10px] font-bold uppercase tracking-widest text-white/90 md:bottom-4 md:left-6">
+                Imagen demo · referencia visual del rubro
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       <section className="px-4 py-8 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-3 sm:grid-cols-3 md:gap-4">
@@ -120,6 +126,7 @@ export function DemoEnhancements({
 
       {extraTestimonials && extraTestimonials.length > 0 ? (
         <DemoTestimonials
+          sectionHeadingClass={demoSectionHeadingClass(slug)}
           title={extraTestimonialsTitle}
           quotes={extraTestimonials}
           sectionClass={sectionClass}

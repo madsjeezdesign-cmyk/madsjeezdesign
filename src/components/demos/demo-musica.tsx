@@ -1,4 +1,10 @@
 import { Guitar, Mic, Music, Music2, Users } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,37 +14,58 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "musica" as const;
 
 export function DemoMusicaLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-violet-950 font-[family-name:var(--font-demo-montserrat)] text-violet-50">
-      <nav className="flex items-center justify-between border-b border-fuchsia-500/30 px-4 py-4 md:px-10">
-        <span className="font-[family-name:var(--font-demo-bebas)] text-2xl tracking-wider text-fuchsia-400">
-          PENTAGRAMA
-        </span>
-        <button type="button" className="rounded-full bg-fuchsia-500 px-5 py-2 text-xs font-bold text-violet-950">
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
+      <nav className="sticky top-0 z-30 flex items-center justify-between border-b border-fuchsia-500/30 bg-violet-950/90 px-4 py-4 backdrop-blur-md md:px-10">
+        <span className={`text-2xl tracking-wider text-fuchsia-400 ${h}`}>PENTAGRAMA</span>
+        <button type="button" className={art.primaryCta}>
           Inscripción 2026
         </button>
       </nav>
 
-      <header className="relative overflow-hidden px-4 pb-16 pt-12 md:px-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-fuchsia-600/20 to-transparent pointer-events-none" />
-        <div className="relative mx-auto max-w-4xl text-center md:text-left">
-          <h1 className="font-[family-name:var(--font-demo-bebas)] text-6xl uppercase leading-none text-white md:text-8xl">
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-violet-200/80"
+        kicker={
+          <div className="flex items-center justify-center gap-2 text-fuchsia-400 opacity-90 sm:justify-start">
+            <Music className="h-5 w-5" />
+            <span className={`text-[10px] uppercase tracking-[0.35em] ${h}`}>Conservatorio · bandas · producción</span>
+          </div>
+        }
+        title={
+          <>
             Música
             <br />
             <span className="text-fuchsia-400">en serio</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-sm text-violet-200/80 md:mx-0 md:text-base">
-            Piano, guitarra, canto, batería, ensambles de jazz y orquesta
-            juvenil demo. Metodología por objetivos con grabación trimestral de
-            progreso. Salas insonorizadas, préstamo de instrumento para primer
-            mes y recitales familiares en teatro propio de 80 butacas.
-          </p>
-        </div>
-      </header>
+          </>
+        }
+        lead="Piano, guitarra, canto, batería, ensambles de jazz y orquesta juvenil demo. Metodología por objetivos con grabación trimestral de progreso. Salas insonorizadas, préstamo de instrumento para primer mes y recitales familiares en teatro propio de 80 butacas."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Probar clase
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              Ver sedes
+            </button>
+          </>
+        }
+      />
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Propuesta pedagógica"
         title="Lectura, oído y escena desde el primer mes"
         paragraphs={[
@@ -57,9 +84,9 @@ export function DemoMusicaLanding() {
           { icon: Mic, t: "Canto moderno", d: "Respiración diafragmática, registro mixto y mic técnica en vivo." },
           { icon: Music2, t: "Teoría y audición", d: "Solfeo movido, armonía pop y transcripción por oído." },
         ].map(({ icon: I, t, d }) => (
-          <div key={t} className="rounded-2xl border border-fuchsia-500/25 bg-violet-950/60 p-6">
+          <div key={t} className={`p-6 ${art.cardShell}`}>
             <I className="h-7 w-7 text-fuchsia-400" />
-            <h3 className="mt-3 font-bold">{t}</h3>
+            <h3 className={`mt-3 font-bold text-white ${h}`}>{t}</h3>
             <p className="mt-2 text-sm text-violet-300/70">{d}</p>
           </div>
         ))}
@@ -72,11 +99,15 @@ export function DemoMusicaLanding() {
           { value: "14", label: "Salas", hint: "Acústica tratada" },
           { value: "2", label: "Shows / año", hint: "Teatro propio" },
         ]}
-        cardClass="rounded-2xl border border-fuchsia-500/20 bg-black/30 p-6"
-        valueClass="text-3xl font-black text-fuchsia-400"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-fuchsia-400 ${h}`}
+        sectionClass="border-y border-fuchsia-500/20 bg-black/20"
+        labelClass="mt-2 text-[11px] font-bold uppercase text-violet-300/80"
+        hintClass="mt-1 text-xs text-violet-400/60"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Inscripción"
         steps={[
           { n: "01", t: "Trial 20 min", d: "Sin costo para conocer alumnado y nivel previo." },
@@ -85,10 +116,15 @@ export function DemoMusicaLanding() {
           { n: "04", t: "Seguimiento", d: "Repos grabados en plataforma si faltás con aviso 24 h." },
         ]}
         sectionClass="bg-violet-950/80"
+        titleClass="text-white"
         stepNumClass="text-fuchsia-400"
+        cardClass={`p-6 ${art.cardShell}`}
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-violet-300/80"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Cursos y talleres"
         items={[
           { title: "Rock band lab", body: "Arreglos en grupo, ensayo con click y show en vivo al cierre del cuatrimestre demo." },
@@ -96,11 +132,14 @@ export function DemoMusicaLanding() {
           { title: "Trinity & ABRSM prep", body: "Examen internacional opcional con coach de examen simulado." },
           { title: "Adultos 40+", body: "Horarios al mediodía; repertorio cancionero argentino y bossa." },
         ]}
-        itemTitleClass="text-fuchsia-300"
-        itemBodyClass="text-violet-200/65"
+        itemTitleClass="font-bold text-fuchsia-300"
+        itemBodyClass="mt-2 text-sm text-violet-200/65"
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Familias"
         quotes={[
           { text: "Mi hija pasó de ver videos a tocar en un escenario real; eso no tiene precio.", author: "Vero Salas", role: "Madre de alumna" },
@@ -108,9 +147,14 @@ export function DemoMusicaLanding() {
           { text: "El ensamble de jazz le dio amigos para toda la vida.", author: "Leo", role: "Alumno 17 años" },
         ]}
         sectionClass="bg-fuchsia-950/20"
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        quoteClass="text-sm italic text-violet-100/85"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-fuchsia-400"
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="Preguntas"
         items={[
           { q: "¿Necesito instrumento propio?", a: "Préstamo inicial incluido; luego lista de compra ajustada al presupuesto." },
@@ -118,22 +162,26 @@ export function DemoMusicaLanding() {
           { q: "¿Reagendan por viaje?", a: "Hasta 2 clases por trimestre congeladas sin costo demo." },
           { q: "¿Online?", a: "Híbrido disponible para teoría y piano con tecla ponderada en casa." },
         ]}
+        titleClass="text-white"
+        qClass="font-bold text-violet-100"
+        aClass="mt-2 text-sm text-violet-300/80"
       />
 
       <section className="flex flex-wrap items-center justify-center gap-4 bg-fuchsia-600 py-10">
         <Music className="h-10 w-10 text-white" />
         <Users className="h-10 w-10 text-white" />
-        <p className="font-[family-name:var(--font-demo-bebas)] text-2xl uppercase text-white">Open day sábado demo · cupo 40 familias</p>
+        <p className={`text-center text-2xl uppercase text-white ${h}`}>Open day sábado demo · cupo 40 familias</p>
       </section>
 
       <DemoEnhancements
-        slug="musica"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Pentagrama"
         shopCardClass="border border-violet-500/30 bg-black/50"
         shopAccentClass="bg-fuchsia-500 font-bold text-white"
         sectionClass="border-y border-violet-500/20 bg-violet-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-violet-500/25 bg-violet-950/40 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-violet-100/85"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-fuchsia-400"
         extraTestimonialsTitle="Alumnos y padres"

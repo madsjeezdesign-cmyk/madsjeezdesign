@@ -1,4 +1,10 @@
 import { BookOpen, Briefcase, Scale, Shield } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,44 +14,56 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "abogados" as const;
 
 export function DemoAbogadosLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-[#0f0f0f] font-[family-name:var(--font-demo-montserrat)] text-neutral-200">
-      <nav className="flex items-center justify-between border-b border-amber-900/20 px-6 py-6 md:px-16">
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
+      <nav className="flex items-start justify-between gap-4 border-b border-amber-900/20 px-6 py-6 md:items-center md:px-16">
         <div className="flex items-center gap-3">
-          <Scale className="h-6 w-6 text-amber-600" />
+          <Scale className="mt-1 h-6 w-6 shrink-0 text-amber-600 md:mt-0" />
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-amber-700">
-              Estudio jurídico
-            </p>
-            <p className="font-[family-name:var(--font-demo-playfair)] text-lg text-neutral-100">
-              Bravo &amp; Asociados
-            </p>
+            <p className={`text-[10px] font-semibold uppercase tracking-[0.25em] text-amber-700 ${h}`}>Estudio jurídico</p>
+            <p className={`text-lg text-neutral-100 ${h}`}>Bravo &amp; Asociados</p>
           </div>
         </div>
-        <button
-          type="button"
-          className="border border-amber-700/60 px-5 py-2 text-xs font-semibold uppercase tracking-widest text-amber-500"
-        >
+        <button type="button" className={art.primaryCta}>
           Consulta inicial
         </button>
       </nav>
 
-      <header className="px-6 py-16 md:px-16 md:py-24">
-        <div className="mx-auto max-w-3xl">
-          <h1 className="font-[family-name:var(--font-demo-playfair)] text-3xl font-semibold leading-snug text-white md:text-5xl">
-            Defensa estratégica en{" "}
-            <span className="text-amber-500">derecho civil</span>, laboral y
-            empresarial
-          </h1>
-          <p className="mt-6 text-sm leading-relaxed text-neutral-500">
-            Equipo interdisciplinario con más de quince años de actuación.
-            Primera reunión de evaluación sin cargo — agenda coordinada por
-            secretaría.
-          </p>
-        </div>
-      </header>
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-neutral-500"
+        kicker={
+          <p className={`text-[10px] uppercase tracking-[0.28em] text-amber-600 ${h}`}>Litigios · contratos · compliance</p>
+        }
+        title={
+          <>
+            Defensa estratégica en <span className="text-amber-500">derecho civil</span>, laboral y empresarial
+          </>
+        }
+        lead="Equipo interdisciplinario con más de quince años de actuación. Primera reunión de evaluación sin cargo — agenda coordinada por secretaría."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Agendar llamada
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              Casos de éxito
+            </button>
+          </>
+        }
+      />
 
       <section className="border-y border-neutral-900 bg-neutral-950 px-6 py-16 md:px-16">
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
@@ -71,15 +89,10 @@ export function DemoAbogadosLanding() {
               d: "Estrategia procesal y seguimiento online del expediente.",
             },
           ].map(({ icon: I, t, d }) => (
-            <div
-              key={t}
-              className="flex gap-5 border-l-2 border-amber-700/40 pl-5"
-            >
+            <div key={t} className={`flex gap-5 border-l-4 border-amber-700/40 py-2 pl-5 ${art.cardShell}`}>
               <I className="mt-1 h-5 w-5 shrink-0 text-amber-600" />
               <div>
-                <h3 className="font-[family-name:var(--font-demo-playfair)] text-xl text-white">
-                  {t}
-                </h3>
+                <h3 className={`text-xl text-white ${h}`}>{t}</h3>
                 <p className="mt-2 text-sm text-neutral-500">{d}</p>
               </div>
             </div>
@@ -88,6 +101,7 @@ export function DemoAbogadosLanding() {
       </section>
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Metodología"
         title="Estrategia procesal con lectura de negocio, no solo de expediente"
         paragraphs={[
@@ -108,13 +122,14 @@ export function DemoAbogadosLanding() {
           { value: "92 %", label: "Éxito mediación", hint: "Último año" },
         ]}
         sectionClass="border-y border-neutral-900 bg-[#0a0a0a]"
-        cardClass="rounded-2xl border border-amber-900/20 bg-neutral-950/80 p-6"
-        valueClass="text-3xl font-black text-amber-500"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-amber-500 ${h}`}
         labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
         hintClass="mt-1 text-xs text-neutral-600"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Consulta inicial"
         subtitle="Evaluamos viabilidad y costos antes de avanzar a etapas caras."
         steps={[
@@ -127,16 +142,17 @@ export function DemoAbogadosLanding() {
         titleClass="text-white"
         subtitleClass="text-neutral-500"
         stepNumClass="text-amber-600"
-        cardClass="rounded-2xl border border-neutral-800 bg-black/40 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         stepTitleClass="font-bold text-white"
         stepDescClass="mt-2 text-sm text-neutral-500"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Industrias que acompañamos"
         sectionClass="bg-[#0f0f0f]"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         itemTitleClass="font-bold text-amber-500"
         itemBodyClass="mt-2 text-sm text-neutral-500"
         items={[
@@ -148,10 +164,11 @@ export function DemoAbogadosLanding() {
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Referencias"
         sectionClass="bg-neutral-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-neutral-800 bg-black/30 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-neutral-400"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-600"
         quotes={[
@@ -162,6 +179,7 @@ export function DemoAbogadosLanding() {
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ"
         sectionClass="border-t border-neutral-900 bg-black/40"
         titleClass="text-white"
@@ -177,27 +195,22 @@ export function DemoAbogadosLanding() {
       />
 
       <section className="px-6 py-16 text-center md:px-16">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-amber-700">
-          Confidencialidad
-        </p>
+        <p className={`text-[10px] font-semibold uppercase tracking-[0.35em] text-amber-700 ${h}`}>Confidencialidad</p>
         <p className="mx-auto mt-4 max-w-lg text-sm text-neutral-500">
-          Toda comunicación queda sujeta a secreto profesional. Entorno seguro
-          para adjuntar documentación.
+          Toda comunicación queda sujeta a secreto profesional. Entorno seguro para adjuntar documentación.
         </p>
-        <button
-          type="button"
-          className="mt-8 border border-amber-600 bg-amber-950/30 px-10 py-4 text-xs font-bold uppercase tracking-widest text-amber-500"
-        >
+        <button type="button" className={`mt-8 ${art.secondaryCta}`}>
           Solicitar llamado
         </button>
       </section>
 
       <DemoEnhancements
-        slug="abogados"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Bravo y Asociados"
         sectionClass="border-y border-amber-900/25 bg-[#0a0a0a]"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-amber-900/30 bg-neutral-950 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-neutral-400"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-amber-600"
         extraTestimonialsTitle="Más clientes"

@@ -1,4 +1,10 @@
 import { Box, Cpu, Lock, Rocket, Sparkles } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,59 +14,69 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "tech" as const;
 
 export function DemoTechLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-slate-950 font-[family-name:var(--font-demo-montserrat)] text-slate-200">
+    <div style={demoBodyStyle(SLUG)} className={`relative ${art.pageRoot}`}>
       <div className="pointer-events-none fixed inset-0 opacity-40">
         <div className="absolute left-1/4 top-0 h-[500px] w-[500px] rounded-full bg-violet-600/20 blur-[120px]" />
         <div className="absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-cyan-500/15 blur-[100px]" />
       </div>
 
-      <nav className="relative z-10 flex items-center justify-between px-5 py-5 md:px-10">
-        <span className="flex items-center gap-2 font-[family-name:var(--font-jetbrains)] text-sm font-bold text-white">
+      <nav className="sticky top-0 z-40 flex items-center justify-between border-b border-violet-500/10 bg-slate-950/80 px-5 py-4 backdrop-blur-md md:px-10">
+        <span className={`flex items-center gap-2 text-sm font-bold text-white ${h}`}>
           <Cpu className="h-5 w-5 text-violet-400" />
           NexoLab
         </span>
         <div className="flex items-center gap-4">
           <span className="hidden text-xs text-slate-500 md:inline">Docs</span>
-          <button
-            type="button"
-            className="rounded-lg bg-white px-4 py-2 text-xs font-bold text-slate-950"
-          >
+          <button type="button" className={art.primaryCta}>
             Empezar trial
           </button>
         </div>
       </nav>
 
-      <header className="relative z-10 mx-auto max-w-4xl px-5 pt-12 text-center md:pt-20">
-        <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-violet-300">
-          <Sparkles className="h-3 w-3" /> Nuevo · API v2
-        </div>
-        <h1 className="mt-8 bg-gradient-to-b from-white to-slate-500 bg-clip-text font-[family-name:var(--font-demo-montserrat)] text-4xl font-extrabold leading-tight text-transparent md:text-6xl md:leading-tight">
-          Orquestá integraciones sin escribir boilerplate
-        </h1>
-        <p className="mx-auto mt-6 max-w-lg text-sm text-slate-400">
-          Conectores listos, webhooks firmados y panel para tu equipo de soporte.
-          SLA 99,9% en plan Business — demo con datos sintéticos.
-        </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <button
-            type="button"
-            className="rounded-xl bg-violet-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-violet-600/30"
-          >
-            Crear cuenta gratis
-          </button>
-          <button
-            type="button"
-            className="rounded-xl border border-slate-700 bg-slate-900/60 px-8 py-3.5 text-sm font-bold text-slate-300 backdrop-blur"
-          >
-            Ver documentación
-          </button>
-        </div>
-      </header>
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-slate-400"
+        kicker={
+          <div className="mx-auto inline-flex w-max items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-violet-300 md:mx-0">
+            <Sparkles className="h-3 w-3" /> Nuevo · API v2
+          </div>
+        }
+        title={
+          <>
+            Orquestá integraciones
+            <br />
+            <span className="bg-gradient-to-b from-violet-200 to-slate-400 bg-clip-text text-transparent">
+              sin boilerplate
+            </span>
+          </>
+        }
+        lead="Conectores listos, webhooks firmados y panel para tu equipo de soporte. SLA 99,9% en plan Business — demo con datos sintéticos."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Crear cuenta gratis
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              Ver documentación
+            </button>
+          </>
+        }
+      />
 
-      <section className="relative z-10 mx-auto mt-20 max-w-5xl px-5">
+      <section className="relative z-10 mx-auto mt-6 max-w-5xl px-5 pb-8">
         <div className="grid gap-4 md:grid-cols-3">
           {[
             {
@@ -79,18 +95,15 @@ export function DemoTechLanding() {
               d: "Deploy en multi-región con un click.",
             },
           ].map(({ icon: I, t, d }) => (
-            <div
-              key={t}
-              className="rounded-2xl border border-slate-800/80 bg-slate-900/40 p-6 backdrop-blur-md"
-            >
+            <div key={t} className={`p-6 backdrop-blur-md ${art.cardShell}`}>
               <I className="h-6 w-6 text-cyan-400" />
-              <p className="mt-4 font-bold text-white">{t}</p>
+              <p className={`mt-4 font-bold text-white ${h}`}>{t}</p>
               <p className="mt-2 text-xs leading-relaxed text-slate-500">{d}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 overflow-hidden rounded-2xl border border-slate-800 bg-black/60 p-6 font-[family-name:var(--font-jetbrains)] text-left text-xs text-violet-300/90 backdrop-blur">
+        <div className={`mt-8 overflow-hidden p-6 text-left text-xs text-violet-300/90 backdrop-blur ${art.cardShell} font-mono`}>
           <p className="text-slate-500">$ nexolab init --project demo</p>
           <p className="mt-1 text-emerald-400">✓ Connected · 3 environments</p>
           <p className="mt-1 text-slate-400">→ Dashboard: https://app.nexolab.demo</p>
@@ -98,6 +111,7 @@ export function DemoTechLanding() {
       </section>
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Plataforma"
         title="Menos glue code: conectores mantenidos y observabilidad de extremo a extremo"
         paragraphs={[
@@ -118,13 +132,14 @@ export function DemoTechLanding() {
           { value: "48 h", label: "Onboarding", hint: "Con dev interno" },
         ]}
         sectionClass="relative z-10 border-y border-slate-800 bg-slate-900/50"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-950/80 p-6"
-        valueClass="text-3xl font-black text-cyan-400"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-cyan-400 ${h}`}
         labelClass="mt-2 text-[11px] font-bold uppercase tracking-wider text-slate-500"
         hintClass="mt-1 text-xs text-slate-600"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Seguridad y compliance"
         subtitle="SOC2 type II en marcha; compartimos letter progress trimestral."
         steps={[
@@ -137,16 +152,17 @@ export function DemoTechLanding() {
         titleClass="text-white"
         subtitleClass="text-slate-500"
         stepNumClass="text-violet-400"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         stepTitleClass="font-bold text-white"
         stepDescClass="mt-2 text-sm text-slate-500"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Roadmap público"
         sectionClass="relative z-10 bg-slate-900/30"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-950/60 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         itemTitleClass="font-bold text-violet-300"
         itemBodyClass="mt-2 text-sm text-slate-500"
         items={[
@@ -158,10 +174,11 @@ export function DemoTechLanding() {
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Equipos de plataforma"
         sectionClass="relative z-10 border-y border-slate-800 bg-slate-950/50"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-900/50 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-slate-300"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-violet-400"
         quotes={[
@@ -172,6 +189,7 @@ export function DemoTechLanding() {
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ"
         sectionClass="relative z-10 border-t border-slate-800 bg-black/40"
         titleClass="text-white"
@@ -187,13 +205,14 @@ export function DemoTechLanding() {
       />
 
       <DemoEnhancements
-        slug="tech"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="NexoLab Software"
         shopCardClass="border border-violet-500/25 bg-slate-900/60"
         shopAccentClass="bg-violet-600 font-bold text-white"
         sectionClass="relative z-10 border-y border-violet-500/15 bg-slate-950/80"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-slate-800 bg-slate-900/50 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-slate-300"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-violet-400"
         extraTestimonialsTitle="Equipos de ingeniería"
@@ -204,7 +223,7 @@ export function DemoTechLanding() {
         ]}
       />
 
-      <footer className="relative z-10 mt-20 py-10 text-center text-xs text-slate-600">
+      <footer className="relative z-10 mt-12 py-10 text-center text-xs text-slate-600">
         Demo visual · MadsJeez Design
       </footer>
     </div>

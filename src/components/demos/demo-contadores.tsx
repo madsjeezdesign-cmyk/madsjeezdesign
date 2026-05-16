@@ -1,4 +1,10 @@
 import { Calculator, FileSpreadsheet, Landmark, Scale, ShieldCheck } from "lucide-react";
+import { getDemoVisuals } from "@/lib/demo-assets";
+import {
+  DEMO_HEADING_CLASS,
+  demoBodyStyle,
+  getDemoArtDirection,
+} from "@/lib/demo-art-direction";
 import {
   DemoDetailGrid,
   DemoFaqList,
@@ -8,35 +14,56 @@ import {
   DemoTestimonials,
 } from "./demo-common-sections";
 import { DemoEnhancements } from "./demo-enhancements";
+import { DemoThemedHero } from "./demo-themed-hero";
+
+const SLUG = "contadores" as const;
 
 export function DemoContadoresLanding() {
+  const v = getDemoVisuals(SLUG);
+  const art = getDemoArtDirection(SLUG);
+  const h = DEMO_HEADING_CLASS[SLUG];
+
   return (
-    <div className="min-h-screen bg-slate-950 font-[family-name:var(--font-demo-montserrat)] text-slate-200">
+    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <nav className="flex items-center justify-between border-b border-slate-700 px-4 py-4 md:px-10">
-        <span className="flex items-center gap-2 font-bold text-white">
+        <span className={`flex items-center gap-2 font-bold text-white ${h}`}>
           <Calculator className="h-6 w-6 text-slate-400" />
           Número Exacto
         </span>
-        <button type="button" className="rounded-lg border border-slate-600 px-4 py-2 text-xs font-bold uppercase text-white">
+        <button type="button" className={art.secondaryCta}>
           Agendar videollamada
         </button>
       </nav>
 
-      <header className="px-4 pb-14 pt-14 md:px-10 md:pt-20">
-        <h1 className="font-[family-name:var(--font-demo-bebas)] text-5xl uppercase text-white md:text-7xl">
-          Contabilidad
-          <br />
-          <span className="text-slate-400">que habla con tu banco</span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
-          Monotributo, responsable inscripto, SAS y sociedades. Presentaciones
-          AFIP y ARBA, balances auditables demo, payroll outsourcing y armado de
-          carpetas para créditos bancarios. Integramos extractos vía banca
-          electrónica y conciliamos tarjetas con ERP o Excel compartido.
-        </p>
-      </header>
+      <DemoThemedHero
+        variant={art.heroVariant}
+        imageSrc={v.cover}
+        headingClass={h}
+        titleColorClass="text-white"
+        leadColorClass="text-slate-400"
+        kicker={<p className={`text-[10px] uppercase tracking-[0.35em] text-slate-500 ${h}`}>Estudio contable · cloud</p>}
+        title={
+          <>
+            Contabilidad
+            <br />
+            <span className="text-slate-400">que habla con tu banco</span>
+          </>
+        }
+        lead="Monotributo, responsable inscripto, SAS y sociedades. Presentaciones AFIP y ARBA, balances auditables demo, payroll outsourcing y armado de carpetas para créditos bancarios. Integramos extractos vía banca electrónica y conciliamos tarjetas con ERP o Excel compartido."
+        ctas={
+          <>
+            <button type="button" className={art.primaryCta}>
+              Cotizar plan
+            </button>
+            <button type="button" className={art.secondaryCta}>
+              Ver servicios
+            </button>
+          </>
+        }
+      />
 
       <DemoLongStory
+        sectionHeadingClass={h}
         kicker="Enfoque"
         title="Menos improvisación, más previsibilidad fiscal"
         paragraphs={[
@@ -56,9 +83,9 @@ export function DemoContadoresLanding() {
             { icon: ShieldCheck, t: "Compliance", d: "UIF cuando corresponde, convenio multilateral y control de retenciones sufridas." },
             { icon: Landmark, t: "Relación bancaria", d: "Te preparamos pack para gerente con ratios y proyección de flujo 6 meses demo." },
           ].map(({ icon: I, t, d }) => (
-            <div key={t} className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
+            <div key={t} className={`p-6 ${art.cardShell}`}>
               <I className="h-6 w-6 text-slate-400" />
-              <h3 className="mt-3 font-bold text-white">{t}</h3>
+              <h3 className={`mt-3 font-bold text-white ${h}`}>{t}</h3>
               <p className="mt-2 text-sm text-slate-500">{d}</p>
             </div>
           ))}
@@ -72,12 +99,14 @@ export function DemoContadoresLanding() {
           { value: "100%", label: "Trabajo en cloud", hint: "Firma digital demo" },
           { value: "24 h", label: "SLA consultas", hint: "Días hábiles" },
         ]}
-        cardClass="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"
-        valueClass="text-3xl font-black text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        valueClass={`text-3xl font-black text-white ${h}`}
         labelClass="mt-2 text-[11px] font-bold uppercase text-slate-500"
+        sectionClass="border-y border-slate-800 bg-slate-950/50"
       />
 
       <DemoProcessSteps
+        sectionHeadingClass={h}
         title="Onboarding"
         subtitle="En dos semanas tenés balances normalizados y calendario listo."
         steps={[
@@ -87,9 +116,15 @@ export function DemoContadoresLanding() {
           { n: "04", t: "Operación continua", d: "Mes cerrado hasta día 8 hábil con reunión de 15 minutos de variaciones." },
         ]}
         stepNumClass="text-slate-400"
+        titleClass="text-white"
+        subtitleClass="text-slate-500"
+        cardClass={`p-6 ${art.cardShell}`}
+        stepTitleClass="font-bold text-white"
+        stepDescClass="mt-2 text-sm text-slate-500"
       />
 
       <DemoDetailGrid
+        sectionHeadingClass={h}
         title="Planes orientativos"
         items={[
           { title: "Monotributo full", body: "Facturación, recategorización, obra social y DDJJ anuales. Incluye respuesta a ARCA sobre ventas cruzadas demo." },
@@ -97,19 +132,28 @@ export function DemoContadoresLanding() {
           { title: "Due diligence venta", body: "Data room contable, ajustes de working capital y proforma de deuda." },
           { title: "Recuperación mora", body: "Cartas documento coordinadas con estudio externo y provisión contable." },
         ]}
-        itemTitleClass="text-slate-300"
+        itemTitleClass="font-bold text-slate-300"
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        itemBodyClass="mt-2 text-sm text-slate-500"
       />
 
       <DemoTestimonials
+        sectionHeadingClass={h}
         title="Referencias"
         quotes={[
           { text: "Pasamos de planilla a reportes que entiendo en el celular.", author: "Laura Bench", role: "Retail indumentaria" },
           { text: "Nos salvaron el cierre para el fondo ángel.", author: "Tomás Arias", role: "Startup SaaS demo" },
           { text: "Precio fijo mensual sin sorpresas.", author: "Miguel Fornes", role: "Distribuidor" },
         ]}
+        titleClass="text-white"
+        cardClass={`p-6 ${art.cardShell}`}
+        quoteClass="text-sm italic text-slate-400"
+        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-slate-300"
       />
 
       <DemoFaqList
+        sectionHeadingClass={h}
         title="FAQ impuestos"
         items={[
           { q: "¿Trabajan con contador interno del cliente?", a: "Sí, en modelo híbrido: nosotros fiscal y consolidación, tu equipo operativo." },
@@ -117,19 +161,25 @@ export function DemoContadoresLanding() {
           { q: "¿Auditorías externas?", a: "Armado de file y liaison con auditores; no emitimos opinión de auditoría." },
           { q: "¿Secretaría societarial?", a: "Actas y designaciones vía estudio jurídico asociado demo." },
         ]}
+        titleClass="text-white"
+        qClass="font-bold text-slate-200"
+        aClass="mt-2 text-sm text-slate-500"
       />
 
-      <section className="flex items-center justify-center gap-2 bg-slate-800 px-4 py-10">
-        <Scale className="h-8 w-8" />
-        <span className="font-bold text-white">Primera consulta 30 min sin costo demo · cupos mayo</span>
+      <section className="flex flex-wrap items-center justify-center gap-2 bg-slate-800 px-4 py-10">
+        <Scale className="h-8 w-8 shrink-0 text-slate-300" />
+        <span className={`text-center text-sm font-bold text-white md:text-base ${h}`}>
+          Primera consulta 30 min sin costo demo · cupos mayo
+        </span>
       </section>
 
       <DemoEnhancements
-        slug="contadores"
+        slug={SLUG}
+        omitCoverBanner
         brandLabel="Número Exacto"
         sectionClass="border-y border-slate-700 bg-slate-950"
         titleClass="text-white"
-        cardClass="rounded-2xl border border-slate-700 bg-slate-900/60 p-6"
+        cardClass={`p-6 ${art.cardShell}`}
         quoteClass="text-sm italic text-slate-400"
         authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-slate-300"
         extraTestimonialsTitle="PyMEs y profesionales"
