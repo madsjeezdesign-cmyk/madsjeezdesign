@@ -58,6 +58,10 @@ const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">
   ark: { badge: "Cluster", subtitle: "Workshop ASA" },
   terraria: { badge: "tModLoader", subtitle: "Co-op worlds" },
   palworld: { badge: "Dedicated", subtitle: "Co-op pals" },
+  streamer: { badge: "Live", subtitle: "Twitch & Kick" },
+  youtuber: { badge: "Studio", subtitle: "Long-form" },
+  tiktoker: { badge: "Viral", subtitle: "Short-form" },
+  comunicadores: { badge: "On air", subtitle: "Podcast & prensa" },
 };
 
 export function getShowcaseCardTheme(slug: string, accentHex: string): ShowcaseCardTheme {

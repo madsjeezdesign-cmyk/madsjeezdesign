@@ -339,6 +339,34 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     pitch:
       "Dedicated co-op con saves protegidos y restarts: captación para comunidades Pal activas post-launch.",
   },
+  streamer: {
+    color: "from-violet-600/30",
+    accent: "text-violet-400",
+    border: "group-hover:border-violet-500/50",
+    pitch:
+      "Hub para streamers con overlays, donaciones y media kit: convierte viewers en sponsors y subs.",
+  },
+  youtuber: {
+    color: "from-red-600/30",
+    accent: "text-red-400",
+    border: "group-hover:border-red-500/50",
+    pitch:
+      "Landing de canal con funnels de sponsors, lead magnets y biblioteca SEO para creadores long-form.",
+  },
+  tiktoker: {
+    color: "from-cyan-600/30",
+    accent: "text-cyan-300",
+    border: "group-hover:border-cyan-400/50",
+    pitch:
+      "Link in bio mobile-first con UGC, formulario de marcas y tienda digital para creadores short-form.",
+  },
+  comunicadores: {
+    color: "from-amber-600/30",
+    accent: "text-amber-400",
+    border: "group-hover:border-amber-500/50",
+    pitch:
+      "Sitio broadcast para podcasters y comunicadores: episodios, prensa, booking y sponsors en un solo hub.",
+  },
 };
 
 export function getShowcaseMeta(slug: string): ShowcaseCardMeta {

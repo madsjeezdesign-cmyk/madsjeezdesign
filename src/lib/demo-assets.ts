@@ -95,6 +95,8 @@ function gameServerLead(accent: string): DemoLeadTheme {
   };
 }
 
+const creatorLead = gameServerLead;
+
 const GS_PLACEHOLDER = u("photo-1542751374-adc38448a05e", "ixlib=rb-4.0.3");
 
 /** Cobertura por slug — mismas claves que DEMOS */
@@ -917,6 +919,38 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     b: GS_PLACEHOLDER,
     c: GS_PLACEHOLDER,
     lead: gameServerLead("#06b6d4"),
+    shop: null,
+  },
+  streamer: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: creatorLead("#9146ff"),
+    shop: null,
+  },
+  youtuber: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: creatorLead("#ff0000"),
+    shop: null,
+  },
+  tiktoker: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: creatorLead("#25f4ee"),
+    shop: null,
+  },
+  comunicadores: {
+    cover: GS_PLACEHOLDER,
+    a: GS_PLACEHOLDER,
+    b: GS_PLACEHOLDER,
+    c: GS_PLACEHOLDER,
+    lead: creatorLead("#f59e0b"),
     shop: null,
   },
 };

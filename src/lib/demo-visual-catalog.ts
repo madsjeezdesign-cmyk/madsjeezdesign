@@ -338,6 +338,38 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     d: id("photo-1712883596678-abdae6550a9a"),
     e: id("photo-1711214107882-f180ca17637d"),
   },
+  streamer: {
+    cover: id("photo-1511516718561-96265b1d0477"),
+    a: id("photo-1522869635101-7f8c96765a1d"),
+    b: id("photo-1549692345-7f3364ec8804"),
+    c: id("photo-1574717024653-e22288a92194"),
+    d: id("photo-1611532739407-5da1e0e7bb4a"),
+    e: id("photo-1624487500581-d9fb78a37996"),
+  },
+  youtuber: {
+    cover: id("photo-1616469818811-81d29e840b26"),
+    a: id("photo-1598893490205-67759876e403"),
+    b: id("photo-1579375909881-2b04b96b1d23"),
+    c: id("photo-1611160613972-efece30b36ff"),
+    d: id("photo-1626785774627-f869a9ec25fa"),
+    e: id("photo-1611162616305-c69b65e98240"),
+  },
+  tiktoker: {
+    cover: id("photo-1611606813691-7afffb69ebc7"),
+    a: id("photo-1611606815092-1aea6fb7e767"),
+    b: id("photo-1526498464423-471187cc822c"),
+    c: id("photo-1614680376619-4b0c16c676c8"),
+    d: id("photo-1529154215-abb9739d3939"),
+    e: id("photo-1600880292203-757bb62b4baf"),
+  },
+  comunicadores: {
+    cover: id("photo-1478731560518-11037afce4e2"),
+    a: id("photo-1590602847865-f9882636d4ae"),
+    b: id("photo-1511671782779-c970da3776b4"),
+    c: id("photo-1589904486835-89ab6bf06b9b"),
+    d: id("photo-1516280443617-27378d4fb516"),
+    e: id("photo-1598387813146-34c809f26f0f"),
+  },
 };
 
 /** Tiendas demo: copy de conversión + layout distinto por rubro. */
@@ -844,5 +876,25 @@ export const DEMO_LEAD_COPY: Record<string, { kicker: string; title: string; sub
     kicker: "Dedicated co-op",
     title: "Activá tu Palworld",
     sub: "Saves en NVMe y restarts programados.",
+  },
+  streamer: {
+    kicker: "Overlays & alerts",
+    title: "Lanzá tu hub live",
+    sub: "Donaciones, media kit y panel de sponsors en un solo sitio.",
+  },
+  youtuber: {
+    kicker: "Sponsors & funnel",
+    title: "Pedí tu landing de canal",
+    sub: "Media kit, lead magnet y tarifas listas para marcas.",
+  },
+  tiktoker: {
+    kicker: "Link in bio pro",
+    title: "Convertí tu feed",
+    sub: "UGC, formulario de marcas y tienda digital mobile-first.",
+  },
+  comunicadores: {
+    kicker: "Podcast & prensa",
+    title: "Reservá tu sitio OnAir",
+    sub: "Episodios, EPK y booking de charlas con estética broadcast.",
   },
 };

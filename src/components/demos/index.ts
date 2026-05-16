@@ -40,3 +40,9 @@ export {
   DemoTerraria,
   DemoPalworld,
 } from "./game-server/create-game-server-demo";
+export {
+  DemoStreamer,
+  DemoYoutuber,
+  DemoTiktoker,
+  DemoComunicadores,
+} from "./creator/create-creator-demo";

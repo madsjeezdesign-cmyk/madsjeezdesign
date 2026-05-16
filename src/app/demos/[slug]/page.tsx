@@ -46,6 +46,10 @@ import {
   DemoArk,
   DemoTerraria,
   DemoPalworld,
+  DemoStreamer,
+  DemoYoutuber,
+  DemoTiktoker,
+  DemoComunicadores,
 } from "@/components/demos";
 
 const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
@@ -89,6 +93,10 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   ark: DemoArk,
   terraria: DemoTerraria,
   palworld: DemoPalworld,
+  streamer: DemoStreamer,
+  youtuber: DemoYoutuber,
+  tiktoker: DemoTiktoker,
+  comunicadores: DemoComunicadores,
 };
 
 export function generateStaticParams() {

@@ -333,6 +333,38 @@ export const DEMOS: DemoMeta[] = [
     accent: "#06b6d4",
     previewClass: "from-cyan-950 to-slate-950",
   },
+  {
+    slug: "streamer",
+    title: "NeoStream",
+    industry: "Streamer · Twitch & Kick",
+    tagline: "Overlays, donaciones y media kit en un hub",
+    accent: "#9146ff",
+    previewClass: "from-violet-950 to-slate-950",
+  },
+  {
+    slug: "youtuber",
+    title: "FrameLab",
+    industry: "YouTuber · long-form",
+    tagline: "Funnels de sponsors y biblioteca de videos",
+    accent: "#ff0000",
+    previewClass: "from-red-950 to-slate-950",
+  },
+  {
+    slug: "tiktoker",
+    title: "ViralPulse",
+    industry: "TikToker · short-form",
+    tagline: "Link in bio, UGC y formulario de marcas",
+    accent: "#25f4ee",
+    previewClass: "from-cyan-950 via-fuchsia-950 to-slate-950",
+  },
+  {
+    slug: "comunicadores",
+    title: "OnAir Media",
+    industry: "Podcast & comunicación",
+    tagline: "Episodios, prensa y booking de charlas",
+    accent: "#f59e0b",
+    previewClass: "from-amber-950 to-slate-950",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

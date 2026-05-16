@@ -413,6 +413,17 @@ const bGameserver = Inter({
   variable: "--font-demo-b-gameserver",
 });
 
+const hCreator = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-demo-h-creator",
+});
+const bCreator = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-demo-b-creator",
+});
+
 /** Concatenar en el layout de /demos para definir todas las variables CSS. */
 export const demoFontsClassName = [
   hFerreteria.variable,
@@ -478,4 +489,6 @@ export const demoFontsClassName = [
   bCoworking.variable,
   hGameserver.variable,
   bGameserver.variable,
+  hCreator.variable,
+  bCreator.variable,
 ].join(" ");
