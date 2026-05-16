@@ -18,6 +18,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 import {
   portfolioSites,
   services,
@@ -95,6 +96,12 @@ export function HyperLanding() {
             <a href="#stack" className="transition-all hover:text-[#1de0b1]">Stack</a>
             <a href="#protocolos" className="transition-all hover:text-[#1de0b1]">Código</a>
             <a href="#nexo" className="transition-all hover:text-[#1de0b1]">Nexo</a>
+            <Link
+              href="/demos"
+              className="rounded-full border-2 border-amber-400/80 bg-gradient-to-r from-amber-500/25 to-orange-500/20 px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-amber-200 shadow-[0_0_22px_rgba(251,191,36,0.45)] transition-all hover:scale-105 hover:border-amber-300 hover:from-amber-400/35 hover:to-orange-400/30 hover:text-white hover:shadow-[0_0_28px_rgba(251,191,36,0.55)]"
+            >
+              10 demos
+            </Link>
             <a
               href="#nexo"
               className="rounded-full bg-[#1de0b1] px-6 py-2.5 text-[#05070a] shadow-[0_10px_20px_-5px_rgba(29,224,177,0.4)] transition-all hover:scale-105 hover:bg-white active:scale-95 md:px-8 md:py-3"
@@ -123,6 +130,13 @@ export function HyperLanding() {
               <a href="#stack" onClick={() => setMobileOpen(false)}>Stack</a>
               <a href="#protocolos" onClick={() => setMobileOpen(false)}>Código</a>
               <a href="#nexo" onClick={() => setMobileOpen(false)}>Nexo</a>
+              <Link
+                href="/demos"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex items-center justify-center rounded-full border-2 border-amber-400/80 bg-gradient-to-r from-amber-500/25 to-orange-500/20 py-3 text-amber-200 shadow-[0_0_20px_rgba(251,191,36,0.4)] transition-all hover:text-white"
+              >
+                10 demos por rubro
+              </Link>
               <a
                 href="#nexo"
                 onClick={() => setMobileOpen(false)}
