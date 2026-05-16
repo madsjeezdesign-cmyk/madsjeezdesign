@@ -1,0 +1,718 @@
+/**
+ * Imágenes y tiendas únicas por slug (sin repetir IDs entre rubros).
+ * Los temas de lead siguen en demo-assets.ts.
+ */
+
+import type { DemoShopConfig } from "@/lib/demo-assets";
+
+export type DemoImageSet = {
+  cover: string;
+  a: string;
+  b: string;
+  c: string;
+  d: string;
+  e: string;
+};
+
+const id = (photoId: string) =>
+  `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=1400&q=82&ixlib=rb-4.0.3`;
+
+export const DEMO_IMAGES: Record<string, DemoImageSet> = {
+  ferreteria: {
+    cover: id("photo-1504148455328-c376907d081c"),
+    a: id("photo-1625047509168-a7026f36de04"),
+    b: id("photo-1504328345606-18bbc8c9d7d1"),
+    c: id("photo-1530124569389-6585d6eee850"),
+    d: id("photo-1581091226034-f4c2e729aa13"),
+    e: id("photo-1621905252507-b35492cc74b4"),
+  },
+  restaurante: {
+    cover: id("photo-1517248135467-4c7edcad34c4"),
+    a: id("photo-1414235077428-338989a2e8c0"),
+    b: id("photo-1555396273-367ea4eb4db5"),
+    c: id("photo-1559339352-11d035aa65de"),
+    d: id("photo-1552566626-52f8b7d9a148"),
+    e: id("photo-1551218808-94e220e084d2"),
+  },
+  estetica: {
+    cover: id("photo-1560066984-138dadb4c035"),
+    a: id("photo-1522337360788-8b13dee7a37e"),
+    b: id("photo-1511499767150-a48a237f0083"),
+    c: id("photo-1487412940907-5f8b5fb8d5c5"),
+    d: id("photo-1516975080664-ed2fc6a32983"),
+    e: id("photo-1524504388940-b1c1722653e1"),
+  },
+  gimnasio: {
+    cover: id("photo-1571902943202-507ec2618e8f"),
+    a: id("photo-1534438327276-14e5300c3a48"),
+    b: id("photo-1490645935967-10de6ba17061"),
+    c: id("photo-1517836357463-d25dfeac3438"),
+    d: id("photo-1583454110551-21ed2c878d0e"),
+    e: id("photo-1571019614242-c5c5dee9f50e"),
+  },
+  veterinaria: {
+    cover: id("photo-1548199973-03cce0bbc87b"),
+    a: id("photo-1583337130417-3346a1be7dee"),
+    b: id("photo-1601758228041-f3b2795255f1"),
+    c: id("photo-1587300003388-59208cc962cb"),
+    d: id("photo-1450778862550-9d9baf9a8f7f"),
+    e: id("photo-1516734212186-a967f81d0b8c"),
+  },
+  inmobiliaria: {
+    cover: id("photo-1560518883-ce09059eeffa"),
+    a: id("photo-1600596542815-ffad4c1539a9"),
+    b: id("photo-1600585154340-be6161a56a0c"),
+    c: id("photo-1600047509807-ba139d0a8a8c"),
+    d: id("photo-1600607687640-4a3ac7fbe8b0"),
+    e: id("photo-1600566753190-17f0baa2a6c3"),
+  },
+  tech: {
+    cover: id("photo-1517694712202-14dd9538aa97"),
+    a: id("photo-1555949963-aa79dcee981c"),
+    b: id("photo-1460925895917-afdab827c52f"),
+    c: id("photo-1504639725590-34d0984388bd"),
+    d: id("photo-1551288049-bebda4e38f71"),
+    e: id("photo-1550751827-4bd374c3f58b"),
+  },
+  floreria: {
+    cover: id("photo-1490750967868-88aa4486c946"),
+    a: id("photo-1561181286-d3fee7d55364"),
+    b: id("photo-1487072168812-7b4c0a7b2d3a"),
+    c: id("photo-1464349095432-e228a98d72be"),
+    d: id("photo-1519378058454-fbd6c2f0c8e0"),
+    e: id("photo-1496066787929-58a6a7b8d24f"),
+  },
+  taller: {
+    cover: id("photo-1619405399517-d7fce0f13302"),
+    a: id("photo-1487754183944-69b058268714"),
+    b: id("photo-1621939514570-ba078ad00c44"),
+    c: id("photo-1615909438525-d252b0a44c47"),
+    d: id("photo-1486262715619-67b85e0a08d3"),
+    e: id("photo-1492144534655-ae79c964c9d7"),
+  },
+  abogados: {
+    cover: id("photo-1507679799987-c73779587ccf"),
+    a: id("photo-1450101499163-c8848c66ca85"),
+    b: id("photo-1454165804606-c3d57bc86b40"),
+    c: id("photo-1554224155-6726b3ff858f"),
+    d: id("photo-1589829545856-d10d557cf7f1"),
+    e: id("photo-1521791136064-7986c2920216"),
+  },
+  farmacia: {
+    cover: id("photo-1587854692152-cbe660dbde88"),
+    a: id("photo-1576091160399-112ba8d25d1d"),
+    b: id("photo-1555633514-abcee6ab92e1"),
+    c: id("photo-1631548856608-5e1b4e4e3b3e"),
+    d: id("photo-1584308664894-14d4b1525afb"),
+    e: id("photo-1576091160550-017a1f9a0e0e"),
+  },
+  odontologia: {
+    cover: id("photo-1629909613654-28e377c37b09"),
+    a: id("photo-1606811971618-4486d14f46ea"),
+    b: id("photo-1609840114035-3c981b782dfe"),
+    c: id("photo-1588776814546-1ffcf47267a5"),
+    d: id("photo-1608570460779-187a3a8efca9"),
+    e: id("photo-1622549789220-81ad32970437"),
+  },
+  contadores: {
+    cover: id("photo-1568997034235-ad0e27fe8cb5"),
+    a: id("photo-1551836022-d5d88e9c4339"),
+    b: id("photo-1556761175-5973dc0f32e7"),
+    c: id("photo-1553877522-43269d4ea984"),
+    d: id("photo-1521737714869-ea242ddcfe7c"),
+    e: id("photo-1552664730-d307ca884978"),
+  },
+  musica: {
+    cover: id("photo-1511379938547-c1f69419868d"),
+    a: id("photo-1511671782779-c97d3d27a1d4"),
+    b: id("photo-1493225457124-a3eb161ffa5f"),
+    c: id("photo-1520523839897-bd0b52f945a0"),
+    d: id("photo-1514320291840-75555a4ecee6"),
+    e: id("photo-1516280449280-90f38ede9c0c"),
+  },
+  detailing: {
+    cover: id("photo-1601362849907-683653470621"),
+    a: id("photo-1607860106248-6b3adfb34db8"),
+    b: id("photo-1618005196385-e92f6c6aa40e"),
+    c: id("photo-1507136561156-8f4336299e1b"),
+    d: id("photo-1503376780353-7e6692767b70"),
+    e: id("photo-1502877338535-766e1452684a"),
+  },
+  panaderia: {
+    cover: id("photo-1509440159596-0249088772ff"),
+    a: id("photo-1555507036-ab1f4038808a"),
+    b: id("photo-1542838132-92c53300491e"),
+    c: id("photo-1517433670127-fbb54da666d7"),
+    d: id("photo-1558961363-fa8a64e0a1a1"),
+    e: id("photo-1486427948961-9a4c4b5e0e0e"),
+  },
+  viajes: {
+    cover: id("photo-1488646953014-85cb44e25828"),
+    a: id("photo-1436491865332-7a61a109cc05"),
+    b: id("photo-1476514525535-07fb3c4a672c"),
+    c: id("photo-1501785888041-ca649709b10e"),
+    d: id("photo-1469854523086-cc02afe5bf8d"),
+    e: id("photo-1506929562872-b936b837ad0a"),
+  },
+  limpieza: {
+    cover: id("photo-1581578731548-c64695cc6952"),
+    a: id("photo-1585421514754-4e9be3c2c1c1"),
+    b: id("photo-1628177140286-f2947b9ec0e8"),
+    c: id("photo-1527515637462-c4f23375a7f6"),
+    d: id("photo-1557683316-973673baf926"),
+    e: id("photo-1563453392219-992ef1b12c55"),
+  },
+  foto: {
+    cover: id("photo-1516035069371-29a1b244cc32"),
+    a: id("photo-1542038784456-1ea8e935640e"),
+    b: id("photo-1492691527719-9d1e07e534b4"),
+    c: id("photo-1452587925148-ce544e77e70d"),
+    d: id("photo-1493863647861-56959e9e0b8f"),
+    e: id("photo-1472214103451-9374bd1c798e"),
+  },
+  optica: {
+    cover: id("photo-1574258495973-f010dfbb5371"),
+    a: id("photo-1577805187420-988e1a4a0a4a"),
+    b: id("photo-1596727147706-43c2c8f21e10"),
+    c: id("photo-1509695507047-3c4461469b0c"),
+    d: id("photo-1516574187841-545a68f08e4a"),
+    e: id("photo-1559757148-5c350d0d3c56"),
+  },
+  heladeria: {
+    cover: id("photo-1563805042-76840396a842"),
+    a: id("photo-1497034825420-c936a79e04da"),
+    b: id("photo-1578985545062-69928b1d9587"),
+    c: id("photo-1556679343-c7306c1976bc"),
+    d: id("photo-1580915411954-282cb1b99deb"),
+    e: id("photo-1501447529947-6299e75df4aa"),
+  },
+  lavadero: {
+    cover: id("photo-1520340351874-b922bb932d21"),
+    a: id("photo-1489824904134-891ab64532f1"),
+    b: id("photo-1605559424843-ef52659a2732"),
+    c: id("photo-1558618253-d4b83be05c0e"),
+    d: id("photo-1619643475276-f7487e2e6a2a"),
+    e: id("photo-1628243609251-d411945f0271"),
+  },
+  seguridad: {
+    cover: id("photo-1557597774-9d63fd9ecffc"),
+    a: id("photo-1557804506-669a67965ba0"),
+    b: id("photo-1451187580459-43490279c0fa"),
+    c: id("photo-1510511459019-5dda772513fd"),
+    d: id("photo-1563986768609-322da13575f3"),
+    e: id("photo-1584433144859-1fc3ab64a978"),
+  },
+  yoga: {
+    cover: id("photo-1544367567-0f2fcb009e0b"),
+    a: id("photo-1506126613408-eca07ce68773"),
+    b: id("photo-1599901860904-17e6ed7083a0"),
+    c: id("photo-1545205597-3d9d02c29597"),
+    d: id("photo-1575052814086-42aed8426e4d"),
+    e: id("photo-1599447421410-3410dfe0c871"),
+  },
+  hotel: {
+    cover: id("photo-1566073771259-6a8506099945"),
+    a: id("photo-1631049307264-da0a9d8b57a2"),
+    b: id("photo-1611892440504-42a792ae8649"),
+    c: id("photo-1582719478250-c89cae4dc85b"),
+    d: id("photo-1520250497591-112f2f40a3f4"),
+    e: id("photo-1566662587733-51f80924b7a6"),
+  },
+  catering: {
+    cover: id("photo-1555244162-80383440eb97"),
+    a: id("photo-1466978913421-dad61cffa3a8"),
+    b: id("photo-1556910103-1c02745aae4d"),
+    c: id("photo-1555939593-03fac5b2aa18"),
+    d: id("photo-1540189549336-7b84b0e5f4a0"),
+    e: id("photo-1476224207-1cad74fd0f3f"),
+  },
+  paisajismo: {
+    cover: id("photo-1416879595882-3373a0480b7e"),
+    a: id("photo-1598901963450-c1a0e05f97b8"),
+    b: id("photo-1558618666-fcd25c85cd64"),
+    c: id("photo-1464226184922-a912d6707e4d"),
+    d: id("photo-1585320806297-9794b3e644ee"),
+    e: id("photo-1591857177580-dc82b24ee6e7"),
+  },
+  tattoo: {
+    cover: id("photo-1611501275019-9b5cda994e1d"),
+    a: id("photo-1590246814889-5791e37fe980"),
+    b: id("photo-1611348586804-61bf6c080496"),
+    c: id("photo-1568515048389-1d5da43f0424"),
+    d: id("photo-1598373181952-e1a05a1a5d4e"),
+    e: id("photo-1605100663262-a8a4ae864d68"),
+  },
+  cerrajeria: {
+    cover: id("photo-1589756824025-6bb2a6cf8fa1"),
+    a: id("photo-1581149787766-e32f0e58e3e2"),
+    b: id("photo-1558002038-1055907df827"),
+    c: id("photo-1504384308090-c894fdcc538d"),
+    d: id("photo-1453222714902-292970d40d78"),
+    e: id("photo-1616468811088-2baa50facf26"),
+  },
+  coworking: {
+    cover: id("photo-1527195091313-076d671660de"),
+    a: id("photo-1497366212358-3750bf24b38a"),
+    b: id("photo-1497366754035-f200968a6e72"),
+    c: id("photo-1524758631624-e2822e304c36"),
+    d: id("photo-1522071820081-009f0129c71c"),
+    e: id("photo-1519389950473-47ba0277781c"),
+  },
+};
+
+/** Tiendas demo: copy de conversión + layout distinto por rubro. */
+export const DEMO_SHOPS: Record<string, DemoShopConfig | null> = {
+  ferreteria: {
+    eyebrow: "Comprá ahora · retiro o envío",
+    headline: "Tu obra no para: stock real y entrega hoy",
+    sub: "Sumá materiales al carrito, reservá con número de pedido y recibí remito digital al instante. Ideal para constructoras y ferreterías de barrio.",
+    layout: "grid",
+    products: [
+      { id: "f1", name: "Combo taladro 750 W + mechas", price: "$189.900", note: "12 cuotas sin interés demo" },
+      { id: "f2", name: "Kit pintura interior 40 m²", price: "$98.400", note: "Envío gratis CABA" },
+      { id: "f3", name: "Bulonería industrial 1200 pzs", price: "$52.800" },
+    ],
+  },
+  restaurante: {
+    eyebrow: "Delivery & retiro",
+    headline: "Pedí ahora y comé como en sala",
+    sub: "Menú actualizado, tiempos de espera visibles y pago seguro. Perfecto para convertir reservas en tickets recurrentes.",
+    layout: "featured",
+    products: [
+      { id: "r1", name: "Experiencia 7 pasos (2 personas)", price: "$92.000", note: "Solo viernes y sábado" },
+      { id: "r2", name: "Burger norteña + papas craft", price: "$19.800" },
+      { id: "r3", name: "Maridaje 4 copas selección sommelier", price: "$34.500" },
+    ],
+  },
+  estetica: {
+    eyebrow: "Boutique facial",
+    headline: "Resultados visibles en 14 días",
+    sub: "Comprá protocolos profesionales con asesoría por WhatsApp y retiro en cabina sin costo extra.",
+    layout: "minimal",
+    products: [
+      { id: "e1", name: "Ritual glow vitamina C 30 días", price: "$64.500" },
+      { id: "e2", name: "Serum niacinamida 10% 50 ml", price: "$39.900", note: "Dermatológico" },
+      { id: "e3", name: "SPF 50+ fluido toque seco", price: "$31.200" },
+    ],
+  },
+  gimnasio: {
+    eyebrow: "Membresía & shop",
+    headline: "Empezá hoy: plan + suplementos",
+    sub: "Activá tu pase en minutos y sumá nutrición deportiva con envío al box.",
+    layout: "list",
+    products: [
+      { id: "g1", name: "Membresía ilimitada 3 meses", price: "$89.000", note: "Sin matrícula demo" },
+      { id: "g2", name: "Whey isolate 2 kg", price: "$96.500" },
+      { id: "g3", name: "Pack recovery + shaker", price: "$24.900" },
+    ],
+  },
+  veterinaria: {
+    eyebrow: "Pet shop clínico",
+    headline: "Cuidá a tu mascota sin salir de casa",
+    sub: "Alimento, antiparasitarios y accesorios con recordatorio de vacunas por email.",
+    layout: "bento",
+    products: [
+      { id: "v1", name: "Alimento premium 15 kg", price: "$81.200" },
+      { id: "v2", name: "Plan antipulgas 3 meses", price: "$26.800", note: "Gato/perro" },
+      { id: "v3", name: "Kit bienvenida cachorro", price: "$18.500" },
+    ],
+  },
+  inmobiliaria: null,
+  tech: {
+    eyebrow: "Licencias & add-ons",
+    headline: "Escalá tu SaaS sin llamar a ventas",
+    sub: "Sumá seats, soporte premium o onboarding en checkout transparente — ideal para equipos que ya probaron el trial.",
+    layout: "bento",
+    products: [
+      { id: "t1", name: "Seat Business +100k eventos", price: "USD 159 / mes" },
+      { id: "t2", name: "Soporte 24/7 dedicado", price: "USD 420 / mes" },
+      { id: "t3", name: "Onboarding asistido 12 h", price: "USD 1.350", note: "Pago único" },
+    ],
+  },
+  floreria: {
+    eyebrow: "Envío mismo día",
+    headline: "Sorprendé hoy: ramos listos en 2 h",
+    sub: "Elegí fecha, dedicatoria y seguimiento por WhatsApp. Suscripciones para oficinas disponibles.",
+    layout: "featured",
+    products: [
+      { id: "fl1", name: "Ramo premium peonías", price: "$32.500" },
+      { id: "fl2", name: "Suscripción semanal tulipanes", price: "$21.900 / sem" },
+      { id: "fl3", name: "Centro mesa evento 12 pax", price: "$48.000", note: "Coordinación incluida" },
+    ],
+  },
+  taller: {
+    eyebrow: "Repuestos & servicios",
+    headline: "Reservá service y pagá online",
+    sub: "Turno confirmado, repuestos originales y presupuesto sin sorpresas antes de aprobar.",
+    layout: "list",
+    products: [
+      { id: "ta1", name: "Service sintético 10.000 km", price: "$102.000", note: "Incluye filtro aceite" },
+      { id: "ta2", name: "Kit frenos delanteros premium", price: "$138.000" },
+      { id: "ta3", name: "Diagnóstico computarizado", price: "$28.000" },
+    ],
+  },
+  abogados: null,
+  farmacia: {
+    eyebrow: "Farmacia online",
+    headline: "Pedí y retirá en 45 minutos",
+    sub: "OTC, dermocosmética y cuidado familiar con validación de cobertura y cupones de obra social demo.",
+    layout: "grid",
+    products: [
+      { id: "fa1", name: "Pack pañales premium M x72", price: "$31.500" },
+      { id: "fa2", name: "Protector solar facial FPS 50+", price: "$23.800" },
+      { id: "fa3", name: "Electrolitos hidratación x12", price: "$7.200" },
+    ],
+  },
+  odontologia: {
+    eyebrow: "Cuidado en casa",
+    headline: "Mantené tu sonrisa entre visitas",
+    sub: "Productos recomendados por odontólogos del staff con instrucciones de uso en PDF.",
+    layout: "minimal",
+    products: [
+      { id: "o1", name: "Kit blanqueamiento supervisado", price: "$58.000" },
+      { id: "o2", name: "Cepillo sónico + 2 cabezales", price: "$42.500" },
+      { id: "o3", name: "Enjuague clínico sin alcohol", price: "$9.400" },
+    ],
+  },
+  contadores: null,
+  musica: {
+    eyebrow: "Inscripción & materiales",
+    headline: "Reservá tu lugar en el próximo cuatrimestre",
+    sub: "Cuotas claras, material digital incluido y acceso a ensamble estudiantil.",
+    layout: "bento",
+    products: [
+      { id: "m1", name: "Cuota guitarra nivel 1", price: "$38.000 / mes" },
+      { id: "m2", name: "Pack partituras + audio Trinity", price: "$16.500" },
+      { id: "m3", name: "Alquiler instrumento 30 días", price: "$22.000" },
+    ],
+  },
+  detailing: {
+    eyebrow: "Protección premium",
+    headline: "Tu auto como recién salido de agencia",
+    sub: "Reservá coating o kit de mantenimiento con garantía escrita y seguimiento post servicio.",
+    layout: "featured",
+    products: [
+      { id: "d1", name: "Cerámico 9H + pulido completo", price: "$365.000", note: "Garantía 24 meses demo" },
+      { id: "d2", name: "Kit lavado pH neutro pro", price: "$21.500" },
+      { id: "d3", name: "Tratamiento tapizado cuero", price: "$48.000" },
+    ],
+  },
+  panaderia: {
+    eyebrow: "Pedidos & café",
+    headline: "Encargá fresco para mañana",
+    sub: "Horneamos según demanda: elegí retiro o delivery corporativo con factura A/B.",
+    layout: "grid",
+    products: [
+      { id: "p1", name: "Docena medialunas manteca", price: "$19.500" },
+      { id: "p2", name: "Pan de campo masa madre 1 kg", price: "$9.200" },
+      { id: "p3", name: "Box desayuno oficina x10", price: "$86.000", note: "Entrega 8–10 h" },
+    ],
+  },
+  viajes: {
+    eyebrow: "Paquetes con seña",
+    headline: "Viajá con respaldo 24/7",
+    sub: "Cotización clara, asistencia en destino y cambios flexibles según tarifa demo.",
+    layout: "featured",
+    products: [
+      { id: "vi1", name: "Escape 4 noches · todo incluido", price: "USD 920 p/p" },
+      { id: "vi2", name: "Crucero veranda 7 noches", price: "USD 2.550" },
+      { id: "vi3", name: "MICE día completo + AV", price: "Cotizar online" },
+    ],
+  },
+  limpieza: {
+    eyebrow: "Insumos B2B",
+    headline: "Reposición automática para tu edificio",
+    sub: "Pedidos recurrentes con SLA y facturación centralizada para administraciones.",
+    layout: "list",
+    products: [
+      { id: "l1", name: "Kit higiene baños 50 unidades", price: "$98.000 / mes" },
+      { id: "l2", name: "Microfibra industrial x200", price: "$41.200" },
+      { id: "l3", name: "Químico piso neutro x4 bidones", price: "$46.800" },
+    ],
+  },
+  foto: {
+    eyebrow: "Packs producción",
+    headline: "Contenido que vende tu producto",
+    sub: "Reservá sesión e-commerce o video corto con entrega en plazos publicados.",
+    layout: "minimal",
+    products: [
+      { id: "fo1", name: "Pack 15 fotos producto", price: "$105.000" },
+      { id: "fo2", name: "Color grade marca LUT", price: "$32.000" },
+      { id: "fo3", name: "Rush 48 h (+30%)", price: "Sobre pack", note: "Add-on" },
+    ],
+  },
+  optica: {
+    eyebrow: "Armazones & cristales",
+    headline: "Ver mejor empieza acá",
+    sub: "Combiná armazón y lentes tras examen; financiación en cuotas sin interés demo.",
+    layout: "grid",
+    products: [
+      { id: "op1", name: "Armazón titanio ultraliviano", price: "$124.000" },
+      { id: "op2", name: "Cristales progresivos antirreflejo", price: "$168.000" },
+      { id: "op3", name: "Audífono digital entrada", price: "$210.000", note: "Con ajuste" },
+    ],
+  },
+  heladeria: {
+    eyebrow: "Heladería artesanal",
+    headline: "Pedí sabor de temporada a domicilio",
+    sub: "Cadena de frío garantizada, toppings premium y tortas para eventos con 48 h de anticipación.",
+    layout: "featured",
+    products: [
+      { id: "he1", name: "Caja 6 sabores 500 ml c/u", price: "$22.500" },
+      { id: "he2", name: "Torta helada 20 porciones", price: "$185.000", note: "Personalizable" },
+      { id: "he3", name: "Barra móvil 40 porciones", price: "$240.000" },
+    ],
+  },
+  lavadero: {
+    eyebrow: "Planes sin fila",
+    headline: "Brillá hoy: membresía o pase único",
+    sub: "Entrá con QR, elegí túnel o detailing express y pagá en un solo paso.",
+    layout: "list",
+    products: [
+      { id: "la1", name: "Lavado premium + cera", price: "$11.500" },
+      { id: "la2", name: "Membresía SUV ilimitada", price: "$49.900 / mes" },
+      { id: "la3", name: "Detailing interior express", price: "$35.000" },
+    ],
+  },
+  seguridad: {
+    eyebrow: "Kits instalables",
+    headline: "Protegé tu hogar en 48 h",
+    sub: "Cámaras, sensores y monitoreo con instalación certificada y app unificada.",
+    layout: "bento",
+    products: [
+      { id: "se1", name: "Kit 4 cámaras 4K + NVR", price: "$412.000" },
+      { id: "se2", name: "Monitoreo 24/7 + app", price: "$16.800 / mes" },
+      { id: "se3", name: "Alarma perimetral wireless", price: "$48.500" },
+    ],
+  },
+  yoga: {
+    eyebrow: "Passes digitales",
+    headline: "Reservá tu mat en segundos",
+    sub: "Créditos flexibles, clases híbridas y descuento corporativo automático al checkout.",
+    layout: "minimal",
+    products: [
+      { id: "yo1", name: "Pack 12 clases 60 días", price: "$62.000" },
+      { id: "yo2", name: "Retiro mindfulness finde", price: "$118.000" },
+      { id: "yo3", name: "Mat pro antideslizante", price: "$19.800" },
+    ],
+  },
+  hotel: {
+    eyebrow: "Extras de estadía",
+    headline: "Sumá experiencias a tu reserva",
+    sub: "Late checkout, cenas y spa con confirmación inmediata — aumentá el ticket sin llamar a recepción.",
+    layout: "grid",
+    products: [
+      { id: "ho1", name: "Cena maridaje 5 pasos x2", price: "$105.000" },
+      { id: "ho2", name: "Late checkout hasta 16 h", price: "$26.000" },
+      { id: "ho3", name: "Circuito spa 90 min", price: "$42.000" },
+    ],
+  },
+  catering: {
+    eyebrow: "Eventos corporativos",
+    headline: "Cotizá por persona en minutos",
+    sub: "Menús claros, logística en sitio y opciones veganas/kosher visibles antes de pagar seña.",
+    layout: "featured",
+    products: [
+      { id: "ca1", name: "Cóctel premium 60 pax", price: "$320.000" },
+      { id: "ca2", name: "Coffee break plant based", price: "$9.200 / pax" },
+      { id: "ca3", name: "Asado ejecutivo 4 h", price: "$68.000 / pax" },
+    ],
+  },
+  paisajismo: {
+    eyebrow: "Mantenimiento & riego",
+    headline: "Contratá verde sin sorpresas",
+    sub: "Planes anuales con visitas programadas y reporte fotográfico post poda.",
+    layout: "list",
+    products: [
+      { id: "pa1", name: "Mantenimiento jardín 250 m²", price: "$98.000 / mes" },
+      { id: "pa2", name: "Riego inteligente completo", price: "$335.000" },
+      { id: "pa3", name: "Diseño paisajismo nativo", price: "Desde $450.000" },
+    ],
+  },
+  tattoo: {
+    eyebrow: "Reservas & aftercare",
+    headline: "Asegurá tu sesión con seña",
+    sub: "Elegí artista, bloque horario y productos de curación recomendados por el estudio.",
+    layout: "minimal",
+    products: [
+      { id: "ta1", name: "Sesión custom 6 h", price: "$235.000", note: "Seña 40%" },
+      { id: "ta2", name: "Flash day cupo prioritario", price: "$9.500" },
+      { id: "ta3", name: "Kit aftercare profesional", price: "$15.800" },
+    ],
+  },
+  cerrajeria: {
+    eyebrow: "Tienda técnica",
+    headline: "Comprá cilindros y controles online",
+    sub: "Retiro en taller o envío certificado con factura y soporte de instalación.",
+    layout: "grid",
+    products: [
+      { id: "ce1", name: "Cilindro antibumping premium", price: "$72.000" },
+      { id: "ce2", name: "Kit RFID consorcio x10", price: "$192.000" },
+      { id: "ce3", name: "Duplicado codificado", price: "$14.200", note: "Con credencial" },
+    ],
+  },
+  coworking: {
+    eyebrow: "Reserva instantánea",
+    headline: "Trabajá hoy: day pass o sala",
+    sub: "Ocupación en tiempo real, WiFi simétrico y café de especialidad incluidos.",
+    layout: "bento",
+    products: [
+      { id: "co1", name: "Day pass hot desk", price: "$10.500" },
+      { id: "co2", name: "Cabina acústica 3 h", price: "$12.800" },
+      { id: "co3", name: "Sala equipo 8 pax · 4K", price: "$31.000" },
+    ],
+  },
+};
+
+export const DEMO_LEAD_COPY: Record<string, { kicker: string; title: string; sub: string }> = {
+  ferreteria: {
+    kicker: "¿Listo para vender online?",
+    title: "Pedinos tu propuesta digital",
+    sub: "Catálogo, envíos y cuenta corriente en un sitio que convierte visitas en pedidos.",
+  },
+  restaurante: {
+    kicker: "Más reservas y delivery",
+    title: "Hablemos de tu carta digital",
+    sub: "Reservas, menú actualizable y CTA a WhatsApp sin perder la estética de tu salón.",
+  },
+  estetica: {
+    kicker: "Llená tu agenda",
+    title: "Consultá por tu web premium",
+    sub: "Turnos online, protocolos visibles y tienda home care en una sola experiencia.",
+  },
+  gimnasio: {
+    kicker: "Sumá socios este mes",
+    title: "Coordiná una demo de tu web",
+    sub: "Planes, horarios y shop integrado para convertir cada visita.",
+  },
+  veterinaria: {
+    kicker: "Más turnos y pet shop",
+    title: "Contacto clínica + retail",
+    sub: "Urgencias, vacunas y e-commerce de alimento en un flujo claro.",
+  },
+  inmobiliaria: {
+    kicker: "Captá leads calificados",
+    title: "Solicitá una propuesta",
+    sub: "Portfolio filtrable y fichas con datos verificables.",
+  },
+  tech: {
+    kicker: "Más trials calificados",
+    title: "Agendá demo de producto",
+    sub: "Pricing claro, prueba social técnica y checkout de add-ons.",
+  },
+  floreria: {
+    kicker: "Vendé emoción hoy",
+    title: "Cotizá tu tienda floral",
+    sub: "Delivery por zona, suscripciones y temporadas con fotos premium.",
+  },
+  taller: {
+    kicker: "Más turnos confirmados",
+    title: "Pedí presupuesto web",
+    sub: "Servicios, urgencias y repuestos online con confianza previa.",
+  },
+  abogados: {
+    kicker: "Consultas serias",
+    title: "Contacto confidencial",
+    sub: "Áreas de práctica claras y captación institucional.",
+  },
+  farmacia: {
+    kicker: "Farmacia digital",
+    title: "Consultá e-commerce",
+    sub: "OTC, obras sociales y delivery con información útil.",
+  },
+  odontologia: {
+    kicker: "Primera visita",
+    title: "Reservá evaluación",
+    sub: "Tratamientos, financiación y urgencias bien explicados.",
+  },
+  contadores: {
+    kicker: "PyME y monotributo",
+    title: "Pedí reunión inicial",
+    sub: "Servicios impositivos claros y contacto directo.",
+  },
+  musica: {
+    kicker: "Inscripciones abiertas",
+    title: "Escribinos",
+    sub: "Calendario, niveles y pagos online para familias.",
+  },
+  detailing: {
+    kicker: "Protegé tu inversión",
+    title: "Reservá evaluación",
+    sub: "Paquetes premium y upsell con narrativa de valor.",
+  },
+  panaderia: {
+    kicker: "Pedidos anticipados",
+    title: "Hablemos de tu vitrina",
+    sub: "Horno, encargues B2B y pedido online unificado.",
+  },
+  viajes: {
+    kicker: "Próximo viaje",
+    title: "Armá tu itinerario",
+    sub: "Paquetes, MICE y soporte 24/7 con confianza.",
+  },
+  limpieza: {
+    kicker: "Facility B2B",
+    title: "Solicitá propuesta",
+    sub: "SLA y cotización por vertical en landing profesional.",
+  },
+  foto: {
+    kicker: "Producción visual",
+    title: "Pedí brief y presupuesto",
+    sub: "Packs claros, plazos y add-ons para marcas.",
+  },
+  optica: {
+    kicker: "Salud visual",
+    title: "Reservá examen",
+    sub: "Armazones, cristales y audiología con financiación visible.",
+  },
+  heladeria: {
+    kicker: "Temporada alta",
+    title: "Coordiná tu web",
+    sub: "Sabores, eventos y delivery que suben ticket medio.",
+  },
+  lavadero: {
+    kicker: "Sin filas",
+    title: "Membresía y turnos",
+    sub: "Planes recurrentes y detailing en app de reserva.",
+  },
+  seguridad: {
+    kicker: "Protección real",
+    title: "Auditoría sin cargo",
+    sub: "Kits con instalación certificada y monitoreo 24/7.",
+  },
+  yoga: {
+    kicker: "Cupos limitados",
+    title: "Probá una clase",
+    sub: "Grilla híbrida, passes y wellness corporativo.",
+  },
+  hotel: {
+    kicker: "Próxima estadía",
+    title: "Reservá o consultá",
+    sub: "Experiencias y upsells que elevan ingresos por huésped.",
+  },
+  catering: {
+    kicker: "Tu evento",
+    title: "Brief en 24 h",
+    sub: "Menús por persona y logística antes de la seña.",
+  },
+  paisajismo: {
+    kicker: "Proyecto verde",
+    title: "Visita técnica",
+    sub: "Diseño, riego inteligente y mantenimiento anual.",
+  },
+  tattoo: {
+    kicker: "Agenda abierta",
+    title: "Reservá con seña",
+    sub: "Portfolio, políticas y aftercare en un solo lugar.",
+  },
+  cerrajeria: {
+    kicker: "Urgencia o proyecto",
+    title: "Llamanos o escribinos",
+    sub: "Cilindros, RFID y duplicados con garantía.",
+  },
+  coworking: {
+    kicker: "Trabajá mejor",
+    title: "Reservá tour",
+    sub: "Day pass, cabinas y salas con ocupación en vivo.",
+  },
+};

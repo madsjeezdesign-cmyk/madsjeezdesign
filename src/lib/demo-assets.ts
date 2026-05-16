@@ -4,6 +4,7 @@
  */
 
 import { DEMO_SLUGS } from "@/lib/demos-registry";
+import { DEMO_IMAGES, DEMO_SHOPS } from "@/lib/demo-visual-catalog";
 
 export const DEMO_VIDEO_POOL = [
   "https://filesamples.com/samples/video/mp4/sample_640x360.mp4",
@@ -842,8 +843,15 @@ export function getDemoVisuals(slug: string): DemoVisualsResolved {
       },
       shop: null,
     };
+  const images = DEMO_IMAGES[slug];
+  const shopOverride = Object.prototype.hasOwnProperty.call(DEMO_SHOPS, slug)
+    ? DEMO_SHOPS[slug]
+    : pack.shop;
+
   return {
     ...pack,
+    ...(images ?? {}),
+    shop: shopOverride ?? null,
     videoSrc: pickDemoVideo(slug),
     videoFallbackSrc: pickDemoVideoFallback(slug),
   };

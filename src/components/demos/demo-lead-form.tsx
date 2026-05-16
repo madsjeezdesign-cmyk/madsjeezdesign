@@ -3,16 +3,26 @@
 import { Loader2, Send } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { DemoLeadTheme } from "@/lib/demo-assets";
+import { demoContainerNarrow, demoSection } from "./demo-layout";
 
 type Props = {
   slug: string;
   brandLabel: string;
   kicker?: string;
+  title?: string;
+  sub?: string;
   theme: DemoLeadTheme;
 };
 
 /** Envía lead real al mismo `/api/contact` que la sección NEXO de la home. */
-export function DemoLeadForm({ slug, brandLabel, kicker = "Consultá desde esta demo", theme }: Props) {
+export function DemoLeadForm({
+  slug,
+  brandLabel,
+  kicker = "Consultá desde esta demo",
+  title = "Contacto",
+  sub = "Mismo flujo que el sitio principal: tu consulta queda registrada. Etiquetamos el rubro de esta demo.",
+  theme,
+}: Props) {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -58,18 +68,11 @@ export function DemoLeadForm({ slug, brandLabel, kicker = "Consultá desde esta 
   const inputCls = `${theme.input} ${theme.focus}`;
 
   return (
-    <section className={`px-4 py-16 md:px-10 ${theme.section}`} id={`lead-${slug}`}>
-      <div className="mx-auto max-w-3xl">
+    <section className={`${demoSection} ${theme.section}`} id={`lead-${slug}`}>
+      <div className={demoContainerNarrow}>
         <p className={theme.label}>{kicker}</p>
-        <h2
-          className={`mt-3 font-[family-name:var(--font-demo-bebas)] text-4xl uppercase tracking-wide md:text-5xl ${hClass}`}
-        >
-          Contacto
-        </h2>
-        <p className={`mt-3 max-w-xl text-sm leading-relaxed ${pClass}`}>
-          Mismo flujo que la sección de contacto del sitio principal: tu consulta queda registrada para el
-          equipo. Etiquetamos el rubro de esta demo automáticamente.
-        </p>
+        <h2 className={`mt-3 text-3xl font-semibold leading-tight md:text-4xl ${hClass}`}>{title}</h2>
+        <p className={`mt-3 text-sm leading-relaxed ${pClass}`}>{sub}</p>
 
         <div className={`mt-8 ${theme.card}`}>
           {sent ? (

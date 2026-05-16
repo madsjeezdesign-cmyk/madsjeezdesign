@@ -440,8 +440,8 @@ export function DemoThemedHero({
             </div>
           </div>
           <div className="relative mx-auto mt-10 max-w-6xl">
-            <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden md:w-[calc(100%+4rem)] md:rounded-xl">
-              <div className="relative aspect-[21/9] min-h-[200px]">{img}</div>
+            <div className="relative w-full overflow-hidden rounded-xl">
+              <div className="relative aspect-[21/9] min-h-[200px] w-full">{img}</div>
             </div>
           </div>
           <div className={`mx-auto mt-8 max-w-2xl text-center text-sm md:text-base ${leadColorClass}`}>{lead}</div>

@@ -4,6 +4,8 @@
  * los h2 no dependan de Bebas/Playfair compartidos.
  */
 
+import { demoContainer, demoContainerNarrow, demoSection } from "./demo-layout";
+
 export function DemoStatsStrip({
   eyebrow,
   stats,
@@ -22,8 +24,8 @@ export function DemoStatsStrip({
   hintClass?: string;
 }) {
   return (
-    <section className={`px-4 py-14 md:px-10 ${sectionClass}`}>
-      <div className="mx-auto max-w-5xl">
+    <section className={`${demoSection} ${sectionClass}`}>
+      <div className={demoContainer}>
         {eyebrow ? (
           <p className="mb-8 text-center text-[10px] font-bold uppercase tracking-[0.35em] opacity-80 md:text-left">
             {eyebrow}
@@ -70,8 +72,8 @@ export function DemoProcessSteps({
   stepDescClass?: string;
 }) {
   return (
-    <section className={`px-4 py-16 md:px-10 ${sectionClass}`}>
-      <div className="mx-auto max-w-5xl">
+    <section className={`${demoSection} ${sectionClass}`}>
+      <div className={demoContainer}>
         <h2
           className={`text-4xl font-semibold uppercase tracking-wide md:text-5xl ${sectionHeadingClass} ${titleClass}`}
         >
@@ -118,8 +120,8 @@ export function DemoDetailGrid({
   itemBodyClass?: string;
 }) {
   return (
-    <section className={`px-4 py-16 md:px-10 ${sectionClass}`}>
-      <div className="mx-auto max-w-5xl">
+    <section className={`${demoSection} ${sectionClass}`}>
+      <div className={demoContainer}>
         <h2
           className={`text-4xl font-semibold uppercase tracking-wide md:text-5xl ${sectionHeadingClass} ${titleClass}`}
         >
@@ -158,8 +160,8 @@ export function DemoFaqList({
   rowClass?: string;
 }) {
   return (
-    <section className={`px-4 py-16 md:px-10 ${sectionClass}`}>
-      <div className="mx-auto max-w-3xl">
+    <section className={`${demoSection} ${sectionClass}`}>
+      <div className={demoContainerNarrow}>
         <h2
           className={`text-4xl font-semibold uppercase tracking-wide ${sectionHeadingClass} ${titleClass}`}
         >
@@ -198,8 +200,8 @@ export function DemoTestimonials({
   authorClass?: string;
 }) {
   return (
-    <section className={`px-4 py-16 md:px-10 ${sectionClass}`}>
-      <div className="mx-auto max-w-5xl">
+    <section className={`${demoSection} ${sectionClass}`}>
+      <div className={demoContainer}>
         <h2 className={`text-3xl font-semibold leading-tight md:text-4xl ${sectionHeadingClass} ${titleClass}`}>
           {title}
         </h2>
@@ -238,8 +240,8 @@ export function DemoLongStory({
   pClass?: string;
 }) {
   return (
-    <section className={`px-4 py-16 md:px-10 ${sectionClass}`}>
-      <div className="mx-auto max-w-3xl">
+    <section className={`${demoSection} ${sectionClass}`}>
+      <div className={demoContainerNarrow}>
         {kicker ? (
           <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${kickerClass}`}>
             {kicker}

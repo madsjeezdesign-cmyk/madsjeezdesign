@@ -3,10 +3,12 @@
 import { Check, Minus, Plus, ShoppingBag } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { DemoShopConfig, DemoShopProduct } from "@/lib/demo-assets";
+import { demoContainer, demoSection } from "./demo-layout";
 
 type Props = {
   slug: string;
   shop: DemoShopConfig;
+  headingClass?: string;
   cardClass?: string;
   accentClass?: string;
   /** Salón / demos con fondo claro (ej. estética) */
@@ -16,6 +18,7 @@ type Props = {
 export function DemoShopFlow({
   slug,
   shop,
+  headingClass = "",
   cardClass = "border border-white/10 bg-zinc-900/50",
   accentClass = "bg-[#1de0b1] text-black",
   light = false,
@@ -100,8 +103,8 @@ export function DemoShopFlow({
   const browseGrid = (
     <div className="mt-10 grid gap-4 md:grid-cols-3">
       {shop.products.map((p) => (
-        <div key={p.id} className={`rounded-2xl p-6 ${cardClass}`}>
-          {productChrome(p)}
+        <div key={p.id} className={`flex min-h-[220px] flex-col rounded-2xl p-6 ${cardClass}`}>
+          <div className="flex flex-1 flex-col justify-between">{productChrome(p)}</div>
         </div>
       ))}
     </div>
@@ -176,15 +179,15 @@ export function DemoShopFlow({
             : browseGrid;
 
   return (
-    <section className={`px-4 py-16 md:px-10 ${light ? "bg-[#f5f0e8]" : ""}`} id={`shop-${slug}`}>
-      <div className="mx-auto max-w-5xl">
+    <section className={`${demoSection} ${light ? "bg-[#f5f0e8]" : ""}`} id={`shop-${slug}`}>
+      <div className={demoContainer}>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${light ? "text-stone-500" : "text-zinc-500"}`}>
               {shopEyebrow}
             </p>
             <h2
-              className={`mt-2 font-[family-name:var(--font-demo-bebas)] text-4xl uppercase tracking-wide md:text-5xl ${h}`}
+              className={`mt-2 text-3xl font-semibold uppercase tracking-wide md:text-4xl ${headingClass} ${h}`}
             >
               {shop.headline}
             </h2>
@@ -209,8 +212,8 @@ export function DemoShopFlow({
               ¡Compra demo completada!
             </p>
             <p className={`mt-2 text-sm ${sub}`}>
-              En un sitio real acá iría pasarela de pago (Mercado Pago, Stripe), email de confirmación y
-              seguimiento de pedido. Este flujo es solo demostración visual.
+              En tu sitio real: pago seguro, email de confirmación y seguimiento del pedido. Este paso es
+              demostración para que veas cómo convierte tu marca.
             </p>
             <button
               type="button"

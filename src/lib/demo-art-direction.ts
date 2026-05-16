@@ -404,6 +404,9 @@ export function getDemoArtDirection(slug: string): DemoArtDirection {
   return {
     slug: s,
     heroVariant: DEMO_HERO_VARIANT[s] ?? 0,
-    ...base,
+    pageRoot: `${base.pageRoot} overflow-x-hidden`,
+    cardShell: base.cardShell,
+    primaryCta: base.primaryCta,
+    secondaryCta: base.secondaryCta,
   };
 }

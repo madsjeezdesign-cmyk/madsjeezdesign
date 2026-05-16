@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
 import { DemoFaqList, DemoLongStory, DemoProcessSteps } from "./demo-common-sections";
+import { demoContainer, demoSectionTight } from "./demo-layout";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
 
@@ -58,13 +59,15 @@ export function DemoPaisajismoLanding() {
         }
       />
 
-      <section className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-8">
-        <div className="relative aspect-[21/8] min-h-[140px] w-full">
-          <Image src={v.e ?? v.b} alt="" fill className="object-cover" sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-r from-green-950/80 to-transparent" />
-          <p className="absolute bottom-6 left-6 max-w-md text-sm text-lime-50/90 md:left-16">
-            Banda full-bleed simulando antes/después de diseño de parterres — recurso que vende proyectos grandes.
-          </p>
+      <section className={`${demoSectionTight} bg-green-950/30`}>
+        <div className={demoContainer}>
+          <div className="relative aspect-[21/8] min-h-[160px] w-full overflow-hidden rounded-2xl border border-green-800/40">
+            <Image src={v.e ?? v.b} alt="" fill className="object-cover" sizes="(max-width:768px) 100vw, 1152px" />
+            <div className="absolute inset-0 bg-gradient-to-r from-green-950/80 to-transparent" />
+            <p className="absolute bottom-6 left-6 max-w-md text-sm text-lime-50/90">
+              Antes y después de diseño de parterres — prueba social que cierra proyectos grandes.
+            </p>
+          </div>
         </div>
       </section>
 
