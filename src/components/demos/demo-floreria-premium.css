@@ -1,0 +1,43 @@
+/* Jardín Ensueño — florería & vivero premium */
+.je-premium {
+  --je-emerald: #065f46;
+  --je-emerald-light: #047857;
+}
+
+.je-premium .je-bounce-slow {
+  animation: je-bounce 3s ease-in-out infinite;
+}
+
+@keyframes je-bounce {
+  0%,
+  100% {
+    transform: translateY(-5%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+.je-premium .je-scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.je-premium .je-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.je-premium .je-cart-panel {
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.je-premium .je-cart-panel.is-open {
+  transform: translateX(0);
+}
+
+.je-premium .font-serif-display {
+  font-family: var(--font-demo-h-floreria), ui-serif, Georgia, serif;
+}

@@ -71,11 +71,11 @@ export const DEMOS: DemoMeta[] = [
   },
   {
     slug: "floreria",
-    title: "Jardín Urbano",
-    industry: "Florería & eventos",
-    tagline: "Ramos, bodas y suscripciones",
-    accent: "#f472b6",
-    previewClass: "from-emerald-950 to-pink-950/50",
+    title: "Jardín Ensueño",
+    industry: "Florería & vivero",
+    tagline: "Plantas, ramos y talleres botánicos",
+    accent: "#065f46",
+    previewClass: "from-emerald-50 to-stone-100",
   },
   {
     slug: "taller",

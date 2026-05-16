@@ -75,12 +75,12 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     e: id("photo-1629904853716-f0bc54eea481"),
   },
   floreria: {
-    cover: id("photo-1619707046314-e76ae25d5ab3"),
-    a: id("photo-1698103182772-de33f15d7000"),
-    b: id("photo-1560453497-fdcb351a0c55"),
-    c: id("photo-1718568698986-eb9045432622"),
-    d: id("photo-1718568698631-c8e53cc1b18b"),
-    e: id("photo-1668765552296-9c6f1c87a0bb"),
+    cover: id("photo-1526047932273-341f2a7631f9"),
+    a: id("photo-1523694559144-4ec08b9e1146"),
+    b: id("photo-1614594975525-e45190c55d0b"),
+    c: id("photo-1591886960571-74d43a9d4166"),
+    d: id("photo-1585127623106-483eb6a099bc"),
+    e: id("photo-1591854265821-657e0347814b"),
   },
   taller: {
     cover: id("photo-1618312980096-873bd19759a0"),
