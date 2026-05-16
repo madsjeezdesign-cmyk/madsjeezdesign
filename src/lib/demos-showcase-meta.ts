@@ -370,133 +370,133 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-orange-400",
     border: "group-hover:border-orange-500/50",
     pitch:
-      "Sitios para talleres de motos: turnos online, catálogo de repuestos, historial de service ",
+      "Sitios para talleres de motos: turnos online, catálogo de repuestos, historial de service y presupuestos por WhatsApp. Pensado para captar clientes de barrio y delivery.",
   },
   celulares: {
     color: "from-blue-600/30",
     accent: "text-blue-400",
     border: "group-hover:border-blue-500/50",
     pitch:
-      "E-commerce y local para casas de celulares: comparador de modelos, financiación, trade-in ",
+      "E-commerce y local para casas de celulares: comparador de modelos, financiación, trade-in y garantía visible. Mobile-first para compras rápidas.",
   },
   almacen: {
     color: "from-amber-600/30",
     accent: "text-amber-400",
     border: "group-hover:border-amber-500/50",
     pitch:
-      "Listas de precios, promos del día y pedidos por WhatsApp para almacenes de barrio. Simple,",
+      "Listas de precios, promos del día y pedidos por WhatsApp para almacenes de barrio. Simple, rápido y sin comisión innecesaria.",
   },
   kiosco: {
     color: "from-yellow-600/30",
     accent: "text-yellow-400",
     border: "group-hover:border-yellow-500/50",
     pitch:
-      "Micrositio para kioscos: combos, horario nocturno, delivery express y recargas. Ideal para",
+      "Micrositio para kioscos: combos, horario nocturno, delivery express y recargas. Ideal para captar pedidos del barrio sin app propia.",
   },
   libreria: {
     color: "from-amber-700/30",
     accent: "text-amber-300",
     border: "group-hover:border-amber-600/50",
     pitch:
-      "Catálogo por curso, listas escolares descargables y reservas para librerías. Perfecto para",
+      "Catálogo por curso, listas escolares descargables y reservas para librerías. Perfecto para picos de inicio de clases y venta corporativa.",
   },
   bazar: {
     color: "from-pink-600/30",
     accent: "text-pink-400",
     border: "group-hover:border-pink-500/50",
     pitch:
-      "Vitrina digital para bazares: temporada, regalería, decoración y ofertas por categoría. Co",
+      "Vitrina digital para bazares: temporada, regalería, decoración y ofertas por categoría. Conversión con WhatsApp y catálogo visual.",
   },
   carniceria: {
     color: "from-red-600/30",
     accent: "text-red-400",
     border: "group-hover:border-red-500/50",
     pitch:
-      "Menú de cortes, parrilleros, combos familiares y pedidos programados para carnicerías. Fot",
+      "Menú de cortes, parrilleros, combos familiares y pedidos programados para carnicerías. Fotos apetitosas y peso estimado en carrito demo.",
   },
   granja: {
     color: "from-green-600/30",
     accent: "text-green-400",
     border: "group-hover:border-green-500/50",
     pitch:
-      "Sitios para granjas y productores: cajas semanales, suscripción, visitas educativas y vent",
+      "Sitios para granjas y productores: cajas semanales, suscripción, visitas educativas y venta directa sin intermediarios.",
   },
   computacion: {
     color: "from-cyan-600/30",
     accent: "text-cyan-400",
     border: "group-hover:border-cyan-500/50",
     pitch:
-      "Armado de PCs, comparador de componentes, service técnico y financiación para casas de com",
+      "Armado de PCs, comparador de componentes, service técnico y financiación para casas de computación. Copy orientado a gamers y pymes.",
   },
   ropa: {
     color: "from-fuchsia-600/30",
     accent: "text-fuchsia-400",
     border: "group-hover:border-fuchsia-500/50",
     pitch:
-      "Lookbooks, filtros por talle, nueva colección y outlet para tiendas de ropa. Experiencia v",
+      "Lookbooks, filtros por talle, nueva colección y outlet para tiendas de ropa. Experiencia visual tipo editorial con checkout demo.",
   },
   supermercado: {
     color: "from-emerald-600/30",
     accent: "text-emerald-400",
     border: "group-hover:border-emerald-500/50",
     pitch:
-      "Folletos digitales, ofertas por pasillo y pedidos programados para supermercados chicos y ",
+      "Folletos digitales, ofertas por pasillo y pedidos programados para supermercados chicos y medianos. Sin la complejidad de un e-commerce gigante.",
   },
   barberia: {
     color: "from-slate-600/30",
     accent: "text-slate-300",
     border: "group-hover:border-slate-400/50",
     pitch:
-      "Reservas online, barberos por estilo, membresía mensual y tienda de grooming para barbería",
+      "Reservas online, barberos por estilo, membresía mensual y tienda de grooming para barberías modernas. Estética urbana premium.",
   },
   marketing: {
     color: "from-violet-600/30",
     accent: "text-violet-400",
     border: "group-hover:border-violet-500/50",
     pitch:
-      "Portfolios, casos de éxito, paquetes de servicios y funnels de leads para agencias de mark",
+      "Portfolios, casos de éxito, paquetes de servicios y funnels de leads para agencias de marketing. Posicionamiento premium B2B.",
   },
   imprenta: {
     color: "from-indigo-600/30",
     accent: "text-indigo-400",
     border: "group-hover:border-indigo-500/50",
     pitch:
-      "Cotizador online, catálogo de productos impresos y seguimiento de pedidos para imprentas. ",
+      "Cotizador online, catálogo de productos impresos y seguimiento de pedidos para imprentas. Desde tarjetas hasta plotter.",
   },
   motores: {
     color: "from-orange-700/30",
     accent: "text-orange-300",
     border: "group-hover:border-orange-600/50",
     pitch:
-      "Landings para servicios de motores nafteros y diésel: diagnóstico, rectificación, garantía",
+      "Landings para servicios de motores nafteros y diésel: diagnóstico, rectificación, garantía y presupuestos técnicos con credibilidad industrial.",
   },
   gasista: {
     color: "from-sky-600/30",
     accent: "text-sky-400",
     border: "group-hover:border-sky-500/50",
     pitch:
-      "Sitios para gasistas matriculados: artefactos, certificaciones, zonas de cobertura y botón",
+      "Sitios para gasistas matriculados: artefactos, certificaciones, zonas de cobertura y botón de urgencia. Confianza y normativa visible.",
   },
   electricista: {
     color: "from-yellow-600/30",
     accent: "text-yellow-300",
     border: "group-hover:border-yellow-500/50",
     pitch:
-      "Electricistas con portafolio de obras, presupuesto por foto y destacado de urgencias. Idea",
+      "Electricistas con portafolio de obras, presupuesto por foto y destacado de urgencias. Ideal para domicilios y locales comerciales.",
   },
   albanil: {
     color: "from-stone-600/30",
     accent: "text-stone-300",
     border: "group-hover:border-stone-400/50",
     pitch:
-      "Portafolio de obras, presupuestos por metro cuadrado y testimonios para albañiles y equipo",
+      "Portafolio de obras, presupuestos por metro cuadrado y testimonios para albañiles y equipos de reforma. Generá confianza antes de la visita.",
   },
   arquitectos: {
     color: "from-neutral-600/30",
     accent: "text-neutral-300",
     border: "group-hover:border-neutral-400/50",
     pitch:
-      "Portfolios editoriales, procesos de diseño, renders y formulario de consulta para estudios",
+      "Portfolios editoriales, procesos de diseño, renders y formulario de consulta para estudios de arquitectura. Estética minimal premium.",
   },
 };
 
