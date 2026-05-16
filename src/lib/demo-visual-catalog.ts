@@ -101,7 +101,7 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
   farmacia: {
     cover: id("photo-1576091160550-2173dba999ef"),
     a: id("photo-1576091160399-112ba8d25d1d"),
-    b: id("photo-1526733169359-ab1142275411"),
+    b: id("photo-1524661135-423995f22d0b"),
     c: id("photo-1584308666744-24d5c474f2ae"),
     d: id("photo-1620916566398-39f1143ab7be"),
     e: id("photo-1631549916768-4119b2e5f926"),

@@ -47,6 +47,9 @@ type Product = {
 const productImage = (photoId: string) =>
   `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=800&q=82&ixlib=rb-4.0.3`;
 
+/** Mapa / sucursales (evita v.b del catálogo, ID inválido en Unsplash). */
+const STORE_LOCATOR_IMAGE = productImage("photo-1524661135-423995f22d0b");
+
 type CartLine = { id: string; name: string; price: number; qty: number };
 
 const NAV_ITEMS = ["Medicamentos", "Belleza", "Nutrición", "Consultas", "Ofertas"] as const;
@@ -661,7 +664,7 @@ export function DemoFarmaciaLanding() {
               </div>
               <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
                 <Image
-                  src={v.b}
+                  src={STORE_LOCATOR_IMAGE}
                   alt="Mapa de sucursales Galénica"
                   fill
                   className="object-cover"
