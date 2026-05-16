@@ -80,7 +80,7 @@ export function DemoEnhancements({
                   className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${meta.color} to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-50`}
                 />
                 <p className="absolute bottom-3 left-4 right-4 text-[10px] font-bold uppercase tracking-widest text-white/90 md:bottom-4">
-                  Referencia visual · {industry}
+                  {brandLabel} · referencia visual · {industry}
                 </p>
               </div>
             </div>

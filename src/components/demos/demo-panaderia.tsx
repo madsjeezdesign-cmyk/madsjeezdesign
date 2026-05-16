@@ -28,7 +28,7 @@ export function DemoPanaderiaLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug="panaderia"
-        brand="Masa Madre"
+        brand="El Horno de Raíz"
         iconKey="Croissant"
         variant="light"
         primaryCta="Pedir pan"

@@ -28,7 +28,7 @@ export function DemoDetailingLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug="detailing"
-        brand="SHINE"
+        brand="Shine Autodetail"
         iconKey="Sparkles"
         variant="dark"
         primaryCta="Reservar slot"

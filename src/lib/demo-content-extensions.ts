@@ -22,6 +22,23 @@ export type DemoQuickAction = {
   sub: string;
 };
 
+/** Landings premium con contenido propio completo (sin bloques genéricos en shell). */
+export const PREMIUM_OWNED_SLUGS = new Set([
+  "ferreteria",
+  "herreria",
+  "restaurante",
+  "estetica",
+  "gimnasio",
+  "veterinaria",
+  "inmobiliaria",
+  "tech",
+  "floreria",
+  "taller",
+  "abogados",
+  "farmacia",
+  "odontologia",
+]);
+
 /** Demos con bloques enriquecidos al final vía DemoEnhancements (evitar duplicar en shell). */
 export const LEGACY_ENHANCED_SLUGS = new Set([
   "contadores",
@@ -116,19 +133,20 @@ export function getDemoCapabilityCards(slug: string): DemoCapabilityCard[] {
 
 export function getDemoTrustItems(slug: string): DemoTrustItem[] {
   const demo = getDemoBySlug(slug);
-  const industry = demo?.industry ?? "tu negocio";
+  const brand = demo?.title ?? "Tu marca";
+  const industry = demo?.industry ?? "tu rubro";
   return [
     {
-      label: "Respuesta ágil",
-      detail: "Consultas demo atendidas en menos de 24 h con plantilla adaptable a tu equipo.",
+      label: "Respuesta en 24 h",
+      detail: `Consultas para ${brand} con plantilla de respuesta y seguimiento por WhatsApp o email.`,
     },
     {
-      label: "Rubro especializado",
-      detail: `Copy y jerarquía visual calibrados para ${industry}, no plantillas genéricas.`,
+      label: industry,
+      detail: `Jerarquía visual y copy calibrados para ${industry.toLowerCase()}, no plantillas genéricas.`,
     },
     {
-      label: "Listo para escalar",
-      detail: "Arquitectura Next.js: blog, tienda, turnos o CRM según lo que necesites después.",
+      label: "Módulos activables",
+      detail: "Galería, video, tienda demo, formulario y FAQ listos para priorizar según tu operación.",
     },
     {
       label: "Marca consistente",
@@ -165,5 +183,6 @@ export function getDemoQuickActions(slug: string): DemoQuickAction[] {
 }
 
 export function shouldRenderSiteExtrasInShell(slug: string): boolean {
-  return !LEGACY_ENHANCED_SLUGS.has(slug);
+  if (LEGACY_ENHANCED_SLUGS.has(slug) || PREMIUM_OWNED_SLUGS.has(slug)) return false;
+  return true;
 }

@@ -28,7 +28,7 @@ export function DemoFotoLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug="foto"
-        brand="LUZ NEGRA"
+        brand="Lúmenes Estudio"
         iconKey="Camera"
         variant="dark"
         primaryCta="Sesión express"

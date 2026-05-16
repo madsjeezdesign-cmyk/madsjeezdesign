@@ -28,7 +28,7 @@ export function DemoLimpiezaLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug="limpieza"
-        brand="PULCRO"
+        brand="ProLimpio"
         iconKey="Sparkles"
         variant="dark"
         primaryCta="Cotizar limpieza"

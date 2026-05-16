@@ -21,7 +21,7 @@ export function DemoCerrajeriaLanding() {
       </div>
       <DemoBrandNav
         slug="cerrajeria"
-        brand="LLAVE 24"
+        brand="Llaves 24 Sur"
         iconKey="Key"
         variant="dark"
         primaryCta="Urgencias"

@@ -36,7 +36,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-orange-400",
     border: "group-hover:border-orange-500/50",
     pitch:
-      "Plataforma robusta para catálogos extensos, disponibilidad creíble y coordinación de entregas sin fricción.",
+      "Ferretería del Oeste: catálogo con 2.000+ SKUs, stock por sucursal, envíos same-day y listas para obradores con cuenta corriente B2B.",
   },
   herreria: {
     color: "from-orange-600/35",
@@ -51,7 +51,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-red-400",
     border: "group-hover:border-red-500/50",
     pitch:
-      "Experiencia gourmet digital: reservas, menú y CTA claros con fotografía y storytelling de sala.",
+      "La Mesa Norteña: carta digital con fotos de plato, reservas sin fricción, delivery por barrio y storytelling de sala que eleva el ticket.",
   },
   estetica: {
 
@@ -59,7 +59,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-pink-400",
     border: "group-hover:border-pink-500/50",
     pitch:
-      "Interfaz minimal y relajante, pensada para conversión de turnos y presentación de protocolos premium.",
+      "Aura Estética: turnos online, protocolos premium visibles, membresías y tienda home care con estética spa minimal.",
   },
   gimnasio: {
 
@@ -67,7 +67,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-lime-400",
     border: "group-hover:border-lime-500/50",
     pitch:
-      "Energía y dinamismo: planes, open gym y señales de confianza para atletas y estudiantes.",
+      "Pulse Cross: planes open gym y box, horarios en vivo, coaches destacados y shop de indumentaria para convertir visitas en socios.",
   },
   veterinaria: {
 
@@ -75,7 +75,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-teal-400",
     border: "group-hover:border-teal-500/50",
     pitch:
-      "Portal integral para clínica y tienda: servicios, guardia y retail integrado en un solo flujo.",
+      "Patitas Sanas: guardia 24 h, vacunación, internación demo y pet shop integrado con recordatorios por WhatsApp.",
   },
   inmobiliaria: {
 
@@ -83,7 +83,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-amber-400",
     border: "group-hover:border-amber-500/50",
     pitch:
-      "Catálogo inmobiliario premium con jerarquía visual, datos verificables y CTAs de visita.",
+      "Horizonte Propiedades: fichas con datos verificables, tours virtuales, tasaciones online y captación de compradores calificados.",
   },
   tech: {
 
@@ -137,7 +137,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-slate-400",
     border: "group-hover:border-slate-500/50",
     pitch:
-      "Estudio contable con propuesta clara, credenciales y contacto sin ruido.",
+      "Número Exacto: calendario AFIP/ARBA, balances para bancos, payroll outsourcing y videollamada de onboarding en 48 h.",
   },
   musica: {
 
@@ -145,7 +145,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-purple-400",
     border: "group-hover:border-purple-500/50",
     pitch:
-      "Escuela con ritmo propio: instrumentos, metodología y calendario visible para familias.",
+      "Pentagrama: inscripciones por nivel, calendario de recitales, pagos online para familias y credenciales docentes visibles.",
   },
   detailing: {
 
@@ -153,7 +153,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-blue-400",
     border: "group-hover:border-blue-500/50",
     pitch:
-      "Alto valor percibido: antes/después, procesos y upsell de protección y productos.",
+      "Shine Autodetail: antes/después, paquetes cerámicos, coating y membresía mensual con reserva de slot online.",
   },
   panaderia: {
 
@@ -161,7 +161,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-amber-400",
     border: "group-hover:border-amber-500/50",
     pitch:
-      "Marca artesanal con aromas en el copy, pedidos B2C/B2B y horarios de horno.",
+      "El Horno de Raíz: horno en vivo, encargues B2B, pedido anticipado y narrativa de masa madre que vende por aroma.",
   },
   viajes: {
 
@@ -169,7 +169,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-cyan-400",
     border: "group-hover:border-cyan-500/50",
     pitch:
-      "Viajes y eventos con storytelling de destino y confianza en cada etapa del itinerario.",
+      "Atlas Experiencias: itinerarios a medida, MICE corporativo, seguro incluido y asesor humano visible en cada etapa.",
   },
   limpieza: {
 
@@ -177,7 +177,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-indigo-400",
     border: "group-hover:border-indigo-500/50",
     pitch:
-      "Servicios B2B con credibilidad operativa, certificaciones y propuestas por vertical.",
+      "ProLimpio: propuestas B2B por m², certificaciones ISO demo, SLA de respuesta y vertical hotel/oficina/edificio.",
   },
   foto: {
 
@@ -185,7 +185,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-amber-400",
     border: "group-hover:border-amber-500/50",
     pitch:
-      "Portfolio cinematográfico: procesos, equipamiento y precios-paquete entendibles.",
+      "Lúmenes Estudio: packs corporativos y sociales, equipamiento listado, plazos claros y galería cinematográfica.",
   },
   optica: {
 
@@ -193,7 +193,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-blue-400",
     border: "group-hover:border-blue-500/50",
     pitch:
-      "Salud visual y auditiva con educación del paciente y upsell ético de productos.",
+      "Visión Clara: examen visual, armazones premium, cristales progresivos y audiología con financiación transparente.",
   },
   heladeria: {
 
@@ -201,7 +201,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-fuchsia-400",
     border: "group-hover:border-fuchsia-500/50",
     pitch:
-      "Marca sensorial con estaciones, packs para fiestas y narrativa de ingredientes reales — el tipo de storytelling que buscan heladerías artesanales.",
+      "Gelato Alborada: estaciones de sabor, eventos, franquicia demo y delivery nocturno con copy sensorial.",
   },
   lavadero: {
 
@@ -209,7 +209,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-cyan-400",
     border: "group-hover:border-cyan-500/50",
     pitch:
-      "Operación de alto volumen con control de filas, planes recurrentes y cross-sell de detailing sin ensuciar la propuesta.",
+      "Spin & Gloss: membresías sin fila, detailing express, flota PyME y app de reserva con ocupación en vivo.",
   },
   seguridad: {
 
@@ -217,7 +217,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-emerald-400",
     border: "group-hover:border-emerald-500/50",
     pitch:
-      "Confianza técnica: diagramas de cobertura, SLA de respuesta y bundles claros para hogar y PyME.",
+      "Vigilum Alarmas: diagramas de cobertura, botón de pánico, monitoreo 24/7 y bundles hogar/PyME sin jerga.",
   },
   yoga: {
 
@@ -225,7 +225,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-violet-500",
     border: "group-hover:border-violet-400/50",
     pitch:
-      "Espacio calmado que prioriza agenda, claridad de estilos y conversión mobile-first para alumnos corporativos.",
+      "Mat Lumen: estilos Hatha y Vinyasa, agenda mobile-first, packs corporativos y prueba de clase gratuita.",
   },
   hotel: {
 
@@ -233,7 +233,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-amber-400",
     border: "group-hover:border-amber-500/50",
     pitch:
-      "Hospitalidad con tono editorial, upsells de experiencia y señales de confianza para visitantes internacionales.",
+      "Posada 9 Luces: suites boutique, spa 11–21 h, MICE hasta 12 pax y upsells de experiencias locales.",
   },
   catering: {
 
@@ -241,7 +241,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-red-400",
     border: "group-hover:border-red-500/50",
     pitch:
-      "Propuestas B2B con menús por persona, requisitos dietéticos visibles y demostración de producción en vivo.",
+      "Banquetes Origen: menús por persona, dietas visibles, producción en sitio y brief online para eventos B2B.",
   },
   paisajismo: {
 
@@ -249,7 +249,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-green-400",
     border: "group-hover:border-green-500/50",
     pitch:
-      "Portafolio de obra y mantenimiento con foco en sostenibilidad hídrica y contratos anuales transparentes.",
+      "Verde Horizonte: diseño de jardín, riego inteligente, mantenimiento anual y portafolio antes/después.",
   },
   tattoo: {
 
@@ -257,7 +257,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-rose-400",
     border: "group-hover:border-rose-500/50",
     pitch:
-      "Estudio con tono galería: calendario claro, políticas visibles y storytelling del proceso creativo.",
+      "Oráculo Ink Lab: flash book, lista de espera, políticas claras y galería de manga & piercing.",
   },
   cerrajeria: {
 
@@ -265,7 +265,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-yellow-400",
     border: "group-hover:border-yellow-500/50",
     pitch:
-      "Servicio de confianza con geolocalización de móviles, garantías explícitas y catálogo técnico sin jerga innecesaria.",
+      "Llaves 24 Sur: urgencias geolocalizadas, apertura sin daño, cerraduras smart y matrícula visible.",
   },
   coworking: {
 
@@ -273,7 +273,7 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
     accent: "text-sky-400",
     border: "group-hover:border-sky-500/50",
     pitch:
-      "Espacio flexible con ocupación en tiempo real, add-ons de tecnología y propuesta clara para equipos remotos.",
+      "Hub Muelle: day pass, salas con occupancy live, fibra dedicada y planes para equipos híbridos.",
   },
   minecraft: {
     color: "from-emerald-600/30",

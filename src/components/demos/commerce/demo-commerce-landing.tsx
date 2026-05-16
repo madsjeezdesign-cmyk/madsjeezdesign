@@ -160,16 +160,16 @@ export function CommerceLanding({ slug }: Props) {
                 Ver paquetes <ArrowRight className="h-4 w-4" />
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-500">
-              <span className="flex items-center gap-2">
+            <div className="mt-12 flex flex-wrap gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+              <span className="cm-hero-stat flex items-center gap-2">
                 <Zap className="h-4 w-4" style={{ color: config.accent }} />
                 {config.stat1}
               </span>
-              <span className="flex items-center gap-2">
+              <span className="cm-hero-stat flex items-center gap-2">
                 <Users className="h-4 w-4" style={{ color: config.accent }} />
                 {config.stat2}
               </span>
-              <span className="flex items-center gap-2">
+              <span className="cm-hero-stat flex items-center gap-2">
                 <Sparkles className="h-4 w-4" style={{ color: config.accent }} />
                 {config.stat3}
               </span>

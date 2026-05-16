@@ -28,7 +28,7 @@ export function DemoOpticaLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug="optica"
-        brand="VISIÓN+"
+        brand="Visión Clara"
         iconKey="Glasses"
         variant="dark"
         primaryCta="Turno online"

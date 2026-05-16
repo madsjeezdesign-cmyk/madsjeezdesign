@@ -18,7 +18,7 @@ export function DemoTattooLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug={SLUG}
-        brand="INK · ORÁCULO"
+        brand="Oráculo Ink Lab"
         iconKey="Pen"
         primaryCta="Lista espera"
         primaryCtaClass={art.primaryCta}

@@ -20,7 +20,7 @@ export function DemoSeguridadLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug="seguridad"
-        brand="BUNKER"
+        brand="Vigilum Alarmas"
         iconKey="Shield"
         variant="dark"
         primaryCta="Auditoría gratis"

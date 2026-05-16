@@ -40,16 +40,16 @@ export function DemoSiteValueBlocks({
       <section id="demo-capacidades" className={`${demoSectionTight} ${sectionClass}`}>
         <div className={demoContainer}>
           <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-500">
-            Qué podés activar
+            Capacidades del sitio
           </p>
           <h2
             className={`mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl ${headingClass}`}
           >
-            Opciones para {brandLabel}
+            Todo lo que {brandLabel} puede ofrecer online
           </h2>
-          <p className="mt-3 max-w-2xl text-sm text-zinc-400">
-            Módulos habituales en sitios de este rubro. En producción adaptamos prioridades, copy y
-            integraciones a tu operación real.
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400">
+            Nueve módulos típicos del rubro, con copy y diseño listos para adaptar a tu operación,
+            prioridades y presupuesto.
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((card) => (

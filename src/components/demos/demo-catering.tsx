@@ -17,7 +17,7 @@ export function DemoCateringLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug={SLUG}
-        brand="Origen"
+        brand="Banquetes Origen"
         iconKey="ChefHat"
         primaryCta="Brief online"
         primaryCtaClass={art.primaryCta}

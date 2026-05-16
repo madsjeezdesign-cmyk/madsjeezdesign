@@ -28,7 +28,7 @@ export function DemoViajesLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug="viajes"
-        brand="RUMBO"
+        brand="Atlas Experiencias"
         iconKey="Plane"
         variant="dark"
         primaryCta="Armar viaje"

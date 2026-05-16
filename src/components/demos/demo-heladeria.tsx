@@ -24,7 +24,7 @@ export function DemoHeladeriaLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <DemoBrandNav
         slug={SLUG}
-        brand="Alborada"
+        brand="Gelato Alborada"
         iconKey="IceCream"
         primaryCta="Pedir ahora"
         primaryCtaClass={art.primaryCta}

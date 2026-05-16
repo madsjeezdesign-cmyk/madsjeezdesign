@@ -41,17 +41,20 @@ export function DemoSlugPageShell({
       <CinematicBackdrop />
       <ShowcaseSiteNav sticky showDemosIndexLink industry={industry} demoTitle={title} />
 
-      <div className="relative z-10 border-b border-white/10 bg-black/60 px-4 py-4 backdrop-blur-xl md:px-10">
-        <div className="mx-auto max-w-[1400px] space-y-2">
-          <div className="flex flex-wrap items-center justify-between gap-3 text-[10px] font-bold uppercase tracking-[0.28em] text-zinc-500 md:text-[11px]">
+      <div className="relative z-10 border-b border-white/10 bg-gradient-to-b from-zinc-950/95 via-black/80 to-black/60 px-4 py-5 backdrop-blur-xl md:px-10 md:py-6">
+        <div className="mx-auto max-w-[1400px]">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3 text-[10px] font-bold uppercase tracking-[0.28em] text-zinc-500 md:text-[11px]">
             <span>
               Showroom {year} · <span className="text-zinc-400">{industry}</span>
             </span>
-            <span className={`max-w-[220px] truncate text-right md:max-w-md ${accent}`}>
-              {title} — {tagline}
-            </span>
+            <span className={`max-w-[240px] truncate text-right md:max-w-lg ${accent}`}>{title}</span>
           </div>
-          <p className="max-w-3xl text-xs leading-relaxed text-zinc-500 md:text-sm">{pitch}</p>
+          <p className={`mb-3 text-sm font-semibold tracking-tight text-zinc-300 md:text-base ${accent}`}>
+            {tagline}
+          </p>
+          <p className="max-w-3xl border-l-2 border-white/15 pl-4 text-xs leading-relaxed text-zinc-400 md:text-sm md:leading-relaxed">
+            {pitch}
+          </p>
         </div>
       </div>
 
