@@ -38,7 +38,9 @@ export function DemoEnhancements({
   sectionClass = "bg-zinc-950/40",
 }: Props) {
   const v = getDemoVisuals(slug);
-  const galleryImages = [v.a, v.b, v.c, v.d ?? v.a, v.e ?? v.b];
+  const galleryImages = [v.a, v.b, v.c, v.d, v.e].filter(
+    (src): src is string => Boolean(src),
+  ).filter((src, i, arr) => arr.indexOf(src) === i);
   const meta = getShowcaseMeta(slug);
   const leadCopy = DEMO_LEAD_COPY[slug];
   const resolvedShopCard =

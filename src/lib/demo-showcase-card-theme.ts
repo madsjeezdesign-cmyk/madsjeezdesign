@@ -1,0 +1,63 @@
+/** Etiquetas cortas y subtítulos premium para cartillas del índice /demos. */
+
+export type ShowcaseCardTheme = {
+  badge: string;
+  subtitle: string;
+  accentHex: string;
+  accentGlow: string;
+  /** Texto oscuro en botón primario (ej. amber) */
+  primaryBtnDarkText?: boolean;
+};
+
+function glow(hex: string, alpha = 0.12): string {
+  const h = hex.replace("#", "");
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">> = {
+  ferreteria: { badge: "Retail Pro", subtitle: "Arquitectura de alta carga", primaryBtnDarkText: true },
+  restaurante: { badge: "Gourmet Tech", subtitle: "Experiencia de elite" },
+  estetica: { badge: "Beauty Cloud", subtitle: "Minimalismo de lujo" },
+  gimnasio: { badge: "Performance", subtitle: "Conversión deportiva" },
+  veterinaria: { badge: "Pet Care", subtitle: "Clínica + retail" },
+  inmobiliaria: { badge: "Luxury RE", subtitle: "Portfolio premium" },
+  tech: { badge: "SaaS Scale", subtitle: "Product-led growth" },
+  floreria: { badge: "Bloom OS", subtitle: "Venta emocional" },
+  taller: { badge: "Auto Service", subtitle: "Confianza mecánica" },
+  abogados: { badge: "Legal Firm", subtitle: "Captación institucional" },
+  farmacia: { badge: "Health Retail", subtitle: "Salud accesible" },
+  odontologia: { badge: "Dental Pro", subtitle: "Primera visita" },
+  contadores: { badge: "Finance Hub", subtitle: "PyME sin fricción" },
+  musica: { badge: "Academy", subtitle: "Inscripción digital" },
+  detailing: { badge: "Auto Spa", subtitle: "Alto valor percibido" },
+  panaderia: { badge: "Artisan", subtitle: "Marca sensorial" },
+  viajes: { badge: "Travel OS", subtitle: "Itinerarios a medida" },
+  limpieza: { badge: "Facility B2B", subtitle: "Operación certificada" },
+  foto: { badge: "Studio Pro", subtitle: "Producción visual" },
+  optica: { badge: "Vision Care", subtitle: "Salud visual" },
+  heladeria: { badge: "Gelato Lab", subtitle: "Temporada y delivery" },
+  lavadero: { badge: "Wash Tech", subtitle: "Alto volumen" },
+  seguridad: { badge: "Secure IoT", subtitle: "Monitoreo 24/7" },
+  yoga: { badge: "Wellness", subtitle: "Studio híbrido" },
+  hotel: { badge: "Boutique", subtitle: "Hospitalidad editorial" },
+  catering: { badge: "Events B2B", subtitle: "Producción en sitio" },
+  paisajismo: { badge: "Green Pro", subtitle: "Diseño + mantenimiento" },
+  tattoo: { badge: "Ink Studio", subtitle: "Galería creativa" },
+  cerrajeria: { badge: "Access Tech", subtitle: "Urgencias 24 h" },
+  coworking: { badge: "Flex Space", subtitle: "Equipos híbridos" },
+};
+
+export function getShowcaseCardTheme(slug: string, accentHex: string): ShowcaseCardTheme {
+  const t = themes[slug] ?? {
+    badge: "Demo Pro",
+    subtitle: "Landing optimizada",
+  };
+  return {
+    ...t,
+    accentHex,
+    accentGlow: glow(accentHex),
+  };
+}
