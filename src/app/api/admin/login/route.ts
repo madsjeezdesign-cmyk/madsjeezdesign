@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { parseJsonBody } from "@/lib/parse-json-body";
+import {
+  checkRateLimit,
+  clientIp,
+  rateLimitResponse,
+} from "@/lib/rate-limit";
 import {
   buildAdminSessionCookie,
   createSessionToken,
@@ -23,14 +29,16 @@ export async function POST(request: Request) {
     );
   }
 
-  let json: unknown;
-  try {
-    json = await request.json();
-  } catch {
-    return NextResponse.json({ error: "JSON inválido." }, { status: 400 });
+  const ip = clientIp(request);
+  const limited = checkRateLimit(`admin-login:${ip}`, 10, 15 * 60 * 1000);
+  if (!limited.ok) {
+    return rateLimitResponse(limited.retryAfterSec);
   }
 
-  const parsed = bodySchema.safeParse(json);
+  const parsedBody = await parseJsonBody(request, 4_000);
+  if (!parsedBody.ok) return parsedBody.response;
+
+  const parsed = bodySchema.safeParse(parsedBody.data);
   if (!parsed.success) {
     return NextResponse.json({ error: "Credenciales inválidas." }, { status: 400 });
   }

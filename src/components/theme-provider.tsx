@@ -36,17 +36,19 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [mode, setModeState] = useState<ThemeMode>("system");
-  const [resolved, setResolved] = useState<"light" | "dark">("light");
+function readStoredMode(): ThemeMode {
+  if (typeof window === "undefined") return "system";
+  const raw = localStorage.getItem(THEME_STORAGE_KEY) as ThemeMode | null;
+  return raw === "light" || raw === "dark" || raw === "system" ? raw : "system";
+}
 
-  useEffect(() => {
-    const raw = localStorage.getItem(THEME_STORAGE_KEY) as ThemeMode | null;
-    const initial: ThemeMode =
-      raw === "light" || raw === "dark" || raw === "system" ? raw : "system";
-    setModeState(initial);
-    setResolved(applyDom(initial));
-  }, []);
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [mode, setModeState] = useState<ThemeMode>(readStoredMode);
+  const [resolved, setResolved] = useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "light";
+    const initial = readStoredMode();
+    return applyDom(initial);
+  });
 
   useEffect(() => {
     if (mode !== "system") return;

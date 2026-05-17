@@ -462,7 +462,7 @@ export function DemoFerreteriaLanding() {
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-            {GUIDES.map((g, i) => (
+            {GUIDES.map((g) => (
               <div
                 key={g.title}
                 className="flex cursor-pointer flex-col items-center gap-6 rounded-[2rem] border border-white/5 bg-white/5 p-6 transition-all hover:border-orange-600/30 md:flex-row md:rounded-[3rem] md:p-8"

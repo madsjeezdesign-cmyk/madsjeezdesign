@@ -49,6 +49,7 @@ export function DemoLeadForm({
           email: data.get("email"),
           service: serviceValue,
           message: `[Lead /demos/${slug}]\n\n${data.get("message")}`,
+          website: data.get("website") ?? "",
         }),
       });
       const json = (await res.json()) as { ok?: boolean; error?: string };
@@ -84,6 +85,14 @@ export function DemoLeadForm({
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                className="absolute -left-[9999px] h-px w-px opacity-0"
+                aria-hidden
+              />
               {error ? (
                 <p
                   role="alert"
@@ -95,7 +104,13 @@ export function DemoLeadForm({
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block">
                   <span className={theme.label}>Nombre</span>
-                  <input required disabled={loading} name="name" className={inputCls} />
+                  <input
+                    required
+                    disabled={loading}
+                    name="name"
+                    minLength={2}
+                    className={inputCls}
+                  />
                 </label>
                 <label className="block">
                   <span className={theme.label}>Empresa (opcional)</span>

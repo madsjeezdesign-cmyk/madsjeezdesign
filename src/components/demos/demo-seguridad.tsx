@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, Bell, Camera, Lock, Radio, Shield } from "lucide-react";
+import { Activity, Bell, Camera, Radio } from "lucide-react";
 import { motion } from "framer-motion";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";

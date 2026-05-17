@@ -28,6 +28,7 @@ export function HyperContact() {
           email: data.get("email"),
           service: data.get("service"),
           message: data.get("message"),
+          website: data.get("website") ?? "",
         }),
       });
       const json = (await res.json()) as { ok?: boolean; error?: string };
@@ -126,6 +127,14 @@ export function HyperContact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="absolute -left-[9999px] h-0 w-0 opacity-0"
+                  aria-hidden
+                />
                 {error && (
                   <p
                     role="alert"
@@ -141,6 +150,8 @@ export function HyperContact() {
                     </span>
                     <input
                       required
+                      minLength={2}
+                      maxLength={120}
                       disabled={loading}
                       name="name"
                       className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-[#1de0b1]/50 disabled:opacity-60"
@@ -192,6 +203,8 @@ export function HyperContact() {
                   </span>
                   <textarea
                     required
+                    minLength={10}
+                    maxLength={4000}
                     disabled={loading}
                     name="message"
                     rows={4}

@@ -58,6 +58,8 @@ export function verifySessionToken(
     };
     if (typeof json.exp !== "number" || json.exp < Date.now()) return null;
     if (typeof json.email !== "string" || !json.email) return null;
+    const { email: currentEmail } = getAdminCredentials();
+    if (!currentEmail || json.email !== currentEmail) return null;
     return { email: json.email };
   } catch {
     return null;

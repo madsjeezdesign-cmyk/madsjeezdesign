@@ -1,4 +1,4 @@
-import { Compass, Globe, Luggage, Plane, Ship } from "lucide-react";
+import { Compass, Luggage, Plane, Ship } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import {
   DEMO_HEADING_CLASS,

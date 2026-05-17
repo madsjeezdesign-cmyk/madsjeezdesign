@@ -5,6 +5,9 @@ import { createSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/server
 
 const filterSchema = z.enum(["inbox", "new", "archived", "all"]);
 
+const PAGE_SIZE = 50;
+const MAX_PAGE = 20;
+
 export async function GET(request: Request) {
   const session = await requireAdminSession();
   if (!session) {
@@ -25,13 +28,21 @@ export async function GET(request: Request) {
   const parsedFilter = filterSchema.safeParse(filterRaw);
   const filter = parsedFilter.success ? parsedFilter.data : "inbox";
 
+  const pageRaw = Number(searchParams.get("page") ?? "1");
+  const page = Number.isFinite(pageRaw)
+    ? Math.min(MAX_PAGE, Math.max(1, Math.floor(pageRaw)))
+    : 1;
+  const from = (page - 1) * PAGE_SIZE;
+  const to = from + PAGE_SIZE - 1;
+
   let q = supabase
     .from("contact_inquiries")
     .select(
       "id, name, company, email, service, message, read_at, archived, admin_notes, created_at",
+      { count: "exact" },
     )
     .order("created_at", { ascending: false })
-    .limit(200);
+    .range(from, to);
 
   if (filter === "inbox") {
     q = q.eq("archived", false);
@@ -41,12 +52,22 @@ export async function GET(request: Request) {
     q = q.eq("archived", true);
   }
 
-  const { data, error } = await q;
+  const { data, error, count } = await q;
 
   if (error) {
     console.error("[admin/leads]", error.message);
     return NextResponse.json({ error: "No se pudieron cargar los leads." }, { status: 500 });
   }
 
-  return NextResponse.json({ leads: data ?? [] });
+  const total = count ?? 0;
+  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+
+  return NextResponse.json({
+    leads: data ?? [],
+    page,
+    pageSize: PAGE_SIZE,
+    total,
+    totalPages,
+    hasMore: page < totalPages,
+  });
 }

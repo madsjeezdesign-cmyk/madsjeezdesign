@@ -12,7 +12,6 @@ import {
   CreditCard,
   Database,
   FileText,
-  Gem,
   Gift,
   Heart,
   Image as ImageIcon,

@@ -1,4 +1,4 @@
-import { Calculator, FileSpreadsheet, Landmark, Scale, ShieldCheck } from "lucide-react";
+import { FileSpreadsheet, Landmark, Scale, ShieldCheck } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import {
   DEMO_HEADING_CLASS,

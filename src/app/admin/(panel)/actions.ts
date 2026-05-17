@@ -2,9 +2,11 @@
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { adminSessionCookieName } from "@/lib/admin-session";
+import { buildAdminSessionCookie } from "@/lib/admin-session";
 
 export async function adminLogoutAction() {
-  (await cookies()).delete(adminSessionCookieName());
+  const jar = await cookies();
+  const cleared = buildAdminSessionCookie(null);
+  jar.set(cleared);
   redirect("/admin/login");
 }

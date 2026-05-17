@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   ChevronDown,
@@ -49,7 +49,9 @@ export function GameServerLanding({ slug }: Props) {
 
   const [deployOpen, setDeployOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [selectedPlan, setSelectedPlan] = useState("");
+  const defaultPlan =
+    config?.plans.find((p) => p.popular)?.name ?? config?.plans[0]?.name ?? "";
+  const [selectedPlan, setSelectedPlan] = useState(defaultPlan);
 
   const v = config ? getDemoVisuals(slug) : null;
 
@@ -62,14 +64,8 @@ export function GameServerLanding({ slug }: Props) {
     return `rgba(${r}, ${g}, ${b}, 0.15)`;
   }, [config]);
 
-  useEffect(() => {
-    if (!config) return;
-    const popular = config.plans.find((p) => p.popular)?.name ?? config.plans[0]?.name ?? "";
-    setSelectedPlan(popular);
-  }, [config]);
-
-  const toggleDeploy = useCallback(() => setDeployOpen((o) => !o), []);
-  const closeDeploy = useCallback(() => setDeployOpen(false), []);
+  const toggleDeploy = () => setDeployOpen((o) => !o);
+  const closeDeploy = () => setDeployOpen(false);
 
   useEffect(() => {
     document.body.style.overflow = deployOpen ? "hidden" : "";

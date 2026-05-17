@@ -1,4 +1,4 @@
-import { Eye, Glasses, HeartPulse, Scan, Volume2 } from "lucide-react";
+import { Eye, HeartPulse, Scan, Volume2 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import {
   DEMO_HEADING_CLASS,

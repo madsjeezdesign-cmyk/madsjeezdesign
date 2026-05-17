@@ -1,6 +1,6 @@
 "use client";
 
-import { Loader2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 export type LeadRow = {
@@ -18,9 +18,19 @@ export type LeadRow = {
 
 type Filter = "inbox" | "new" | "archived" | "all";
 
+type LeadsResponse = {
+  leads?: LeadRow[];
+  totalPages?: number;
+  total?: number;
+  error?: string;
+};
+
 export function AdminDashboard() {
   const [filter, setFilter] = useState<Filter>("inbox");
+  const [page, setPage] = useState(1);
   const [leads, setLeads] = useState<LeadRow[]>([]);
+  const [totalPages, setTotalPages] = useState(1);
+  const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -28,27 +38,41 @@ export function AdminDashboard() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`/api/admin/leads?filter=${filter}`, {
-        credentials: "same-origin",
-      });
-      const data = (await res.json()) as { leads?: LeadRow[]; error?: string };
+      const res = await fetch(
+        `/api/admin/leads?filter=${filter}&page=${page}`,
+        { credentials: "same-origin" },
+      );
+      const data = (await res.json()) as LeadsResponse;
       if (!res.ok) {
         setError(data.error ?? "Error al cargar.");
         setLeads([]);
         return;
       }
       setLeads(data.leads ?? []);
+      setTotalPages(data.totalPages ?? 1);
+      setTotal(data.total ?? 0);
     } catch {
       setError("Error de conexión.");
       setLeads([]);
     } finally {
       setLoading(false);
     }
-  }, [filter]);
+  }, [filter, page]);
 
   useEffect(() => {
-    void load();
+    let cancelled = false;
+    queueMicrotask(() => {
+      if (!cancelled) void load();
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [load]);
+
+  function changeFilter(id: Filter) {
+    setFilter(id);
+    setPage(1);
+  }
 
   return (
     <div className="space-y-6">
@@ -59,6 +83,7 @@ export function AdminDashboard() {
           </h2>
           <p className="mt-1 text-sm text-zinc-500">
             Mensajes del formulario de contacto guardados en Supabase.
+            {total > 0 ? ` · ${total} en total` : ""}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -73,7 +98,7 @@ export function AdminDashboard() {
             <button
               key={id}
               type="button"
-              onClick={() => setFilter(id)}
+              onClick={() => changeFilter(id)}
               className={`rounded-lg px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition-colors ${
                 filter === id
                   ? "bg-[#1de0b1] text-black"
@@ -101,11 +126,38 @@ export function AdminDashboard() {
           No hay leads en esta vista.
         </p>
       ) : (
-        <ul className="space-y-4">
-          {leads.map((lead) => (
-            <LeadCard key={lead.id} lead={lead} onUpdated={() => void load()} />
-          ))}
-        </ul>
+        <>
+          <ul className="space-y-4">
+            {leads.map((lead) => (
+              <LeadCard key={lead.id} lead={lead} onUpdated={() => void load()} />
+            ))}
+          </ul>
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-4 pt-2">
+              <button
+                type="button"
+                disabled={page <= 1 || loading}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                className="inline-flex items-center gap-1 rounded-lg border border-white/10 px-3 py-2 text-xs font-bold uppercase tracking-wide text-zinc-400 hover:text-white disabled:opacity-40"
+              >
+                <ChevronLeft className="h-4 w-4" />
+                Anterior
+              </button>
+              <span className="font-[family-name:var(--font-jetbrains)] text-xs text-zinc-500">
+                Página {page} / {totalPages}
+              </span>
+              <button
+                type="button"
+                disabled={page >= totalPages || loading}
+                onClick={() => setPage((p) => p + 1)}
+                className="inline-flex items-center gap-1 rounded-lg border border-white/10 px-3 py-2 text-xs font-bold uppercase tracking-wide text-zinc-400 hover:text-white disabled:opacity-40"
+              >
+                Siguiente
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
@@ -121,10 +173,14 @@ function LeadCard({
   const [open, setOpen] = useState(false);
   const [notes, setNotes] = useState(lead.admin_notes ?? "");
   const [saving, setSaving] = useState(false);
+  const [patchError, setPatchError] = useState<string | null>(null);
 
-  useEffect(() => {
-    setNotes(lead.admin_notes ?? "");
-  }, [lead.id, lead.admin_notes]);
+  function toggleOpen() {
+    setOpen((wasOpen) => {
+      if (!wasOpen) setNotes(lead.admin_notes ?? "");
+      return !wasOpen;
+    });
+  }
 
   const fmt = (iso: string) =>
     new Date(iso).toLocaleString("es-AR", {
@@ -134,6 +190,7 @@ function LeadCard({
 
   async function patch(body: Record<string, unknown>) {
     setSaving(true);
+    setPatchError(null);
     try {
       const res = await fetch(`/api/admin/leads/${lead.id}`, {
         method: "PATCH",
@@ -143,7 +200,7 @@ function LeadCard({
       });
       if (!res.ok) {
         const d = (await res.json()) as { error?: string };
-        alert(d.error ?? "No se pudo guardar.");
+        setPatchError(d.error ?? "No se pudo guardar.");
         return;
       }
       onUpdated();
@@ -158,7 +215,7 @@ function LeadCard({
     <li className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
+        onClick={toggleOpen}
         className="flex w-full flex-col gap-2 px-4 py-4 text-left transition-colors hover:bg-white/[0.04] sm:flex-row sm:items-center sm:justify-between"
       >
         <div className="min-w-0 flex-1">
@@ -186,6 +243,11 @@ function LeadCard({
 
       {open && (
         <div className="space-y-4 border-t border-white/10 px-4 py-4">
+          {patchError && (
+            <p className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-xs text-red-300">
+              {patchError}
+            </p>
+          )}
           {lead.company && (
             <p className="text-sm text-zinc-400">
               <span className="text-zinc-600">Empresa · </span>

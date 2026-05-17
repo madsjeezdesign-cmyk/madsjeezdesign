@@ -1,4 +1,4 @@
-import { Building2, Droplets, ShieldCheck, Sparkles, Users } from "lucide-react";
+import { Building2, Droplets, ShieldCheck, Users } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import {
   DEMO_HEADING_CLASS,
