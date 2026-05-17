@@ -24,7 +24,7 @@ export function FashionInstagramGallery({ config }: Props) {
               <span className="italic">Instagram</span>
             </h2>
             <p className="mt-4 text-sm font-light leading-relaxed text-gray-600">
-              Looks, reels y novedades de temporada — seguinos en{" "}
+              Más looks de la temporada — fotos exclusivas del feed, distintas a la tienda. Seguinos en{" "}
               <a
                 href={config.instagramUrl}
                 target="_blank"

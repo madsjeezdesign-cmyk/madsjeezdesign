@@ -1,14 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight, Infinity, MapPin, Menu, MessageCircle, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { whatsappGeneralUrl } from "@/lib/fashion-whatsapp";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 import { DemoLeadForm } from "../demo-lead-form";
+import { FashionHeroVideo } from "./fashion-hero-video";
 import { FashionPhoto } from "./fashion-photo";
 import { FashionInstagramGallery } from "./fashion-instagram-gallery";
 import { FashionShop } from "./fashion-shop";
+import { InfinitaFashionMarketing } from "./infinita-fashion-marketing";
 import "./demo-retail-fashion-premium.css";
 
 type Props = { slug: string };
@@ -85,10 +86,11 @@ export function RetailFashionLanding({ slug }: Props) {
 
   const wa = whatsappGeneralUrl(config);
   const navMuted = isScrolled ? "text-black" : "text-white";
+  const isInfinita = slug === "moda-infinita";
   const navItems = [
-    { label: "La Maison", href: "#inicio" },
-    { label: "Shop", href: "#shop" },
-    { label: "Collections", href: "#collections" },
+    { label: "Inicio", href: "#inicio" },
+    { label: "Colección", href: isInfinita ? "#coleccion" : "#collections" },
+    { label: "Tienda", href: "#shop" },
     { label: "Instagram", href: "#instagram" },
     { label: "Boutique", href: "#boutique" },
   ];
@@ -201,16 +203,11 @@ export function RetailFashionLanding({ slug }: Props) {
           <div className="absolute inset-0 z-10 bg-black/45" />
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/25 to-black/85" />
           {config.heroVideo ? (
-            <video
-              className="h-full w-full object-cover object-center opacity-90"
-              autoPlay
-              muted
-              loop
-              playsInline
+            <FashionHeroVideo
+              src={config.heroVideo}
               poster={config.heroImage}
-            >
-              <source src={config.heroVideo} type="video/mp4" />
-            </video>
+              className="opacity-90"
+            />
           ) : (
             <FashionPhoto
               src={config.heroImage}
@@ -238,6 +235,20 @@ export function RetailFashionLanding({ slug }: Props) {
             {config.heroTitle} <br />
             <span className="pr-2 font-light italic text-white">{config.heroHighlight}</span>
           </h1>
+          <div className="rf-hero-kicker mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#shop"
+              className="inline-flex items-center gap-2 bg-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.25em] text-black transition-transform hover:scale-[1.02]"
+            >
+              Comprar ahora <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href={isInfinita ? "#coleccion" : "#collections"}
+              className="inline-flex items-center gap-2 border border-white/80 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.25em] text-white transition-colors hover:bg-white hover:text-black"
+            >
+              Ver colección
+            </a>
+          </div>
         </div>
 
         <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center text-white/60">
@@ -265,36 +276,21 @@ export function RetailFashionLanding({ slug }: Props) {
         ))}
       </div>
 
-      <section id="collections" className="bg-white py-32">
-        <div className="mx-auto max-w-[90%]">
-          <div className="rf-reveal mb-24 flex flex-col items-center text-center">
-            <BrandMark monogram={config.monogram} className="mb-6 text-black" />
-            <h2 className="mb-6 font-serif text-5xl tracking-tighter text-black md:text-7xl">
-              {config.collectionTitle}
-            </h2>
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">
-              {config.collectionSubtitle}
-            </p>
+      {isInfinita ? (
+        <InfinitaFashionMarketing config={config} />
+      ) : (
+        <section id="collections" className="bg-white py-32">
+          <div className="mx-auto max-w-[90%]">
+            <div className="rf-reveal flex flex-col items-center text-center">
+              <BrandMark monogram={config.monogram} className="mb-6 text-black" />
+              <h2 className="mb-6 font-serif text-5xl tracking-tighter text-black md:text-7xl">
+                {config.collectionTitle}
+              </h2>
+              <p className="max-w-xl text-sm font-light text-gray-600">{config.collectionSubtitle}</p>
+            </div>
           </div>
-
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
-            {config.instagramFeed.slice(0, 8).map((src, i) => (
-              <div
-                key={`${src}-${i}`}
-                className="rf-reveal relative aspect-[3/4] overflow-hidden bg-stone-100"
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <FashionPhoto
-                  src={src}
-                  alt={`${config.brand} colección ${i + 1}`}
-                  fill
-                  sizes="(max-width:768px) 50vw, 25vw"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <FashionShop config={config} />
       <FashionInstagramGallery config={config} />

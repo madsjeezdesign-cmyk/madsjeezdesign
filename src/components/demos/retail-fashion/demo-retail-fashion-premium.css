@@ -73,3 +73,33 @@
     transform: translateY(0);
   }
 }
+
+.rf-marketing-glow {
+  position: relative;
+}
+
+.rf-marketing-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(0, 0, 0, 0.04) 50%,
+    transparent 60%
+  );
+  pointer-events: none;
+  animation: rf-shimmer 8s ease-in-out infinite;
+}
+
+@keyframes rf-shimmer {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateX(-30%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(30%);
+  }
+}

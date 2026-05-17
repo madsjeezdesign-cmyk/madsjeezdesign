@@ -1,5 +1,10 @@
 import type { ShowcaseFeatures } from "@/lib/demo-showcase-features";
-import { buildInfinitaInstagramMedia, INFINITA_INSTAGRAM_POSTS } from "@/lib/infinita-instagram";
+import {
+  buildInfinitaInstagramMedia,
+  buildInfinitaShopProducts,
+  INFINITA_HERO_VIDEO,
+  INFINITA_INSTAGRAM_POSTS,
+} from "@/lib/infinita-instagram";
 
 export type RetailFashionProduct = {
   id: number;
@@ -149,40 +154,17 @@ export const RETAIL_FASHION_DEMOS: RetailFashionConfig[] = [
     heroKicker: "Nouvelle Collection OI",
     heroTitle: "L'Élégance",
     heroHighlight: "d'Hiver.",
-    heroImage: INFINITA_INSTAGRAM_POSTS[0]!.localPath,
-    collectionTitle: "Édition Otoño Invierno",
-    collectionSubtitle: "Fotos reales · @infinita_fashionstore",
-    shopTitle: "La Boutique en ligne",
-    shopSubtitle:
-      "Cada prenda es un look de nuestro Instagram. Agregá al carrito y comprá por WhatsApp.",
-    products: catalog(
-      INFINITA_INSTAGRAM_POSTS.slice(0, 8).map((post, i) => ({
-        name:
-          i === 0
-            ? "Abrigo Colección OI"
-            : i === 1
-              ? "Conjunto Elegante"
-              : i === 2
-                ? "Vestido & Abrigo"
-                : i === 3
-                  ? "Look Casual Chic"
-                  : i === 4
-                    ? "Outfit Invierno"
-                    : i === 5
-                      ? "Set Premium"
-                      : i === 6
-                        ? "Estilo Parisien"
-                        : "Nuevo Ingreso",
-        price: "Consultar",
-        image: post.localPath,
-        fallbackImage: post.cdnUrl,
-        sizeHint: "Talles según disponibilidad",
-        badge: i < 2 ? "OI 2025" : undefined,
-      })),
-    ),
+    heroImage: INFINITA_INSTAGRAM_POSTS[6]!.localPath,
+    heroVideo: INFINITA_HERO_VIDEO,
+    collectionTitle: "L'hiver, réinventé",
+    collectionSubtitle:
+      "Boutique de autor en Ezeiza. Cada look del feed es único: la tienda y el Instagram muestran fotos distintas, sin repetir.",
+    shopTitle: "La Boutique",
+    shopSubtitle: "Ocho piezas destacadas de la temporada. Carrito → WhatsApp en un toque.",
+    products: catalog(buildInfinitaShopProducts()),
     instagramHandle: "infinita_fashionstore",
     instagramUrl: IG,
-    instagramFeed: INFINITA_INSTAGRAM_POSTS.map((p) => p.localPath),
+    instagramFeed: [],
     instagramMedia: buildInfinitaInstagramMedia(),
     marqueeItems: ["OTOÑO INVIERNO", "EZEIZA", "HAUTE COUTURE", "INFINITA", "@infinita_fashionstore"],
     addressLines: ["Av. 1804 / Ezeiza Centro", "Provincia de Buenos Aires", "Argentina"],
@@ -194,7 +176,7 @@ export const RETAIL_FASHION_DEMOS: RetailFashionConfig[] = [
     phoneDisplay: "011 15-3003-3315",
     footerLocation: "INFINITA · Ezeiza",
     showcasePitch:
-      "Demo real para @infinita_fashionstore: colección OI, carrito a WhatsApp 11-3003-3315, feed IG y video — lista para cerrar ventas.",
+      "Demo INFINITA: video hero loop, marketing React, tienda 8 looks + galería IG sin duplicar, WhatsApp 11-3003-3315.",
     showcaseFeatures: DEFAULT_FEATURES,
   },
   {

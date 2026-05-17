@@ -154,16 +154,55 @@ export function infinitaImageSrc(post: InfinitaPost): string {
 /** Posts con archivo local corrupto o placeholder (<12KB). */
 const CDN_FIRST_INDEX = new Set([12, 14, 15, 16, 17, 18]);
 
+/** Video editorial hero (Mixkit, moda invierno). */
+export const INFINITA_HERO_VIDEO =
+  "https://assets.mixkit.co/videos/preview/mixkit-woman-walking-in-a-hall-with-a-long-black-coat-39879-large.mp4";
+
+const SHOP_COUNT = 8;
+
+function mediaFromPost(post: InfinitaPost, globalIndex: number) {
+  const cdnFirst = CDN_FIRST_INDEX.has(globalIndex);
+  return {
+    id: `ig-${post.code}`,
+    image: cdnFirst ? post.cdnUrl : post.localPath,
+    fallbackImage: cdnFirst ? post.localPath : post.cdnUrl,
+    alt: `INFINITA — @infinita_fashionstore`,
+    postUrl: post.postUrl,
+    kind: "image" as const,
+  };
+}
+
+const SHOP_NAMES = [
+  "Abrigo Laine OI",
+  "Conjunto Structuré",
+  "Vestido & Capa",
+  "Look Street Chic",
+  "Set Invierno Noir",
+  "Silueta Premium",
+  "Élégance Parisienne",
+  "Nouveau Drop",
+] as const;
+
+/** Tienda: primeras 8 fotos (sin repetir en galería). */
+export function buildInfinitaShopProducts() {
+  return INFINITA_INSTAGRAM_POSTS.slice(0, SHOP_COUNT).map((post, i) => ({
+    name: SHOP_NAMES[i] ?? `Look ${i + 1}`,
+    price: "Consultar",
+    image: CDN_FIRST_INDEX.has(i) ? post.cdnUrl : post.localPath,
+    fallbackImage: CDN_FIRST_INDEX.has(i) ? post.localPath : post.cdnUrl,
+    sizeHint: "Talles según disponibilidad",
+    badge: i < 2 ? "OI 2025" : undefined,
+  }));
+}
+
+/** Galería IG: fotos 9–19 (sin solapar con la tienda). */
 export function buildInfinitaInstagramMedia() {
-  return INFINITA_INSTAGRAM_POSTS.map((post, i) => {
-    const cdnFirst = CDN_FIRST_INDEX.has(i);
-    return {
-      id: `ig-${post.code}`,
-      image: cdnFirst ? post.cdnUrl : post.localPath,
-      fallbackImage: cdnFirst ? post.localPath : post.cdnUrl,
-      alt: `INFINITA — look @infinita_fashionstore (${i + 1})`,
-      postUrl: post.postUrl,
-      kind: "image" as const,
-    };
-  });
+  return INFINITA_INSTAGRAM_POSTS.slice(SHOP_COUNT).map((post, i) =>
+    mediaFromPost(post, SHOP_COUNT + i),
+  );
+}
+
+/** @deprecated Usar buildInfinitaInstagramMedia */
+export function buildInfinitaGalleryMedia() {
+  return buildInfinitaInstagramMedia();
 }
