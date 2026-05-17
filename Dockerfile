@@ -12,11 +12,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-cert
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Railway inyecta NEXT_PUBLIC_* en el entorno del build; no usar ARG vacío que las borre.
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
 RUN NODE_OPTIONS="--max-old-space-size=4096" npm run build
+
+# pg solo para ensure-schema — NUNCA npm install en /app del runner (rompe standalone)
+FROM node:22-bookworm-slim AS schema-deps
+WORKDIR /deps
+RUN npm init -y >/dev/null 2>&1 && npm install pg@8.16.0 --omit=dev --no-audit --no-fund
 
 FROM node:22-bookworm-slim AS runner
 WORKDIR /app
@@ -35,9 +39,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
 COPY --from=builder --chown=nextjs:nodejs /app/supabase ./supabase
+COPY --from=schema-deps --chown=nextjs:nodejs /deps/node_modules ./schema-deps/node_modules
 
-USER root
-RUN npm install pg@8.16.0 --omit=dev --no-audit --no-fund
 COPY docker-entrypoint.sh /app/docker-entrypoint.sh
 RUN chmod +x /app/docker-entrypoint.sh && chown nextjs:nodejs /app/docker-entrypoint.sh
 
