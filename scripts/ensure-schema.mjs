@@ -52,6 +52,7 @@ const needsSsl =
 const client = new pg.Client({
   connectionString,
   ssl: needsSsl ? { rejectUnauthorized: false } : undefined,
+  connectionTimeoutMillis: 12_000,
 });
 
 try {
