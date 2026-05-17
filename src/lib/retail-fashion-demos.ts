@@ -1,10 +1,12 @@
 import type { ShowcaseFeatures } from "@/lib/demo-showcase-features";
+import { buildInfinitaInstagramMedia, INFINITA_INSTAGRAM_POSTS } from "@/lib/infinita-instagram";
 
 export type RetailFashionProduct = {
   id: number;
   name: string;
   price: string;
   image: string;
+  fallbackImage?: string;
   sizeHint?: string;
   badge?: string;
 };
@@ -12,6 +14,8 @@ export type RetailFashionProduct = {
 export type RetailFashionMedia = {
   id: string;
   image: string;
+  /** CDN u otra URL si la imagen principal falla. */
+  fallbackImage?: string;
   alt: string;
   postUrl: string;
   kind: "image" | "video";
@@ -145,93 +149,41 @@ export const RETAIL_FASHION_DEMOS: RetailFashionConfig[] = [
     heroKicker: "Nouvelle Collection OI",
     heroTitle: "L'Élégance",
     heroHighlight: "d'Hiver.",
-    heroImage: AW.hero,
-    heroVideo:
-      "https://assets.mixkit.co/videos/preview/mixkit-woman-walking-in-a-hall-with-a-long-black-coat-39879-large.mp4",
+    heroImage: INFINITA_INSTAGRAM_POSTS[0]!.localPath,
     collectionTitle: "Édition Otoño Invierno",
-    collectionSubtitle: "Laines · soie · silhouettes noires",
+    collectionSubtitle: "Fotos reales · @infinita_fashionstore",
     shopTitle: "La Boutique en ligne",
     shopSubtitle:
-      "Prendas de la temporada, inspiradas en el estilo de @infinita_fashionstore. Agregá al carrito y comprá por WhatsApp en un toque.",
-    products: catalog([
-      {
-        name: "Abrigo Laine Long",
+      "Cada prenda es un look de nuestro Instagram. Agregá al carrito y comprá por WhatsApp.",
+    products: catalog(
+      INFINITA_INSTAGRAM_POSTS.slice(0, 8).map((post, i) => ({
+        name:
+          i === 0
+            ? "Abrigo Colección OI"
+            : i === 1
+              ? "Conjunto Elegante"
+              : i === 2
+                ? "Vestido & Abrigo"
+                : i === 3
+                  ? "Look Casual Chic"
+                  : i === 4
+                    ? "Outfit Invierno"
+                    : i === 5
+                      ? "Set Premium"
+                      : i === 6
+                        ? "Estilo Parisien"
+                        : "Nuevo Ingreso",
         price: "Consultar",
-        image: AW.coat,
-        sizeHint: "Talles S a XL",
-        badge: "New in",
-      },
-      {
-        name: "Blazer Structuré Noir",
-        price: "Consultar",
-        image: AW.blazer,
-        sizeHint: "Últimas unidades",
-      },
-      {
-        name: "Pull Cachemire",
-        price: "Consultar",
-        image: AW.knit,
-        sizeHint: "Tonos tierra & noir",
-        badge: "OI",
-      },
-      {
-        name: "Robe Midi Hiver",
-        price: "Consultar",
-        image: AW.dress,
-        sizeHint: "Ideal para eventos",
-      },
-      {
-        name: "Pantalon Wide Laine",
-        price: "Consultar",
-        image: AW.pants,
-        sizeHint: "Corte sastre",
-      },
-      {
-        name: "Veste Cuir Éco",
-        price: "Consultar",
-        image: AW.leather,
-        badge: "Best seller",
-      },
-      {
-        name: "Écharpe & Accessoires",
-        price: "Consultar",
-        image: AW.scarf,
-        sizeHint: "Regalo perfecto",
-      },
-      {
-        name: "Bottes Talon Hiver",
-        price: "Consultar",
-        image: AW.boots,
-        sizeHint: "Consultar talles",
-      },
-    ]),
+        image: post.localPath,
+        fallbackImage: post.cdnUrl,
+        sizeHint: "Talles según disponibilidad",
+        badge: i < 2 ? "OI 2025" : undefined,
+      })),
+    ),
     instagramHandle: "infinita_fashionstore",
     instagramUrl: IG,
-    instagramFeed: [AW.editorial, AW.street, AW.window, AW.coat, AW.knit, AW.leather],
-    instagramMedia: igMedia([
-      { image: AW.editorial, alt: "Look INFINITA OI", postUrl: IG, kind: "image" },
-      { image: AW.coat, alt: "Abrigos INFINITA", postUrl: IG, kind: "image" },
-      {
-        image: AW.street,
-        alt: "Reel temporada",
-        postUrl: IG,
-        kind: "video",
-        videoSrc:
-          "https://assets.mixkit.co/videos/preview/mixkit-fashion-model-with-a-black-and-white-outfit-3980-large.mp4",
-      },
-      { image: AW.knit, alt: "Sweaters", postUrl: IG, kind: "image" },
-      { image: AW.window, alt: "Vitrina boutique", postUrl: IG, kind: "image" },
-      {
-        image: AW.dress,
-        alt: "Noche & seda",
-        postUrl: IG,
-        kind: "video",
-        videoSrc:
-          "https://assets.mixkit.co/videos/preview/mixkit-young-woman-wearing-a-black-coat-39878-large.mp4",
-      },
-      { image: AW.leather, alt: "Cuero & noir", postUrl: IG, kind: "image" },
-      { image: AW.boots, alt: "Calzado invierno", postUrl: IG, kind: "image" },
-    ]),
+    instagramFeed: INFINITA_INSTAGRAM_POSTS.map((p) => p.localPath),
+    instagramMedia: buildInfinitaInstagramMedia(),
     marqueeItems: ["OTOÑO INVIERNO", "EZEIZA", "HAUTE COUTURE", "INFINITA", "@infinita_fashionstore"],
     addressLines: ["Av. 1804 / Ezeiza Centro", "Provincia de Buenos Aires", "Argentina"],
     mapsEmbedUrl:

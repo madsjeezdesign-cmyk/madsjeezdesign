@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { whatsappGeneralUrl } from "@/lib/fashion-whatsapp";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 import { DemoLeadForm } from "../demo-lead-form";
+import { FashionPhoto } from "./fashion-photo";
 import { FashionInstagramGallery } from "./fashion-instagram-gallery";
 import { FashionShop } from "./fashion-shop";
 import "./demo-retail-fashion-premium.css";
@@ -197,8 +198,8 @@ export function RetailFashionLanding({ slug }: Props) {
           className="absolute inset-0 -top-[10%] h-[120%] w-full"
           style={{ transform: `translateY(${offsetY * 0.4}px)` }}
         >
-          <div className="absolute inset-0 z-10 bg-black/30" />
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+          <div className="absolute inset-0 z-10 bg-black/45" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/25 to-black/85" />
           {config.heroVideo ? (
             <video
               className="h-full w-full object-cover object-center opacity-90"
@@ -211,7 +212,7 @@ export function RetailFashionLanding({ slug }: Props) {
               <source src={config.heroVideo} type="video/mp4" />
             </video>
           ) : (
-            <Image
+            <FashionPhoto
               src={config.heroImage}
               alt={`Editorial ${config.brand}`}
               fill
@@ -222,18 +223,21 @@ export function RetailFashionLanding({ slug }: Props) {
           )}
         </div>
 
-        <div className="relative z-20 mx-auto mt-20 max-w-5xl px-4 text-center">
-          <div className="mb-6 overflow-hidden">
-            <p className="rf-animate-slide-up translate-y-full text-xs font-medium uppercase tracking-[0.4em] text-white/80">
-              {config.heroKicker}
-            </p>
-          </div>
-          <div className="overflow-hidden">
-            <h1 className="rf-animate-slide-up-delay translate-y-full font-serif text-6xl leading-[0.85] tracking-tighter text-white md:text-8xl lg:text-[10rem]">
-              {config.heroTitle} <br />
-              <span className="pr-4 font-light italic text-white/90">{config.heroHighlight}</span>
-            </h1>
-          </div>
+        <div className="relative z-20 mx-auto mt-16 max-w-[95vw] px-4 text-center">
+          <p className="rf-hero-kicker mb-4 text-sm font-semibold uppercase tracking-[0.45em] text-white md:text-base">
+            {config.heroKicker}
+          </p>
+          <h1
+            className="rf-hero-title font-serif font-normal leading-[0.88] tracking-tighter text-white"
+            style={{
+              fontSize: "clamp(3.5rem, 14vw, 18rem)",
+              textShadow:
+                "0 4px 40px rgba(0,0,0,0.85), 0 2px 12px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,1)",
+            }}
+          >
+            {config.heroTitle} <br />
+            <span className="pr-2 font-light italic text-white">{config.heroHighlight}</span>
+          </h1>
         </div>
 
         <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center text-white/60">
@@ -271,6 +275,23 @@ export function RetailFashionLanding({ slug }: Props) {
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">
               {config.collectionSubtitle}
             </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+            {config.instagramFeed.slice(0, 8).map((src, i) => (
+              <div
+                key={`${src}-${i}`}
+                className="rf-reveal relative aspect-[3/4] overflow-hidden bg-stone-100"
+                style={{ transitionDelay: `${i * 60}ms` }}
+              >
+                <FashionPhoto
+                  src={src}
+                  alt={`${config.brand} colección ${i + 1}`}
+                  fill
+                  sizes="(max-width:768px) 50vw, 25vw"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

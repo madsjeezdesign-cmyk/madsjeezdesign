@@ -53,3 +53,23 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.rf-hero-kicker {
+  animation: rf-hero-in 1s ease-out forwards;
+}
+
+.rf-hero-title {
+  animation: rf-hero-in 1.4s ease-out 0.15s forwards;
+  opacity: 0;
+}
+
+@keyframes rf-hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

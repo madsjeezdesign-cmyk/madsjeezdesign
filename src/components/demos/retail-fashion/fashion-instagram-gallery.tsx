@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
 import { useRef, useState } from "react";
 import type { RetailFashionConfig } from "@/lib/retail-fashion-demos";
+import { FashionPhoto } from "./fashion-photo";
 
 type Props = { config: RetailFashionConfig };
 
@@ -62,11 +62,12 @@ export function FashionInstagramGallery({ config }: Props) {
                 }
               }}
             >
-              <Image
+              <FashionPhoto
                 src={item.image}
+                fallbackSrc={item.fallbackImage}
                 alt={item.alt}
                 fill
-                className="object-cover transition-all duration-700 group-hover:scale-105"
+                className="transition-all duration-700 group-hover:scale-105"
                 sizes="(max-width:768px) 50vw, 25vw"
               />
               {item.kind === "video" ? (

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ShoppingBag, X } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
 import type { RetailFashionConfig, RetailFashionProduct } from "@/lib/retail-fashion-demos";
@@ -9,6 +8,7 @@ import {
   whatsappGeneralUrl,
   whatsappProductUrl,
 } from "@/lib/fashion-whatsapp";
+import { FashionPhoto } from "./fashion-photo";
 
 type Props = {
   config: RetailFashionConfig;
@@ -64,8 +64,9 @@ export function FashionShop({ config }: Props) {
                 style={{ transitionDelay: `${index * 80}ms` }}
               >
                 <div className="relative aspect-[3/4] overflow-hidden bg-stone-100">
-                  <Image
+                  <FashionPhoto
                     src={product.image}
+                    fallbackSrc={product.fallbackImage}
                     alt={product.name}
                     fill
                     className="object-cover object-center transition-transform duration-[1.2s] ease-out group-hover:scale-105"
@@ -162,7 +163,14 @@ export function FashionShop({ config }: Props) {
               {cart.map((item) => (
                 <li key={item.id} className="flex gap-4 border-b border-black/5 pb-4">
                   <div className="relative h-24 w-20 shrink-0 overflow-hidden bg-stone-100">
-                    <Image src={item.image} alt="" fill className="object-cover" sizes="80px" />
+                    <FashionPhoto
+                      src={item.image}
+                      fallbackSrc={item.fallbackImage}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="80px"
+                    />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-serif text-sm italic leading-snug">{item.name}</p>
