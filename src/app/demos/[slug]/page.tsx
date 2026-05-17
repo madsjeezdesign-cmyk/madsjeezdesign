@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDemoBySlug, DEMO_SLUGS } from "@/lib/demos-registry";
 import { getShowcaseMeta } from "@/lib/demos-showcase-meta";
+import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
 import { DemoSlugPageShell } from "@/components/demos/demo-slug-page-shell";
+import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
   DemoCatering,
@@ -70,6 +72,16 @@ import {
   DemoElectricista,
   DemoAlbanil,
   DemoArquitectos,
+  DemoModaInfinita,
+  DemoModaMaisonElle,
+  DemoModaAtelierNoir,
+  DemoModaLunaBoutique,
+  DemoModaSilkAtelier,
+  DemoModaCasaNova,
+  DemoModaLinnea,
+  DemoModaMaisonRose,
+  DemoModaUrbanoChic,
+  DemoModaVogueEstudio,
 } from "@/components/demos";
 
 const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
@@ -137,6 +149,16 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   electricista: DemoElectricista,
   albanil: DemoAlbanil,
   arquitectos: DemoArquitectos,
+  "moda-infinita": DemoModaInfinita,
+  "moda-maison-elle": DemoModaMaisonElle,
+  "moda-atelier-noir": DemoModaAtelierNoir,
+  "moda-luna-boutique": DemoModaLunaBoutique,
+  "moda-silk-atelier": DemoModaSilkAtelier,
+  "moda-casa-nova": DemoModaCasaNova,
+  "moda-linnea": DemoModaLinnea,
+  "moda-maison-rose": DemoModaMaisonRose,
+  "moda-urbano-chic": DemoModaUrbanoChic,
+  "moda-vogue-estudio": DemoModaVogueEstudio,
 };
 
 export function generateStaticParams() {
@@ -169,6 +191,15 @@ export default async function DemoPage({
   const d = getDemoBySlug(slug);
   if (!d) notFound();
   const showcase = getShowcaseMeta(slug);
+
+  if (isRetailFashionSlug(slug)) {
+    return (
+      <>
+        <FashionDemoChrome brand={d.title} />
+        <Demo />
+      </>
+    );
+  }
 
   return (
     <DemoSlugPageShell

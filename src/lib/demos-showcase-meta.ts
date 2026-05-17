@@ -3,6 +3,7 @@ import {
   SHOWCASE_FEATURES,
   type ShowcaseFeatures,
 } from "@/lib/demo-showcase-features";
+import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
  * Meta de presentación para tarjetas del índice /demos (estilo showcase).
@@ -509,6 +510,16 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
 };
 
 export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
+  const fashion = getRetailFashionConfig(slug);
+  if (fashion) {
+    return {
+      color: "from-zinc-500/25",
+      accent: "text-zinc-200",
+      border: "group-hover:border-white/40",
+      pitch: fashion.showcasePitch,
+      features: fashion.showcaseFeatures,
+    };
+  }
   const base = SHOWCASE_BY_SLUG[slug] ?? fallback;
   return {
     ...base,

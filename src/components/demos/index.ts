@@ -68,3 +68,15 @@ export {
   DemoAlbanil,
   DemoArquitectos,
 } from "./commerce/create-commerce-demo";
+export {
+  DemoModaInfinita,
+  DemoModaMaisonElle,
+  DemoModaAtelierNoir,
+  DemoModaLunaBoutique,
+  DemoModaSilkAtelier,
+  DemoModaCasaNova,
+  DemoModaLinnea,
+  DemoModaMaisonRose,
+  DemoModaUrbanoChic,
+  DemoModaVogueEstudio,
+} from "./retail-fashion/create-retail-fashion-demo";

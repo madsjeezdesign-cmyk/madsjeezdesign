@@ -34,6 +34,7 @@ import {
   Zap,
 } from "lucide-react";
 import { site } from "@/lib/data";
+import { DEMO_SECTORS, type DemoSectorId } from "@/lib/demo-sectors";
 import type { ShowcaseFeatures } from "@/lib/demo-showcase-features";
 import { getShowcaseCardTheme } from "@/lib/demo-showcase-card-theme";
 import {
@@ -73,6 +74,7 @@ const FEATURE_ICONS: LucideIcon[] = [
 export type DemosShowcaseItem = {
   slug: string;
   category: string;
+  sector: DemoSectorId;
   title: string;
   tagline: string;
   pitch: string;
@@ -208,8 +210,23 @@ function DemoCard({ item, index }: { item: DemosShowcaseItem; index: number }) {
   );
 }
 
+function groupBySector(items: DemosShowcaseItem[]) {
+  const buckets: Partial<Record<DemoSectorId, DemosShowcaseItem[]>> = {};
+  for (const item of items) {
+    const list = buckets[item.sector] ?? [];
+    list.push(item);
+    buckets[item.sector] = list;
+  }
+  return DEMO_SECTORS.filter((s) => buckets[s.id]?.length).map((s) => ({
+    ...s,
+    items: buckets[s.id]!,
+  }));
+}
+
 export function DemosIndexShowcase({ items }: { items: DemosShowcaseItem[] }) {
   const year = site.activeYear;
+  const sections = groupBySector(items);
+  let cardIndex = 0;
 
   return (
     <div className="showcase-page-noise relative min-h-screen overflow-x-hidden bg-[#050505] font-[family-name:var(--font-demo-jakarta)] text-zinc-100 selection:bg-white selection:text-black">
@@ -260,12 +277,31 @@ export function DemosIndexShowcase({ items }: { items: DemosShowcaseItem[] }) {
         </motion.div>
       </header>
 
-      <main className="relative z-10 mx-auto max-w-[1400px] px-6 pb-28 md:px-12 md:pb-40 lg:px-16">
-        <ul className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((item, index) => (
-            <DemoCard key={item.slug} item={item} index={index} />
-          ))}
-        </ul>
+      <main className="relative z-10 mx-auto max-w-[1400px] space-y-20 px-6 pb-28 md:px-12 md:pb-40 lg:px-16">
+        {sections.map((section) => (
+          <section key={section.id} aria-labelledby={`sector-${section.id}`}>
+            <div className="mb-10 border-b border-white/10 pb-8">
+              <h2
+                id={`sector-${section.id}`}
+                className="font-[family-name:var(--font-demo-bebas)] text-4xl uppercase tracking-wide text-white md:text-5xl"
+              >
+                {section.label}
+              </h2>
+              <p className="mt-3 max-w-3xl text-sm font-light leading-relaxed text-zinc-500 md:text-base">
+                {section.description}
+              </p>
+              <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.28em] text-zinc-600">
+                {section.items.length} modelos
+              </p>
+            </div>
+            <ul className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {section.items.map((item) => {
+                const index = cardIndex++;
+                return <DemoCard key={item.slug} item={item} index={index} />;
+              })}
+            </ul>
+          </section>
+        ))}
       </main>
 
       <ShowcaseSiteFooter />

@@ -3,6 +3,8 @@
  * Índice en /demos (sin enlace obligatorio desde la home).
  */
 
+import type { DemoSectorId } from "@/lib/demo-sectors";
+
 export type DemoMeta = {
   slug: string;
   title: string;
@@ -10,6 +12,8 @@ export type DemoMeta = {
   tagline: string;
   accent: string;
   previewClass: string;
+  /** Agrupa en el índice /demos por sector comercial. */
+  sector?: DemoSectorId;
 };
 
 export const DEMOS: DemoMeta[] = [
@@ -524,6 +528,96 @@ export const DEMOS: DemoMeta[] = [
     tagline: "Proyectos · renders · dirección",
     accent: "#a8a29e",
     previewClass: "from-stone-700 to-neutral-950",
+  },
+  {
+    slug: "moda-infinita",
+    title: "INFINITA",
+    industry: "Tienda de ropa · boutique",
+    tagline: "L'Élégance Absolue · Ezeiza",
+    accent: "#fafafa",
+    previewClass: "from-zinc-950 via-black to-zinc-900",
+    sector: "moda-retail",
+  },
+  {
+    slug: "moda-maison-elle",
+    title: "Maison Elle",
+    industry: "Tienda de ropa · boutique",
+    tagline: "Silhouettes atemporales · Palermo",
+    accent: "#d6d3d1",
+    previewClass: "from-stone-200 to-stone-900",
+    sector: "moda-retail",
+  },
+  {
+    slug: "moda-atelier-noir",
+    title: "Atelier Noir",
+    industry: "Tienda de ropa · boutique",
+    tagline: "Dark luxury · Recoleta",
+    accent: "#525252",
+    previewClass: "from-black to-zinc-800",
+    sector: "moda-retail",
+  },
+  {
+    slug: "moda-luna-boutique",
+    title: "Luna Boutique",
+    industry: "Tienda de ropa · boutique",
+    tagline: "Noche de gala · San Telmo",
+    accent: "#c4b5fd",
+    previewClass: "from-indigo-950 to-black",
+    sector: "moda-retail",
+  },
+  {
+    slug: "moda-silk-atelier",
+    title: "Silk Atelier",
+    industry: "Tienda de ropa · boutique",
+    tagline: "Alta costura en seda · Belgrano",
+    accent: "#fde68a",
+    previewClass: "from-amber-100 to-stone-900",
+    sector: "moda-retail",
+  },
+  {
+    slug: "moda-casa-nova",
+    title: "Casa Nova",
+    industry: "Tienda de ropa · boutique",
+    tagline: "Moda de autor · Villa Crespo",
+    accent: "#f97316",
+    previewClass: "from-orange-950 to-zinc-950",
+    sector: "moda-retail",
+  },
+  {
+    slug: "moda-linnea",
+    title: "Linnea",
+    industry: "Tienda de ropa · boutique",
+    tagline: "Minimal nordic · Nordelta",
+    accent: "#e7e5e4",
+    previewClass: "from-stone-100 to-stone-800",
+    sector: "moda-retail",
+  },
+  {
+    slug: "moda-maison-rose",
+    title: "Maison Rosé",
+    industry: "Tienda de ropa · boutique",
+    tagline: "Femme délicate · Olivos",
+    accent: "#fda4af",
+    previewClass: "from-rose-100 to-rose-950",
+    sector: "moda-retail",
+  },
+  {
+    slug: "moda-urbano-chic",
+    title: "Urbano Chic",
+    industry: "Tienda de ropa · boutique",
+    tagline: "Street luxury · Caballito",
+    accent: "#a3e635",
+    previewClass: "from-lime-400 to-zinc-950",
+    sector: "moda-retail",
+  },
+  {
+    slug: "moda-vogue-estudio",
+    title: "Vogue Estudio",
+    industry: "Tienda de ropa · boutique",
+    tagline: "Imagen editorial · Microcentro",
+    accent: "#94a3b8",
+    previewClass: "from-slate-400 to-black",
+    sector: "moda-retail",
   },
 ];
 

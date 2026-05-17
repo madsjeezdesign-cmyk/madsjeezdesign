@@ -3,6 +3,7 @@ import {
   SHOWCASE_FEATURES,
 } from "@/lib/demo-showcase-features";
 import { getDemoBySlug } from "@/lib/demos-registry";
+import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 
 export type DemoNavLink = { href: string; label: string };
 
@@ -184,5 +185,6 @@ export function getDemoQuickActions(slug: string): DemoQuickAction[] {
 
 export function shouldRenderSiteExtrasInShell(slug: string): boolean {
   if (LEGACY_ENHANCED_SLUGS.has(slug) || PREMIUM_OWNED_SLUGS.has(slug)) return false;
+  if (isRetailFashionSlug(slug)) return false;
   return true;
 }
