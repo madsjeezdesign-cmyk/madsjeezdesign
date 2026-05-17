@@ -30,10 +30,10 @@ export const ANDREA_MARI_CONFIG = {
   tagline: "Moda vibrante en talles reales · Ezeiza",
   instagramHandle: "showroom_andreamari",
   instagramUrl: "https://www.instagram.com/showroom_andreamari/",
-  whatsapp: "5491112345678",
+  whatsapp: "5491127458483",
   whatsappMessage:
     "¡Hola Showroom Andrea Mari! 💖 Vengo desde su web y quiero consultar por prendas en mi talle.",
-  phoneDisplay: "Consultar por WhatsApp",
+  phoneDisplay: "011 2745-8483",
   addressLines: ["Showroom Andrea Mari", "Ezeiza, Buenos Aires", "Argentina"],
   mapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.4053748882583!2d-58.5244127!3d-34.8503777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbee8d83a9a7%3A0x2332ecef7525f8b8!2sShowroom%20Andrea%20Mari!5e0!3m2!1ses-419!2sar!4v1716000000000!5m2!1ses-419!2sar",
