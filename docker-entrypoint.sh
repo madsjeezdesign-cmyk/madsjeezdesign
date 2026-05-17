@@ -2,10 +2,10 @@
 set -e
 
 if [ -n "${DATABASE_URL}" ] || [ -n "${SUPABASE_DATABASE_URL}" ]; then
-  node scripts/ensure-schema.mjs || {
-    echo "[entrypoint] ensure-schema falló; revisá DATABASE_URL / permisos." >&2
-    exit 1
-  }
+  if ! node scripts/ensure-schema.mjs; then
+    echo "[entrypoint] ensure-schema falló — el servidor arranca igual." >&2
+    echo "[entrypoint] Revisá DATABASE_URL (Session pooler recomendado) o ejecutá supabase/schema.sql." >&2
+  fi
 else
   echo "[entrypoint] Sin DATABASE_URL — asumiendo que contact_inquiries ya existe."
 fi

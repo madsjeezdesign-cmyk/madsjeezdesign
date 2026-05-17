@@ -62,6 +62,11 @@ try {
   console.log("[ensure-schema] Listo: contact_inquiries verificada/creada.");
 } catch (e) {
   console.error("[ensure-schema] Error:", e.message);
+  if (/ENOTFOUND|ETIMEDOUT|ECONNREFUSED/i.test(String(e.message))) {
+    console.error(
+      "[ensure-schema] Tip: en Railway usá la URI Session pooler (postgres.[ref]@*.pooler.supabase.com), no la URL https del proyecto.",
+    );
+  }
   process.exit(1);
 } finally {
   await client.end().catch(() => {});
