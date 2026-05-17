@@ -195,12 +195,13 @@ export function ShowroomWeekendLanding() {
       </section>
 
       <div className="overflow-hidden border-y border-rose-500/10 bg-rose-950/20 py-5">
-        {[0, 1].map((d) => (
-          <div key={d} className="sw-marquee-track inline-flex whitespace-nowrap font-serif text-lg italic tracking-widest text-rose-400/80" aria-hidden={d === 1}>
-            <span className="mx-8">WEEKEND ✦ TALLES 44-60 ✦ EL JAGÜEL ✦ PASO DE LA PATRIA 324 ✦</span>
-            <span className="mx-8">WEEKEND ✦ TALLES 44-60 ✦ EL JAGÜEL ✦ PASO DE LA PATRIA 324 ✦</span>
-          </div>
-        ))}
+        <div className="sw-marquee-track flex w-max whitespace-nowrap font-serif text-lg italic tracking-widest text-rose-400/80">
+          {[0, 1].map((dup) => (
+            <span key={dup} className="mx-8">
+              {cfg.marqueeText}
+            </span>
+          ))}
+        </div>
       </div>
 
       <ShowroomWeekendFittingRoom onFilterSize={setSizeFilter} />
@@ -302,9 +303,9 @@ export function ShowroomWeekendLanding() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:text-left">
           <p className="font-serif text-3xl font-black italic text-rose-500">{cfg.brand}</p>
           <p className="mt-2 text-sm text-slate-400">{cfg.tagline}</p>
-          <a href={cfg.instagramUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block text-sm font-bold text-rose-400 hover:underline">
-            @{cfg.instagramHandle}
-          </a>
+          <p className="mt-4 text-sm font-bold text-slate-500" aria-disabled>
+            Instagram — no disponible
+          </p>
           <p className="mt-8 text-xs text-slate-600">© {new Date().getFullYear()} Showroom Weekend · Ezeiza</p>
         </div>
       </footer>

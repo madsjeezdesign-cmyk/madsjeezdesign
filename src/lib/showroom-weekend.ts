@@ -1,4 +1,4 @@
-/** Showroom Weekend — moda curva real, El Jagüel / Ezeiza */
+/** Showroom Weekend — moda curva real, Ezeiza */
 
 export const SHOWROOM_WEEKEND_SLUG = "moda-showroom-weekend";
 
@@ -35,8 +35,8 @@ export const SHOWROOM_WEEKEND_CONFIG = {
   brand: "WEEKEND",
   brandTag: "Showroom",
   tagline: "Moda real con estilo & actitud · Talles 44 al 60",
-  instagramHandle: "showroom_andreamari",
-  instagramUrl: "https://www.instagram.com/showroom_andreamari/",
+  instagramHandle: null,
+  instagramUrl: null,
   whatsapp: "5491136453000",
   whatsappMessage:
     "¡Hola Showroom Weekend! ☀️ Vengo desde su web y quiero consultar por prendas en mi talle.",
@@ -44,12 +44,12 @@ export const SHOWROOM_WEEKEND_CONFIG = {
   addressLines: [
     "Paso de la Patria 324",
     "B1804 Ezeiza, Provincia de Buenos Aires",
-    "Showroom · Faro Recalada 306, El Jagüel",
   ],
   mapsEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d3275.4!2d-58.5219898!3d-34.8555301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd18afc79879f%3A0x842b4ba5f92a30e1!2sShowroom%20Weekend!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.4053748882583!2d-58.5219898!3d-34.8555301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd18afc79879f%3A0x842b4ba5f92a30e1!2sShowroom%20Weekend!5e0!3m2!1ses-419!2sar!4v1716000000000!5m2!1ses-419!2sar",
   mapsDirectionsUrl:
-    "https://www.google.com/maps/dir/?api=1&destination=-34.8555301,-58.5219898",
+    "https://www.google.com/maps/place/showroom+weekend/@-34.8555301,-58.5219898,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcd18afc79879f:0x842b4ba5f92a30e1!8m2!3d-34.8555301!4d-58.5219898!16s%2Fg%2F11nmcnn1v_",
+  marqueeText: "WEEKEND ✦ TALLES 44-60 ✦ EZEIZA ✦ PASO DE LA PATRIA 324 ✦",
   heroImage: "/demos/showroom-weekend/store-01.jpg",
   storeImage: "/demos/showroom-weekend/store-02.jpg",
   hours: "Viernes y Sábados de 16:00 a 20:00 hs",
@@ -147,7 +147,7 @@ export const WEEKEND_PRODUCTS: WeekendProduct[] = [
     price: 52000,
     category: "Abrigos",
     sizes: [48, 50, 52, 54, 56, 58],
-    image: img("photo-1548624149-f140c6a2e6f0"),
+    image: img("photo-1485968579580-b6d095142e6e"),
     badge: "Impactante 🌟",
     description:
       "Corte estructurado con elástico interno para máxima comodidad. Tono fucsia neón de alto impacto.",
@@ -271,7 +271,7 @@ export function weekendCartWhatsApp(
 ): string {
   const deliveryStr =
     deliveryMethod === "pickup"
-      ? "📍 Retiro en local (Paso de la Patria 324 / El Jagüel)"
+      ? "📍 Retiro en local (Paso de la Patria 324, Ezeiza)"
       : "📦 Envío a coordinar por Correo Argentino";
 
   let msg = `¡Hola Showroom Weekend! ☀️ Vengo desde la web. Quiero encargar:\n\n`;
