@@ -4,6 +4,7 @@ import {
   type ShowcaseFeatures,
 } from "@/lib/demo-showcase-features";
 import { ANDREA_MARI_SLUG } from "@/lib/andrea-mari";
+import { ARANA_283_SLUG } from "@/lib/arana-283";
 import { SHOWROOM_WEEKEND_SLUG } from "@/lib/showroom-weekend";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
@@ -530,6 +531,25 @@ const ANDREA_MARI_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const ARANA_283_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-purple-600/35",
+  accent: "text-purple-400",
+  border: "group-hover:border-purple-500/50",
+  pitch:
+    "ARANA 283: moda circular futurista en Monte Grande. Catálogo único, cotizador de ropa, bolsa WhatsApp y mapa real.",
+  features: [
+    "Catálogo con filtros",
+    "Cotizador compra/venta",
+    "Carrito → WhatsApp",
+    "Estado local en vivo",
+    "Mapa Google embed",
+    "Instagram @arana283",
+    "Fotos reales del local",
+    "Proceso circular 3 pasos",
+    "Formulario leads demo",
+  ],
+};
+
 const SHOWROOM_WEEKEND_SHOWCASE: ShowcaseCardMeta = {
   color: "from-rose-600/35",
   accent: "text-rose-400",
@@ -552,6 +572,7 @@ const SHOWROOM_WEEKEND_SHOWCASE: ShowcaseCardMeta = {
 export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === ANDREA_MARI_SLUG) return ANDREA_MARI_SHOWCASE;
   if (slug === SHOWROOM_WEEKEND_SLUG) return SHOWROOM_WEEKEND_SHOWCASE;
+  if (slug === ARANA_283_SLUG) return ARANA_283_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

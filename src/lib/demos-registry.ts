@@ -637,6 +637,15 @@ export const DEMOS: DemoMeta[] = [
     previewClass: "from-rose-600 via-pink-500 to-slate-950",
     sector: "moda-retail",
   },
+  {
+    slug: "moda-arana-283",
+    title: "ARANA 283",
+    industry: "Moda circular · compra-venta",
+    tagline: "Streetwear premium · Monte Grande",
+    accent: "#a855f7",
+    previewClass: "from-purple-600 via-pink-500 to-zinc-950",
+    sector: "moda-retail",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

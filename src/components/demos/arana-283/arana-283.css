@@ -1,0 +1,65 @@
+.arana-demo {
+  --arana-bg: #09090b;
+  --arana-purple: #9333ea;
+  --arana-pink: #ec4899;
+}
+
+@keyframes arana-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arana-slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes arana-slide-down {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+.arana-fade-in {
+  animation: arana-fade-in 0.35s ease-out forwards;
+}
+
+.arana-slide-in-right {
+  animation: arana-slide-in-right 0.3s ease-out forwards;
+}
+
+.arana-slide-down {
+  animation: arana-slide-down 0.3s ease-out forwards;
+}
+
+.arana-marquee-track {
+  animation: arana-marquee 25s linear infinite;
+}
+
+@keyframes arana-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.arana-map-filter {
+  filter: invert(90%) hue-rotate(180deg) contrast(95%);
+}
