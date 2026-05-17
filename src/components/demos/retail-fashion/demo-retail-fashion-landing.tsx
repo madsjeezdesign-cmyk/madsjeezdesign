@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { ArrowRight, Infinity, MapPin, Menu, MessageCircle, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import {
-  getRetailFashionConfig,
-  whatsappUrl,
-} from "@/lib/retail-fashion-demos";
+import { whatsappGeneralUrl } from "@/lib/fashion-whatsapp";
+import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 import { DemoLeadForm } from "../demo-lead-form";
+import { FashionInstagramGallery } from "./fashion-instagram-gallery";
+import { FashionShop } from "./fashion-shop";
 import "./demo-retail-fashion-premium.css";
 
 type Props = { slug: string };
@@ -82,9 +82,15 @@ export function RetailFashionLanding({ slug }: Props) {
 
   if (!config) return null;
 
-  const wa = whatsappUrl(config);
+  const wa = whatsappGeneralUrl(config);
   const navMuted = isScrolled ? "text-black" : "text-white";
-  const navItems = ["La Maison", "Collections", "Boutique"];
+  const navItems = [
+    { label: "La Maison", href: "#inicio" },
+    { label: "Shop", href: "#shop" },
+    { label: "Collections", href: "#collections" },
+    { label: "Instagram", href: "#instagram" },
+    { label: "Boutique", href: "#boutique" },
+  ];
 
   return (
     <div
@@ -101,13 +107,13 @@ export function RetailFashionLanding({ slug }: Props) {
         <div className="mx-auto max-w-[90%]">
           <div className="flex items-center justify-between">
             <div className={`hidden w-1/3 space-x-10 md:flex ${navMuted}`}>
-              {navItems.slice(0, 2).map((item) => (
+              {navItems.slice(0, 3).map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
+                  key={item.label}
+                  href={item.href}
                   className="group relative text-[11px] font-medium uppercase tracking-[0.2em] transition-colors duration-300"
                 >
-                  {item}
+                  {item.label}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-current transition-all duration-500 ease-out group-hover:w-full" />
                 </a>
               ))}
@@ -160,16 +166,25 @@ export function RetailFashionLanding({ slug }: Props) {
           }`}
         >
           <div className="flex flex-col items-center space-y-8 px-6 py-12 text-center">
-            {[...navItems, "Instagram"].map((item) => (
+            {navItems.map((item) => (
               <a
-                key={item}
-                href={item === "Instagram" ? config.instagramUrl : `#${item.toLowerCase()}`}
+                key={item.label}
+                href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className="block font-serif text-xl uppercase tracking-[0.1em] text-black transition-colors hover:text-gray-500"
               >
-                {item}
+                {item.label}
               </a>
             ))}
+            <a
+              href={config.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setIsMenuOpen(false)}
+              className="block font-serif text-xl uppercase tracking-[0.1em] text-black"
+            >
+              Instagram
+            </a>
           </div>
         </div>
       </nav>
@@ -184,14 +199,27 @@ export function RetailFashionLanding({ slug }: Props) {
         >
           <div className="absolute inset-0 z-10 bg-black/30" />
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
-          <Image
-            src={config.heroImage}
-            alt={`Editorial ${config.brand}`}
-            fill
-            priority
-            className="object-cover object-center opacity-90"
-            sizes="100vw"
-          />
+          {config.heroVideo ? (
+            <video
+              className="h-full w-full object-cover object-center opacity-90"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={config.heroImage}
+            >
+              <source src={config.heroVideo} type="video/mp4" />
+            </video>
+          ) : (
+            <Image
+              src={config.heroImage}
+              alt={`Editorial ${config.brand}`}
+              fill
+              priority
+              className="object-cover object-center opacity-90"
+              sizes="100vw"
+            />
+          )}
         </div>
 
         <div className="relative z-20 mx-auto mt-20 max-w-5xl px-4 text-center">
@@ -244,85 +272,11 @@ export function RetailFashionLanding({ slug }: Props) {
               {config.collectionSubtitle}
             </p>
           </div>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {config.products.map((producto, index) => (
-              <a
-                key={producto.id}
-                href={wa}
-                target="_blank"
-                rel="noreferrer"
-                className="rf-reveal group relative cursor-pointer"
-                style={{ transitionDelay: `${index * 150}ms` }}
-              >
-                <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
-                  <Image
-                    src={producto.image}
-                    alt={producto.name}
-                    fill
-                    className="object-cover object-center transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
-                    sizes="(max-width:768px) 100vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                </div>
-                <div className="absolute bottom-0 left-0 w-full translate-y-4 p-6 text-center opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                  <h3 className="mb-1 font-serif text-lg italic tracking-wide text-white drop-shadow-md">
-                    {producto.name}
-                  </h3>
-                  <span className="border-b border-white pb-1 text-[9px] font-bold uppercase tracking-[0.2em] text-white">
-                    {producto.price} · WhatsApp
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
-      <section id="instagram" className="bg-[#fafafa] py-32">
-        <div className="mx-auto max-w-[90%]">
-          <div className="rf-reveal mb-16 flex flex-col items-end justify-between md:flex-row">
-            <div className="max-w-xl">
-              <h2 className="mb-4 font-serif text-4xl leading-tight tracking-tighter text-black md:text-5xl">
-                Vu sur <br />
-                <span className="italic">Instagram</span>
-              </h2>
-              <a
-                href={config.instagramUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-gray-500 transition-colors hover:text-black"
-              >
-                @{config.instagramHandle} <ArrowRight size={14} />
-              </a>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
-            {config.instagramFeed.map((img, index) => (
-              <a
-                key={img}
-                href={config.instagramUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="rf-reveal group relative block aspect-square overflow-hidden"
-                style={{ transitionDelay: `${index * 150}ms` }}
-              >
-                <Image
-                  src={img}
-                  alt="Look Instagram"
-                  fill
-                  className="object-cover grayscale-[20%] transition-all duration-1000 ease-out group-hover:grayscale-0"
-                  sizes="(max-width:768px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-500 hover:opacity-100">
-                  <IgIcon className="h-8 w-8 text-white" />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FashionShop config={config} />
+      <FashionInstagramGallery config={config} />
 
       <section id="boutique" className="bg-black text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -363,14 +317,22 @@ export function RetailFashionLanding({ slug }: Props) {
               </div>
             </div>
 
-            <a
-              href={wa}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-16 inline-block border border-white px-10 py-5 text-center text-[11px] font-bold uppercase tracking-[0.2em] transition-colors hover:bg-white hover:text-black"
-            >
-              Prendre Rendez-vous (Cita)
-            </a>
+            <div className="mt-16 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={wa}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border border-[#25D366] bg-[#25D366] px-10 py-5 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90"
+              >
+                WhatsApp · Comprar
+              </a>
+              <a
+                href="#shop"
+                className="inline-block border border-white px-10 py-5 text-center text-[11px] font-bold uppercase tracking-[0.2em] transition-colors hover:bg-white hover:text-black"
+              >
+                Ver tienda
+              </a>
+            </div>
           </div>
 
           <div className="relative min-h-[500px] grayscale contrast-125 opacity-80 transition-all duration-[2s] hover:opacity-100 hover:grayscale-0 lg:min-h-full">
@@ -429,7 +391,7 @@ export function RetailFashionLanding({ slug }: Props) {
         <span className="-translate-x-4 border border-black/10 bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-black opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
           Service Client
         </span>
-        <div className="bg-black p-4 text-white shadow-2xl transition-transform duration-500 hover:scale-110">
+        <div className="bg-[#25D366] p-4 text-white shadow-2xl transition-transform duration-500 hover:scale-110">
           <MessageCircle size={24} strokeWidth={1} />
         </div>
       </a>
