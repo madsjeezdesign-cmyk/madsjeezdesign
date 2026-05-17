@@ -519,7 +519,8 @@ const ANDREA_MARI_SHOWCASE: ShowcaseCardMeta = {
   features: [
     "Carrito → WhatsApp con total ARS",
     "Talles reales · curva completa",
-    "Feed Instagram (10 posts)",
+    "Feed Instagram (12 posts reales)",
+    "Fotos reales del showroom",
     "Mapa Google del local",
     "Paleta fucsia · dorado · océano",
     "Categorías y lookbook",
