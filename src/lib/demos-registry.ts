@@ -619,6 +619,15 @@ export const DEMOS: DemoMeta[] = [
     previewClass: "from-slate-400 to-black",
     sector: "moda-retail",
   },
+  {
+    slug: "moda-andrea-mari",
+    title: "Showroom Andrea Mari",
+    industry: "Tienda de ropa · talles reales",
+    tagline: "Moda vibrante · curva completa · Ezeiza",
+    accent: "#D81159",
+    previewClass: "from-fuchsia-600 via-amber-400 to-sky-950",
+    sector: "moda-retail",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

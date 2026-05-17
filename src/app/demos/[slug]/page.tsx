@@ -3,9 +3,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDemoBySlug, DEMO_SLUGS } from "@/lib/demos-registry";
 import { getShowcaseMeta } from "@/lib/demos-showcase-meta";
+import { isAndreaMariSlug } from "@/lib/andrea-mari";
 import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
 import { DemoSlugPageShell } from "@/components/demos/demo-slug-page-shell";
+import { AndreaMariChrome } from "@/components/demos/andrea-mari/andrea-mari-chrome";
+import { DemoModaAndreaMari } from "@/components/demos/andrea-mari/andrea-mari-landing";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
@@ -159,6 +162,7 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   "moda-maison-rose": DemoModaMaisonRose,
   "moda-urbano-chic": DemoModaUrbanoChic,
   "moda-vogue-estudio": DemoModaVogueEstudio,
+  "moda-andrea-mari": DemoModaAndreaMari,
 };
 
 export function generateStaticParams() {
@@ -191,6 +195,15 @@ export default async function DemoPage({
   const d = getDemoBySlug(slug);
   if (!d) notFound();
   const showcase = getShowcaseMeta(slug);
+
+  if (isAndreaMariSlug(slug)) {
+    return (
+      <>
+        <AndreaMariChrome />
+        <Demo />
+      </>
+    );
+  }
 
   if (isRetailFashionSlug(slug)) {
     return (

@@ -3,6 +3,7 @@ import {
   SHOWCASE_FEATURES,
   type ShowcaseFeatures,
 } from "@/lib/demo-showcase-features";
+import { ANDREA_MARI_SLUG } from "@/lib/andrea-mari";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -509,7 +510,27 @@ export const SHOWCASE_BY_SLUG: Record<string, ShowcaseStyleMeta> = {
   },
 };
 
+const ANDREA_MARI_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-fuchsia-600/35",
+  accent: "text-fuchsia-300",
+  border: "group-hover:border-fuchsia-400/50",
+  pitch:
+    "Showroom Andrea Mari: moda vibrante en talles reales, carrito con precios ARS → WhatsApp, feed Instagram y mapa en Ezeiza.",
+  features: [
+    "Carrito → WhatsApp con total ARS",
+    "Talles reales · curva completa",
+    "Feed Instagram (10 posts)",
+    "Mapa Google del local",
+    "Paleta fucsia · dorado · océano",
+    "Categorías y lookbook",
+    "Envíos a todo el país",
+    "Formulario de leads demo",
+  ],
+};
+
 export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
+  if (slug === ANDREA_MARI_SLUG) return ANDREA_MARI_SHOWCASE;
+
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {
     return {
