@@ -628,6 +628,15 @@ export const DEMOS: DemoMeta[] = [
     previewClass: "from-fuchsia-600 via-amber-400 to-sky-950",
     sector: "moda-retail",
   },
+  {
+    slug: "moda-showroom-weekend",
+    title: "Showroom Weekend",
+    industry: "Tienda de ropa · talles reales",
+    tagline: "Moda tech · probador virtual · Ezeiza",
+    accent: "#f43f5e",
+    previewClass: "from-rose-600 via-pink-500 to-slate-950",
+    sector: "moda-retail",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

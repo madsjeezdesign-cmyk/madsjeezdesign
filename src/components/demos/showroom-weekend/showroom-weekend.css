@@ -1,0 +1,45 @@
+.sw-demo {
+  --sw-rose: #f43f5e;
+  --sw-pink: #ec4899;
+  --sw-indigo: #6366f1;
+  --sw-slate-950: #020617;
+  --sw-slate-900: #0f172a;
+  --sw-slate-800: #1e293b;
+}
+
+.sw-marquee-track {
+  animation: sw-marquee 25s linear infinite;
+}
+
+@keyframes sw-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.sw-reveal {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.sw-reveal.sw-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sw-grid-bg {
+  background-image:
+    linear-gradient(to right, #1e293b12 1px, transparent 1px),
+    linear-gradient(to bottom, #1e293b12 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+.sw-map-filter {
+  filter: invert(90%) hue-rotate(180deg) contrast(95%);
+}

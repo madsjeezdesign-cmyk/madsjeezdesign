@@ -4,6 +4,7 @@ import {
   type ShowcaseFeatures,
 } from "@/lib/demo-showcase-features";
 import { ANDREA_MARI_SLUG } from "@/lib/andrea-mari";
+import { SHOWROOM_WEEKEND_SLUG } from "@/lib/showroom-weekend";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -529,8 +530,28 @@ const ANDREA_MARI_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const SHOWROOM_WEEKEND_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-rose-600/35",
+  accent: "text-rose-400",
+  border: "group-hover:border-rose-500/50",
+  pitch:
+    "Showroom Weekend: probador virtual de talles, catálogo filtrable, cupones y checkout por WhatsApp. Dark UI tech en Ezeiza.",
+  features: [
+    "Probador virtual 2.0",
+    "Carrito → WhatsApp ARS",
+    "Cupones WEEKEND10 / ENVIOFREE",
+    "Talles 44 al 60",
+    "Fotos reales del local",
+    "Mapa Google embed",
+    "Retiro o envío Correo",
+    "Tabla de talles modal",
+    "Formulario leads demo",
+  ],
+};
+
 export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === ANDREA_MARI_SLUG) return ANDREA_MARI_SHOWCASE;
+  if (slug === SHOWROOM_WEEKEND_SLUG) return SHOWROOM_WEEKEND_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {
