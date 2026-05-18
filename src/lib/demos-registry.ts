@@ -750,6 +750,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#E8D5D0",
     previewClass: "from-[#F8F6F2] via-rose-50/30 to-sky-50/20",
   },
+  {
+    slug: "nexus-ferreteria",
+    title: "NEXUS Ferretería",
+    industry: "Ferretería industrial premium",
+    tagline: "Futuro industrial · Framer Motion · e-commerce",
+    accent: "#f97316",
+    previewClass: "from-zinc-950 via-orange-950/40 to-black",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

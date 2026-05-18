@@ -19,6 +19,7 @@ import { RAICES_CRIOLLAS_SLUG } from "@/lib/raices-criollas";
 import { INTIMA_CO_SLUG } from "@/lib/intima-co";
 import { CERRAJERIA_CENTRAL_SLUG } from "@/lib/cerrajeria-central";
 import { LUNA_PETIT_CO_SLUG } from "@/lib/luna-petit-co";
+import { NEXUS_FERRETERIA_SLUG } from "@/lib/nexus-ferreteria";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -696,6 +697,25 @@ const LUNA_PETIT_CO_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const NEXUS_FERRETERIA_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-orange-600/25",
+  accent: "text-orange-400",
+  border: "group-hover:border-orange-500/50",
+  pitch:
+    "NEXUS Ferretería: la ferretería del futuro — hero brutalista, bento industrial, 6 categorías con identidad, spotlight 3D, carrito WhatsApp y cotizador de obra.",
+  features: [
+    "Hero fullscreen parallax",
+    "Marquee marcas",
+    "6 categorías gradiente",
+    "Catálogo bento asimétrico",
+    "Filtros + stock",
+    "Quick view + wishlist",
+    "Cotización obra",
+    "Mobile dock",
+    "Scroll progress",
+  ],
+};
+
 const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-500/25",
   accent: "text-amber-400",
@@ -846,6 +866,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === INTIMA_CO_SLUG) return INTIMA_CO_SHOWCASE;
   if (slug === CERRAJERIA_CENTRAL_SLUG) return CERRAJERIA_CENTRAL_SHOWCASE;
   if (slug === LUNA_PETIT_CO_SLUG) return LUNA_PETIT_CO_SHOWCASE;
+  if (slug === NEXUS_FERRETERIA_SLUG) return NEXUS_FERRETERIA_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

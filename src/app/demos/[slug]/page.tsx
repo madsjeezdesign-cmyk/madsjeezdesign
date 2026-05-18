@@ -18,6 +18,7 @@ import { isRaicesCriollasSlug } from "@/lib/raices-criollas";
 import { isIntimaCoSlug } from "@/lib/intima-co";
 import { isCerrajeriaCentralSlug } from "@/lib/cerrajeria-central";
 import { isLunaPetitCoSlug } from "@/lib/luna-petit-co";
+import { isNexusFerreteriaSlug } from "@/lib/nexus-ferreteria";
 import { isShowroomWeekendSlug } from "@/lib/showroom-weekend";
 import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
@@ -54,6 +55,8 @@ import { CerrajeriaCentralChrome } from "@/components/demos/cerrajeria-central/c
 import { DemoCerrajeriaCentral } from "@/components/demos/cerrajeria-central/cerrajeria-central-landing";
 import { LunaPetitCoChrome } from "@/components/demos/luna-petit-co/luna-petit-co-chrome";
 import { DemoLunaPetitCo } from "@/components/demos/luna-petit-co/luna-petit-co-landing";
+import { NexusFerreteriaChrome } from "@/components/demos/nexus-ferreteria/nexus-ferreteria-chrome";
+import { DemoNexusFerreteria } from "@/components/demos/nexus-ferreteria/nexus-ferreteria-landing";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
@@ -395,6 +398,15 @@ export default async function DemoPage({
     return (
       <>
         <LunaPetitCoChrome />
+        <Demo />
+      </>
+    );
+  }
+
+  if (isNexusFerreteriaSlug(slug)) {
+    return (
+      <>
+        <NexusFerreteriaChrome />
         <Demo />
       </>
     );
