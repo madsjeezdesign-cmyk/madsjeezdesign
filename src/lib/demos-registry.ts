@@ -654,6 +654,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#f59e0b",
     previewClass: "from-amber-600 via-zinc-900 to-black",
   },
+  {
+    slug: "masa-madre-co",
+    title: "Masa Madre & Co.",
+    industry: "Panadería & pastelería artesanal",
+    tagline: "Pedidos online · horno en vivo · Ezeiza",
+    accent: "#c2410c",
+    previewClass: "from-orange-100 via-amber-50 to-stone-200",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

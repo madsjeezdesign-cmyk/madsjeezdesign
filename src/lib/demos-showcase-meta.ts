@@ -7,6 +7,7 @@ import { ANDREA_MARI_SLUG } from "@/lib/andrea-mari";
 import { ARANA_283_SLUG } from "@/lib/arana-283";
 import { SHOWROOM_WEEKEND_SLUG } from "@/lib/showroom-weekend";
 import { THE_BARBER_CLUB_SLUG } from "@/lib/the-barber-club";
+import { MASA_MADRE_CO_SLUG } from "@/lib/masa-madre-co";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -551,6 +552,25 @@ const ARANA_283_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const MASA_MADRE_CO_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-orange-200/50",
+  accent: "text-orange-700",
+  border: "group-hover:border-orange-400/50",
+  pitch:
+    "Masa Madre & Co.: menú por categorías, carrito con envío/retiro, tablero del horno en vivo y checkout por WhatsApp. Estética panadería artesanal cálida.",
+  features: [
+    "Menú con 4 categorías",
+    "Selector de cantidad +/-",
+    "Carrito lateral en vivo",
+    "Retiro gratis o envío",
+    "Checkout WhatsApp",
+    "Tablero horno en vivo",
+    "Horarios fin de semana",
+    "Mapa Carlos Spegazzini",
+    "Formulario leads demo",
+  ],
+};
+
 const THE_BARBER_CLUB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-600/35",
   accent: "text-amber-400",
@@ -594,6 +614,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === SHOWROOM_WEEKEND_SLUG) return SHOWROOM_WEEKEND_SHOWCASE;
   if (slug === ARANA_283_SLUG) return ARANA_283_SHOWCASE;
   if (slug === THE_BARBER_CLUB_SLUG) return THE_BARBER_CLUB_SHOWCASE;
+  if (slug === MASA_MADRE_CO_SLUG) return MASA_MADRE_CO_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {
