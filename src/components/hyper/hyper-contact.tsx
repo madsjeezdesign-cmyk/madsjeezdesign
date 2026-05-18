@@ -1,15 +1,115 @@
 "use client";
 
-import { useState } from "react";
-import { Loader2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { useEffect, useId, useRef, useState } from "react";
+import { ChevronDown, Loader2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { site, websiteModels } from "@/lib/data";
 
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address.mapsQuery)}`;
+
+const SERVICE_OPTIONS = [
+  ...websiteModels.map((m) => ({
+    value: m.name,
+    title: `${m.name} (${m.priceNote})`,
+    subtitle: m.subtitle,
+  })),
+  { value: "Otro / integración", title: "Otro / integración", subtitle: "Proyecto a medida o integración externa" },
+];
+
+const DEFAULT_SERVICE = SERVICE_OPTIONS[0]?.value ?? "";
+
+function HyperServiceSelect({
+  disabled,
+  value,
+  onChange,
+}: {
+  disabled?: boolean;
+  value: string;
+  onChange: (value: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const listId = useId();
+  const selected = SERVICE_OPTIONS.find((o) => o.value === value) ?? SERVICE_OPTIONS[0];
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointer = (e: MouseEvent) => {
+      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={rootRef} className="relative">
+      <input type="hidden" name="service" value={value} />
+      <button
+        type="button"
+        disabled={disabled}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-controls={listId}
+        onClick={() => !disabled && setOpen((o) => !o)}
+        className="mt-1 flex w-full items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-white outline-none transition-colors focus:border-[#1de0b1]/50 disabled:opacity-60"
+      >
+        <span className="min-w-0 flex-1">
+          <span className="block font-medium leading-snug">{selected?.title}</span>
+          {selected?.subtitle ? (
+            <span className="mt-0.5 block text-xs leading-snug text-zinc-400">{selected.subtitle}</span>
+          ) : null}
+        </span>
+        <ChevronDown
+          className={`h-4 w-4 shrink-0 text-zinc-500 transition-transform ${open ? "rotate-180" : ""}`}
+          aria-hidden
+        />
+      </button>
+      {open && (
+        <ul
+          id={listId}
+          role="listbox"
+          aria-label="Servicio"
+          className="absolute z-50 mt-2 max-h-72 w-full overflow-y-auto rounded-xl border border-white/15 bg-[#0c1018] py-1 shadow-[0_20px_50px_rgba(0,0,0,0.65)]"
+        >
+          {SERVICE_OPTIONS.map((opt) => {
+            const active = opt.value === value;
+            return (
+              <li key={opt.value} role="option" aria-selected={active}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onChange(opt.value);
+                    setOpen(false);
+                  }}
+                  className={`w-full px-4 py-3 text-left transition-colors hover:bg-white/10 ${
+                    active ? "bg-[#1de0b1]/15 text-white" : "text-zinc-200"
+                  }`}
+                >
+                  <span className="block text-sm font-medium leading-snug">{opt.title}</span>
+                  {opt.subtitle ? (
+                    <span className="mt-1 block text-xs leading-relaxed text-zinc-400">{opt.subtitle}</span>
+                  ) : null}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 export function HyperContact() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [service, setService] = useState(DEFAULT_SERVICE);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -37,6 +137,7 @@ export function HyperContact() {
         return;
       }
       setSent(true);
+      setService(DEFAULT_SERVICE);
       form.reset();
     } catch {
       setError("Error de conexión. Probá WhatsApp o email.");
@@ -184,18 +285,11 @@ export function HyperContact() {
                   <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">
                     Servicio
                   </span>
-                  <select
+                  <HyperServiceSelect
                     disabled={loading}
-                    name="service"
-                    className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-[#1de0b1]/50 disabled:opacity-60"
-                  >
-                    {websiteModels.map((m) => (
-                      <option key={m.id} value={m.name}>
-                        {m.name} ({m.priceNote}) — {m.subtitle}
-                      </option>
-                    ))}
-                    <option value="Otro / integración">Otro / integración</option>
-                  </select>
+                    value={service}
+                    onChange={setService}
+                  />
                 </label>
                 <label className="block">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">
