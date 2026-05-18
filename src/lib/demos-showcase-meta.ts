@@ -9,6 +9,7 @@ import { SHOWROOM_WEEKEND_SLUG } from "@/lib/showroom-weekend";
 import { THE_BARBER_CLUB_SLUG } from "@/lib/the-barber-club";
 import { MASA_MADRE_CO_SLUG } from "@/lib/masa-madre-co";
 import { NIDO_LINAJE_SLUG } from "@/lib/nido-linaje";
+import { CENTRAL_BEBIDAS_SLUG } from "@/lib/central-bebidas";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -553,6 +554,25 @@ const ARANA_283_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const CENTRAL_BEBIDAS_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-lime-600/25",
+  accent: "text-lime-400",
+  border: "group-hover:border-lime-500/50",
+  pitch:
+    "Central de Bebidas: modo minorista/mayorista, catálogo multi-filtro, precios por bulto, combos instantáneos y checkout WhatsApp para el depósito.",
+  features: [
+    "Buscador predictivo mock",
+    "Switch minorista/mayorista",
+    "5 categorías + stock",
+    "Precio unidad y bulto",
+    "Combos un clic",
+    "Countdown ofertas",
+    "Carrito con descuentos",
+    "3 tipos de entrega",
+    "WhatsApp formateado",
+  ],
+};
+
 const NIDO_LINAJE_SHOWCASE: ShowcaseCardMeta = {
   color: "from-stone-300/30",
   accent: "text-stone-500",
@@ -636,6 +656,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === THE_BARBER_CLUB_SLUG) return THE_BARBER_CLUB_SHOWCASE;
   if (slug === MASA_MADRE_CO_SLUG) return MASA_MADRE_CO_SHOWCASE;
   if (slug === NIDO_LINAJE_SLUG) return NIDO_LINAJE_SHOWCASE;
+  if (slug === CENTRAL_BEBIDAS_SLUG) return CENTRAL_BEBIDAS_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

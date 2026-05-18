@@ -1,0 +1,48 @@
+.cdb-demo {
+  --cdb-lime: #a3e635;
+  --cdb-amber: #f59e0b;
+}
+
+.cdb-glow-lime {
+  box-shadow: 0 0 24px rgba(163, 230, 53, 0.25);
+}
+
+.cdb-slide-in {
+  animation: cdb-slide 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes cdb-slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cdb-pulse-offer {
+  animation: cdb-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes cdb-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.cdb-ticker {
+  animation: cdb-marquee 25s linear infinite;
+}
+
+@keyframes cdb-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

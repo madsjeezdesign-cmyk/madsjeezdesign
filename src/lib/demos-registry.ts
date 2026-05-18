@@ -670,6 +670,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#78716c",
     previewClass: "from-stone-50 via-white to-slate-50",
   },
+  {
+    slug: "central-bebidas",
+    title: "Central de Bebidas",
+    industry: "Distribuidora mayorista y minorista",
+    tagline: "B2B/B2C · combos · WhatsApp depósito",
+    accent: "#a3e635",
+    previewClass: "from-zinc-950 via-zinc-900 to-lime-950",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);
