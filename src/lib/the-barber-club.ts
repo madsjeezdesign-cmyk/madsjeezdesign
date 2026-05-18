@@ -97,21 +97,21 @@ export const BARBER_PROS: BarberPro[] = [
     id: "mateo",
     name: "Mateo R.",
     specialty: "Fades & texturas",
-    image: img("photo-1621605815971-fbc98d665ca0"),
+    image: img("photo-1556471013-0001958d2f12"),
     rating: 4.9,
   },
   {
     id: "diego",
     name: "Diego S.",
     specialty: "Barbas clásicas",
-    image: img("photo-1622286342621-4bd786c2449a"),
+    image: img("photo-1577595927087-dedbe84f0e4d"),
     rating: 5,
   },
   {
     id: "luca",
     name: "Luca M.",
     specialty: "Color & styling",
-    image: img("photo-1599351431202-1e0c36b1e6ea"),
+    image: img("photo-1620830958756-46335282c574"),
     rating: 4.8,
   },
 ];
@@ -122,14 +122,14 @@ export const BARBER_PRODUCTS: BarberProduct[] = [
     name: "Cera Mate Signature",
     price: 8900,
     description: "Fijación media-alta, acabado natural sin residuos.",
-    image: img("photo-1522338242992-e5a549dcb3cd", 400),
+    image: img("photo-1576354302919-96748cb8299e", 400),
   },
   {
     id: 2,
     name: "Aceite de Barba Gold",
     price: 11200,
     description: "Argán y jojoba. Suaviza y da brillo controlado.",
-    image: img("photo-1596755389375-c20601a6a0c8", 400),
+    image: img("photo-1578898886225-c7c894047899", 400),
   },
   {
     id: 3,
@@ -177,12 +177,12 @@ export const MEMBERSHIP_PLANS: MembershipPlan[] = [
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
-  { id: 1, title: "Skin Fade", tag: "Fade", image: img("photo-1622286342621-4bd786c2449a", 500) },
-  { id: 2, title: "Beard Sculpt", tag: "Barba", image: img("photo-1621605815971-fbc98d665ca0", 500) },
+  { id: 1, title: "Skin Fade", tag: "Fade", image: img("photo-1577595927087-dedbe84f0e4d", 500) },
+  { id: 2, title: "Beard Sculpt", tag: "Barba", image: img("photo-1556471013-0001958d2f12", 500) },
   { id: 3, title: "Classic Pompadour", tag: "Clásico", image: img("photo-1503951914875-452162b0f3f1", 500) },
-  { id: 4, title: "Textured Crop", tag: "Textura", image: img("photo-1599351431202-1e0c36b1e6ea", 500) },
-  { id: 5, title: "Silver Blend", tag: "Color", image: img("photo-1620331315488-9ee3a09e1a40", 500) },
-  { id: 6, title: "Executive Cut", tag: "Premium", image: img("photo-1593702279370-f8a3d0f3c2b6", 500) },
+  { id: 4, title: "Textured Crop", tag: "Textura", image: img("photo-1620830958756-46335282c574", 500) },
+  { id: 5, title: "Silver Blend", tag: "Color", image: img("photo-1578898887932-dce23a595ad4", 500) },
+  { id: 6, title: "Executive Cut", tag: "Premium", image: img("photo-1590675560125-0d832b9d719e", 500) },
 ];
 
 /** Mock occupied slots per barber+date key */

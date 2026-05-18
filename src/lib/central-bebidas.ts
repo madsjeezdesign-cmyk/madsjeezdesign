@@ -81,19 +81,19 @@ export const CENTRAL_BEBIDAS_CONFIG = {
   heroSlides: [
     {
       image:
-        "https://images.unsplash.com/photo-1608270586620-01048fecad0f?q=80&w=2000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=2000&auto=format&fit=crop",
       title: "Cervezas bien frías",
       subtitle: "Marcas líderes · precios por bulto",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d44?q=80&w=2000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1667329829058-ac191ba4a905?q=80&w=2000&auto=format&fit=crop",
       title: "Destilados premium",
       subtitle: "Fernet · Gin · Vodka · stock inmediato",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1551024709-8f23f40f6386?q=80&w=2000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1633424234673-c8cd0f4df77b?q=80&w=2000&auto=format&fit=crop",
       title: "Combos para eventos",
       subtitle: "Armados listos · un clic al carrito",
     },
@@ -119,7 +119,7 @@ export const BEBIDA_PRODUCTS: BebidaProduct[] = [
     bulkMin: 6,
     bulkLabel: "Bulto x24",
     stock: "high",
-    image: img("photo-1608270586620-01048fecad0f"),
+    image: img("photo-1510812431401-41d2bd2722f3"),
   },
   {
     id: 2,
@@ -132,7 +132,7 @@ export const BEBIDA_PRODUCTS: BebidaProduct[] = [
     bulkMin: 6,
     bulkLabel: "Bulto x24",
     stock: "high",
-    image: img("photo-1535958636472-d7eeef527c0d"),
+    image: img("photo-1512152272829-e3139592d56f"),
   },
   {
     id: 3,
@@ -158,7 +158,7 @@ export const BEBIDA_PRODUCTS: BebidaProduct[] = [
     bulkMin: 3,
     bulkLabel: "Caja x3",
     stock: "low",
-    image: img("photo-1514362545857-3bc16c4c7d44"),
+    image: img("photo-1667329829058-ac191ba4a905"),
   },
   {
     id: 5,
@@ -171,7 +171,7 @@ export const BEBIDA_PRODUCTS: BebidaProduct[] = [
     bulkMin: 6,
     bulkLabel: "Caja x6",
     stock: "high",
-    image: img("photo-1551538827-9bcdc4c7d167"),
+    image: img("photo-1508736793122-f516e3ba5569"),
   },
   {
     id: 6,
@@ -210,7 +210,7 @@ export const BEBIDA_PRODUCTS: BebidaProduct[] = [
     bulkMin: 4,
     bulkLabel: "Pack x6",
     stock: "high",
-    image: img("photo-1622483767028-3ff66d7f2d92"),
+    image: img("photo-1551782450-a2132b4ba21d"),
   },
   {
     id: 9,
@@ -223,7 +223,7 @@ export const BEBIDA_PRODUCTS: BebidaProduct[] = [
     bulkMin: 4,
     bulkLabel: "Pack x6",
     stock: "high",
-    image: img("photo-1625772299848-fca379cf8783"),
+    image: img("photo-1586816001966-79b736744398"),
   },
   {
     id: 10,
@@ -236,7 +236,7 @@ export const BEBIDA_PRODUCTS: BebidaProduct[] = [
     bulkMin: 6,
     bulkLabel: "Pack x6",
     stock: "critical",
-    image: img("photo-1548839140-29a4e9608603"),
+    image: img("photo-1632203171982-cc0df6e9ceb4"),
   },
   {
     id: 11,
@@ -249,7 +249,7 @@ export const BEBIDA_PRODUCTS: BebidaProduct[] = [
     bulkMin: 2,
     bulkLabel: "Dúo barriles",
     stock: "low",
-    image: img("photo-1571613317784-ef00d0cc0ae4"),
+    image: img("photo-1610970878459-a0e464d7592b"),
   },
   {
     id: 12,
@@ -284,7 +284,7 @@ export const BEBIDA_COMBOS: BebidaCombo[] = [
     name: "Combo Cumpleaños 30 pers.",
     description: "2 barriles + gaseosas + hielo simbólico",
     promoPrice: 118000,
-    image: img("photo-1571613317784-ef00d0cc0ae4"),
+    image: img("photo-1610970878459-a0e464d7592b"),
     items: [
       { productId: 11, qty: 2, label: "Barril Schneider 30L" },
       { productId: 8, qty: 6, label: "Coca-Cola 2.25L" },
@@ -297,7 +297,7 @@ export const BEBIDA_COMBOS: BebidaCombo[] = [
     description: "3 Bombay + 6 Sprite + 2 Chandon",
     promoPrice: 142000,
     badge: "Eventos",
-    image: img("photo-1514362545857-3bc16c4c7d44"),
+    image: img("photo-1667329829058-ac191ba4a905"),
     items: [
       { productId: 4, qty: 3, label: "Gin Bombay 750ml" },
       { productId: 9, qty: 6, label: "Sprite 2.25L" },

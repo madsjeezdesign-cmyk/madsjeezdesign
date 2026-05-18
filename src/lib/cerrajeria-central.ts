@@ -93,7 +93,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "digital",
     brand: "SmartLock Pro",
     price: 189000,
-    image: img("photo-1558002339-0d4bfc0c3f0a"),
+    image: img("photo-1597241693839-07d7fb803af1"),
     specs: {
       boltDiameter: "20 mm acero",
       latchType: "Pestillo reversible",
@@ -106,7 +106,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "digital",
     brand: "SecurePad",
     price: 98500,
-    image: img("photo-1614064641938-3bbee52942c8"),
+    image: img("photo-1566417713940-fe7c737a9ef2"),
     specs: {
       boltDiameter: "18 mm",
       latchType: "Monopunto",
@@ -119,7 +119,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "candados",
     brand: "Armored",
     price: 42800,
-    image: img("photo-1603791447921-6247fb2be1b4"),
+    image: img("photo-1572116469696-31de0f17cc34"),
     specs: {
       boltDiameter: "10 mm endurecido",
       extra: "Cuerpo bronce · doble bloqueo",
@@ -143,7 +143,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "alta",
     brand: "Trabex",
     price: 89500,
-    image: img("photo-1614064641938-3bbee52942c8"),
+    image: img("photo-1566417713940-fe7c737a9ef2"),
     specs: {
       boltDiameter: "32 mm europeo",
       latchType: "Doble embrague",
@@ -156,7 +156,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "alta",
     brand: "Prive",
     price: 124000,
-    image: img("photo-1558002339-0d4bfc0c3f0a"),
+    image: img("photo-1597241693839-07d7fb803af1"),
     specs: {
       boltDiameter: "35 mm",
       latchType: "Multipunto 3 pestillos",
@@ -169,7 +169,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "cajas",
     brand: "VaultHome",
     price: 245000,
-    image: img("photo-1603791447921-6247fb2be1b4"),
+    image: img("photo-1572116469696-31de0f17cc34"),
     specs: {
       extra: "Anclaje químico incluido · fuego 30 min",
       combinations: "Electrónica + llave de emergencia",

@@ -98,15 +98,15 @@ function gameServerLead(accent: string): DemoLeadTheme {
 const creatorLead = gameServerLead;
 const commerceLead = gameServerLead;
 
-const GS_PLACEHOLDER = u("photo-1542751374-adc38448a05e", "ixlib=rb-4.0.3");
+const GS_PLACEHOLDER = u("photo-1623408859815-22534357b3db", "ixlib=rb-4.0.3");
 
 /** Cobertura por slug — mismas claves que DEMOS */
 const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   herreria: {
-    cover: u("photo-1535557902630-e21b31a26548", "ixlib=rb-4.0.3"),
-    a: u("photo-1504917595217-d0024f06ce79", "ixlib=rb-4.0.3"),
-    b: u("photo-1590859651225-92e35fd71ca8", "ixlib=rb-4.0.3"),
-    c: u("photo-1541974247859-004447a4b93d", "ixlib=rb-4.0.3"),
+    cover: u("photo-1608198093002-ad4e005484ec", "ixlib=rb-4.0.3"),
+    a: u("photo-1568254183919-78a4f43a2877", "ixlib=rb-4.0.3"),
+    b: u("photo-1587241321921-91a834d6d191", "ixlib=rb-4.0.3"),
+    c: u("photo-1523294587484-bae6cc870010", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-amber-500/20 bg-stone-950",
       card: "rounded-2xl border border-stone-700 bg-stone-900/80 p-6 md:p-8",
@@ -282,7 +282,7 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   },
   floreria: {
     cover: u("photo-1526047932273-341f2a7631f9", "ixlib=rb-4.0.3"),
-    a: u("photo-1523694559144-4ec08b9e1146", "ixlib=rb-4.0.3"),
+    a: u("photo-1559811814-e2c57b5e69df", "ixlib=rb-4.0.3"),
     b: u("photo-1614594975525-e45190c55d0b", "ixlib=rb-4.0.3"),
     c: u("photo-1591886960571-74d43a9d4166", "ixlib=rb-4.0.3"),
     lead: {
@@ -306,10 +306,10 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   taller: {
-    cover: u("photo-1530046339160-ce3e5b0c7a2f", "ixlib=rb-4.0.3"),
+    cover: u("photo-1549413468-cd78edb7e75c", "ixlib=rb-4.0.3"),
     a: u("photo-1486262715619-67b85e0b08d3", "ixlib=rb-4.0.3"),
-    b: u("photo-1542282088-fe8426682e8f", "ixlib=rb-4.0.3"),
-    c: u("photo-1613214149174-da7a397738b0", "ixlib=rb-4.0.3"),
+    b: u("photo-1622808516114-02a5749cd965", "ixlib=rb-4.0.3"),
+    c: u("photo-1567042661848-7161ce446f85", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-orange-600/20 bg-zinc-950",
       card: "rounded-sm border border-zinc-800 bg-zinc-900/80 p-6 md:p-8",
@@ -332,8 +332,8 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   abogados: {
     cover: u("photo-1589829545856-d10d557cf95f", "ixlib=rb-4.0.3"),
     a: u("photo-1505664194779-8beaceb93744", "ixlib=rb-4.0.3"),
-    b: u("photo-1453723490680-798aa0ed62bd", "ixlib=rb-4.0.3"),
-    c: u("photo-1473186578172-c141e6798ea4", "ixlib=rb-4.0.3"),
+    b: u("photo-1579697096985-41fe1430e5df", "ixlib=rb-4.0.3"),
+    c: u("photo-1546237769-6f84ec1a512a", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-amber-600/20 bg-[#0a0f18]",
       card: "border border-slate-800 bg-slate-900/80 p-6 md:p-8",
@@ -580,12 +580,12 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   heladeria: {
-    cover: u("photo-1563805042-76840396a842", "ixlib=rb-4.0.3"),
-    a: u("photo-1497034825420-c936a79e04da", "ixlib=rb-4.0.3"),
+    cover: u("photo-1612539466296-4ecf1db303e3", "ixlib=rb-4.0.3"),
+    a: u("photo-1566698629409-787a68fc5724", "ixlib=rb-4.0.3"),
     b: u("photo-1578985545062-69928b1d9587", "ixlib=rb-4.0.3"),
     c: u("photo-1556679343-c7306c1976bc", "ixlib=rb-4.0.3"),
-    d: u("photo-1580915411954-282cb1b99deb", "ixlib=rb-4.0.3"),
-    e: u("photo-1501447529947-6299e75df4aa", "ixlib=rb-4.0.3"),
+    d: u("photo-1560427183-4efd29c38997", "ixlib=rb-4.0.3"),
+    e: u("photo-1711672284661-bd70e38f31b2", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-fuchsia-500/25 bg-[#1a0b18]",
       card: "rounded-[2rem] border border-fuchsia-500/25 bg-gradient-to-br from-fuchsia-950/50 to-cyan-950/30 p-6 md:p-8",
@@ -608,12 +608,12 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   lavadero: {
-    cover: u("photo-1520340351874-b922bb932d21", "ixlib=rb-4.0.3"),
+    cover: u("photo-1618773928121-c32242e63f39", "ixlib=rb-4.0.3"),
     a: u("photo-1489824904134-891ab64532f1", "ixlib=rb-4.0.3"),
     b: u("photo-1503376780353-7e6692767b70", "ixlib=rb-4.0.3"),
     c: u("photo-1619405399517-d7fce0f13302", "ixlib=rb-4.0.3"),
     d: u("photo-1492144534655-ae79c964c9d7", "ixlib=rb-4.0.3"),
-    e: u("photo-1486262715619-67b85e0a08d3", "ixlib=rb-4.0.3"),
+    e: u("photo-1611892440504-42a792e24d32", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-cyan-500/30 bg-slate-950",
       card: "rounded-xl border border-cyan-500/20 bg-slate-900/70 p-6 md:p-8",
@@ -636,12 +636,12 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   seguridad: {
-    cover: u("photo-1557597774-9d63fd9ecffc", "ixlib=rb-4.0.3"),
+    cover: u("photo-1551882547-ff40c63fe5fa", "ixlib=rb-4.0.3"),
     a: u("photo-1507679799987-c73779587ccf", "ixlib=rb-4.0.3"),
     b: u("photo-1451187580459-43490279c0fa", "ixlib=rb-4.0.3"),
-    c: u("photo-1510511459019-5dda772513fd", "ixlib=rb-4.0.3"),
+    c: u("photo-1629140727571-9b5c6f6267b4", "ixlib=rb-4.0.3"),
     d: u("photo-1563986768609-322da13575f3", "ixlib=rb-4.0.3"),
-    e: u("photo-1584433144859-1fc3ab64a978", "ixlib=rb-4.0.3"),
+    e: u("photo-1631049552057-403cdb8f0658", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-emerald-500/30 bg-[#050a08]",
       card: "rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-6 md:p-8",
@@ -668,8 +668,8 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     a: u("photo-1506126613408-eca07ce68773", "ixlib=rb-4.0.3"),
     b: u("photo-1599901860904-17e6ed7083a0", "ixlib=rb-4.0.3"),
     c: u("photo-1545205597-3d9d02c29597", "ixlib=rb-4.0.3"),
-    d: u("photo-1575052814086-42aed8426e4d", "ixlib=rb-4.0.3"),
-    e: u("photo-1599447421410-3410dfe0c871", "ixlib=rb-4.0.3"),
+    d: u("photo-1711059985570-4c32ed12a12c", "ixlib=rb-4.0.3"),
+    e: u("photo-1583847268964-b28dc8f51f92", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-violet-300/25 bg-[#f4f1ff]",
       card: "rounded-3xl border border-violet-200 bg-white p-6 shadow-lg md:p-8",
@@ -694,11 +694,11 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
   },
   hotel: {
     cover: u("photo-1566073771259-6a8506099945", "ixlib=rb-4.0.3"),
-    a: u("photo-1631049307264-da0a9d8b57a2", "ixlib=rb-4.0.3"),
-    b: u("photo-1611892440504-42a792ae8649", "ixlib=rb-4.0.3"),
+    a: u("photo-1578683010236-d716f9a3f461", "ixlib=rb-4.0.3"),
+    b: u("photo-1621293954908-907159247fc8", "ixlib=rb-4.0.3"),
     c: u("photo-1582719478250-c89cae4dc85b", "ixlib=rb-4.0.3"),
     d: u("photo-1520250497591-112f2f40a3f4", "ixlib=rb-4.0.3"),
-    e: u("photo-1566662587733-51f80924b7a6", "ixlib=rb-4.0.3"),
+    e: u("photo-1568495248636-6432b97bd949", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-amber-800/40 bg-[#1c1410]",
       card: "rounded-sm border border-amber-700/40 bg-stone-900/70 p-6 md:p-8",
@@ -721,9 +721,9 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   catering: {
-    cover: u("photo-1555244162-80383440eb97", "ixlib=rb-4.0.3"),
+    cover: u("photo-1566665797739-1674de7a421a", "ixlib=rb-4.0.3"),
     a: u("photo-1414235077428-338989a2e8c0", "ixlib=rb-4.0.3"),
-    b: u("photo-1466978913421-dad61cffa3a8", "ixlib=rb-4.0.3"),
+    b: u("photo-1496417263034-38ec4f0b665a", "ixlib=rb-4.0.3"),
     c: u("photo-1517248135467-4c7edcad34c4", "ixlib=rb-4.0.3"),
     d: u("photo-1551218808-94e220e084d2", "ixlib=rb-4.0.3"),
     e: u("photo-1559339352-11d035aa65de", "ixlib=rb-4.0.3"),
@@ -749,12 +749,12 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   paisajismo: {
-    cover: u("photo-1416879595882-3373a0480b7e", "ixlib=rb-4.0.3"),
-    a: u("photo-1598901963450-c1a0e05f97b8", "ixlib=rb-4.0.3"),
+    cover: u("photo-1590490360182-c33d57733427", "ixlib=rb-4.0.3"),
+    a: u("photo-1616394584738-fc6e612e71b9", "ixlib=rb-4.0.3"),
     b: u("photo-1558618666-fcd25c85cd64", "ixlib=rb-4.0.3"),
-    c: u("photo-1464226184922-a912d6707e4d", "ixlib=rb-4.0.3"),
-    d: u("photo-1585320806297-9794b3e644ee", "ixlib=rb-4.0.3"),
-    e: u("photo-1591857177580-dc82b24ee6e7", "ixlib=rb-4.0.3"),
+    c: u("photo-1634449571010-02389ed0f9b0", "ixlib=rb-4.0.3"),
+    d: u("photo-1633681926022-84c23e8cb2d6", "ixlib=rb-4.0.3"),
+    e: u("photo-1570172619644-dfd03ed5d881", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-green-700/35 bg-green-950",
       card: "rounded-2xl border border-green-800/50 bg-green-900/35 p-6 md:p-8",
@@ -777,11 +777,11 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   tattoo: {
-    cover: u("photo-1611501275019-9b5cda994e1d", "ixlib=rb-4.0.3"),
-    a: u("photo-1590246814889-5791e37fe980", "ixlib=rb-4.0.3"),
-    b: u("photo-1611348586804-61bf6c080496", "ixlib=rb-4.0.3"),
-    c: u("photo-1568515048389-1d5da43f0424", "ixlib=rb-4.0.3"),
-    d: u("photo-1598373181952-e1a05a1a5d4e", "ixlib=rb-4.0.3"),
+    cover: u("photo-1596462502278-27bfdc403348", "ixlib=rb-4.0.3"),
+    a: u("photo-1589710751893-f9a6770ad71b", "ixlib=rb-4.0.3"),
+    b: u("photo-1555820585-c5ae44394b79", "ixlib=rb-4.0.3"),
+    c: u("photo-1551184451-76b762941ad6", "ixlib=rb-4.0.3"),
+    d: u("photo-1521590832167-7bcbfaa6381f", "ixlib=rb-4.0.3"),
     e: u("photo-1522337360788-8b13dee7a37e", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-rose-600/30 bg-[#12050a]",
@@ -805,12 +805,12 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   cerrajeria: {
-    cover: u("photo-1589756824025-6bb2a6cf8fa1", "ixlib=rb-4.0.3"),
+    cover: u("photo-1632345031435-8727f6897d53", "ixlib=rb-4.0.3"),
     a: u("photo-1454165804606-c3d57bc86b40", "ixlib=rb-4.0.3"),
-    b: u("photo-1581149787766-e32f0e58e3e2", "ixlib=rb-4.0.3"),
+    b: u("photo-1560869713-7d0a29430803", "ixlib=rb-4.0.3"),
     c: u("photo-1621905252507-b35492cc74b4", "ixlib=rb-4.0.3"),
     d: u("photo-1504384308090-c894fdcc538d", "ixlib=rb-4.0.3"),
-    e: u("photo-1453222714902-292970d40d78", "ixlib=rb-4.0.3"),
+    e: u("photo-1600948836101-f9ffda59d250", "ixlib=rb-4.0.3"),
     lead: {
       section: "border-y border-yellow-600/30 bg-neutral-950",
       card: "rounded-2xl border border-yellow-700/40 bg-zinc-900/80 p-6 md:p-8",
@@ -833,8 +833,8 @@ const DEMO_VISUAL_PACKS: Record<string, DemoVisualPack> = {
     },
   },
   coworking: {
-    cover: u("photo-1527195091313-076d671660de", "ixlib=rb-4.0.3"),
-    a: u("photo-1497366212358-3750bf24b38a", "ixlib=rb-4.0.3"),
+    cover: u("photo-1512496015851-a90fb38ba796", "ixlib=rb-4.0.3"),
+    a: u("photo-1595475884562-073c30d45670", "ixlib=rb-4.0.3"),
     b: u("photo-1497366754035-f200968a6e72", "ixlib=rb-4.0.3"),
     c: u("photo-1524758631624-e2822e304c36", "ixlib=rb-4.0.3"),
     d: u("photo-1522071820081-009f0129c71c", "ixlib=rb-4.0.3"),

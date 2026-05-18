@@ -110,7 +110,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "San Antonio de Areco",
     description: "Calabaza curada · virola grabada a mano",
     price: 48500,
-    image: img("photo-1511926729278-0c5877a1c2e0"),
+    image: img("photo-1574879948818-1cfda7aa5b1a"),
   },
   {
     id: 2,
@@ -140,7 +140,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Tandil",
     description: "Mango caldén · funda de cuero",
     price: 67800,
-    image: img("photo-1593618602-2d26c4fd4f8e"),
+    image: img("photo-1605270012917-bf157c5a9541"),
   },
   {
     id: 5,
@@ -150,7 +150,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Azul",
     description: "Para mantener filo de asador",
     price: 18900,
-    image: img("photo-1580915413794-8bbaf3402e6b"),
+    image: img("photo-1618220179428-22790b461013"),
   },
   {
     id: 6,
@@ -160,7 +160,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Tandil",
     description: "Curado 60 días · peso aprox. 400 g",
     price: 12800,
-    image: img("photo-1607623811926-60d4d511a948"),
+    image: img("photo-1772311698901-fe3fa07141be"),
   },
   {
     id: 7,
@@ -170,7 +170,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Tandil",
     description: "Horma 500 g · pasta compacta",
     price: 14200,
-    image: img("photo-1486297678162-eb2a19b0a32e"),
+    image: img("photo-1676475061527-38552ed8b3f2"),
   },
   {
     id: 8,
@@ -190,7 +190,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Areco",
     description: "Cuero vacuno · hebilla alpaca",
     price: 35600,
-    image: img("photo-1624378515194-6e4f8e0e8b0e"),
+    image: img("photo-1650691960684-c15e3e2d5c85"),
   },
   {
     id: 10,
@@ -210,7 +210,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Misiones",
     description: "Selección sin palo · 1 kg",
     price: 6800,
-    image: img("photo-1514228742584-6b1558fcca3d"),
+    image: img("photo-1607622750671-6cd9a99eabd1"),
   },
   {
     id: 12,
@@ -220,7 +220,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Tandil",
     description: "Madera algarrobo · incluye chaira",
     price: 94500,
-    image: img("photo-1607083206869-4c2d07a03a5e"),
+    image: img("photo-1615887584283-91f1be7fdc34"),
   },
 ];
 

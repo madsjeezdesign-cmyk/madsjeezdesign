@@ -121,7 +121,7 @@ const PORTFOLIO = [
   {
     title: "Portón minimal Alu-Iron",
     category: "Portones automáticos",
-    image: img("photo-1600566753086-00f18efc2297", 1000),
+    image: img("photo-1504328345606-18bbc8c9d7d1", 1000),
     description: "Estructura tubular de alta densidad con perfiles de aluminio negro mate. Cero mantenimiento.",
   },
   {
@@ -139,19 +139,19 @@ const PORTFOLIO = [
   {
     title: "Baranda vidrio + acero",
     category: "Residencial premium",
-    image: img("photo-1541888942225-d81a192d04db", 1000),
+    image: img("photo-1577140917170-285929fb55b7", 1000),
     description: "Pasamanos en acero inoxidable con anclajes ocultos y vidrio templado.",
   },
   {
     title: "Escalera caracol",
     category: "Interior · loft",
-    image: img("photo-1590649837877-78513ad8d0e8", 1000),
+    image: img("photo-1519085360753-af0119f7cbe7", 1000),
     description: "Estructura helicoidal calculada con peldaños en chapa antideslizante.",
   },
   {
     title: "Pérgola comercial",
     category: "Local · terraza",
-    image: img("photo-1503387762-592deb58ef4a", 1000),
+    image: img("photo-1507679799987-c73779587ccf", 1000),
     description: "Cubierta en hierro con tratamiento anticorrosivo y canal de lluvia integrado.",
   },
 ] as const;
@@ -176,7 +176,7 @@ const MATERIALS = [
 
 const MATERIAL_IMAGES = [
   { src: img("photo-1504198458649-3128b932f49e", 1000), alt: "Detalle de hierro estructural en taller" },
-  { src: img("photo-1610444319451-b0e6fa7f88da", 1000), alt: "Madera noble para mesadas y frentes" },
+  { src: img("photo-1598514982205-f36b96d1e8d4", 1000), alt: "Madera noble para mesadas y frentes" },
   { src: img("photo-1533090161767-e6ffed986c88", 1000), alt: "Taller de herrería y soldadura" },
 ] as const;
 

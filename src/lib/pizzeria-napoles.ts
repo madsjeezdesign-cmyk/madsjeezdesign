@@ -126,7 +126,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 14500,
     category: "pizzas",
     description: "Muzza de masa madre, salsa de tomates italianos, albahaca fresca, oliva.",
-    image: img("photo-1574071318508-1cdbab1a9d7f"),
+    image: img("photo-1573551565922-aec98de55802"),
     badge: "Clásica",
   },
   {
@@ -143,7 +143,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 17200,
     category: "pizzas",
     description: "Cebolla, muzza, jamón cocido artesanal.",
-    image: img("photo-1593504049579-74349494a1e8"),
+    image: img("photo-1671713682264-ecf27750b276"),
   },
   {
     id: 4,
@@ -151,7 +151,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 16800,
     category: "pizzas",
     description: "Longaniza, muzza, ají en oliva.",
-    image: img("photo-1628840042765-447cdee8a1a0"),
+    image: img("photo-1670710028748-4127e46ef542"),
   },
   {
     id: 10,
@@ -159,7 +159,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 2200,
     category: "empanadas",
     description: "Carne cortada a cuchillo, cebolla, huevo.",
-    image: img("photo-1599971696841-775f5a709a0e"),
+    image: img("photo-1613577813903-e9e9bc994cdb"),
   },
   {
     id: 11,
@@ -167,7 +167,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 2100,
     category: "empanadas",
     description: "Jamón cocido premium y muzza.",
-    image: img("photo-1626700053989-69d4b3e1a69d"),
+    image: img("photo-1697793275956-9f74bb9c9005"),
   },
   {
     id: 12,
@@ -175,7 +175,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 2000,
     category: "empanadas",
     description: "Choclo cremoso, cebolla, morrón.",
-    image: img("photo-1608038798067-1b9c731a1eac"),
+    image: img("photo-1683744129482-2cdd6645ed29"),
   },
   {
     id: 20,
@@ -183,7 +183,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 3500,
     category: "bebidas",
     description: "Para compartir.",
-    image: img("photo-1622483767028-3ff66d7f2d92"),
+    image: img("photo-1551782450-a2132b4ba21d"),
   },
   {
     id: 21,
@@ -191,7 +191,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 4200,
     category: "bebidas",
     description: "Rubia 473ml.",
-    image: img("photo-1608270586620-01048fecad0f"),
+    image: img("photo-1510812431401-41d2bd2722f3"),
   },
 ];
 

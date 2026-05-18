@@ -80,7 +80,7 @@ export const LECLAT_CONFIG = {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1487412946677-5bf3eeacb377?q=80&w=2000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1628152371231-936cf45eb8f3?q=80&w=2000&auto=format&fit=crop",
       title: "Ritual de bienestar",
       subtitle: "Keratina · nutrición · manicura spa",
     },
@@ -185,13 +185,13 @@ export const SALON_STYLISTS: SalonStylist[] = [
     id: "camila",
     name: "Camila R.",
     specialty: "Colormetría & eventos",
-    image: img("photo-1562323566-6d6a16c977ea"),
+    image: img("photo-1616047006789-b7af5afb8c20"),
   },
   {
     id: "lucia",
     name: "Lucía P.",
     specialty: "Cortes & tratamientos",
-    image: img("photo-1595476108010-b4d5829fda98"),
+    image: img("photo-1617103996702-96ff29b1c467"),
   },
 ];
 
@@ -201,7 +201,7 @@ export const SALON_PRODUCTS: SalonProduct[] = [
     name: "Champú Sin Sulfatos",
     price: 18500,
     description: "Limpieza suave · color protegido",
-    image: img("photo-1608248543801-0a4f0e845fe6"),
+    image: img("photo-1534349762230-e0cadf78f5da"),
   },
   {
     id: 2,
@@ -215,14 +215,14 @@ export const SALON_PRODUCTS: SalonProduct[] = [
     name: "Máscara Nutrición 5",
     price: 21000,
     description: "Reconstrucción profunda en casa",
-    image: img("photo-1527798202000-fbd99c2a6c6d"),
+    image: img("photo-1441984904996-e0b6ba687e04"),
   },
   {
     id: 4,
     name: "Spray Térmico Shield",
     price: 16500,
     description: "Protección hasta 230°C",
-    image: img("photo-1620916566392-92466e3cb62b"),
+    image: img("photo-1567401893414-76b7b1e5a7a5"),
   },
 ];
 
@@ -243,25 +243,25 @@ export const SALON_GALLERY: GalleryWork[] = [
     id: 3,
     title: "Updo de gala",
     tag: "Evento",
-    image: img("photo-1633681923010-208ad3d70325"),
+    image: img("photo-1603400521630-9f2de124b33b"),
   },
   {
     id: 4,
     title: "Rubio perla",
     tag: "Colormetría",
-    image: img("photo-1519699047748-de8e457a8eab"),
+    image: img("photo-1540221652346-e5dd6b50f3e7"),
   },
   {
     id: 5,
     title: "Nutrición brillo",
     tag: "Tratamiento",
-    image: img("photo-1521590839616-2bcf4fdaa44e"),
+    image: img("photo-1445205170230-053b83016050"),
   },
   {
     id: 6,
     title: "Manicura nude",
     tag: "Estética",
-    image: img("photo-1604654894610-6973b2589a88"),
+    image: img("photo-1555529771-835f59fc5efe"),
   },
 ];
 

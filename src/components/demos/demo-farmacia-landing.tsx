@@ -61,7 +61,7 @@ const PRODUCTS: Product[] = [
     price: 24990,
     category: "Nutrición",
     discount: 15,
-    image: productImage("photo-1550572017-edd75baa1b8f"),
+    image: productImage("photo-1576091160550-2173dba999ef"),
   },
   {
     id: "serum",
@@ -76,21 +76,21 @@ const PRODUCTS: Product[] = [
     price: 85000,
     category: "Equipamiento",
     discount: 20,
-    image: productImage("photo-1616540809701-d29f6a21bc6d"),
+    image: productImage("photo-1576091160399-112ba8d25d1d"),
   },
   {
     id: "whey",
     name: "Proteína isolatada Whey Premium chocolate",
     price: 54900,
     category: "Deportiva",
-    image: productImage("photo-1593095948074-1bb9fd47b8e5"),
+    image: productImage("photo-1631549916768-4119b2e5f926"),
   },
   {
     id: "pañales",
     name: "Pack pañales premium M x72",
     price: 31500,
     category: "Bebés",
-    image: productImage("photo-1515488042361-ee00e28a2271"),
+    image: productImage("photo-1576091160550-2173dba999ef"),
   },
   {
     id: "fps50",
@@ -112,7 +112,7 @@ const PRODUCTS: Product[] = [
     name: "Termómetro digital infrarrojo sin contacto",
     price: 18900,
     category: "Equipamiento",
-    image: productImage("photo-1584984541648-6d0c9f3699fcc"),
+    image: productImage("photo-1584308666744-24d5c474f2ae"),
   },
 ];
 

@@ -75,10 +75,10 @@ const img = (id: string, w = 700) =>
   `https://images.unsplash.com/${id}?q=80&w=${w}&auto=format&fit=crop`;
 
 const colors = {
-  blanco: { id: "blanco", name: "Blanco", hex: "#faf9f7", image: img("photo-1618354691373-8516019a8c76") },
+  blanco: { id: "blanco", name: "Blanco", hex: "#faf9f7", image: img("photo-1667312939978-64cf31718a6e") },
   negro: { id: "negro", name: "Negro", hex: "#1c1917", image: img("photo-1596755094514-f87e34085b2c") },
-  nude: { id: "nude", name: "Nude", hex: "#e7d5c4", image: img("photo-1582555170597-9ab98a5c5c8e") },
-  borgona: { id: "borgona", name: "Borgoña", hex: "#7f1d1d", image: img("photo-1582555170597-9ab98a5c5c8e") },
+  nude: { id: "nude", name: "Nude", hex: "#e7d5c4", image: img("photo-1554995207-c18c203602cb") },
+  borgona: { id: "borgona", name: "Borgoña", hex: "#7f1d1d", image: img("photo-1554995207-c18c203602cb") },
 };
 
 export const INTIMA_PRODUCTS: IntimaProduct[] = [

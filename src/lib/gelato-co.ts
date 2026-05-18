@@ -74,7 +74,7 @@ export const GELATO_SIZES: GelatoSize[] = [
     subtitle: "Hasta 3 gustos",
     price: 11200,
     maxFlavors: 3,
-    image: img("photo-1497032628192-886ef48c1a0a"),
+    image: img("photo-1616046229478-9901c5536a45"),
   },
   {
     id: "quarter",
@@ -82,7 +82,7 @@ export const GELATO_SIZES: GelatoSize[] = [
     subtitle: "Hasta 3 gustos",
     price: 6800,
     maxFlavors: 3,
-    image: img("photo-1580915413794-8bbaf3402e6b"),
+    image: img("photo-1618220179428-22790b461013"),
   },
   {
     id: "cone",
@@ -90,7 +90,7 @@ export const GELATO_SIZES: GelatoSize[] = [
     subtitle: "Hasta 2 gustos",
     price: 4500,
     maxFlavors: 2,
-    image: img("photo-1621303837574-7d1d581a6c2c"),
+    image: img("photo-1615873968403-89e068629265"),
   },
 ];
 
