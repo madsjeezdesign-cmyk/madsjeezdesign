@@ -1,0 +1,31 @@
+.gc-demo {
+  --gc-rose: #fda4af;
+  --gc-pistachio: #86efac;
+}
+
+.gc-fresh-pulse {
+  animation: gc-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gc-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.gc-slide-cart {
+  animation: gc-slide 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes gc-slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

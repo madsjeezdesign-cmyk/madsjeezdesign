@@ -702,6 +702,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#dc2626",
     previewClass: "from-zinc-900 via-red-950 to-zinc-950",
   },
+  {
+    slug: "gelato-co",
+    title: "Gelato & Co.",
+    industry: "Heladería artesanal premium",
+    tagline: "Potes multi-gusto · cadena de frío · WhatsApp",
+    accent: "#fb7185",
+    previewClass: "from-rose-50 via-stone-50 to-emerald-50",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

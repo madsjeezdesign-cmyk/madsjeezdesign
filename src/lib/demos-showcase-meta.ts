@@ -13,6 +13,7 @@ import { CENTRAL_BEBIDAS_SLUG } from "@/lib/central-bebidas";
 import { LECLAT_SALON_SLUG } from "@/lib/leclat-salon";
 import { BURGER_LAB_SLUG } from "@/lib/burger-lab";
 import { PIZZERIA_NAPOLES_SLUG } from "@/lib/pizzeria-napoles";
+import { GELATO_CO_SLUG } from "@/lib/gelato-co";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -576,6 +577,25 @@ const PIZZERIA_NAPOLES_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const GELATO_CO_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-rose-400/25",
+  accent: "text-rose-400",
+  border: "group-hover:border-rose-400/50",
+  pitch:
+    "Gelato & Co.: heladería premium con potes multi-gusto, límite por tamaño, carrito lateral y pedido WhatsApp con cadena de frío.",
+  features: [
+    "Badge abierto + frío",
+    "4 formatos de pote",
+    "Límite gustos por tamaño",
+    "4 categorías sabores",
+    "Bloqueo al máximo",
+    "Carrito ARS en vivo",
+    "Delivery / retiro",
+    "WhatsApp despacho",
+    "Mapa Spegazzini",
+  ],
+};
+
 const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-500/25",
   accent: "text-amber-400",
@@ -720,6 +740,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === LECLAT_SALON_SLUG) return LECLAT_SALON_SHOWCASE;
   if (slug === BURGER_LAB_SLUG) return BURGER_LAB_SHOWCASE;
   if (slug === PIZZERIA_NAPOLES_SLUG) return PIZZERIA_NAPOLES_SHOWCASE;
+  if (slug === GELATO_CO_SLUG) return GELATO_CO_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {
