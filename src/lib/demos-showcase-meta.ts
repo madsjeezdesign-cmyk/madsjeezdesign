@@ -16,6 +16,7 @@ import { PIZZERIA_NAPOLES_SLUG } from "@/lib/pizzeria-napoles";
 import { GELATO_CO_SLUG } from "@/lib/gelato-co";
 import { DECO_BAZAR_CO_SLUG } from "@/lib/deco-bazar-co";
 import { RAICES_CRIOLLAS_SLUG } from "@/lib/raices-criollas";
+import { INTIMA_CO_SLUG } from "@/lib/intima-co";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -636,6 +637,25 @@ const RAICES_CRIOLLAS_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const INTIMA_CO_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-rose-900/20",
+  accent: "text-rose-300",
+  border: "group-hover:border-rose-400/40",
+  pitch:
+    "Íntima & Co.: lencería luxury minimalista con variantes de color, calculadora de talles, armador de packs 15% off y checkout con envío discreto.",
+  features: [
+    "Banner cuotas discretas",
+    "Filtros por colección",
+    "Colores y talles",
+    "Microanimación add",
+    "Calculadora busto/cadera",
+    "Pack 3 piezas -15%",
+    "Carrito slide-over",
+    "Modal checkout",
+    "Mapa showroom",
+  ],
+};
+
 const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-500/25",
   accent: "text-amber-400",
@@ -783,6 +803,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === GELATO_CO_SLUG) return GELATO_CO_SHOWCASE;
   if (slug === DECO_BAZAR_CO_SLUG) return DECO_BAZAR_CO_SHOWCASE;
   if (slug === RAICES_CRIOLLAS_SLUG) return RAICES_CRIOLLAS_SHOWCASE;
+  if (slug === INTIMA_CO_SLUG) return INTIMA_CO_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

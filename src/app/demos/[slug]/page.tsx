@@ -15,6 +15,7 @@ import { isPizzeriaNapolesSlug } from "@/lib/pizzeria-napoles";
 import { isGelatoCoSlug } from "@/lib/gelato-co";
 import { isDecoBazarCoSlug } from "@/lib/deco-bazar-co";
 import { isRaicesCriollasSlug } from "@/lib/raices-criollas";
+import { isIntimaCoSlug } from "@/lib/intima-co";
 import { isShowroomWeekendSlug } from "@/lib/showroom-weekend";
 import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
@@ -45,6 +46,8 @@ import { DecoBazarCoChrome } from "@/components/demos/deco-bazar-co/deco-bazar-c
 import { DemoDecoBazarCo } from "@/components/demos/deco-bazar-co/deco-bazar-co-landing";
 import { RaicesCriollasChrome } from "@/components/demos/raices-criollas/raices-criollas-chrome";
 import { DemoRaicesCriollas } from "@/components/demos/raices-criollas/raices-criollas-landing";
+import { IntimaCoChrome } from "@/components/demos/intima-co/intima-co-chrome";
+import { DemoIntimaCo } from "@/components/demos/intima-co/intima-co-landing";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
@@ -211,6 +214,7 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   "gelato-co": DemoGelatoCo,
   "deco-bazar-co": DemoDecoBazarCo,
   "raices-criollas": DemoRaicesCriollas,
+  "intima-co": DemoIntimaCo,
 };
 
 export function generateStaticParams() {
@@ -356,6 +360,15 @@ export default async function DemoPage({
     return (
       <>
         <RaicesCriollasChrome />
+        <Demo />
+      </>
+    );
+  }
+
+  if (isIntimaCoSlug(slug)) {
+    return (
+      <>
+        <IntimaCoChrome />
         <Demo />
       </>
     );

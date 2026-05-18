@@ -726,6 +726,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#b45309",
     previewClass: "from-stone-50 via-amber-50/30 to-stone-100",
   },
+  {
+    slug: "intima-co",
+    title: "Íntima & Co.",
+    industry: "Lencería premium · bienestar",
+    tagline: "Talles · variantes · packs · checkout",
+    accent: "#9f1239",
+    previewClass: "from-stone-50 via-rose-50/20 to-stone-100",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);
