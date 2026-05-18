@@ -8,6 +8,7 @@ import { ARANA_283_SLUG } from "@/lib/arana-283";
 import { SHOWROOM_WEEKEND_SLUG } from "@/lib/showroom-weekend";
 import { THE_BARBER_CLUB_SLUG } from "@/lib/the-barber-club";
 import { MASA_MADRE_CO_SLUG } from "@/lib/masa-madre-co";
+import { NIDO_LINAJE_SLUG } from "@/lib/nido-linaje";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -552,6 +553,25 @@ const ARANA_283_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const NIDO_LINAJE_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-stone-300/30",
+  accent: "text-stone-500",
+  border: "group-hover:border-stone-400/50",
+  pitch:
+    "Nido & Linaje: e-commerce couture de blanquería premium. Hero slider, filtros por línea, variantes tamaño/color, modal técnico y checkout seguro simulado.",
+  features: [
+    "Navbar scroll + ticker",
+    "Hero slider full-screen",
+    "3 líneas de producto",
+    "Tamaño y color en vivo",
+    "Modal composición técnica",
+    "Carrito slide-over lujo",
+    "Checkout premium mock",
+    "Editorial sostenibilidad",
+    "Formulario leads demo",
+  ],
+};
+
 const MASA_MADRE_CO_SHOWCASE: ShowcaseCardMeta = {
   color: "from-orange-200/50",
   accent: "text-orange-700",
@@ -615,6 +635,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === ARANA_283_SLUG) return ARANA_283_SHOWCASE;
   if (slug === THE_BARBER_CLUB_SLUG) return THE_BARBER_CLUB_SHOWCASE;
   if (slug === MASA_MADRE_CO_SLUG) return MASA_MADRE_CO_SHOWCASE;
+  if (slug === NIDO_LINAJE_SLUG) return NIDO_LINAJE_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

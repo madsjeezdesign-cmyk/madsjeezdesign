@@ -662,6 +662,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#c2410c",
     previewClass: "from-orange-100 via-amber-50 to-stone-200",
   },
+  {
+    slug: "nido-linaje",
+    title: "Nido & Linaje",
+    industry: "Blanquería premium · home textiles",
+    tagline: "Couture · variantes · checkout de lujo",
+    accent: "#78716c",
+    previewClass: "from-stone-50 via-white to-slate-50",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

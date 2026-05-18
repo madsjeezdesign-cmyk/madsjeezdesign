@@ -1,0 +1,88 @@
+.nl-demo {
+  --nl-gold: #a8a29e;
+  --nl-ivory: #fafaf9;
+}
+
+.nl-ticker {
+  animation: nl-marquee 32s linear infinite;
+}
+
+@keyframes nl-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.nl-fade-in {
+  animation: nl-fade 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes nl-fade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nl-hero-fade {
+  animation: nl-hero 1.2s ease-out forwards;
+}
+
+@keyframes nl-hero {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nl-cart-bump {
+  animation: nl-bump 0.35s ease-out;
+}
+
+@keyframes nl-bump {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nl-add-loading {
+  animation: nl-pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes nl-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.nl-slide-panel {
+  animation: nl-slide 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes nl-slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
