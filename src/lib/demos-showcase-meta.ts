@@ -17,6 +17,7 @@ import { GELATO_CO_SLUG } from "@/lib/gelato-co";
 import { DECO_BAZAR_CO_SLUG } from "@/lib/deco-bazar-co";
 import { RAICES_CRIOLLAS_SLUG } from "@/lib/raices-criollas";
 import { INTIMA_CO_SLUG } from "@/lib/intima-co";
+import { CERRAJERIA_CENTRAL_SLUG } from "@/lib/cerrajeria-central";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -656,6 +657,25 @@ const INTIMA_CO_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const CERRAJERIA_CENTRAL_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-amber-500/25",
+  accent: "text-amber-400",
+  border: "group-hover:border-amber-500/50",
+  pitch:
+    "Cerrajería Central: urgencias 24 hs, cotizador de copias en vivo, tienda técnica con fichas y pedido WhatsApp con detalles de compatibilidad.",
+  features: [
+    "Botón urgencia pulsante",
+    "Modal emergencia",
+    "Cotizador 4 tipos llave",
+    "Reserva turno",
+    "Catálogo seguridad",
+    "Ficha técnica",
+    "Carrito productos/servicios",
+    "WhatsApp técnico",
+    "Mapa Spegazzini",
+  ],
+};
+
 const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-500/25",
   accent: "text-amber-400",
@@ -804,6 +824,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === DECO_BAZAR_CO_SLUG) return DECO_BAZAR_CO_SHOWCASE;
   if (slug === RAICES_CRIOLLAS_SLUG) return RAICES_CRIOLLAS_SHOWCASE;
   if (slug === INTIMA_CO_SLUG) return INTIMA_CO_SHOWCASE;
+  if (slug === CERRAJERIA_CENTRAL_SLUG) return CERRAJERIA_CENTRAL_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

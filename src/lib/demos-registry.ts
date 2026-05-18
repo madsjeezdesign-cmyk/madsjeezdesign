@@ -734,6 +734,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#9f1239",
     previewClass: "from-stone-50 via-rose-50/20 to-stone-100",
   },
+  {
+    slug: "cerrajeria-central",
+    title: "Cerrajería Central",
+    industry: "Cerrajería integral · seguridad",
+    tagline: "Urgencias 24 hs · cotizador · WhatsApp técnico",
+    accent: "#f59e0b",
+    previewClass: "from-zinc-950 via-zinc-900 to-black",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);
