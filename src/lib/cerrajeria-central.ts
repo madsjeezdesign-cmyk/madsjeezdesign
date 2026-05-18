@@ -76,7 +76,7 @@ export const CERRAJERIA_CENTRAL_CONFIG = {
   hoursShop: "Lun–Sáb 8:00 – 20:00 · copias en el acto hasta las 19:00",
   hoursUrgency: "Urgencias 24/7 los 365 días",
   heroImage:
-    "https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1634979149798-e9a118734e93?q=80&w=2000&auto=format&fit=crop",
   mapsEmbedUrl:
     "https://maps.google.com/maps?q=Carlos+Spegazzini,+Ezeiza&t=&z=14&ie=UTF8&iwloc=&output=embed",
   shippingProduct: 4500,
@@ -93,7 +93,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "digital",
     brand: "SmartLock Pro",
     price: 189000,
-    image: img("photo-1597241693839-07d7fb803af1"),
+    image: img("photo-1685886069739-c1b96bba7953"),
     specs: {
       boltDiameter: "20 mm acero",
       latchType: "Pestillo reversible",
@@ -106,7 +106,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "digital",
     brand: "SecurePad",
     price: 98500,
-    image: img("photo-1566417713940-fe7c737a9ef2"),
+    image: img("photo-1733244766159-f58f4184fd38"),
     specs: {
       boltDiameter: "18 mm",
       latchType: "Monopunto",
@@ -119,7 +119,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "candados",
     brand: "Armored",
     price: 42800,
-    image: img("photo-1572116469696-31de0f17cc34"),
+    image: img("photo-1635237393049-55046279ebb8"),
     specs: {
       boltDiameter: "10 mm endurecido",
       extra: "Cuerpo bronce · doble bloqueo",
@@ -131,7 +131,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "candados",
     brand: "Titan",
     price: 67200,
-    image: img("photo-1582139329536-e7284fece509"),
+    image: img("photo-1634979149798-e9a118734e93"),
     specs: {
       boltDiameter: "12 mm boron",
       extra: "Anti-taladro · grillete acero cementado",
@@ -143,7 +143,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "alta",
     brand: "Trabex",
     price: 89500,
-    image: img("photo-1566417713940-fe7c737a9ef2"),
+    image: img("photo-1733244766159-f58f4184fd38"),
     specs: {
       boltDiameter: "32 mm europeo",
       latchType: "Doble embrague",
@@ -156,7 +156,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "alta",
     brand: "Prive",
     price: 124000,
-    image: img("photo-1597241693839-07d7fb803af1"),
+    image: img("photo-1685886069739-c1b96bba7953"),
     specs: {
       boltDiameter: "35 mm",
       latchType: "Multipunto 3 pestillos",
@@ -169,7 +169,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "cajas",
     brand: "VaultHome",
     price: 245000,
-    image: img("photo-1572116469696-31de0f17cc34"),
+    image: img("photo-1635237393049-55046279ebb8"),
     specs: {
       extra: "Anclaje químico incluido · fuego 30 min",
       combinations: "Electrónica + llave de emergencia",
@@ -181,7 +181,7 @@ export const SECURITY_PRODUCTS: SecurityProduct[] = [
     category: "cajas",
     brand: "VaultHome",
     price: 389000,
-    image: img("photo-1582139329536-e7284fece509"),
+    image: img("photo-1634979149798-e9a118734e93"),
     specs: {
       extra: "60 min fuego · sensor de inclinación",
       combinations: "Biométrica + teclado",

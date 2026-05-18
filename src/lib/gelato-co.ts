@@ -49,7 +49,7 @@ export const GELATO_CO_CONFIG = {
   hoursPeak: "Jue–Dom y feriados 12:00 – 00:00 (pico tarde/noche)",
   deliveryFee: 2800,
   heroImage:
-    "https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=2000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1555992643-0c053cbd87e1?q=80&w=2000&auto=format&fit=crop",
   mapsEmbedUrl:
     "https://maps.google.com/maps?q=Carlos+Spegazzini,+Ezeiza&t=&z=14&ie=UTF8&iwloc=&output=embed",
   mapsDirectionsUrl:
@@ -66,7 +66,7 @@ export const GELATO_SIZES: GelatoSize[] = [
     subtitle: "Hasta 4 gustos",
     price: 18500,
     maxFlavors: 4,
-    image: img("photo-1563805042-7684c019e1cb"),
+    image: img("photo-1555992643-0c053cbd87e1"),
   },
   {
     id: "half",
@@ -74,7 +74,7 @@ export const GELATO_SIZES: GelatoSize[] = [
     subtitle: "Hasta 3 gustos",
     price: 11200,
     maxFlavors: 3,
-    image: img("photo-1616046229478-9901c5536a45"),
+    image: img("photo-1657220644506-77fa47a3487b"),
   },
   {
     id: "quarter",
@@ -82,7 +82,7 @@ export const GELATO_SIZES: GelatoSize[] = [
     subtitle: "Hasta 3 gustos",
     price: 6800,
     maxFlavors: 3,
-    image: img("photo-1618220179428-22790b461013"),
+    image: img("photo-1638176474160-10b700d32f25"),
   },
   {
     id: "cone",
@@ -90,7 +90,7 @@ export const GELATO_SIZES: GelatoSize[] = [
     subtitle: "Hasta 2 gustos",
     price: 4500,
     maxFlavors: 2,
-    image: img("photo-1615873968403-89e068629265"),
+    image: img("photo-1544071004-dde12a9edfbd"),
   },
 ];
 

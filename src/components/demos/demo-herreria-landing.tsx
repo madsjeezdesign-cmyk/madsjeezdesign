@@ -121,37 +121,37 @@ const PORTFOLIO = [
   {
     title: "Portón minimal Alu-Iron",
     category: "Portones automáticos",
-    image: img("photo-1504328345606-18bbc8c9d7d1", 1000),
+    image: img("photo-1778230501920-d5503dd6b6d0", 1000),
     description: "Estructura tubular de alta densidad con perfiles de aluminio negro mate. Cero mantenimiento.",
   },
   {
     title: "Mesa Guayubira X",
     category: "Mobiliario industrial",
-    image: img("photo-1577140917170-285929fb55b7", 1000),
+    image: img("photo-1751482820198-094cc95d8476", 1000),
     description: "Tapa maciza de 2\" sobre base estructural con soldaduras pulidas invisibles.",
   },
   {
     title: "Parrilla Fuego Cruzado",
     category: "Sistemas de asado",
-    image: img("photo-1598514982205-f36b96d1e8d4", 1000),
+    image: img("photo-1776928220142-f0ba6b3f90fe", 1000),
     description: "Hierro en V, recolector inox, fogonero colgante y frente en madera tratada.",
   },
   {
     title: "Baranda vidrio + acero",
     category: "Residencial premium",
-    image: img("photo-1577140917170-285929fb55b7", 1000),
+    image: img("photo-1751482820198-094cc95d8476", 1000),
     description: "Pasamanos en acero inoxidable con anclajes ocultos y vidrio templado.",
   },
   {
     title: "Escalera caracol",
     category: "Interior · loft",
-    image: img("photo-1519085360753-af0119f7cbe7", 1000),
+    image: img("photo-1706730297608-eec30696ccbc", 1000),
     description: "Estructura helicoidal calculada con peldaños en chapa antideslizante.",
   },
   {
     title: "Pérgola comercial",
     category: "Local · terraza",
-    image: img("photo-1507679799987-c73779587ccf", 1000),
+    image: img("photo-1777426827861-c6f235a2a5b6", 1000),
     description: "Cubierta en hierro con tratamiento anticorrosivo y canal de lluvia integrado.",
   },
 ] as const;
@@ -175,9 +175,9 @@ const MATERIALS = [
 ] as const;
 
 const MATERIAL_IMAGES = [
-  { src: img("photo-1504198458649-3128b932f49e", 1000), alt: "Detalle de hierro estructural en taller" },
-  { src: img("photo-1598514982205-f36b96d1e8d4", 1000), alt: "Madera noble para mesadas y frentes" },
-  { src: img("photo-1533090161767-e6ffed986c88", 1000), alt: "Taller de herrería y soldadura" },
+  { src: img("photo-1762798808438-b94dfb8732e0", 1000), alt: "Detalle de hierro estructural en taller" },
+  { src: img("photo-1776928220142-f0ba6b3f90fe", 1000), alt: "Madera noble para mesadas y frentes" },
+  { src: img("photo-1754490792202-7a56a5908494", 1000), alt: "Taller de herrería y soldadura" },
 ] as const;
 
 const SERVICES = [

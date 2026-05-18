@@ -68,19 +68,19 @@ export const LECLAT_CONFIG = {
   heroSlides: [
     {
       image:
-        "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=2000&auto=format&fit=crop",
       title: "Cabello radiante",
       subtitle: "Cortes de autor · peinados de fiesta",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1554519934-e32b1629d9ee?q=80&w=2000&auto=format&fit=crop",
       title: "Colormetría de alta fidelidad",
       subtitle: "Balayage · babylights · glossing",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1628152371231-936cf45eb8f3?q=80&w=2000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=2000&auto=format&fit=crop",
       title: "Ritual de bienestar",
       subtitle: "Keratina · nutrición · manicura spa",
     },
@@ -179,19 +179,19 @@ export const SALON_STYLISTS: SalonStylist[] = [
     id: "valentina",
     name: "Valentina M.",
     specialty: "Especialista en Balayage",
-    image: img("photo-1580618672591-eb180b1a973f"),
+    image: img("photo-1554519934-e32b1629d9ee"),
   },
   {
     id: "camila",
     name: "Camila R.",
     specialty: "Colormetría & eventos",
-    image: img("photo-1616047006789-b7af5afb8c20"),
+    image: img("photo-1562322140-8baeececf3df"),
   },
   {
     id: "lucia",
     name: "Lucía P.",
     specialty: "Cortes & tratamientos",
-    image: img("photo-1617103996702-96ff29b1c467"),
+    image: img("photo-1629397685944-7073f5589754"),
   },
 ];
 
@@ -201,28 +201,28 @@ export const SALON_PRODUCTS: SalonProduct[] = [
     name: "Champú Sin Sulfatos",
     price: 18500,
     description: "Limpieza suave · color protegido",
-    image: img("photo-1534349762230-e0cadf78f5da"),
+    image: img("photo-1675034743339-0b0747047727"),
   },
   {
     id: 2,
     name: "Aceite Reparador Midnight",
     price: 24000,
     description: "Brillo instantáneo · puntas selladas",
-    image: img("photo-1571875257727-256c39da42af"),
+    image: img("photo-1634449571017-5fecfd26ad76"),
   },
   {
     id: 3,
     name: "Máscara Nutrición 5",
     price: 21000,
     description: "Reconstrucción profunda en casa",
-    image: img("photo-1441984904996-e0b6ba687e04"),
+    image: img("photo-1695527081848-1e46c06e6458"),
   },
   {
     id: 4,
     name: "Spray Térmico Shield",
     price: 16500,
     description: "Protección hasta 230°C",
-    image: img("photo-1567401893414-76b7b1e5a7a5"),
+    image: img("photo-1712213396688-c6f2d536671f"),
   },
 ];
 
@@ -231,37 +231,37 @@ export const SALON_GALLERY: GalleryWork[] = [
     id: 1,
     title: "Balayage caramelo",
     tag: "Antes / Después",
-    image: img("photo-1522337360788-8b13dee7a37e"),
+    image: img("photo-1554519934-e32b1629d9ee"),
   },
   {
     id: 2,
     title: "Bob glass hair",
     tag: "Tendencia",
-    image: img("photo-1492106087820-71f1a00d2b11"),
+    image: img("photo-1619367901998-73b3a70b3898"),
   },
   {
     id: 3,
     title: "Updo de gala",
     tag: "Evento",
-    image: img("photo-1603400521630-9f2de124b33b"),
+    image: img("photo-1613754773306-532ec48b0de5"),
   },
   {
     id: 4,
     title: "Rubio perla",
     tag: "Colormetría",
-    image: img("photo-1540221652346-e5dd6b50f3e7"),
+    image: img("photo-1581674210501-c760093514e8"),
   },
   {
     id: 5,
     title: "Nutrición brillo",
     tag: "Tratamiento",
-    image: img("photo-1445205170230-053b83016050"),
+    image: img("photo-1582095133179-bfd08e2fc6b3"),
   },
   {
     id: 6,
     title: "Manicura nude",
     tag: "Estética",
-    image: img("photo-1555529771-835f59fc5efe"),
+    image: img("photo-1593702288056-7927b442d0fa"),
   },
 ];
 

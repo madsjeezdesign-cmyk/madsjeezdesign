@@ -48,7 +48,7 @@ const productImage = (photoId: string) =>
   `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=800&q=82&ixlib=rb-4.0.3`;
 
 /** Mapa / sucursales (evita v.b del catálogo, ID inválido en Unsplash). */
-const STORE_LOCATOR_IMAGE = productImage("photo-1524661135-423995f22d0b");
+const STORE_LOCATOR_IMAGE = productImage("photo-1587854692152-cbe660dbde88");
 
 type CartLine = { id: string; name: string; price: number; qty: number };
 
@@ -61,14 +61,14 @@ const PRODUCTS: Product[] = [
     price: 24990,
     category: "Nutrición",
     discount: 15,
-    image: productImage("photo-1576091160550-2173dba999ef"),
+    image: productImage("photo-1607619056574-7b8d3ee536b2"),
   },
   {
     id: "serum",
     name: "Serum facial ácido hialurónico Pure Hydra",
     price: 38500,
     category: "Dermocosmética",
-    image: productImage("photo-1556228578-0d85b1a4d571"),
+    image: productImage("photo-1576602976047-174e57a47881"),
   },
   {
     id: "tensi",
@@ -76,21 +76,21 @@ const PRODUCTS: Product[] = [
     price: 85000,
     category: "Equipamiento",
     discount: 20,
-    image: productImage("photo-1576091160399-112ba8d25d1d"),
+    image: productImage("photo-1471864190281-a93a3070b6de"),
   },
   {
     id: "whey",
     name: "Proteína isolatada Whey Premium chocolate",
     price: 54900,
     category: "Deportiva",
-    image: productImage("photo-1631549916768-4119b2e5f926"),
+    image: productImage("photo-1587854692152-cbe660dbde88"),
   },
   {
     id: "pañales",
     name: "Pack pañales premium M x72",
     price: 31500,
     category: "Bebés",
-    image: productImage("photo-1576091160550-2173dba999ef"),
+    image: productImage("photo-1607619056574-7b8d3ee536b2"),
   },
   {
     id: "fps50",
@@ -98,21 +98,21 @@ const PRODUCTS: Product[] = [
     price: 23800,
     category: "Dermocosmética",
     discount: 10,
-    image: productImage("photo-1620916566398-39f1143ab7be"),
+    image: productImage("photo-1642055514517-7b52288890ec"),
   },
   {
     id: "electro",
     name: "Electrolitos hidratación x12 sobres",
     price: 7200,
     category: "OTC",
-    image: productImage("photo-1584308666744-24d5c474f2ae"),
+    image: productImage("photo-1585435557343-3b092031a831"),
   },
   {
     id: "termo",
     name: "Termómetro digital infrarrojo sin contacto",
     price: 18900,
     category: "Equipamiento",
-    image: productImage("photo-1584308666744-24d5c474f2ae"),
+    image: productImage("photo-1585435557343-3b092031a831"),
   },
 ];
 

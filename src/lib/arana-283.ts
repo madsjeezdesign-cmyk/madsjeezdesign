@@ -66,7 +66,7 @@ export const ARANA_PRODUCTS: AranaProduct[] = [
     conditionScore: 10,
     price: 32000,
     emoji: "🧥",
-    image: img("photo-1544022613-e87ca75a784a"),
+    image: img("photo-1660486044177-45cd45bb5e99"),
     desc: "Prenda de alto impacto térmico y visual. Color gris metalizado con capucha desmontable y logos refractarios.",
   },
   {
@@ -79,7 +79,7 @@ export const ARANA_PRODUCTS: AranaProduct[] = [
     conditionScore: 9,
     price: 28500,
     emoji: "👖",
-    image: img("photo-1542272604-787c3835535d"),
+    image: img("photo-1532332248682-206cc786359f"),
     desc: "Mezclilla rígida original, importada. Azul lavado medio con terminación recta clásica.",
   },
   {
@@ -92,7 +92,7 @@ export const ARANA_PRODUCTS: AranaProduct[] = [
     conditionScore: 10,
     price: 45000,
     emoji: "👟",
-    image: img("photo-1595950653106-6c9ebd614d3a"),
+    image: img("photo-1582225905616-c3adc77ada6b"),
     desc: "Pieza única de colección sin rodar. Se entrega en caja de fábrica.",
   },
   {
@@ -105,7 +105,7 @@ export const ARANA_PRODUCTS: AranaProduct[] = [
     conditionScore: 9,
     price: 14000,
     emoji: "👕",
-    image: img("photo-1521572267360-ee0c2909d518"),
+    image: img("photo-1510853851847-5c02796e8c8a"),
     desc: "Algodón pesado premium de 24/1, corte boxy oversized. Estampa frontal cyber-punk.",
   },
   {
@@ -118,7 +118,7 @@ export const ARANA_PRODUCTS: AranaProduct[] = [
     conditionScore: 10,
     price: 9500,
     emoji: "🕶️",
-    image: img("photo-1511499767150-a48a237f0083"),
+    image: img("photo-1624353656309-8be1a6c457be"),
     desc: "Marcos negros ultra envolventes con protección UV400. Incluye estuche rígido.",
   },
   {
@@ -131,7 +131,7 @@ export const ARANA_PRODUCTS: AranaProduct[] = [
     conditionScore: 8,
     price: 21000,
     emoji: "🧥",
-    image: img("photo-1539571696357-5a69c17a67c6"),
+    image: img("photo-1649114383220-c4f0f0dbafbe"),
     desc: "Cortavientos premium impermeable con cierres termosellados. Ideal para días lluviosos.",
   },
 ];

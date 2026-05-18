@@ -88,7 +88,7 @@ export const RAICES_CRIOLLAS_CONFIG = {
   hoursShowroom: "Mar–Sáb 10:00 – 20:00 · Dom 10:00 – 14:00",
   hoursAlmacen: "Despachos lun–vie hasta las 18:00",
   heroImage:
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1619926096619-5956ab4dfb1b?q=80&w=2000&auto=format&fit=crop",
   mapsEmbedUrl:
     "https://maps.google.com/maps?q=Carlos+Spegazzini,+Ezeiza&t=&z=14&ie=UTF8&iwloc=&output=embed",
   shipping: {
@@ -110,7 +110,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "San Antonio de Areco",
     description: "Calabaza curada · virola grabada a mano",
     price: 48500,
-    image: img("photo-1574879948818-1cfda7aa5b1a"),
+    image: img("photo-1609525313344-a56b96f20718"),
   },
   {
     id: 2,
@@ -120,7 +120,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Importado · curado local",
     description: "Mantiene temperatura 24 hs",
     price: 89200,
-    image: img("photo-1602143407151-7111542de6e8"),
+    image: img("photo-1624128082323-beb6b8b508db"),
   },
   {
     id: 3,
@@ -130,7 +130,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Tandil",
     description: "Pico recto · diseño tradicional",
     price: 22400,
-    image: img("photo-1495474472287-4d71bcdd2085"),
+    image: img("photo-1646314230198-e27c375e1a2a"),
   },
   {
     id: 4,
@@ -140,7 +140,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Tandil",
     description: "Mango caldén · funda de cuero",
     price: 67800,
-    image: img("photo-1605270012917-bf157c5a9541"),
+    image: img("photo-1549889450-0e0fb9c1d668"),
   },
   {
     id: 5,
@@ -150,7 +150,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Azul",
     description: "Para mantener filo de asador",
     price: 18900,
-    image: img("photo-1618220179428-22790b461013"),
+    image: img("photo-1679310249395-ae267ae0d273"),
   },
   {
     id: 6,
@@ -160,7 +160,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Tandil",
     description: "Curado 60 días · peso aprox. 400 g",
     price: 12800,
-    image: img("photo-1772311698901-fe3fa07141be"),
+    image: img("photo-1673716575331-60b042589b8d"),
   },
   {
     id: 7,
@@ -170,7 +170,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Tandil",
     description: "Horma 500 g · pasta compacta",
     price: 14200,
-    image: img("photo-1676475061527-38552ed8b3f2"),
+    image: img("photo-1681389158414-adf7f9583f24"),
   },
   {
     id: 8,
@@ -180,7 +180,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Lobos",
     description: "Loncheada al momento",
     price: 16500,
-    image: img("photo-1529692236671-f1f6cf9683ba"),
+    image: img("photo-1668401181398-a4bb0d62f124"),
   },
   {
     id: 9,
@@ -190,7 +190,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Areco",
     description: "Cuero vacuno · hebilla alpaca",
     price: 35600,
-    image: img("photo-1650691960684-c15e3e2d5c85"),
+    image: img("photo-1543738066-49621e5b1f87"),
   },
   {
     id: 10,
@@ -200,7 +200,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "San Antonio de Areco",
     description: "Compartimento termo · forro lienzo",
     price: 52400,
-    image: img("photo-1548036328-c9fa89d128fa"),
+    image: img("photo-1629385907123-0fda67d8f7ef"),
   },
   {
     id: 11,
@@ -210,7 +210,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Misiones",
     description: "Selección sin palo · 1 kg",
     price: 6800,
-    image: img("photo-1607622750671-6cd9a99eabd1"),
+    image: img("photo-1762207654337-73ccc93a80c4"),
   },
   {
     id: 12,
@@ -220,7 +220,7 @@ export const RAICES_PRODUCTS: RaicesProduct[] = [
     origin: "Tandil",
     description: "Madera algarrobo · incluye chaira",
     price: 94500,
-    image: img("photo-1615887584283-91f1be7fdc34"),
+    image: img("photo-1585166512582-d0bfcfc479ce"),
   },
 ];
 

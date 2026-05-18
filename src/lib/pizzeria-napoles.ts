@@ -109,7 +109,7 @@ export const PIZZERIA_NAPOLES_CONFIG = {
   empanadaDozenMin: 12,
   empanadaDozenDiscountPct: 10,
   heroImage:
-    "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=2000&auto=format&fit=crop",
   mapsEmbedUrl:
     "https://maps.google.com/maps?q=Carlos+Spegazzini,+Ezeiza&t=&z=14&ie=UTF8&iwloc=&output=embed",
   mapsDirectionsUrl:
@@ -126,7 +126,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 14500,
     category: "pizzas",
     description: "Muzza de masa madre, salsa de tomates italianos, albahaca fresca, oliva.",
-    image: img("photo-1573551565922-aec98de55802"),
+    image: img("photo-1622880833523-7cf1c0bd4296"),
     badge: "Clásica",
   },
   {
@@ -135,7 +135,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 15800,
     category: "pizzas",
     description: "Muzza, tomate en rodajas, ajo, orégano del Véneto.",
-    image: img("photo-1565299624946-b28f40a0ae38"),
+    image: img("photo-1564936281291-294551497d81"),
   },
   {
     id: 3,
@@ -143,7 +143,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 17200,
     category: "pizzas",
     description: "Cebolla, muzza, jamón cocido artesanal.",
-    image: img("photo-1671713682264-ecf27750b276"),
+    image: img("photo-1621538997517-58ce53933faa"),
   },
   {
     id: 4,
@@ -151,7 +151,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 16800,
     category: "pizzas",
     description: "Longaniza, muzza, ají en oliva.",
-    image: img("photo-1670710028748-4127e46ef542"),
+    image: img("photo-1606152196365-d1ce5ea838b5"),
   },
   {
     id: 10,
@@ -159,7 +159,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 2200,
     category: "empanadas",
     description: "Carne cortada a cuchillo, cebolla, huevo.",
-    image: img("photo-1613577813903-e9e9bc994cdb"),
+    image: img("photo-1612692177120-847e15b2815d"),
   },
   {
     id: 11,
@@ -167,7 +167,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 2100,
     category: "empanadas",
     description: "Jamón cocido premium y muzza.",
-    image: img("photo-1697793275956-9f74bb9c9005"),
+    image: img("photo-1607018244619-dab6235709dd"),
   },
   {
     id: 12,
@@ -175,7 +175,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 2000,
     category: "empanadas",
     description: "Choclo cremoso, cebolla, morrón.",
-    image: img("photo-1683744129482-2cdd6645ed29"),
+    image: img("photo-1489564239502-7a532064e1c2"),
   },
   {
     id: 20,
@@ -183,7 +183,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 3500,
     category: "bebidas",
     description: "Para compartir.",
-    image: img("photo-1551782450-a2132b4ba21d"),
+    image: img("photo-1564936281403-f92f66f89ee0"),
   },
   {
     id: 21,
@@ -191,7 +191,7 @@ export const NAPOLES_PRODUCTS: NapolesProduct[] = [
     price: 4200,
     category: "bebidas",
     description: "Rubia 473ml.",
-    image: img("photo-1510812431401-41d2bd2722f3"),
+    image: img("photo-1680798671233-a6823e6e9a1e"),
   },
 ];
 

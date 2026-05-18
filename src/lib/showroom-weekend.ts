@@ -69,7 +69,7 @@ export const WEEKEND_PRODUCTS: WeekendProduct[] = [
     price: 43500,
     category: "Jeans",
     sizes: [44, 46, 48, 50, 52, 54],
-    image: img("photo-1541099649105-f69ad21f3246"),
+    image: img("photo-1441986300917-64674bd600d8"),
     badge: "Más vendido 🔥",
     description:
       "Denim premium super elastizado con excelente rebote. Calce perfecto que abraza tus curvas sin apretar.",
@@ -82,7 +82,7 @@ export const WEEKEND_PRODUCTS: WeekendProduct[] = [
     price: 38900,
     category: "Abrigos",
     sizes: [46, 48, 50, 52, 54],
-    image: img("photo-1516762689617-e1cffcef479d"),
+    image: img("photo-1555529771-835f59fc5efe"),
     badge: "Nueva temporada ✨",
     description:
       "Tejido oversize abrigado y súper suave en color coral vibrante. Una explosión de energía para el invierno.",
@@ -95,7 +95,7 @@ export const WEEKEND_PRODUCTS: WeekendProduct[] = [
     price: 32000,
     category: "Tops",
     sizes: [44, 46, 48, 50, 52],
-    image: img("photo-1607746882042-944635dfe10e"),
+    image: img("photo-1582719188393-bb71ca45dbb9"),
     badge: "Fresco & chic",
     description:
       "Lino de alta calidad, corte amplio ideal para usar abierto con top abajo o anudado.",
@@ -108,7 +108,7 @@ export const WEEKEND_PRODUCTS: WeekendProduct[] = [
     price: 45000,
     category: "Jeans",
     sizes: [46, 48, 50, 52, 54, 56, 58],
-    image: img("photo-1576995853123-5a10305d93c0"),
+    image: img("photo-1595665593673-bf1ad72905c0"),
     badge: "Súper rebote 10/10",
     description:
       "Oxford icónico tiro ultra alto. El calce de piernas más estilizado en talle real.",
@@ -121,7 +121,7 @@ export const WEEKEND_PRODUCTS: WeekendProduct[] = [
     price: 49500,
     category: "Abrigos",
     sizes: [44, 48, 52, 56, 60],
-    image: img("photo-1556905055-8f358a7a47b2"),
+    image: img("photo-1546213290-e1b492ab3eee"),
     badge: "Últimos disponibles",
     description:
       "Denim prelavado ultra suave con flex. Comodidad absoluta en sintonía con tu actitud.",
@@ -134,7 +134,7 @@ export const WEEKEND_PRODUCTS: WeekendProduct[] = [
     price: 19500,
     category: "Tops",
     sizes: [44, 46, 48, 50, 52, 54],
-    image: img("photo-1515886657613-9f3515b0c78f"),
+    image: img("photo-1665815844395-06f64f44b5e3"),
     badge: "Básico premium",
     description:
       "Morfología clásica con morley de algodón pesado. No transparenta y contiene perfectamente.",
@@ -147,7 +147,7 @@ export const WEEKEND_PRODUCTS: WeekendProduct[] = [
     price: 52000,
     category: "Abrigos",
     sizes: [48, 50, 52, 54, 56, 58],
-    image: img("photo-1485968579580-b6d095142e6e"),
+    image: img("photo-1612423284934-2850a4ea6b0f"),
     badge: "Impactante 🌟",
     description:
       "Corte estructurado con elástico interno para máxima comodidad. Tono fucsia neón de alto impacto.",
@@ -160,7 +160,7 @@ export const WEEKEND_PRODUCTS: WeekendProduct[] = [
     price: 36000,
     category: "Tops",
     sizes: [46, 48, 50, 52, 54, 56],
-    image: img("photo-1595777457583-95e059d581b8"),
+    image: img("photo-1625698311031-f0dd15be5144"),
     badge: "Colección especial",
     description:
       "Satén premium fluido. Mangas Oxford ligeras y caída perfecta que aporta sofisticación.",

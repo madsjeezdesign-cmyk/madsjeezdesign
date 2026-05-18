@@ -68,17 +68,17 @@ export const INTIMA_CO_CONFIG = {
   mapsEmbedUrl:
     "https://maps.google.com/maps?q=Carlos+Spegazzini,+Ezeiza&t=&z=14&ie=UTF8&iwloc=&output=embed",
   heroImage:
-    "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1761333478911-1ad6a29aca36?q=80&w=2000&auto=format&fit=crop",
 } as const;
 
 const img = (id: string, w = 700) =>
   `https://images.unsplash.com/${id}?q=80&w=${w}&auto=format&fit=crop`;
 
 const colors = {
-  blanco: { id: "blanco", name: "Blanco", hex: "#faf9f7", image: img("photo-1667312939978-64cf31718a6e") },
-  negro: { id: "negro", name: "Negro", hex: "#1c1917", image: img("photo-1596755094514-f87e34085b2c") },
-  nude: { id: "nude", name: "Nude", hex: "#e7d5c4", image: img("photo-1554995207-c18c203602cb") },
-  borgona: { id: "borgona", name: "Borgoña", hex: "#7f1d1d", image: img("photo-1554995207-c18c203602cb") },
+  blanco: { id: "blanco", name: "Blanco", hex: "#faf9f7", image: img("photo-1763633923421-52ded65c0cb2") },
+  negro: { id: "negro", name: "Negro", hex: "#1c1917", image: img("photo-1758672992749-3855de546662") },
+  nude: { id: "nude", name: "Nude", hex: "#e7d5c4", image: img("photo-1758520387423-9b8034d909d4") },
+  borgona: { id: "borgona", name: "Borgoña", hex: "#7f1d1d", image: img("photo-1758520387423-9b8034d909d4") },
 };
 
 export const INTIMA_PRODUCTS: IntimaProduct[] = [

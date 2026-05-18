@@ -59,7 +59,7 @@ export const BARBER_CLUB_CONFIG = {
   address: "Av. del Libertador 2830, Palermo, CABA",
   hours: "Lun–Sáb 10:00 – 21:00",
   heroImage:
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1759134155377-4207d89b39ec?q=80&w=1600&auto=format&fit=crop",
 } as const;
 
 const img = (id: string, w = 600) =>
@@ -97,21 +97,21 @@ export const BARBER_PROS: BarberPro[] = [
     id: "mateo",
     name: "Mateo R.",
     specialty: "Fades & texturas",
-    image: img("photo-1556471013-0001958d2f12"),
+    image: img("photo-1775126250972-fb5143c506ce"),
     rating: 4.9,
   },
   {
     id: "diego",
     name: "Diego S.",
     specialty: "Barbas clásicas",
-    image: img("photo-1577595927087-dedbe84f0e4d"),
+    image: img("photo-1776843448493-eb35a803489b"),
     rating: 5,
   },
   {
     id: "luca",
     name: "Luca M.",
     specialty: "Color & styling",
-    image: img("photo-1620830958756-46335282c574"),
+    image: img("photo-1759142235060-3191ee596c81"),
     rating: 4.8,
   },
 ];
@@ -122,28 +122,28 @@ export const BARBER_PRODUCTS: BarberProduct[] = [
     name: "Cera Mate Signature",
     price: 8900,
     description: "Fijación media-alta, acabado natural sin residuos.",
-    image: img("photo-1576354302919-96748cb8299e", 400),
+    image: img("photo-1630827020718-3433092696e7", 400),
   },
   {
     id: 2,
     name: "Aceite de Barba Gold",
     price: 11200,
     description: "Argán y jojoba. Suaviza y da brillo controlado.",
-    image: img("photo-1578898886225-c7c894047899", 400),
+    image: img("photo-1629189784191-9afdcbcb0398", 400),
   },
   {
     id: 3,
     name: "Champú Energizante",
     price: 7500,
     description: "Menta y cafeína. Limpieza profunda para cuero cabelludo.",
-    image: img("photo-1571875257727-256c39da42af", 400),
+    image: img("photo-1517832606299-7ae9b720a186", 400),
   },
   {
     id: 4,
     name: "Aftershave Balm",
     price: 6800,
     description: "Calma la piel post afeitado con aloe y vitamina E.",
-    image: img("photo-1556228720-195a672e8a03", 400),
+    image: img("photo-1635273051937-a0ddef9573b6", 400),
   },
 ];
 
@@ -177,12 +177,12 @@ export const MEMBERSHIP_PLANS: MembershipPlan[] = [
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
-  { id: 1, title: "Skin Fade", tag: "Fade", image: img("photo-1577595927087-dedbe84f0e4d", 500) },
-  { id: 2, title: "Beard Sculpt", tag: "Barba", image: img("photo-1556471013-0001958d2f12", 500) },
-  { id: 3, title: "Classic Pompadour", tag: "Clásico", image: img("photo-1503951914875-452162b0f3f1", 500) },
-  { id: 4, title: "Textured Crop", tag: "Textura", image: img("photo-1620830958756-46335282c574", 500) },
-  { id: 5, title: "Silver Blend", tag: "Color", image: img("photo-1578898887932-dce23a595ad4", 500) },
-  { id: 6, title: "Executive Cut", tag: "Premium", image: img("photo-1590675560125-0d832b9d719e", 500) },
+  { id: 1, title: "Skin Fade", tag: "Fade", image: img("photo-1776843448493-eb35a803489b", 500) },
+  { id: 2, title: "Beard Sculpt", tag: "Barba", image: img("photo-1775126250972-fb5143c506ce", 500) },
+  { id: 3, title: "Classic Pompadour", tag: "Clásico", image: img("photo-1759134155377-4207d89b39ec", 500) },
+  { id: 4, title: "Textured Crop", tag: "Textura", image: img("photo-1759142235060-3191ee596c81", 500) },
+  { id: 5, title: "Silver Blend", tag: "Color", image: img("photo-1635273051839-003bf06a8751", 500) },
+  { id: 6, title: "Executive Cut", tag: "Premium", image: img("photo-1532710093739-9470acff878f", 500) },
 ];
 
 /** Mock occupied slots per barber+date key */

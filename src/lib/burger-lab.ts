@@ -74,7 +74,7 @@ export const BURGER_LAB_CONFIG = {
   hoursNight: "Jue–Dom 18:00 – 02:00 (horario nocturno)",
   deliveryFee: 3500,
   heroImage:
-    "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=2000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1632898658005-af95f6fa589c?q=80&w=2000&auto=format&fit=crop",
   mapsEmbedUrl:
     "https://maps.google.com/maps?q=Carlos+Spegazzini,+Ezeiza&t=&z=14&ie=UTF8&iwloc=&output=embed",
   mapsDirectionsUrl:
@@ -91,7 +91,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 12500,
     category: "smash",
     description: "Doble carne 120g, triple cheddar, bacon crujiente, salsa secreta.",
-    image: img("photo-1572802419224-296b0aeee0d9"),
+    image: img("photo-1632898658005-af95f6fa589c"),
     customizable: true,
     badge: "Best seller",
   },
@@ -101,7 +101,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 9800,
     category: "smash",
     description: "Carne 90g, cheddar fundido, pepinillos, cebolla y mostaza.",
-    image: img("photo-1550547660-d9450f859349"),
+    image: img("photo-1627378378955-a3f4e406c5de"),
     customizable: true,
   },
   {
@@ -110,7 +110,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 13200,
     category: "smash",
     description: "Doble smash, jalapeños, cheddar pepper jack, salsa chipotle.",
-    image: img("photo-1586190848861-99aa4a171e90"),
+    image: img("photo-1632898657999-ae6920976661"),
     customizable: true,
     badge: "Picante",
   },
@@ -120,7 +120,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 6500,
     category: "papas",
     description: "Papas finas, sal de ajo, queso rallado y verdeo.",
-    image: img("photo-1571091718767-18b5b1457add"),
+    image: img("photo-1632898657953-f41f81bfa892"),
     customizable: false,
   },
   {
@@ -129,7 +129,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 8900,
     category: "papas",
     description: "Papas cargadas, cheddar líquido, bacon y verdeo.",
-    image: img("photo-1530554764233-e79e16c91d08"),
+    image: img("photo-1632898658030-ead731d252d4"),
     customizable: false,
   },
   {
@@ -138,7 +138,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 5200,
     category: "papas",
     description: "Crujientes, rebozados, dip de mostaza miel.",
-    image: img("photo-1561758033-d89a9ad46330"),
+    image: img("photo-1626869300069-eb1c0866feea"),
     customizable: false,
   },
   {
@@ -147,7 +147,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 2800,
     category: "bebidas",
     description: "Bien fría.",
-    image: img("photo-1551782450-a2132b4ba21d"),
+    image: img("photo-1692197275931-0793e08efcc1"),
     customizable: false,
   },
   {
@@ -156,7 +156,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 4500,
     category: "bebidas",
     description: "IPA local 473ml.",
-    image: img("photo-1510812431401-41d2bd2722f3"),
+    image: img("photo-1626869300065-3bfc3a8b2e42"),
     customizable: false,
   },
   {
@@ -165,7 +165,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 18900,
     category: "combos",
     description: "Doble Bacon + papas especiales + bebida.",
-    image: img("photo-1594212699903-ec8a3eca50f5"),
+    image: img("photo-1664232802830-592394491fd2"),
     customizable: false,
     badge: "Combo",
   },
@@ -175,7 +175,7 @@ export const BURGER_PRODUCTS: BurgerProduct[] = [
     basePrice: 22900,
     category: "combos",
     description: "2 Classic Smash + 2 papas + 2 bebidas.",
-    image: img("photo-1460306855393-0410f61241c7"),
+    image: img("photo-1761315413237-cc3bca353af9"),
     customizable: false,
   },
 ];
