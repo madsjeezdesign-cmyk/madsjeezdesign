@@ -686,6 +686,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#f43f5e",
     previewClass: "from-rose-50 via-stone-50 to-white",
   },
+  {
+    slug: "burger-lab",
+    title: "Burger Lab",
+    industry: "Hamburguesería smash premium",
+    tagline: "Armá tu burger · WhatsApp · delivery",
+    accent: "#fbbf24",
+    previewClass: "from-zinc-950 via-zinc-900 to-amber-950",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

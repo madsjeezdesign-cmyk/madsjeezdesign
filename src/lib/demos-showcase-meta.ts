@@ -11,6 +11,7 @@ import { MASA_MADRE_CO_SLUG } from "@/lib/masa-madre-co";
 import { NIDO_LINAJE_SLUG } from "@/lib/nido-linaje";
 import { CENTRAL_BEBIDAS_SLUG } from "@/lib/central-bebidas";
 import { LECLAT_SALON_SLUG } from "@/lib/leclat-salon";
+import { BURGER_LAB_SLUG } from "@/lib/burger-lab";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -555,6 +556,25 @@ const ARANA_283_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-amber-500/25",
+  accent: "text-amber-400",
+  border: "group-hover:border-amber-500/50",
+  pitch:
+    "Burger Lab: menú smash por categorías, modal Armá tu Burger con extras, carrito WhatsApp y badge abierto. Street food dark mode.",
+  features: [
+    "Badge abierto en vivo",
+    "CTA pulso animado",
+    "4 categorías menú",
+    "Modal combo + extras",
+    "Carrito con desglose",
+    "Delivery / take away",
+    "WhatsApp para cocina",
+    "Horario nocturno",
+    "Formulario leads demo",
+  ],
+};
+
 const LECLAT_SALON_SHOWCASE: ShowcaseCardMeta = {
   color: "from-rose-400/25",
   accent: "text-rose-400",
@@ -678,6 +698,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === NIDO_LINAJE_SLUG) return NIDO_LINAJE_SHOWCASE;
   if (slug === CENTRAL_BEBIDAS_SLUG) return CENTRAL_BEBIDAS_SHOWCASE;
   if (slug === LECLAT_SALON_SLUG) return LECLAT_SALON_SHOWCASE;
+  if (slug === BURGER_LAB_SLUG) return BURGER_LAB_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

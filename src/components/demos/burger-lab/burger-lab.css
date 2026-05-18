@@ -1,0 +1,45 @@
+.bl-demo {
+  --bl-cheese: #fbbf24;
+  --bl-fire: #f97316;
+}
+
+.bl-pulse-cta {
+  animation: bl-pulse 2s ease-in-out infinite;
+}
+
+@keyframes bl-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(251, 191, 36, 0);
+  }
+}
+
+.bl-open-dot {
+  animation: bl-blink 1.2s ease-in-out infinite;
+}
+
+@keyframes bl-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.bl-slide-cart {
+  animation: bl-slide 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes bl-slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
