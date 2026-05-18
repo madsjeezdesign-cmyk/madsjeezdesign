@@ -9,6 +9,7 @@ import { isTheBarberClubSlug } from "@/lib/the-barber-club";
 import { isMasaMadreCoSlug } from "@/lib/masa-madre-co";
 import { isNidoLinajeSlug } from "@/lib/nido-linaje";
 import { isCentralBebidasSlug } from "@/lib/central-bebidas";
+import { isLeclatSalonSlug } from "@/lib/leclat-salon";
 import { isShowroomWeekendSlug } from "@/lib/showroom-weekend";
 import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
@@ -27,6 +28,8 @@ import { NidoLinajeChrome } from "@/components/demos/nido-linaje/nido-linaje-chr
 import { DemoNidoLinaje } from "@/components/demos/nido-linaje/nido-linaje-landing";
 import { CentralBebidasChrome } from "@/components/demos/central-bebidas/central-bebidas-chrome";
 import { DemoCentralBebidas } from "@/components/demos/central-bebidas/central-bebidas-landing";
+import { LeclatSalonChrome } from "@/components/demos/leclat-salon/leclat-salon-chrome";
+import { DemoLeclatSalon } from "@/components/demos/leclat-salon/leclat-salon-landing";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
@@ -187,6 +190,7 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   "masa-madre-co": DemoMasaMadreCo,
   "nido-linaje": DemoNidoLinaje,
   "central-bebidas": DemoCentralBebidas,
+  "leclat-salon": DemoLeclatSalon,
 };
 
 export function generateStaticParams() {
@@ -278,6 +282,15 @@ export default async function DemoPage({
     return (
       <>
         <CentralBebidasChrome />
+        <Demo />
+      </>
+    );
+  }
+
+  if (isLeclatSalonSlug(slug)) {
+    return (
+      <>
+        <LeclatSalonChrome />
         <Demo />
       </>
     );

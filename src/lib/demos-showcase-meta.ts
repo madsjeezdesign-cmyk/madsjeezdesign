@@ -10,6 +10,7 @@ import { THE_BARBER_CLUB_SLUG } from "@/lib/the-barber-club";
 import { MASA_MADRE_CO_SLUG } from "@/lib/masa-madre-co";
 import { NIDO_LINAJE_SLUG } from "@/lib/nido-linaje";
 import { CENTRAL_BEBIDAS_SLUG } from "@/lib/central-bebidas";
+import { LECLAT_SALON_SLUG } from "@/lib/leclat-salon";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -554,6 +555,25 @@ const ARANA_283_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const LECLAT_SALON_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-rose-400/25",
+  accent: "text-rose-400",
+  border: "group-hover:border-rose-400/50",
+  pitch:
+    "L'Éclat Salón Boutique: reservas en 4 pasos, menú por categoría, galería antes/después, shop express y mapa en Spegazzini. Estética beauty high-end.",
+  features: [
+    "Hero slider belleza",
+    "4 categorías de servicio",
+    "Turnos multi-servicio",
+    "3 estilistas",
+    "Mañana y tarde",
+    "Galería interactiva",
+    "Shop retail premium",
+    "Horarios jue–sáb",
+    "Formulario leads demo",
+  ],
+};
+
 const CENTRAL_BEBIDAS_SHOWCASE: ShowcaseCardMeta = {
   color: "from-lime-600/25",
   accent: "text-lime-400",
@@ -657,6 +677,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === MASA_MADRE_CO_SLUG) return MASA_MADRE_CO_SHOWCASE;
   if (slug === NIDO_LINAJE_SLUG) return NIDO_LINAJE_SHOWCASE;
   if (slug === CENTRAL_BEBIDAS_SLUG) return CENTRAL_BEBIDAS_SHOWCASE;
+  if (slug === LECLAT_SALON_SLUG) return LECLAT_SALON_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

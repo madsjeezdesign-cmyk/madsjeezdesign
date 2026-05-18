@@ -678,6 +678,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#a3e635",
     previewClass: "from-zinc-950 via-zinc-900 to-lime-950",
   },
+  {
+    slug: "leclat-salon",
+    title: "L'Éclat Salón Boutique",
+    industry: "Peluquería y estética premium",
+    tagline: "Turnos · colormetría · shop express",
+    accent: "#f43f5e",
+    previewClass: "from-rose-50 via-stone-50 to-white",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);
