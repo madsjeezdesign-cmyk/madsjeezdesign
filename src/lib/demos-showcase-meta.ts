@@ -536,7 +536,7 @@ const ARANA_283_SHOWCASE: ShowcaseCardMeta = {
   accent: "text-purple-400",
   border: "group-hover:border-purple-500/50",
   pitch:
-    "ARANA 283: moda circular futurista en Monte Grande. Catálogo único, cotizador de ropa, bolsa WhatsApp y mapa real.",
+    "ARANA 283: moda circular futurista en Ezeiza. Catálogo único, cotizador de ropa, bolsa WhatsApp y mapa real.",
   features: [
     "Catálogo con filtros",
     "Cotizador compra/venta",

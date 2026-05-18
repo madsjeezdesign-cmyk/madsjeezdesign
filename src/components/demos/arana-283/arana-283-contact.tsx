@@ -16,9 +16,9 @@ export function Arana283Contact() {
             <span className="mb-1 block text-xs font-black uppercase tracking-widest text-pink-500">
               Ubicación estratégica
             </span>
-            <h2 className="text-3xl font-black text-white">Vení a conocernos en Monte Grande</h2>
+            <h2 className="text-3xl font-black text-white">Vení a conocernos en Ezeiza</h2>
             <p className="mt-2 text-xs leading-relaxed text-slate-400">
-              Zona tranquila y accesible, cerca de la plaza principal y la estación de tren.
+              Zona tranquila y accesible en el partido de Ezeiza, Buenos Aires.
             </p>
           </div>
 

@@ -1,4 +1,4 @@
-/** ARANA 283 — moda circular premium, Monte Grande */
+/** ARANA 283 — moda circular premium, Ezeiza */
 
 export const ARANA_283_SLUG = "moda-arana-283";
 
@@ -33,14 +33,14 @@ export const ARANA_283_CONFIG = {
   slug: ARANA_283_SLUG,
   brand: "ARANA 283",
   brandTag: "Moda Circular Futurista",
-  tagline: "Ropa premium con vibe moderno · Monte Grande",
+  tagline: "Ropa premium con vibe moderno · Ezeiza",
   instagramHandle: "arana283",
   instagramUrl: "https://www.instagram.com/arana283/",
   email: "arana283@gmail.com",
   whatsapp: "5491128300000",
   whatsappMessage:
     "¡Hola ARANA 283! Vengo desde la web y quiero hacer una consulta.",
-  addressLines: ["Arana 283", "Monte Grande, Buenos Aires, Argentina"],
+  addressLines: ["Arana 283", "Ezeiza, Buenos Aires, Argentina"],
   mapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.4053748882583!2d-58.5212705!3d-34.8549147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd0cce0e318a9%3A0xf4e42ab2ac7f4b85!2sARANA%20283%20compra-venta%20de%20ropa!5e0!3m2!1ses-419!2sar!4v1716000000000!5m2!1ses-419!2sar",
   mapsDirectionsUrl:
@@ -49,7 +49,7 @@ export const ARANA_283_CONFIG = {
   storeImage: "/demos/arana-283/store-02.jpg",
   hoursGeneral: "Lunes a Sábados: 10:00 hs a 19:00 hs",
   hoursReception: "Recepción de ropa: Mié y Sáb 10 a 17 hs",
-  marqueeText: "ARANA 283 ✦ MODA CIRCULAR ✦ MONTE GRANDE ✦ +20% CANJE ✦",
+  marqueeText: "ARANA 283 ✦ MODA CIRCULAR ✦ EZEIZA ✦ +20% CANJE ✦",
 } as const;
 
 const img = (id: string, w = 600) =>
@@ -252,7 +252,7 @@ export function aranaCartWhatsApp(items: AranaProduct[]): string {
   items.forEach((item, index) => {
     msg += `📍 *Prenda ${index + 1}:* ${item.title}\n🏷️ *Marca:* ${item.brand} | *Talle:* ${item.size}\n💵 *Precio:* ${formatAranaPrice(item.price)}\n\n`;
   });
-  msg += `👉 ¿Me confirman disponibilidad en Arana 283, Monte Grande? ¡Gracias!`;
+  msg += `👉 ¿Me confirman disponibilidad en Arana 283, Ezeiza? ¡Gracias!`;
   return aranaWhatsAppLink(msg);
 }
 

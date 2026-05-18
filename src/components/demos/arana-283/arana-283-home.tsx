@@ -46,7 +46,7 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
                 </span>
               </h1>
               <p className="mx-auto max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg lg:mx-0">
-                Compramos y vendemos prendas seleccionadas de las mejores marcas en Monte Grande. Estilo impecable y
+                Compramos y vendemos prendas seleccionadas de las mejores marcas en Ezeiza. Estilo impecable y
                 precios disruptivos.
               </p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
@@ -87,7 +87,7 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
                       <div>
                         <span className="block text-[10px] font-extrabold uppercase text-slate-500">Boutique circular</span>
                         <span className="flex items-center gap-1 text-sm font-black text-white">
-                          <MapPin className="h-4 w-4 text-pink-500" /> Arana 283, Monte Grande
+                          <MapPin className="h-4 w-4 text-pink-500" /> Arana 283, Ezeiza
                         </span>
                       </div>
                       <a
@@ -138,7 +138,7 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
                 </div>
                 <h3 className="text-xl font-black text-white group-hover:text-purple-400">Quiero comprar</h3>
                 <p className="mt-3 text-xs leading-relaxed text-slate-400">
-                  Prendas únicas de marcas nacionales e internacionales. Reservá online y retirá en Monte Grande.
+                  Prendas únicas de marcas nacionales e internacionales. Reservá online y retirá en Ezeiza.
                 </p>
               </div>
               <button type="button" onClick={() => onTab("catalogo")} className="mt-8 flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-purple-400">

@@ -641,7 +641,7 @@ export const DEMOS: DemoMeta[] = [
     slug: "moda-arana-283",
     title: "ARANA 283",
     industry: "Moda circular · compra-venta",
-    tagline: "Streetwear premium · Monte Grande",
+    tagline: "Streetwear premium · Ezeiza",
     accent: "#a855f7",
     previewClass: "from-purple-600 via-pink-500 to-zinc-950",
     sector: "moda-retail",
