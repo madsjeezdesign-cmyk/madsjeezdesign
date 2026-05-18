@@ -694,6 +694,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#fbbf24",
     previewClass: "from-zinc-950 via-zinc-900 to-amber-950",
   },
+  {
+    slug: "pizzeria-napoles",
+    title: "Pizzería Nápoles",
+    industry: "Pizza artesanal · masa madre",
+    tagline: "Mitad/mitad · empanadas · WhatsApp",
+    accent: "#dc2626",
+    previewClass: "from-zinc-900 via-red-950 to-zinc-950",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

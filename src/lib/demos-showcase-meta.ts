@@ -12,6 +12,7 @@ import { NIDO_LINAJE_SLUG } from "@/lib/nido-linaje";
 import { CENTRAL_BEBIDAS_SLUG } from "@/lib/central-bebidas";
 import { LECLAT_SALON_SLUG } from "@/lib/leclat-salon";
 import { BURGER_LAB_SLUG } from "@/lib/burger-lab";
+import { PIZZERIA_NAPOLES_SLUG } from "@/lib/pizzeria-napoles";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -556,6 +557,25 @@ const ARANA_283_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const PIZZERIA_NAPOLES_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-red-600/25",
+  accent: "text-red-400",
+  border: "group-hover:border-red-500/50",
+  pitch:
+    "Pizzería Nápoles: pizza mitad/mitad, contador de empanadas con docena, menú por categorías y pedido WhatsApp. Estética italiana moderna.",
+  features: [
+    "Horno encendido badge",
+    "4 categorías menú",
+    "Pizza mitad/mitad",
+    "Precio mitad más cara",
+    "Empanadas +/-",
+    "Descuento x12",
+    "Carrito desglosado",
+    "Delivery / retiro",
+    "WhatsApp cocina",
+  ],
+};
+
 const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-500/25",
   accent: "text-amber-400",
@@ -699,6 +719,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === CENTRAL_BEBIDAS_SLUG) return CENTRAL_BEBIDAS_SHOWCASE;
   if (slug === LECLAT_SALON_SLUG) return LECLAT_SALON_SHOWCASE;
   if (slug === BURGER_LAB_SLUG) return BURGER_LAB_SHOWCASE;
+  if (slug === PIZZERIA_NAPOLES_SLUG) return PIZZERIA_NAPOLES_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

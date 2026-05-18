@@ -11,6 +11,7 @@ import { isNidoLinajeSlug } from "@/lib/nido-linaje";
 import { isCentralBebidasSlug } from "@/lib/central-bebidas";
 import { isLeclatSalonSlug } from "@/lib/leclat-salon";
 import { isBurgerLabSlug } from "@/lib/burger-lab";
+import { isPizzeriaNapolesSlug } from "@/lib/pizzeria-napoles";
 import { isShowroomWeekendSlug } from "@/lib/showroom-weekend";
 import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
@@ -33,6 +34,8 @@ import { LeclatSalonChrome } from "@/components/demos/leclat-salon/leclat-salon-
 import { DemoLeclatSalon } from "@/components/demos/leclat-salon/leclat-salon-landing";
 import { BurgerLabChrome } from "@/components/demos/burger-lab/burger-lab-chrome";
 import { DemoBurgerLab } from "@/components/demos/burger-lab/burger-lab-landing";
+import { PizzeriaNapolesChrome } from "@/components/demos/pizzeria-napoles/pizzeria-napoles-chrome";
+import { DemoPizzeriaNapoles } from "@/components/demos/pizzeria-napoles/pizzeria-napoles-landing";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
@@ -195,6 +198,7 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   "central-bebidas": DemoCentralBebidas,
   "leclat-salon": DemoLeclatSalon,
   "burger-lab": DemoBurgerLab,
+  "pizzeria-napoles": DemoPizzeriaNapoles,
 };
 
 export function generateStaticParams() {
@@ -304,6 +308,15 @@ export default async function DemoPage({
     return (
       <>
         <BurgerLabChrome />
+        <Demo />
+      </>
+    );
+  }
+
+  if (isPizzeriaNapolesSlug(slug)) {
+    return (
+      <>
+        <PizzeriaNapolesChrome />
         <Demo />
       </>
     );
