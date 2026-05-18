@@ -718,6 +718,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#5c6b4a",
     previewClass: "from-white via-zinc-50 to-zinc-100",
   },
+  {
+    slug: "raices-criollas",
+    title: "Raíces Criollas",
+    industry: "Pulpería premium · productos regionales",
+    tagline: "Mates · fiambres · caja regalo · WhatsApp",
+    accent: "#b45309",
+    previewClass: "from-stone-50 via-amber-50/30 to-stone-100",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

@@ -1,0 +1,25 @@
+.rc-slide-cart {
+  animation: rc-slide-in 0.28s ease-out;
+}
+
+@keyframes rc-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.rc-ticker {
+  animation: rc-ticker 28s linear infinite;
+}
+
+@keyframes rc-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -15,6 +15,7 @@ import { BURGER_LAB_SLUG } from "@/lib/burger-lab";
 import { PIZZERIA_NAPOLES_SLUG } from "@/lib/pizzeria-napoles";
 import { GELATO_CO_SLUG } from "@/lib/gelato-co";
 import { DECO_BAZAR_CO_SLUG } from "@/lib/deco-bazar-co";
+import { RAICES_CRIOLLAS_SLUG } from "@/lib/raices-criollas";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -616,6 +617,25 @@ const DECO_BAZAR_CO_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const RAICES_CRIOLLAS_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-amber-700/25",
+  accent: "text-amber-400",
+  border: "group-hover:border-amber-600/50",
+  pitch:
+    "Raíces Criollas: pulpería premium con filtros de origen, armador de caja regalo/tabla, carrito lateral y pedido WhatsApp con identidad de campo.",
+  features: [
+    "Banner envíos premium",
+    "Filtros categoría/material",
+    "Origen por producto",
+    "Armador caja regalo",
+    "Límite espacios caja",
+    "Precio acumulado",
+    "3 modos de envío",
+    "WhatsApp estructurado",
+    "Mapa Spegazzini",
+  ],
+};
+
 const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-500/25",
   accent: "text-amber-400",
@@ -762,6 +782,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === PIZZERIA_NAPOLES_SLUG) return PIZZERIA_NAPOLES_SHOWCASE;
   if (slug === GELATO_CO_SLUG) return GELATO_CO_SHOWCASE;
   if (slug === DECO_BAZAR_CO_SLUG) return DECO_BAZAR_CO_SHOWCASE;
+  if (slug === RAICES_CRIOLLAS_SLUG) return RAICES_CRIOLLAS_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {
