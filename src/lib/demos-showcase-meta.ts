@@ -6,6 +6,7 @@ import {
 import { ANDREA_MARI_SLUG } from "@/lib/andrea-mari";
 import { ARANA_283_SLUG } from "@/lib/arana-283";
 import { SHOWROOM_WEEKEND_SLUG } from "@/lib/showroom-weekend";
+import { THE_BARBER_CLUB_SLUG } from "@/lib/the-barber-club";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -550,6 +551,25 @@ const ARANA_283_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const THE_BARBER_CLUB_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-amber-600/35",
+  accent: "text-amber-400",
+  border: "group-hover:border-amber-500/50",
+  pitch:
+    "The Barber Club: reservas en 4 pasos, shop con carrito lateral, galería de estilos y planes Black / VIP Gold. UI oscura premium 100% interactiva.",
+  features: [
+    "Turnos en 4 pasos",
+    "Barberos y horarios mock",
+    "Modal confirmación + recordatorio",
+    "Shop con carrito lateral",
+    "Checkout simulado",
+    "Galería masonry hover",
+    "Membresías Black y VIP",
+    "Hero CTA a turnos",
+    "Formulario leads demo",
+  ],
+};
+
 const SHOWROOM_WEEKEND_SHOWCASE: ShowcaseCardMeta = {
   color: "from-rose-600/35",
   accent: "text-rose-400",
@@ -573,6 +593,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === ANDREA_MARI_SLUG) return ANDREA_MARI_SHOWCASE;
   if (slug === SHOWROOM_WEEKEND_SLUG) return SHOWROOM_WEEKEND_SHOWCASE;
   if (slug === ARANA_283_SLUG) return ARANA_283_SHOWCASE;
+  if (slug === THE_BARBER_CLUB_SLUG) return THE_BARBER_CLUB_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

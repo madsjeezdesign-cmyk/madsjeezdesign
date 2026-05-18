@@ -5,6 +5,7 @@ import { getDemoBySlug, DEMO_SLUGS } from "@/lib/demos-registry";
 import { getShowcaseMeta } from "@/lib/demos-showcase-meta";
 import { isAndreaMariSlug } from "@/lib/andrea-mari";
 import { isArana283Slug } from "@/lib/arana-283";
+import { isTheBarberClubSlug } from "@/lib/the-barber-club";
 import { isShowroomWeekendSlug } from "@/lib/showroom-weekend";
 import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
@@ -15,6 +16,8 @@ import { ShowroomWeekendChrome } from "@/components/demos/showroom-weekend/showr
 import { DemoModaShowroomWeekend } from "@/components/demos/showroom-weekend/showroom-weekend-landing";
 import { Arana283Chrome } from "@/components/demos/arana-283/arana-283-chrome";
 import { DemoModaArana283 } from "@/components/demos/arana-283/arana-283-landing";
+import { TheBarberClubChrome } from "@/components/demos/the-barber-club/the-barber-club-chrome";
+import { DemoTheBarberClub } from "@/components/demos/the-barber-club/the-barber-club-landing";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
@@ -171,6 +174,7 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   "moda-andrea-mari": DemoModaAndreaMari,
   "moda-showroom-weekend": DemoModaShowroomWeekend,
   "moda-arana-283": DemoModaArana283,
+  "the-barber-club": DemoTheBarberClub,
 };
 
 export function generateStaticParams() {
@@ -226,6 +230,15 @@ export default async function DemoPage({
     return (
       <>
         <Arana283Chrome />
+        <Demo />
+      </>
+    );
+  }
+
+  if (isTheBarberClubSlug(slug)) {
+    return (
+      <>
+        <TheBarberClubChrome />
         <Demo />
       </>
     );

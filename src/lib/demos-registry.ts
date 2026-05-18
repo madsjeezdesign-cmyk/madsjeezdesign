@@ -646,6 +646,14 @@ export const DEMOS: DemoMeta[] = [
     previewClass: "from-purple-600 via-pink-500 to-zinc-950",
     sector: "moda-retail",
   },
+  {
+    slug: "the-barber-club",
+    title: "The Barber Club",
+    industry: "Barbería premium & grooming",
+    tagline: "Turnos · shop · membresías VIP",
+    accent: "#f59e0b",
+    previewClass: "from-amber-600 via-zinc-900 to-black",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);
