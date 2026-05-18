@@ -742,6 +742,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#f59e0b",
     previewClass: "from-zinc-950 via-zinc-900 to-black",
   },
+  {
+    slug: "luna-petit-co",
+    title: "Luna Petit & Co.",
+    industry: "Moda infantil premium · lujo",
+    tagline: "Framer Motion · bento · e-commerce",
+    accent: "#E8D5D0",
+    previewClass: "from-[#F8F6F2] via-rose-50/30 to-sky-50/20",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

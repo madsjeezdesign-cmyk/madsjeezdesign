@@ -18,6 +18,7 @@ import { DECO_BAZAR_CO_SLUG } from "@/lib/deco-bazar-co";
 import { RAICES_CRIOLLAS_SLUG } from "@/lib/raices-criollas";
 import { INTIMA_CO_SLUG } from "@/lib/intima-co";
 import { CERRAJERIA_CENTRAL_SLUG } from "@/lib/cerrajeria-central";
+import { LUNA_PETIT_CO_SLUG } from "@/lib/luna-petit-co";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -676,6 +677,25 @@ const CERRAJERIA_CENTRAL_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const LUNA_PETIT_CO_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-rose-200/30",
+  accent: "text-rose-200",
+  border: "group-hover:border-rose-300/40",
+  pitch:
+    "Luna Petit & Co.: e-commerce infantil luxury con hero cinematográfico, bento grid, Framer Motion, spotlight cards, quick view y carrito animado.",
+  features: [
+    "Hero asimétrico parallax",
+    "Navbar blur scroll",
+    "Bento productos",
+    "Spotlight cursor",
+    "Calculadora talles N/A",
+    "Wishlist + búsqueda",
+    "Quick view layoutId",
+    "Marquee testimonios",
+    "Mobile dock",
+  ],
+};
+
 const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-500/25",
   accent: "text-amber-400",
@@ -825,6 +845,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === RAICES_CRIOLLAS_SLUG) return RAICES_CRIOLLAS_SHOWCASE;
   if (slug === INTIMA_CO_SLUG) return INTIMA_CO_SHOWCASE;
   if (slug === CERRAJERIA_CENTRAL_SLUG) return CERRAJERIA_CENTRAL_SHOWCASE;
+  if (slug === LUNA_PETIT_CO_SLUG) return LUNA_PETIT_CO_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {
