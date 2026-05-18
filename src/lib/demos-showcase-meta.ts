@@ -20,6 +20,7 @@ import { INTIMA_CO_SLUG } from "@/lib/intima-co";
 import { CERRAJERIA_CENTRAL_SLUG } from "@/lib/cerrajeria-central";
 import { LUNA_PETIT_CO_SLUG } from "@/lib/luna-petit-co";
 import { NEXUS_FERRETERIA_SLUG } from "@/lib/nexus-ferreteria";
+import { GUSTITOS_SLUG } from "@/lib/gustitos";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -716,6 +717,25 @@ const NEXUS_FERRETERIA_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const GUSTITOS_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-red-600/30",
+  accent: "text-red-400",
+  border: "group-hover:border-red-500/50",
+  pitch:
+    "GUSTITOS: hamburguesería viral cinematográfica — hero burger flotante, bento menú, 6 categorías, combo builder, spotlight cards, testimonios marquee y carrito WhatsApp.",
+  features: [
+    "Hero burger 3D float",
+    "Smoke + grain FX",
+    "6 categorías food",
+    "Menú bento asimétrico",
+    "Combo builder",
+    "Quick view layoutId",
+    "Experiencia + counters",
+    "Reviews marquee",
+    "Mobile dock + CTA",
+  ],
+};
+
 const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-500/25",
   accent: "text-amber-400",
@@ -867,6 +887,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === CERRAJERIA_CENTRAL_SLUG) return CERRAJERIA_CENTRAL_SHOWCASE;
   if (slug === LUNA_PETIT_CO_SLUG) return LUNA_PETIT_CO_SHOWCASE;
   if (slug === NEXUS_FERRETERIA_SLUG) return NEXUS_FERRETERIA_SHOWCASE;
+  if (slug === GUSTITOS_SLUG) return GUSTITOS_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

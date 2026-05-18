@@ -1,0 +1,42 @@
+.gu-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+}
+
+.gu-smoke {
+  background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(239, 68, 68, 0.15), transparent 70%);
+  animation: gu-smoke 8s ease-in-out infinite alternate;
+}
+
+@keyframes gu-smoke {
+  from {
+    opacity: 0.4;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateY(-12px) scale(1.05);
+  }
+}
+
+.gu-marquee {
+  animation: gu-marquee 40s linear infinite;
+}
+
+@keyframes gu-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.gu-glow-red {
+  box-shadow:
+    0 0 0 1px rgba(239, 68, 68, 0.25),
+    0 24px 80px -24px rgba(220, 38, 38, 0.45);
+}
+
+.gu-text-glow {
+  text-shadow: 0 0 40px rgba(239, 68, 68, 0.5);
+}

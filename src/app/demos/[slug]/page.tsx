@@ -19,6 +19,7 @@ import { isIntimaCoSlug } from "@/lib/intima-co";
 import { isCerrajeriaCentralSlug } from "@/lib/cerrajeria-central";
 import { isLunaPetitCoSlug } from "@/lib/luna-petit-co";
 import { isNexusFerreteriaSlug } from "@/lib/nexus-ferreteria";
+import { isGustitosSlug } from "@/lib/gustitos";
 import { isShowroomWeekendSlug } from "@/lib/showroom-weekend";
 import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
@@ -57,6 +58,8 @@ import { LunaPetitCoChrome } from "@/components/demos/luna-petit-co/luna-petit-c
 import { DemoLunaPetitCo } from "@/components/demos/luna-petit-co/luna-petit-co-landing";
 import { NexusFerreteriaChrome } from "@/components/demos/nexus-ferreteria/nexus-ferreteria-chrome";
 import { DemoNexusFerreteria } from "@/components/demos/nexus-ferreteria/nexus-ferreteria-landing";
+import { GustitosChrome } from "@/components/demos/gustitos/gustitos-chrome";
+import { DemoGustitos } from "@/components/demos/gustitos/gustitos-landing";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
@@ -226,6 +229,8 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   "intima-co": DemoIntimaCo,
   "cerrajeria-central": DemoCerrajeriaCentral,
   "luna-petit-co": DemoLunaPetitCo,
+  "nexus-ferreteria": DemoNexusFerreteria,
+  gustitos: DemoGustitos,
 };
 
 export function generateStaticParams() {
@@ -407,6 +412,15 @@ export default async function DemoPage({
     return (
       <>
         <NexusFerreteriaChrome />
+        <Demo />
+      </>
+    );
+  }
+
+  if (isGustitosSlug(slug)) {
+    return (
+      <>
+        <GustitosChrome />
         <Demo />
       </>
     );

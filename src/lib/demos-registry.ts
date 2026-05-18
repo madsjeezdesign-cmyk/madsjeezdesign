@@ -758,6 +758,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#f97316",
     previewClass: "from-zinc-950 via-orange-950/40 to-black",
   },
+  {
+    slug: "gustitos",
+    title: "GUSTITOS",
+    industry: "Hamburguesería premium · street gourmet",
+    tagline: "Hero cinematográfico · combo builder · viral food",
+    accent: "#ef4444",
+    previewClass: "from-zinc-950 via-red-950/50 to-black",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);
