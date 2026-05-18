@@ -13,6 +13,7 @@ import { isLeclatSalonSlug } from "@/lib/leclat-salon";
 import { isBurgerLabSlug } from "@/lib/burger-lab";
 import { isPizzeriaNapolesSlug } from "@/lib/pizzeria-napoles";
 import { isGelatoCoSlug } from "@/lib/gelato-co";
+import { isDecoBazarCoSlug } from "@/lib/deco-bazar-co";
 import { isShowroomWeekendSlug } from "@/lib/showroom-weekend";
 import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
@@ -39,6 +40,8 @@ import { PizzeriaNapolesChrome } from "@/components/demos/pizzeria-napoles/pizze
 import { DemoPizzeriaNapoles } from "@/components/demos/pizzeria-napoles/pizzeria-napoles-landing";
 import { GelatoCoChrome } from "@/components/demos/gelato-co/gelato-co-chrome";
 import { DemoGelatoCo } from "@/components/demos/gelato-co/gelato-co-landing";
+import { DecoBazarCoChrome } from "@/components/demos/deco-bazar-co/deco-bazar-co-chrome";
+import { DemoDecoBazarCo } from "@/components/demos/deco-bazar-co/deco-bazar-co-landing";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
@@ -203,6 +206,7 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   "burger-lab": DemoBurgerLab,
   "pizzeria-napoles": DemoPizzeriaNapoles,
   "gelato-co": DemoGelatoCo,
+  "deco-bazar-co": DemoDecoBazarCo,
 };
 
 export function generateStaticParams() {
@@ -330,6 +334,15 @@ export default async function DemoPage({
     return (
       <>
         <GelatoCoChrome />
+        <Demo />
+      </>
+    );
+  }
+
+  if (isDecoBazarCoSlug(slug)) {
+    return (
+      <>
+        <DecoBazarCoChrome />
         <Demo />
       </>
     );

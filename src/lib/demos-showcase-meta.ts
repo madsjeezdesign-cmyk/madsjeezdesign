@@ -14,6 +14,7 @@ import { LECLAT_SALON_SLUG } from "@/lib/leclat-salon";
 import { BURGER_LAB_SLUG } from "@/lib/burger-lab";
 import { PIZZERIA_NAPOLES_SLUG } from "@/lib/pizzeria-napoles";
 import { GELATO_CO_SLUG } from "@/lib/gelato-co";
+import { DECO_BAZAR_CO_SLUG } from "@/lib/deco-bazar-co";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -596,6 +597,25 @@ const GELATO_CO_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const DECO_BAZAR_CO_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-zinc-400/20",
+  accent: "text-zinc-300",
+  border: "group-hover:border-zinc-400/50",
+  pitch:
+    "DecoBazar & Co.: e-commerce Nordic minimalista con buscador, filtros categoría/material, hover de producto, sets promocionales y checkout con cuotas.",
+  features: [
+    "Buscador autocompletado",
+    "Filtros multi-criterio",
+    "Hover doble imagen",
+    "Badges envío/cuotas",
+    "Carrusel sets",
+    "Carrito por región",
+    "3 cuotas simuladas",
+    "Modal checkout",
+    "Mapa showroom",
+  ],
+};
+
 const BURGER_LAB_SHOWCASE: ShowcaseCardMeta = {
   color: "from-amber-500/25",
   accent: "text-amber-400",
@@ -741,6 +761,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === BURGER_LAB_SLUG) return BURGER_LAB_SHOWCASE;
   if (slug === PIZZERIA_NAPOLES_SLUG) return PIZZERIA_NAPOLES_SHOWCASE;
   if (slug === GELATO_CO_SLUG) return GELATO_CO_SHOWCASE;
+  if (slug === DECO_BAZAR_CO_SLUG) return DECO_BAZAR_CO_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

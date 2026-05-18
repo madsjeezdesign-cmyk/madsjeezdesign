@@ -710,6 +710,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#fb7185",
     previewClass: "from-rose-50 via-stone-50 to-emerald-50",
   },
+  {
+    slug: "deco-bazar-co",
+    title: "DecoBazar & Co.",
+    industry: "Bazar premium · diseño del hogar",
+    tagline: "Filtros · sets · checkout con cuotas",
+    accent: "#5c6b4a",
+    previewClass: "from-white via-zinc-50 to-zinc-100",
+  },
 ];
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);

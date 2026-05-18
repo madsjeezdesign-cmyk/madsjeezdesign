@@ -1,0 +1,21 @@
+.dbz-slide-cart {
+  animation: dbz-slide-in 0.28s ease-out;
+}
+
+@keyframes dbz-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.dbz-carousel {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dbz-carousel > * {
+  scroll-snap-align: start;
+}
