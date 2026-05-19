@@ -89,7 +89,7 @@ export function BeltranBrionesLanding() {
       {/* Hero cinematográfico */}
       <section className="relative flex h-[150vh] flex-col items-center justify-start pt-[18vh]">
         <div
-          className="bb-hero-bg fixed inset-0 scale-105"
+          className="bb-hero-bg pointer-events-none fixed inset-0 -z-10 scale-105"
           style={{ transform: `scale(${heroScale})` }}
           aria-hidden
         >
@@ -102,7 +102,7 @@ export function BeltranBrionesLanding() {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020202]/40 via-[#020202]/80 to-[#020202]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#020202]/40 via-[#020202]/80 to-[#020202]" />
 
         <div className="sticky top-[18vh] z-10 px-4 text-center">
           <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.8em] text-amber-500">
@@ -381,4 +381,5 @@ export function BeltranBrionesLanding() {
     </div>
   );
 }
+
 
