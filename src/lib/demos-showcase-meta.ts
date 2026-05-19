@@ -21,6 +21,7 @@ import { CERRAJERIA_CENTRAL_SLUG } from "@/lib/cerrajeria-central";
 import { LUNA_PETIT_CO_SLUG } from "@/lib/luna-petit-co";
 import { NEXUS_FERRETERIA_SLUG } from "@/lib/nexus-ferreteria";
 import { GUSTITOS_SLUG } from "@/lib/gustitos";
+import { BELTRAN_BRIONES_SLUG } from "@/lib/beltran-briones";
 import { getRetailFashionConfig } from "@/lib/retail-fashion-demos";
 
 /**
@@ -717,6 +718,25 @@ const NEXUS_FERRETERIA_SHOWCASE: ShowcaseCardMeta = {
   ],
 };
 
+const BELTRAN_BRIONES_SHOWCASE: ShowcaseCardMeta = {
+  color: "from-amber-900/40",
+  accent: "text-amber-400",
+  border: "group-hover:border-amber-500/50",
+  pitch:
+    "Beltrán Briones: hero cinematográfico con revelado BRIONES al scroll, torre que crece, pilares Materialidad/Estrategia/Perpetuidad, calculadora ROI y lead magnet.",
+  features: [
+    "Hero scroll BRIONES",
+    "Torre animada scroll",
+    "Calculadora ROI USD",
+    "Lead magnet email",
+    "Pilares elite",
+    "CTA inversión / libro",
+    "WhatsApp directo",
+    "Sub-demo inmobiliaria",
+    "Estética dark luxury",
+  ],
+};
+
 const GUSTITOS_SHOWCASE: ShowcaseCardMeta = {
   color: "from-red-600/30",
   accent: "text-red-400",
@@ -888,6 +908,7 @@ export function getShowcaseMeta(slug: string): ShowcaseCardMeta {
   if (slug === LUNA_PETIT_CO_SLUG) return LUNA_PETIT_CO_SHOWCASE;
   if (slug === NEXUS_FERRETERIA_SLUG) return NEXUS_FERRETERIA_SHOWCASE;
   if (slug === GUSTITOS_SLUG) return GUSTITOS_SHOWCASE;
+  if (slug === BELTRAN_BRIONES_SLUG) return BELTRAN_BRIONES_SHOWCASE;
 
   const fashion = getRetailFashionConfig(slug);
   if (fashion) {

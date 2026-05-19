@@ -25,6 +25,11 @@ const themes: Record<string, Omit<ShowcaseCardTheme, "accentHex" | "accentGlow">
   gimnasio: { badge: "Pulse Cross", subtitle: "Planes · comunidad" },
   veterinaria: { badge: "Patitas Sanas", subtitle: "Guardia · pet shop" },
   inmobiliaria: { badge: "Horizonte", subtitle: "Tasaciones · fichas premium" },
+  "inmobiliaria-beltran-briones": {
+    badge: "Beltrán Briones",
+    subtitle: "ROI · inversión · libro",
+    primaryBtnDarkText: true,
+  },
   tech: { badge: "Vanguardia OS", subtitle: "Infra & IA soberana" },
   floreria: { badge: "Jardín Ensueño", subtitle: "Florería & vivero" },
   taller: { badge: "Motor Dynamics", subtitle: "Tuning & diagnóstico" },

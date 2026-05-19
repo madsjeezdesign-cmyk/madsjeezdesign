@@ -2,7 +2,7 @@
  * Sectores del showroom /demos — agrupa demos por rubro comercial.
  */
 
-export type DemoSectorId = "moda-retail" | "general";
+export type DemoSectorId = "moda-retail" | "inmobiliaria" | "general";
 
 export type DemoSectorMeta = {
   id: DemoSectorId;
@@ -21,11 +21,18 @@ export const DEMO_SECTORS: DemoSectorMeta[] = [
     order: 0,
   },
   {
+    id: "inmobiliaria",
+    label: "Inmobiliaria & inversión",
+    description:
+      "Portfolio premium, tasaciones y landings de educación / influencer para captar inversores y alumnos.",
+    order: 1,
+  },
+  {
     id: "general",
     label: "Todos los rubros",
     description:
       "Ferreterías, gastronomía, servicios, hosting, creadores y más modelos listos para adaptar.",
-    order: 1,
+    order: 2,
   },
 ];
 

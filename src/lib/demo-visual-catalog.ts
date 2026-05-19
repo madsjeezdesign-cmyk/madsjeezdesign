@@ -74,6 +74,14 @@ export const DEMO_IMAGES: Record<string, DemoImageSet> = {
     d: id("photo-1741764014072-68953e93cd48"),
     e: id("photo-1611094016919-36b65678f3d6"),
   },
+  "inmobiliaria-beltran-briones": {
+    cover: id("photo-1486406146926-c627a92ad1ab"),
+    a: id("photo-1738168246881-40f35f8aba0a"),
+    b: id("photo-1715985160053-d339e8b6eb94"),
+    c: id("photo-1680416124510-5eae1beca412"),
+    d: id("photo-1741764014072-68953e93cd48"),
+    e: id("photo-1611094016919-36b65678f3d6"),
+  },
   tech: {
     cover: id("photo-1606857521015-7f9fcf423740"),
     a: id("photo-1551434678-e076c223a692"),
@@ -871,6 +879,11 @@ export const DEMO_LEAD_COPY: Record<string, { kicker: string; title: string; sub
     kicker: "Leads calificados",
     title: "Propuesta Horizonte Propiedades",
     sub: "Portfolio filtrable, tasaciones y fichas con datos que generan confianza antes de la visita.",
+  },
+  "inmobiliaria-beltran-briones": {
+    kicker: "Inversión con datos",
+    title: "Consultá con Beltrán Briones",
+    sub: "Calculadora ROI, lead magnet y CTAs a WhatsApp para inversores y formación en ventas.",
   },
   tech: {
     kicker: "Más trials calificados",

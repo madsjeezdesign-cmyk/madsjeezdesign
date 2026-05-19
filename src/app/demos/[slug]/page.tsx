@@ -20,6 +20,7 @@ import { isCerrajeriaCentralSlug } from "@/lib/cerrajeria-central";
 import { isLunaPetitCoSlug } from "@/lib/luna-petit-co";
 import { isNexusFerreteriaSlug } from "@/lib/nexus-ferreteria";
 import { isGustitosSlug } from "@/lib/gustitos";
+import { isBeltranBrionesSlug } from "@/lib/beltran-briones";
 import { isShowroomWeekendSlug } from "@/lib/showroom-weekend";
 import { isRetailFashionSlug } from "@/lib/retail-fashion-demos";
 import { site } from "@/lib/data";
@@ -60,6 +61,8 @@ import { NexusFerreteriaChrome } from "@/components/demos/nexus-ferreteria/nexus
 import { DemoNexusFerreteria } from "@/components/demos/nexus-ferreteria/nexus-ferreteria-landing";
 import { GustitosChrome } from "@/components/demos/gustitos/gustitos-chrome";
 import { DemoGustitos } from "@/components/demos/gustitos/gustitos-landing";
+import { BeltranBrionesChrome } from "@/components/demos/beltran-briones/beltran-briones-chrome";
+import { DemoBeltranBriones } from "@/components/demos/beltran-briones";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import {
   DemoAbogados,
@@ -231,6 +234,7 @@ const BY_SLUG: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
   "luna-petit-co": DemoLunaPetitCo,
   "nexus-ferreteria": DemoNexusFerreteria,
   gustitos: DemoGustitos,
+  "inmobiliaria-beltran-briones": DemoBeltranBriones,
 };
 
 export function generateStaticParams() {
@@ -421,6 +425,15 @@ export default async function DemoPage({
     return (
       <>
         <GustitosChrome />
+        <Demo />
+      </>
+    );
+  }
+
+  if (isBeltranBrionesSlug(slug)) {
+    return (
+      <>
+        <BeltranBrionesChrome />
         <Demo />
       </>
     );

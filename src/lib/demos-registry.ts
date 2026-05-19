@@ -14,6 +14,8 @@ export type DemoMeta = {
   previewClass: string;
   /** Agrupa en el índice /demos por sector comercial. */
   sector?: DemoSectorId;
+  /** Demo padre en el catálogo (sub-demo). */
+  parentSlug?: string;
 };
 
 export const DEMOS: DemoMeta[] = [
@@ -72,6 +74,17 @@ export const DEMOS: DemoMeta[] = [
     tagline: "Tasaciones y portfolio premium",
     accent: "#c5a572",
     previewClass: "from-slate-950 to-slate-800",
+    sector: "inmobiliaria",
+  },
+  {
+    slug: "inmobiliaria-beltran-briones",
+    title: "Beltrán Briones",
+    industry: "Inmobiliaria · inversión & ventas",
+    tagline: "Calculadora ROI, lead magnet y método Real Estate",
+    accent: "#f59e0b",
+    previewClass: "from-zinc-950 via-amber-950/40 to-black",
+    sector: "inmobiliaria",
+    parentSlug: "inmobiliaria",
   },
   {
     slug: "tech",
@@ -767,6 +780,10 @@ export const DEMOS: DemoMeta[] = [
     previewClass: "from-zinc-950 via-red-950/50 to-black",
   },
 ];
+
+export function getDemoChildren(parentSlug: string): DemoMeta[] {
+  return DEMOS.filter((d) => d.parentSlug === parentSlug);
+}
 
 export const DEMO_SLUGS = DEMOS.map((d) => d.slug);
 

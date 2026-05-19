@@ -89,6 +89,17 @@ export const SHOWCASE_FEATURES: Record<string, ShowcaseFeatures> = {
     "Agentes destacados",
     "Mapa interactivo",
   ],
+  "inmobiliaria-beltran-briones": [
+    "Calculadora ROI",
+    "Lead magnet email",
+    "CTA inversión",
+    "CTA libro / curso",
+    "WhatsApp directo",
+    "Pilares educativos",
+    "Sub-demo inmobiliaria",
+    "Hero datos",
+    "Marca influencer",
+  ],
   tech: [
     "Trial y pricing",
     "Docs y API",

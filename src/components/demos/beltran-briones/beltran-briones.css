@@ -1,0 +1,36 @@
+.bb-root {
+  padding-top: 3.25rem;
+}
+
+.bb-hero-bg {
+  will-change: transform;
+}
+
+.bb-hero-title {
+  will-change: mask-image, -webkit-mask-image;
+}
+
+.bb-tower {
+  box-shadow: 0 0 80px rgba(245, 158, 11, 0.08);
+}
+
+.bb-input {
+  color: #f4f4f5;
+}
+
+.bb-input:focus {
+  border-color: rgb(245 158 11 / 0.5);
+  outline: 2px solid rgb(245 158 11 / 0.15);
+  outline-offset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-tower {
+    transition: none !important;
+  }
+
+  .bb-hero-title {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+}
