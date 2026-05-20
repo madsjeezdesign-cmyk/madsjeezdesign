@@ -1,36 +1,356 @@
+/* ─── Beltrán Briones · AAA Real Estate Demo ────────────────────────────── */
+
+/* Root */
 .bb-root {
-  padding-top: 3.25rem;
+  --gold: #f59e0b;
+  --gold-dim: rgba(245, 158, 11, 0.15);
+  --gold-border: rgba(245, 158, 11, 0.25);
+  --bg-0: #020202;
+  --bg-1: #080808;
+  --bg-2: #0d0d0d;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
+/* Hero */
 .bb-hero-bg {
   will-change: transform;
+  transform-origin: center center;
 }
 
 .bb-hero-title {
   will-change: mask-image, -webkit-mask-image;
+  font-family: "Inter", system-ui, sans-serif;
+  letter-spacing: -0.06em;
 }
 
-.bb-tower {
-  box-shadow: 0 0 80px rgba(245, 158, 11, 0.08);
+/* Grain overlay */
+.bb-grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.032;
+  mix-blend-mode: overlay;
 }
 
+/* Sticky nav */
+.bb-sticky-nav {
+  position: fixed;
+  top: 0;
+  inset-x: 0;
+  z-index: 200;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(2, 2, 2, 0.92);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.12);
+}
+.bb-sticky-nav.is-visible {
+  transform: translateY(0);
+}
+
+/* Gold shimmer text */
+.bb-gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #f59e0b 0%,
+    #fcd34d 40%,
+    #f59e0b 60%,
+    #b45309 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: bb-shimmer 4s linear infinite;
+}
+
+@keyframes bb-shimmer {
+  to { background-position: 200% center; }
+}
+
+/* Stats counter */
+.bb-stat-card {
+  position: relative;
+  overflow: hidden;
+}
+.bb-stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(245,158,11,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.bb-stat-card:hover::before {
+  opacity: 1;
+}
+
+.bb-counter {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Track cards */
+.bb-track-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s;
+}
+.bb-track-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(245,158,11,0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.bb-track-card:hover {
+  transform: translateY(-4px);
+}
+.bb-track-card:hover::after {
+  opacity: 1;
+}
+
+.bb-track-card.bb-track-gold {
+  background: linear-gradient(135deg, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.03) 100%);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+/* Step process */
+.bb-step-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(245,158,11,0.3), transparent);
+  transform: translateX(-50%);
+}
+
+.bb-step-num {
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.05));
+  border: 1px solid rgba(245,158,11,0.25);
+  transition: background 0.3s, border-color 0.3s;
+}
+.bb-step-num:hover {
+  background: linear-gradient(135deg, rgba(245,158,11,0.3), rgba(245,158,11,0.1));
+  border-color: rgba(245,158,11,0.5);
+}
+
+/* ROI Calculator */
+.bb-calc-panel {
+  background: linear-gradient(135deg, #0a0a0a 0%, #0d0a00 100%);
+  border: 1px solid rgba(245,158,11,0.18);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(245,158,11,0.08);
+}
+
+.bb-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+  accent-color: #f59e0b;
+}
+.bb-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245,158,11,0.25), 0 4px 12px rgba(245,158,11,0.3);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.bb-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 6px rgba(245,158,11,0.2), 0 4px 16px rgba(245,158,11,0.4);
+}
+.bb-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #f59e0b;
+  cursor: pointer;
+}
+
+.bb-roi-result {
+  background: radial-gradient(ellipse at 30% 0%, rgba(245,158,11,0.12) 0%, transparent 70%);
+  border: 1px solid rgba(245,158,11,0.2);
+}
+
+/* Case study cards */
+.bb-case-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+}
+.bb-case-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(2,2,2,0.95) 100%);
+  z-index: 1;
+}
+.bb-case-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(245,158,11,0.3);
+}
+.bb-case-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Testimonials */
+.bb-testimonial {
+  transition: transform 0.3s, opacity 0.3s;
+}
+.bb-testimonial:hover {
+  transform: translateY(-2px);
+}
+.bb-quote-mark {
+  font-size: 5rem;
+  line-height: 0.8;
+  color: rgba(245,158,11,0.2);
+  font-family: Georgia, serif;
+}
+
+/* CTA section */
+.bb-cta-final {
+  background: linear-gradient(135deg, #0d0800 0%, #020202 50%, #0a0600 100%);
+  position: relative;
+  overflow: hidden;
+}
+.bb-cta-final::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Buttons */
+.bb-btn-primary {
+  background: #f59e0b;
+  color: #000;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 8px 24px rgba(245,158,11,0.3);
+}
+.bb-btn-primary:hover {
+  background: #fbbf24;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(245,158,11,0.4);
+}
+.bb-btn-primary:active {
+  transform: translateY(0);
+}
+
+.bb-btn-secondary {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  backdrop-filter: blur(8px);
+}
+.bb-btn-secondary:hover {
+  background: rgba(245,158,11,0.1);
+  border-color: rgba(245,158,11,0.4);
+  transform: translateY(-2px);
+}
+
+/* Input */
 .bb-input {
   color: #f4f4f5;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.bb-input:focus {
+  border-color: rgba(245,158,11,0.5);
+  box-shadow: 0 0 0 3px rgba(245,158,11,0.12);
+  outline: none;
 }
 
-.bb-input:focus {
-  border-color: rgb(245 158 11 / 0.5);
-  outline: 2px solid rgb(245 158 11 / 0.15);
-  outline-offset: 0;
+/* Tower animation */
+.bb-tower {
+  box-shadow: 0 0 100px rgba(245,158,11,0.06), 0 40px 80px rgba(0,0,0,0.5);
+  transition: height 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scroll reveal */
+.bb-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.bb-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.bb-reveal-delay-1 { transition-delay: 0.1s; }
+.bb-reveal-delay-2 { transition-delay: 0.2s; }
+.bb-reveal-delay-3 { transition-delay: 0.3s; }
+.bb-reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Separator */
+.bb-sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245,158,11,0.3), transparent);
+}
+
+/* WhatsApp sticky button */
+.bb-wa-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 300;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.bb-wa-btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 12px 32px rgba(37,211,102,0.45);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-tower {
-    transition: none !important;
-  }
-
-  .bb-hero-title {
-    mask-image: none !important;
-    -webkit-mask-image: none !important;
-  }
+  .bb-tower { transition: none !important; }
+  .bb-hero-title { mask-image: none !important; -webkit-mask-image: none !important; }
+  .bb-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .bb-gold-shimmer { animation: none; }
 }
