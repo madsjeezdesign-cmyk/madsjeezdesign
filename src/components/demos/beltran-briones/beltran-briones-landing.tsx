@@ -30,6 +30,7 @@ import {
   BELTRAN_STATS,
   BELTRAN_TESTIMONIALS,
 } from "@/lib/beltran-briones";
+import { BrickWallTitle } from "./brick-wall-title";
 import "./beltran-briones.css";
 
 /* ─── Helpers ─────────────────────────────────────────────────────────────── */
@@ -133,7 +134,6 @@ export function BeltranBrionesLanding() {
   }, []);
   const stickyVisible = scrollY > 120;
   const buildingHeight = Math.min(scrollY / 1.1, 560);
-  const textProgress = Math.min(Math.max(((scrollY - 60) / 320) * 100, 0), 100);
   const heroScale = 1 + scrollY * 0.00008;
 
   /* ROI calculator */
@@ -269,29 +269,12 @@ export function BeltranBrionesLanding() {
             </span>
           </div>
 
-          {/* Title reveal on scroll */}
+          {/* Título construido ladrillo por ladrillo */}
           <div className="relative inline-block px-2 md:px-8">
-            <div
-              className="bb-hero-title text-[clamp(5rem,24vw,18rem)] font-black leading-none text-white drop-shadow-[0_0_100px_rgba(255,255,255,0.15)]"
-              style={{
-                WebkitMaskImage: `linear-gradient(to top, black ${textProgress}%, transparent ${textProgress + 6}%)`,
-                maskImage: `linear-gradient(to top, black ${textProgress}%, transparent ${textProgress + 6}%)`,
-              }}
-            >
-              {cfg.heroTitle}
-            </div>
-            <div className="bb-hero-title text-[clamp(1.2rem,5vw,4rem)] font-black leading-none tracking-[0.25em] text-amber-500">
+            <BrickWallTitle word={cfg.heroTitle} brickDelayMs={40} autoStartDelayMs={600} />
+            <div className="bb-hero-title mt-4 text-[clamp(1.2rem,5vw,4rem)] font-black leading-none tracking-[0.25em] text-amber-500 drop-shadow-[0_0_40px_rgba(245,158,11,0.35)]">
               {cfg.heroSubtitle}
             </div>
-
-            {/* Glow line */}
-            {textProgress > 0 && textProgress < 96 && (
-              <div
-                className="absolute right-0 left-0 z-20 h-1 rounded-full bg-amber-400 blur-sm"
-                style={{ bottom: `${textProgress}%`, boxShadow: "0 0 24px 4px rgba(251,191,36,0.7)", opacity: 1 - textProgress / 100 }}
-                aria-hidden
-              />
-            )}
           </div>
 
           <p className="mt-8 max-w-xl mx-auto text-base font-light tracking-widest text-gray-400 italic md:text-xl">
