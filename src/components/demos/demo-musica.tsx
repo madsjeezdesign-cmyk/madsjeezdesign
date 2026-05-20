@@ -1,202 +1,275 @@
-import { Guitar, Mic, Music, Music2, Users } from "lucide-react";
+"use client";
+
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import {
+  ArrowRight,
+  Guitar,
+  Headphones,
+  Mic2,
+  Music2,
+  Play,
+  Star,
+  Users,
+} from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
-import {
-  DEMO_HEADING_CLASS,
-  demoBodyStyle,
-  getDemoArtDirection,
-} from "@/lib/demo-art-direction";
-import {
-  DemoDetailGrid,
-  DemoFaqList,
-  DemoLongStory,
-  DemoProcessSteps,
-  DemoStatsStrip,
-  DemoTestimonials,
-} from "./demo-common-sections";
-import { DemoBrandNav } from "./demo-brand-nav";
-import { DemoEnhancements } from "./demo-enhancements";
-import { DemoThemedHero } from "./demo-themed-hero";
+import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
 
 const SLUG = "musica" as const;
+const H = DEMO_HEADING_CLASS[SLUG];
+
+const img = (id: string) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=85`;
+
+const IMAGES = {
+  cover:  img("photo-1511671782779-c97d3d27a1d4"),
+  piano:  img("photo-1520523839897-bd0b52f945a0"),
+  guitar: img("photo-1493225457124-a3eb161ffa5f"),
+  class:  img("photo-1524117074681-31bd4de22ad3"),
+  stage:  img("photo-1501612780327-45045538702b"),
+};
+
+const COURSES = [
+  { icon: Piano, name: "Piano Clásico", level: "Principiante → Avanzado", seats: "3 cupos" },
+  { icon: Guitar, name: "Guitarra Eléctrica", level: "Pop · Rock · Blues", seats: "2 cupos" },
+  { icon: Mic2, name: "Canto & Técnica vocal", level: "Todos los niveles", seats: "4 cupos" },
+  { icon: Music2, name: "Teoría Musical", level: "Lectura · Armonía · Composición", seats: "6 cupos" },
+  { icon: Headphones, name: "Producción Digital", level: "DAW · Mezcla · Master", seats: "2 cupos" },
+  { icon: Users, name: "Ensamble & Banda", level: "Conjunto · Repertorio vivo", seats: "1 grupo" },
+];
+
+function Piano(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="M6 4v8M10 4v8M14 4v8M18 4v8M4 12h16" />
+    </svg>
+  );
+}
+
+const STATS = [
+  { val: "18 años", label: "Trayectoria" },
+  { val: "340+", label: "Alumnos formados" },
+  { val: "8", label: "Profesores en planta" },
+  { val: "Trinity", label: "Exámenes certificados" },
+];
+
+function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  return (
+    <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }} className={className}>
+      {children}
+    </motion.div>
+  );
+}
 
 export function DemoMusicaLanding() {
-  const v = getDemoVisuals(SLUG);
-  const art = getDemoArtDirection(SLUG);
-  const h = DEMO_HEADING_CLASS[SLUG];
+  getDemoVisuals(SLUG);
 
   return (
-    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <DemoBrandNav
-        slug="musica"
-        brand="PENTAGRAMA"
-        iconKey="Music"
-        variant="dark"
-        primaryCta="Inscripción 2026"
-        primaryCtaClass={art.primaryCta}
-      />
+    <div style={demoBodyStyle(SLUG)} className="min-h-screen bg-[#12082a] text-white">
 
+      {/* ── NAV ── */}
+      <nav className="sticky top-0 z-40 flex items-center justify-between border-b border-white/[0.07] bg-[#12082a]/90 px-5 py-4 backdrop-blur-xl md:px-10">
+        <div className="flex items-center gap-3">
+          <Music2 className="h-5 w-5 text-violet-400" />
+          <span className={`text-sm font-bold tracking-widest text-white uppercase ${H}`}>Pentagrama</span>
+          <span className="hidden rounded-sm bg-violet-500/20 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-violet-400 md:block">Escuela de música</span>
+        </div>
+        <div className="hidden items-center gap-6 text-[11px] font-semibold uppercase tracking-widest text-zinc-500 md:flex">
+          {["Cursos", "Horarios", "Exámenes", "Contacto"].map((n) => (
+            <span key={n} className="cursor-pointer hover:text-violet-300 transition-colors">{n}</span>
+          ))}
+          <button type="button" className="rounded-full bg-violet-600 px-5 py-2 text-[10px] font-bold text-white hover:bg-violet-500 transition-colors">
+            Inscripción 2026
+          </button>
+        </div>
+      </nav>
 
-      <DemoThemedHero
-        variant={art.heroVariant}
-        imageSrc={v.cover}
-        headingClass={h}
-        titleColorClass="text-white"
-        leadColorClass="text-violet-200/80"
-        kicker={
-          <div className="flex items-center justify-center gap-2 text-fuchsia-400 opacity-90 sm:justify-start">
-            <Music className="h-5 w-5" />
-            <span className={`text-[10px] uppercase tracking-[0.35em] ${h}`}>Conservatorio · bandas · producción</span>
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden">
+        {/* background image full bleed */}
+        <div className="relative h-[85vh] min-h-[560px]">
+          <Image src={IMAGES.cover} alt="Escuela de música Pentagrama" fill className="object-cover object-center" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#12082a] via-[#12082a]/75 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#12082a] via-transparent to-[#12082a]/40" />
+
+          <div className="absolute inset-0 flex items-center px-5 md:px-10">
+            <div className="max-w-2xl">
+              <motion.div
+                initial={{ opacity: 0, y: -16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mb-6 flex items-center gap-3"
+              >
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-violet-400 text-violet-400" />
+                ))}
+                <span className="text-[11px] text-zinc-400">+ de 340 músicos formados</span>
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, delay: 0.1 }}
+                className={`text-6xl font-bold leading-[0.93] tracking-tight text-white md:text-8xl ${H}`}
+              >
+                Donde la música
+                <br />
+                <span className="italic text-violet-300">se convierte</span>
+                <br />
+                en lenguaje
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="mt-6 max-w-md text-sm leading-loose text-zinc-300 md:text-base"
+              >
+                Piano, guitarra, canto, producción y ensamble. Clases individuales y grupales con maestros egresados del conservatorio. Exámenes Trinity College London certificados.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.42, duration: 0.5 }}
+                className="mt-8 flex flex-wrap gap-3"
+              >
+                <button type="button" className={`flex items-center gap-2 rounded-full bg-violet-600 px-7 py-3.5 font-bold text-white hover:bg-violet-500 transition-colors ${H}`}>
+                  Inscribirme ahora <ArrowRight className="h-4 w-4" />
+                </button>
+                <button type="button" className="flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+                  <Play className="h-4 w-4 fill-white" /> Ver clases demo
+                </button>
+              </motion.div>
+            </div>
           </div>
-        }
-        title={
-          <>
-            Música
-            <br />
-            <span className="text-fuchsia-400">en serio</span>
-          </>
-        }
-        lead="Piano, guitarra, canto, batería, ensambles de jazz y orquesta juvenil demo. Metodología por objetivos con grabación trimestral de progreso. Salas insonorizadas, préstamo de instrumento para primer mes y recitales familiares en teatro propio de 80 butacas."
-        ctas={
-          <>
-            <button type="button" className={art.primaryCta}>
-              Probar clase
-            </button>
-            <button type="button" className={art.secondaryCta}>
-              Ver sedes
-            </button>
-          </>
-        }
-      />
-
-      <DemoLongStory
-        sectionHeadingClass={h}
-        kicker="Propuesta pedagógica"
-        title="Lectura, oído y escena desde el primer mes"
-        paragraphs={[
-          "No enseñamos solo ‘temas’: trabajamos técnica gradual, teoría aplicada y improvisación guiada según edad. Los grupos de banda adolescente ensayan con técnico de sonido para entender monitores y másters demo.",
-          "Padres reciben informe breve con videos privados: tres objetivos cumplidos y uno siguiente. Así evitamos sorpresas antes de invertir en instrumento definitivo.",
-        ]}
-        kickerClass="text-fuchsia-400"
-        titleClass="text-white"
-        pClass="mt-4 text-sm text-violet-200/75"
-        sectionClass="bg-violet-900/30"
-      />
-
-      <section className="grid gap-4 border-y border-fuchsia-500/20 px-4 py-12 md:grid-cols-3 md:px-10">
-        {[
-          { icon: Guitar, t: "Cuerdas y folk", d: "Ukelele a partir de 6 años; guitarra eléctrica con backing tracks." },
-          { icon: Mic, t: "Canto moderno", d: "Respiración diafragmática, registro mixto y mic técnica en vivo." },
-          { icon: Music2, t: "Teoría y audición", d: "Solfeo movido, armonía pop y transcripción por oído." },
-        ].map(({ icon: I, t, d }) => (
-          <div key={t} className={`p-6 ${art.cardShell}`}>
-            <I className="h-7 w-7 text-fuchsia-400" />
-            <h3 className={`mt-3 font-bold text-white ${h}`}>{t}</h3>
-            <p className="mt-2 text-sm text-violet-300/70">{d}</p>
-          </div>
-        ))}
+        </div>
       </section>
 
-      <DemoStatsStrip
-        stats={[
-          { value: "480", label: "Alumnos", hint: "Todas las sedes" },
-          { value: "32", label: "Docentes", hint: "Titulados y session players" },
-          { value: "14", label: "Salas", hint: "Acústica tratada" },
-          { value: "2", label: "Shows / año", hint: "Teatro propio" },
-        ]}
-        cardClass={`p-6 ${art.cardShell}`}
-        valueClass={`text-3xl font-black text-fuchsia-400 ${h}`}
-        sectionClass="border-y border-fuchsia-500/20 bg-black/20"
-        labelClass="mt-2 text-[11px] font-bold uppercase text-violet-300/80"
-        hintClass="mt-1 text-xs text-violet-400/60"
-      />
-
-      <DemoProcessSteps
-        sectionHeadingClass={h}
-        title="Inscripción"
-        steps={[
-          { n: "01", t: "Trial 20 min", d: "Sin costo para conocer alumnado y nivel previo." },
-          { n: "02", t: "Plan de estudio", d: "Frecuencia semanal o quincenal + material digital." },
-          { n: "03", t: "Cuota y becas", d: "Hermano 15% off; beca social demo con documentación." },
-          { n: "04", t: "Seguimiento", d: "Repos grabados en plataforma si faltás con aviso 24 h." },
-        ]}
-        sectionClass="bg-violet-950/80"
-        titleClass="text-white"
-        stepNumClass="text-fuchsia-400"
-        cardClass={`p-6 ${art.cardShell}`}
-        stepTitleClass="font-bold text-white"
-        stepDescClass="mt-2 text-sm text-violet-300/80"
-      />
-
-      <DemoDetailGrid
-        sectionHeadingClass={h}
-        title="Cursos y talleres"
-        items={[
-          { title: "Rock band lab", body: "Arreglos en grupo, ensayo con click y show en vivo al cierre del cuatrimestre demo." },
-          { title: "Producción en casa", body: "DAW, MIDI, samples legales y mezcla básica en auriculares." },
-          { title: "Trinity & ABRSM prep", body: "Examen internacional opcional con coach de examen simulado." },
-          { title: "Adultos 40+", body: "Horarios al mediodía; repertorio cancionero argentino y bossa." },
-        ]}
-        itemTitleClass="font-bold text-fuchsia-300"
-        itemBodyClass="mt-2 text-sm text-violet-200/65"
-        titleClass="text-white"
-        cardClass={`p-6 ${art.cardShell}`}
-      />
-
-      <DemoTestimonials
-        sectionHeadingClass={h}
-        title="Familias"
-        quotes={[
-          { text: "Mi hija pasó de ver videos a tocar en un escenario real; eso no tiene precio.", author: "Vero Salas", role: "Madre de alumna" },
-          { text: "Retomé piano a los 52 sin sentirme fuera de lugar.", author: "Gustavo Prieto", role: "Contador" },
-          { text: "El ensamble de jazz le dio amigos para toda la vida.", author: "Leo", role: "Alumno 17 años" },
-        ]}
-        sectionClass="bg-fuchsia-950/20"
-        titleClass="text-white"
-        cardClass={`p-6 ${art.cardShell}`}
-        quoteClass="text-sm italic text-violet-100/85"
-        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-fuchsia-400"
-      />
-
-      <DemoFaqList
-        sectionHeadingClass={h}
-        title="Preguntas"
-        items={[
-          { q: "¿Necesito instrumento propio?", a: "Préstamo inicial incluido; luego lista de compra ajustada al presupuesto." },
-          { q: "¿Hay clases grupales baratas?", a: "Sí, introducción a ritmo y uke en grupos de 5." },
-          { q: "¿Reagendan por viaje?", a: "Hasta 2 clases por trimestre congeladas sin costo demo." },
-          { q: "¿Online?", a: "Híbrido disponible para teoría y piano con tecla ponderada en casa." },
-        ]}
-        titleClass="text-white"
-        qClass="font-bold text-violet-100"
-        aClass="mt-2 text-sm text-violet-300/80"
-      />
-
-      <section className="flex flex-wrap items-center justify-center gap-4 bg-fuchsia-600 py-10">
-        <Music className="h-10 w-10 text-white" />
-        <Users className="h-10 w-10 text-white" />
-        <p className={`text-center text-2xl uppercase text-white ${h}`}>Open day sábado demo · cupo 40 familias</p>
+      {/* ── STATS ── */}
+      <section className="border-y border-white/[0.07] bg-[#1a0f34]">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 divide-x divide-white/[0.07] md:grid-cols-4">
+          {STATS.map((s, i) => (
+            <FadeUp key={s.label} delay={i * 0.08}>
+              <div className="px-8 py-8 text-center">
+                <p className={`text-3xl font-bold text-violet-300 md:text-4xl ${H}`}>{s.val}</p>
+                <p className="mt-2 text-[12px] uppercase tracking-widest text-zinc-500">{s.label}</p>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
       </section>
 
-      <DemoEnhancements
-        slug={SLUG}
-        omitCoverBanner
-        brandLabel="Pentagrama"
-        shopCardClass="border border-violet-500/30 bg-black/50"
-        shopAccentClass="bg-fuchsia-500 font-bold text-white"
-        sectionClass="border-y border-violet-500/20 bg-violet-950"
-        titleClass="text-white"
-        cardClass={`p-6 ${art.cardShell}`}
-        quoteClass="text-sm italic text-violet-100/85"
-        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-fuchsia-400"
-        extraTestimonialsTitle="Alumnos y padres"
-        extraTestimonials={[
-          { text: "Mi hijo practicó Trinity sin sentir examen de tortura.", author: "Caro P.", role: "Madre demo" },
-          { text: "Sala de ensayo con backline lista para la muestra anual.", author: "Tomi", role: "Batería" },
-          { text: "Profes de rock sin snobismo con los clásicos.", author: "Leo", role: "Adulto iniciante" },
-        ]}
-      />
+      {/* ── COURSES ── */}
+      <section className="px-5 py-20 md:px-10">
+        <div className="mx-auto max-w-7xl">
+          <FadeUp>
+            <div className="flex items-end justify-between">
+              <div>
+                <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-violet-500 ${H}`}>Cursos 2026</p>
+                <h2 className={`text-3xl font-bold text-white md:text-5xl ${H}`}>Un instrumento<br />o todos a la vez</h2>
+              </div>
+              <button type="button" className="hidden items-center gap-2 text-sm font-semibold text-violet-400 hover:text-violet-300 transition-colors md:flex">
+                Ver grilla completa <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          </FadeUp>
 
-      <footer className="py-8 text-center text-xs text-violet-800">Demo · MadsJeez Design</footer>
+          <div className="mt-12 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {COURSES.map((c, i) => (
+              <FadeUp key={c.name} delay={i * 0.07}>
+                <div className="group flex items-start gap-4 rounded-2xl border border-white/[0.07] bg-[#1a0f34] p-6 transition-all hover:border-violet-500/30 hover:bg-[#1f1040]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 group-hover:bg-violet-500/20 transition-colors">
+                    <c.icon className="h-5 w-5" />
+                  </div>
+                  <div className="flex-1">
+                    <p className={`font-bold text-white ${H}`}>{c.name}</p>
+                    <p className="mt-1 text-[12px] text-zinc-500">{c.level}</p>
+                    <span className="mt-3 inline-block rounded-full bg-violet-500/15 px-3 py-1 text-[10px] font-bold text-violet-400">
+                      {c.seats}
+                    </span>
+                  </div>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SPLIT STORY ── */}
+      <section className="border-y border-white/[0.07] px-5 py-20 md:px-10">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
+          <FadeUp>
+            <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/[0.07]">
+              <Image src={IMAGES.class} alt="Clase de música" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-900/40 to-transparent" />
+              {/* vinyl record decorative */}
+              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full border-4 border-violet-500/20 opacity-50" />
+              <div className="absolute -right-4 -top-4 h-20 w-20 rounded-full border-2 border-violet-500/30 opacity-50" />
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.15}>
+            <p className={`mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-violet-500 ${H}`}>Metodología</p>
+            <h2 className={`text-4xl font-bold text-white md:text-5xl ${H}`}>Teoría que<br />se aprende tocando</h2>
+            <div className="mt-6 space-y-4 text-sm leading-relaxed text-zinc-400">
+              <p>No separamos la teoría de la práctica. Desde el primer día el alumno toca, escucha y crea — el solfeo aparece como herramienta cuando el oído ya entendió el concepto.</p>
+              <p>Para los que apuntan a exámenes internacionales, preparamos repertorio Trinity/ABRSM con simulacros desde 6 meses antes del examen.</p>
+            </div>
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              {[
+                { label: "Clases 1 a 1", desc: "Progreso a tu ritmo" },
+                { label: "Grupos reducidos", desc: "Máx. 4 alumnos" },
+                { label: "Clases híbridas", desc: "Presencial + online" },
+                { label: "Exámenes Trinity", desc: "London certificados" },
+              ].map((b) => (
+                <div key={b.label} className="rounded-xl border border-white/[0.07] p-4">
+                  <p className={`text-sm font-bold text-violet-300 ${H}`}>{b.label}</p>
+                  <p className="mt-1 text-[11px] text-zinc-500">{b.desc}</p>
+                </div>
+              ))}
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ── STAGE IMAGE ── */}
+      <section className="relative h-64 overflow-hidden md:h-96">
+        <Image src={IMAGES.stage} alt="Recital Pentagrama" fill className="object-cover object-top" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#12082a] via-[#12082a]/50 to-transparent" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <FadeUp>
+            <div className="text-center">
+              <p className={`text-2xl font-bold text-white md:text-4xl ${H}`}>Recital de fin de año</p>
+              <p className="mt-2 text-sm text-zinc-400">Escenario real · público · experiencia completa</p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ── CTA BAND ── */}
+      <section className="bg-gradient-to-r from-violet-900 to-indigo-900 px-5 py-16 md:px-10">
+        <div className="mx-auto max-w-4xl text-center">
+          <FadeUp>
+            <h2 className={`text-3xl font-bold text-white md:text-5xl ${H}`}>Inscripciones abiertas.<br />Cupos muy limitados.</h2>
+            <p className="mt-4 text-sm text-violet-200">Clases de prueba gratuita disponibles para nuevos alumnos</p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <button type="button" className={`rounded-full bg-white px-8 py-3.5 font-bold text-violet-900 hover:bg-violet-50 transition-colors ${H}`}>
+                Reservar clase de prueba
+              </button>
+              <button type="button" className="rounded-full border border-white/30 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+                Ver horarios y aranceles
+              </button>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      <footer className="bg-[#0d0520] py-8 text-center text-xs text-zinc-600">Demo · MadsJeez Design</footer>
     </div>
   );
 }
