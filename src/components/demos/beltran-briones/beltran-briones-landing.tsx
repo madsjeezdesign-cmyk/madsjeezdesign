@@ -30,7 +30,7 @@ import {
   BELTRAN_STATS,
   BELTRAN_TESTIMONIALS,
 } from "@/lib/beltran-briones";
-import { VanguardHeroTitle } from "./vanguard-hero-title";
+import { BrickWallTitle } from "./brick-wall-title";
 import "./beltran-briones.css";
 
 /* ─── Helpers ─────────────────────────────────────────────────────────────── */
@@ -134,7 +134,6 @@ export function BeltranBrionesLanding() {
   }, []);
   const stickyVisible = scrollY > 120;
   const buildingHeight = Math.min(scrollY / 1.1, 560);
-  const heroTextScrollProgress = Math.min(Math.max(((scrollY - 60) / 320) * 100, 0), 100);
   const heroScale = 1 + scrollY * 0.00008;
 
   /* ROI calculator */
@@ -270,9 +269,9 @@ export function BeltranBrionesLanding() {
             </span>
           </div>
 
-          {/* Título hero estilo Vanguardia (reveal + glow) */}
+          {/* H1 construido ladrillo por ladrillo (código de referencia) */}
           <div className="relative inline-block px-2 md:px-8">
-            <VanguardHeroTitle word={cfg.heroTitle} scrollProgress={heroTextScrollProgress} />
+            <BrickWallTitle word={cfg.heroTitle} brickDelayMs={40} autoStartDelayMs={800} />
             <div className="bb-hero-title mt-4 text-[clamp(1.2rem,5vw,4rem)] font-black leading-none tracking-[0.25em] text-amber-500 drop-shadow-[0_0_40px_rgba(245,158,11,0.35)]">
               {cfg.heroSubtitle}
             </div>
