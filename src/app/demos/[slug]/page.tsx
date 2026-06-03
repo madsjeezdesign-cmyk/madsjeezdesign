@@ -64,6 +64,7 @@ import { DemoGustitos } from "@/components/demos/gustitos/gustitos-landing";
 import { BeltranBrionesChrome } from "@/components/demos/beltran-briones/beltran-briones-chrome";
 import { DemoBeltranBriones } from "@/components/demos/beltran-briones";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
+import { SLUG_TO_VARIANT } from "@/components/demos/retail-fashion/fashion-variant-router";
 import {
   DemoAbogados,
   DemoCatering,
@@ -440,12 +441,18 @@ export default async function DemoPage({
   }
 
   if (isRetailFashionSlug(slug)) {
-    return (
-      <>
-        <FashionDemoChrome brand={d.title} />
-        <Demo />
-      </>
-    );
+    // The 4 new chrome variants render their own back-to-showroom link.
+    // Only the legacy shared shell needs the FashionDemoChrome floating bar.
+    const variant = SLUG_TO_VARIANT[slug] ?? "legacy";
+    if (variant === "legacy") {
+      return (
+        <>
+          <FashionDemoChrome brand={d.title} />
+          <Demo />
+        </>
+      );
+    }
+    return <Demo />;
   }
 
   return (
