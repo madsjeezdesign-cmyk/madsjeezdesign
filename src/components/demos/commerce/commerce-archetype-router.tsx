@@ -3,6 +3,10 @@
 /**
  * Routes each commerce slug to its archetype shell.
  * Slugs not mapped here fall back to the legacy CommerceLanding for back-compat.
+ *
+ * NOTE: electricista, albanil, arquitectos are intercepted FIRST and routed
+ * to the creator-domain trade-worker shell — they were wrongly sharing the
+ * gamer-saas CreatorLanding before this split.
  */
 
 import { CommerceLanding } from "./demo-commerce-landing";
@@ -10,16 +14,26 @@ import { TradeTrustLanding } from "./trade-trust-landing";
 import { NeighborhoodWarmthLanding } from "./neighborhood-warmth-landing";
 import { B2bAgencyLanding } from "./b2b-agency-landing";
 import { RetailGridLanding } from "./retail-grid-landing";
+import { CreatorArchetypeLanding } from "../creator/creator-archetype-router";
 
-export type CommerceArchetype = "trade-trust" | "neighborhood-warmth" | "b2b-agency" | "retail-grid" | "legacy";
+export type CommerceArchetype =
+  | "trade-worker"
+  | "trade-trust"
+  | "neighborhood-warmth"
+  | "b2b-agency"
+  | "retail-grid"
+  | "legacy";
 
 const SLUG_TO_ARCHETYPE: Record<string, CommerceArchetype> = {
-  // Trade trust — licensed trades, urgency + matrícula + photo of work
+  // Trade WORKER (creator-domain): photo-led editorial, single-quote testimonials.
+  electricista: "trade-worker",
+  albanil: "trade-worker",
+  arquitectos: "trade-worker",
+
+  // Trade TRUST (commerce-domain): licensed trades, urgency + matrícula.
   gasista: "trade-trust",
   motores: "trade-trust",
   "taller-motos": "trade-trust",
-  electricista: "trade-trust",
-  albanil: "trade-trust",
 
   // Neighborhood warmth — local barrio commerce, warm voice
   almacen: "neighborhood-warmth",
@@ -32,7 +46,6 @@ const SLUG_TO_ARCHETYPE: Record<string, CommerceArchetype> = {
   // B2B agency — professional services with editorial restraint
   marketing: "b2b-agency",
   imprenta: "b2b-agency",
-  arquitectos: "b2b-agency",
 
   // Retail grid — product-first e-commerce feel
   ropa: "retail-grid",
@@ -52,6 +65,8 @@ type Props = { slug: string };
 export function CommerceArchetypeLanding({ slug }: Props) {
   const archetype = getCommerceArchetype(slug);
   switch (archetype) {
+    case "trade-worker":
+      return <CreatorArchetypeLanding slug={slug} />;
     case "trade-trust":
       return <TradeTrustLanding slug={slug} />;
     case "neighborhood-warmth":
