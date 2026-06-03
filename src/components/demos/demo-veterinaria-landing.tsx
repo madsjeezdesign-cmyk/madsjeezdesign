@@ -1,681 +1,587 @@
 "use client";
 
+/**
+ * VETERINARIA — neighborhood vet clinic.
+ *
+ * Identity: warm sage + clay on cream surface (cream as CARD only, never body bg).
+ * Body is off-white #fbfaf6. Soft serif headline (Instrument Serif) paired with
+ * Plus Jakarta body. No luxury cosplay. No ALL-CAPS eyebrows. No "01/02/03".
+ *
+ * Layout move: split hero with friendly clinic photo on the right, opening hours
+ * and matrícula veterinaria pill above-the-fold. Services in a soft 2x3 grid
+ * with sage hairline. Testimonials as serif italic single quotes, no card.
+ */
+
 import Image from "next/image";
-import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowRight, Gem, Globe, Search, Share2, Sparkles, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Bone,
+  HeartPulse,
+  MapPin,
+  MessageCircle,
+  Phone,
+  PawPrint,
+  Scissors,
+  ShieldCheck,
+  Sparkles,
+  Stethoscope,
+  Syringe,
+} from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
+import { useMotionTransition } from "@/lib/motion";
 import { DemoLeadForm } from "./demo-lead-form";
-import "./demo-veterinaria-premium.css";
 
 const SLUG = "veterinaria" as const;
-const BRAND = "Patitas Sanas";
+const BRAND = "Don Pancho";
+const WA_URL = "https://wa.me/5491100000000?text=Hola%20Don%20Pancho%2C%20necesito%20una%20consulta";
+const URGENCIAS_URL = "https://wa.me/5491100000000?text=URGENCIA%20-%20mi%20mascota%20necesita%20atenci%C3%B3n%20ya%21";
 
-const ATELIER = [
-  {
-    title: "Marroquinería",
-    subtitle: "Pieles exóticas & latón macido",
-    imageKey: "a" as const,
-  },
-  {
-    title: "Alta joyería",
-    subtitle: "Diamantes & oro certificado",
-    imageKey: "b" as const,
-  },
-  {
-    title: "Maison design",
-    subtitle: "Mobiliario de autor & confort",
-    imageKey: "c" as const,
-  },
-] as const;
+const SAGE = "#5b7a5c";
+const SAGE_DARK = "#3f5a40";
+const CLAY = "#c87b54";
+const INK = "#1c2421";
+const PAPER = "#fbfaf6";
+const CREAM = "#f1ecdf";
 
-const BOUTIQUE = [
+const SERVICES = [
   {
-    name: 'Correa "Vendôme" en avestruz',
-    description:
-      "Cuero de avestruz africano con detalles en oro rosa. Una pieza de declaración para el paseo urbano.",
-    price: 1250,
-    imageKey: "d" as const,
+    icon: Stethoscope,
+    title: "Consulta general",
+    desc: "Examen clínico completo, vacunación y plan sanitario por etapa de vida.",
   },
   {
-    name: 'Cofre gastronómico "Royal"',
-    description:
-      "Selección wagyu y trufa negra, formulada por nutricionistas veterinarios de élite para el paladar más exigente.",
-    price: 320,
-    imageKey: "e" as const,
+    icon: Syringe,
+    title: "Vacunación",
+    desc: "Plan anual con recordatorio por WhatsApp. Antirrábica, séxtuple y triple felina.",
   },
   {
-    name: 'Sofá "Elysium" ortopédico',
-    description:
-      "Estructura de ébano y terciopelo italiano anti-manchas. Tecnología de descanso aeroespacial.",
-    price: 4800,
-    imageKey: "cover" as const,
-  },
-] as const;
-
-const CONCIERGE = [
-  {
-    title: "Guardia 24 h",
-    desc: "Internación premium con monitoreo continuo y suites climatizadas.",
+    icon: Scissors,
+    title: "Cirugía",
+    desc: "Castraciones, tumores benignos y traumatología con anestesia monitoreada.",
   },
   {
-    title: "Spa & grooming",
-    desc: "Baños terapéuticos, ozonoterapia y estilismo de pasarela.",
+    icon: PawPrint,
+    title: "Peluquería",
+    desc: "Baño, corte y desenredo sin sedación. Reservá el turno y dejá tu mascota desde las 9.",
   },
   {
-    title: "Nutrición bespoke",
-    desc: "Planes por raza, edad y metabolismo con seguimiento mensual.",
+    icon: Bone,
+    title: "Nutrición",
+    desc: "Plan alimentario para sobrepeso, alergias o cachorros. Te asesoramos sin venderte de más.",
   },
   {
-    title: "Transporte VIP",
-    desc: "Traslados en vehículo climatizado con handler certificado.",
+    icon: HeartPulse,
+    title: "Exóticos",
+    desc: "Conejos, hurones, aves, reptiles. Atención específica con especialista los jueves.",
   },
 ] as const;
 
-const MEMBERSHIP = [
-  "Acceso prioritario a colecciones cápsula",
-  "Eventos en Madrid, París y Londres",
-  "Concierge global para viajes con mascota",
-  "10% en boutique y atelier a medida",
+const HOURS = [
+  { d: "Lunes a viernes", h: "9:00 — 20:00" },
+  { d: "Sábados", h: "9:00 — 14:00" },
+  { d: "Domingos", h: "Urgencias por WhatsApp" },
 ] as const;
 
-function formatUsd(n: number) {
-  return `$${n.toLocaleString("en-US")}`;
-}
-
-function useLuxCursor() {
-  const dotRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
-  const [hovering, setHovering] = useState(false);
-
-  useEffect(() => {
-    const move = (e: MouseEvent) => {
-      if (dotRef.current) {
-        dotRef.current.style.left = `${e.clientX}px`;
-        dotRef.current.style.top = `${e.clientY}px`;
-      }
-      if (ringRef.current) {
-        ringRef.current.style.left = `${e.clientX}px`;
-        ringRef.current.style.top = `${e.clientY}px`;
-      }
-    };
-    window.addEventListener("mousemove", move, { passive: true });
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
-
-  const onEnterInteractive = useCallback(() => setHovering(true), []);
-  const onLeaveInteractive = useCallback(() => setHovering(false), []);
-
-  return { dotRef, ringRef, hovering, onEnterInteractive, onLeaveInteractive };
-}
-
-function useScrollReveal(rootRef: React.RefObject<HTMLDivElement | null>) {
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-    const els = root.querySelectorAll(".paw-scroll-reveal");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("is-visible");
-        });
-      },
-      { threshold: 0.12 },
-    );
-    els.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, [rootRef]);
-}
+const TESTIMONIALS = [
+  {
+    text: "Atendieron a Mocha de madrugada cuando se intoxicó. Don Pancho contestó el WhatsApp en cinco minutos. Hoy está perfecta.",
+    name: "Mariana B.",
+    pet: "con Mocha, 4 años",
+  },
+  {
+    text: "Llevo a Roco y a Pulga acá desde 2014. La doctora Carla explica todo sin tecnicismos y nunca infla la factura.",
+    name: "Federico L.",
+    pet: "con Roco (15) y Pulga (3)",
+  },
+  {
+    text: "Mi conejo necesitaba un veterinario de exóticos y son los únicos del barrio que saben. Precio justo, mucha paciencia.",
+    name: "Sofía Q.",
+    pet: "con Tito, conejo holandés",
+  },
+] as const;
 
 export function DemoVeterinariaLanding() {
   const v = getDemoVisuals(SLUG);
-  const rootRef = useRef<HTMLDivElement>(null);
-  useScrollReveal(rootRef);
-  const { dotRef, ringRef, hovering, onEnterInteractive, onLeaveInteractive } = useLuxCursor();
-
-  const [headerScrolled, setHeaderScrolled] = useState(false);
-  const [heroMask, setHeroMask] = useState(false);
-  const [bookingOpen, setBookingOpen] = useState(false);
-  const [wishlist, setWishlist] = useState<string[]>([]);
-
-  const imageMap = {
-    cover: v.cover,
-    a: v.a,
-    b: v.b,
-    c: v.c,
-    d: v.d ?? v.a,
-    e: v.e ?? v.b,
-  };
-
-  const toggleBooking = useCallback(() => setBookingOpen((o) => !o), []);
-  const closeBooking = useCallback(() => setBookingOpen(false), []);
-
-  const toggleWishlist = useCallback((id: string) => {
-    setWishlist((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
-  }, []);
+  const t = useMotionTransition("display");
+  const tUi = useMotionTransition("ui");
+  const [openDay, setOpenDay] = useState(true);
 
   useEffect(() => {
-    const t = requestAnimationFrame(() => setHeroMask(true));
-    return () => cancelAnimationFrame(t);
+    const h = new Date().getHours();
+    const day = new Date().getDay();
+    const inHours =
+      (day >= 1 && day <= 5 && h >= 9 && h < 20) ||
+      (day === 6 && h >= 9 && h < 14);
+    setOpenDay(inHours);
   }, []);
-
-  useEffect(() => {
-    const onScroll = () => setHeaderScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = bookingOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [bookingOpen]);
-
-  const interactiveProps = {
-    onMouseEnter: onEnterInteractive,
-    onMouseLeave: onLeaveInteractive,
-  };
 
   return (
     <div
-      ref={rootRef}
-      className="paw-premium relative min-h-screen overflow-x-hidden bg-[#080808] font-[family-name:var(--font-demo-b-veterinaria)] text-white antialiased selection:bg-[#c5a059]/30"
+      className="relative min-h-screen antialiased"
+      style={{
+        background: PAPER,
+        color: INK,
+        fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
+      }}
     >
-      <div ref={dotRef} className="paw-cursor-dot hidden md:block" aria-hidden />
-      <div
-        ref={ringRef}
-        className={`paw-cursor-ring hidden md:block ${hovering ? "is-hover" : ""}`}
-        aria-hidden
-      />
-
-      {/* Header */}
       <header
-        className={`fixed top-0 z-[100] flex w-full items-center justify-between px-6 py-6 transition-all duration-500 md:px-10 ${
-          headerScrolled ? "bg-black/80 py-4 backdrop-blur-xl" : "md:py-8"
-        }`}
+        className="sticky top-0 z-40"
+        style={{
+          background: `${PAPER}f2`,
+          backdropFilter: "blur(12px)",
+          borderBottom: `1px solid ${INK}10`,
+        }}
       >
-        <div className="flex items-center gap-4">
-          <div className="relative flex h-12 w-12 items-center justify-center border border-[#c5a059]/40">
-            <Gem className="h-6 w-6 text-[#c5a059]" strokeWidth={1.25} />
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
+          <div className="flex items-center gap-3">
+            <div
+              className="flex h-10 w-10 items-center justify-center rounded-full"
+              style={{ background: SAGE, color: PAPER }}
+            >
+              <PawPrint className="h-5 w-5" strokeWidth={1.5} />
+            </div>
+            <div className="flex flex-col leading-tight">
+              <span
+                className="text-[1.25rem] leading-none"
+                style={{ fontFamily: "var(--font-instrument), serif", color: INK }}
+              >
+                Veterinaria {BRAND}
+              </span>
+              <span className="text-[0.72rem]" style={{ color: SAGE_DARK }}>
+                Almagro · MP Vet. 4821
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span className="font-[family-name:var(--font-demo-h-veterinaria)] text-xl leading-none tracking-[0.2em] md:text-3xl">
-              PATITAS
-            </span>
-            <span className="mt-1 text-[8px] uppercase tracking-[0.6em] text-[#c5a059]">
-              L&apos;excellence absolue
-            </span>
-          </div>
-        </div>
 
-        <nav className="hidden gap-12 text-[10px] font-light tracking-[0.4em] lg:flex xl:gap-16">
-          <a href="#atelier" className="transition-colors hover:text-[#c5a059]" {...interactiveProps}>
-            ATELIER
-          </a>
-          <a href="#boutique" className="transition-colors hover:text-[#c5a059]" {...interactiveProps}>
-            BOUTIQUE
-          </a>
-          <a href="#concierge" className="transition-colors hover:text-[#c5a059]" {...interactiveProps}>
-            CONCIERGE
-          </a>
-          <a href="#membership" className="transition-colors hover:text-[#c5a059]" {...interactiveProps}>
-            CLUB PRIVÉ
-          </a>
-        </nav>
-
-        <div className="flex items-center gap-6 md:gap-10">
-          <button type="button" className="text-white/60 hover:text-[#c5a059]" aria-label="Buscar">
-            <Search className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            onClick={toggleBooking}
-            className="paw-btn-gold hidden rounded-sm px-6 py-2.5 text-[10px] font-bold tracking-[0.2em] sm:block md:px-8 md:py-3"
-            {...interactiveProps}
+          <nav
+            className="hidden items-center gap-7 text-[0.92rem] md:flex"
+            style={{ color: `${INK}b3` }}
           >
-            RESERVAR CITA
-          </button>
+            <a href="#servicios">Servicios</a>
+            <a href="#equipo">Equipo</a>
+            <a href="#testimonios">Familias</a>
+            <a href="#horarios">Horarios</a>
+          </nav>
+
+          <a
+            href={URGENCIAS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[0.82rem] font-medium transition-transform hover:scale-[1.02]"
+            style={{ background: CLAY, color: PAPER }}
+          >
+            <Phone className="h-4 w-4" strokeWidth={2} />
+            Urgencias
+          </a>
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
-        <div className="pointer-events-none absolute inset-0 opacity-20" aria-hidden>
-          <div className="absolute left-1/2 top-1/2 h-[120vh] w-[120vw] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5" />
-          <div className="absolute left-1/2 top-1/2 h-[80vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5" />
-        </div>
-
-        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-16 px-6 md:px-10 lg:grid-cols-2 lg:gap-20">
-          <div>
-            <h5 className="mb-8 text-[9px] font-bold uppercase tracking-[0.8em] text-[#c5a059]">
-              Establecido en 1992 · Madrid — París — Londres
-            </h5>
-            <h1 className="mb-12 font-[family-name:var(--font-demo-h-veterinaria)] text-5xl italic leading-[0.85] md:text-7xl lg:text-[7rem]">
-              La nobleza <br />
-              <span className="paw-gold-gradient not-italic">reimaginada.</span>
-            </h1>
-            <p className="mb-16 max-w-lg text-lg font-light leading-relaxed text-[#888888] md:text-xl">
-              Dedicados a los compañeros más leales de la humanidad, ofreciendo una curaduría donde
-              cada detalle es una declaración de amor y estatus.
-            </p>
-            <div className="flex flex-wrap items-center gap-8 md:gap-12">
-              <button
-                type="button"
-                className="paw-btn-outline px-10 py-5 text-xs font-bold tracking-[0.3em]"
-                onClick={() =>
-                  document.getElementById("atelier")?.scrollIntoView({ behavior: "smooth" })
-                }
-                {...interactiveProps}
-              >
-                <span>DESCUBRIR LA MAISON</span>
-              </button>
-              <div className="flex items-center gap-4 text-xs tracking-widest text-white/40">
-                <span className="h-px w-12 bg-white/20" />
-                EXPLORAR EL FILM
-              </div>
-            </div>
-          </div>
-
-          <div className="relative flex justify-center">
-            <div className="relative w-full max-w-[550px]">
-              <div
-                className={`paw-reveal-mask relative aspect-[4/5] overflow-hidden bg-[#111111] ${heroMask ? "is-active" : ""}`}
-              >
-                <Image
-                  src={imageMap.cover}
-                  alt="Mascota de lujo"
-                  fill
-                  priority
-                  className="scale-110 object-cover transition-transform duration-[2000ms] ease-out"
-                  style={{ transform: heroMask ? "scale(1)" : "scale(1.25)" }}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 hidden bg-[#c5a059] p-8 text-black lg:block lg:p-10">
-                <p className="font-[family-name:var(--font-demo-h-veterinaria)] text-2xl italic md:text-3xl">
-                  Colección 2024
-                </p>
-                <p className="text-[9px] font-bold uppercase tracking-[0.4em]">L&apos;art de vivre</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="border-y border-white/5 bg-white/[0.02] py-12">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4 md:px-10">
-          {[
-            { v: "32+", l: "Años de maison" },
-            { v: "3", l: "Capitales de moda" },
-            { v: "18k", l: "Familias miembro" },
-            { v: "24/7", l: "Concierge clínico" },
-          ].map((s) => (
-            <div key={s.l} className="text-center">
-              <p className="paw-gold-gradient font-[family-name:var(--font-demo-h-veterinaria)] text-3xl md:text-4xl">
-                {s.v}
-              </p>
-              <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.3em] text-white/40">
-                {s.l}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Atelier */}
-      <section id="atelier" className="overflow-hidden bg-white/[0.02] py-24 text-center md:py-40">
-        <div className="mx-auto max-w-4xl px-6 md:px-10">
-          <h5 className="mb-6 text-[10px] uppercase tracking-[0.5em] text-[#c5a059]">
-            La artesanía detrás del lujo
-          </h5>
-          <h2 className="mb-10 font-[family-name:var(--font-demo-h-veterinaria)] text-4xl italic md:text-6xl">
-            El atelier de {BRAND}.
-          </h2>
-          <div className="paw-title-line" />
-          <p className="mb-16 text-lg font-light leading-relaxed text-[#888888] md:mb-20 md:text-xl">
-            Cada accesorio es el resultado de cientos de horas de trabajo artesanal: cueros de
-            curtido vegetal toscano, herrajes de oro de 18 quilates y seda natural. No fabricamos
-            productos; creamos herencia.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-1 px-1 md:mt-20 md:grid-cols-3">
-          {ATELIER.map((item) => (
-            <article key={item.title} className="group relative h-[420px] overflow-hidden md:h-[600px]">
-              <Image
-                src={imageMap[item.imageKey]}
-                alt={item.title}
-                fill
-                className="object-cover grayscale transition-all duration-1000 group-hover:scale-110 group-hover:grayscale-0"
-                sizes="33vw"
-              />
-              <div className="absolute inset-0 flex flex-col justify-end bg-black/60 p-8 text-left opacity-80 transition-opacity group-hover:opacity-100 md:p-12">
-                <h3 className="font-[family-name:var(--font-demo-h-veterinaria)] text-2xl md:text-3xl">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-xs uppercase tracking-widest text-white/50">
-                  {item.subtitle}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Boutique */}
-      <section id="boutique" className="py-24 md:py-40">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="mb-20 flex flex-col items-start justify-between gap-10 md:mb-32 md:flex-row md:items-end">
-            <div>
-              <h2 className="paw-gold-gradient mb-6 font-[family-name:var(--font-demo-h-veterinaria)] text-5xl italic md:text-7xl">
-                La boutique.
-              </h2>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#888888]">
-                Objetos de deseo inigualables.
-              </p>
-              {wishlist.length > 0 ? (
-                <p className="mt-4 text-[10px] tracking-widest text-[#c5a059]">
-                  {wishlist.length} pieza{wishlist.length > 1 ? "s" : ""} en tu lista privada
-                </p>
-              ) : null}
-            </div>
-            <Link
-              href="#lead-veterinaria"
-              className="flex items-center gap-4 text-[10px] font-bold tracking-widest text-[#c5a059] transition-all hover:gap-6"
-              {...interactiveProps}
+      <section className="relative overflow-hidden">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-12 md:gap-16 md:px-8 md:py-24">
+          <motion.div
+            className="md:col-span-7"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={t}
+          >
+            <div
+              className="mb-6 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[0.76rem]"
+              style={{
+                background: openDay ? `${SAGE}1a` : `${CLAY}1a`,
+                color: openDay ? SAGE_DARK : CLAY,
+                border: `1px solid ${openDay ? SAGE : CLAY}33`,
+              }}
             >
-              VER TODO EL CATÁLOGO <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+              <span
+                className="h-1.5 w-1.5 rounded-full"
+                style={{ background: openDay ? SAGE : CLAY }}
+              />
+              {openDay ? "Abierto ahora" : "Cerrado · urgencias por WhatsApp"}
+            </div>
 
-          <div className="grid gap-12 md:grid-cols-3 md:gap-16">
-            {BOUTIQUE.map((item, i) => (
-              <article
-                key={item.name}
-                className="paw-luxe-card paw-scroll-reveal p-6"
-                style={{ transitionDelay: `${i * 0.15}s` }}
+            <h1
+              className="leading-[1.02] tracking-[-0.01em]"
+              style={{
+                fontFamily: "var(--font-instrument), serif",
+                fontSize: "clamp(2.4rem, 6vw, 4.6rem)",
+                color: INK,
+              }}
+            >
+              Veterinaria de barrio.
+              <br />
+              <span style={{ color: SAGE_DARK, fontStyle: "italic" }}>
+                12 años cuidando
+              </span>{" "}
+              perros, gatos y exóticos.
+            </h1>
+
+            <p
+              className="mt-6 max-w-xl text-[1.04rem] leading-relaxed"
+              style={{ color: `${INK}b3` }}
+            >
+              Don Pancho atiende en Almagro desde 2013. Consultas, vacunación,
+              cirugía, peluquería y atención de animales exóticos los jueves.
+              Te respondemos el WhatsApp el mismo día.
+            </p>
+
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-[0.95rem] font-medium transition-transform hover:scale-[1.02]"
+                style={{ background: INK, color: PAPER }}
               >
-                <div className="relative mb-10 aspect-[4/5] overflow-hidden bg-[#080808]">
-                  <Image
-                    src={imageMap[item.imageKey]}
-                    alt={item.name}
-                    fill
-                    className="object-cover opacity-80 transition-all duration-700 group-hover:opacity-100 hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <h4 className="mb-4 font-[family-name:var(--font-demo-h-veterinaria)] text-xl md:text-2xl">
-                  {item.name}
-                </h4>
-                <p className="mb-8 text-sm font-light leading-relaxed text-[#888888]">
-                  {item.description}
-                </p>
-                <div className="flex items-center justify-between border-t border-white/5 pt-6">
-                  <span className="font-bold tracking-widest text-[#c5a059]">
-                    {formatUsd(item.price)}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => toggleWishlist(item.name)}
-                    className={`text-[9px] font-extrabold tracking-widest transition-colors ${
-                      wishlist.includes(item.name) ? "text-[#c5a059]" : "text-white/40 hover:text-white"
-                    }`}
-                    {...interactiveProps}
-                  >
-                    {wishlist.includes(item.name) ? "EN LISTA ✓" : "AÑADIR A LA LISTA"}
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
+                <MessageCircle className="h-4 w-4" />
+                Pedir turno por WhatsApp
+              </a>
+              <a
+                href="#servicios"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-[0.95rem]"
+                style={{ border: `1px solid ${INK}26`, color: INK }}
+              >
+                Ver servicios <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-6 text-[0.82rem]" style={{ color: `${INK}80` }}>
+              <span className="inline-flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4" style={{ color: SAGE_DARK }} />
+                Matrícula profesional 4821
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4" style={{ color: SAGE_DARK }} />
+                Av. Corrientes 4750, Almagro
+              </span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="relative md:col-span-5"
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ ...t, delay: 0.1 }}
+          >
+            <div
+              className="relative aspect-[4/5] overflow-hidden rounded-[28px]"
+              style={{ background: CREAM, boxShadow: `0 30px 80px -40px ${INK}40` }}
+            >
+              <Image
+                src={v.cover}
+                alt="Veterinaria Don Pancho, Almagro"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
+                priority
+              />
+            </div>
+
+            <div
+              className="absolute -bottom-6 -left-6 hidden rounded-2xl p-5 md:block"
+              style={{
+                background: PAPER,
+                border: `1px solid ${INK}14`,
+                boxShadow: `0 18px 40px -20px ${INK}30`,
+                minWidth: 240,
+              }}
+            >
+              <p className="text-[0.7rem]" style={{ color: SAGE_DARK, letterSpacing: "0.02em" }}>
+                Horarios
+              </p>
+              <p className="mt-1 text-[1rem]" style={{ fontFamily: "var(--font-instrument), serif" }}>
+                Lun – Vie · 9 a 20 hs
+              </p>
+              <p className="text-[0.84rem]" style={{ color: `${INK}99` }}>
+                Sábados · 9 a 14 hs
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Concierge */}
-      <section id="concierge" className="border-y border-white/5 bg-[#050505] py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="mb-16 max-w-2xl md:mb-20">
-            <h5 className="mb-4 text-[10px] uppercase tracking-[0.5em] text-[#c5a059]">Concierge</h5>
-            <h2 className="font-[family-name:var(--font-demo-h-veterinaria)] text-4xl italic md:text-5xl">
-              Servicios para la élite canina y felina.
+      <section id="servicios" className="py-20 md:py-28" style={{ background: CREAM }}>
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <div className="max-w-2xl">
+            <p className="text-[0.82rem]" style={{ color: SAGE_DARK }}>
+              Lo que hacemos
+            </p>
+            <h2
+              className="mt-2 leading-[1.05]"
+              style={{
+                fontFamily: "var(--font-instrument), serif",
+                fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
+                color: INK,
+              }}
+            >
+              Atención clínica, sin
+              <span style={{ fontStyle: "italic", color: SAGE_DARK }}> sobreventa</span>.
             </h2>
+            <p className="mt-4 text-[1rem]" style={{ color: `${INK}b3` }}>
+              Nuestro principio: te decimos lo que tu mascota realmente
+              necesita. Si no hace falta un estudio, no lo pedimos.
+            </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {CONCIERGE.map((s, i) => (
-              <div
+
+          <div
+            className="mt-12 grid gap-px overflow-hidden rounded-3xl"
+            style={{ background: `${INK}10`, gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}
+          >
+            {SERVICES.map((s) => (
+              <motion.article
                 key={s.title}
-                className="paw-scroll-reveal border border-white/5 bg-[#111111] p-8"
-                style={{ transitionDelay: `${i * 0.1}s` }}
+                className="p-7 transition-colors"
+                style={{ background: PAPER }}
+                whileHover={{ background: `${SAGE}08` }}
+                transition={tUi}
               >
-                <Sparkles className="mb-6 h-5 w-5 text-[#c5a059]" />
-                <h4 className="mb-3 text-sm font-bold uppercase tracking-widest">{s.title}</h4>
-                <p className="text-sm font-light leading-relaxed text-[#888888]">{s.desc}</p>
-              </div>
+                <div
+                  className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full"
+                  style={{ background: `${SAGE}15`, color: SAGE_DARK }}
+                >
+                  <s.icon className="h-5 w-5" strokeWidth={1.6} />
+                </div>
+                <h3
+                  className="text-[1.18rem] leading-tight"
+                  style={{ fontFamily: "var(--font-instrument), serif", color: INK }}
+                >
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-[0.94rem] leading-relaxed" style={{ color: `${INK}99` }}>
+                  {s.desc}
+                </p>
+              </motion.article>
             ))}
-          </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            <div className="relative h-64 overflow-hidden md:h-80">
-              <Image
-                src={imageMap.a}
-                alt="Clínica veterinaria premium"
-                fill
-                className="object-cover"
-                sizes="50vw"
-              />
-            </div>
-            <div className="relative h-64 overflow-hidden md:h-80">
-              <Image
-                src={imageMap.b}
-                alt="Cuidado personalizado"
-                fill
-                className="object-cover"
-                sizes="50vw"
-              />
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Club Privé */}
-      <section id="membership" className="py-24 md:py-40">
-        <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:px-10 lg:grid-cols-2">
-          <div className="relative aspect-[4/5] overflow-hidden">
+      <section id="equipo" className="py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8">
+          <div className="relative aspect-[5/4] overflow-hidden rounded-[24px]" style={{ background: CREAM }}>
             <Image
-              src={imageMap.c}
-              alt="Club privé mascotas"
+              src={v.a}
+              alt="Equipo Don Pancho"
               fill
               className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
-          <div className="paw-scroll-reveal">
-            <h5 className="mb-6 text-[10px] uppercase tracking-[0.5em] text-[#c5a059]">
-              Club privé
-            </h5>
-            <h2 className="mb-10 font-[family-name:var(--font-demo-h-veterinaria)] text-4xl italic leading-tight md:text-6xl">
-              Membresía <span className="paw-gold-gradient not-italic">Patitas Elite.</span>
+          <div>
+            <p className="text-[0.82rem]" style={{ color: SAGE_DARK }}>
+              El equipo
+            </p>
+            <h2
+              className="mt-2 leading-[1.05]"
+              style={{
+                fontFamily: "var(--font-instrument), serif",
+                fontSize: "clamp(1.85rem, 4vw, 2.8rem)",
+                color: INK,
+              }}
+            >
+              Tres veterinarios. Un único <span style={{ fontStyle: "italic" }}>compromiso</span>.
             </h2>
-            <ul className="mb-12 space-y-5">
-              {MEMBERSHIP.map((perk) => (
-                <li key={perk} className="flex items-start gap-4 text-sm font-light text-[#888888]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c5a059]" />
-                  {perk}
+
+            <ul className="mt-8 space-y-5">
+              {[
+                { name: "Dra. Carla Pérez", role: "Clínica y cirugía · 14 años de oficio" },
+                { name: "Dr. Mateo Robles", role: "Animales exóticos · jueves y sábados" },
+                { name: "Téc. Lucía Aguilar", role: "Peluquería y enfermería · ATR todo el día" },
+              ].map((p) => (
+                <li key={p.name} className="flex items-start gap-4">
+                  <div
+                    className="mt-1.5 h-2 w-2 shrink-0 rounded-full"
+                    style={{ background: CLAY }}
+                  />
+                  <div>
+                    <p className="text-[1rem]" style={{ color: INK, fontWeight: 500 }}>
+                      {p.name}
+                    </p>
+                    <p className="text-[0.92rem]" style={{ color: `${INK}99` }}>
+                      {p.role}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>
-            <button
-              type="button"
-              onClick={toggleBooking}
-              className="paw-btn-gold rounded-sm px-10 py-4 text-[10px] font-bold tracking-[0.2em]"
-              {...interactiveProps}
+
+            <p className="mt-9 text-[0.96rem] leading-relaxed" style={{ color: `${INK}b3` }}>
+              Atendemos con la creencia simple de que tu animal no es un
+              cliente. Por eso te llamamos por el nombre de tu mascota cuando
+              te ve por la puerta.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonios" className="py-20 md:py-28" style={{ background: CREAM }}>
+        <div className="mx-auto max-w-5xl px-5 md:px-8">
+          <p className="text-[0.82rem]" style={{ color: SAGE_DARK }}>
+            Familias del barrio
+          </p>
+          <h2
+            className="mt-2 max-w-2xl leading-[1.05]"
+            style={{
+              fontFamily: "var(--font-instrument), serif",
+              fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
+              color: INK,
+            }}
+          >
+            Lo que dicen quienes nos eligen hace años.
+          </h2>
+
+          <div className="mt-14 space-y-12">
+            {TESTIMONIALS.map((q, i) => (
+              <motion.figure
+                key={q.name}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ ...t, delay: i * 0.08 }}
+                className="border-t pt-9"
+                style={{ borderColor: `${INK}1a` }}
+              >
+                <blockquote
+                  className="leading-snug"
+                  style={{
+                    fontFamily: "var(--font-instrument), serif",
+                    fontStyle: "italic",
+                    fontSize: "clamp(1.3rem, 2.6vw, 1.9rem)",
+                    color: INK,
+                  }}
+                >
+                  &ldquo;{q.text}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 text-[0.92rem]" style={{ color: SAGE_DARK }}>
+                  {q.name} <span style={{ color: `${INK}80` }}>· {q.pet}</span>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="horarios" className="py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8">
+          <div
+            className="rounded-3xl p-9"
+            style={{ background: INK, color: PAPER }}
+          >
+            <p className="text-[0.82rem]" style={{ color: `${CREAM}aa` }}>
+              Horarios y dirección
+            </p>
+            <h2
+              className="mt-2 leading-[1.05]"
+              style={{ fontFamily: "var(--font-instrument), serif", fontSize: "clamp(1.7rem, 3.5vw, 2.4rem)" }}
             >
-              SOLICITAR INVITACIÓN
-            </button>
+              Estamos en Almagro.
+            </h2>
+
+            <div className="mt-8 space-y-3">
+              {HOURS.map((row) => (
+                <div
+                  key={row.d}
+                  className="flex items-center justify-between border-b pb-3 text-[0.95rem]"
+                  style={{ borderColor: `${PAPER}1a` }}
+                >
+                  <span style={{ color: `${PAPER}cc` }}>{row.d}</span>
+                  <span style={{ color: PAPER, fontFamily: "var(--font-instrument), serif" }}>
+                    {row.h}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href={URGENCIAS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-9 inline-flex items-center gap-2 rounded-full px-5 py-3 text-[0.95rem] font-medium"
+              style={{ background: CLAY, color: PAPER }}
+            >
+              <Phone className="h-4 w-4" strokeWidth={2} />
+              Urgencia · WhatsApp 24h
+            </a>
+          </div>
+
+          <div>
+            <h3
+              className="leading-[1.05]"
+              style={{ fontFamily: "var(--font-instrument), serif", fontSize: "clamp(1.4rem, 2.6vw, 1.85rem)", color: INK }}
+            >
+              Cerca de la estación de Castro Barros
+            </h3>
+            <p className="mt-3 text-[0.96rem]" style={{ color: `${INK}99` }}>
+              Av. Corrientes 4750, esquina Castro Barros.
+              <br />
+              Estacionamiento medido en la cuadra.
+              <br />
+              Frente al kiosco de diarios.
+            </p>
+
+            <div className="mt-7 grid grid-cols-3 gap-3">
+              {[v.b, v.c, v.cover].map((src, idx) => (
+                <div
+                  key={idx}
+                  className="relative aspect-square overflow-hidden rounded-2xl"
+                  style={{ background: CREAM }}
+                >
+                  <Image
+                    src={src}
+                    alt={`Foto clínica ${idx + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="20vw"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div
+              className="mt-8 flex items-center gap-3 rounded-2xl p-4"
+              style={{ background: `${SAGE}10`, border: `1px solid ${SAGE}33` }}
+            >
+              <Sparkles className="h-5 w-5 shrink-0" style={{ color: SAGE_DARK }} />
+              <p className="text-[0.92rem]" style={{ color: INK }}>
+                Convenio con Provet y OSDE Salud Animal · 20% off en planes anuales.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <DemoLeadForm
         slug={SLUG}
-        brandLabel={BRAND}
-        theme={v.lead}
-        kicker="Contacto boutique & clínica"
-        title="Consultá disponibilidad o piezas a medida"
-        sub="Coordinamos cita en atelier, envíos globales y servicios de concierge clínico."
+        brandLabel={`Veterinaria ${BRAND}`}
+        theme={{
+          ...v.lead,
+          invert: true,
+          section: "py-20 md:py-28",
+          card: "rounded-3xl p-7 md:p-10",
+          label: "text-[0.82rem]",
+          input: "mt-1 w-full border-b border-[#1c2421]/15 bg-transparent px-0 py-3 text-[0.96rem] text-[#1c2421] outline-none focus:border-[#3f5a40]",
+          button: "w-full rounded-full bg-[#1c2421] py-3.5 text-[0.95rem] font-medium text-[#fbfaf6]",
+          focus: "focus:border-[#3f5a40]",
+        }}
+        kicker="Contanos sobre tu mascota"
+        title="Reservá tu turno"
+        sub="Te contestamos en el día. Para urgencias, escribinos directo al WhatsApp del consultorio."
       />
 
-      {/* Footer */}
-      <footer className="relative overflow-hidden bg-[#050505] pb-16 pt-24 md:pb-20 md:pt-40">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="mb-24 grid gap-16 lg:grid-cols-2 lg:gap-40 md:mb-40">
-            <div>
-              <h4 className="paw-gold-gradient mb-10 font-[family-name:var(--font-demo-h-veterinaria)] text-5xl italic leading-tight md:mb-12 md:text-7xl">
-                Únase a la <br /> élite de {BRAND}.
-              </h4>
-              <p className="mb-12 max-w-sm text-lg text-[#888888] md:mb-16">
-                Acceso prioritario a colecciones cápsula, eventos exclusivos y servicios de concierge
-                global.
-              </p>
-              <div className="flex flex-col gap-6">
-                <label className="text-[9px] font-bold uppercase tracking-[0.4em] text-white/30">
-                  Inscripción privada
-                </label>
-                <div className="relative flex items-center">
-                  <input
-                    type="email"
-                    placeholder="SU DIRECCIÓN DE EMAIL"
-                    className="w-full border-b border-white/10 bg-transparent py-5 text-xs tracking-widest outline-none transition-colors placeholder:text-white/10 focus:border-[#c5a059]"
-                  />
-                  <ArrowRight className="absolute right-0 h-5 w-5 text-[#c5a059]" />
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-12 md:gap-20">
-              <div>
-                <h5 className="mb-8 text-[10px] uppercase tracking-[0.4em] text-[#c5a059]">
-                  Explorar
-                </h5>
-                <ul className="space-y-5 text-xs font-light tracking-[0.2em]">
-                  <li>
-                    <a href="#atelier" className="transition-colors hover:text-white">
-                      NUESTRA HISTORIA
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#boutique" className="transition-colors hover:text-white">
-                      BOUTIQUE
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#concierge" className="transition-colors hover:text-white">
-                      SOSTENIBILIDAD
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="mb-8 text-[10px] uppercase tracking-[0.4em] text-[#c5a059]">
-                  Servicios VIP
-                </h5>
-                <ul className="space-y-5 text-xs font-light tracking-[0.2em]">
-                  <li>
-                    <a href="#concierge" className="transition-colors hover:text-white">
-                      CONCIERGE
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#membership" className="transition-colors hover:text-white">
-                      CLUB PRIVÉ
-                    </a>
-                  </li>
-                  <li>
-                    <Link href="#lead-veterinaria" className="transition-colors hover:text-white">
-                      GARANTÍA DE VIDA
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-between gap-8 border-t border-white/5 pt-12 md:flex-row md:pt-16">
-            <span className="text-[9px] uppercase tracking-[0.5em] text-white/20">
-              © {new Date().getFullYear()} {BRAND.toUpperCase()} INTERNATIONAL · DEMO
-            </span>
-            <div className="flex items-center gap-10">
-              <Share2 className="h-4 w-4 cursor-pointer text-white/20 transition-colors hover:text-[#c5a059]" />
-              <Globe className="h-4 w-4 cursor-pointer text-white/20 transition-colors hover:text-[#c5a059]" />
-            </div>
-          </div>
+      <footer
+        className="border-t py-10"
+        style={{ borderColor: `${INK}14`, background: PAPER }}
+      >
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-[0.84rem] md:flex-row md:px-8">
+          <span style={{ color: `${INK}80` }}>
+            © Veterinaria {BRAND} · MP Vet. 4821 · Almagro
+          </span>
+          <span style={{ color: `${INK}66` }}>
+            Demo · Mads Jeez Design
+          </span>
         </div>
       </footer>
-
-      {/* Modal cita */}
-      <div
-        className={`fixed inset-0 z-[200] transition-opacity duration-300 ${bookingOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
-        aria-hidden={!bookingOpen}
-      >
-        <button
-          type="button"
-          aria-label="Cerrar"
-          onClick={closeBooking}
-          className="absolute inset-0 bg-black/90 backdrop-blur-xl"
-        />
-        <aside className="absolute right-0 top-0 flex h-full w-full max-w-lg flex-col justify-center overflow-y-auto border-l border-white/5 bg-[#080808] p-10 md:p-14">
-          <button
-            type="button"
-            onClick={closeBooking}
-            className="absolute right-6 top-6 text-white/30 hover:text-[#c5a059]"
-            aria-label="Cerrar panel"
-          >
-            <X className="h-8 w-8" />
-          </button>
-          <h3 className="mb-4 font-[family-name:var(--font-demo-h-veterinaria)] text-4xl italic">
-            Reservar <span className="paw-gold-gradient not-italic">cita</span>
-          </h3>
-          <p className="mb-10 text-sm text-[#888888]">
-            Atelier, consulta clínica o visita boutique — confirmamos en menos de 2 horas hábiles.
-          </p>
-          <form
-            className="space-y-8"
-            onSubmit={(e) => {
-              e.preventDefault();
-              closeBooking();
-              document.getElementById("lead-veterinaria")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            <div className="border-b border-white/10 pb-4 focus-within:border-[#c5a059]">
-              <label className="mb-2 block text-[9px] font-bold uppercase tracking-[0.4em] text-[#c5a059]">
-                Nombre y mascota
-              </label>
-              <input
-                type="text"
-                className="w-full bg-transparent text-sm outline-none"
-                placeholder="Ej. María — Luna (Golden)"
-              />
-            </div>
-            <div className="border-b border-white/10 pb-4 focus-within:border-[#c5a059]">
-              <label className="mb-2 block text-[9px] font-bold uppercase tracking-[0.4em] text-[#c5a059]">
-                Motivo
-              </label>
-              <select className="w-full bg-transparent text-sm outline-none">
-                <option className="bg-black">Consulta clínica</option>
-                <option className="bg-black">Spa & grooming</option>
-                <option className="bg-black">Pieza a medida atelier</option>
-                <option className="bg-black">Club privé</option>
-              </select>
-            </div>
-            <button
-              type="submit"
-              className="paw-btn-gold w-full rounded-sm py-5 text-[10px] font-bold tracking-[0.2em]"
-            >
-              CONFIRMAR SOLICITUD
-            </button>
-          </form>
-        </aside>
-      </div>
     </div>
   );
 }
