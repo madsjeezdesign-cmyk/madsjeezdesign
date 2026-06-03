@@ -1,10 +1,10 @@
 "use client";
 
-import { RetailFashionLanding } from "./demo-retail-fashion-landing";
+import { FashionVariantRouter } from "./fashion-variant-router";
 
 export function createRetailFashionDemo(slug: string) {
   return function RetailFashionDemo() {
-    return <RetailFashionLanding slug={slug} />;
+    return <FashionVariantRouter slug={slug} />;
   };
 }
 
