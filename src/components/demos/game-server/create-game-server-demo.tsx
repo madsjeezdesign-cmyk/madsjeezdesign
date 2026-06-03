@@ -1,10 +1,19 @@
 "use client";
 
-import { GameServerLanding } from "./demo-gameserver-landing";
+import { GameServerArchetypeRouter } from "./game-server-archetype-router";
 
+/**
+ * Factory used by `src/components/demos/index.ts` to materialize a per-slug
+ * demo component. Each demo now resolves to one of three archetype shells
+ * via {@link GameServerArchetypeRouter}.
+ *
+ * The legacy single shell at `./demo-gameserver-landing` is preserved for
+ * back-compat and is intentionally NOT exported from here. To restore the
+ * old visual for a slug, import `GameServerLanding` directly.
+ */
 export function createGameServerDemo(slug: string) {
   return function GameServerDemo() {
-    return <GameServerLanding slug={slug} />;
+    return <GameServerArchetypeRouter slug={slug} />;
   };
 }
 
