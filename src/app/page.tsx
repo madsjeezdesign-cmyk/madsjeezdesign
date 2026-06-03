@@ -12,15 +12,13 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
-        <LandingHero />
-        <LandingStats />
-        <LandingTrabajos />
-        <LandingServicios />
-        <LandingProcess />
-        <LandingSobre />
-        <HyperContact />
-      </main>
+      <LandingHero />
+      <LandingStats />
+      <LandingTrabajos />
+      <LandingServicios />
+      <LandingProcess />
+      <LandingSobre />
+      <HyperContact />
       <Footer />
     </>
   );
