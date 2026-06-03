@@ -148,13 +148,20 @@ export function HyperContact() {
 
   return (
     <section
-      id="nexo"
+      id="contacto"
       className="relative scroll-mt-24 px-8 py-32 text-left"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 space-y-4">
-          <h2 className="text-5xl font-black tracking-tighter text-white">
-            NEXO<span className="text-[#1de0b1]">.</span>
+          <h2
+            className="font-[family-name:var(--font-instrument)] text-white"
+            style={{
+              fontSize: "var(--font-size-h1)",
+              lineHeight: "var(--leading-heading)",
+              letterSpacing: "var(--tracking-heading)",
+            }}
+          >
+            Hablemos<span className="text-[#1de0b1]">.</span>
           </h2>
           <p className="max-w-xl font-[family-name:var(--font-jetbrains)] text-sm text-zinc-500">
             Escribinos o pasá por el estudio. {site.hours}. Zona Carlos Spegazzini,
@@ -317,7 +324,7 @@ export function HyperContact() {
                     </>
                   ) : (
                     <>
-                      Enviar señal
+                      Enviar consulta
                       <Send className="h-4 w-4" />
                     </>
                   )}

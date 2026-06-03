@@ -378,10 +378,9 @@ export const story = {
 };
 
 export const navLinks = [
+  { href: "#trabajos", label: "Trabajos" },
   { href: "#servicios", label: "Servicios" },
-  { href: "#tecnologias", label: "Tecnologías" },
-  { href: "#casos", label: "Casos" },
-  { href: "#equipo", label: "Equipo" },
-  { href: "#historia", label: "Historia" },
+  { href: "#proceso", label: "Proceso" },
+  { href: "#sobre", label: "Sobre" },
   { href: "#contacto", label: "Contacto" },
 ];
