@@ -12,6 +12,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-cert
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+# NEXT_PUBLIC_* vars must be inlined at build time, so Railway needs to
+# pass them as docker build args. Declare each ARG and re-export as ENV
+# so `next build` sees them.
+ARG NEXT_PUBLIC_GA_ID=""
+ENV NEXT_PUBLIC_GA_ID=$NEXT_PUBLIC_GA_ID
+
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
