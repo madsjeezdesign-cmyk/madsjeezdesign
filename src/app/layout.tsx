@@ -50,6 +50,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/",
+    languages: {
+      "es-AR": "/",
+      "x-default": "/",
+    },
   },
   openGraph: {
     title: titleBase,
@@ -86,6 +90,33 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: site.name,
+  description,
+  url: site.siteUrl,
+  email: site.email,
+  telephone: site.phoneTel,
+  foundingDate: String(site.foundedYear),
+  priceRange: "$$",
+  image: `${site.siteUrl}/og-image.svg`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address.street,
+    addressLocality: site.address.locality,
+    addressRegion: site.address.province,
+    addressCountry: "AR",
+  },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: site.address.partido },
+    { "@type": "AdministrativeArea", name: site.address.province },
+    { "@type": "Country", name: "Argentina" },
+  ],
+  openingHours: "Mo-Sa 10:00-20:00",
+  sameAs: [site.whatsapp],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -100,6 +131,12 @@ export default function RootLayout({
         <Script id="theme-init" strategy="beforeInteractive">
           {THEME_INIT_SCRIPT}
         </Script>
+        <Script
+          id="ld-business"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         {gaId ? (
           <>
             <Script
@@ -111,7 +148,17 @@ export default function RootLayout({
             </Script>
           </>
         ) : null}
-        <ThemeProvider>{children}</ThemeProvider>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+        >
+          Saltar al contenido
+        </a>
+        <ThemeProvider>
+          <main id="main" tabIndex={-1} className="focus:outline-none">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
