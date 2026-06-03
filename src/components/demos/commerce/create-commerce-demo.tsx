@@ -1,10 +1,10 @@
 "use client";
 
-import { CommerceLanding } from "./demo-commerce-landing";
+import { CommerceArchetypeLanding } from "./commerce-archetype-router";
 
 export function createCommerceDemo(slug: string) {
   return function CommerceDemo() {
-    return <CommerceLanding slug={slug} />;
+    return <CommerceArchetypeLanding slug={slug} />;
   };
 }
 
