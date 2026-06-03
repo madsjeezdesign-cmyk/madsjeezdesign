@@ -1,20 +1,36 @@
 import { NextResponse } from "next/server";
-import { isSupabaseConfigured } from "@/lib/supabase/server";
+import { createSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/server";
+
+const DB_TIMEOUT_MS = 2000;
+
+async function checkDb(): Promise<boolean> {
+  const client = createSupabaseAdmin();
+  if (!client) return false;
+
+  const query = client
+    .from("contact_inquiries")
+    .select("*", { count: "exact", head: true })
+    .limit(1)
+    .then((r) => !r.error);
+
+  const timeout = new Promise<boolean>((resolve) =>
+    setTimeout(() => resolve(false), DB_TIMEOUT_MS),
+  );
+
+  try {
+    return await Promise.race([query, timeout]);
+  } catch {
+    return false;
+  }
+}
 
 export async function GET() {
   const supabaseApi = isSupabaseConfigured();
-  const hasDbUrl = Boolean(
-    (process.env.DATABASE_URL ?? process.env.SUPABASE_DATABASE_URL ?? "").trim(),
-  );
-
-  const ok = supabaseApi;
+  const db = supabaseApi ? await checkDb() : false;
+  const ok = supabaseApi && db;
 
   return NextResponse.json(
-    {
-      ok,
-      supabaseApi,
-      postgresMigrate: hasDbUrl,
-    },
+    { ok, supabaseApi, db },
     { status: ok ? 200 : 503 },
   );
 }

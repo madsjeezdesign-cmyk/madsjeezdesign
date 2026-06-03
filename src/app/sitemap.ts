@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/data";
-import { DEMOS } from "@/lib/demos-registry";
 
+// Demos are noindex (see src/app/demos/[slug]/page.tsx) so they must not
+// appear in the sitemap — listing 93 dead URLs hurts crawl budget.
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.siteUrl.replace(/\/$/, "");
   const now = new Date();
 
-  const staticRoutes: MetadataRoute.Sitemap = [
+  return [
     {
       url: `${base}/`,
       lastModified: now,
@@ -20,13 +21,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
-
-  const demoRoutes: MetadataRoute.Sitemap = DEMOS.map((d) => ({
-    url: `${base}/demos/${d.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
-
-  return [...staticRoutes, ...demoRoutes];
 }
