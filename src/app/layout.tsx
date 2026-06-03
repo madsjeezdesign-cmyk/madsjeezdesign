@@ -58,11 +58,20 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: site.siteUrl,
     siteName: site.name,
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "MadsJeez Design — Estudio de diseño y desarrollo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: titleBase,
     description,
+    images: ["/og-image.svg"],
   },
   robots: {
     index: true,

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="MadsJeez Design — Estudio de diseño y desarrollo">
+  <defs>
+    <linearGradient id="vignette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0d12" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1de0b1" stop-opacity="0.10"/>
+      <stop offset="60%" stop-color="#1de0b1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="#05070a"/>
+
+  <!-- subtle accent glow -->
+  <circle cx="980" cy="120" r="320" fill="url(#glow)"/>
+
+  <!-- editorial top hairline -->
+  <line x1="80" y1="80" x2="1120" y2="80" stroke="#1a1f26" stroke-width="1"/>
+
+  <!-- eyebrow row: mark + meta -->
+  <g transform="translate(80, 120)">
+    <!-- minimal geometric mark: square + accent dot -->
+    <rect x="0" y="-14" width="28" height="28" fill="none" stroke="#3a4350" stroke-width="1.5"/>
+    <circle cx="14" cy="0" r="3" fill="#1de0b1"/>
+    <text x="48" y="6" fill="#7a8595" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, monospace" font-size="14" letter-spacing="2.4">EST. 2009 — BUENOS AIRES</text>
+  </g>
+
+  <!-- main wordmark -->
+  <text x="80" y="360" fill="#f6f7f9" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="124" font-weight="700" letter-spacing="-4">MadsJeez<tspan fill="#1de0b1">.</tspan></text>
+  <text x="80" y="448" fill="#c6ccd5" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="46" font-weight="300" letter-spacing="-0.5">Estudio de diseño y desarrollo</text>
+
+  <!-- accent bar -->
+  <rect x="80" y="500" width="64" height="3" fill="#1de0b1"/>
+
+  <!-- subtitle / footer row -->
+  <text x="80" y="548" fill="#7a8595" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="400">Sitios web · E-commerce · Sistemas a medida</text>
+
+  <!-- right-side meta -->
+  <text x="1120" y="548" text-anchor="end" fill="#7a8595" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, monospace" font-size="16" letter-spacing="1.5">2009 — 2026</text>
+
+  <!-- bottom hairline -->
+  <line x1="80" y1="570" x2="1120" y2="570" stroke="#1a1f26" stroke-width="1"/>
+
+  <!-- subtle bottom vignette -->
+  <rect width="1200" height="630" fill="url(#vignette)" pointer-events="none"/>
+</svg>
