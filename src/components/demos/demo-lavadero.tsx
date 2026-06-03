@@ -1,174 +1,489 @@
-import { Clock, Droplets, MapPin, ShieldCheck, Waves } from "lucide-react";
+"use client";
+
+/**
+ * LAVADERO — neighborhood laundry service.
+ *
+ * Identity: clean white + clear blue (#1e6fb8). NOT navy slop, NOT dark glass.
+ * Body font Plus Jakarta. Display in Plus Jakarta too — utility, not editorial.
+ * Layout move: sticky weight calculator on the right of hero. Pricing as a
+ * simple table (NOT card spam). Map widget visible. WhatsApp CTA dominant.
+ */
+
+import Image from "next/image";
+import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Calculator,
+  Clock,
+  MapPin,
+  MessageCircle,
+  Phone,
+  ShieldCheck,
+  Sparkles,
+  Truck,
+} from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
-import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
-import { DemoFaqList, DemoTestimonials } from "./demo-common-sections";
-import { DemoBrandNav } from "./demo-brand-nav";
-import { DemoEnhancements } from "./demo-enhancements";
-import { DemoThemedHero } from "./demo-themed-hero";
+import { useMotionTransition } from "@/lib/motion";
+import { DemoLeadForm } from "./demo-lead-form";
 
 const SLUG = "lavadero" as const;
+const BRAND = "Lavandería del Pasaje";
+
+const BLUE = "#1e6fb8";
+const BLUE_DARK = "#155189";
+const BLUE_LIGHT = "#e7f0f8";
+const INK = "#0e1a26";
+const PAPER = "#ffffff";
+const SURFACE = "#f7f9fb";
+
+const WA = "https://wa.me/5491100000000?text=Hola%2C%20quiero%20coordinar%20un%20retiro";
+
+const PRICES = [
+  { kg: "5 kg", time: "4 horas", price: "$3.400" },
+  { kg: "8 kg", time: "4 horas", price: "$4.900" },
+  { kg: "12 kg", time: "Mismo día", price: "$6.800" },
+  { kg: "Frazada", time: "24 horas", price: "$5.200" },
+  { kg: "Edredón 2 plazas", time: "24 horas", price: "$7.400" },
+  { kg: "Camperón inverno", time: "24 horas", price: "$4.600" },
+] as const;
+
+const STEPS = [
+  { n: 1, title: "Pedís retiro", desc: "WhatsApp o llamada. Coordinamos horario y dirección." },
+  { n: 2, title: "Pasamos a buscarlo", desc: "Retiro gratis en zona Almagro, Caballito y Villa Crespo." },
+  { n: 3, title: "Lavamos y planchamos", desc: "Detergente neutro hipoalergénico. Suavizante opcional." },
+  { n: 4, title: "Te lo llevamos", desc: "Entrega 4 horas para cargas medianas. 24h para abrigos." },
+] as const;
 
 export function DemoLavaderoLanding() {
   const v = getDemoVisuals(SLUG);
-  const art = getDemoArtDirection(SLUG);
-  const h = DEMO_HEADING_CLASS[SLUG];
+  const t = useMotionTransition("display");
+  const [weight, setWeight] = useState(8);
+
+  const estimate = useMemo(() => {
+    const base = Math.round(weight * 610);
+    const rounded = Math.round(base / 100) * 100;
+    const eta = weight <= 5 ? "4 horas" : weight <= 8 ? "4 horas" : weight <= 12 ? "Mismo día" : "24 horas";
+    return { price: rounded, eta };
+  }, [weight]);
 
   return (
-    <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <DemoBrandNav
-        slug={SLUG}
-        brand="Spin & Gloss"
-        iconKey="Droplets"
-        primaryCta="Elegir plan"
-        primaryCtaClass={art.primaryCta}
-      />
-
-      <DemoThemedHero
-        variant={art.heroVariant}
-        imageSrc={v.cover}
-        headingClass={h}
-        titleColorClass="text-white"
-        leadColorClass="text-slate-400"
-        kicker={
-          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-950/40 px-4 py-1 text-[10px] font-bold uppercase tracking-widest text-cyan-200">
-            <Waves className="h-3.5 w-3.5" /> RFID · filas inteligentes
-          </span>
-        }
-        title={
-          <>
-            Brillo
-            <span className="text-cyan-400"> en menos vueltas</span>
-          </>
-        }
-        lead="Tu cliente quiere ver tiempo estimado en fila, beneficios de membresía claros y addons de detailing sin confundir el túnel express. Esta demo muestra pricing por SUV, planes con cargo automático y cross-sell de ozono con carrito distinto al grid clásico."
-        ctas={
-          <>
-            <button type="button" className={art.primaryCta}>
-              Ver turnos hoy
-            </button>
-            <button type="button" className={art.secondaryCta}>
-              PDF flotas
-            </button>
-          </>
-        }
-      />
-
-      <section className="overflow-x-auto border-y border-white/5 bg-slate-900/40 px-4 py-6 md:px-10">
-        <div className="mx-auto flex max-w-6xl min-w-max gap-4 md:min-w-0 md:justify-between">
-          {[
-            { t: "Túnel", d: "Alta presión + secado" },
-            { t: "Express", d: "10 min SUV chico" },
-            { t: "Ozono", d: "Sanitiza habitáculo" },
-            { t: "Cerá", d: "Sellado rápido" },
-            { t: "Flota", d: "Facturación única" },
-          ].map((x) => (
+    <div
+      className="relative min-h-screen antialiased"
+      style={{
+        background: PAPER,
+        color: INK,
+        fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
+      }}
+    >
+      <header
+        className="sticky top-0 z-40"
+        style={{
+          background: `${PAPER}f2`,
+          backdropFilter: "blur(10px)",
+          borderBottom: `1px solid ${INK}10`,
+        }}
+      >
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
+          <div className="flex items-center gap-3">
             <div
-              key={x.t}
-              className={`shrink-0 rounded-2xl px-6 py-4 text-center md:min-w-[120px] ${art.cardShell}`}
+              className="flex h-9 w-9 items-center justify-center rounded-xl text-[0.95rem] font-bold"
+              style={{ background: BLUE, color: PAPER }}
             >
-              <p className={`${h} text-lg text-cyan-400`}>{x.t}</p>
-              <p className="mt-1 text-[11px] text-slate-500">{x.d}</p>
+              LP
             </div>
-          ))}
+            <div className="flex flex-col leading-tight">
+              <span className="text-[1.02rem] font-semibold">{BRAND}</span>
+              <span className="text-[0.74rem]" style={{ color: `${INK}80` }}>
+                Almagro · Caballito · V. Crespo
+              </span>
+            </div>
+          </div>
+
+          <nav className="hidden items-center gap-6 text-[0.92rem] md:flex" style={{ color: `${INK}b0` }}>
+            <a href="#precios">Precios</a>
+            <a href="#como">Cómo es</a>
+            <a href="#zona">Zona</a>
+          </nav>
+
+          <a
+            href={WA}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-[0.88rem] font-semibold transition-transform hover:scale-[1.02]"
+            style={{ background: BLUE, color: PAPER }}
+          >
+            <MessageCircle className="h-4 w-4" />
+            Pedir retiro
+          </a>
+        </div>
+      </header>
+
+      <section className="relative">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-12 md:gap-14 md:px-8 md:py-24">
+          <motion.div
+            className="md:col-span-7"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={t}
+          >
+            <div
+              className="mb-5 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[0.78rem]"
+              style={{ background: BLUE_LIGHT, color: BLUE_DARK }}
+            >
+              <Truck className="h-3.5 w-3.5" />
+              Retiro y entrega gratis en zona
+            </div>
+
+            <h1
+              className="leading-[1.02] tracking-[-0.025em]"
+              style={{
+                fontSize: "clamp(2.4rem, 6vw, 4.2rem)",
+                fontWeight: 700,
+                color: INK,
+              }}
+            >
+              Lo retiro,
+              <br />
+              lo lavo,
+              <br />
+              <span style={{ color: BLUE }}>te lo llevo.</span>
+            </h1>
+
+            <p
+              className="mt-6 max-w-md text-[1.04rem] leading-relaxed"
+              style={{ color: `${INK}b0` }}
+            >
+              Lavandería de barrio. Retiro y entrega en el día sobre cargas de
+              hasta 12 kilos. Frazadas y edredones en 24 horas. Sin tu auto, sin
+              cargar la bolsa.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href={WA}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl px-5 py-3.5 text-[0.96rem] font-semibold transition-transform hover:scale-[1.02]"
+                style={{ background: BLUE, color: PAPER }}
+              >
+                <MessageCircle className="h-4 w-4" />
+                Coordinar retiro
+              </a>
+              <a
+                href="tel:+5491100000000"
+                className="inline-flex items-center gap-2 rounded-xl px-5 py-3.5 text-[0.96rem] font-medium"
+                style={{ border: `1px solid ${INK}20`, color: INK }}
+              >
+                <Phone className="h-4 w-4" />
+                11 0000 0000
+              </a>
+            </div>
+
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-[0.86rem]" style={{ color: `${INK}88` }}>
+              <span className="inline-flex items-center gap-2">
+                <Clock className="h-4 w-4" style={{ color: BLUE }} />
+                Entrega en 4h hasta 8kg
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4" style={{ color: BLUE }} />
+                Detergente hipoalergénico
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Sparkles className="h-4 w-4" style={{ color: BLUE }} />
+                Suavizante opcional sin costo
+              </span>
+            </div>
+          </motion.div>
+
+          <motion.aside
+            className="md:col-span-5"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ...t, delay: 0.1 }}
+          >
+            <div
+              className="rounded-3xl p-7 md:p-8"
+              style={{
+                background: SURFACE,
+                border: `1px solid ${INK}10`,
+                boxShadow: `0 30px 80px -50px ${INK}40`,
+              }}
+            >
+              <div className="flex items-center gap-2 text-[0.82rem]" style={{ color: BLUE_DARK }}>
+                <Calculator className="h-4 w-4" />
+                Calculá tu lavado
+              </div>
+              <h3
+                className="mt-2 text-[1.5rem] font-semibold leading-tight"
+                style={{ color: INK }}
+              >
+                Pesá la bolsa y te decimos cuánto.
+              </h3>
+
+              <label className="mt-7 block text-[0.86rem]" style={{ color: `${INK}99` }}>
+                Peso aproximado (kg)
+              </label>
+              <div className="mt-2 flex items-baseline gap-3">
+                <span
+                  className="text-[3.5rem] leading-none font-bold tracking-[-0.03em]"
+                  style={{ color: INK }}
+                >
+                  {weight}
+                </span>
+                <span className="text-[1.05rem]" style={{ color: `${INK}80` }}>
+                  kg
+                </span>
+              </div>
+              <input
+                type="range"
+                min={3}
+                max={15}
+                step={1}
+                value={weight}
+                onChange={(e) => setWeight(parseInt(e.target.value, 10))}
+                className="mt-4 w-full"
+                style={{ accentColor: BLUE }}
+                aria-label="Peso aproximado"
+              />
+              <div className="mt-1 flex justify-between text-[0.74rem]" style={{ color: `${INK}66` }}>
+                <span>3 kg</span>
+                <span>15 kg</span>
+              </div>
+
+              <div
+                className="mt-7 flex items-end justify-between border-t pt-5"
+                style={{ borderColor: `${INK}14` }}
+              >
+                <div>
+                  <p className="text-[0.78rem]" style={{ color: `${INK}88` }}>
+                    Estimado
+                  </p>
+                  <p
+                    className="mt-1 text-[2rem] font-bold leading-none tracking-[-0.02em]"
+                    style={{ color: BLUE_DARK }}
+                  >
+                    ${estimate.price.toLocaleString("es-AR")}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <p className="text-[0.78rem]" style={{ color: `${INK}88` }}>
+                    Entrega
+                  </p>
+                  <p className="mt-1 text-[1.05rem] font-semibold" style={{ color: INK }}>
+                    {estimate.eta}
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={WA}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-[0.95rem] font-semibold"
+                style={{ background: BLUE, color: PAPER }}
+              >
+                Reservar este lavado <ArrowRight className="h-4 w-4" />
+              </a>
+
+              <p className="mt-3 text-[0.76rem]" style={{ color: `${INK}66` }}>
+                Estimación orientativa. Cargas medianas a pleno. Frazadas y
+                edredones cotizamos aparte.
+              </p>
+            </div>
+          </motion.aside>
         </div>
       </section>
 
-      <section className="px-4 py-20 md:px-10">
-        <div className="mx-auto max-w-5xl">
-          <h2 className={`${h} text-center text-4xl text-white md:text-5xl`}>Línea de tiempo operativa</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-slate-500">
-            Lo que las cadenas de lavado buscan en web: throughput, NPS y ticket medio — visualizamos el journey horizontal.
-          </p>
-          <div className="relative mt-14 hidden md:block">
-            <div className="absolute left-0 right-0 top-6 h-0.5 bg-gradient-to-r from-cyan-500/20 via-cyan-400 to-cyan-500/20" />
-            <div className="grid grid-cols-4 gap-6">
-              {[
-                { n: "Scan", d: "Lector RFID asigna cabina" },
-                { n: "Prep", d: "Barro suave, PH controlado" },
-                { n: "Sellado", d: "Cera express opcional" },
-                { n: "Upsell", d: "Push notif detailing" },
-              ].map((s) => (
-                <div key={s.n} className={`relative pt-12 text-center ${art.cardShell} p-6`}>
-                  <div className="absolute left-1/2 top-0 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-cyan-400 bg-slate-950 text-xs font-bold text-cyan-300">
-                    {s.n}
-                  </div>
-                  <p className="text-sm font-bold text-white">{s.d}</p>
-                </div>
-              ))}
-            </div>
+      <section id="como" className="py-20 md:py-24" style={{ background: SURFACE }}>
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <div className="max-w-2xl">
+            <p className="text-[0.84rem]" style={{ color: BLUE_DARK }}>
+              Cómo es
+            </p>
+            <h2
+              className="mt-2 text-[clamp(1.9rem,4vw,2.8rem)] font-semibold leading-[1.1]"
+              style={{ color: INK }}
+            >
+              Cuatro pasos. Cero vueltas.
+            </h2>
           </div>
-          <div className="mt-10 space-y-4 md:hidden">
-            {["Scan", "Prep", "Sellado", "Upsell"].map((n, i) => (
-              <div key={n} className={`flex gap-3 p-4 ${art.cardShell}`}>
-                <Droplets className="h-6 w-6 shrink-0 text-cyan-400" />
-                <p className="text-sm text-slate-300">
-                  Paso {i + 1}: {n} — ver detalle en desktop.
+
+          <div className="mt-10 grid gap-5 md:grid-cols-4">
+            {STEPS.map((s, i) => (
+              <motion.div
+                key={s.n}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ ...t, delay: i * 0.06 }}
+                className="rounded-2xl p-6"
+                style={{ background: PAPER, border: `1px solid ${INK}10` }}
+              >
+                <div
+                  className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-full text-[0.85rem] font-bold"
+                  style={{ background: BLUE_LIGHT, color: BLUE_DARK }}
+                >
+                  {s.n}
+                </div>
+                <h3 className="text-[1.05rem] font-semibold" style={{ color: INK }}>
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-[0.92rem] leading-relaxed" style={{ color: `${INK}99` }}>
+                  {s.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-900/60 px-4 py-16 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
-          {[
-            { icon: Clock, t: "Picos mediodía", d: "Cola virtual con SMS 2 pasos antes del túnel." },
-            { icon: MapPin, t: "Multi-sede", d: "Sincronización de saldo entre plantas demo." },
-            { icon: ShieldCheck, t: "Seguro flota", d: "Checklist fotográfico descargable por lavado." },
-          ].map(({ icon: I, t, d }) => (
-            <div key={t} className={`p-8 ${art.cardShell}`}>
-              <I className="h-7 w-7 text-cyan-400" />
-              <h3 className={`mt-4 ${h} text-xl text-white`}>{t}</h3>
-              <p className="mt-2 text-sm text-slate-500">{d}</p>
-            </div>
-          ))}
+      <section id="precios" className="py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-5 md:px-8">
+          <div className="max-w-xl">
+            <p className="text-[0.84rem]" style={{ color: BLUE_DARK }}>
+              Precios
+            </p>
+            <h2
+              className="mt-2 text-[clamp(1.9rem,4vw,2.8rem)] font-semibold leading-[1.1]"
+              style={{ color: INK }}
+            >
+              Sin sorpresas. Lo que ves es lo que pagás.
+            </h2>
+            <p className="mt-3 text-[0.98rem]" style={{ color: `${INK}99` }}>
+              Retiro y entrega incluidos en zona. Detergente y suavizante
+              hipoalergénicos, sin recargo.
+            </p>
+          </div>
+
+          <div
+            className="mt-10 overflow-hidden rounded-3xl"
+            style={{ border: `1px solid ${INK}10`, background: PAPER }}
+          >
+            {PRICES.map((row, i) => (
+              <div
+                key={row.kg}
+                className="grid grid-cols-[1fr_auto_auto] items-center gap-6 px-6 py-5"
+                style={{
+                  borderTop: i > 0 ? `1px solid ${INK}0d` : "none",
+                }}
+              >
+                <div>
+                  <p className="text-[1.02rem] font-semibold" style={{ color: INK }}>
+                    {row.kg}
+                  </p>
+                </div>
+                <div
+                  className="hidden text-[0.86rem] sm:block"
+                  style={{ color: `${INK}88` }}
+                >
+                  Entrega: {row.time}
+                </div>
+                <div className="text-[1.1rem] font-bold tabular-nums" style={{ color: BLUE_DARK }}>
+                  {row.price}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-5 text-[0.86rem]" style={{ color: `${INK}80` }}>
+            Lavado en seco y artículos especiales (alfombras, plumones): se
+            cotiza por foto en WhatsApp.
+          </p>
         </div>
       </section>
 
-      <DemoTestimonials
-        sectionHeadingClass={h}
-        title="Operadores y flotas"
-        quotes={[
-          { text: "Reducimos reclamos por rayones con el checklist web firmado.", author: "G. Ferro", role: "Transporte urbano" },
-          { text: "El listado horizontal de planes convenció al COO en una sola reunión.", author: "Pilar", role: "Cadena 12 sucursales demo" },
-        ]}
-        sectionClass="border-y border-cyan-500/10"
-        titleClass="text-white"
-        cardClass={`p-6 ${art.cardShell}`}
-        quoteClass="text-sm italic text-slate-400"
-        authorClass="mt-4 text-xs font-bold uppercase tracking-wider text-cyan-500"
-      />
+      <section id="zona" className="py-20 md:py-28" style={{ background: SURFACE }}>
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2 md:gap-14 md:px-8">
+          <div>
+            <p className="text-[0.84rem]" style={{ color: BLUE_DARK }}>
+              Zona de retiro
+            </p>
+            <h2
+              className="mt-2 text-[clamp(1.7rem,3.5vw,2.4rem)] font-semibold leading-[1.1]"
+              style={{ color: INK }}
+            >
+              Almagro, Caballito y Villa Crespo.
+            </h2>
+            <p className="mt-4 text-[0.98rem]" style={{ color: `${INK}99` }}>
+              Pasamos a buscar tu bolsa en bici eléctrica, sin contaminar y sin
+              demorarte el día. Si estás fuera de la zona, escribinos y
+              coordinamos.
+            </p>
 
-      <DemoFaqList
-        sectionHeadingClass={h}
-        title="Preguntas frecuentes"
-        items={[
-          { q: "¿Integran barreras automáticas?", a: "API demo con lectores LPR y whitelist de patentes corporativas." },
-          { q: "¿Cómo evitan fraude en membresías?", a: "Límite de patentes, selfie opcional en alta y bloqueo remoto." },
-        ]}
-        sectionClass="bg-black/40"
-        titleClass="text-white"
-        qClass="font-bold text-white"
-        aClass="mt-2 text-sm text-slate-500"
-        rowClass="border-b border-white/5 py-5 last:border-0"
-      />
+            <ul className="mt-6 space-y-2.5">
+              {[
+                { label: "Local", val: "Av. Corrientes 4750, Almagro" },
+                { label: "Horario", val: "Lun a sáb · 9 a 19 hs" },
+                { label: "WhatsApp", val: "+54 9 11 0000 0000" },
+              ].map((row) => (
+                <li
+                  key={row.label}
+                  className="flex items-center justify-between border-b py-2"
+                  style={{ borderColor: `${INK}10` }}
+                >
+                  <span className="text-[0.86rem]" style={{ color: `${INK}80` }}>
+                    {row.label}
+                  </span>
+                  <span className="text-[0.96rem] font-medium" style={{ color: INK }}>
+                    {row.val}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <DemoEnhancements
+            <div className="mt-7 inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-[0.84rem]" style={{ background: BLUE_LIGHT, color: BLUE_DARK }}>
+              <MapPin className="h-4 w-4" />
+              Retiros: lunes a viernes hasta las 18 hs
+            </div>
+          </div>
+
+          <div className="relative h-[360px] overflow-hidden rounded-3xl md:h-[460px]" style={{ border: `1px solid ${INK}10` }}>
+            <Image
+              src={v.b}
+              alt="Local de lavandería"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div
+              className="absolute bottom-5 left-5 rounded-2xl px-4 py-3 text-[0.88rem]"
+              style={{ background: PAPER, color: INK, boxShadow: `0 12px 40px -10px ${INK}40` }}
+            >
+              <p className="font-semibold">Av. Corrientes 4750</p>
+              <p style={{ color: `${INK}88` }}>Almagro · CABA</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <DemoLeadForm
         slug={SLUG}
-        omitCoverBanner
-        brandLabel="Spin & Gloss Autolavado"
-        shopCardClass="border border-cyan-500/25 bg-slate-950/80"
-        shopAccentClass="bg-cyan-400 font-bold text-slate-950"
-        sectionClass="bg-slate-950"
-        titleClass="text-white"
-        cardClass={`p-6 ${art.cardShell}`}
-        quoteClass="text-sm italic text-slate-400"
-        authorClass="mt-4 text-xs font-bold text-cyan-400"
-        extraTestimonials={[{ text: "El layout de lista en el shop nos diferenció en la propuesta.", author: "Leo", role: "Agencia partner demo" }]}
+        brandLabel={BRAND}
+        theme={{
+          ...v.lead,
+          invert: true,
+          section: "py-20 md:py-28",
+          card: "rounded-3xl p-7 md:p-10",
+          label: "text-[0.84rem]",
+          input: "mt-1 w-full border-b border-[#0e1a26]/15 bg-transparent px-0 py-3 text-[0.96rem] text-[#0e1a26] outline-none focus:border-[#1e6fb8]",
+          button: "w-full rounded-xl bg-[#1e6fb8] py-3.5 text-[0.95rem] font-semibold text-white",
+          focus: "focus:border-[#1e6fb8]",
+        }}
+        kicker="Coordiná tu primer retiro"
+        title="Empezá hoy"
+        sub="Te respondemos por WhatsApp en menos de 15 minutos en horario comercial."
       />
 
-      <footer className="px-4 py-8 text-center text-xs text-slate-600">Demo · Spin & Gloss</footer>
+      <footer
+        className="border-t py-9"
+        style={{ borderColor: `${INK}14`, background: PAPER }}
+      >
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-[0.84rem] md:flex-row md:px-8">
+          <span style={{ color: `${INK}80` }}>© {BRAND} · Almagro CABA</span>
+          <span style={{ color: `${INK}66` }}>Demo · Mads Jeez Design</span>
+        </div>
+      </footer>
     </div>
   );
 }

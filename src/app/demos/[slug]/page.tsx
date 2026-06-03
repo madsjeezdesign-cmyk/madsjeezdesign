@@ -65,6 +65,10 @@ import { BeltranBrionesChrome } from "@/components/demos/beltran-briones/beltran
 import { DemoBeltranBriones } from "@/components/demos/beltran-briones";
 import { FashionDemoChrome } from "@/components/demos/retail-fashion/fashion-demo-chrome";
 import { SLUG_TO_VARIANT } from "@/components/demos/retail-fashion/fashion-variant-router";
+import { GasistaTrustOverride } from "@/components/demos/overrides/gasista-trust-override";
+import { RopaEditorialOverride } from "@/components/demos/overrides/ropa-editorial-override";
+import { UrbanoChicStreetOverride } from "@/components/demos/overrides/urbano-chic-street-override";
+import { MuonlineMedievalOverride } from "@/components/demos/overrides/muonline-medieval-override";
 import {
   DemoAbogados,
   DemoCatering,
@@ -268,6 +272,27 @@ export default async function DemoPage({
   const d = getDemoBySlug(slug);
   if (!d) notFound();
   const showcase = getShowcaseMeta(slug);
+
+  // ─── Tragic-demo overrides (rebuild PR) ───────────────────────────────
+  // Slugs that route to a per-slug unique-identity shell instead of
+  // their archetype router. Each override owns its full chrome + content.
+  if (slug === "gasista") {
+    return <GasistaTrustOverride slug={slug} />;
+  }
+  if (slug === "ropa") {
+    return <RopaEditorialOverride />;
+  }
+  if (slug === "moda-urbano-chic") {
+    return (
+      <>
+        <FashionDemoChrome brand={d.title} />
+        <UrbanoChicStreetOverride />
+      </>
+    );
+  }
+  if (slug === "muonline") {
+    return <MuonlineMedievalOverride slug={slug} />;
+  }
 
   if (isAndreaMariSlug(slug)) {
     return (
