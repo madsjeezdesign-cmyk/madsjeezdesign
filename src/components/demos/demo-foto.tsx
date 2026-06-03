@@ -9,7 +9,7 @@ import {
   Camera,
   Clapperboard,
   Film,
-  Instagram,
+  Share2,
   MessageCircle,
   Play,
 } from "lucide-react";
@@ -36,7 +36,7 @@ const SPECIALTIES = [
   { icon: Aperture, label: "Corporativo & prensa", desc: "Retrato ejecutivo, cobertura de eventos, headshots con entrega express." },
   { icon: Clapperboard, label: "Video comercial", desc: "Reels de marca, spots 30 seg y testimoniales con postproducción incluida." },
   { icon: Film, label: "Editorial & lookbook", desc: "Campañas de moda, catálogos estacionales y contenido para marcas." },
-  { icon: Instagram, label: "Contenido RRSS", desc: "Pack mensual de imágenes y video corto optimizados por plataforma." },
+  { icon: Share2, label: "Contenido RRSS", desc: "Pack mensual de imágenes y video corto optimizados por plataforma." },
   { icon: Play, label: "Cobertura de eventos", desc: "Lanzamientos, fiestas corporativas y recitales con entrega en 48 h." },
 ];
 
