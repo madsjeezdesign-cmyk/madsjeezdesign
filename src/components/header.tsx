@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { navLinks, site } from "@/lib/data";
+import { navLinks } from "@/lib/data";
+import { LogoHorizontal } from "./brand/logo";
 import { ThemeToggle } from "./theme-toggle";
 
 export function Header() {
@@ -12,13 +13,12 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">
-            M
-          </span>
-          <span className="font-[family-name:var(--font-instrument)] text-xl tracking-tight text-foreground">
-            {site.name}
-          </span>
+        <Link
+          href="/"
+          aria-label="MadsJeezDesign · Inicio"
+          className="flex items-center text-foreground"
+        >
+          <LogoHorizontal size={34} textSize="1.0625rem" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

@@ -18,9 +18,11 @@
   --card: #ffffff;
   --border: #e2e8f0;
   --hairline: #e2e8f0;     /* alias for --border, for new code */
-  --accent: #0d9488;
-  --accent-light: #ccfbf1;
-  --accent-dark: #0f766e;
+  --accent: #0891b2;          /* brand · cyan-600 — readable on light */
+  --accent-light: #cffafe;
+  --accent-dark: #0e7490;
+  --brand-cyan: #22d3ee;      /* brand mark hero glow */
+  --brand-cyan-deep: #0e7490;
   --warm: #d97706;
   --warm-light: #fef3c7;
   --surface: #f1f5f9;
@@ -83,9 +85,11 @@ html.dark {
   --card: #121a2b;
   --border: #2a3650;
   --hairline: #2a3650;
-  --accent: #2dd4bf;
-  --accent-light: rgba(45, 212, 191, 0.12);
-  --accent-dark: #14b8a6;
+  --accent: #22d3ee;          /* brand · electric cyan, neon glow */
+  --accent-light: rgba(34, 211, 238, 0.12);
+  --accent-dark: #06b6d4;
+  --brand-cyan: #22d3ee;
+  --brand-cyan-deep: #0891b2;
   --warm: #fbbf24;
   --warm-light: rgba(251, 191, 36, 0.12);
   --surface: #161f33;
@@ -112,6 +116,7 @@ html.dark {
   --font-sans: var(--font-plus-jakarta);
   --font-display: var(--font-instrument);
   --font-mono: var(--font-jetbrains);
+  --font-brand: var(--font-space-grotesk);
 }
 
 html {

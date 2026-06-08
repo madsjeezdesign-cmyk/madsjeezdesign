@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site, navLinks } from "@/lib/data";
+import { LogoHorizontal } from "./brand/logo";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -9,15 +10,14 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">
-                M
-              </span>
-              <span className="font-[family-name:var(--font-instrument)] text-xl text-foreground">
-                {site.name}
-              </span>
+            <Link
+              href="/"
+              aria-label="MadsJeezDesign · Inicio"
+              className="text-foreground"
+            >
+              <LogoHorizontal size={36} textSize="1.125rem" withTagline />
             </Link>
-            <p className="mt-4 max-w-xs text-sm text-muted">
+            <p className="mt-5 max-w-xs text-sm text-muted">
               Desarrollo web profesional para comercios y empresas en Argentina y
               Latinoamérica.
             </p>
