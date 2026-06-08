@@ -5,6 +5,7 @@ import {
   JetBrains_Mono,
   Plus_Jakarta_Sans,
 } from "next/font/google";
+import { SiteEffects } from "@/components/site-effects";
 import { ThemeProvider } from "@/components/theme-provider";
 import { THEME_INIT_SCRIPT } from "@/lib/theme-script";
 import { site, yearsExperience } from "@/lib/data";
@@ -155,6 +156,7 @@ export default function RootLayout({
           Saltar al contenido
         </a>
         <ThemeProvider>
+          <SiteEffects />
           <main id="main" tabIndex={-1} className="focus:outline-none">
             {children}
           </main>
