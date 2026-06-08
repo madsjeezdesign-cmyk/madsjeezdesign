@@ -4,6 +4,7 @@ import {
   Instrument_Serif,
   JetBrains_Mono,
   Plus_Jakarta_Sans,
+  Space_Grotesk,
 } from "next/font/google";
 import { SiteEffects } from "@/components/site-effects";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -27,6 +28,12 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument",
   subsets: ["latin"],
   weight: "400",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const titleBase = `${site.name} · ${site.experienceLabel} · ${yearsExperience} años`;
@@ -123,7 +130,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const fontVars = `${plusJakarta.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`;
+  const fontVars = `${plusJakarta.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} ${spaceGrotesk.variable}`;
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (

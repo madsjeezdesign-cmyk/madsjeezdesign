@@ -1,4 +1,5 @@
 import { site, yearsExperience } from "@/lib/data";
+import { LogoMark } from "@/components/brand/logo";
 
 /**
  * Sobre — brand-forward editorial. Wordmark moment at scale, single short
@@ -37,31 +38,37 @@ export function LandingSobre() {
             El estudio
           </p>
 
-          {/* Wordmark — the brand identity moment */}
-          <div className="mt-6 leading-none">
-            <p
-              className="font-[family-name:var(--font-instrument)] text-body-strong"
-              style={{
-                fontSize: "clamp(4.5rem, 13vw, 11rem)",
-                lineHeight: 0.95,
-                letterSpacing: "-0.035em",
-              }}
-            >
-              <span className="italic">Mads</span>
-              <span style={{ color: "var(--accent)" }}>·</span>
-              <span className="italic">Jeez</span>
-            </p>
-            <p
-              className="mt-3 font-[family-name:var(--font-jetbrains)]"
-              style={{
-                fontSize: "0.8125rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "var(--muted-body)",
-              }}
-            >
-              Design Studio · est. {site.foundedYear}
-            </p>
+          {/* Wordmark — brand identity moment with M-monogram + Space Grotesk */}
+          <div className="mt-6 flex items-center gap-6 md:gap-8">
+            <LogoMark size={88} className="shrink-0" />
+            <div className="leading-none">
+              <p
+                className="text-body-strong"
+                style={{
+                  fontFamily:
+                    "var(--font-brand), var(--font-sans), sans-serif",
+                  fontSize: "clamp(2.5rem, 7.5vw, 6rem)",
+                  fontWeight: 600,
+                  lineHeight: 0.95,
+                  letterSpacing: "-0.025em",
+                }}
+              >
+                Mads
+                <span style={{ color: "var(--brand-cyan)" }}>Jeez</span>
+                Design
+              </p>
+              <p
+                className="mt-3 font-[family-name:var(--font-jetbrains)]"
+                style={{
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.32em",
+                  textTransform: "uppercase",
+                  color: "var(--brand-cyan)",
+                }}
+              >
+                Design · Code · Elevate
+              </p>
+            </div>
           </div>
 
           {/* Single short paragraph — no wall of text */}
@@ -128,18 +135,8 @@ export function LandingSobre() {
               >
                 Datos del estudio
               </p>
-              <span
-                aria-hidden
-                className="font-[family-name:var(--font-instrument)] italic"
-                style={{
-                  fontSize: "1.5rem",
-                  lineHeight: 1,
-                  color: "var(--accent)",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                M·J
-              </span>
+              <LogoMark size={28} />
+              <span className="sr-only">MadsJeezDesign</span>
             </div>
 
             <dl className="mt-6 space-y-5 text-sm">

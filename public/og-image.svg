@@ -1,49 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="MadsJeez Design — Estudio de diseño y desarrollo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="MadsJeezDesign — Design · Code · Elevate">
   <defs>
-    <linearGradient id="vignette" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0a0d12" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#0e1a2e" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#67e8f9" />
+      <stop offset="55%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#0891b2" />
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1de0b1" stop-opacity="0.10"/>
-      <stop offset="60%" stop-color="#1de0b1" stop-opacity="0"/>
+    <linearGradient id="letter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#67e8f9" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="40%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0" />
     </radialGradient>
   </defs>
 
-  <!-- background -->
-  <rect width="1200" height="630" fill="#05070a"/>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
 
-  <!-- subtle accent glow -->
-  <circle cx="980" cy="120" r="320" fill="url(#glow)"/>
-
-  <!-- editorial top hairline -->
-  <line x1="80" y1="80" x2="1120" y2="80" stroke="#1a1f26" stroke-width="1"/>
-
-  <!-- eyebrow row: mark + meta -->
-  <g transform="translate(80, 120)">
-    <!-- minimal geometric mark: square + accent dot -->
-    <rect x="0" y="-14" width="28" height="28" fill="none" stroke="#3a4350" stroke-width="1.5"/>
-    <circle cx="14" cy="0" r="3" fill="#1de0b1"/>
-    <text x="48" y="6" fill="#7a8595" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, monospace" font-size="14" letter-spacing="2.4">EST. 2009 — BUENOS AIRES</text>
+  <g transform="translate(140 215)">
+    <circle cx="100" cy="100" r="92" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4" />
+    <circle cx="100" cy="100" r="90" fill="#0e1a2e" stroke="url(#ring)" stroke-width="4" />
+    <path
+      d="M 50 145 L 50 56 L 75 56 L 100 95 L 125 56 L 150 56 L 150 145 L 128 145 L 128 92 L 103 128 L 97 128 L 72 92 L 72 145 Z"
+      fill="url(#letter)"
+    />
   </g>
 
-  <!-- main wordmark -->
-  <text x="80" y="360" fill="#f6f7f9" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="124" font-weight="700" letter-spacing="-4">MadsJeez<tspan fill="#1de0b1">.</tspan></text>
-  <text x="80" y="448" fill="#c6ccd5" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="46" font-weight="300" letter-spacing="-0.5">Estudio de diseño y desarrollo</text>
+  <g transform="translate(420 270)">
+    <text
+      x="0"
+      y="0"
+      font-family="'Space Grotesk', system-ui, sans-serif"
+      font-weight="600"
+      font-size="78"
+      letter-spacing="-2"
+      fill="#f8fafc"
+    >Mads<tspan fill="#22d3ee">Jeez</tspan>Design</text>
+    <text
+      x="2"
+      y="50"
+      font-family="'JetBrains Mono', ui-monospace, monospace"
+      font-weight="400"
+      font-size="20"
+      letter-spacing="6"
+      fill="#22d3ee"
+    >DESIGN · CODE · ELEVATE</text>
+  </g>
 
-  <!-- accent bar -->
-  <rect x="80" y="500" width="64" height="3" fill="#1de0b1"/>
-
-  <!-- subtitle / footer row -->
-  <text x="80" y="548" fill="#7a8595" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="400">Sitios web · E-commerce · Sistemas a medida</text>
-
-  <!-- right-side meta -->
-  <text x="1120" y="548" text-anchor="end" fill="#7a8595" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, monospace" font-size="16" letter-spacing="1.5">2009 — 2026</text>
-
-  <!-- bottom hairline -->
-  <line x1="80" y1="570" x2="1120" y2="570" stroke="#1a1f26" stroke-width="1"/>
-
-  <!-- subtle bottom vignette -->
-  <rect width="1200" height="630" fill="url(#vignette)" pointer-events="none"/>
+  <line x1="140" y1="540" x2="1060" y2="540" stroke="#22d3ee" stroke-opacity="0.15" stroke-width="1" />
+  <g transform="translate(140 570)" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="16" letter-spacing="2">
+    <text x="0" y="0" fill="#94a3b8">Buenos Aires · 2009—2026</text>
+    <text x="920" y="0" fill="#94a3b8" text-anchor="end">madsjeezdesign.com</text>
+  </g>
 </svg>
