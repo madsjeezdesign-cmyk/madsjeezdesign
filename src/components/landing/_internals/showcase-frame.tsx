@@ -148,130 +148,333 @@ function FrameComposition({
   const isLight = isLightPreview(demo.previewClass);
   const titleColor = isLight ? "#0f172a" : "#f8fafc";
   const subColor = isLight ? "#475569" : "rgba(226,232,240,0.78)";
-  const microColor = isLight ? "rgba(15,23,42,0.55)" : "rgba(226,232,240,0.55)";
+  const microColor = isLight ? "rgba(15,23,42,0.55)" : "rgba(226,232,240,0.62)";
+  const hairline = isLight ? "rgba(15,23,42,0.10)" : "rgba(255,255,255,0.08)";
+  const softBg = isLight ? "rgba(15,23,42,0.04)" : "rgba(255,255,255,0.04)";
+  const ctaTextColor = pickCtaText(demo.accent);
+  const navLinks = navFor(demo);
+  const products = productsFor(demo);
+  const stats = statsFor(demo);
 
   return (
-    <div className="grid h-full w-full grid-cols-12 gap-3 p-5 md:gap-4 md:p-6">
-      {/* LEFT — typographic block */}
-      <div className="col-span-7 flex flex-col justify-between">
-        <div className="flex items-center gap-1.5">
+    <div className="flex h-full w-full flex-col">
+      {/* MOCK NAVBAR — gives the preview an actual "site" feel */}
+      <div
+        className="flex items-center justify-between gap-3 px-5 py-3"
+        style={{
+          borderBottom: `1px solid ${hairline}`,
+          background: isLight ? "rgba(255,255,255,0.6)" : "rgba(10,15,26,0.45)",
+        }}
+      >
+        <div className="flex items-center gap-2">
           <span
-            className="inline-block h-1.5 w-1.5 rounded-full"
-            style={{ background: demo.accent }}
-          />
-          <span
-            className="text-[9px] uppercase"
+            className="inline-flex h-5 w-5 items-center justify-center rounded"
             style={{
-              color: microColor,
-              letterSpacing: "0.18em",
-              fontFamily: "var(--font-jetbrains), monospace",
+              background: demo.accent,
+              color: ctaTextColor,
+              fontFamily: "var(--font-instrument), serif",
+              fontSize: "10px",
+              fontWeight: 600,
+              lineHeight: 1,
             }}
           >
-            {demo.industry.split(" · ")[0].slice(0, 28)}
+            {monogram(demo.title).slice(0, 1)}
           </span>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h3
-            className="text-balance"
+          <span
+            className="text-[10px] font-semibold"
             style={{
               color: titleColor,
               fontFamily: "var(--font-instrument), serif",
-              fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
-              lineHeight: 1.05,
-              letterSpacing: "var(--tracking-display)",
+              letterSpacing: "-0.01em",
             }}
           >
-            {demo.title}
-          </h3>
-          <p
-            className="max-w-[26ch] text-[11px] md:text-[12px]"
-            style={{ color: subColor, lineHeight: 1.45 }}
-          >
-            {demo.tagline}
-          </p>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <span
-            className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[10px] font-medium"
-            style={{
-              background: demo.accent,
-              color: pickCtaText(demo.accent),
-              letterSpacing: "0.02em",
-            }}
-          >
-            {ctaLabel}
-            <span aria-hidden>→</span>
-          </span>
-          <span
-            className="rounded-full px-3 py-1.5 text-[10px]"
-            style={{
-              background: isLight ? "rgba(15,23,42,0.05)" : "rgba(255,255,255,0.06)",
-              color: subColor,
-              border: `1px solid ${isLight ? "rgba(15,23,42,0.08)" : "rgba(255,255,255,0.08)"}`,
-            }}
-          >
-            Ver más
+            {demo.title.length > 18 ? demo.title.slice(0, 17) + "…" : demo.title}
           </span>
         </div>
-      </div>
-
-      {/* RIGHT — hero "image" area */}
-      <div className="col-span-5 flex flex-col gap-2">
-        <div
-          className="relative flex-1 overflow-hidden rounded-md"
-          style={{
-            background: `
-              radial-gradient(120% 80% at 30% 10%, ${demo.accent}44, transparent 60%),
-              radial-gradient(120% 100% at 100% 100%, ${demo.accent}22, transparent 70%),
-              ${isLight ? "rgba(15,23,42,0.04)" : "rgba(255,255,255,0.04)"}
-            `,
-            border: `1px solid ${isLight ? "rgba(15,23,42,0.08)" : "rgba(255,255,255,0.08)"}`,
-          }}
-        >
-          {/* Decorative grid */}
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage: `linear-gradient(${isLight ? "rgba(15,23,42,0.04)" : "rgba(255,255,255,0.04)"} 1px, transparent 1px), linear-gradient(90deg, ${isLight ? "rgba(15,23,42,0.04)" : "rgba(255,255,255,0.04)"} 1px, transparent 1px)`,
-              backgroundSize: "16px 16px",
-            }}
-          />
-          {/* Brand monogram */}
-          <div className="absolute inset-0 flex items-center justify-center">
+        <div className="hidden items-center gap-3 md:flex">
+          {navLinks.map((link) => (
             <span
+              key={link}
+              className="text-[9px]"
               style={{
-                fontFamily: "var(--font-instrument), serif",
-                color: demo.accent,
-                fontSize: "clamp(2rem, 5vw, 3.6rem)",
-                lineHeight: 1,
-                opacity: 0.92,
-                letterSpacing: "-0.04em",
+                color: microColor,
+                fontFamily: "var(--font-jetbrains), monospace",
               }}
             >
-              {monogram(demo.title)}
+              {link}
+            </span>
+          ))}
+        </div>
+        <span
+          className="rounded-full px-2.5 py-1 text-[9px] font-semibold"
+          style={{
+            background: demo.accent,
+            color: ctaTextColor,
+          }}
+        >
+          {ctaLabel}
+        </span>
+      </div>
+
+      {/* MAIN — hero left, product/feature grid right */}
+      <div className="grid flex-1 grid-cols-12 gap-3 p-5 md:gap-4 md:p-6">
+        {/* LEFT — editorial copy */}
+        <div className="col-span-7 flex flex-col justify-between">
+          <div className="flex items-center gap-1.5">
+            <span
+              className="inline-block h-1.5 w-1.5 rounded-full"
+              style={{ background: demo.accent }}
+            />
+            <span
+              className="text-[9px] uppercase"
+              style={{
+                color: microColor,
+                letterSpacing: "0.18em",
+                fontFamily: "var(--font-jetbrains), monospace",
+              }}
+            >
+              {demo.industry.split(" · ")[0].slice(0, 28)}
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <h3
+              className="text-balance"
+              style={{
+                color: titleColor,
+                fontFamily: "var(--font-instrument), serif",
+                fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
+                lineHeight: 1.05,
+                letterSpacing: "var(--tracking-display)",
+              }}
+            >
+              {demo.title}
+            </h3>
+            <p
+              className="max-w-[28ch] text-[11px] md:text-[12px]"
+              style={{ color: subColor, lineHeight: 1.5 }}
+            >
+              {demo.tagline}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[10px] font-medium"
+              style={{
+                background: demo.accent,
+                color: ctaTextColor,
+                letterSpacing: "0.02em",
+              }}
+            >
+              {ctaLabel}
+              <span aria-hidden>→</span>
+            </span>
+            <span
+              className="rounded-full px-3 py-1.5 text-[10px]"
+              style={{
+                background: softBg,
+                color: subColor,
+                border: `1px solid ${hairline}`,
+              }}
+            >
+              Ver más
             </span>
           </div>
         </div>
 
-        {/* Mini info chips */}
-        <div className="grid grid-cols-3 gap-1.5">
-          {["A", "B", "C"].map((k, i) => (
+        {/* RIGHT — product/feature mini-grid (3 stacked cards) */}
+        <div className="col-span-5 flex flex-col gap-2">
+          {products.map((p, i) => (
             <div
-              key={k}
-              className="h-6 rounded"
+              key={p.name}
+              className="flex items-center gap-2 rounded-md px-2.5 py-2"
               style={{
-                background: isLight ? "rgba(15,23,42,0.04)" : "rgba(255,255,255,0.04)",
-                border: `1px solid ${i === 1 ? demo.accent + "55" : isLight ? "rgba(15,23,42,0.06)" : "rgba(255,255,255,0.06)"}`,
+                background: i === 0 ? softBg : "transparent",
+                border: `1px solid ${i === 0 ? demo.accent + "44" : hairline}`,
               }}
-            />
+            >
+              {/* Mini product thumb */}
+              <span
+                className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded"
+                style={{
+                  background: `radial-gradient(120% 90% at 30% 20%, ${demo.accent}55, transparent 70%), ${softBg}`,
+                  border: `1px solid ${hairline}`,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "var(--font-instrument), serif",
+                    fontSize: "12px",
+                    color: demo.accent,
+                    letterSpacing: "-0.04em",
+                  }}
+                >
+                  {monogram(p.name).slice(0, 2)}
+                </span>
+              </span>
+              <span className="flex min-w-0 flex-1 flex-col">
+                <span
+                  className="truncate text-[10px] font-medium"
+                  style={{ color: titleColor }}
+                >
+                  {p.name}
+                </span>
+                <span
+                  className="truncate text-[9px]"
+                  style={{
+                    color: microColor,
+                    fontFamily: "var(--font-jetbrains), monospace",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {p.note}
+                </span>
+              </span>
+              <span
+                className="text-[10px] font-semibold"
+                style={{
+                  color: demo.accent,
+                  fontFamily: "var(--font-jetbrains), monospace",
+                }}
+              >
+                {p.price}
+              </span>
+            </div>
           ))}
         </div>
       </div>
+
+      {/* BOTTOM STRIP — stats / trust signals */}
+      <div
+        className="flex items-center justify-between gap-2 px-5 py-2.5 md:px-6"
+        style={{
+          borderTop: `1px solid ${hairline}`,
+          background: isLight ? "rgba(255,255,255,0.4)" : "rgba(10,15,26,0.35)",
+        }}
+      >
+        <div className="flex items-center gap-3">
+          {stats.map((s) => (
+            <span
+              key={s}
+              className="text-[9px]"
+              style={{
+                color: microColor,
+                fontFamily: "var(--font-jetbrains), monospace",
+                letterSpacing: "0.04em",
+              }}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+        <span
+          className="text-[9px]"
+          style={{
+            color: microColor,
+            fontFamily: "var(--font-jetbrains), monospace",
+            letterSpacing: "0.18em",
+          }}
+        >
+          ● LIVE
+        </span>
+      </div>
     </div>
   );
+}
+
+/* ---------- Mock content generators ---------- */
+
+function navFor(demo: DemoMeta): string[] {
+  // Pick a nav that reads contextually right for the industry
+  const k = demo.industry.toLowerCase();
+  if (k.includes("gam")) return ["Servers", "Comunidad", "Soporte"];
+  if (k.includes("moda") || k.includes("retail") || k.includes("boutique"))
+    return ["Catálogo", "Lookbook", "Contacto"];
+  if (k.includes("gastr") || k.includes("restaur") || k.includes("café"))
+    return ["Carta", "Reservas", "Delivery"];
+  if (k.includes("salon") || k.includes("estética") || k.includes("spa") || k.includes("salud"))
+    return ["Servicios", "Turnos", "Equipo"];
+  if (k.includes("comercio") || k.includes("e-com") || k.includes("ecom") || k.includes("tienda"))
+    return ["Productos", "Ofertas", "Envíos"];
+  if (k.includes("hotel") || k.includes("viajes") || k.includes("hospital"))
+    return ["Habitaciones", "Servicios", "Reservar"];
+  if (k.includes("trade") || k.includes("oficio") || k.includes("ferretería") || k.includes("constru"))
+    return ["Servicios", "Trabajos", "Contacto"];
+  if (k.includes("media") || k.includes("creador") || k.includes("stream"))
+    return ["En vivo", "Videos", "Patrocinar"];
+  return ["Inicio", "Servicios", "Contacto"];
+}
+
+function productsFor(demo: DemoMeta): { name: string; note: string; price: string }[] {
+  const k = demo.industry.toLowerCase();
+  if (k.includes("gam")) {
+    return [
+      { name: "Starter", note: "8 slots · global", price: "$3.5k" },
+      { name: "Pro", note: "32 slots · LATAM", price: "$8.9k" },
+      { name: "Elite", note: "128 slots · DDoS", price: "$22k" },
+    ];
+  }
+  if (k.includes("moda") || k.includes("boutique") || k.includes("retail")) {
+    return [
+      { name: "Túnica Linnea", note: "Talles XS–XL", price: "$48k" },
+      { name: "Pantalón slip", note: "3 colores", price: "$32k" },
+      { name: "Saco de lino", note: "Edición FW26", price: "$92k" },
+    ];
+  }
+  if (k.includes("gastr") || k.includes("restaur")) {
+    return [
+      { name: "Tapeo del día", note: "Para compartir", price: "$8.4k" },
+      { name: "Bondiola lenta", note: "Plato fuerte", price: "$14k" },
+      { name: "Postre helado", note: "Casero", price: "$5.2k" },
+    ];
+  }
+  if (k.includes("salud") || k.includes("salon") || k.includes("estética")) {
+    return [
+      { name: "Consulta inicial", note: "45 min", price: "$12k" },
+      { name: "Sesión completa", note: "90 min · combo", price: "$28k" },
+      { name: "Plan mensual", note: "4 sesiones", price: "$95k" },
+    ];
+  }
+  if (k.includes("hotel") || k.includes("viajes")) {
+    return [
+      { name: "Hab. Standard", note: "2 personas", price: "$45k" },
+      { name: "Suite Vista", note: "Premium", price: "$95k" },
+      { name: "Pack 3 noches", note: "Con desayuno", price: "$210k" },
+    ];
+  }
+  if (k.includes("trade") || k.includes("oficio") || k.includes("ferret")) {
+    return [
+      { name: "Visita técnica", note: "GBA Sur", price: "$8.5k" },
+      { name: "Service completo", note: "Mano de obra", price: "$45k" },
+      { name: "Urgencia 24h", note: "Disponible", price: "$22k" },
+    ];
+  }
+  if (k.includes("creador") || k.includes("stream") || k.includes("media")) {
+    return [
+      { name: "Pack mensual", note: "4 videos", price: "$60k" },
+      { name: "Set lifestyle", note: "Reels + foto", price: "$95k" },
+      { name: "Branding full", note: "Identidad", price: "$220k" },
+    ];
+  }
+  // Default — generic commerce/services
+  return [
+    { name: "Producto base", note: "Edición simple", price: "$12k" },
+    { name: "Combo destacado", note: "Más vendido", price: "$28k" },
+    { name: "Plan premium", note: "Full service", price: "$78k" },
+  ];
+}
+
+function statsFor(demo: DemoMeta): string[] {
+  const k = demo.industry.toLowerCase();
+  if (k.includes("gam")) return ["DDoS 24/7", "Latencia <40ms", "Backup auto"];
+  if (k.includes("moda") || k.includes("retail")) return ["Envíos 48h", "Cambios", "Mercado Pago"];
+  if (k.includes("gastr") || k.includes("restaur")) return ["Reservas online", "Delivery", "WhatsApp"];
+  if (k.includes("salud") || k.includes("estética")) return ["Turnos online", "Profesionales", "Obra social"];
+  if (k.includes("hotel") || k.includes("viajes")) return ["Booking integrado", "Mejor precio", "Sin recargo"];
+  if (k.includes("trade") || k.includes("oficio")) return ["Matrícula MP 1234", "15 años", "Urgencias"];
+  if (k.includes("creador") || k.includes("stream")) return ["+200k followers", "Top 5 LATAM", "Patrocinios"];
+  return ["Pago seguro", "Envíos 48h", "Soporte WhatsApp"];
 }
 
 /* -----------------------------------------------------------
