@@ -84,7 +84,7 @@ export function ShowcaseCategoryNav({ categories, activeId, onSelect }: Props) {
 
                 <span className="flex min-w-0 flex-1 items-baseline justify-between gap-3">
                   <span
-                    className="truncate font-medium"
+                    className="flex items-center gap-2 truncate font-medium"
                     style={{
                       color: active ? "var(--foreground)" : "var(--muted-body)",
                       fontSize: "var(--font-size-small)",
@@ -92,15 +92,40 @@ export function ShowcaseCategoryNav({ categories, activeId, onSelect }: Props) {
                       transition: "color var(--duration-snap) var(--ease-snap)",
                     }}
                   >
-                    {c.label}
+                    <span className="truncate">{c.label}</span>
+                    {/* Animated arrow indicator — shows on active OR hover */}
+                    <span
+                      aria-hidden
+                      className="hidden h-3 w-3 shrink-0 items-center justify-center text-[10px] opacity-0 transition-all lg:inline-flex group-hover:opacity-60"
+                      style={{
+                        color: c.accent,
+                        opacity: active ? 1 : undefined,
+                        transform: active ? "translateX(0)" : "translateX(-4px)",
+                        transitionDuration: "var(--duration-snap)",
+                        transitionTimingFunction: "var(--ease-ui)",
+                      }}
+                    >
+                      ↗
+                    </span>
                   </span>
                   <span
-                    className="hidden font-[family-name:var(--font-jetbrains)] text-[10px] tabular-nums lg:inline"
+                    className="hidden items-center gap-1 font-[family-name:var(--font-jetbrains)] text-[10px] tabular-nums lg:inline-flex"
                     style={{
                       color: active ? c.accent : "color-mix(in srgb, var(--muted-body) 70%, transparent)",
                       letterSpacing: "var(--tracking-micro)",
+                      transition: "color var(--duration-snap) var(--ease-snap)",
                     }}
                   >
+                    {active ? (
+                      <span
+                        aria-hidden
+                        className="inline-block h-1 w-1 rounded-full"
+                        style={{
+                          background: c.accent,
+                          boxShadow: `0 0 6px ${c.accent}`,
+                        }}
+                      />
+                    ) : null}
                     {String(c.slugs.length).padStart(2, "0")}
                   </span>
                 </span>

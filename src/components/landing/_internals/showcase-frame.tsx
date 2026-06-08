@@ -56,21 +56,31 @@ export function ShowcaseFrame({ demo }: { demo: DemoMeta }) {
       ref={wrapRef}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="relative"
+      className="group/frame relative"
       style={{ perspective: 1200 }}
     >
       <motion.div
         style={{ rotateX: reduced ? 0 : rx, rotateY: reduced ? 0 : ry, transformStyle: "preserve-3d" }}
-        className="relative w-full overflow-hidden"
+        className="relative w-full overflow-visible"
       >
-        {/* Glow on the frame edge — accent-tinted, low alpha */}
+        {/* Glow LAYER 1 — close ambient glow (warm rim) */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -inset-px rounded-[20px]"
+          className="pointer-events-none absolute -inset-3 rounded-[28px]"
           style={{
-            background: `radial-gradient(120% 80% at 50% 0%, ${demo.accent}24, transparent 60%)`,
-            filter: "blur(20px)",
-            opacity: 0.55,
+            background: `radial-gradient(60% 100% at 50% 0%, ${demo.accent}33, transparent 60%)`,
+            filter: "blur(28px)",
+            opacity: 0.7,
+          }}
+        />
+        {/* Glow LAYER 2 — wide cyan ambient (brand-coherent) */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -inset-10 rounded-[40px]"
+          style={{
+            background: `radial-gradient(80% 90% at 50% 60%, color-mix(in srgb, var(--brand-cyan) 22%, transparent), transparent 70%)`,
+            filter: "blur(60px)",
+            opacity: 0.45,
           }}
         />
 
@@ -78,17 +88,21 @@ export function ShowcaseFrame({ demo }: { demo: DemoMeta }) {
           className="relative w-full overflow-hidden rounded-[18px]"
           style={{
             background: "#0b1120",
-            border: `1px solid color-mix(in srgb, ${demo.accent} 18%, transparent)`,
-            boxShadow:
-              "0 30px 70px -30px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.04) inset",
+            border: `1px solid color-mix(in srgb, ${demo.accent} 22%, transparent)`,
+            boxShadow: `
+              0 36px 80px -30px rgba(0,0,0,0.65),
+              0 12px 32px -16px color-mix(in srgb, ${demo.accent} 35%, transparent),
+              0 1px 0 rgba(255,255,255,0.05) inset,
+              0 -1px 0 rgba(0,0,0,0.3) inset
+            `,
             aspectRatio: "16 / 10",
           }}
         >
-          {/* Browser chrome */}
+          {/* Browser chrome — refined */}
           <div
             className="flex items-center gap-2 px-3 py-2"
             style={{
-              background: "rgba(10, 15, 26, 0.6)",
+              background: "rgba(10, 15, 26, 0.65)",
               borderBottom: "1px solid rgba(255,255,255,0.06)",
             }}
           >
@@ -97,40 +111,180 @@ export function ShowcaseFrame({ demo }: { demo: DemoMeta }) {
               <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#febc2e" }} />
               <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#28c840" }} />
             </div>
+            {/* Mini favicon — demo monogram in accent */}
+            <span
+              className="ml-2 inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-sm"
+              style={{
+                background: `linear-gradient(135deg, ${demo.accent}, color-mix(in srgb, ${demo.accent} 50%, #000))`,
+                color: pickCtaText(demo.accent),
+                fontFamily: "var(--font-instrument), serif",
+                fontSize: "8px",
+                fontWeight: 600,
+                lineHeight: 1,
+              }}
+            >
+              {monogram(demo.title).slice(0, 1)}
+            </span>
             <div
-              className="ml-3 flex flex-1 items-center gap-2 rounded-md px-3 py-1"
+              className="ml-1 flex flex-1 items-center gap-2 rounded-md px-3 py-1"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.06)",
-                backdropFilter: "blur(8px)",
-                WebkitBackdropFilter: "blur(8px)",
                 fontFamily: "var(--font-jetbrains), monospace",
               }}
             >
               <span
                 className="h-1.5 w-1.5 rounded-full"
-                style={{ background: demo.accent }}
+                style={{ background: demo.accent, boxShadow: `0 0 6px ${demo.accent}aa` }}
               />
+              <span
+                className="text-[10px]"
+                style={{
+                  color: "rgba(226,232,240,0.45)",
+                  letterSpacing: "var(--tracking-micro)",
+                }}
+              >
+                https://
+              </span>
               <span
                 className="truncate text-[10px]"
                 style={{
-                  color: "rgba(226,232,240,0.7)",
+                  color: "rgba(226,232,240,0.75)",
                   letterSpacing: "var(--tracking-micro)",
                 }}
               >
                 {urlPath}
               </span>
             </div>
+            {/* Share/external icon on the right of the URL bar */}
+            <span
+              aria-hidden
+              className="hidden h-5 w-5 shrink-0 items-center justify-center rounded sm:inline-flex"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                color: "rgba(226,232,240,0.55)",
+                fontSize: "10px",
+              }}
+            >
+              ↗
+            </span>
           </div>
 
           {/* Hero composition — accent-driven CSS scene */}
           <div className={`relative flex h-[calc(100%-2.5rem)] bg-gradient-to-br ${demo.previewClass}`}>
             <FrameComposition demo={demo} ctaLabel={ctaLabel} />
+
+            {/* SCAN LINE — slow cyan light sweep, ambient */}
+            {!reduced ? (
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 z-10"
+                style={{
+                  top: 0,
+                  height: "2px",
+                  background: `linear-gradient(90deg, transparent, color-mix(in srgb, var(--brand-cyan) 70%, transparent), transparent)`,
+                  filter: "blur(1px)",
+                  animation: "showcase-scan 6.4s var(--ease-ui) infinite",
+                  opacity: 0.55,
+                }}
+              />
+            ) : null}
+
+            {/* NOISE GRAIN — subtle film overlay */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-overlay"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+              }}
+            />
+
+            {/* LIVE-VIEWS BADGE — floats top-right of preview area */}
+            <div
+              className="pointer-events-none absolute right-3 top-3 z-20 flex items-center gap-1.5 rounded-full px-2.5 py-1"
+              style={{
+                background: "rgba(10, 15, 26, 0.7)",
+                border: `1px solid color-mix(in srgb, ${demo.accent} 30%, rgba(255,255,255,0.08))`,
+                backdropFilter: "blur(6px)",
+                WebkitBackdropFilter: "blur(6px)",
+              }}
+            >
+              <span
+                className="h-1.5 w-1.5 rounded-full"
+                style={{
+                  background: demo.accent,
+                  animation: reduced ? "none" : "showcase-pulse 1.8s ease-in-out infinite",
+                  boxShadow: `0 0 8px ${demo.accent}`,
+                }}
+              />
+              <span
+                className="text-[9px] font-semibold uppercase"
+                style={{
+                  color: "rgba(226,232,240,0.85)",
+                  fontFamily: "var(--font-jetbrains), monospace",
+                  letterSpacing: "var(--tracking-micro)",
+                }}
+              >
+                Live · {viewsFor(demo.slug)}
+              </span>
+            </div>
+
+            {/* HOVER OVERLAY — "Ver demo en vivo" CTA */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover/frame:opacity-100"
+              style={{
+                background: `radial-gradient(60% 80% at 50% 50%, rgba(10,15,26,0.55), rgba(10,15,26,0.85))`,
+              }}
+            >
+              <span
+                className="inline-flex translate-y-2 items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-transform duration-300 group-hover/frame:translate-y-0"
+                style={{
+                  background: demo.accent,
+                  color: pickCtaText(demo.accent),
+                  boxShadow: `0 12px 30px -10px ${demo.accent}`,
+                  fontFamily: "var(--font-brand), var(--font-sans), sans-serif",
+                  letterSpacing: "-0.005em",
+                }}
+              >
+                Ver demo en vivo
+                <span aria-hidden>↗</span>
+              </span>
+            </div>
           </div>
         </div>
       </motion.div>
+
+      {/* Keyframes — local to this component */}
+      <style jsx>{`
+        @keyframes showcase-scan {
+          0% { top: -2%; opacity: 0; }
+          12% { opacity: 0.55; }
+          88% { opacity: 0.55; }
+          100% { top: 102%; opacity: 0; }
+        }
+        @keyframes showcase-pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.7; transform: scale(1.18); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          @keyframes showcase-scan { 0%, 100% { top: 50%; opacity: 0; } }
+          @keyframes showcase-pulse { 0%, 100% { opacity: 1; transform: scale(1); } }
+        }
+      `}</style>
     </div>
   );
+}
+
+/** Stable pseudo-random views label per slug (for the live badge). */
+function viewsFor(slug: string): string {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) | 0;
+  const n = (Math.abs(h) % 28) + 4; // 4 — 31
+  if (n >= 10) return `${n}.${(Math.abs(h) % 9) + 1}k views`;
+  return `${n * 100} views`;
 }
 
 /* -----------------------------------------------------------
