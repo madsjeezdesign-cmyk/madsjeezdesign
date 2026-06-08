@@ -4,8 +4,10 @@ import { HyperContact } from "@/components/hyper/hyper-contact";
 import { LandingHero } from "@/components/landing/landing-hero";
 import { LandingStats } from "@/components/landing/landing-stats";
 import { LandingTrabajos } from "@/components/landing/landing-trabajos";
+import { LandingCases } from "@/components/landing/landing-cases";
 import { LandingServicios } from "@/components/landing/landing-servicios";
-import { LandingProcess } from "@/components/landing/landing-process";
+import { LandingPlans } from "@/components/landing/landing-plans";
+import { LandingTech } from "@/components/landing/landing-tech";
 import { LandingSobre } from "@/components/landing/landing-sobre";
 
 export default function Home() {
@@ -15,8 +17,10 @@ export default function Home() {
       <LandingHero />
       <LandingStats />
       <LandingTrabajos />
+      <LandingCases />
       <LandingServicios />
-      <LandingProcess />
+      <LandingPlans />
+      <LandingTech />
       <LandingSobre />
       <HyperContact />
       <Footer />
