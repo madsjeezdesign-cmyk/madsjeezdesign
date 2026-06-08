@@ -192,8 +192,9 @@ function PlanCard({
 
   const highlighted = !!plan.highlighted;
 
-  // Mobile order: highlighted first (-1), others keep natural order.
-  const mobileOrder = highlighted ? -1 : index;
+  // Keep natural array order on every breakpoint: básico → completo →
+  // personalizado (highlighted) → desarrollo. The highlighted plan stands
+  // out via border/glow, not by jumping out of sequence.
 
   return (
     <motion.article
@@ -213,7 +214,6 @@ function PlanCard({
       }
       className="group relative flex flex-col overflow-hidden"
       style={{
-        order: mobileOrder,
         background: highlighted ? "var(--card)" : "var(--card)",
         border: highlighted
           ? "1px solid color-mix(in srgb, var(--accent) 55%, var(--hairline))"

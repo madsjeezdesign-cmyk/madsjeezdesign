@@ -16,6 +16,7 @@ type CaseStudy = {
 };
 
 const cases: CaseStudy[] = [
+  // Row 1 — two wide cards
   {
     slug: "luna-petit-co",
     brand: "Luna Petit & Co.",
@@ -23,7 +24,7 @@ const cases: CaseStudy[] = [
     description:
       "E-commerce con bento, animaciones y catálogo curado para una marca de lujo.",
     accent: "#E8D5D0",
-    size: "lg",
+    size: "md",
     variant: "rose",
   },
   {
@@ -31,15 +32,16 @@ const cases: CaseStudy[] = [
     brand: "Nido & Linaje",
     industry: "Blanquería premium",
     description:
-      "Checkout cuidado, variantes y un look editorial para textiles del hogar.",
+      "Checkout cuidado, variantes y look editorial para textiles del hogar.",
     accent: "#78716c",
     size: "md",
     variant: "light",
   },
+  // Row 2 — four compact cards
   {
     slug: "intima-co",
     brand: "Íntima & Co.",
-    industry: "Lencería · bienestar",
+    industry: "Lencería",
     description: "Talles, packs y checkout sin fricción.",
     accent: "#9f1239",
     size: "sm",
@@ -58,7 +60,7 @@ const cases: CaseStudy[] = [
     slug: "restaurante",
     brand: "La Mesa Norteña",
     industry: "Restaurante & bar",
-    description: "Reservas, carta y delivery en un click.",
+    description: "Reservas, carta y delivery.",
     accent: "#9f1239",
     size: "sm",
     variant: "warm",
@@ -171,12 +173,14 @@ function Card({ c }: { c: CaseStudy }) {
   const bodyColor = dark ? "#cbd5e1" : "#475569";
   const microColor = dark ? "#94a3b8" : "#64748b";
 
+  // Uniform heights per row prevent CSS-Grid row-span stretching the
+  // small cards into empty space. Row 1 (md cards) = 320px, row 2 (sm) = 240px.
   const sizeClasses =
     c.size === "lg"
-      ? "md:col-span-2 md:row-span-2 min-h-[400px] md:min-h-[520px]"
+      ? "md:col-span-2 min-h-[320px]"
       : c.size === "md"
-        ? "md:col-span-2 min-h-[260px]"
-        : "md:col-span-1 min-h-[260px]";
+        ? "md:col-span-2 min-h-[320px]"
+        : "md:col-span-1 min-h-[240px]";
 
   return (
     <Link
