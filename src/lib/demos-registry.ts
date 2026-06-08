@@ -779,6 +779,14 @@ export const DEMOS: DemoMeta[] = [
     accent: "#ef4444",
     previewClass: "from-zinc-950 via-red-950/50 to-black",
   },
+  {
+    slug: "aromas-kym",
+    title: "Aromas KyM",
+    industry: "Insumos para velas & aromaterapia",
+    tagline: "Esencias, ceras y rituales editoriales",
+    accent: "#b85a3c",
+    previewClass: "from-stone-100 via-amber-50 to-orange-100",
+  },
 ];
 
 export function getDemoChildren(parentSlug: string): DemoMeta[] {
