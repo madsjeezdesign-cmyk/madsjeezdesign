@@ -8,6 +8,7 @@ import { DemoDetailGrid, DemoLongStory, DemoProcessSteps } from "./demo-common-s
 import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
+import { MagneticButton, ScrollReveal } from "@/components/primitives";
 
 const SLUG = "seguridad" as const;
 
@@ -49,9 +50,9 @@ export function DemoSeguridadLanding() {
         lead="Integradores y PyME buscan diagramas de zona, tiempos de instalación y SLA de monitoreo entendibles para no técnicos. Esta demo combina storytelling de amenazas mitigadas, ecommerce de kits y un panel simulado de eventos para generar confianza en RFPs."
         ctas={
           <>
-            <button type="button" className={art.primaryCta}>
+            <MagneticButton variant="primary" className={art.primaryCta}>
               Descargar brochure técnico
-            </button>
+            </MagneticButton>
             <button type="button" className={art.secondaryCta}>
               Simular cobertura
             </button>
@@ -65,21 +66,22 @@ export function DemoSeguridadLanding() {
         </p>
         <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-4">
           {[
-            { label: "Cámaras online", val: "42/42", icon: Camera },
-            { label: "Alarmas armadas", val: "12 zonas", icon: Bell },
-            { label: "Latencia enlace", val: "28 ms", icon: Radio },
-            { label: "Tickets abiertos", val: "1", icon: Activity },
-          ].map(({ label, val, icon: I }) => (
+            { label: "Cámaras online", val: "42/42", icon: Camera, live: true },
+            { label: "Alarmas armadas", val: "12 zonas", icon: Bell, live: false },
+            { label: "Latencia enlace", val: "28 ms", icon: Radio, live: false },
+            { label: "Tickets abiertos", val: "1", icon: Activity, live: false },
+          ].map(({ label, val, icon: I, live }) => (
             <motion.div
               key={label}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className={`rounded-xl p-5 ${art.cardShell}`}
+              className={`relative rounded-xl p-5 ${art.cardShell}`}
             >
               <I className="h-5 w-5 text-emerald-400" />
               <p className="mt-3 text-2xl font-bold text-white">{val}</p>
               <p className="text-[11px] uppercase tracking-[0.04em] text-emerald-200/50">{label}</p>
+              {live ? <span aria-hidden className="live-ping-dot absolute right-4 top-4" /> : null}
             </motion.div>
           ))}
         </div>
@@ -131,19 +133,21 @@ export function DemoSeguridadLanding() {
         ]}
       />
 
-      <DemoLongStory
-        sectionHeadingClass={h}
-        kicker="Propuesta de valor"
-        title="Lo que buscan CFO y facilities en la misma URL"
-        paragraphs={[
-          "Narrativa dual: ROI por reducción de siniestralidad más storytelling emocional para committee de barrio.",
-          "Integración con access control y ascensores — roadmap visible para no prometer integraciones fantasmas.",
-        ]}
-        kickerClass="text-emerald-400"
-        titleClass="text-white"
-        pClass="mt-4 text-sm leading-relaxed text-emerald-100/65"
-        sectionClass="bg-emerald-950/30"
-      />
+      <ScrollReveal>
+        <DemoLongStory
+          sectionHeadingClass={h}
+          kicker="Propuesta de valor"
+          title="Lo que buscan CFO y facilities en la misma URL"
+          paragraphs={[
+            "Narrativa dual: ROI por reducción de siniestralidad más storytelling emocional para committee de barrio.",
+            "Integración con access control y ascensores — roadmap visible para no prometer integraciones fantasmas.",
+          ]}
+          kickerClass="text-emerald-400"
+          titleClass="text-white"
+          pClass="mt-4 text-sm leading-relaxed text-emerald-100/65"
+          sectionClass="bg-emerald-950/30"
+        />
+      </ScrollReveal>
 
       <DemoEnhancements
         slug={SLUG}

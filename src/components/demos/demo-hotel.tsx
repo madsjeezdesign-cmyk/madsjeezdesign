@@ -5,6 +5,7 @@ import { DemoLongStory, DemoProcessSteps, DemoTestimonials } from "./demo-common
 import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
+import { MagneticButton, ScrollReveal, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "hotel" as const;
 
@@ -40,9 +41,9 @@ export function DemoHotelLanding() {
         lead="Hoteles boutique necesitan storytelling editorial, upsell de experiencias y páginas MICE sin parecer portal corporate. Esta demo une tono cálido, itinerarios descargables y señales de confianza (revistas, premios) con booking simulado en carrito."
         ctas={
           <>
-            <button type="button" className={art.primaryCta}>
+            <MagneticButton variant="primary" className={art.primaryCta}>
               Ver disponibilidad
-            </button>
+            </MagneticButton>
             <button type="button" className={art.secondaryCta}>
               Deck eventos
             </button>
@@ -64,14 +65,19 @@ export function DemoHotelLanding() {
               body: "Paquete romance con maridaje — cross-sell visible sin recargar la home.",
             },
           ].map((room) => (
-            <article key={room.title} className={`flex flex-col p-8 ${art.cardShell}`}>
+            <SpotlightCard
+              key={room.title}
+              variant="transparent"
+              glowColor="rgba(245,158,11,0.18)"
+              className={`flex flex-col p-8 ${art.cardShell}`}
+            >
               <h3 className={`${h} text-2xl text-amber-50`}>{room.title}</h3>
               <p className="mt-1 text-xs font-bold uppercase tracking-[0.04em] text-amber-500/80">{room.meta}</p>
               <p className="mt-4 flex-1 text-sm text-amber-100/55">{room.body}</p>
               <button type="button" className={`mt-6 w-fit ${art.secondaryCta}`}>
                 Ficha PDF demo
               </button>
-            </article>
+            </SpotlightCard>
           ))}
         </div>
       </section>
@@ -115,19 +121,21 @@ export function DemoHotelLanding() {
         stepDescClass="mt-2 text-sm text-amber-100/55"
       />
 
-      <DemoLongStory
-        sectionHeadingClass={h}
-        kicker="Revenue management"
-        title="Contenido que alimenta SEO de destino"
-        paragraphs={[
-          "Bloques de escapadas 48h, rutas en bici y mapas locales enlazados — fundamental para hoteles fuera del centro urbano.",
-          "Integración demo con motor de reservas y giftcards digitales en la misma UI para maximizar ADR combinado.",
-        ]}
-        kickerClass="text-amber-500"
-        titleClass="text-amber-50"
-        pClass="mt-4 text-sm text-amber-100/60"
-        sectionClass="border-t border-amber-900/30"
-      />
+      <ScrollReveal>
+        <DemoLongStory
+          sectionHeadingClass={h}
+          kicker="Revenue management"
+          title="Contenido que alimenta SEO de destino"
+          paragraphs={[
+            "Bloques de escapadas 48h, rutas en bici y mapas locales enlazados — fundamental para hoteles fuera del centro urbano.",
+            "Integración demo con motor de reservas y giftcards digitales en la misma UI para maximizar ADR combinado.",
+          ]}
+          kickerClass="text-amber-500"
+          titleClass="text-amber-50"
+          pClass="mt-4 text-sm text-amber-100/60"
+          sectionClass="border-t border-amber-900/30"
+        />
+      </ScrollReveal>
 
       <DemoTestimonials
         sectionHeadingClass={h}
