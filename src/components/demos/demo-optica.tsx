@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
+import { MagneticButton, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "optica" as const;
 const H = DEMO_HEADING_CLASS[SLUG];
@@ -134,9 +135,13 @@ export function DemoOpticaLanding() {
               transition={{ delay: 0.38 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              <button type="button" className={`flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 font-bold text-white hover:bg-blue-500 transition-colors ${H}`}>
-                Hacer examen visual <ArrowRight className="h-4 w-4" />
-              </button>
+              <MagneticButton
+                strength={8}
+                className={`!bg-blue-600 hover:!bg-blue-500 !px-7 !py-3.5 !font-bold ${H}`}
+                ariaLabel="Hacer examen visual"
+              >
+                <span className="text-white">Hacer examen visual</span> <ArrowRight className="h-4 w-4 text-white" />
+              </MagneticButton>
               <button type="button" className="flex items-center gap-2 rounded-full border border-blue-200 px-7 py-3.5 text-sm font-semibold text-[color:var(--muted-body)] hover:bg-blue-50 transition-colors">
                 Ver catálogo
               </button>
@@ -194,26 +199,29 @@ export function DemoOpticaLanding() {
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => (
               <FadeUp key={s.title} delay={i * 0.06}>
-                <div
-                  onClick={() => setSelectedService(i)}
-                  className={`cursor-pointer rounded-xl border p-6 transition-all ${
+                <SpotlightCard
+                  variant="transparent"
+                  glowColor="rgba(37,99,235,0.32)"
+                  className={`!cursor-pointer !rounded-xl !border !p-6 transition-all h-full ${
                     selectedService === i
-                      ? "border-blue-400 bg-blue-50 shadow-md"
-                      : "border-blue-100 hover:border-blue-300 hover:shadow-sm"
+                      ? "!border-blue-400 !bg-blue-50 shadow-md"
+                      : "!border-blue-100 hover:!border-blue-300 hover:shadow-sm"
                   }`}
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
-                      <s.icon className="h-5 w-5" />
+                  <div onClick={() => setSelectedService(i)} role="button" tabIndex={0}>
+                    <div className="flex items-start justify-between">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
+                        <s.icon className="h-5 w-5" />
+                      </div>
+                      <span className={`rounded-full bg-blue-600/10 px-2.5 py-0.5 text-[9px] font-bold text-blue-600 ${H}`}>{s.tag}</span>
                     </div>
-                    <span className={`rounded-full bg-blue-600/10 px-2.5 py-0.5 text-[9px] font-bold text-blue-600 ${H}`}>{s.tag}</span>
+                    <h3 className={`mt-4 font-bold text-[#08143a] ${H}`}>{s.title}</h3>
+                    <p className="mt-2 text-sm text-[color:var(--muted-body)]">{s.desc}</p>
+                    <button type="button" className="mt-4 flex items-center gap-1 text-[11px] font-bold text-blue-600">
+                      Más info <ChevronRight className="h-3.5 w-3.5" />
+                    </button>
                   </div>
-                  <h3 className={`mt-4 font-bold text-[#08143a] ${H}`}>{s.title}</h3>
-                  <p className="mt-2 text-sm text-[color:var(--muted-body)]">{s.desc}</p>
-                  <button type="button" className="mt-4 flex items-center gap-1 text-[11px] font-bold text-blue-600">
-                    Más info <ChevronRight className="h-3.5 w-3.5" />
-                  </button>
-                </div>
+                </SpotlightCard>
               </FadeUp>
             ))}
           </div>

@@ -26,6 +26,7 @@ import {
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
 import { DemoLeadForm } from "./demo-lead-form";
+import { SpotlightCard } from "@/components/primitives";
 
 const SLUG = "lavadero" as const;
 const BRAND = "Lavandería del Pasaje";
@@ -131,6 +132,11 @@ export function DemoLavaderoLanding() {
               className="mb-5 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[0.78rem]"
               style={{ background: BLUE_LIGHT, color: BLUE_DARK }}
             >
+              <span
+                className="live-ping-dot"
+                style={{ background: BLUE } as React.CSSProperties}
+                aria-hidden
+              />
               <Truck className="h-3.5 w-3.5" />
               Retiro y entrega gratis en zona
             </div>
@@ -202,6 +208,12 @@ export function DemoLavaderoLanding() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ ...t, delay: 0.1 }}
           >
+            <SpotlightCard
+              variant="transparent"
+              glowColor={`${BLUE}55`}
+              size={280}
+              className="!rounded-3xl !p-0 !border-0"
+            >
             <div
               className="rounded-3xl p-7 md:p-8"
               style={{
@@ -291,6 +303,7 @@ export function DemoLavaderoLanding() {
                 edredones cotizamos aparte.
               </p>
             </div>
+            </SpotlightCard>
           </motion.aside>
         </div>
       </section>

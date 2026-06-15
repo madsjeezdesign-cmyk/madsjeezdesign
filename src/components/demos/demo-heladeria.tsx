@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
+import { MagneticButton, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "heladeria" as const;
 const H = DEMO_HEADING_CLASS[SLUG];
@@ -138,9 +139,13 @@ export function DemoHeladeriaLanding() {
               transition={{ delay: 0.4 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              <button type="button" className={`flex items-center gap-2 rounded-full bg-rose-500 px-7 py-3.5 font-bold text-white hover:bg-rose-400 transition-colors ${H}`}>
-                Ver sabores de hoy <ArrowRight className="h-4 w-4" />
-              </button>
+              <MagneticButton
+                strength={9}
+                className={`!bg-rose-500 hover:!bg-rose-400 !px-7 !py-3.5 !font-bold ${H}`}
+                ariaLabel="Ver sabores de hoy"
+              >
+                <span className="text-white">Ver sabores de hoy</span> <ArrowRight className="h-4 w-4 text-white" />
+              </MagneticButton>
               <button type="button" className="flex items-center gap-2 rounded-full border border-rose-200 px-7 py-3.5 text-sm font-semibold text-stone-600 hover:bg-rose-50 transition-colors">
                 <Truck className="h-4 w-4" /> Pedir delivery
               </button>
@@ -217,7 +222,11 @@ export function DemoHeladeriaLanding() {
           <div className="mt-10 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {SIZES.map((s, i) => (
               <FadeUp key={s.size} delay={i * 0.07}>
-                <div className="flex items-center justify-between rounded-2xl border border-rose-100 bg-[#fff9f5] p-5 hover:border-rose-300 transition-colors">
+                <SpotlightCard
+                  variant="transparent"
+                  glowColor="rgba(244,63,94,0.35)"
+                  className="!flex !items-center !justify-between !rounded-2xl !border-rose-100 !bg-[#fff9f5] !p-5 hover:!border-rose-300 transition-colors"
+                >
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{s.icon}</span>
                     <div>
@@ -225,7 +234,7 @@ export function DemoHeladeriaLanding() {
                     </div>
                   </div>
                   <span className={`text-sm font-black text-rose-500 ${H}`}>{s.price}</span>
-                </div>
+                </SpotlightCard>
               </FadeUp>
             ))}
           </div>
