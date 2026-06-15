@@ -23,6 +23,7 @@ import { CerrajeriaCentralKeyQuote } from "./cerrajeria-central-key-quote";
 import { CerrajeriaCentralNavbar } from "./cerrajeria-central-navbar";
 import { CerrajeriaCentralServices } from "./cerrajeria-central-services";
 import { CerrajeriaCentralShop } from "./cerrajeria-central-shop";
+import { ScrollReveal } from "@/components/primitives";
 import "./cerrajeria-central.css";
 
 export function CerrajeriaCentralLanding() {
@@ -140,7 +141,9 @@ export function CerrajeriaCentralLanding() {
         onCatalog={() => scrollTo("tienda")}
       />
       <CerrajeriaCentralServices />
-      <CerrajeriaCentralKeyQuote onAddService={addKeyService} onReserve={reserveTurn} />
+      <ScrollReveal>
+        <CerrajeriaCentralKeyQuote onAddService={addKeyService} onReserve={reserveTurn} />
+      </ScrollReveal>
       <CerrajeriaCentralShop onAdd={addProduct} />
       <CerrajeriaCentralFooter />
 

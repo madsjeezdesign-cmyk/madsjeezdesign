@@ -24,6 +24,7 @@ import { Services } from "./sections/services";
 import { Catalog } from "./sections/catalog";
 import { NexusFooter } from "./sections/footer";
 import { QuickView } from "./product/quick-view";
+import { ScrollReveal } from "@/components/primitives";
 import "./nexus-ferreteria.css";
 
 const mono = JetBrains_Mono({
@@ -114,7 +115,9 @@ export function DemoNexusFerreteria() {
       />
       <Hero onCta={scrollToCatalog} inventoryCount={inventoryCount} />
       <ToolsMarquee />
-      <Categories active={categoryFilter} onSelect={setCategoryFilter} />
+      <ScrollReveal>
+        <Categories active={categoryFilter} onSelect={setCategoryFilter} />
+      </ScrollReveal>
       <Services />
       <Catalog
         category={categoryFilter}
