@@ -74,7 +74,7 @@ export function HeroMockup() {
         {/* Editorial copy column */}
         <div className="col-span-7 flex flex-col justify-between pr-2 pt-5">
           <div>
-            <p className="text-[9px] uppercase tracking-[0.32em] text-neutral-400">
+            <p className="text-[10px] tracking-[0.04em] text-neutral-300">
               SS · 2025
             </p>
             <h2

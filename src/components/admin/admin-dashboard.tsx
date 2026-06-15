@@ -81,7 +81,7 @@ export function AdminDashboard() {
           <h2 className="text-xl font-bold tracking-tight text-white">
             Consultas recibidas
           </h2>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-[color:var(--muted-body)]">
             Mensajes del formulario de contacto guardados en Supabase.
             {total > 0 ? ` · ${total} en total` : ""}
           </p>
@@ -122,7 +122,7 @@ export function AdminDashboard() {
           <Loader2 className="h-8 w-8 animate-spin text-[var(--brand-cyan)]" aria-hidden />
         </div>
       ) : leads.length === 0 ? (
-        <p className="rounded-xl border border-white/10 bg-white/[0.02] py-16 text-center text-sm text-zinc-500">
+        <p className="rounded-xl border border-white/10 bg-white/[0.02] py-16 text-center text-sm text-[color:var(--muted-body)]">
           No hay leads en esta vista.
         </p>
       ) : (
@@ -143,7 +143,7 @@ export function AdminDashboard() {
                 <ChevronLeft className="h-4 w-4" />
                 Anterior
               </button>
-              <span className="font-[family-name:var(--font-jetbrains)] text-xs text-zinc-500">
+              <span className="font-[family-name:var(--font-jetbrains)] text-xs text-[color:var(--muted-body)]">
                 Página {page} / {totalPages}
               </span>
               <button
@@ -229,19 +229,19 @@ function LeadCard({
               </span>
             )}
             {lead.archived && (
-              <span className="rounded-full border border-zinc-600 px-2 py-0.5 font-[family-name:var(--font-jetbrains)] text-[10px] font-bold uppercase tracking-wide text-zinc-500">
+              <span className="rounded-full border border-[color:color-mix(in_srgb,var(--muted-body)_30%,transparent)] px-2 py-0.5 font-[family-name:var(--font-jetbrains)] text-[10px] font-bold uppercase tracking-wide text-[color:var(--muted-body)]">
                 Archivado
               </span>
             )}
             <span className="font-semibold text-white">{lead.name}</span>
-            <span className="text-zinc-500">·</span>
+            <span className="text-[color:var(--muted-body)]">·</span>
             <span className="truncate text-sm text-[var(--brand-cyan)]">{lead.email}</span>
           </div>
-          <p className="mt-1 font-[family-name:var(--font-jetbrains)] text-xs text-zinc-500">
+          <p className="mt-1 font-[family-name:var(--font-jetbrains)] text-xs text-[color:var(--muted-body)]">
             {lead.service} · {fmt(lead.created_at)}
           </p>
         </div>
-        <span className="shrink-0 text-xs text-zinc-500">{open ? "▲" : "▼"}</span>
+        <span className="shrink-0 text-xs text-[color:var(--muted-body)]">{open ? "▲" : "▼"}</span>
       </button>
 
       {open && (
@@ -253,12 +253,12 @@ function LeadCard({
           )}
           {lead.company && (
             <p className="text-sm text-zinc-400">
-              <span className="text-zinc-600">Empresa · </span>
+              <span className="text-[color:var(--muted-body)]">Empresa · </span>
               {lead.company}
             </p>
           )}
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-600">
+            <p className="font-[family-name:var(--font-jetbrains)] text-[11px] tracking-[0.04em] text-[color:var(--muted-body)]">
               Mensaje
             </p>
             <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-zinc-300">
@@ -266,7 +266,7 @@ function LeadCard({
             </p>
           </div>
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-600">
+            <p className="font-[family-name:var(--font-jetbrains)] text-[11px] tracking-[0.04em] text-[color:var(--muted-body)]">
               Notas internas
             </p>
             <textarea
