@@ -24,8 +24,9 @@ export function MasaMadreCoHero() {
       <div className="mmc-hero-overlay absolute inset-0" />
       <div className="relative z-10 mx-auto flex min-h-[calc(92vh-4rem)] max-w-7xl flex-col justify-end px-4 pb-16 pt-24 sm:px-6 sm:pb-20">
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-orange-200/80 bg-white/80 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.04em] text-orange-800 backdrop-blur">
+          <span className="live-ping-dot" aria-hidden />
           <Flame className="h-3.5 w-3.5 text-orange-600" />
-          Horneado artesanal · Carlos Spegazzini
+          Horno encendido · Carlos Spegazzini
         </span>
         <h1 className="mt-6 max-w-2xl font-serif text-4xl font-bold leading-tight text-stone-900 sm:text-5xl md:text-6xl">
           {cfg.brand}
