@@ -27,6 +27,11 @@ import {
   whatsappProductUrl,
 } from "@/lib/fashion-whatsapp";
 import { useMotionTransition } from "@/lib/motion";
+import {
+  MagneticButton,
+  ScrollReveal,
+  SpotlightCard,
+} from "@/components/primitives";
 import { DemoLeadForm } from "../../demo-lead-form";
 import { FashionPhoto } from "../fashion-photo";
 
@@ -88,12 +93,13 @@ function NightHero({ config }: { config: RetailFashionConfig }) {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
+            <MagneticButton
               href="#piezas"
-              className="inline-flex items-center gap-2 bg-[#d8b07e] px-7 py-3 text-[11px] tracking-[0.06em] text-[#1c0f1a] transition-colors hover:bg-[#f3d8a8]"
+              strength={6}
+              className="!rounded-none !bg-[#d8b07e] !px-7 !py-3 !text-[11px] !font-normal tracking-[0.06em] !text-[#1c0f1a] hover:!bg-[#f3d8a8]"
             >
               Ver piezas <ArrowRight className="h-3.5 w-3.5" />
-            </a>
+            </MagneticButton>
             <a
               href={whatsappGeneralUrl(config)}
               target="_blank"
@@ -143,39 +149,46 @@ function NightProductCard({
   onAdd: (p: RetailFashionProduct) => void;
 }) {
   return (
-    <article className="group w-[78vw] shrink-0 snap-start md:w-[22rem]">
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#2a1426]">
-        <FashionPhoto
-          src={product.image}
-          fallbackSrc={product.fallbackImage}
-          alt={product.name}
-          fill
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
-          sizes="(max-width:768px) 78vw, 22rem"
-        />
-      </div>
-      <div className="mt-5 px-1">
-        <h3 className="font-serif text-[18px] italic text-[#f3e7d0]">{product.name}</h3>
-        <p className="mt-1 text-[12px] tracking-[0.04em] text-[#a9805d]">{product.price}</p>
-        <div className="mt-4 flex items-center gap-3">
-          <button
-            type="button"
-            onClick={() => onAdd(product)}
-            className="border border-[#d8b07e]/50 px-4 py-2 text-[11px] tracking-[0.05em] text-[#f3e7d0] hover:border-[#d8b07e] hover:text-[#d8b07e]"
-          >
-            Reservar
-          </button>
-          <a
-            href={whatsappProductUrl(config, product)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[11px] italic text-[#c8a37a] underline-offset-4 hover:text-[#f3d8a8] hover:underline"
-          >
-            Consultar
-          </a>
+    <SpotlightCard
+      glowColor="rgba(216,176,126,0.35)"
+      size={300}
+      variant="transparent"
+      className="group w-[78vw] shrink-0 snap-start !rounded-none !border-0 !bg-transparent md:w-[22rem]"
+    >
+      <article className="block">
+        <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#2a1426]">
+          <FashionPhoto
+            src={product.image}
+            fallbackSrc={product.fallbackImage}
+            alt={product.name}
+            fill
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+            sizes="(max-width:768px) 78vw, 22rem"
+          />
         </div>
-      </div>
-    </article>
+        <div className="mt-5 px-1">
+          <h3 className="font-serif text-[18px] italic text-[#f3e7d0]">{product.name}</h3>
+          <p className="mt-1 text-[12px] tracking-[0.04em] text-[#a9805d]">{product.price}</p>
+          <div className="mt-4 flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => onAdd(product)}
+              className="border border-[#d8b07e]/50 px-4 py-2 text-[11px] tracking-[0.05em] text-[#f3e7d0] hover:border-[#d8b07e] hover:text-[#d8b07e]"
+            >
+              Reservar
+            </button>
+            <a
+              href={whatsappProductUrl(config, product)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] italic text-[#c8a37a] underline-offset-4 hover:text-[#f3d8a8] hover:underline"
+            >
+              Consultar
+            </a>
+          </div>
+        </div>
+      </article>
+    </SpotlightCard>
   );
 }
 
@@ -191,7 +204,7 @@ function NightShowcase({
   return (
     <section id="piezas" className="bg-[#150a14] py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
+        <ScrollReveal className="mb-12 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-[11px] tracking-[0.08em] text-[#a9805d]">Selección</p>
             <h2 className="mt-3 font-serif text-[clamp(2rem,4vw,3rem)] italic text-[#f3e7d0]">
@@ -202,7 +215,7 @@ function NightShowcase({
             {config.collectionSubtitle}. Carrusel horizontal —
             piezas elegidas a mano para esta temporada.
           </p>
-        </div>
+        </ScrollReveal>
       </div>
 
       <div className="relative">
@@ -283,7 +296,7 @@ function NightMood({ config }: { config: RetailFashionConfig }) {
 function NightSalon({ config }: { config: RetailFashionConfig }) {
   return (
     <section id="salon" className="bg-[#0f070d] py-24 text-[#f3e7d0] md:py-32">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 md:grid-cols-2">
+      <ScrollReveal className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 md:grid-cols-2">
         <div>
           <p className="text-[11px] tracking-[0.08em] text-[#d8b07e]">El salón</p>
           <h3 className="mt-3 font-serif text-[clamp(1.75rem,3vw,2.5rem)] italic">
@@ -323,7 +336,7 @@ function NightSalon({ config }: { config: RetailFashionConfig }) {
             title={`Ubicación ${config.brand}`}
           />
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

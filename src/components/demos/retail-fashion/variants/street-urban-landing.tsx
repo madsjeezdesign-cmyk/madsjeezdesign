@@ -25,6 +25,12 @@ import {
   whatsappGeneralUrl,
   whatsappProductUrl,
 } from "@/lib/fashion-whatsapp";
+import {
+  AnimatedStats,
+  MagneticButton,
+  ScrollReveal,
+  SpotlightCard,
+} from "@/components/primitives";
 import { DemoLeadForm } from "../../demo-lead-form";
 import { FashionPhoto } from "../fashion-photo";
 
@@ -85,7 +91,13 @@ function StreetDropTicker({ countdown }: { countdown: { dd: string; hh: string; 
   return (
     <div className="sticky top-[57px] z-30 border-b border-[#f6f55a]/40 bg-[#f6f55a] text-[#0a0a0a]">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-2 text-[11px] tracking-[0.05em]">
-        <span className="font-bold">Próximo drop</span>
+        <span className="inline-flex items-center gap-2 font-bold">
+          <span
+            className="live-ping-dot"
+            style={{ ["--brand-cyan" as string]: "#0a0a0a" } as React.CSSProperties}
+          />
+          Próximo drop
+        </span>
         <span className="font-mono">
           {countdown.dd}d : {countdown.hh}h : {countdown.mm}m
         </span>
@@ -117,12 +129,13 @@ function StreetHero({ config }: { config: RetailFashionConfig }) {
             Última colección. Stock limitado. Sin floreos. {config.tagline}.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <a
+            <MagneticButton
               href="#drop"
-              className="inline-flex items-center gap-2 bg-[#f6f55a] px-6 py-3 text-[12px] font-bold tracking-[0.04em] text-[#0a0a0a] transition-transform hover:scale-[1.02]"
+              strength={10}
+              className="!rounded-none !bg-[#f6f55a] !px-6 !py-3 !text-[12px] !font-bold tracking-[0.04em] !text-[#0a0a0a]"
             >
               Ver drop <ArrowRight className="h-4 w-4" />
-            </a>
+            </MagneticButton>
             <a
               href={whatsappGeneralUrl(config)}
               target="_blank"
@@ -174,48 +187,94 @@ function StreetProductCard({
   const stock = stockOf(product.id);
   const low = stock <= 4;
   return (
-    <article className="group relative overflow-hidden border border-white/10 bg-[#111]">
-      <div className="relative aspect-[4/5] overflow-hidden bg-zinc-900">
-        <FashionPhoto
-          src={product.image}
-          fallbackSrc={product.fallbackImage}
-          alt={product.name}
-          fill
-          className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-          sizes="(max-width:768px) 50vw, 33vw"
-        />
-        <span
-          className={`absolute left-3 top-3 px-2 py-0.5 text-[10px] font-bold tracking-[0.05em] ${
-            low ? "bg-[#ff4d4d] text-white" : "bg-[#f6f55a] text-[#0a0a0a]"
-          }`}
-        >
-          {low ? `Quedan ${stock}` : `Stock ${stock}`}
-        </span>
-      </div>
-      <div className="p-4">
-        <h3 className="text-[14px] font-bold uppercase tracking-[-0.01em] text-white">
-          {product.name}
-        </h3>
-        <p className="mt-1 text-[12px] text-zinc-400">{product.price}</p>
-        <div className="mt-4 flex gap-2">
-          <button
-            type="button"
-            onClick={() => onAdd(product)}
-            className="flex-1 bg-[#f6f55a] px-3 py-2 text-[11px] font-bold tracking-[0.04em] text-[#0a0a0a] transition-transform hover:scale-[1.01]"
+    <SpotlightCard
+      glowColor="#f6f55a"
+      size={260}
+      variant="transparent"
+      className="group relative overflow-hidden !rounded-none border border-white/10 bg-[#111]"
+    >
+      <article className="block">
+        <div className="relative aspect-[4/5] overflow-hidden bg-zinc-900">
+          <FashionPhoto
+            src={product.image}
+            fallbackSrc={product.fallbackImage}
+            alt={product.name}
+            fill
+            className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+            sizes="(max-width:768px) 50vw, 33vw"
+          />
+          <span
+            className={`absolute left-3 top-3 inline-flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-bold tracking-[0.05em] ${
+              low ? "bg-[#ff4d4d] text-white" : "bg-[#f6f55a] text-[#0a0a0a]"
+            }`}
           >
-            Agregar
-          </button>
-          <a
-            href={whatsappProductUrl(config, product)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center border border-white/20 px-3 py-2 text-[11px] font-bold tracking-[0.04em] text-white hover:border-[#f6f55a] hover:text-[#f6f55a]"
-          >
-            WhatsApp
-          </a>
+            {low ? (
+              <span
+                className="live-ping-dot"
+                style={{ ["--brand-cyan" as string]: "#ffffff" } as React.CSSProperties}
+                aria-hidden
+              />
+            ) : null}
+            {low ? `Quedan ${stock}` : `Stock ${stock}`}
+          </span>
         </div>
+        <div className="p-4">
+          <h3 className="text-[14px] font-bold uppercase tracking-[-0.01em] text-white">
+            {product.name}
+          </h3>
+          <p className="mt-1 text-[12px] text-zinc-400">{product.price}</p>
+          <div className="mt-4 flex gap-2">
+            <button
+              type="button"
+              onClick={() => onAdd(product)}
+              className="flex-1 bg-[#f6f55a] px-3 py-2 text-[11px] font-bold tracking-[0.04em] text-[#0a0a0a] transition-transform hover:scale-[1.01]"
+            >
+              Agregar
+            </button>
+            <a
+              href={whatsappProductUrl(config, product)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center border border-white/20 px-3 py-2 text-[11px] font-bold tracking-[0.04em] text-white hover:border-[#f6f55a] hover:text-[#f6f55a]"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>
+    </SpotlightCard>
+  );
+}
+
+function StreetStats({ config }: { config: RetailFashionConfig }) {
+  // Stable drop-style stats. Counts derived from product list size — no Math.random.
+  const totalPieces = config.products.length;
+  return (
+    <ScrollReveal as="section" className="border-y border-white/10 bg-[#0a0a0a] py-12 md:py-16">
+      <div className="mx-auto max-w-6xl px-5">
+        <AnimatedStats
+          layout="grid-3"
+          items={[
+            {
+              value: totalPieces,
+              label: "Piezas en el drop",
+              format: (v) => v.toString().padStart(2, "0"),
+            },
+            {
+              value: 100,
+              label: "Hecho en Argentina",
+              suffix: "%",
+            },
+            {
+              value: 24,
+              label: "Envío express CABA",
+              suffix: " hs",
+            },
+          ]}
+          className="!gap-y-10 [&>div>div]:!text-white [&>div>div]:!font-black [&>div>div]:!uppercase [&>div>div]:tracking-[-0.02em] [&>div>p]:!text-[10px] [&>div>p]:!tracking-[0.06em] [&>div>p]:!uppercase [&>div>p]:!text-[#f6f55a]"
+        />
       </div>
-    </article>
+    </ScrollReveal>
   );
 }
 
@@ -231,9 +290,15 @@ function StreetDrop({
   return (
     <section id="drop" className="bg-[#0a0a0a] py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-white/10 pb-6">
+        <ScrollReveal className="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-white/10 pb-6">
           <div>
-            <p className="text-[11px] tracking-[0.06em] text-[#f6f55a]">Drop 03</p>
+            <p className="inline-flex items-center gap-2 text-[11px] tracking-[0.06em] text-[#f6f55a]">
+              <span
+                className="live-ping-dot"
+                style={{ ["--brand-cyan" as string]: "#f6f55a" } as React.CSSProperties}
+              />
+              Drop 03
+            </p>
             <h2 className="mt-2 font-sans text-[clamp(2rem,5vw,3.5rem)] font-black uppercase leading-[0.9] tracking-[-0.02em] text-white">
               {config.collectionTitle}
             </h2>
@@ -241,7 +306,7 @@ function StreetDrop({
           <p className="max-w-xs text-[13px] leading-[1.5] text-zinc-400">
             {config.collectionSubtitle} · Stock real, no se repone.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
           {config.products.map((p) => (
@@ -339,6 +404,7 @@ export function StreetUrbanLanding({ slug }: Props) {
       <StreetNav brand={config.brand} />
       <StreetDropTicker countdown={countdown} />
       <StreetHero config={config} />
+      <StreetStats config={config} />
       <StreetDrop config={config} cart={cart} onAdd={onAdd} />
 
       <DemoLeadForm
