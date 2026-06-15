@@ -16,7 +16,7 @@ export function DecoBazarCoHero() {
           <h1 className="mt-3 max-w-lg text-3xl font-light leading-snug text-zinc-900 sm:text-4xl md:text-5xl">
             Diseño que ordena, objetos que perduran.
           </h1>
-          <p className="mt-4 max-w-md text-sm font-light leading-relaxed text-zinc-600">{cfg.tagline}</p>
+          <p className="mt-4 max-w-md text-sm font-light leading-relaxed text-[color:var(--muted-body)]">{cfg.tagline}</p>
           <button
             type="button"
             onClick={() => document.querySelector("#catalogo")?.scrollIntoView({ behavior: "smooth" })}

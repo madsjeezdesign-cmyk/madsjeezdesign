@@ -156,10 +156,10 @@ function BentoPanel({
       whileHover={{ borderColor: "rgba(249,115,22,0.4)" }}
     >
       {icon}
-      <p className="mt-2 text-xs uppercase tracking-wider text-zinc-500">{label}</p>
+      <p className="mt-2 text-xs uppercase tracking-wider text-[color:var(--muted-body)]">{label}</p>
       <p className="font-mono text-2xl font-bold text-white">
         {value}
-        <span className="text-sm font-normal text-zinc-500">{suffix}</span>
+        <span className="text-sm font-normal text-[color:var(--muted-body)]">{suffix}</span>
       </p>
     </motion.div>
   );

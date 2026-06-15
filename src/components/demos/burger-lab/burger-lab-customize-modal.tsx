@@ -74,7 +74,7 @@ export function BurgerLabCustomizeModal({ product, onClose, onAdd }: Props) {
 
         <div className="p-5">
           <h3 className="text-xl font-black uppercase text-white">{product.name}</h3>
-          <p className="mt-1 text-xs text-zinc-500">{product.description}</p>
+          <p className="mt-1 text-xs text-[color:var(--muted-body)]">{product.description}</p>
 
           <p className="mt-6 text-[10px] font-black uppercase tracking-widest text-amber-400">Tipo de combo</p>
           <div className="mt-2 space-y-2">

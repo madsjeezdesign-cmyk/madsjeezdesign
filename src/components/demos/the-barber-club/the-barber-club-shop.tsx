@@ -33,7 +33,7 @@ export function TheBarberClubShop({ onAdd }: Props) {
               </div>
               <div className="p-5">
                 <h3 className="font-bold text-white">{p.name}</h3>
-                <p className="mt-1 line-clamp-2 text-xs text-zinc-500">{p.description}</p>
+                <p className="mt-1 line-clamp-2 text-xs text-[color:var(--muted-body)]">{p.description}</p>
                 <div className="mt-4 flex items-center justify-between">
                   <span className="text-lg font-black text-amber-400">{formatBarberPrice(p.price)}</span>
                   <button

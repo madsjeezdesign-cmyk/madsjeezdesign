@@ -55,7 +55,7 @@ export function DecoBazarCoNavbar({
           <button
             type="button"
             onClick={() => setCatOpen(!catOpen)}
-            className="flex items-center gap-1 rounded-lg px-3 py-2 text-xs font-medium text-zinc-600 hover:bg-zinc-50"
+            className="flex items-center gap-1 rounded-lg px-3 py-2 text-xs font-medium text-[color:var(--muted-body)] hover:bg-zinc-50"
           >
             Categorías
             <ChevronDown className={`h-3.5 w-3.5 transition ${catOpen ? "rotate-180" : ""}`} />
@@ -68,7 +68,7 @@ export function DecoBazarCoNavbar({
                   <li key={c.id}>
                     <button
                       type="button"
-                      className="block w-full px-4 py-2.5 text-left text-sm text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900"
+                      className="block w-full px-4 py-2.5 text-left text-sm text-[color:var(--muted-body)] hover:bg-zinc-50 hover:text-zinc-900"
                       onClick={() => {
                         onCategoryNav(c.id);
                         setCatOpen(false);
@@ -106,7 +106,7 @@ export function DecoBazarCoNavbar({
                 <li key={s}>
                   <button
                     type="button"
-                    className="block w-full px-4 py-3 text-left text-sm text-zinc-600 hover:bg-zinc-50"
+                    className="block w-full px-4 py-3 text-left text-sm text-[color:var(--muted-body)] hover:bg-zinc-50"
                     onMouseDown={(e) => {
                       e.preventDefault();
                       if (blurTimer.current) clearTimeout(blurTimer.current);
@@ -135,7 +135,7 @@ export function DecoBazarCoNavbar({
 
         <button
           type="button"
-          className="text-zinc-500 lg:hidden"
+          className="text-[color:var(--muted-body)] lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menú"
         >
@@ -156,7 +156,7 @@ export function DecoBazarCoNavbar({
                   setMenuOpen(false);
                   document.querySelector("#catalogo")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="rounded-full border border-zinc-200 px-3 py-1.5 text-xs text-zinc-600"
+                className="rounded-full border border-zinc-200 px-3 py-1.5 text-xs text-[color:var(--muted-body)]"
               >
                 {c.label}
               </button>

@@ -36,13 +36,13 @@ export function BurgerLabCart({ open, onClose, lines, onRemove, onWhatsApp }: Pr
         <div className="flex items-center justify-between border-b border-zinc-800 px-4 py-4">
           <h3 className="text-lg font-black uppercase text-white">Tu pedido</h3>
           <button type="button" onClick={onClose} aria-label="Cerrar">
-            <X className="h-5 w-5 text-zinc-500" />
+            <X className="h-5 w-5 text-[color:var(--muted-body)]" />
           </button>
         </div>
 
         <div className="flex-1 overflow-y-auto px-4 py-3">
           {lines.length === 0 ? (
-            <p className="py-16 text-center text-sm text-zinc-500">Carrito vacío 🍔</p>
+            <p className="py-16 text-center text-sm text-[color:var(--muted-body)]">Carrito vacío 🍔</p>
           ) : (
             <ul className="space-y-4">
               {lines.map((line) => (
@@ -59,7 +59,7 @@ export function BurgerLabCart({ open, onClose, lines, onRemove, onWhatsApp }: Pr
                       Quitar
                     </button>
                   </div>
-                  <p className="mt-1 text-[11px] text-zinc-500">{line.comboLabel}</p>
+                  <p className="mt-1 text-[11px] text-[color:var(--muted-body)]">{line.comboLabel}</p>
                   {line.extras.length > 0 ? (
                     <p className="text-[11px] text-amber-500/80">
                       + {line.extras.map((e) => e.label).join(", ")}
@@ -83,7 +83,7 @@ export function BurgerLabCart({ open, onClose, lines, onRemove, onWhatsApp }: Pr
                 className={`rounded-xl border py-2.5 text-[10px] font-black uppercase ${
                   mode === "delivery"
                     ? "border-amber-500 bg-amber-500/10 text-amber-400"
-                    : "border-zinc-800 text-zinc-500"
+                    : "border-zinc-800 text-[color:var(--muted-body)]"
                 }`}
               >
                 Delivery
@@ -94,7 +94,7 @@ export function BurgerLabCart({ open, onClose, lines, onRemove, onWhatsApp }: Pr
                 className={`rounded-xl border py-2.5 text-[10px] font-black uppercase ${
                   mode === "takeaway"
                     ? "border-amber-500 bg-amber-500/10 text-amber-400"
-                    : "border-zinc-800 text-zinc-500"
+                    : "border-zinc-800 text-[color:var(--muted-body)]"
                 }`}
               >
                 Take away

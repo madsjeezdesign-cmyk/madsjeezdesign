@@ -37,7 +37,7 @@ export function BurgerLabMenu({ onSelectProduct, onAddSimple }: Props) {
               className={`shrink-0 rounded-xl px-4 py-2.5 text-xs font-black uppercase transition ${
                 category === c.id
                   ? "bg-amber-500 text-zinc-950"
-                  : "bg-zinc-900 text-zinc-500 hover:text-white"
+                  : "bg-zinc-900 text-[color:var(--muted-body)] hover:text-white"
               }`}
             >
               {c.label}
@@ -61,7 +61,7 @@ export function BurgerLabMenu({ onSelectProduct, onAddSimple }: Props) {
               </div>
               <div className="p-4">
                 <h3 className="font-black uppercase text-white">{product.name}</h3>
-                <p className="mt-1 text-xs leading-relaxed text-zinc-500">{product.description}</p>
+                <p className="mt-1 text-xs leading-relaxed text-[color:var(--muted-body)]">{product.description}</p>
                 <div className="mt-3 flex items-center justify-between">
                   <span className="text-lg font-black text-amber-400">
                     {formatBurgerPrice(product.basePrice)}

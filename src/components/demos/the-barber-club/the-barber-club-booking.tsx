@@ -72,7 +72,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
             <div
               key={s.n}
               className={`flex flex-1 flex-col items-center gap-1 rounded-lg border px-2 py-3 text-center transition-colors ${
-                step === s.n ? "border-amber-500/50 bg-amber-500/10 text-amber-400" : "border-zinc-800 text-zinc-600"
+                step === s.n ? "border-amber-500/50 bg-amber-500/10 text-amber-400" : "border-zinc-800 text-[color:var(--muted-body)]"
               }`}
             >
               <s.icon className="h-4 w-4" />
@@ -100,7 +100,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
                     <span className="text-2xl">{s.icon}</span>
                     <p className="mt-2 font-bold text-white">{s.name}</p>
                     <p className="text-lg font-black text-amber-400">{formatBarberPrice(s.price)}</p>
-                    <p className="mt-1 text-[10px] text-zinc-500">{s.duration}</p>
+                    <p className="mt-1 text-[10px] text-[color:var(--muted-body)]">{s.duration}</p>
                   </button>
                 ))}
               </div>
@@ -126,7 +126,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
                     <div className="p-4">
                       <p className="font-bold text-white">{b.name}</p>
                       <p className="text-xs text-amber-400">{b.specialty}</p>
-                      <p className="mt-1 text-[10px] text-zinc-500">★ {b.rating}</p>
+                      <p className="mt-1 text-[10px] text-[color:var(--muted-body)]">★ {b.rating}</p>
                     </div>
                   </button>
                 ))}
@@ -156,7 +156,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
               </div>
               {draft.date ? (
                 <div>
-                  <p className="mb-3 flex items-center gap-2 text-xs font-bold text-zinc-500">
+                  <p className="mb-3 flex items-center gap-2 text-xs font-bold text-[color:var(--muted-body)]">
                     <Clock className="h-4 w-4" /> Horarios disponibles
                   </p>
                   <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">
@@ -188,13 +188,13 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
               <h3 className="text-sm font-bold uppercase tracking-widest text-zinc-400">Confirmá tu reserva</h3>
               <div className="mx-auto max-w-sm rounded-xl border border-zinc-800 bg-zinc-950 p-6 text-left text-sm">
                 <p>
-                  <span className="text-zinc-500">Servicio:</span> <strong className="text-white">{service?.name}</strong>
+                  <span className="text-[color:var(--muted-body)]">Servicio:</span> <strong className="text-white">{service?.name}</strong>
                 </p>
                 <p className="mt-2">
-                  <span className="text-zinc-500">Barbero:</span> <strong className="text-white">{barber?.name}</strong>
+                  <span className="text-[color:var(--muted-body)]">Barbero:</span> <strong className="text-white">{barber?.name}</strong>
                 </p>
                 <p className="mt-2">
-                  <span className="text-zinc-500">Cuándo:</span>{" "}
+                  <span className="text-[color:var(--muted-body)]">Cuándo:</span>{" "}
                   <strong className="text-white">
                     {days.find((d) => d.key === draft.date)?.label} · {draft.time}
                   </strong>

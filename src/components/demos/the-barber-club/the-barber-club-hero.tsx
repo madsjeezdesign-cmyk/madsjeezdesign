@@ -30,7 +30,7 @@ export function TheBarberClubHero() {
         >
           Reservar mi turno
         </button>
-        <div className="mt-16 flex justify-center text-zinc-500">
+        <div className="mt-16 flex justify-center text-[color:var(--muted-body)]">
           <ChevronDown className="h-6 w-6 animate-bounce" />
         </div>
       </div>

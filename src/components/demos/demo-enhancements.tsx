@@ -35,7 +35,7 @@ export function DemoEnhancements({
   extraTestimonialsTitle = "Más opiniones",
   titleClass = "text-white",
   quoteClass = "text-sm italic text-zinc-300",
-  authorClass = "mt-4 text-xs font-bold uppercase tracking-wider text-zinc-500",
+  authorClass = "mt-4 text-xs font-bold uppercase tracking-wider text-[color:var(--muted-body)]",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-950/60 p-6",
   sectionClass = "bg-zinc-950/40",
 }: Props) {
@@ -90,7 +90,7 @@ export function DemoEnhancements({
 
       <section id="demo-galeria" className={demoSectionTight}>
         <div className={demoContainer}>
-          <p className="mb-6 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
+          <p className="mb-6 text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)]">
             Galería de trabajos y ambientes
           </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -112,7 +112,7 @@ export function DemoEnhancements({
               </div>
             ))}
           </div>
-          <p className="mt-4 text-center text-[11px] text-zinc-500">
+          <p className="mt-4 text-center text-[11px] text-[color:var(--muted-body)]">
             En tu sitio usamos fotografía propia o licenciada. Estas imágenes son referencia del rubro.
           </p>
         </div>
@@ -120,8 +120,8 @@ export function DemoEnhancements({
 
       <section className={`${demoSectionTight} pb-12`}>
         <div className={`${demoContainer} ${cardChrome} p-4 md:p-6`}>
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">Video promocional (demo)</p>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)]">Video promocional (demo)</p>
+          <p className="mt-1 text-sm text-[color:var(--muted-body)]">
             Reemplazalo por tu filmación de marca. Si un CDN falla, el reproductor prueba una segunda fuente.
           </p>
           <video

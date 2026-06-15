@@ -19,11 +19,11 @@ export function GustitosFooter() {
           <h2 className="font-[family-name:var(--font-gu-display)] text-3xl uppercase text-white">
             {cfg.brand}
           </h2>
-          <p className="mt-4 flex items-start gap-2 text-sm text-zinc-500">
+          <p className="mt-4 flex items-start gap-2 text-sm text-[color:var(--muted-body)]">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
             {cfg.addressLines.join(" · ")}
           </p>
-          <p className="mt-2 text-sm text-zinc-600">{cfg.hours}</p>
+          <p className="mt-2 text-sm text-[color:var(--muted-body)]">{cfg.hours}</p>
           <a
             href={gustitosWhatsAppLink("Hola GUSTITOS! Quiero hacer un pedido desde la demo.")}
             target="_blank"
@@ -37,7 +37,7 @@ export function GustitosFooter() {
             <iframe title="Mapa GUSTITOS" src={cfg.mapsEmbedUrl} className="h-full w-full border-0 opacity-80" loading="lazy" />
           </div>
         </motion.div>
-        <p className="mt-12 text-center text-xs text-zinc-600">
+        <p className="mt-12 text-center text-xs text-[color:var(--muted-body)]">
           Demo gastronómica · {cfg.brand} · Mads Jeez Design
         </p>
       </div>

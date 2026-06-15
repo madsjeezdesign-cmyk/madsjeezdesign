@@ -24,13 +24,13 @@ export function TheBarberClubCart({ open, onClose, items, onRemove, onCheckout }
             <ShoppingBag className="h-5 w-5 text-amber-500" />
             <h3 className="font-bold text-white">Tu carrito</h3>
           </div>
-          <button type="button" onClick={onClose} className="text-zinc-500 hover:text-white" aria-label="Cerrar">
+          <button type="button" onClick={onClose} className="text-[color:var(--muted-body)] hover:text-white" aria-label="Cerrar">
             <X className="h-5 w-5" />
           </button>
         </div>
         <div className="flex-1 overflow-y-auto p-5">
           {items.length === 0 ? (
-            <p className="py-20 text-center text-sm text-zinc-500">El carrito está vacío.</p>
+            <p className="py-20 text-center text-sm text-[color:var(--muted-body)]">El carrito está vacío.</p>
           ) : (
             <ul className="space-y-4">
               {items.map((item) => (
@@ -39,7 +39,7 @@ export function TheBarberClubCart({ open, onClose, items, onRemove, onCheckout }
                     <p className="text-sm font-bold text-white">{item.name}</p>
                     <p className="text-xs text-amber-400">{formatBarberPrice(item.price)}</p>
                   </div>
-                  <button type="button" onClick={() => onRemove(item.id)} className="text-zinc-600 hover:text-rose-400">
+                  <button type="button" onClick={() => onRemove(item.id)} className="text-[color:var(--muted-body)] hover:text-rose-400">
                     <Trash2 className="h-4 w-4" />
                   </button>
                 </li>

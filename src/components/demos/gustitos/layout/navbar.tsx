@@ -90,7 +90,7 @@ export function Navbar({ cartCount, cartTotal, onOpenCart, onOrder }: Props) {
           </motion.div>
         </div>
         {scrolled && cartCount > 0 && (
-          <p className="hidden text-center text-xs text-zinc-500 lg:block">
+          <p className="hidden text-center text-xs text-[color:var(--muted-body)] lg:block">
             Tu pedido · {formatGustitosPrice(cartTotal)}
           </p>
         )}

@@ -79,7 +79,7 @@ export function DemoMusicaLanding() {
           <span className={`text-sm font-bold tracking-widest text-white uppercase ${H}`}>Pentagrama</span>
           <span className="hidden rounded-sm bg-violet-500/20 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-violet-400 md:block">Escuela de música</span>
         </div>
-        <div className="hidden items-center gap-6 text-[11px] font-semibold uppercase tracking-widest text-zinc-500 md:flex">
+        <div className="hidden items-center gap-6 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
           {["Cursos", "Horarios", "Exámenes", "Contacto"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-violet-300 transition-colors">{n}</span>
           ))}
@@ -158,7 +158,7 @@ export function DemoMusicaLanding() {
             <FadeUp key={s.label} delay={i * 0.08}>
               <div className="px-8 py-8 text-center">
                 <p className={`text-3xl font-bold text-violet-300 md:text-4xl ${H}`}>{s.val}</p>
-                <p className="mt-2 text-[12px] uppercase tracking-widest text-zinc-500">{s.label}</p>
+                <p className="mt-2 text-[12px] uppercase tracking-widest text-[color:var(--muted-body)]">{s.label}</p>
               </div>
             </FadeUp>
           ))}
@@ -189,7 +189,7 @@ export function DemoMusicaLanding() {
                   </div>
                   <div className="flex-1">
                     <p className={`font-bold text-white ${H}`}>{c.name}</p>
-                    <p className="mt-1 text-[12px] text-zinc-500">{c.level}</p>
+                    <p className="mt-1 text-[12px] text-[color:var(--muted-body)]">{c.level}</p>
                     <span className="mt-3 inline-block rounded-full bg-violet-500/15 px-3 py-1 text-[10px] font-bold text-violet-400">
                       {c.seats}
                     </span>
@@ -229,7 +229,7 @@ export function DemoMusicaLanding() {
               ].map((b) => (
                 <div key={b.label} className="rounded-xl border border-white/[0.07] p-4">
                   <p className={`text-sm font-bold text-violet-300 ${H}`}>{b.label}</p>
-                  <p className="mt-1 text-[11px] text-zinc-500">{b.desc}</p>
+                  <p className="mt-1 text-[11px] text-[color:var(--muted-body)]">{b.desc}</p>
                 </div>
               ))}
             </div>
@@ -269,7 +269,7 @@ export function DemoMusicaLanding() {
         </div>
       </section>
 
-      <footer className="bg-[#0d0520] py-8 text-center text-xs text-zinc-600">Demo · MadsJeez Design</footer>
+      <footer className="bg-[#0d0520] py-8 text-center text-xs text-[color:var(--muted-body)]">Demo · MadsJeez Design</footer>
     </div>
   );
 }

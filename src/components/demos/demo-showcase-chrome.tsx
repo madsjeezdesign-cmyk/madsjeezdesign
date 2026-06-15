@@ -48,11 +48,11 @@ export function ShowcaseSiteNav({
         <span className="text-[11px] font-black uppercase tracking-[0.45em] text-white md:text-xs">
           MADSJEEZ
         </span>
-        <span className="text-[8px] uppercase tracking-[0.35em] text-zinc-500 md:text-[9px]">
+        <span className="text-[8px] uppercase tracking-[0.35em] text-[color:var(--muted-body)] md:text-[9px]">
           {demoTitle ? `${demoTitle.slice(0, 28)}${demoTitle.length > 28 ? "…" : ""}` : "Design Studio"}
         </span>
         {industry ? (
-          <span className="mt-0.5 hidden truncate text-[8px] uppercase tracking-[0.25em] text-zinc-600 sm:block">
+          <span className="mt-0.5 hidden truncate text-[8px] uppercase tracking-[0.25em] text-[color:var(--muted-body)] sm:block">
             {industry}
           </span>
         ) : null}
@@ -97,10 +97,10 @@ export function ShowcaseSiteFooter() {
   return (
     <footer className="relative z-10 border-t border-white/5 px-6 py-16 md:px-12 lg:px-16">
       <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-8 md:flex-row">
-        <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 md:text-left">
+        <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)] md:text-left">
           © {year} {site.name} · Creative solutions
         </p>
-        <div className="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
+        <div className="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)]">
           <a
             href={site.whatsapp}
             target="_blank"

@@ -37,7 +37,7 @@ export function Services() {
             >
               <span className="font-mono text-2xl font-bold text-orange-500">{s.metric}</span>
               <h3 className="mt-4 text-lg font-semibold text-white">{s.title}</h3>
-              <p className="mt-2 text-sm text-zinc-500">{s.desc}</p>
+              <p className="mt-2 text-sm text-[color:var(--muted-body)]">{s.desc}</p>
             </motion.article>
           ))}
         </motion.div>

@@ -43,7 +43,7 @@ export function CentralBebidasNavbar({
       <div className="border-b border-zinc-900 bg-zinc-900/80 py-1.5">
         <div className="cdb-ticker flex whitespace-nowrap">
           {[...cfg.deliveryZones, ...cfg.deliveryZones].map((z, i) => (
-            <span key={`${z}-${i}`} className="mx-6 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
+            <span key={`${z}-${i}`} className="mx-6 text-[10px] font-bold uppercase tracking-wider text-[color:var(--muted-body)]">
               {z}
             </span>
           ))}
@@ -61,7 +61,7 @@ export function CentralBebidasNavbar({
         </button>
 
         <div className="relative order-3 w-full min-w-0 flex-1 sm:order-none sm:max-w-md">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[color:var(--muted-body)]" />
           <input
             type="search"
             value={search}
@@ -72,7 +72,7 @@ export function CentralBebidasNavbar({
             onFocus={() => setSuggestions(true)}
             onBlur={() => window.setTimeout(() => setSuggestions(false), 150)}
             placeholder="Buscar marca, bebida, combo…"
-            className="w-full rounded-xl border border-zinc-800 bg-zinc-900 py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-zinc-600 focus:border-lime-500/50 focus:outline-none focus:ring-1 focus:ring-lime-500/30"
+            className="w-full rounded-xl border border-zinc-800 bg-zinc-900 py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-[color:var(--muted-body)] focus:border-lime-500/50 focus:outline-none focus:ring-1 focus:ring-lime-500/30"
           />
           {suggestions && mockSuggestions.length > 0 ? (
             <ul className="absolute left-0 right-0 top-full z-20 mt-1 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900 shadow-xl">
@@ -100,7 +100,7 @@ export function CentralBebidasNavbar({
               type="button"
               onClick={() => onMode("retail")}
               className={`rounded-lg px-3 py-1.5 text-[10px] font-black uppercase transition ${
-                mode === "retail" ? "bg-amber-500 text-zinc-950" : "text-zinc-500 hover:text-white"
+                mode === "retail" ? "bg-amber-500 text-zinc-950" : "text-[color:var(--muted-body)] hover:text-white"
               }`}
             >
               Minorista
@@ -109,7 +109,7 @@ export function CentralBebidasNavbar({
               type="button"
               onClick={() => onMode("wholesale")}
               className={`rounded-lg px-3 py-1.5 text-[10px] font-black uppercase transition ${
-                mode === "wholesale" ? "bg-lime-500 text-zinc-950" : "text-zinc-500 hover:text-white"
+                mode === "wholesale" ? "bg-lime-500 text-zinc-950" : "text-[color:var(--muted-body)] hover:text-white"
               }`}
             >
               Mayorista
@@ -145,7 +145,7 @@ export function CentralBebidasNavbar({
                 setMenuOpen(false);
               }}
               className={`flex-1 rounded-lg py-2 text-[10px] font-black uppercase ${
-                mode === "retail" ? "bg-amber-500 text-zinc-950" : "text-zinc-500"
+                mode === "retail" ? "bg-amber-500 text-zinc-950" : "text-[color:var(--muted-body)]"
               }`}
             >
               Minorista
@@ -157,7 +157,7 @@ export function CentralBebidasNavbar({
                 setMenuOpen(false);
               }}
               className={`flex-1 rounded-lg py-2 text-[10px] font-black uppercase ${
-                mode === "wholesale" ? "bg-lime-500 text-zinc-950" : "text-zinc-500"
+                mode === "wholesale" ? "bg-lime-500 text-zinc-950" : "text-[color:var(--muted-body)]"
               }`}
             >
               Mayorista

@@ -84,7 +84,7 @@ export function DemoBrandNav({
   const bar = isLight
     ? "border-stone-200/80 bg-white/90 text-stone-900"
     : "border-white/10 bg-zinc-950/85 text-white";
-  const muted = isLight ? "text-stone-500" : "text-zinc-500";
+  const muted = isLight ? "text-stone-500" : "text-[color:var(--muted-body)]";
   const linkCls = isLight
     ? "text-stone-600 hover:text-stone-900"
     : "text-zinc-400 hover:text-white";

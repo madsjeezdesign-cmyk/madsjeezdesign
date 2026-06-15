@@ -35,7 +35,7 @@ export function CerrajeriaCentralFooter() {
             <iframe title="Mapa Cerrajería Central" src={cfg.mapsEmbedUrl} className="h-[260px] w-full" loading="lazy" />
           </div>
         </div>
-        <p className="mt-8 text-center text-[10px] text-zinc-600">© {new Date().getFullYear()} {cfg.brand} — Demo</p>
+        <p className="mt-8 text-center text-[10px] text-[color:var(--muted-body)]">© {new Date().getFullYear()} {cfg.brand} — Demo</p>
       </div>
     </footer>
   );

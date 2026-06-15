@@ -45,16 +45,16 @@ export function CerrajeriaCentralCart({
         <div className="flex items-center justify-between border-b border-zinc-800 px-4 py-4">
           <div>
             <h3 className="text-lg font-black uppercase text-white">Pedido técnico</h3>
-            <p className="text-xs text-zinc-500">{count} ítems</p>
+            <p className="text-xs text-[color:var(--muted-body)]">{count} ítems</p>
           </div>
-          <button type="button" onClick={onClose} className="text-zinc-500" aria-label="Cerrar">
+          <button type="button" onClick={onClose} className="text-[color:var(--muted-body)]" aria-label="Cerrar">
             <X className="h-5 w-5" />
           </button>
         </div>
 
         <div className="flex-1 overflow-y-auto px-4 py-3">
           {lines.length === 0 ? (
-            <p className="py-16 text-center text-zinc-500">Carrito vacío</p>
+            <p className="py-16 text-center text-[color:var(--muted-body)]">Carrito vacío</p>
           ) : (
             <ul className="space-y-4">
               {lines.map((line) => (
@@ -65,17 +65,17 @@ export function CerrajeriaCentralCart({
                         {line.kind === "service" ? line.serviceLabel : line.name}
                       </p>
                       {line.kind === "service" ? (
-                        <p className="mt-1 text-[10px] text-zinc-500">
+                        <p className="mt-1 text-[10px] text-[color:var(--muted-body)]">
                           {line.keyTypeLabel} · {line.copies} copias
                         </p>
                       ) : (
-                        <p className="mt-1 text-[10px] text-zinc-500 line-clamp-2">{line.specs}</p>
+                        <p className="mt-1 text-[10px] text-[color:var(--muted-body)] line-clamp-2">{line.specs}</p>
                       )}
                     </div>
                     <button
                       type="button"
                       onClick={() => onRemove(line.key)}
-                      className="shrink-0 text-zinc-600 hover:text-red-400"
+                      className="shrink-0 text-[color:var(--muted-body)] hover:text-red-400"
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>
@@ -116,7 +116,7 @@ export function CerrajeriaCentralCart({
 
         {lines.length > 0 ? (
           <div className="space-y-4 border-t border-zinc-800 p-4">
-            <p className="text-[10px] font-black uppercase text-zinc-500">Entrega / instalación</p>
+            <p className="text-[10px] font-black uppercase text-[color:var(--muted-body)]">Entrega / instalación</p>
             {MODES.map((m) => (
               <button
                 key={m.id}
@@ -129,7 +129,7 @@ export function CerrajeriaCentralCart({
                 }`}
               >
                 {m.label}
-                <span className="mt-0.5 block text-zinc-600">{m.sub}</span>
+                <span className="mt-0.5 block text-[color:var(--muted-body)]">{m.sub}</span>
               </button>
             ))}
             <div className="space-y-1 text-sm">

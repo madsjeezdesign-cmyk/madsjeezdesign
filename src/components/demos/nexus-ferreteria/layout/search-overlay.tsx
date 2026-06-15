@@ -57,11 +57,11 @@ export function SearchOverlay({ open, onClose, onSelect }: Props) {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Buscar por SKU, marca o producto..."
-                className="flex-1 bg-transparent text-lg text-white outline-none placeholder:text-zinc-600"
+                className="flex-1 bg-transparent text-lg text-white outline-none placeholder:text-[color:var(--muted-body)]"
                 autoFocus
               />
               <button type="button" onClick={onClose} aria-label="Cerrar">
-                <X className="h-5 w-5 text-zinc-500" />
+                <X className="h-5 w-5 text-[color:var(--muted-body)]" />
               </button>
             </motion.div>
             <ul className="mt-4 max-h-80 overflow-y-auto">
@@ -86,7 +86,7 @@ export function SearchOverlay({ open, onClose, onSelect }: Props) {
                     />
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm text-white">{p.name}</p>
-                      <p className="text-xs text-zinc-500">
+                      <p className="text-xs text-[color:var(--muted-body)]">
                         {p.brand} · {p.sku}
                       </p>
                     </div>

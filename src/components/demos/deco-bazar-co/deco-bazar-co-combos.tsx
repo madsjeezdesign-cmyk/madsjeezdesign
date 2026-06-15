@@ -23,13 +23,13 @@ export function DecoBazarCoCombos({ onAddCombo }: Props) {
           <div>
             <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-zinc-400">Promos</p>
             <h2 className="mt-2 text-2xl font-light text-zinc-900">Sets y combos</h2>
-            <p className="mt-1 text-sm font-light text-zinc-500">Cajas armadas · un clic al carrito</p>
+            <p className="mt-1 text-sm font-light text-[color:var(--muted-body)]">Cajas armadas · un clic al carrito</p>
           </div>
           <div className="hidden gap-2 sm:flex">
             <button
               type="button"
               onClick={() => scroll(-1)}
-              className="rounded-full border border-zinc-200 p-2 text-zinc-500 hover:bg-zinc-50"
+              className="rounded-full border border-zinc-200 p-2 text-[color:var(--muted-body)] hover:bg-zinc-50"
               aria-label="Anterior"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -37,7 +37,7 @@ export function DecoBazarCoCombos({ onAddCombo }: Props) {
             <button
               type="button"
               onClick={() => scroll(1)}
-              className="rounded-full border border-zinc-200 p-2 text-zinc-500 hover:bg-zinc-50"
+              className="rounded-full border border-zinc-200 p-2 text-[color:var(--muted-body)] hover:bg-zinc-50"
               aria-label="Siguiente"
             >
               <ChevronRight className="h-5 w-5" />
@@ -62,8 +62,8 @@ export function DecoBazarCoCombos({ onAddCombo }: Props) {
               </div>
               <div className="p-4">
                 <h3 className="font-medium text-zinc-900">{combo.name}</h3>
-                <p className="mt-1 text-xs font-light text-zinc-500">{combo.description}</p>
-                <ul className="mt-3 space-y-0.5 text-[11px] text-zinc-500">
+                <p className="mt-1 text-xs font-light text-[color:var(--muted-body)]">{combo.description}</p>
+                <ul className="mt-3 space-y-0.5 text-[11px] text-[color:var(--muted-body)]">
                   {combo.items.map((it) => (
                     <li key={it.label}>· {it.label}</li>
                   ))}

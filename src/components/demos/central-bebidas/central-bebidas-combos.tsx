@@ -13,7 +13,7 @@ export function CentralBebidasCombos({ onAddCombo }: Props) {
     <section id="combos" className="border-b border-zinc-800 bg-zinc-900/30 py-8">
       <div className="mx-auto max-w-7xl px-3 sm:px-4">
         <h2 className="text-lg font-black uppercase text-white">Combos armados</h2>
-        <p className="mt-1 text-sm text-zinc-500">Un clic — todos los productos al carrito con precio promo</p>
+        <p className="mt-1 text-sm text-[color:var(--muted-body)]">Un clic — todos los productos al carrito con precio promo</p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {BEBIDA_COMBOS.map((combo) => (
@@ -31,7 +31,7 @@ export function CentralBebidasCombos({ onAddCombo }: Props) {
               </div>
               <div className="p-4">
                 <h3 className="font-bold text-white">{combo.name}</h3>
-                <p className="mt-1 text-xs text-zinc-500">{combo.description}</p>
+                <p className="mt-1 text-xs text-[color:var(--muted-body)]">{combo.description}</p>
                 <ul className="mt-3 space-y-1 text-[11px] text-zinc-400">
                   {combo.items.map((it) => (
                     <li key={it.label}>· {it.qty}x {it.label}</li>

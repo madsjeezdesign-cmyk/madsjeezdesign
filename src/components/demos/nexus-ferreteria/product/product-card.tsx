@@ -90,7 +90,7 @@ export function ProductCard({
         </button>
       </div>
       <div className="p-4">
-        <p className="font-mono text-[10px] uppercase tracking-wider text-zinc-500">
+        <p className="font-mono text-[10px] uppercase tracking-wider text-[color:var(--muted-body)]">
           {product.brand} · {product.sku}
         </p>
         <h3 className="mt-1 line-clamp-2 text-sm font-semibold text-white">{product.name}</h3>
@@ -98,7 +98,7 @@ export function ProductCard({
           {product.specs.slice(0, 2).map((s) => (
             <span
               key={s}
-              className="rounded border border-white/5 bg-zinc-950 px-1.5 py-0.5 text-[10px] text-zinc-500"
+              className="rounded border border-white/5 bg-zinc-950 px-1.5 py-0.5 text-[10px] text-[color:var(--muted-body)]"
             >
               {s}
             </span>

@@ -65,7 +65,7 @@ export function ComboBuilder({ product, onClose, onAdd }: Props) {
                 <h2 id="combo-title" className="text-xl font-bold text-white">
                   {product.name}
                 </h2>
-                <p className="text-sm text-zinc-500">{product.description}</p>
+                <p className="text-sm text-[color:var(--muted-body)]">{product.description}</p>
               </div>
             </div>
             <p className="mt-6 text-xs font-bold uppercase tracking-widest text-red-400">

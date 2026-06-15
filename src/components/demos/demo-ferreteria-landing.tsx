@@ -175,7 +175,7 @@ export function DemoFerreteriaLanding() {
 
         <div className="flex-1 space-y-6 overflow-y-auto pr-2">
           {cart.length === 0 ? (
-            <p className="py-20 text-center font-mono text-xs uppercase italic tracking-widest text-zinc-600">
+            <p className="py-20 text-center font-mono text-xs uppercase italic tracking-widest text-[color:var(--muted-body)]">
               Esperando materiales...
             </p>
           ) : (
@@ -187,12 +187,12 @@ export function DemoFerreteriaLanding() {
                 <div>
                   <h5 className="text-xs font-bold uppercase tracking-widest text-zinc-300">{item.name}</h5>
                   <p className="font-black italic text-[#ff5e00]">{formatPrice(item.price * item.qty)}</p>
-                  <p className="mt-1 text-[9px] font-bold uppercase text-zinc-600">Cant: {item.qty}</p>
+                  <p className="mt-1 text-[9px] font-bold uppercase text-[color:var(--muted-body)]">Cant: {item.qty}</p>
                 </div>
                 <button
                   type="button"
                   onClick={() => removeFromCart(item.id)}
-                  className="p-3 text-zinc-600 transition-colors hover:text-red-500"
+                  className="p-3 text-[color:var(--muted-body)] transition-colors hover:text-red-500"
                   aria-label="Quitar"
                 >
                   <Trash2 className="h-4 w-4" />
@@ -204,7 +204,7 @@ export function DemoFerreteriaLanding() {
 
         <div className="mt-10 border-t border-white/5 pt-10">
           <div className="mb-8 flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">Total estimado</span>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[color:var(--muted-body)]">Total estimado</span>
             <span className="font-[family-name:var(--font-demo-h-ferreteria)] text-5xl font-black text-white">
               {formatPrice(cartTotal)}
             </span>
@@ -228,7 +228,7 @@ export function DemoFerreteriaLanding() {
               </h1>
             </div>
             <div className="hidden h-6 w-px bg-white/10 xl:block" />
-            <span className="hidden text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 xl:block">
+            <span className="hidden text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)] xl:block">
               Est. 1984 Â· GBA Sur
             </span>
           </div>
@@ -287,7 +287,7 @@ export function DemoFerreteriaLanding() {
                 <div className="flex items-center gap-4 border-l border-white/10 pl-6 md:pl-8">
                   <div>
                     <p className="font-mono text-2xl font-bold">4.9/5</p>
-                    <p className="text-[9px] font-bold uppercase tracking-widest text-zinc-500">Google reviews</p>
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">Google reviews</p>
                   </div>
                 </div>
               </div>
@@ -346,7 +346,7 @@ export function DemoFerreteriaLanding() {
               <h4 className="mb-4 font-[family-name:var(--font-demo-h-ferreteria)] text-2xl font-bold uppercase text-white">
                 {title}
               </h4>
-              <p className="text-sm leading-relaxed text-zinc-500">{text}</p>
+              <p className="text-sm leading-relaxed text-[color:var(--muted-body)]">{text}</p>
             </div>
           ))}
         </div>
@@ -407,7 +407,7 @@ export function DemoFerreteriaLanding() {
                     />
                     {product.stock === "stock" ? "En stock" : "Últimos 3"}
                   </div>
-                  <span className="font-mono text-[10px] text-zinc-600">
+                  <span className="font-mono text-[10px] text-[color:var(--muted-body)]">
                     {product.ref}
                   </span>
                 </div>
@@ -424,13 +424,13 @@ export function DemoFerreteriaLanding() {
                   <h4 className="mb-4 font-[family-name:var(--font-demo-h-ferreteria)] text-xl font-black uppercase italic text-white md:text-2xl">
                     {product.name}
                   </h4>
-                  <p className="mb-8 flex-1 text-xs font-light leading-relaxed text-zinc-500">
+                  <p className="mb-8 flex-1 text-xs font-light leading-relaxed text-[color:var(--muted-body)]">
                     {product.description}
                   </p>
                 </div>
                 <div className="flex items-center justify-between border-t border-white/5 pt-8">
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-600">Precio final</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">Precio final</p>
                     <p className="font-[family-name:var(--font-demo-h-ferreteria)] text-3xl font-black italic text-white">
                       {formatPrice(product.price)}
                     </p>
@@ -457,7 +457,7 @@ export function DemoFerreteriaLanding() {
             <h3 className="mb-4 font-[family-name:var(--font-demo-h-ferreteria)] text-4xl font-black uppercase italic text-white">
               Consejos del <span className="text-orange-600">experto</span>
             </h3>
-            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-zinc-500">
+            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[color:var(--muted-body)]">
               No solo te vendemos, te enseñamos.
             </p>
           </div>
@@ -481,7 +481,7 @@ export function DemoFerreteriaLanding() {
                     {g.tag}
                   </span>
                   <h5 className="mb-3 text-xl font-black text-white md:text-2xl">{g.title}</h5>
-                  <p className="mb-4 text-sm text-zinc-500">{g.text}</p>
+                  <p className="mb-4 text-sm text-[color:var(--muted-body)]">{g.text}</p>
                   <span className="text-xs font-bold text-white">Leer guía →</span>
                 </div>
               </div>
@@ -506,7 +506,7 @@ export function DemoFerreteriaLanding() {
             <h4 className="mb-8 font-[family-name:var(--font-demo-h-ferreteria)] text-4xl font-black uppercase italic tracking-tighter text-white">
               FDO <span className="text-orange-600">.</span>
             </h4>
-            <p className="mb-8 max-w-sm italic leading-relaxed text-zinc-500">
+            <p className="mb-8 max-w-sm italic leading-relaxed text-[color:var(--muted-body)]">
               La ferretería que construyó el barrio desde 1984. Hoy digitalizamos la confianza de siempre para
               llevarte la mejor calidad a tu puerta.
             </p>
@@ -523,7 +523,7 @@ export function DemoFerreteriaLanding() {
             <h6 className="mb-8 font-mono text-[10px] font-bold uppercase tracking-[0.4em] text-white">
               Explorar
             </h6>
-            <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-zinc-500">
+            <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-[color:var(--muted-body)]">
               <li>
                 <a href="#shop" className="hover:text-orange-500">
                   Máquinas PRO
@@ -561,7 +561,7 @@ export function DemoFerreteriaLanding() {
             </div>
           </div>
         </div>
-        <p className="mx-auto mt-16 max-w-[1600px] border-t border-white/5 pt-8 text-center text-[10px] text-zinc-600">
+        <p className="mx-auto mt-16 max-w-[1600px] border-t border-white/5 pt-8 text-center text-[10px] text-[color:var(--muted-body)]">
           Demo visual Â· MadsJeez Design Â·{" "}
           <Link href="/demos" className="text-orange-500/80 hover:text-orange-400">
             Volver al showroom

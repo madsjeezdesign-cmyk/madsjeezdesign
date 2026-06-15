@@ -293,7 +293,7 @@ export function BeltranBrionesLanding() {
           </div>
 
           {/* Trust badges */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">
             <span className="flex items-center gap-1.5"><Shield className="h-3.5 w-3.5 text-amber-600" />Operaciones verificadas</span>
             <span className="flex items-center gap-1.5"><Star className="h-3.5 w-3.5 text-amber-600" />4.9★ en Google</span>
             <span className="flex items-center gap-1.5"><Users className="h-3.5 w-3.5 text-amber-600" />+1.200 inversores</span>
@@ -314,7 +314,7 @@ export function BeltranBrionesLanding() {
                   decimals={"prefix" in stat ? 0 : stat.suffix === "★" ? 1 : 0}
                 />
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">{stat.label}</div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -358,7 +358,7 @@ export function BeltranBrionesLanding() {
               <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 border border-white/10">
                 <BookOpen className="h-7 w-7 text-white" />
               </div>
-              <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-zinc-500">Track B</p>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">Track B</p>
               <h3 className="mb-4 text-3xl font-black text-white md:text-4xl">Quiero vender<br />propiedades</h3>
               <p className="mb-8 leading-relaxed text-zinc-400">
                 Aprendé el método completo para hacer tus primeras operaciones, dominar el cierre de alto ticket y construir una cartera de clientes que te genere comisiones consistentes.
@@ -366,7 +366,7 @@ export function BeltranBrionesLanding() {
               <ul className="mb-10 space-y-3 text-sm text-zinc-300">
                 {["Formación desde cero (sin experiencia previa)", "Scripts de venta y manejo de objeciones", "Cómo cerrar a precio de lista", "Comunidad de agentes activos"].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-zinc-500" />
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[color:var(--muted-body)]" />
                     {item}
                   </li>
                 ))}
@@ -438,7 +438,7 @@ export function BeltranBrionesLanding() {
             >
               <span className="mb-6 block text-3xl font-black text-amber-500/30">{pillar.number}</span>
               <h3 className="mb-4 text-2xl font-black tracking-tight md:text-3xl">{pillar.title}</h3>
-              <p className="text-sm leading-relaxed text-zinc-500">{pillar.text}</p>
+              <p className="text-sm leading-relaxed text-[color:var(--muted-body)]">{pillar.text}</p>
             </article>
           ))}
         </div>
@@ -452,7 +452,7 @@ export function BeltranBrionesLanding() {
             <h2 className="text-4xl font-black tracking-tight md:text-5xl">
               El método <span className="text-amber-500">Beltrán Briones</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-zinc-500">
+            <p className="mx-auto mt-4 max-w-lg text-[color:var(--muted-body)]">
               Cuatro fases que llevaron a más de 320 inversores a cerrar sus primeras operaciones rentables.
             </p>
           </div>
@@ -472,7 +472,7 @@ export function BeltranBrionesLanding() {
                       <Icon className="h-5 w-5 text-amber-500/70" />
                       <h3 className="font-bold text-white">{step.title}</h3>
                     </div>
-                    <p className="text-sm leading-relaxed text-zinc-500">{step.text}</p>
+                    <p className="text-sm leading-relaxed text-[color:var(--muted-body)]">{step.text}</p>
                   </div>
                 </article>
               );
@@ -489,7 +489,7 @@ export function BeltranBrionesLanding() {
           <div className="bb-reveal mb-12 text-center">
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.6em] text-amber-500">Herramienta gratuita</p>
             <h2 className="text-4xl font-black tracking-tight md:text-5xl">Calculadora de<br />rentabilidad (ROI)</h2>
-            <p className="mx-auto mt-4 max-w-md text-zinc-500">
+            <p className="mx-auto mt-4 max-w-md text-[color:var(--muted-body)]">
               Ajustá los valores y descubrí cuánto puede rendir tu propiedad. Comparalo con un plazo fijo.
             </p>
           </div>
@@ -557,16 +557,16 @@ export function BeltranBrionesLanding() {
                   <Calculator className="mb-3 h-6 w-6 text-amber-500/60" />
                   <span className="mb-1 text-[10px] font-bold uppercase tracking-widest text-amber-500">Tu rentabilidad anual</span>
                   <span className="text-7xl font-black text-amber-400 md:text-8xl">{roiDisplay}%</span>
-                  <span className="mt-2 text-xs text-zinc-600 italic">sobre precio de compra</span>
+                  <span className="mt-2 text-xs text-[color:var(--muted-body)] italic">sobre precio de compra</span>
                 </div>
                 {/* Comparison */}
                 <div className="rounded-xl border border-white/6 bg-white/[0.02] p-6 space-y-3">
                   <div className="flex justify-between text-sm">
-                    <span className="text-zinc-500">Tu propiedad</span>
+                    <span className="text-[color:var(--muted-body)]">Tu propiedad</span>
                     <span className="font-black text-amber-400">{roiDisplay}% anual</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-zinc-500">Plazo fijo ref.</span>
+                    <span className="text-[color:var(--muted-body)]">Plazo fijo ref.</span>
                     <span className="font-bold text-zinc-400">{plazoFijo.toFixed(1)}% anual</span>
                   </div>
                   <div className="bb-sep" />
@@ -577,7 +577,7 @@ export function BeltranBrionesLanding() {
                     </span>
                   </div>
                 </div>
-                <p className="text-center text-xs text-zinc-600 italic">
+                <p className="text-center text-xs text-[color:var(--muted-body)] italic">
                   "Los números no mienten. ¿Esta inversión encaja con tu estrategia?"
                 </p>
                 <a
@@ -616,7 +616,7 @@ export function BeltranBrionesLanding() {
                     <span className="rounded-full border border-amber-500/25 bg-amber-500/10 px-3 py-1 text-[10px] font-black text-amber-400">ROI {c.roi}%</span>
                   </div>
                   <h3 className="mb-2 font-bold text-white">{c.persona}</h3>
-                  <p className="mb-4 text-xs text-zinc-500">{c.tipo} · Capital: {c.capital} · Plazo: {c.plazo}</p>
+                  <p className="mb-4 text-xs text-[color:var(--muted-body)]">{c.tipo} · Capital: {c.capital} · Plazo: {c.plazo}</p>
                   <blockquote className="border-l-2 border-amber-500/30 pl-4 text-sm italic leading-relaxed text-zinc-400">
                     "{c.quote}"
                   </blockquote>
@@ -651,7 +651,7 @@ export function BeltranBrionesLanding() {
                     </div>
                     <div>
                       <div className="font-bold text-white">{t.name}</div>
-                      <div className="text-xs text-zinc-500">{t.role}</div>
+                      <div className="text-xs text-[color:var(--muted-body)]">{t.role}</div>
                       <div className="mt-1 flex gap-0.5">
                         {Array.from({ length: t.stars }).map((_, i) => (
                           <Star key={i} className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
@@ -714,7 +714,7 @@ export function BeltranBrionesLanding() {
                       value={leadEmail}
                       onChange={(e) => setLeadEmail(e.target.value)}
                       placeholder="Tu email"
-                      className="bb-input min-w-0 flex-1 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white placeholder:text-zinc-600"
+                      className="bb-input min-w-0 flex-1 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white placeholder:text-[color:var(--muted-body)]"
                     />
                     <button type="submit" className="bb-btn-primary whitespace-nowrap">
                       Descargar gratis
@@ -772,10 +772,10 @@ export function BeltranBrionesLanding() {
             <h4 className="mb-4 text-2xl font-black tracking-tight">
               BELTRÁN <span className="text-amber-500">BRIONES</span>
             </h4>
-            <p className="mb-6 max-w-sm text-sm leading-relaxed text-zinc-500">
+            <p className="mb-6 max-w-sm text-sm leading-relaxed text-[color:var(--muted-body)]">
               Inversión inmobiliaria de élite y formación para agentes en el mercado de Buenos Aires. Más de 320 operaciones cerradas.
             </p>
-            <div className="space-y-3 text-sm text-zinc-500">
+            <div className="space-y-3 text-sm text-[color:var(--muted-body)]">
               <p className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 shrink-0 text-amber-600" />
                 {cfg.address}
@@ -792,7 +792,7 @@ export function BeltranBrionesLanding() {
           </div>
           <div>
             <h6 className="mb-6 text-[10px] font-bold uppercase tracking-[0.4em] text-white">Servicios</h6>
-            <ul className="space-y-3 text-sm text-zinc-500">
+            <ul className="space-y-3 text-sm text-[color:var(--muted-body)]">
               {["Asesoría de inversión", "Gestión de activos", "Formación para agentes", "Calculadora ROI"].map((item) => (
                 <li key={item}><a href={waInvest} className="hover:text-amber-500 transition-colors">{item}</a></li>
               ))}
@@ -800,7 +800,7 @@ export function BeltranBrionesLanding() {
           </div>
           <div>
             <h6 className="mb-6 text-[10px] font-bold uppercase tracking-[0.4em] text-white">Zonas</h6>
-            <ul className="space-y-3 text-sm text-zinc-500">
+            <ul className="space-y-3 text-sm text-[color:var(--muted-body)]">
               {["Palermo · CABA", "Belgrano · CABA", "Villa Crespo · CABA", "GBA Norte", "GBA Sur"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <span className="h-1 w-1 rounded-full bg-amber-600" />

@@ -46,7 +46,7 @@ export function DecoBazarCoCart({
         <div className="flex items-center justify-between border-b border-zinc-100 px-4 py-4">
           <div>
             <h3 className="text-lg font-light text-zinc-900">Tu carrito</h3>
-            <p className="text-xs text-zinc-500">{count} artículos</p>
+            <p className="text-xs text-[color:var(--muted-body)]">{count} artículos</p>
           </div>
           <button type="button" onClick={onClose} className="text-zinc-400 hover:text-zinc-700" aria-label="Cerrar">
             <X className="h-5 w-5" />
@@ -110,11 +110,11 @@ export function DecoBazarCoCart({
                   className={`rounded-xl border px-3 py-3 text-left text-xs ${
                     mode === "shipping"
                       ? "border-zinc-800 bg-zinc-50 text-zinc-900"
-                      : "border-zinc-200 text-zinc-600"
+                      : "border-zinc-200 text-[color:var(--muted-body)]"
                   }`}
                 >
                   Envío a domicilio
-                  <span className="mt-0.5 block font-light text-zinc-500">Correo / flete</span>
+                  <span className="mt-0.5 block font-light text-[color:var(--muted-body)]">Correo / flete</span>
                 </button>
                 <button
                   type="button"
@@ -122,11 +122,11 @@ export function DecoBazarCoCart({
                   className={`rounded-xl border px-3 py-3 text-left text-xs ${
                     mode === "pickup"
                       ? "border-[#5c6b4a] bg-[#5c6b4a]/5 text-[#4d5a3e]"
-                      : "border-zinc-200 text-zinc-600"
+                      : "border-zinc-200 text-[color:var(--muted-body)]"
                   }`}
                 >
                   Retiro gratuito por el local
-                  <span className="mt-0.5 block font-light text-zinc-500">Showroom Spegazzini</span>
+                  <span className="mt-0.5 block font-light text-[color:var(--muted-body)]">Showroom Spegazzini</span>
                 </button>
               </div>
             </div>
@@ -150,18 +150,18 @@ export function DecoBazarCoCart({
             ) : null}
 
             <div className="space-y-1 text-sm">
-              <div className="flex justify-between font-light text-zinc-600">
+              <div className="flex justify-between font-light text-[color:var(--muted-body)]">
                 <span>Subtotal</span>
                 <span>{formatDecoPrice(totals.subtotal)}</span>
               </div>
               {mode === "shipping" ? (
-                <div className="flex justify-between font-light text-zinc-600">
+                <div className="flex justify-between font-light text-[color:var(--muted-body)]">
                   <span>Envío</span>
                   <span>{formatDecoPrice(totals.shipping)}</span>
                 </div>
               ) : null}
               {totals.installmentAmount ? (
-                <p className="rounded-lg bg-zinc-50 px-3 py-2 text-xs text-zinc-600">
+                <p className="rounded-lg bg-zinc-50 px-3 py-2 text-xs text-[color:var(--muted-body)]">
                   {cfg.installmentCount} cuotas sin interés de{" "}
                   <strong className="text-zinc-800">{formatDecoPrice(totals.installmentAmount)}</strong>
                 </p>

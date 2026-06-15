@@ -23,7 +23,7 @@ export function ToolsMarquee() {
           {[...items, ...items].map((label, i) => (
             <span
               key={`${label}-${i}`}
-              className="font-mono text-sm uppercase tracking-[0.3em] text-zinc-600"
+              className="font-mono text-sm uppercase tracking-[0.3em] text-[color:var(--muted-body)]"
             >
               {label}
               <span className="mx-6 text-orange-500/50">◆</span>

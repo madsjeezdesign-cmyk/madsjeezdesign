@@ -50,7 +50,7 @@ export function CentralBebidasCatalog({ mode, search, onAdd }: Props) {
     <section id="catalogo" className="scroll-mt-4 border-b border-zinc-800 bg-zinc-950 py-6">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-3 sm:flex-row sm:px-4">
         <aside className="shrink-0 sm:w-52">
-          <p className="mb-3 text-[10px] font-black uppercase tracking-widest text-zinc-500">Categorías</p>
+          <p className="mb-3 text-[10px] font-black uppercase tracking-widest text-[color:var(--muted-body)]">Categorías</p>
           <nav className="flex gap-2 overflow-x-auto pb-2 sm:flex-col sm:overflow-visible sm:pb-0">
             {BEBIDA_CATEGORIES.map((c) => (
               <button
@@ -72,7 +72,7 @@ export function CentralBebidasCatalog({ mode, search, onAdd }: Props) {
         <div className="min-w-0 flex-1">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-black uppercase text-white">Catálogo</h2>
-            <span className="text-xs text-zinc-500">{filtered.length} productos</span>
+            <span className="text-xs text-[color:var(--muted-body)]">{filtered.length} productos</span>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -98,19 +98,19 @@ export function CentralBebidasCatalog({ mode, search, onAdd }: Props) {
                   <div className="flex flex-1 flex-col p-3">
                     <p className="text-[10px] font-bold uppercase text-lime-400">{product.brand}</p>
                     <h3 className="font-bold text-white">{product.name}</h3>
-                    <p className="text-xs text-zinc-500">{product.volume}</p>
+                    <p className="text-xs text-[color:var(--muted-body)]">{product.volume}</p>
 
                     <div className="mt-3 grid grid-cols-2 gap-2 text-center text-[10px]">
                       <div className={`rounded-lg border p-2 ${!bulkActive ? "border-amber-500/50 bg-amber-500/10" : "border-zinc-800"}`}>
-                        <p className="text-zinc-500">Unidad</p>
+                        <p className="text-[color:var(--muted-body)]">Unidad</p>
                         <p className="font-black text-white">{formatBebidaPrice(product.unitPrice)}</p>
                       </div>
                       <div
                         className={`rounded-lg border p-2 ${bulkActive ? "border-lime-500/50 bg-lime-500/10" : "border-zinc-800"}`}
                       >
-                        <p className="text-zinc-500">{product.bulkLabel}</p>
+                        <p className="text-[color:var(--muted-body)]">{product.bulkLabel}</p>
                         <p className="font-black text-lime-400">{formatBebidaPrice(product.bulkUnitPrice)}</p>
-                        <p className="text-[9px] text-zinc-600">desde {product.bulkMin} u.</p>
+                        <p className="text-[9px] text-[color:var(--muted-body)]">desde {product.bulkMin} u.</p>
                       </div>
                     </div>
 
@@ -159,7 +159,7 @@ export function CentralBebidasCatalog({ mode, search, onAdd }: Props) {
           </div>
 
           {filtered.length === 0 ? (
-            <p className="py-12 text-center text-zinc-500">Sin resultados para tu búsqueda.</p>
+            <p className="py-12 text-center text-[color:var(--muted-body)]">Sin resultados para tu búsqueda.</p>
           ) : null}
         </div>
       </div>

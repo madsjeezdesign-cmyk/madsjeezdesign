@@ -43,10 +43,10 @@ export function CerrajeriaCentralKeyQuote({ onAddService, onReserve }: Props) {
             >
               <div>
                 <p className="font-bold text-white">{k.label}</p>
-                <p className="mt-1 text-xs text-zinc-500">{k.eta}</p>
+                <p className="mt-1 text-xs text-[color:var(--muted-body)]">{k.eta}</p>
               </div>
               <p className="mt-2 text-lg font-black text-amber-400 sm:mt-0">
-                {formatCentralPrice(k.pricePerCopy)} <span className="text-xs text-zinc-500">/ copia</span>
+                {formatCentralPrice(k.pricePerCopy)} <span className="text-xs text-[color:var(--muted-body)]">/ copia</span>
               </p>
             </button>
           ))}
@@ -76,9 +76,9 @@ export function CerrajeriaCentralKeyQuote({ onAddService, onReserve }: Props) {
         </div>
 
         <div className="mt-6 rounded-2xl border-2 border-amber-500/50 bg-zinc-950 p-6 text-center">
-          <p className="text-xs font-bold uppercase text-zinc-500">Total estimado</p>
+          <p className="text-xs font-bold uppercase text-[color:var(--muted-body)]">Total estimado</p>
           <p className="mt-2 text-4xl font-black text-amber-400">{formatCentralPrice(total)}</p>
-          <p className="mt-2 text-xs text-zinc-500">
+          <p className="mt-2 text-xs text-[color:var(--muted-body)]">
             {keyType.label} × {copies} — {keyType.eta}
           </p>
         </div>

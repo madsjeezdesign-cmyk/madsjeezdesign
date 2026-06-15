@@ -12,7 +12,7 @@ export function CerrajeriaCentralServices() {
         {SERVICES.map((s) => (
           <div key={s.title} className="rounded-xl border border-zinc-800 bg-zinc-900 p-4">
             <h3 className="text-sm font-black uppercase text-amber-400">{s.title}</h3>
-            <p className="mt-2 text-xs text-zinc-500">{s.desc}</p>
+            <p className="mt-2 text-xs text-[color:var(--muted-body)]">{s.desc}</p>
           </div>
         ))}
       </div>

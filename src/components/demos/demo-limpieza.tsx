@@ -154,7 +154,7 @@ export function DemoLimpiezaLanding() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.28, duration: 0.6 }}
-              className="mt-6 max-w-md text-sm leading-loose text-zinc-500"
+              className="mt-6 max-w-md text-sm leading-loose text-[color:var(--muted-body)]"
             >
               Edificios corporativos, clínicas, plantas industriales y eventos. Operarios propios con uniforme, equipo certificado y supervisor de turno en cada servicio.
             </motion.p>
@@ -168,7 +168,7 @@ export function DemoLimpiezaLanding() {
               <button type="button" className={`flex items-center gap-2 rounded bg-emerald-600 px-7 py-3.5 font-bold text-white hover:bg-emerald-500 transition-colors ${H}`}>
                 Pedir presupuesto <ArrowRight className="h-4 w-4" />
               </button>
-              <button type="button" className="flex items-center gap-2 rounded border border-emerald-200 px-7 py-3.5 text-sm font-semibold text-zinc-600 hover:bg-emerald-50 transition-colors">
+              <button type="button" className="flex items-center gap-2 rounded border border-emerald-200 px-7 py-3.5 text-sm font-semibold text-[color:var(--muted-body)] hover:bg-emerald-50 transition-colors">
                 Ver sectores
               </button>
             </motion.div>
@@ -225,7 +225,7 @@ export function DemoLimpiezaLanding() {
                     <s.icon className="h-5 w-5" />
                   </div>
                   <h3 className={`mt-4 font-bold text-[#0a1a14] ${H}`}>{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{s.desc}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted-body)]">{s.desc}</p>
                 </div>
               </FadeUp>
             ))}
@@ -273,7 +273,7 @@ export function DemoLimpiezaLanding() {
                   <span className={`text-4xl font-black text-emerald-200 ${H}`}>{step.n}</span>
                   <div>
                     <p className={`font-bold text-[#0a1a14] ${H}`}>{step.t}</p>
-                    <p className="mt-1 text-sm text-zinc-500">{step.d}</p>
+                    <p className="mt-1 text-sm text-[color:var(--muted-body)]">{step.d}</p>
                   </div>
                 </div>
               </FadeUp>
