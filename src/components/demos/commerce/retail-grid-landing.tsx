@@ -14,6 +14,7 @@ import { getCommerceConfig } from "@/lib/commerce-demos";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
 import { DemoLeadForm } from "../demo-lead-form";
+import { ScrollReveal, SpotlightCard, MagneticButton } from "@/components/primitives";
 
 type Props = { slug: string };
 
@@ -153,13 +154,14 @@ export function RetailGridLanding({ slug }: Props) {
             </h1>
             <p className="mt-6 max-w-md text-base text-white/65">{config.heroSub}</p>
             <div className="mt-8 flex items-center gap-3">
-              <a
+              <MagneticButton
                 href="#catalogo"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-[#0d0d0d] transition-transform hover:scale-[1.02]"
-                style={{ background: accent }}
+                variant="primary"
+                strength={8}
+                className="text-[#0d0d0d]"
               >
                 {seed.cta}
-              </a>
+              </MagneticButton>
               <a
                 href="#colecciones"
                 className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-white/85 hover:border-white"
@@ -225,14 +227,20 @@ export function RetailGridLanding({ slug }: Props) {
       </section>
 
       {/* CATEGORY NAV — sticky pill row */}
-      <section id="catalogo" className="px-5 py-12 md:px-8 md:py-16">
-        <div className="mx-auto max-w-7xl">
+      <ScrollReveal as="section" className="px-5 py-12 md:px-8 md:py-16">
+        <div id="catalogo" className="mx-auto max-w-7xl">
           <div className="mb-8 flex items-end justify-between gap-4">
             <h2 className="font-[family-name:var(--font-demo-h-commerce)] text-3xl font-medium tracking-tight md:text-5xl">
               Catálogo
             </h2>
-            <p className="hidden text-xs text-white/50 md:block">
-              {seed.products.length * 8} productos · stock en vivo
+            <p className="hidden items-center gap-2 text-xs text-white/50 md:inline-flex">
+              {seed.products.length * 8} productos
+              <span
+                className="live-ping-dot"
+                style={{ background: accent, "--brand-cyan": accent } as React.CSSProperties}
+                aria-hidden
+              />
+              <span>stock en vivo</span>
             </p>
           </div>
           <div className="-mx-1 mb-8 flex gap-2 overflow-x-auto px-1 pb-1">
@@ -284,9 +292,12 @@ export function RetailGridLanding({ slug }: Props) {
             </article>
 
             {seed.products.slice(1).map((p, i) => (
-              <article
+              <SpotlightCard
                 key={p.name}
-                className="group relative overflow-hidden rounded-sm border border-white/10 bg-[#161616] transition-colors hover:border-white/30"
+                glowColor={accent}
+                size={260}
+                variant="transparent"
+                className="group relative overflow-hidden border border-white/10 bg-[#161616] !rounded-sm transition-colors hover:border-white/30"
               >
                 <div className="relative aspect-square overflow-hidden">
                   <Image
@@ -319,11 +330,11 @@ export function RetailGridLanding({ slug }: Props) {
                     <Plus className="h-3.5 w-3.5" />
                   </button>
                 </div>
-              </article>
+              </SpotlightCard>
             ))}
           </motion.div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* TESTIMONIALS — small chips */}
       <section className="border-y border-white/8 bg-[#0a0a0a] px-5 py-16 md:px-8 md:py-20">

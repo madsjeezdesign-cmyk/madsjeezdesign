@@ -13,6 +13,7 @@ import { getCommerceConfig } from "@/lib/commerce-demos";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
 import { DemoLeadForm } from "../demo-lead-form";
+import { ScrollReveal, MagneticButton } from "@/components/primitives";
 
 type Props = { slug: string };
 
@@ -95,18 +96,27 @@ export function NeighborhoodWarmthLanding({ slug }: Props) {
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" style={{ color: accent }} />
                 <span>{meta.hours}</span>
+                <span
+                  className="live-ping-dot ml-1"
+                  style={{ background: accent, "--brand-cyan": accent } as React.CSSProperties}
+                  aria-hidden
+                />
+                <span className="text-[11px] text-[#8a7d63]">abierto ahora</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" style={{ color: accent }} />
                 <span>{meta.address}</span>
               </div>
-              <a
-                href="#contacto"
-                className="mt-3 inline-flex w-fit items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white"
-                style={{ background: accent }}
-              >
-                <MessageCircle className="h-4 w-4" /> Pedinos por WhatsApp
-              </a>
+              <div className="mt-3">
+                <MagneticButton
+                  href="#contacto"
+                  variant="primary"
+                  strength={6}
+                  className="text-white"
+                >
+                  <MessageCircle className="h-4 w-4" /> Pedinos por WhatsApp
+                </MagneticButton>
+              </div>
             </div>
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-[#e8e2d3]">
               <Image
@@ -123,7 +133,7 @@ export function NeighborhoodWarmthLanding({ slug }: Props) {
       </section>
 
       {/* WHAT WE HAVE TODAY — hand-noted style list, cream accent surface */}
-      <section className="border-y border-[#e8e2d3] bg-[#f4ecdb] px-5 py-20 md:px-10 md:py-24">
+      <ScrollReveal as="section" className="border-y border-[#e8e2d3] bg-[#f4ecdb] px-5 py-20 md:px-10 md:py-24">
         <div className="mx-auto max-w-5xl">
           <div className="mb-10">
             <p className="text-xs text-[#8a7d63]">Hoy en el mostrador</p>
@@ -147,10 +157,10 @@ export function NeighborhoodWarmthLanding({ slug }: Props) {
             ))}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* HOW WE REACH YOU — delivery / pickup / whatsapp */}
-      <section className="px-5 py-20 md:px-10 md:py-24">
+      <ScrollReveal as="section" className="px-5 py-20 md:px-10 md:py-24">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-10 font-[family-name:var(--font-instrument)] text-3xl italic text-[#26211b] md:text-4xl">
             Cómo te llegamos
@@ -170,7 +180,7 @@ export function NeighborhoodWarmthLanding({ slug }: Props) {
             ))}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* TESTIMONIAL — single large block, italic serif */}
       <section className="border-y border-[#e8e2d3] bg-white px-5 py-20 md:px-10 md:py-28">
