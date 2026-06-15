@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
+import { MagneticButton, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "panaderia" as const;
 const H = DEMO_HEADING_CLASS[SLUG];
@@ -198,7 +199,11 @@ export function DemoPanaderiaLanding() {
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {MENU.map((section, i) => (
               <FadeUp key={section.cat} delay={i * 0.08}>
-                <div className="rounded-2xl border border-[#e8e0d0] bg-[#f5f0e8] p-6">
+                <SpotlightCard
+                  variant="transparent"
+                  glowColor="rgba(180,83,9,0.3)"
+                  className="h-full rounded-2xl border border-[#e8e0d0] bg-[#f5f0e8] p-6"
+                >
                   <p className={`mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-700 ${H}`}>{section.cat}</p>
                   <ul className="space-y-2">
                     {section.items.map((item) => (
@@ -208,7 +213,7 @@ export function DemoPanaderiaLanding() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </SpotlightCard>
               </FadeUp>
             ))}
           </div>
@@ -295,9 +300,16 @@ export function DemoPanaderiaLanding() {
           <FadeUp>
             <h2 className={`text-4xl font-bold text-[#faf7f2] md:text-6xl ${H}`}>Hecho hoy.<br />Listo al mediodía.</h2>
             <p className="mt-4 text-sm text-stone-400">Encargues online · pick up en local · delivery zona sur</p>
-            <button type="button" className={`mt-8 inline-flex items-center gap-2 rounded-full bg-amber-500 px-10 py-4 font-bold text-black hover:bg-amber-400 transition-colors ${H}`}>
-              Encargar por WhatsApp <ArrowRight className="h-4 w-4" />
-            </button>
+            <div className="mt-8 inline-flex">
+              <MagneticButton
+                variant="primary"
+                strength={10}
+                className={`!bg-amber-500 hover:!bg-amber-400 rounded-full px-10 py-4 font-bold !text-black ${H}`}
+                ariaLabel="Encargar por WhatsApp"
+              >
+                Encargar por WhatsApp <ArrowRight className="h-4 w-4" />
+              </MagneticButton>
+            </div>
           </FadeUp>
         </div>
       </section>
