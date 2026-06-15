@@ -12,6 +12,7 @@ import {
   type GelatoFlavor,
   type GelatoSize,
 } from "@/lib/gelato-co";
+import { ScrollReveal } from "@/components/primitives";
 import { DemoLeadForm } from "../demo-lead-form";
 import { GelatoCoCart } from "./gelato-co-cart";
 import { GelatoCoFlavorPicker } from "./gelato-co-flavor-picker";
@@ -80,7 +81,9 @@ export function GelatoCoLanding() {
         onOpenCart={() => setCartOpen(true)}
       />
       <GelatoCoHero />
-      <GelatoCoSizes activeSizeId={activeSizeId} onChoose={openPicker} />
+      <ScrollReveal as="div">
+        <GelatoCoSizes activeSizeId={activeSizeId} onChoose={openPicker} />
+      </ScrollReveal>
       <GelatoCoFooter />
 
       <DemoLeadForm
