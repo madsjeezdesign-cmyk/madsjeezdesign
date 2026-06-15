@@ -334,8 +334,9 @@ export function LandingTrabajos() {
           </Link>
         </div>
 
-        {/* Bento — 4 cols on desktop with mixed spans */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-5">
+        {/* Bento — 4 cols on desktop, content-sized rows (no stretch).
+            E7: items-start + auto-rows-min for defensive consistency. */}
+        <div className="grid grid-cols-1 items-start gap-4 md:auto-rows-min md:grid-cols-4 md:gap-5">
           {cases.map((c) => (
             <Card key={c.slug} c={c} />
           ))}
