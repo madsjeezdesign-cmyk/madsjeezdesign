@@ -29,7 +29,7 @@ export function Experience() {
                 {item.metric}
               </p>
               <h3 className="mt-4 font-semibold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm text-zinc-500">{item.desc}</p>
+              <p className="mt-2 text-sm text-[color:var(--muted-body)]">{item.desc}</p>
             </motion.article>
           ))}
         </motion.div>

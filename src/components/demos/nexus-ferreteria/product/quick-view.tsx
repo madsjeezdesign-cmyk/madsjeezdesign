@@ -52,7 +52,7 @@ export function QuickView({ product, onClose, onAdd }: Props) {
               </button>
               <p className="font-mono text-xs text-orange-400">{product.sku}</p>
               <h2 className="mt-2 text-2xl font-bold text-white">{product.name}</h2>
-              <p className="text-sm text-zinc-500">{product.brand}</p>
+              <p className="text-sm text-[color:var(--muted-body)]">{product.brand}</p>
               <span
                 className={`mt-3 inline-block w-fit rounded-full border px-2 py-0.5 text-xs ${STOCK_LABELS[product.stock].className}`}
               >

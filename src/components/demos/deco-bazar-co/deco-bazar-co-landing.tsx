@@ -126,7 +126,7 @@ export function DecoBazarCoLanding() {
         theme={{
           section: "bg-zinc-900 text-zinc-100",
           invert: false,
-          label: "text-[10px] font-medium uppercase tracking-widest text-zinc-500",
+          label: "text-[10px] font-medium uppercase tracking-widest text-[color:var(--muted-body)]",
           input:
             "mt-2 w-full rounded-xl border border-zinc-600 bg-zinc-950 px-4 py-3 text-sm text-white focus:border-zinc-400 focus:outline-none",
           focus: "focus:border-zinc-400",
@@ -155,10 +155,10 @@ export function DecoBazarCoLanding() {
             </button>
             <CheckCircle2 className="mx-auto h-14 w-14 text-[#5c6b4a]" strokeWidth={1.25} />
             <h3 className="mt-4 text-center text-2xl font-light text-zinc-900">¡Compra confirmada!</h3>
-            <p className="mt-2 text-center text-sm font-light text-zinc-500">
+            <p className="mt-2 text-center text-sm font-light text-[color:var(--muted-body)]">
               Resumen listo para despachar
             </p>
-            <pre className="mt-6 max-h-48 overflow-y-auto rounded-xl bg-zinc-50 p-4 text-left text-[11px] font-light leading-relaxed text-zinc-600 whitespace-pre-wrap">
+            <pre className="mt-6 max-h-48 overflow-y-auto rounded-xl bg-zinc-50 p-4 text-left text-[11px] font-light leading-relaxed text-[color:var(--muted-body)] whitespace-pre-wrap">
               {orderSummary}
             </pre>
             <button

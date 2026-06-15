@@ -56,7 +56,7 @@ export function MenuCard({ product, onQuick, onAdd, className = "" }: Props) {
       </div>
       <div className="p-4">
         <h3 className="font-semibold text-white">{product.name}</h3>
-        <p className="mt-1 line-clamp-2 text-xs text-zinc-500">{product.description}</p>
+        <p className="mt-1 line-clamp-2 text-xs text-[color:var(--muted-body)]">{product.description}</p>
         <div className="mt-4 flex items-center justify-between">
           <span className="font-mono text-lg text-amber-400">{formatGustitosPrice(product.price)}</span>
           <button

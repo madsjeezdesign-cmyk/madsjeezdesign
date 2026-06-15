@@ -14,7 +14,7 @@ export function TheBarberClubMembership({ onJoin }: Props) {
         <div className="mb-12 text-center">
           <span className="text-xs font-black uppercase tracking-widest text-amber-500">Club de miembros</span>
           <h2 className="mt-2 font-serif text-3xl font-bold text-white">Suscripciones mensuales</h2>
-          <p className="mt-2 text-sm text-zinc-500">Beneficios exclusivos para clientes frecuentes.</p>
+          <p className="mt-2 text-sm text-[color:var(--muted-body)]">Beneficios exclusivos para clientes frecuentes.</p>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
           {MEMBERSHIP_PLANS.map((plan) => (
@@ -30,12 +30,12 @@ export function TheBarberClubMembership({ onJoin }: Props) {
                 </span>
               ) : null}
               <div className="flex items-center gap-2">
-                <Crown className={`h-6 w-6 ${plan.id === "vip" ? "text-amber-400" : "text-zinc-500"}`} />
+                <Crown className={`h-6 w-6 ${plan.id === "vip" ? "text-amber-400" : "text-[color:var(--muted-body)]"}`} />
                 <h3 className="text-xl font-bold text-white">{plan.name}</h3>
               </div>
               <p className="mt-4">
                 <span className="text-4xl font-black text-amber-400">{formatBarberPrice(plan.price)}</span>
-                <span className="text-sm text-zinc-500">/mes</span>
+                <span className="text-sm text-[color:var(--muted-body)]">/mes</span>
               </p>
               <ul className="mt-6 space-y-3">
                 {plan.features.map((f) => (

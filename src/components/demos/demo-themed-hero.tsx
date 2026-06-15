@@ -181,7 +181,7 @@ export function DemoThemedHero({
               >
                 {img}
               </motion.div>
-              <div className="rounded-3xl border border-dashed border-white/15 bg-white/[0.03] p-6 text-left text-xs text-zinc-500">
+              <div className="rounded-3xl border border-dashed border-white/15 bg-white/[0.03] p-6 text-left text-xs text-[color:var(--muted-body)]">
                 Referencia visual del rubro · demo
               </div>
             </div>
@@ -282,7 +282,7 @@ export function DemoThemedHero({
               className="relative mx-auto mt-10 w-full max-w-lg bg-white/5 p-3 pb-10 shadow-2xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden">{img}</div>
-              <p className="mt-3 text-center text-[10px] uppercase tracking-widest text-zinc-500">
+              <p className="mt-3 text-center text-[10px] uppercase tracking-widest text-[color:var(--muted-body)]">
                 Demo · imagen del sector
               </p>
             </motion.div>

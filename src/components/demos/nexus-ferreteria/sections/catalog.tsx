@@ -58,7 +58,7 @@ export function Catalog({ category, wishlist, onWishlist, onQuickView, onAdd }: 
             className={`w-56 shrink-0 space-y-6 ${sidebarOpen ? "block" : "hidden lg:block"}`}
           >
             <div className="rounded-xl border border-white/10 bg-zinc-900/50 p-4">
-              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+              <p className="text-xs font-medium uppercase tracking-wider text-[color:var(--muted-body)]">
                 Ordenar
               </p>
               {(

@@ -21,7 +21,7 @@ export function FoodMarquee() {
           {items.map((t, i) => (
             <span
               key={`${t}-${i}`}
-              className="font-[family-name:var(--font-gu-display)] text-lg tracking-[0.25em] text-zinc-600"
+              className="font-[family-name:var(--font-gu-display)] text-lg tracking-[0.25em] text-[color:var(--muted-body)]"
             >
               {t}
               <span className="mx-8 text-red-500">★</span>

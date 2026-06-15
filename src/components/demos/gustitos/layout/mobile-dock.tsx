@@ -22,14 +22,14 @@ export function MobileDock({ cartCount, onCart, onOrder }: Props) {
         <Home className="h-5 w-5" />
         <span className="text-[10px]">Inicio</span>
       </a>
-      <a href="#menu" className="flex flex-col items-center rounded-xl px-3 py-2 text-zinc-500">
+      <a href="#menu" className="flex flex-col items-center rounded-xl px-3 py-2 text-[color:var(--muted-body)]">
         <UtensilsCrossed className="h-5 w-5" />
         <span className="text-[10px]">Menú</span>
       </a>
       <button
         type="button"
         onClick={onCart}
-        className="relative flex flex-col items-center rounded-xl px-3 py-2 text-zinc-500"
+        className="relative flex flex-col items-center rounded-xl px-3 py-2 text-[color:var(--muted-body)]"
       >
         <ShoppingBag className="h-5 w-5" />
         {cartCount > 0 && (

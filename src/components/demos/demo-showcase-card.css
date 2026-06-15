@@ -7,8 +7,8 @@
 }
 
 .showcase-card {
-  --accent-color: #1de0b1;
-  --accent-glow: rgba(29, 224, 177, 0.12);
+  --accent-color: var(--brand-cyan);
+  --accent-glow: color-mix(in srgb, var(--brand-cyan) 18%, transparent);
   position: relative;
   z-index: 10;
   display: flex;

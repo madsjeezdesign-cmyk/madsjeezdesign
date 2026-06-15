@@ -155,7 +155,7 @@ function DemoCard({ item, index }: { item: DemosShowcaseItem; index: number }) {
                 {theme.badge}
               </span>
             </motion.div>
-            <motion.div className="flex shrink-0 gap-3 text-zinc-600">
+            <motion.div className="flex shrink-0 gap-3 text-[color:var(--muted-body)]">
               <Monitor className="h-4 w-4" aria-hidden />
               <Smartphone className="h-4 w-4" aria-hidden />
             </motion.div>

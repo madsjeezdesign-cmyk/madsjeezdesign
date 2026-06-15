@@ -28,7 +28,7 @@ export function MobileDock({ cartCount, onSearch, onCart, onQuote }: Props) {
       </a>
       <a
         href="#catalogo"
-        className="flex flex-col items-center rounded-xl px-3 py-2 text-zinc-500"
+        className="flex flex-col items-center rounded-xl px-3 py-2 text-[color:var(--muted-body)]"
       >
         <LayoutGrid className="h-5 w-5" />
         <span className="text-[10px]">Catálogo</span>
@@ -36,7 +36,7 @@ export function MobileDock({ cartCount, onSearch, onCart, onQuote }: Props) {
       <button
         type="button"
         onClick={onSearch}
-        className="flex flex-col items-center rounded-xl px-3 py-2 text-zinc-500"
+        className="flex flex-col items-center rounded-xl px-3 py-2 text-[color:var(--muted-body)]"
       >
         <Search className="h-5 w-5" />
         <span className="text-[10px]">Buscar</span>
@@ -44,7 +44,7 @@ export function MobileDock({ cartCount, onSearch, onCart, onQuote }: Props) {
       <button
         type="button"
         onClick={onCart}
-        className="relative flex flex-col items-center rounded-xl px-3 py-2 text-zinc-500"
+        className="relative flex flex-col items-center rounded-xl px-3 py-2 text-[color:var(--muted-body)]"
       >
         <ShoppingCart className="h-5 w-5" />
         {cartCount > 0 && (

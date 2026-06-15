@@ -123,7 +123,7 @@ export function DemoOpticaLanding() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.28 }}
-              className="mt-6 max-w-md text-sm leading-loose text-zinc-500"
+              className="mt-6 max-w-md text-sm leading-loose text-[color:var(--muted-body)]"
             >
               Examen visual gratuito, más de 2.000 marcos en stock, laboratorio propio con entrega en el día. Línea de audiología certificada.
             </motion.p>
@@ -137,7 +137,7 @@ export function DemoOpticaLanding() {
               <button type="button" className={`flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 font-bold text-white hover:bg-blue-500 transition-colors ${H}`}>
                 Hacer examen visual <ArrowRight className="h-4 w-4" />
               </button>
-              <button type="button" className="flex items-center gap-2 rounded-full border border-blue-200 px-7 py-3.5 text-sm font-semibold text-zinc-600 hover:bg-blue-50 transition-colors">
+              <button type="button" className="flex items-center gap-2 rounded-full border border-blue-200 px-7 py-3.5 text-sm font-semibold text-[color:var(--muted-body)] hover:bg-blue-50 transition-colors">
                 Ver catálogo
               </button>
             </motion.div>
@@ -209,7 +209,7 @@ export function DemoOpticaLanding() {
                     <span className={`rounded-full bg-blue-600/10 px-2.5 py-0.5 text-[9px] font-bold text-blue-600 ${H}`}>{s.tag}</span>
                   </div>
                   <h3 className={`mt-4 font-bold text-[#08143a] ${H}`}>{s.title}</h3>
-                  <p className="mt-2 text-sm text-zinc-500">{s.desc}</p>
+                  <p className="mt-2 text-sm text-[color:var(--muted-body)]">{s.desc}</p>
                   <button type="button" className="mt-4 flex items-center gap-1 text-[11px] font-bold text-blue-600">
                     Más info <ChevronRight className="h-3.5 w-3.5" />
                   </button>
@@ -249,7 +249,7 @@ export function DemoOpticaLanding() {
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-black text-white">{s.n}</div>
                     <div>
                       <p className={`font-bold text-[#08143a] ${H}`}>{s.t}</p>
-                      <p className="mt-1 text-sm text-zinc-500">{s.d}</p>
+                      <p className="mt-1 text-sm text-[color:var(--muted-body)]">{s.d}</p>
                     </div>
                   </div>
                 ))}

@@ -10,7 +10,7 @@ export function BurgerLabFooter() {
         <div className="grid gap-8 lg:grid-cols-2">
           <div>
             <h3 className="text-lg font-black uppercase text-white">{cfg.brand}</h3>
-            <p className="mt-2 text-sm text-zinc-500">{cfg.tagline}</p>
+            <p className="mt-2 text-sm text-[color:var(--muted-body)]">{cfg.tagline}</p>
 
             <div className="mt-6 space-y-4">
               <div className="rounded-xl border-2 border-amber-500/40 bg-amber-500/5 p-4">
@@ -21,7 +21,7 @@ export function BurgerLabFooter() {
                 <p className="mt-2 text-sm font-bold text-white">{cfg.hoursNight}</p>
               </div>
               <div className="rounded-xl border border-zinc-800 p-4">
-                <p className="text-[10px] font-black uppercase text-zinc-500">Resto de la semana</p>
+                <p className="text-[10px] font-black uppercase text-[color:var(--muted-body)]">Resto de la semana</p>
                 <p className="mt-1 text-sm text-zinc-400">{cfg.hoursWeek}</p>
               </div>
               <p className="flex items-start gap-2 text-sm text-zinc-400">
@@ -39,7 +39,7 @@ export function BurgerLabFooter() {
             />
           </div>
         </div>
-        <p className="mt-8 text-center text-[10px] text-zinc-600">
+        <p className="mt-8 text-center text-[10px] text-[color:var(--muted-body)]">
           © {new Date().getFullYear()} {cfg.brand} — Demo interactiva
         </p>
       </div>

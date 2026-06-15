@@ -50,16 +50,16 @@ export function CentralBebidasCart({
         <div className="flex items-center justify-between border-b border-zinc-800 px-4 py-4">
           <div>
             <h3 className="text-lg font-black uppercase text-white">Tu pedido</h3>
-            <p className="text-xs text-zinc-500">{count} artículos</p>
+            <p className="text-xs text-[color:var(--muted-body)]">{count} artículos</p>
           </div>
-          <button type="button" onClick={onClose} className="text-zinc-500 hover:text-white" aria-label="Cerrar">
+          <button type="button" onClick={onClose} className="text-[color:var(--muted-body)] hover:text-white" aria-label="Cerrar">
             <X className="h-5 w-5" />
           </button>
         </div>
 
         <div className="flex-1 overflow-y-auto px-4 py-3">
           {items.length === 0 ? (
-            <p className="py-16 text-center text-zinc-500">Carrito vacío</p>
+            <p className="py-16 text-center text-[color:var(--muted-body)]">Carrito vacío</p>
           ) : (
             <ul className="space-y-4">
               {items.map((item) => {
@@ -69,12 +69,12 @@ export function CentralBebidasCart({
                     <div className="flex justify-between gap-2">
                       <div className="min-w-0">
                         <p className="font-bold text-white line-clamp-1">{item.name}</p>
-                        <p className="text-[10px] text-zinc-500">{item.volume}</p>
+                        <p className="text-[10px] text-[color:var(--muted-body)]">{item.volume}</p>
                       </div>
                       <button
                         type="button"
                         onClick={() => onRemove(item.key)}
-                        className="shrink-0 text-zinc-600 hover:text-red-400"
+                        className="shrink-0 text-[color:var(--muted-body)] hover:text-red-400"
                         aria-label="Quitar"
                       >
                         <Trash2 className="h-4 w-4" />
@@ -111,7 +111,7 @@ export function CentralBebidasCart({
 
         {items.length > 0 ? (
           <div className="space-y-4 border-t border-zinc-800 p-4">
-            <p className="text-[10px] font-black uppercase text-zinc-500">Entrega</p>
+            <p className="text-[10px] font-black uppercase text-[color:var(--muted-body)]">Entrega</p>
             <div className="space-y-2">
               {DELIVERY_OPTIONS.map((opt) => (
                 <button
@@ -125,7 +125,7 @@ export function CentralBebidasCart({
                   }`}
                 >
                   <span className="font-bold">{opt.label}</span>
-                  <span className="mt-0.5 block text-[10px] text-zinc-500">{opt.sub}</span>
+                  <span className="mt-0.5 block text-[10px] text-[color:var(--muted-body)]">{opt.sub}</span>
                 </button>
               ))}
             </div>

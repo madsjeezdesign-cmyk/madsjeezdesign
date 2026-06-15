@@ -61,7 +61,7 @@ export function DecoBazarCoCatalog({
                   className={`block w-full rounded-lg px-3 py-2 text-left text-xs transition ${
                     categoryFilter === c.id
                       ? "bg-zinc-800 text-white"
-                      : "text-zinc-600 hover:bg-zinc-50"
+                      : "text-[color:var(--muted-body)] hover:bg-zinc-50"
                   }`}
                 >
                   {c.label}
@@ -79,7 +79,7 @@ export function DecoBazarCoCatalog({
                   type="button"
                   onClick={() => setMaterial(m.id)}
                   className={`block w-full rounded-lg px-3 py-2 text-left text-xs transition ${
-                    material === m.id ? "bg-[#5c6b4a]/10 text-[#4d5a3e] ring-1 ring-[#5c6b4a]/30" : "text-zinc-600 hover:bg-zinc-50"
+                    material === m.id ? "bg-[#5c6b4a]/10 text-[#4d5a3e] ring-1 ring-[#5c6b4a]/30" : "text-[color:var(--muted-body)] hover:bg-zinc-50"
                   }`}
                 >
                   {m.label}
@@ -93,7 +93,7 @@ export function DecoBazarCoCatalog({
           <div className="mb-6 flex items-end justify-between">
             <div>
               <h2 className="text-2xl font-light text-zinc-900">Catálogo</h2>
-              <p className="mt-1 text-sm font-light text-zinc-500">{filtered.length} productos</p>
+              <p className="mt-1 text-sm font-light text-[color:var(--muted-body)]">{filtered.length} productos</p>
             </div>
           </div>
 
@@ -151,7 +151,7 @@ export function DecoBazarCoCatalog({
                           <button
                             type="button"
                             onClick={() => setQty((prev) => ({ ...prev, [product.id]: Math.max(1, getQty(product.id) - 1) }))}
-                            className="flex h-10 w-10 items-center justify-center text-zinc-500"
+                            className="flex h-10 w-10 items-center justify-center text-[color:var(--muted-body)]"
                             aria-label="Menos"
                           >
                             <Minus className="h-3.5 w-3.5" />
@@ -160,7 +160,7 @@ export function DecoBazarCoCatalog({
                           <button
                             type="button"
                             onClick={() => setQty((prev) => ({ ...prev, [product.id]: Math.min(99, getQty(product.id) + 1) }))}
-                            className="flex h-10 w-10 items-center justify-center text-zinc-500"
+                            className="flex h-10 w-10 items-center justify-center text-[color:var(--muted-body)]"
                             aria-label="Más"
                           >
                             <Plus className="h-3.5 w-3.5" />

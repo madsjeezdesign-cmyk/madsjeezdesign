@@ -60,7 +60,7 @@ export function CerrajeriaCentralShop({ onAdd }: Props) {
               <div className="flex flex-1 flex-col p-4">
                 <h3 className="font-bold text-white">{product.name}</h3>
                 <dl className="mt-3 space-y-1 rounded-lg border border-zinc-800 bg-zinc-950 p-3 text-[10px] text-zinc-400">
-                  <dt className="font-bold uppercase text-zinc-500">Ficha técnica</dt>
+                  <dt className="font-bold uppercase text-[color:var(--muted-body)]">Ficha técnica</dt>
                   <dd>{formatProductSpecs(product)}</dd>
                 </dl>
                 <p className="mt-4 text-xl font-black text-amber-400">{formatCentralPrice(product.price)}</p>

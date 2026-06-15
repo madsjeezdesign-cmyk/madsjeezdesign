@@ -9,7 +9,7 @@ export function CentralBebidasFooter() {
       <div className="mx-auto grid max-w-7xl gap-8 px-3 sm:grid-cols-2 sm:px-4 lg:grid-cols-4">
         <div>
           <p className="text-sm font-black uppercase text-white">{cfg.brand}</p>
-          <p className="mt-2 text-xs text-zinc-500">{cfg.tagline}</p>
+          <p className="mt-2 text-xs text-[color:var(--muted-body)]">{cfg.tagline}</p>
         </div>
 
         <div>
@@ -30,7 +30,7 @@ export function CentralBebidasFooter() {
             Horarios depósito
           </p>
           <p className="mt-3 text-xs text-zinc-400">{cfg.hours}</p>
-          <p className="mt-2 flex items-start gap-2 text-xs text-zinc-500">
+          <p className="mt-2 flex items-start gap-2 text-xs text-[color:var(--muted-body)]">
             <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" />
             {cfg.address}
           </p>
@@ -41,13 +41,13 @@ export function CentralBebidasFooter() {
             <RotateCcw className="h-3.5 w-3.5" />
             Envases vacíos
           </p>
-          <p className="mt-3 text-xs leading-relaxed text-zinc-500">
+          <p className="mt-3 text-xs leading-relaxed text-[color:var(--muted-body)]">
             Aceptamos retorno de botellas retornables y barriles según normativa local. Consultá
             bonificaciones por volumen en compras mayoristas recurrentes.
           </p>
         </div>
       </div>
-      <p className="mt-8 text-center text-[10px] text-zinc-600">
+      <p className="mt-8 text-center text-[10px] text-[color:var(--muted-body)]">
         © {new Date().getFullYear()} {cfg.brand} — Demo interactiva
       </p>
     </footer>

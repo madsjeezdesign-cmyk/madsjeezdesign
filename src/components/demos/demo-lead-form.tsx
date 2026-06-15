@@ -78,7 +78,7 @@ export function DemoLeadForm({
         <div className={`mt-8 ${theme.card}`}>
           {sent ? (
             <div className="py-10 text-center">
-              <p className={`text-sm font-bold ${theme.invert ? "text-emerald-700" : "text-[#1de0b1]"}`}>
+              <p className={`text-sm font-bold ${theme.invert ? "text-emerald-700" : "text-[var(--brand-cyan)]"}`}>
                 Mensaje recibido
               </p>
               <p className={`mt-2 text-sm ${pClass}`}>Te contactamos pronto. Gracias.</p>

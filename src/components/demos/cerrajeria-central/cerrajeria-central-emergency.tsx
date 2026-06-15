@@ -39,7 +39,7 @@ export function CerrajeriaCentralEmergency({ modalOpen, onOpenModal, onCloseModa
             <button
               type="button"
               onClick={onCloseModal}
-              className="absolute right-3 top-3 text-zinc-500 hover:text-white"
+              className="absolute right-3 top-3 text-[color:var(--muted-body)] hover:text-white"
               aria-label="Cerrar"
             >
               <X className="h-6 w-6" />
@@ -49,7 +49,7 @@ export function CerrajeriaCentralEmergency({ modalOpen, onOpenModal, onCloseModa
             <p className="mt-3 text-sm text-zinc-400">
               Apertura de puertas · autos · persianas · cambio de cerradura en el momento.
             </p>
-            <p className="mt-2 text-xs text-zinc-500">Cobertura: {cfg.coverage}</p>
+            <p className="mt-2 text-xs text-[color:var(--muted-body)]">Cobertura: {cfg.coverage}</p>
             <a
               href={`tel:${cfg.phoneUrgency.replace(/\s/g, "")}`}
               className="mt-6 flex w-full items-center justify-center gap-3 rounded-lg bg-amber-500 py-4 text-lg font-black text-zinc-950"

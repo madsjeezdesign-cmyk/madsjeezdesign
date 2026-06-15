@@ -81,7 +81,7 @@ export function DemoViajesLanding() {
           <Compass className="h-5 w-5 text-teal-400" />
           <span className={`text-sm font-bold tracking-wide text-white ${H}`}>ATLAS EXPERIENCIAS</span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-zinc-600 md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
           {["Destinos", "Cruceros", "Grupos", "Contacto"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-teal-400 transition-colors">{n}</span>
           ))}
@@ -159,7 +159,7 @@ export function DemoViajesLanding() {
               {[["3.000+", "viajeros"], ["100+", "destinos"], ["24/7", "asistencia"]].map(([v, l]) => (
                 <div key={l} className="text-center">
                   <p className={`text-2xl font-black text-teal-400 ${H}`}>{v}</p>
-                  <p className="text-[10px] uppercase tracking-widest text-zinc-500">{l}</p>
+                  <p className="text-[10px] uppercase tracking-widest text-[color:var(--muted-body)]">{l}</p>
                 </div>
               ))}
             </motion.div>
@@ -196,7 +196,7 @@ export function DemoViajesLanding() {
                   className={`rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider transition-colors ${
                     activeTab === tab
                       ? "bg-teal-500 text-black"
-                      : "border border-white/10 text-zinc-500 hover:border-teal-500/30 hover:text-teal-400"
+                      : "border border-white/10 text-[color:var(--muted-body)] hover:border-teal-500/30 hover:text-teal-400"
                   }`}
                 >
                   {tab}
@@ -257,7 +257,7 @@ export function DemoViajesLanding() {
                   </div>
                   <div>
                     <p className={`font-bold text-white ${H}`}>{s.title}</p>
-                    <p className="mt-2 text-sm text-zinc-500">{s.desc}</p>
+                    <p className="mt-2 text-sm text-[color:var(--muted-body)]">{s.desc}</p>
                   </div>
                 </div>
               </FadeUp>
@@ -280,7 +280,7 @@ export function DemoViajesLanding() {
                   <span className={`shrink-0 text-4xl font-black text-teal-500/20 ${H}`}>{s.n}</span>
                   <div className="flex-1 border-l border-white/[0.07] pl-6 pb-4">
                     <p className={`font-bold text-white ${H}`}>{s.t}</p>
-                    <p className="mt-1 text-sm text-zinc-500">{s.d}</p>
+                    <p className="mt-1 text-sm text-[color:var(--muted-body)]">{s.d}</p>
                   </div>
                 </div>
               </FadeUp>

@@ -153,7 +153,7 @@ export function CerrajeriaCentralLanding() {
         theme={{
           section: "bg-black text-zinc-100 border-t border-zinc-800",
           invert: false,
-          label: "text-[10px] font-bold uppercase tracking-widest text-zinc-500",
+          label: "text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]",
           input:
             "mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none",
           focus: "focus:border-amber-500",
@@ -171,12 +171,12 @@ export function CerrajeriaCentralLanding() {
       {waOpen && waUrl ? (
         <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/80 p-4">
           <div className="relative w-full max-w-md rounded-2xl border border-amber-500/50 bg-zinc-900 p-8 text-center">
-            <button type="button" onClick={() => setWaOpen(false)} className="absolute right-4 top-4 text-zinc-500">
+            <button type="button" onClick={() => setWaOpen(false)} className="absolute right-4 top-4 text-[color:var(--muted-body)]">
               <X className="h-5 w-5" />
             </button>
             <CheckCircle2 className="mx-auto h-14 w-14 text-amber-400" />
             <h3 className="mt-4 text-xl font-black uppercase text-white">Pedido listo</h3>
-            <p className="mt-2 text-sm text-zinc-500">Enviá los detalles técnicos por WhatsApp</p>
+            <p className="mt-2 text-sm text-[color:var(--muted-body)]">Enviá los detalles técnicos por WhatsApp</p>
             <Link
               href={waUrl}
               target="_blank"
@@ -191,7 +191,7 @@ export function CerrajeriaCentralLanding() {
                 setWaOpen(false);
                 setCart([]);
               }}
-              className="mt-3 text-xs text-zinc-600"
+              className="mt-3 text-xs text-[color:var(--muted-body)]"
             >
               Cerrar y vaciar
             </button>

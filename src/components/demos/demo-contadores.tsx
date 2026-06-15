@@ -114,7 +114,7 @@ export function DemoContadoresLanding() {
           </div>
           <span className={`text-sm font-bold tracking-tight text-white ${H}`}>NÚMERO EXACTO</span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-zinc-500 md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
           <span className="cursor-pointer hover:text-white transition-colors">Servicios</span>
           <span className="cursor-pointer hover:text-white transition-colors">Proceso</span>
           <span className="cursor-pointer hover:text-white transition-colors">Equipo</span>
@@ -193,7 +193,7 @@ export function DemoContadoresLanding() {
                 className="mt-10 flex flex-wrap items-center gap-5"
               >
                 {["AFIP registrado", "Firma digital", "ISO 27001 data"].map((b) => (
-                  <div key={b} className="flex items-center gap-1.5 text-[11px] text-zinc-500">
+                  <div key={b} className="flex items-center gap-1.5 text-[11px] text-[color:var(--muted-body)]">
                     <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" /> {b}
                   </div>
                 ))}
@@ -214,7 +214,7 @@ export function DemoContadoresLanding() {
               {/* floating metric card */}
               <div className="absolute -bottom-4 -left-4 rounded-lg border border-white/10 bg-[#0d0d16] p-4 shadow-2xl md:-left-8">
                 <p className={`text-2xl font-black text-amber-400 ${H}`}>$0</p>
-                <p className="mt-0.5 text-[11px] text-zinc-500">Sorpresas fiscales</p>
+                <p className="mt-0.5 text-[11px] text-[color:var(--muted-body)]">Sorpresas fiscales</p>
                 <div className="mt-2 flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
                     <div key={i} className="h-1 w-5 rounded-full bg-amber-500" />
@@ -224,7 +224,7 @@ export function DemoContadoresLanding() {
               <div className="absolute -right-4 top-6 rounded-lg border border-white/10 bg-[#0d0d16] p-4 shadow-2xl md:-right-6">
                 <TrendingUp className="h-5 w-5 text-amber-400" />
                 <p className={`mt-1 text-lg font-black text-white ${H}`}>220+</p>
-                <p className="text-[10px] text-zinc-500">Clientes activos</p>
+                <p className="text-[10px] text-[color:var(--muted-body)]">Clientes activos</p>
               </div>
             </motion.div>
           </div>
@@ -239,7 +239,7 @@ export function DemoContadoresLanding() {
               <div className="px-8 py-8 text-center">
                 <p className={`text-4xl font-black text-amber-400 ${H}`}>{m.val}</p>
                 <p className="mt-2 text-sm font-semibold text-white">{m.label}</p>
-                <p className="mt-1 text-[11px] text-zinc-500">{m.sub}</p>
+                <p className="mt-1 text-[11px] text-[color:var(--muted-body)]">{m.sub}</p>
               </div>
             </FadeUp>
           ))}
@@ -262,9 +262,9 @@ export function DemoContadoresLanding() {
                   </div>
                   <div>
                     <h3 className={`font-bold text-white ${H}`}>{s.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-zinc-500">{s.desc}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted-body)]">{s.desc}</p>
                   </div>
-                  <ChevronRight className="mt-auto h-4 w-4 text-zinc-600 group-hover:text-amber-500 transition-colors" />
+                  <ChevronRight className="mt-auto h-4 w-4 text-[color:var(--muted-body)] group-hover:text-amber-500 transition-colors" />
                 </div>
               </FadeUp>
             ))}
@@ -285,7 +285,7 @@ export function DemoContadoresLanding() {
                     <span className={`shrink-0 text-3xl font-black text-amber-500/30 ${H}`}>{s.n}</span>
                     <div className="border-l border-white/[0.07] pl-5">
                       <p className={`font-bold text-white ${H}`}>{s.t}</p>
-                      <p className="mt-1 text-sm text-zinc-500">{s.d}</p>
+                      <p className="mt-1 text-sm text-[color:var(--muted-body)]">{s.d}</p>
                     </div>
                   </div>
                 ))}
@@ -319,7 +319,7 @@ export function DemoContadoresLanding() {
                   <p className="text-sm leading-relaxed text-zinc-300 italic">"{t.q}"</p>
                   <div className="mt-6 border-t border-white/[0.07] pt-4">
                     <p className={`text-sm font-bold text-white ${H}`}>{t.a}</p>
-                    <p className="text-[11px] text-zinc-500">{t.role}</p>
+                    <p className="text-[11px] text-[color:var(--muted-body)]">{t.role}</p>
                   </div>
                 </div>
               </FadeUp>
@@ -353,7 +353,7 @@ export function DemoContadoresLanding() {
         </div>
       </section>
 
-      <footer className="py-8 text-center text-xs text-zinc-600 bg-[#09090f]">Demo · MadsJeez Design</footer>
+      <footer className="py-8 text-center text-xs text-[color:var(--muted-body)] bg-[#09090f]">Demo · MadsJeez Design</footer>
     </div>
   );
 }

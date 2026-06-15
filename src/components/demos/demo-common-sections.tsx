@@ -12,8 +12,8 @@ export function DemoStatsStrip({
   sectionClass = "border-y border-white/5 bg-zinc-900/40",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-950/80 p-6",
   valueClass = "text-3xl font-black text-white",
-  labelClass = "mt-2 text-[11px] font-bold uppercase tracking-wider text-zinc-500",
-  hintClass = "mt-1 text-xs text-zinc-600",
+  labelClass = "mt-2 text-[11px] font-bold uppercase tracking-wider text-[color:var(--muted-body)]",
+  hintClass = "mt-1 text-xs text-[color:var(--muted-body)]",
 }: {
   eyebrow?: string;
   stats: { value: string; label: string; hint?: string }[];
@@ -52,11 +52,11 @@ export function DemoProcessSteps({
   sectionHeadingClass,
   sectionClass = "bg-zinc-950/50",
   titleClass = "text-white",
-  subtitleClass = "text-zinc-500",
-  stepNumClass = "text-zinc-500",
+  subtitleClass = "text-[color:var(--muted-body)]",
+  stepNumClass = "text-[color:var(--muted-body)]",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-900/40 p-6",
   stepTitleClass = "font-bold text-white",
-  stepDescClass = "mt-2 text-sm leading-relaxed text-zinc-500",
+  stepDescClass = "mt-2 text-sm leading-relaxed text-[color:var(--muted-body)]",
 }: {
   title: string;
   subtitle?: string;
@@ -108,7 +108,7 @@ export function DemoDetailGrid({
   titleClass = "text-white",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-900/30 p-6",
   itemTitleClass = "font-bold text-white",
-  itemBodyClass = "mt-2 text-sm leading-relaxed text-zinc-500",
+  itemBodyClass = "mt-2 text-sm leading-relaxed text-[color:var(--muted-body)]",
 }: {
   title: string;
   items: { title: string; body: string }[];
@@ -147,7 +147,7 @@ export function DemoFaqList({
   sectionClass = "border-t border-white/5 bg-black/20",
   titleClass = "text-white",
   qClass = "font-bold text-white",
-  aClass = "mt-2 text-sm leading-relaxed text-zinc-500",
+  aClass = "mt-2 text-sm leading-relaxed text-[color:var(--muted-body)]",
   rowClass = "border-b border-white/5 py-6 last:border-0",
 }: {
   title: string;
@@ -188,7 +188,7 @@ export function DemoTestimonials({
   titleClass = "text-white",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-950/60 p-6",
   quoteClass = "text-sm italic leading-relaxed text-zinc-300",
-  authorClass = "mt-4 text-xs font-bold uppercase tracking-wider text-zinc-500",
+  authorClass = "mt-4 text-xs font-bold uppercase tracking-wider text-[color:var(--muted-body)]",
 }: {
   title: string;
   quotes: { text: string; author: string; role: string }[];

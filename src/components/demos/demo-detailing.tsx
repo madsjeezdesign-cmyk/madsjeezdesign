@@ -87,7 +87,7 @@ export function DemoDetailingLanding() {
           <Sparkles className="h-5 w-5 text-sky-400" />
           <span className={`text-sm font-black uppercase tracking-[0.15em] text-white ${H}`}>SHINE AUTODETAIL</span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-zinc-600 md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
           {["Servicios", "Ceramic", "PPF", "Galería"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-sky-400 transition-colors">{n}</span>
           ))}
@@ -166,7 +166,7 @@ export function DemoDetailingLanding() {
             className="flex whitespace-nowrap"
           >
             {[...Array(6)].map((_, i) => (
-              <span key={i} className={`mr-12 text-[11px] font-bold uppercase tracking-[0.3em] text-zinc-600 ${H}`}>
+              <span key={i} className={`mr-12 text-[11px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)] ${H}`}>
                 CERAMIC PRO 9H &nbsp;·&nbsp; PPF XPEL &nbsp;·&nbsp; PAINT CORRECTION &nbsp;·&nbsp; WINDOW TINTING &nbsp;·&nbsp; VINYL WRAP &nbsp;
               </span>
             ))}
@@ -191,7 +191,7 @@ export function DemoDetailingLanding() {
                   </div>
                   <div>
                     <p className={`font-bold text-white ${H}`}>{p.title}</p>
-                    <p className="mt-2 text-sm text-zinc-500">{p.desc}</p>
+                    <p className="mt-2 text-sm text-[color:var(--muted-body)]">{p.desc}</p>
                   </div>
                 </div>
               </FadeUp>
@@ -222,9 +222,9 @@ export function DemoDetailingLanding() {
                       Más popular
                     </span>
                   )}
-                  <p className={`text-[11px] font-bold uppercase tracking-widest text-zinc-500 ${H}`}>{pkg.name}</p>
+                  <p className={`text-[11px] font-bold uppercase tracking-widest text-[color:var(--muted-body)] ${H}`}>{pkg.name}</p>
                   <p className={`mt-2 text-4xl font-black text-white ${H}`}>{pkg.price}</p>
-                  <p className="text-[11px] text-zinc-600">{pkg.time} de trabajo</p>
+                  <p className="text-[11px] text-[color:var(--muted-body)]">{pkg.time} de trabajo</p>
 
                   <ul className="mt-6 flex-1 space-y-3">
                     {pkg.features.map((f) => (
@@ -274,7 +274,7 @@ export function DemoDetailingLanding() {
         <div className="mx-auto max-w-4xl text-center">
           <FadeUp>
             <h2 className={`text-3xl font-black uppercase text-white md:text-5xl ${H}`}>Agenda cerrada.<br />Cupos muy limitados.</h2>
-            <p className="mt-4 text-sm text-zinc-500">Presupuesto sin cargo · respuesta en menos de 2 horas</p>
+            <p className="mt-4 text-sm text-[color:var(--muted-body)]">Presupuesto sin cargo · respuesta en menos de 2 horas</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <button type="button" className={`flex items-center gap-2 rounded bg-sky-500 px-8 py-3.5 font-bold text-black hover:bg-sky-400 transition-colors ${H}`}>
                 <MessageCircle className="h-4 w-4" /> WhatsApp directo

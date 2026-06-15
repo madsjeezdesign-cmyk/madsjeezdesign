@@ -113,7 +113,7 @@ function ServiceCard({
           <Icon size={28} />
         </div>
         <h3 className="mb-4 text-xl font-bold uppercase tracking-tighter text-white">{title}</h3>
-        <p className="mb-6 text-sm leading-relaxed text-zinc-500">{description}</p>
+        <p className="mb-6 text-sm leading-relaxed text-[color:var(--muted-body)]">{description}</p>
         <button type="button" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-orange-500 transition-colors hover:text-white">
           Ver detalles <ChevronRight size={14} />
         </button>
@@ -183,7 +183,7 @@ export function DemoTallerLanding() {
               <span className="font-[family-name:var(--font-demo-h-taller)] text-2xl font-black uppercase italic tracking-tighter text-white">
                 Motor<span className="text-orange-500">Dynamics</span>
               </span>
-              <span className="text-[8px] font-black uppercase tracking-[0.5em] text-zinc-500">Rendimiento y Reparación</span>
+              <span className="text-[8px] font-black uppercase tracking-[0.5em] text-[color:var(--muted-body)]">Rendimiento y Reparación</span>
             </div>
           </button>
           <nav className="hidden gap-8 lg:flex">
@@ -282,7 +282,7 @@ export function DemoTallerLanding() {
                     </div>
                     <div className="h-10 w-px bg-zinc-800" />
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">Precisión de</p>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">Precisión de</p>
                       <p className="text-xs font-bold uppercase text-white">Diagnóstico</p>
                     </div>
                   </div>
@@ -304,7 +304,7 @@ export function DemoTallerLanding() {
                 <s.icon className="text-orange-600" size={24} />
                 <div>
                   <div className="text-xl font-black text-white">{s.val}</div>
-                  <div className="text-[9px] font-bold uppercase tracking-widest text-zinc-500">{s.label}</div>
+                  <div className="text-[9px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">{s.label}</div>
                 </div>
               </div>
             ))}
@@ -329,13 +329,13 @@ export function DemoTallerLanding() {
               <div className="md-scroll-reveal mt-16 border border-zinc-800 bg-zinc-900/50 p-8 md:p-10">
                 <p className="text-[10px] font-black uppercase tracking-widest text-orange-500">{v.shop.eyebrow ?? "Repuestos"}</p>
                 <h3 className="mt-2 font-[family-name:var(--font-demo-h-taller)] text-3xl uppercase text-white">{v.shop.headline}</h3>
-                <p className="mt-2 max-w-2xl text-sm text-zinc-500">{v.shop.sub}</p>
+                <p className="mt-2 max-w-2xl text-sm text-[color:var(--muted-body)]">{v.shop.sub}</p>
                 <ul className="mt-8 grid gap-4 md:grid-cols-3">
                   {v.shop.products.map((p) => (
                     <li key={p.id} className="border-l-4 border-orange-600 bg-zinc-950 p-5">
                       <p className="font-bold text-white">{p.name}</p>
                       <p className="mt-1 text-sm text-orange-500">{p.price}</p>
-                      {p.note ? <p className="mt-1 text-xs text-zinc-500">{p.note}</p> : null}
+                      {p.note ? <p className="mt-1 text-xs text-[color:var(--muted-body)]">{p.note}</p> : null}
                     </li>
                   ))}
                 </ul>
@@ -352,7 +352,7 @@ export function DemoTallerLanding() {
                 <h2 className="font-[family-name:var(--font-demo-h-taller)] text-5xl font-black uppercase italic tracking-tighter text-white">
                   Resultados <br /> que hablan.
                 </h2>
-                <p className="max-w-md leading-relaxed text-zinc-500">
+                <p className="max-w-md leading-relaxed text-[color:var(--muted-body)]">
                   Desde clásicos restaurados hasta superdeportivos optimizados. Cada vehículo entra como proyecto y sale como pieza maestra.
                 </p>
                 <div className="grid grid-cols-2 gap-4 pt-4">
@@ -401,7 +401,7 @@ export function DemoTallerLanding() {
                 <div key={step.n} className="md-scroll-reveal border border-zinc-800 bg-zinc-900/40 p-6">
                   <span className="text-3xl font-black italic text-orange-500/40">{step.n}</span>
                   <h3 className="mt-4 font-bold uppercase text-white">{step.t}</h3>
-                  <p className="mt-2 text-sm text-zinc-500">{step.d}</p>
+                  <p className="mt-2 text-sm text-[color:var(--muted-body)]">{step.d}</p>
                 </div>
               ))}
             </div>
@@ -447,7 +447,7 @@ export function DemoTallerLanding() {
               ].map((item) => (
                 <details key={item.q} className="group border border-zinc-800 bg-black/40 p-5">
                   <summary className="cursor-pointer font-bold uppercase tracking-wider text-white">{item.q}</summary>
-                  <p className="mt-3 text-sm text-zinc-500">{item.a}</p>
+                  <p className="mt-3 text-sm text-[color:var(--muted-body)]">{item.a}</p>
                 </details>
               ))}
             </div>
@@ -464,7 +464,7 @@ export function DemoTallerLanding() {
         sub="Mismo flujo de contacto del sitio principal. Etiquetamos tu consulta como demo Motor Dynamics."
       />
 
-      <footer className="border-t border-zinc-900 bg-black pb-12 pt-24 text-zinc-500">
+      <footer className="border-t border-zinc-900 bg-black pb-12 pt-24 text-[color:var(--muted-body)]">
         <div className="container mx-auto px-6">
           <div className="mb-24 grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-8">

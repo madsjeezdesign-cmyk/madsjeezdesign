@@ -134,7 +134,7 @@ export function Navbar({
           <motion.p
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
-            className="hidden text-center text-xs text-zinc-500 lg:block"
+            className="hidden text-center text-xs text-[color:var(--muted-body)] lg:block"
           >
             Carrito · {formatNexusPrice(cartTotal)}
           </motion.p>

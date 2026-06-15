@@ -50,7 +50,7 @@ export function TheBarberClubLanding() {
       <TheBarberClubGallery />
       <TheBarberClubMembership onJoin={(plan) => setMemberSuccess(plan)} />
 
-      <footer className="border-t border-zinc-800 bg-black py-12 text-center text-xs text-zinc-600">
+      <footer className="border-t border-zinc-800 bg-black py-12 text-center text-xs text-[color:var(--muted-body)]">
         <p className="font-serif text-lg font-bold text-amber-500/80">{cfg.brand}</p>
         <p className="mt-2">{cfg.address}</p>
         <p>{cfg.hours} · {cfg.phone}</p>
@@ -66,7 +66,7 @@ export function TheBarberClubLanding() {
         theme={{
           section: "bg-zinc-900 text-zinc-100",
           invert: false,
-          label: "text-[10px] font-bold uppercase tracking-widest text-zinc-500",
+          label: "text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]",
           input:
             "mt-2 w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none",
           focus: "focus:border-amber-500",
@@ -119,7 +119,7 @@ export function TheBarberClubLanding() {
           <div className="rounded-2xl border border-amber-500/30 bg-zinc-900 p-8 text-center max-w-sm">
             <Crown className="mx-auto h-10 w-10 text-amber-500" />
             <p className="mt-4 font-bold text-white">¡Bienvenido al {memberSuccess}!</p>
-            <p className="mt-2 text-xs text-zinc-500">Un asesor te contactará para activar tu membresía (demo).</p>
+            <p className="mt-2 text-xs text-[color:var(--muted-body)]">Un asesor te contactará para activar tu membresía (demo).</p>
             <button type="button" onClick={() => setMemberSuccess(null)} className="mt-6 text-sm font-bold text-amber-400">
               Cerrar
             </button>

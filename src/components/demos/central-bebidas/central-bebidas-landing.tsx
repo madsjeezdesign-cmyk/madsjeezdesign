@@ -125,7 +125,7 @@ export function CentralBebidasLanding() {
         theme={{
           section: "bg-zinc-900 text-zinc-100",
           invert: false,
-          label: "text-[10px] font-bold uppercase tracking-widest text-zinc-500",
+          label: "text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]",
           input:
             "mt-2 w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-white focus:border-lime-500 focus:outline-none",
           focus: "focus:border-lime-500",
@@ -147,7 +147,7 @@ export function CentralBebidasLanding() {
             <button
               type="button"
               onClick={() => setConfirmOpen(false)}
-              className="absolute right-4 top-4 text-zinc-500 hover:text-white"
+              className="absolute right-4 top-4 text-[color:var(--muted-body)] hover:text-white"
               aria-label="Cerrar"
             >
               <X className="h-5 w-5" />
@@ -172,7 +172,7 @@ export function CentralBebidasLanding() {
                 setConfirmOpen(false);
                 setCart([]);
               }}
-              className="mt-4 text-xs font-bold text-zinc-500 hover:text-zinc-300"
+              className="mt-4 text-xs font-bold text-[color:var(--muted-body)] hover:text-zinc-300"
             >
               Cerrar y vaciar carrito
             </button>

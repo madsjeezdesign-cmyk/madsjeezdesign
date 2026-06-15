@@ -77,9 +77,9 @@ export function DemoFotoLanding() {
         <div className="flex items-center gap-3">
           <Aperture className="h-5 w-5 text-amber-400" />
           <span className={`text-sm font-bold tracking-[0.1em] text-white uppercase ${H}`}>Lúmenes</span>
-          <span className={`text-[10px] text-zinc-600 ${H}`}>Estudio fotográfico</span>
+          <span className={`text-[10px] text-[color:var(--muted-body)] ${H}`}>Estudio fotográfico</span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-zinc-600 md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
           {["Portfolio", "Servicios", "Packs", "Contacto"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-amber-400 transition-colors">{n}</span>
           ))}
@@ -185,7 +185,7 @@ export function DemoFotoLanding() {
                   </div>
                   <div>
                     <p className={`font-bold text-white ${H}`}>{s.label}</p>
-                    <p className="mt-1.5 text-sm text-zinc-500">{s.desc}</p>
+                    <p className="mt-1.5 text-sm text-[color:var(--muted-body)]">{s.desc}</p>
                   </div>
                 </div>
               </FadeUp>
@@ -219,7 +219,7 @@ export function DemoFotoLanding() {
                       Más elegido
                     </span>
                   )}
-                  <p className={`text-[11px] font-bold uppercase tracking-widest text-zinc-500 ${H}`}>{p.name}</p>
+                  <p className={`text-[11px] font-bold uppercase tracking-widest text-[color:var(--muted-body)] ${H}`}>{p.name}</p>
                   <p className={`mt-1 text-3xl font-black text-white ${H}`}>{p.price}</p>
                   <ul className="mt-5 space-y-2">
                     {p.items.map((item) => (
@@ -247,7 +247,7 @@ export function DemoFotoLanding() {
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
                 <h2 className={`text-2xl font-bold text-white md:text-4xl ${H}`}>¿Tenés un proyecto?<br />Hablemos.</h2>
-                <p className="mt-2 text-sm text-zinc-500">Respuesta en menos de 24 horas · Presupuesto sin cargo</p>
+                <p className="mt-2 text-sm text-[color:var(--muted-body)]">Respuesta en menos de 24 horas · Presupuesto sin cargo</p>
               </div>
               <div className="flex flex-wrap gap-3">
                 <button type="button" className={`flex items-center gap-2 rounded bg-amber-500 px-7 py-3.5 font-bold text-black hover:bg-amber-400 transition-colors ${H}`}>

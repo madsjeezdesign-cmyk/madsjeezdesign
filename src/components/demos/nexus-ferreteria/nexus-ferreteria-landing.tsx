@@ -126,7 +126,7 @@ export function DemoNexusFerreteria() {
       {recentIds.length > 0 && (
         <section className="border-t border-white/5 bg-zinc-900/30 py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-zinc-500">
+            <p className="font-mono text-xs uppercase tracking-widest text-[color:var(--muted-body)]">
               Vistos recientemente
             </p>
             <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
@@ -159,7 +159,7 @@ export function DemoNexusFerreteria() {
         theme={{
           section: "bg-zinc-950 text-zinc-100 border-t border-white/5",
           invert: false,
-          label: "text-[10px] font-medium uppercase tracking-widest text-zinc-500",
+          label: "text-[10px] font-medium uppercase tracking-widest text-[color:var(--muted-body)]",
           input:
             "mt-2 w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm text-white focus:border-orange-500/50 focus:outline-none",
           focus: "focus:border-orange-500/50",

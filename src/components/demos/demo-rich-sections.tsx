@@ -39,7 +39,7 @@ export function DemoSiteValueBlocks({
     <>
       <section id="demo-capacidades" className={`${demoSectionTight} ${sectionClass}`}>
         <div className={demoContainer}>
-          <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-500">
+          <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[color:var(--muted-body)]">
             Capacidades del sitio
           </p>
           <h2
@@ -72,7 +72,7 @@ export function DemoSiteValueBlocks({
 
       <section className={demoSectionTight}>
         <div className={demoContainer}>
-          <p className="mb-4 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
+          <p className="mb-4 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)]">
             Accesos rápidos
           </p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -86,7 +86,7 @@ export function DemoSiteValueBlocks({
                   <Icon className={`h-5 w-5 shrink-0 ${meta.accent}`} />
                   <div>
                     <p className="text-sm font-bold text-white">{action.label}</p>
-                    <p className="mt-1 text-xs text-zinc-500">{action.sub}</p>
+                    <p className="mt-1 text-xs text-[color:var(--muted-body)]">{action.sub}</p>
                   </div>
                 </>
               );
@@ -127,7 +127,7 @@ export function DemoTrustStrip({ slug }: { slug: string }) {
                 <Icon className={`mt-0.5 h-5 w-5 shrink-0 ${meta.accent}`} />
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-white">{item.label}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-zinc-500">{item.detail}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-[color:var(--muted-body)]">{item.detail}</p>
                 </div>
               </div>
             );

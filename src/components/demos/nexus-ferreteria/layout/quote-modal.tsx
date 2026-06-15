@@ -49,7 +49,7 @@ export function QuoteModal({ open, onClose }: Props) {
                 </h2>
               </div>
               <button type="button" onClick={onClose} aria-label="Cerrar">
-                <X className="h-5 w-5 text-zinc-500" />
+                <X className="h-5 w-5 text-[color:var(--muted-body)]" />
               </button>
             </div>
             <label className="mb-4 block text-sm text-zinc-400">

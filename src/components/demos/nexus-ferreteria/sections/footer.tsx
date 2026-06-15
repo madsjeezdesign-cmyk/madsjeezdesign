@@ -24,11 +24,11 @@ export function NexusFooter() {
             {cfg.brand}
           </p>
           <h2 className="mt-2 text-3xl font-bold text-white">{cfg.brandSub}</h2>
-          <p className="mt-4 flex items-start gap-2 text-sm text-zinc-500">
+          <p className="mt-4 flex items-start gap-2 text-sm text-[color:var(--muted-body)]">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />
             {cfg.addressLines.join(" · ")}
           </p>
-          <p className="mt-2 text-sm text-zinc-600">{cfg.hours}</p>
+          <p className="mt-2 text-sm text-[color:var(--muted-body)]">{cfg.hours}</p>
           <a
             href={nexusWhatsAppLink("Hola NEXUS, consulta desde la web demo.")}
             target="_blank"
@@ -47,7 +47,7 @@ export function NexusFooter() {
             />
           </div>
         </motion.div>
-        <p className="mt-16 text-center text-xs text-zinc-600">
+        <p className="mt-16 text-center text-xs text-[color:var(--muted-body)]">
           Demo industrial · {cfg.brand} · Mads Jeez Design
         </p>
       </div>

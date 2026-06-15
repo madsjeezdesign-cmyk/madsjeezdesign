@@ -122,7 +122,7 @@ export function BurgerLabLanding() {
         theme={{
           section: "bg-zinc-900 text-zinc-100",
           invert: false,
-          label: "text-[10px] font-black uppercase tracking-widest text-zinc-500",
+          label: "text-[10px] font-black uppercase tracking-widest text-[color:var(--muted-body)]",
           input:
             "mt-2 w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none",
           focus: "focus:border-amber-500",
@@ -144,7 +144,7 @@ export function BurgerLabLanding() {
             <button
               type="button"
               onClick={() => setConfirmOpen(false)}
-              className="absolute right-4 top-4 text-zinc-500"
+              className="absolute right-4 top-4 text-[color:var(--muted-body)]"
               aria-label="Cerrar"
             >
               <X className="h-5 w-5" />
@@ -166,7 +166,7 @@ export function BurgerLabLanding() {
                 setConfirmOpen(false);
                 setCart([]);
               }}
-              className="mt-3 text-xs font-bold text-zinc-500"
+              className="mt-3 text-xs font-bold text-[color:var(--muted-body)]"
             >
               Cerrar y vaciar
             </button>

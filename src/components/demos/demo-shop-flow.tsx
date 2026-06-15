@@ -20,7 +20,7 @@ export function DemoShopFlow({
   shop,
   headingClass = "",
   cardClass = "border border-white/10 bg-zinc-900/50",
-  accentClass = "bg-[#1de0b1] text-black",
+  accentClass = "bg-[var(--brand-cyan)] text-black",
   light = false,
 }: Props) {
   const [qty, setQty] = useState<Record<string, number>>(() =>
@@ -53,13 +53,13 @@ export function DemoShopFlow({
   }
 
   const h = light ? "text-stone-900" : "text-white";
-  const sub = light ? "text-stone-600" : "text-zinc-500";
+  const sub = light ? "text-stone-600" : "text-[color:var(--muted-body)]";
   const btnGhost = light
     ? "border border-stone-300 bg-white text-stone-800 hover:bg-stone-100"
     : "border border-white/15 bg-white/5 text-white hover:bg-white/10";
   const productTitle = light ? "text-stone-900" : "text-white";
-  const priceCol = light ? "text-amber-800" : "text-[#1de0b1]";
-  const noteCol = light ? "text-stone-500" : "text-zinc-500";
+  const priceCol = light ? "text-amber-800" : "text-[var(--brand-cyan)]";
+  const noteCol = light ? "text-stone-500" : "text-[color:var(--muted-body)]";
   const innerBtn = light ? "text-stone-600 hover:bg-stone-100 hover:text-stone-900" : "text-zinc-400 hover:bg-white/10 hover:text-white";
   const countBg = light ? "border border-stone-200 bg-white" : "border border-white/10 bg-black/30";
   const cartUl = light ? "border-y border-stone-200" : "border-y border-white/10";
@@ -183,7 +183,7 @@ export function DemoShopFlow({
       <div className={demoContainer}>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${light ? "text-stone-500" : "text-zinc-500"}`}>
+            <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${light ? "text-stone-500" : "text-[color:var(--muted-body)]"}`}>
               {shopEyebrow}
             </p>
             <h2
@@ -255,7 +255,7 @@ export function DemoShopFlow({
                 Finalizar compra (simulado)
               </button>
             </div>
-            <p className={`mt-4 text-xs ${light ? "text-stone-500" : "text-zinc-600"}`}>
+            <p className={`mt-4 text-xs ${light ? "text-stone-500" : "text-[color:var(--muted-body)]"}`}>
               Datos de envío y cupón se mostrarían en los siguientes pasos — estructura típica de checkout.
             </p>
           </div>

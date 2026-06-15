@@ -50,7 +50,7 @@ export function MiniCart({ open, items, total, onClose, onUpdateQty, onRemove }:
             </div>
             <ul className="flex-1 overflow-y-auto p-4">
               {items.length === 0 ? (
-                <li className="py-12 text-center text-sm text-zinc-500">
+                <li className="py-12 text-center text-sm text-[color:var(--muted-body)]">
                   Tu carrito está vacío. Agregá herramientas desde el catálogo.
                 </li>
               ) : (
@@ -66,7 +66,7 @@ export function MiniCart({ open, items, total, onClose, onUpdateQty, onRemove }:
                     />
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium text-white">{item.name}</p>
-                      <p className="text-xs text-zinc-500">{item.brand}</p>
+                      <p className="text-xs text-[color:var(--muted-body)]">{item.brand}</p>
                       <p className="mt-1 font-mono text-sm text-orange-400">
                         {formatNexusPrice(item.price * item.quantity)}
                       </p>
@@ -91,7 +91,7 @@ export function MiniCart({ open, items, total, onClose, onUpdateQty, onRemove }:
                         <button
                           type="button"
                           onClick={() => onRemove(item.key)}
-                          className="ml-auto text-zinc-500 hover:text-red-400"
+                          className="ml-auto text-[color:var(--muted-body)] hover:text-red-400"
                           aria-label="Eliminar"
                         >
                           <Trash2 className="h-4 w-4" />
@@ -114,7 +114,7 @@ export function MiniCart({ open, items, total, onClose, onUpdateQty, onRemove }:
                 className={`block w-full rounded-lg py-3 text-center text-sm font-bold uppercase tracking-wider ${
                   items.length
                     ? "bg-gradient-to-r from-orange-600 to-amber-500 text-black"
-                    : "pointer-events-none bg-zinc-800 text-zinc-500"
+                    : "pointer-events-none bg-zinc-800 text-[color:var(--muted-body)]"
                 }`}
               >
                 Confirmar por WhatsApp

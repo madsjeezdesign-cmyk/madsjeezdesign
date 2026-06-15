@@ -90,7 +90,7 @@ function FlashCard({ title, endsAt }: { title: string; endsAt: number }) {
         </div>
       </div>
       <div className="text-right">
-        <p className="text-[9px] uppercase text-zinc-500">Termina en</p>
+        <p className="text-[9px] uppercase text-[color:var(--muted-body)]">Termina en</p>
         <p className="font-mono text-lg font-black text-lime-400">{countdown}</p>
       </div>
     </div>

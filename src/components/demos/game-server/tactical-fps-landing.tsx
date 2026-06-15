@@ -85,7 +85,7 @@ export function TacticalFpsLanding({ slug }: Props) {
             </div>
             <div className="leading-tight">
               <p className="font-mono text-[13px] font-bold tracking-tight text-white">{config.brand}</p>
-              <p className="font-mono text-[10px] uppercase text-zinc-500">{config.gameLabel}</p>
+              <p className="font-mono text-[10px] uppercase text-[color:var(--muted-body)]">{config.gameLabel}</p>
             </div>
           </div>
           <nav className="hidden items-center gap-6 font-mono text-[11px] uppercase text-zinc-400 md:flex">
@@ -104,7 +104,7 @@ export function TacticalFpsLanding({ slug }: Props) {
           </a>
         </div>
         <div className="border-t border-white/5 bg-black/30">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-1 px-5 py-1.5 font-mono text-[10px] uppercase text-zinc-500 md:px-8">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-1 px-5 py-1.5 font-mono text-[10px] uppercase text-[color:var(--muted-body)] md:px-8">
             <span className="flex items-center gap-1.5">
               <span className="relative flex h-1.5 w-1.5">
                 <span
@@ -133,7 +133,7 @@ export function TacticalFpsLanding({ slug }: Props) {
       <section className="relative">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-14 md:px-8 md:pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:pb-24">
           <div className="relative">
-            <p className="font-mono text-[11px] uppercase text-zinc-500">
+            <p className="font-mono text-[11px] uppercase text-[color:var(--muted-body)]">
               <span style={{ color: accent }}>{"// "}</span>
               {config.heroKicker}
             </p>
@@ -147,7 +147,7 @@ export function TacticalFpsLanding({ slug }: Props) {
               {config.heroSub}
             </p>
 
-            <p className="mt-5 font-mono text-[12px] uppercase text-zinc-500">
+            <p className="mt-5 font-mono text-[12px] uppercase text-[color:var(--muted-body)]">
               <span style={{ color: accent }}>{config.industryLabel}</span>
               <span className="mx-2">·</span>
               anticheat propio
@@ -179,7 +179,7 @@ export function TacticalFpsLanding({ slug }: Props) {
                 { label: "anticheat", value: "ON" },
               ].map((stat) => (
                 <div key={stat.label} className="border border-white/10 bg-white/[0.02] p-3">
-                  <dt className="font-mono text-[9px] uppercase text-zinc-500">{stat.label}</dt>
+                  <dt className="font-mono text-[9px] uppercase text-[color:var(--muted-body)]">{stat.label}</dt>
                   <dd className="mt-1 font-mono text-[18px] font-bold" style={{ color: accent }}>
                     {stat.value}
                   </dd>
@@ -230,7 +230,7 @@ export function TacticalFpsLanding({ slug }: Props) {
                 </span>
               </div>
             </div>
-            <div className="mt-3 grid grid-cols-3 gap-2 font-mono text-[10px] uppercase text-zinc-500">
+            <div className="mt-3 grid grid-cols-3 gap-2 font-mono text-[10px] uppercase text-[color:var(--muted-body)]">
               {config.locations.slice(0, 3).map((loc) => (
                 <div key={loc} className="flex items-center gap-1.5 border border-white/10 px-2 py-1.5">
                   <Signal className="h-3 w-3" style={{ color: accent }} />
@@ -246,12 +246,12 @@ export function TacticalFpsLanding({ slug }: Props) {
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mb-6 flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="font-mono text-[11px] uppercase text-zinc-500">{"// status panel"}</p>
+              <p className="font-mono text-[11px] uppercase text-[color:var(--muted-body)]">{"// status panel"}</p>
               <h2 className="font-mono text-[22px] font-bold tracking-tight text-white md:text-[28px]">
                 Servidores online · ping prom {config.pingMs}
               </h2>
             </div>
-            <p className="font-mono text-[10px] uppercase text-zinc-500">
+            <p className="font-mono text-[10px] uppercase text-[color:var(--muted-body)]">
               actualizado · hace 12 s
             </p>
           </div>
@@ -288,17 +288,17 @@ export function TacticalFpsLanding({ slug }: Props) {
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mb-10 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="font-mono text-[11px] uppercase text-zinc-500">{"// tiers"}</p>
+              <p className="font-mono text-[11px] uppercase text-[color:var(--muted-body)]">{"// tiers"}</p>
               <h2 className="font-mono text-[24px] font-bold tracking-tight text-white md:text-[32px]">
                 Comparativa de tiers
               </h2>
             </div>
-            <p className="font-mono text-[11px] uppercase text-zinc-500">
+            <p className="font-mono text-[11px] uppercase text-[color:var(--muted-body)]">
               ARS · mensual · sin permanencia
             </p>
           </div>
 
-          <div className="hidden grid-cols-[1.2fr_repeat(4,_1fr)_auto] items-center gap-3 border-b border-white/10 px-4 pb-2 font-mono text-[10px] uppercase text-zinc-500 md:grid">
+          <div className="hidden grid-cols-[1.2fr_repeat(4,_1fr)_auto] items-center gap-3 border-b border-white/10 px-4 pb-2 font-mono text-[10px] uppercase text-[color:var(--muted-body)] md:grid">
             <span>tier</span>
             <span>ram</span>
             <span>slots</span>
@@ -331,7 +331,7 @@ export function TacticalFpsLanding({ slug }: Props) {
                       </span>
                     ) : null}
                   </div>
-                  <p className="mt-0.5 font-mono text-[10px] uppercase text-zinc-500 md:hidden">
+                  <p className="mt-0.5 font-mono text-[10px] uppercase text-[color:var(--muted-body)] md:hidden">
                     {plan.ram} · {plan.slots} slots · {plan.storage}
                   </p>
                 </div>
@@ -340,7 +340,7 @@ export function TacticalFpsLanding({ slug }: Props) {
                 <span className="hidden font-mono text-[13px] text-zinc-300 md:inline">{plan.storage}</span>
                 <span className="font-mono text-[16px] font-bold text-white">
                   {plan.price}
-                  <span className="ml-1 text-[10px] font-normal text-zinc-500">/mes</span>
+                  <span className="ml-1 text-[10px] font-normal text-[color:var(--muted-body)]">/mes</span>
                 </span>
                 <a
                   href="#demo-contacto"
@@ -359,7 +359,7 @@ export function TacticalFpsLanding({ slug }: Props) {
       <section className="relative border-y border-white/10 bg-black/30 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mb-8">
-            <p className="font-mono text-[11px] uppercase text-zinc-500">{"// loadout"}</p>
+            <p className="font-mono text-[11px] uppercase text-[color:var(--muted-body)]">{"// loadout"}</p>
             <h2 className="font-mono text-[22px] font-bold tracking-tight text-white md:text-[28px]">
               Configuración incluida
             </h2>
@@ -389,12 +389,12 @@ export function TacticalFpsLanding({ slug }: Props) {
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mb-8 flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="font-mono text-[11px] uppercase text-zinc-500">{"// schedule"}</p>
+              <p className="font-mono text-[11px] uppercase text-[color:var(--muted-body)]">{"// schedule"}</p>
               <h2 className="font-mono text-[22px] font-bold tracking-tight text-white md:text-[28px]">
                 Wipes y eventos
               </h2>
             </div>
-            <p className="font-mono text-[10px] uppercase text-zinc-500">
+            <p className="font-mono text-[10px] uppercase text-[color:var(--muted-body)]">
               GMT-3 · auto-notify a Discord
             </p>
           </div>
@@ -427,7 +427,7 @@ export function TacticalFpsLanding({ slug }: Props) {
       <section className="relative border-y border-white/10 bg-black/30 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mb-6">
-            <p className="font-mono text-[11px] uppercase text-zinc-500">{"// stack"}</p>
+            <p className="font-mono text-[11px] uppercase text-[color:var(--muted-body)]">{"// stack"}</p>
             <h2 className="font-mono text-[22px] font-bold tracking-tight text-white md:text-[28px]">
               Plugins & mods
             </h2>
@@ -470,7 +470,7 @@ export function TacticalFpsLanding({ slug }: Props) {
       <section id="faq" className="relative py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
           <div className="mb-8">
-            <p className="font-mono text-[11px] uppercase text-zinc-500">{"// faq"}</p>
+            <p className="font-mono text-[11px] uppercase text-[color:var(--muted-body)]">{"// faq"}</p>
             <h2 className="font-mono text-[22px] font-bold tracking-tight text-white md:text-[28px]">
               Briefing rápido
             </h2>
@@ -520,7 +520,7 @@ export function TacticalFpsLanding({ slug }: Props) {
       </div>
 
       <footer className="border-t border-white/10 px-5 py-8 text-center md:px-8">
-        <p className="font-mono text-[10px] uppercase text-zinc-600">
+        <p className="font-mono text-[10px] uppercase text-[color:var(--muted-body)]">
           © {new Date().getFullYear()} {config.brand} · Demo {config.gameLabel}. Marca no afiliada al editor del juego.
         </p>
       </footer>
