@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
+import { MagneticButton, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "musica" as const;
 const H = DEMO_HEADING_CLASS[SLUG];
@@ -183,7 +184,11 @@ export function DemoMusicaLanding() {
           <div className="mt-12 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {COURSES.map((c, i) => (
               <FadeUp key={c.name} delay={i * 0.07}>
-                <div className="group flex items-start gap-4 rounded-2xl border border-white/[0.07] bg-[#1a0f34] p-6 transition-all hover:border-violet-500/30 hover:bg-[#1f1040]">
+                <SpotlightCard
+                  variant="transparent"
+                  glowColor="rgba(167,139,250,0.45)"
+                  className="group flex h-full items-start gap-4 rounded-2xl border border-white/[0.07] bg-[#1a0f34] p-6 transition-all hover:border-violet-500/30 hover:bg-[#1f1040]"
+                >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 group-hover:bg-violet-500/20 transition-colors">
                     <c.icon className="h-5 w-5" />
                   </div>
@@ -194,7 +199,7 @@ export function DemoMusicaLanding() {
                       {c.seats}
                     </span>
                   </div>
-                </div>
+                </SpotlightCard>
               </FadeUp>
             ))}
           </div>
@@ -258,9 +263,13 @@ export function DemoMusicaLanding() {
             <h2 className={`text-3xl font-bold text-white md:text-5xl ${H}`}>Inscripciones abiertas.<br />Cupos muy limitados.</h2>
             <p className="mt-4 text-sm text-violet-200">Clases de prueba gratuita disponibles para nuevos alumnos</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <button type="button" className={`rounded-full bg-white px-8 py-3.5 font-bold text-violet-900 hover:bg-violet-50 transition-colors ${H}`}>
+              <MagneticButton
+                variant="primary"
+                className={`!bg-white hover:!bg-violet-50 rounded-full px-8 py-3.5 font-bold !text-violet-900 ${H}`}
+                ariaLabel="Reservar clase de prueba"
+              >
                 Reservar clase de prueba
-              </button>
+              </MagneticButton>
               <button type="button" className="rounded-full border border-white/30 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
                 Ver horarios y aranceles
               </button>
