@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
+import { MagneticButton, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "viajes" as const;
 const H = DEMO_HEADING_CLASS[SLUG];
@@ -142,9 +143,13 @@ export function DemoViajesLanding() {
               transition={{ delay: 0.44, duration: 0.5 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              <button type="button" className={`flex items-center gap-2 rounded-full bg-teal-500 px-7 py-3.5 font-bold text-black hover:bg-teal-400 transition-colors ${H}`}>
-                <Compass className="h-4 w-4" /> Armar mi viaje
-              </button>
+              <MagneticButton
+                strength={10}
+                className={`!bg-teal-500 hover:!bg-teal-400 !px-7 !py-3.5 !font-bold ${H}`}
+                ariaLabel="Armar mi viaje"
+              >
+                <Compass className="h-4 w-4 text-black" /> <span className="text-black">Armar mi viaje</span>
+              </MagneticButton>
               <button type="button" className="flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
                 Ver destinos 2026
               </button>
@@ -251,7 +256,11 @@ export function DemoViajesLanding() {
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((s, i) => (
               <FadeUp key={s.title} delay={i * 0.07}>
-                <div className="flex flex-col gap-4 rounded-2xl border border-white/[0.07] bg-[#060d18] p-6 hover:border-teal-500/30 transition-colors">
+                <SpotlightCard
+                  variant="transparent"
+                  glowColor="rgba(20,184,166,0.45)"
+                  className="!flex !flex-col !gap-4 !rounded-2xl !border-white/[0.07] !bg-[#060d18] !p-6 hover:!border-teal-500/30 transition-colors h-full"
+                >
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500/10 text-teal-400">
                     <s.icon className="h-5 w-5" />
                   </div>
@@ -259,7 +268,7 @@ export function DemoViajesLanding() {
                     <p className={`font-bold text-white ${H}`}>{s.title}</p>
                     <p className="mt-2 text-sm text-[color:var(--muted-body)]">{s.desc}</p>
                   </div>
-                </div>
+                </SpotlightCard>
               </FadeUp>
             ))}
           </div>
