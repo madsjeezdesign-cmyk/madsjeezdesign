@@ -12,6 +12,7 @@ import {
   type BurgerProduct,
   type DeliveryMode,
 } from "@/lib/burger-lab";
+import { ScrollReveal } from "@/components/primitives";
 import { DemoLeadForm } from "../demo-lead-form";
 import { BurgerLabCart } from "./burger-lab-cart";
 import { BurgerLabCustomizeModal } from "./burger-lab-customize-modal";
@@ -107,10 +108,12 @@ export function BurgerLabLanding() {
     <div className="bl-demo min-h-screen bg-zinc-950 font-sans text-zinc-100 antialiased selection:bg-amber-500/30">
       <BurgerLabNavbar cartCount={cartCount} cartTotal={cartSubtotal} onOpenCart={() => setCartOpen(true)} />
       <BurgerLabHero />
-      <BurgerLabMenu
-        onSelectProduct={setCustomizeProduct}
-        onAddSimple={addSimple}
-      />
+      <ScrollReveal as="div">
+        <BurgerLabMenu
+          onSelectProduct={setCustomizeProduct}
+          onAddSimple={addSimple}
+        />
+      </ScrollReveal>
       <BurgerLabFooter />
 
       <DemoLeadForm
