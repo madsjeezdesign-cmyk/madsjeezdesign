@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DemoLeadForm } from "./demo-lead-form";
+import { ScrollReveal, MagneticButton, SpotlightCard } from "@/components/primitives";
 import "./demo-farmacia-premium.css";
 
 const SLUG = "farmacia" as const;
@@ -436,7 +437,10 @@ export function DemoFarmaciaLanding() {
           <div className="pointer-events-none absolute right-0 top-0 h-[50vh] w-[50vw] rounded-full bg-cyan-400/10 blur-[100px]" aria-hidden />
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:px-8 lg:grid-cols-2 lg:gap-16">
             <div className="relative z-10">
-              <Badge variant="success">Farmacia 24/7</Badge>
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-600">
+                <span className="live-ping-dot" />
+                Farmacia 24/7
+              </span>
               <h1 className="mt-6 font-[family-name:var(--font-demo-h-farmacia)] text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 md:text-6xl lg:text-[3.5rem]">
                 Tu salud, <span className="text-cyan-600">nuestra ciencia</span>
               </h1>
@@ -540,11 +544,24 @@ export function DemoFarmaciaLanding() {
                 Ver servicios <ChevronRight size={18} />
               </a>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:items-stretch">
-              {PRODUCTS.map((product) => (
-                <ProductCard key={product.id} product={product} onAdd={addToCart} />
-              ))}
-            </div>
+            <ScrollReveal>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:items-stretch">
+                {PRODUCTS.map((product) =>
+                  product.discount ? (
+                    <SpotlightCard
+                      key={product.id}
+                      variant="transparent"
+                      glowColor="rgba(8,145,178,0.35)"
+                      className="h-full"
+                    >
+                      <ProductCard product={product} onAdd={addToCart} />
+                    </SpotlightCard>
+                  ) : (
+                    <ProductCard key={product.id} product={product} onAdd={addToCart} />
+                  ),
+                )}
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -579,13 +596,16 @@ export function DemoFarmaciaLanding() {
                     </li>
                   ))}
                 </ul>
-                <button
-                  type="button"
-                  onClick={() => document.getElementById(`lead-${SLUG}`)?.scrollIntoView({ behavior: "smooth" })}
-                  className="mt-8 inline-flex items-center gap-2 rounded-xl bg-cyan-600 px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-cyan-500"
-                >
-                  Pedir turno <ArrowRight size={18} />
-                </button>
+                <div className="mt-8 inline-flex">
+                  <MagneticButton
+                    onClick={() => document.getElementById(`lead-${SLUG}`)?.scrollIntoView({ behavior: "smooth" })}
+                    variant="primary"
+                    className="!bg-cyan-600 hover:!bg-cyan-500 rounded-xl px-6 py-3.5 text-sm font-bold"
+                    ariaLabel="Pedir turno"
+                  >
+                    Pedir turno <ArrowRight size={18} />
+                  </MagneticButton>
+                </div>
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10">
                 <Image src={v.a} alt="Telemedicina Galénica" fill className="object-cover" sizes="50vw" />
