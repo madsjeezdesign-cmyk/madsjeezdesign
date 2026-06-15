@@ -59,7 +59,7 @@ export function AromasKymNewsletter() {
       </svg>
 
       <div className="ak-reveal mx-auto max-w-3xl px-5 text-center sm:px-8">
-        <p className="font-mono text-[10px] uppercase tracking-[0.42em] text-[#8d8074]">
+        <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
           V — Carta abierta
         </p>
         <h2
@@ -99,7 +99,7 @@ export function AromasKymNewsletter() {
           <button
             type="submit"
             disabled={sent}
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1c1814] px-7 py-4 font-mono text-[11px] uppercase tracking-[0.3em] text-[#fbf8f1] transition hover:bg-[#b85a3c] disabled:opacity-90 sm:rounded-l-none sm:rounded-r-full"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1c1814] px-7 py-4 font-mono text-[11px] uppercase tracking-[0.04em] text-[#fbf8f1] transition hover:bg-[#b85a3c] disabled:opacity-90 sm:rounded-l-none sm:rounded-r-full"
           >
             {sent ? (
               <>
@@ -114,7 +114,7 @@ export function AromasKymNewsletter() {
           </button>
         </form>
 
-        <p className="mt-5 font-mono text-[9px] uppercase tracking-[0.28em] text-[#8d8074]">
+        <p className="mt-5 font-mono text-[9px] uppercase tracking-[0.04em] text-[#8d8074]">
           Sin spam. Te podés dar de baja en cualquier momento.
         </p>
       </div>

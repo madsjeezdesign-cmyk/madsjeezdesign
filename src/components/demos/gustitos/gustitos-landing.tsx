@@ -124,7 +124,7 @@ export function DemoGustitos() {
       {recentIds.length > 0 && (
         <section className="border-t border-white/5 py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <p className="text-xs uppercase tracking-widest text-[color:var(--muted-body)]">Pediste recientemente</p>
+            <p className="text-xs uppercase tracking-[0.04em] text-[color:var(--muted-body)]">Pediste recientemente</p>
             <div className="mt-3 flex gap-2 overflow-x-auto">
               {recentIds.map((id) => {
                 const p = GUSTITOS_PRODUCTS.find((x) => x.id === id);
@@ -157,13 +157,13 @@ export function DemoGustitos() {
         theme={{
           section: "bg-zinc-950 text-zinc-100 border-t border-red-500/10",
           invert: false,
-          label: "text-[10px] font-medium uppercase tracking-widest text-[color:var(--muted-body)]",
+          label: "text-[10px] font-medium uppercase tracking-[0.04em] text-[color:var(--muted-body)]",
           input:
             "mt-2 w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm text-white focus:border-red-500/50 focus:outline-none",
           focus: "focus:border-red-500/50",
           card: "rounded-2xl border border-white/10 bg-zinc-900 p-8",
           button:
-            "rounded-xl bg-gradient-to-r from-red-600 to-orange-500 px-8 py-3 text-xs font-bold uppercase tracking-widest text-white",
+            "rounded-xl bg-gradient-to-r from-red-600 to-orange-500 px-8 py-3 text-xs font-bold uppercase tracking-[0.04em] text-white",
         }}
       />
 

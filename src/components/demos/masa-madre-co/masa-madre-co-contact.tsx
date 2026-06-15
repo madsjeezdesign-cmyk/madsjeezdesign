@@ -11,7 +11,7 @@ export function MasaMadreCoContact() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <span className="text-xs font-black uppercase tracking-widest text-orange-700">Visitanos</span>
+            <span className="text-xs font-black uppercase tracking-[0.04em] text-orange-700">Visitanos</span>
             <h2 className="mt-2 font-serif text-3xl font-bold text-stone-900">Contacto</h2>
 
             <div className="mt-8 space-y-6">

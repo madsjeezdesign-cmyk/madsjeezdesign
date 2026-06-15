@@ -282,7 +282,7 @@ export function DemoThemedHero({
               className="relative mx-auto mt-10 w-full max-w-lg bg-white/5 p-3 pb-10 shadow-2xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden">{img}</div>
-              <p className="mt-3 text-center text-[10px] uppercase tracking-widest text-[color:var(--muted-body)]">
+              <p className="mt-3 text-center text-[10px] uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
                 Demo · imagen del sector
               </p>
             </motion.div>

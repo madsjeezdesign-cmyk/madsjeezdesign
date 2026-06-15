@@ -56,7 +56,7 @@ export function TheBarberClubCart({ open, onClose, items, onRemove, onCheckout }
             <button
               type="button"
               onClick={onCheckout}
-              className="w-full rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 py-4 text-xs font-black uppercase tracking-widest text-zinc-950"
+              className="w-full rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 py-4 text-xs font-black uppercase tracking-[0.04em] text-zinc-950"
             >
               Finalizar compra (demo)
             </button>

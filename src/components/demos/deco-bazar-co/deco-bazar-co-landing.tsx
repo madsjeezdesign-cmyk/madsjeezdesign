@@ -126,13 +126,13 @@ export function DecoBazarCoLanding() {
         theme={{
           section: "bg-zinc-900 text-zinc-100",
           invert: false,
-          label: "text-[10px] font-medium uppercase tracking-widest text-[color:var(--muted-body)]",
+          label: "text-[10px] font-medium uppercase tracking-[0.04em] text-[color:var(--muted-body)]",
           input:
             "mt-2 w-full rounded-xl border border-zinc-600 bg-zinc-950 px-4 py-3 text-sm text-white focus:border-zinc-400 focus:outline-none",
           focus: "focus:border-zinc-400",
           card: "rounded-2xl border border-zinc-700 bg-zinc-950 p-8",
           button:
-            "rounded-full bg-[#5c6b4a] px-8 py-3 text-xs font-medium uppercase tracking-widest text-white",
+            "rounded-full bg-[#5c6b4a] px-8 py-3 text-xs font-medium uppercase tracking-[0.04em] text-white",
         }}
       />
 
@@ -167,7 +167,7 @@ export function DecoBazarCoLanding() {
                 setSuccessOpen(false);
                 setCart([]);
               }}
-              className="mt-6 w-full rounded-full bg-zinc-800 py-3.5 text-xs font-medium uppercase tracking-wider text-white"
+              className="mt-6 w-full rounded-full bg-zinc-800 py-3.5 text-xs font-medium uppercase tracking-[0.04em] text-white"
             >
               Cerrar y nuevo pedido
             </button>

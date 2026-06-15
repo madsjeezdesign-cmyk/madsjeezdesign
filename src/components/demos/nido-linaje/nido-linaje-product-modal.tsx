@@ -63,7 +63,7 @@ export function NidoLinajeProductModal({
           </div>
           <div className="flex flex-col p-8 sm:p-10">
             {product.badge ? (
-              <span className="text-[10px] font-medium uppercase tracking-[0.35em] text-stone-400">
+              <span className="text-[10px] font-medium uppercase tracking-[0.04em] text-stone-400">
                 {product.badge}
               </span>
             ) : null}
@@ -71,7 +71,7 @@ export function NidoLinajeProductModal({
             <p className="mt-2 text-sm font-light text-stone-500">{product.tagline}</p>
 
             <div className="mt-8 rounded-sm border border-stone-100 bg-stone-50/80 p-5">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400">
+              <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-stone-400">
                 Composición técnica
               </p>
               <p className="mt-2 font-serif text-lg text-stone-800">{product.composition}</p>
@@ -85,7 +85,7 @@ export function NidoLinajeProductModal({
               </ul>
             </div>
 
-            <p className="mt-8 text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400">Tamaño</p>
+            <p className="mt-8 text-[10px] font-medium uppercase tracking-[0.04em] text-stone-400">Tamaño</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {LINAJE_SIZES.map((s) => (
                 <button
@@ -103,7 +103,7 @@ export function NidoLinajeProductModal({
               ))}
             </div>
 
-            <p className="mt-6 text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400">Color</p>
+            <p className="mt-6 text-[10px] font-medium uppercase tracking-[0.04em] text-stone-400">Color</p>
             <div className="mt-3 flex gap-3">
               {LINAJE_COLORS.map((c) => (
                 <button
@@ -126,7 +126,7 @@ export function NidoLinajeProductModal({
               type="button"
               disabled={adding}
               onClick={onAdd}
-              className="mt-6 w-full rounded-sm bg-stone-900 py-4 text-[11px] font-medium uppercase tracking-[0.3em] text-white transition hover:bg-stone-700 disabled:opacity-60"
+              className="mt-6 w-full rounded-sm bg-stone-900 py-4 text-[11px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-stone-700 disabled:opacity-60"
             >
               {adding ? <span className="nl-add-loading">Añadiendo…</span> : "Añadir al carrito"}
             </button>

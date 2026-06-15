@@ -48,7 +48,7 @@ export function DecoBazarCoCatalog({
     <section id="catalogo" className="scroll-mt-16 border-t border-zinc-100 bg-zinc-50 py-10 sm:py-14">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-3 sm:flex-row sm:gap-8 sm:px-4">
         <aside className="shrink-0 sm:w-56 lg:w-60">
-          <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.25em] text-zinc-400">Filtros</p>
+          <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.04em] text-zinc-400">Filtros</p>
 
           <div className="rounded-2xl border border-zinc-100 bg-white p-4 shadow-sm">
             <p className="text-xs font-medium text-zinc-800">Categoría</p>
@@ -169,7 +169,7 @@ export function DecoBazarCoCatalog({
                         <button
                           type="button"
                           onClick={() => onAdd(product, q)}
-                          className="flex-1 rounded-full bg-[#5c6b4a] py-2.5 text-[10px] font-medium uppercase tracking-wider text-white hover:bg-[#4d5a3e] active:scale-[0.98]"
+                          className="flex-1 rounded-full bg-[#5c6b4a] py-2.5 text-[10px] font-medium uppercase tracking-[0.04em] text-white hover:bg-[#4d5a3e] active:scale-[0.98]"
                         >
                           Añadir
                         </button>

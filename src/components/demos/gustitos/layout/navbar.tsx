@@ -41,7 +41,7 @@ export function Navbar({ cartCount, cartTotal, onOpenCart, onOrder }: Props) {
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-orange-500 shadow-lg shadow-red-500/30">
               <Flame className="h-5 w-5 text-white" aria-hidden />
             </span>
-            <span className="font-[family-name:var(--font-gu-display)] text-2xl tracking-wider text-white">
+            <span className="font-[family-name:var(--font-gu-display)] text-2xl tracking-[0.04em] text-white">
               {cfg.brand}
             </span>
           </Link>
@@ -75,7 +75,7 @@ export function Navbar({ cartCount, cartTotal, onOpenCart, onOrder }: Props) {
             </button>
             <MagneticButton
               onClick={onOrder}
-              className="hidden rounded-xl bg-gradient-to-r from-red-600 via-red-500 to-orange-500 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-red-500/30 lg:inline-flex"
+              className="hidden rounded-xl bg-gradient-to-r from-red-600 via-red-500 to-orange-500 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.04em] text-white shadow-lg shadow-red-500/30 lg:inline-flex"
             >
               Pedir ahora
             </MagneticButton>

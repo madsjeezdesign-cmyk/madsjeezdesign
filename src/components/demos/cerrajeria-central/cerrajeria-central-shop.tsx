@@ -27,7 +27,7 @@ export function CerrajeriaCentralShop({ onAdd }: Props) {
   return (
     <section id="tienda" className="scroll-mt-20 bg-black py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-3 sm:px-4">
-        <p className="text-xs font-black uppercase tracking-widest text-amber-400">Tienda técnica</p>
+        <p className="text-xs font-black uppercase tracking-[0.04em] text-amber-400">Tienda técnica</p>
         <h2 className="mt-2 text-2xl font-black uppercase text-white">Productos de seguridad</h2>
 
         <div className="mt-6 flex gap-2 overflow-x-auto pb-2">

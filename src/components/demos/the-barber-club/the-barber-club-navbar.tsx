@@ -42,7 +42,7 @@ export function TheBarberClubNavbar({ cartCount, onOpenCart }: Props) {
               key={l.href}
               type="button"
               onClick={() => scrollTo(l.href)}
-              className="text-xs font-bold uppercase tracking-widest text-zinc-400 transition-colors hover:text-amber-400"
+              className="text-xs font-bold uppercase tracking-[0.04em] text-zinc-400 transition-colors hover:text-amber-400"
             >
               {l.label}
             </button>
@@ -65,7 +65,7 @@ export function TheBarberClubNavbar({ cartCount, onOpenCart }: Props) {
           <button
             type="button"
             onClick={() => scrollTo("#turnos")}
-            className="hidden rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 px-4 py-2 text-xs font-black uppercase tracking-wider text-zinc-950 shadow-lg shadow-amber-500/20 sm:block"
+            className="hidden rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 px-4 py-2 text-xs font-black uppercase tracking-[0.04em] text-zinc-950 shadow-lg shadow-amber-500/20 sm:block"
           >
             Reservar
           </button>

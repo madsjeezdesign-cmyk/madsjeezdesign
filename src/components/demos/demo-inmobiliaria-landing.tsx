@@ -208,11 +208,11 @@ export function DemoInmobiliariaLanding() {
             <span className="font-[family-name:var(--font-demo-h-inmobiliaria)] text-2xl leading-none tracking-[0.15em] text-white md:text-4xl">
               HORIZONTE
             </span>
-            <span className="mt-2 text-[7px] uppercase tracking-[0.8em] text-[#a68966]">
+            <span className="mt-2 text-[7px] uppercase tracking-[0.04em] text-[#a68966]">
               Patrimonio & arquitectura
             </span>
           </div>
-          <nav className="hidden gap-10 text-[9px] font-semibold tracking-[0.4em] text-white/40 xl:flex xl:gap-12">
+          <nav className="hidden gap-10 text-[9px] font-semibold tracking-[0.04em] text-white/40 xl:flex xl:gap-12">
             <a href="#proyectos" className="transition-colors hover:text-[#a68966]" {...interactive}>
               PORTFOLIO
             </a>
@@ -232,10 +232,10 @@ export function DemoInmobiliariaLanding() {
         </div>
         <div className="flex items-center gap-6 md:gap-8">
           <div className="hidden flex-col text-right md:flex">
-            <span className="text-[9px] uppercase tracking-widest text-white/30">
+            <span className="text-[9px] uppercase tracking-[0.04em] text-white/30">
               Atención privada
             </span>
-            <span className="text-xs font-light tracking-widest text-[#a68966]">
+            <span className="text-xs font-light tracking-[0.04em] text-[#a68966]">
               +54 11 4800 2200
             </span>
           </div>
@@ -284,14 +284,14 @@ export function DemoInmobiliariaLanding() {
             </button>
             <div className="flex items-center gap-6">
               <span className="h-px w-12 bg-[#a68966]/50 md:w-16" />
-              <span className="text-[9px] uppercase tracking-[0.3em] text-white/50">
+              <span className="text-[9px] uppercase tracking-[0.04em] text-white/50">
                 Explore el tour cinematográfico
               </span>
             </div>
           </div>
         </div>
         <div className="absolute bottom-12 left-1/2 flex -translate-x-1/2 flex-col items-center gap-4 opacity-30">
-          <span className="van-vertical-text text-[8px] uppercase tracking-[0.5em]">Scroll</span>
+          <span className="van-vertical-text text-[8px] uppercase tracking-[0.04em]">Scroll</span>
           <div className="h-12 w-px bg-gradient-to-b from-white to-transparent" />
         </div>
       </section>
@@ -302,7 +302,7 @@ export function DemoInmobiliariaLanding() {
           {MARKETS.map((m) => (
             <span
               key={m}
-              className="text-[9px] font-semibold uppercase tracking-[0.35em] text-white/30"
+              className="text-[9px] font-semibold uppercase tracking-[0.04em] text-white/30"
             >
               {m}
             </span>
@@ -314,7 +314,7 @@ export function DemoInmobiliariaLanding() {
       <section id="nosotros" className="bg-white/[0.02] py-24 md:py-40">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:gap-32 md:px-12 lg:grid-cols-2">
           <div className="van-scroll-reveal">
-            <h5 className="mb-8 text-[10px] font-bold uppercase tracking-[0.5em] text-[#a68966]">
+            <h5 className="mb-8 text-[10px] font-bold uppercase tracking-[0.04em] text-[#a68966]">
               Nuestra visión
             </h5>
             <h2 className="mb-10 font-[family-name:var(--font-demo-h-inmobiliaria)] text-4xl leading-tight text-white md:text-6xl">
@@ -342,7 +342,7 @@ export function DemoInmobiliariaLanding() {
                   <div className="mb-2 font-[family-name:var(--font-demo-h-inmobiliaria)] text-2xl text-[#a68966] md:text-3xl">
                     {s.v}
                   </div>
-                  <div className="text-[9px] uppercase tracking-widest text-white/30">
+                  <div className="text-[9px] uppercase tracking-[0.04em] text-white/30">
                     {s.l}
                   </div>
                 </div>
@@ -416,7 +416,7 @@ export function DemoInmobiliariaLanding() {
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <div className="absolute left-6 top-6 bg-[#0d0d0d]/60 px-4 py-1 text-[8px] uppercase tracking-[0.3em] backdrop-blur-md">
+                  <div className="absolute left-6 top-6 bg-[#0d0d0d]/60 px-4 py-1 text-[8px] uppercase tracking-[0.04em] backdrop-blur-md">
                     {prop.location}
                   </div>
                 </div>
@@ -425,14 +425,14 @@ export function DemoInmobiliariaLanding() {
                     <h3 className="font-[family-name:var(--font-demo-h-inmobiliaria)] text-3xl italic text-white md:text-4xl">
                       {prop.name}
                     </h3>
-                    <span className="shrink-0 text-sm font-semibold tracking-widest text-[#a68966]">
+                    <span className="shrink-0 text-sm font-semibold tracking-[0.04em] text-[#a68966]">
                       {prop.price}
                     </span>
                   </div>
                   <p className="mb-8 text-sm font-light leading-relaxed text-white/40 md:mb-10">
                     {prop.description}
                   </p>
-                  <div className="flex flex-wrap gap-6 border-t border-white/5 pt-6 text-[9px] uppercase tracking-widest text-white/30 md:gap-10 md:pt-8">
+                  <div className="flex flex-wrap gap-6 border-t border-white/5 pt-6 text-[9px] uppercase tracking-[0.04em] text-white/30 md:gap-10 md:pt-8">
                     {prop.tags.map((tag) => (
                       <span key={tag}>{tag}</span>
                     ))}
@@ -440,7 +440,7 @@ export function DemoInmobiliariaLanding() {
                   <button
                     type="button"
                     onClick={toggleDossier}
-                    className="mt-8 text-[9px] font-bold uppercase tracking-widest text-[#a68966] hover:text-white"
+                    className="mt-8 text-[9px] font-bold uppercase tracking-[0.04em] text-[#a68966] hover:text-white"
                     {...interactive}
                   >
                     Solicitar dossier privado →
@@ -463,7 +463,7 @@ export function DemoInmobiliariaLanding() {
                 />
               </div>
               <div className="flex flex-col justify-center p-8 md:p-14">
-                <span className="mb-4 text-[8px] uppercase tracking-[0.3em] text-[#a68966]">
+                <span className="mb-4 text-[8px] uppercase tracking-[0.04em] text-[#a68966]">
                   {PROPERTIES[2].location}
                 </span>
                 <h3 className="mb-6 font-[family-name:var(--font-demo-h-inmobiliaria)] text-3xl italic md:text-5xl">
@@ -472,7 +472,7 @@ export function DemoInmobiliariaLanding() {
                 <p className="mb-8 font-light leading-relaxed text-white/40">
                   {PROPERTIES[2].description}
                 </p>
-                <span className="text-lg font-semibold tracking-widest text-[#a68966]">
+                <span className="text-lg font-semibold tracking-[0.04em] text-[#a68966]">
                   {PROPERTIES[2].price}
                 </span>
               </div>
@@ -484,7 +484,7 @@ export function DemoInmobiliariaLanding() {
       {/* Proceso */}
       <section className="border-y border-white/5 bg-[#2d241e]/40 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <h5 className="mb-4 text-center text-[10px] font-bold uppercase tracking-[0.5em] text-[#a68966]">
+          <h5 className="mb-4 text-center text-[10px] font-bold uppercase tracking-[0.04em] text-[#a68966]">
             Método Horizonte
           </h5>
           <h2 className="mb-14 text-center font-[family-name:var(--font-demo-h-inmobiliaria)] text-3xl text-white md:mb-20 md:text-5xl">
@@ -500,7 +500,7 @@ export function DemoInmobiliariaLanding() {
                 <span className="font-[family-name:var(--font-demo-h-inmobiliaria)] text-3xl text-[#a68966]">
                   {step.n}
                 </span>
-                <h4 className="mb-3 mt-4 text-sm font-bold uppercase tracking-widest">{step.title}</h4>
+                <h4 className="mb-3 mt-4 text-sm font-bold uppercase tracking-[0.04em]">{step.title}</h4>
                 <p className="text-sm font-light leading-relaxed text-white/40">{step.text}</p>
               </div>
             ))}
@@ -522,7 +522,7 @@ export function DemoInmobiliariaLanding() {
             />
           </div>
           <div className="van-scroll-reveal order-1 lg:order-2">
-            <h5 className="mb-8 text-[10px] font-bold uppercase tracking-[0.5em] text-[#a68966]">
+            <h5 className="mb-8 text-[10px] font-bold uppercase tracking-[0.04em] text-[#a68966]">
               Servicio private wealth
             </h5>
             <h2 className="mb-10 font-[family-name:var(--font-demo-h-inmobiliaria)] text-4xl text-white md:text-6xl">
@@ -532,7 +532,7 @@ export function DemoInmobiliariaLanding() {
               Nuestro departamento de concierge real estate se encarga de todo: búsqueda discreta,
               gestión legal y interiorismo llave en mano.
             </p>
-            <ul className="mb-12 space-y-5 text-sm font-light tracking-widest text-white/60 md:mb-16">
+            <ul className="mb-12 space-y-5 text-sm font-light tracking-[0.04em] text-white/60 md:mb-16">
               {[
                 "Acceso a listados off-market",
                 "Due diligence legal & fiscal",
@@ -557,7 +557,7 @@ export function DemoInmobiliariaLanding() {
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <div className="mb-16 flex flex-col gap-6 md:mb-20 md:flex-row md:items-end md:justify-between">
             <div>
-              <h5 className="mb-4 text-[10px] font-bold uppercase tracking-[0.5em] text-[#a68966]">
+              <h5 className="mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-[#a68966]">
                 Equipo directivo
               </h5>
               <h2 className="font-[family-name:var(--font-demo-h-inmobiliaria)] text-4xl text-white md:text-5xl">
@@ -589,7 +589,7 @@ export function DemoInmobiliariaLanding() {
                   <h4 className="font-[family-name:var(--font-demo-h-inmobiliaria)] text-xl text-white md:text-2xl">
                     {agent.name}
                   </h4>
-                  <p className="mt-2 text-[10px] uppercase tracking-widest text-[#a68966]">
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.04em] text-[#a68966]">
                     {agent.role}
                   </p>
                   <p className="mt-4 flex items-center gap-2 text-xs text-white/40">
@@ -599,7 +599,7 @@ export function DemoInmobiliariaLanding() {
                   <button
                     type="button"
                     onClick={toggleDossier}
-                    className="mt-6 flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-white/50 hover:text-[#a68966]"
+                    className="mt-6 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.04em] text-white/50 hover:text-[#a68966]"
                     {...interactive}
                   >
                     <Phone className="h-3 w-3" />
@@ -638,25 +638,25 @@ export function DemoInmobiliariaLanding() {
                 }}
               >
                 <div className="relative">
-                  <label className="absolute -top-6 text-[8px] uppercase tracking-[0.4em] text-white/20">
+                  <label className="absolute -top-6 text-[8px] uppercase tracking-[0.04em] text-white/20">
                     Nombre completo
                   </label>
                   <input
                     type="text"
-                    className="w-full border-b border-white/10 bg-transparent py-4 text-xs uppercase tracking-widest text-white outline-none transition-colors focus:border-[#a68966]"
+                    className="w-full border-b border-white/10 bg-transparent py-4 text-xs uppercase tracking-[0.04em] text-white outline-none transition-colors focus:border-[#a68966]"
                   />
                 </div>
                 <div className="relative">
-                  <label className="absolute -top-6 text-[8px] uppercase tracking-[0.4em] text-white/20">
+                  <label className="absolute -top-6 text-[8px] uppercase tracking-[0.04em] text-white/20">
                     Email corporativo
                   </label>
                   <input
                     type="email"
-                    className="w-full border-b border-white/10 bg-transparent py-4 text-xs uppercase tracking-widest text-white outline-none transition-colors focus:border-[#a68966]"
+                    className="w-full border-b border-white/10 bg-transparent py-4 text-xs uppercase tracking-[0.04em] text-white outline-none transition-colors focus:border-[#a68966]"
                   />
                 </div>
                 <button type="submit" className="group flex items-center gap-6" {...interactive}>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#a68966]">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.04em] text-[#a68966]">
                     Enviar consulta
                   </span>
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#a68966]/30 transition-all group-hover:bg-[#a68966] group-hover:text-[#0d0d0d]">
@@ -667,10 +667,10 @@ export function DemoInmobiliariaLanding() {
             </div>
             <div className="grid grid-cols-2 gap-12 md:gap-20">
               <div>
-                <h5 className="mb-8 text-[9px] font-bold uppercase tracking-[0.4em] text-[#a68966] md:mb-12">
+                <h5 className="mb-8 text-[9px] font-bold uppercase tracking-[0.04em] text-[#a68966] md:mb-12">
                   Oficinas centrales
                 </h5>
-                <ul className="space-y-6 text-[10px] font-light leading-loose tracking-widest text-white/40">
+                <ul className="space-y-6 text-[10px] font-light leading-loose tracking-[0.04em] text-white/40">
                   <li>
                     BUENOS AIRES
                     <br />
@@ -695,10 +695,10 @@ export function DemoInmobiliariaLanding() {
                 </ul>
               </div>
               <div>
-                <h5 className="mb-8 text-[9px] font-bold uppercase tracking-[0.4em] text-[#a68966] md:mb-12">
+                <h5 className="mb-8 text-[9px] font-bold uppercase tracking-[0.04em] text-[#a68966] md:mb-12">
                   Explorar
                 </h5>
-                <ul className="space-y-5 text-[10px] font-bold tracking-widest text-white/40">
+                <ul className="space-y-5 text-[10px] font-bold tracking-[0.04em] text-white/40">
                   <li>
                     <a href="#inversiones" className="transition-colors hover:text-white">
                       INVERSIONES
@@ -719,7 +719,7 @@ export function DemoInmobiliariaLanding() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-between gap-8 border-t border-white/5 pt-12 md:flex-row md:pt-16">
-            <span className="text-[8px] uppercase tracking-[0.8em] text-white/10">
+            <span className="text-[8px] uppercase tracking-[0.04em] text-white/10">
               © {new Date().getFullYear()} {BRAND.toUpperCase()} · DEMO
             </span>
             <div className="flex gap-8 md:gap-10">
@@ -767,14 +767,14 @@ export function DemoInmobiliariaLanding() {
             <input
               type="text"
               placeholder="NOMBRE"
-              className="w-full border-b border-white/10 bg-transparent py-3 text-xs tracking-widest outline-none focus:border-[#a68966]"
+              className="w-full border-b border-white/10 bg-transparent py-3 text-xs tracking-[0.04em] outline-none focus:border-[#a68966]"
             />
             <input
               type="email"
               placeholder="EMAIL CORPORATIVO"
-              className="w-full border-b border-white/10 bg-transparent py-3 text-xs tracking-widest outline-none focus:border-[#a68966]"
+              className="w-full border-b border-white/10 bg-transparent py-3 text-xs tracking-[0.04em] outline-none focus:border-[#a68966]"
             />
-            <select className="w-full border-b border-white/10 bg-transparent py-3 text-xs tracking-widest outline-none">
+            <select className="w-full border-b border-white/10 bg-transparent py-3 text-xs tracking-[0.04em] outline-none">
               <option className="bg-black">Compra residencial</option>
               <option className="bg-black">Inversión patrimonial</option>
               <option className="bg-black">Tasación certificada</option>

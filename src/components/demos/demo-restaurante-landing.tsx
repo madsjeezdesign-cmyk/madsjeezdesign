@@ -98,7 +98,7 @@ export function DemoRestauranteLanding() {
           <h1 className="font-[family-name:var(--font-demo-h-restaurante)] text-xl tracking-tighter text-white md:text-2xl lg:text-3xl">
             La Mesa <span className="text-[#c29d5f]">Norteña</span>
           </h1>
-          <div className="hidden gap-8 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/40 md:flex">
+          <div className="hidden gap-8 text-[10px] font-semibold uppercase tracking-[0.04em] text-white/40 md:flex">
             <a href="#menu" className="transition-colors hover:text-[#c29d5f]">
               La carta
             </a>
@@ -113,7 +113,7 @@ export function DemoRestauranteLanding() {
         <button
           type="button"
           onClick={toggleRes}
-          className="lumina-btn-signature px-6 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] md:px-8 md:py-3"
+          className="lumina-btn-signature px-6 py-2.5 text-[10px] font-bold uppercase tracking-[0.04em] md:px-8 md:py-3"
         >
           Reservar mesa
         </button>
@@ -133,7 +133,7 @@ export function DemoRestauranteLanding() {
           />
         </div>
         <div className="relative z-10 max-w-5xl text-center">
-          <span className="mb-8 block text-[11px] font-bold uppercase tracking-[0.6em] text-[#c29d5f]">
+          <span className="mb-8 block text-[11px] font-bold uppercase tracking-[0.04em] text-[#c29d5f]">
             Cocina de estación &amp; fuego
           </span>
           <h2 className="mb-12 font-[family-name:var(--font-demo-h-restaurante)] text-5xl italic leading-[0.9] text-white md:text-7xl lg:text-[7.5rem]">
@@ -194,7 +194,7 @@ export function DemoRestauranteLanding() {
             </div>
             <Link
               href="#lead-restaurante"
-              className="mt-16 inline-block border-b border-[#c29d5f]/20 pb-2 text-[10px] font-bold uppercase tracking-[0.4em] text-[#c29d5f] transition-all hover:border-[#c29d5f]"
+              className="mt-16 inline-block border-b border-[#c29d5f]/20 pb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-[#c29d5f] transition-all hover:border-[#c29d5f]"
             >
               Ver menú completo
             </Link>
@@ -239,7 +239,7 @@ export function DemoRestauranteLanding() {
             />
           </div>
           <div className="order-1 lg:order-2 lg:col-span-7">
-            <span className="mb-6 block text-[10px] font-bold uppercase tracking-[0.5em] text-[#c29d5f]">
+            <span className="mb-6 block text-[10px] font-bold uppercase tracking-[0.04em] text-[#c29d5f]">
               Nuestra cava
             </span>
             <h3 className="mb-10 font-[family-name:var(--font-demo-h-restaurante)] text-4xl italic text-white md:text-6xl">
@@ -252,7 +252,7 @@ export function DemoRestauranteLanding() {
             </p>
             <div className="grid grid-cols-2 gap-8 md:gap-10">
               <div>
-                <h5 className="mb-4 text-xs font-bold uppercase tracking-widest text-white">
+                <h5 className="mb-4 text-xs font-bold uppercase tracking-[0.04em] text-white">
                   Malbec selection
                 </h5>
                 <p className="text-xs text-white/30">
@@ -260,7 +260,7 @@ export function DemoRestauranteLanding() {
                 </p>
               </div>
               <div>
-                <h5 className="mb-4 text-xs font-bold uppercase tracking-widest text-white">
+                <h5 className="mb-4 text-xs font-bold uppercase tracking-[0.04em] text-white">
                   Blancos de altura
                 </h5>
                 <p className="text-xs text-white/30">
@@ -270,7 +270,7 @@ export function DemoRestauranteLanding() {
             </div>
             <div className="mt-10 flex items-center gap-3 text-[#c29d5f]">
               <Wine className="h-5 w-5" strokeWidth={1.25} />
-              <span className="text-[10px] font-bold uppercase tracking-widest">
+              <span className="text-[10px] font-bold uppercase tracking-[0.04em]">
                 Cata guiada cada 15 días
               </span>
             </div>
@@ -300,7 +300,7 @@ export function DemoRestauranteLanding() {
             </p>
           </div>
           <div>
-            <h5 className="mb-8 text-[10px] font-black uppercase tracking-[0.4em] text-[#c29d5f]">
+            <h5 className="mb-8 text-[10px] font-black uppercase tracking-[0.04em] text-[#c29d5f]">
               Contacto
             </h5>
             <ul className="space-y-4 text-sm font-light text-white/50">
@@ -310,7 +310,7 @@ export function DemoRestauranteLanding() {
             </ul>
           </div>
           <div>
-            <h5 className="mb-8 text-[10px] font-black uppercase tracking-[0.4em] text-[#c29d5f]">
+            <h5 className="mb-8 text-[10px] font-black uppercase tracking-[0.04em] text-[#c29d5f]">
               Horarios
             </h5>
             <ul className="space-y-4 text-sm font-light text-white/50">
@@ -321,7 +321,7 @@ export function DemoRestauranteLanding() {
           </div>
         </div>
         <div className="mx-auto mt-20 flex max-w-7xl flex-col items-center justify-between gap-6 border-t border-white/5 pt-8 md:mt-32 md:flex-row">
-          <span className="text-[9px] uppercase tracking-widest text-white/20">
+          <span className="text-[9px] uppercase tracking-[0.04em] text-white/20">
             © {new Date().getFullYear()} {BRAND} · demo MadsJeez
           </span>
           <div className="flex gap-6">
@@ -373,7 +373,7 @@ export function DemoRestauranteLanding() {
           >
             <div className="space-y-8">
               <div className="border-b border-white/10 pb-4">
-                <label className="mb-2 block text-[9px] font-bold uppercase tracking-widest text-[#c29d5f]">
+                <label className="mb-2 block text-[9px] font-bold uppercase tracking-[0.04em] text-[#c29d5f]">
                   Fecha
                 </label>
                 <input
@@ -382,7 +382,7 @@ export function DemoRestauranteLanding() {
                 />
               </div>
               <div className="border-b border-white/10 pb-4">
-                <label className="mb-2 block text-[9px] font-bold uppercase tracking-widest text-[#c29d5f]">
+                <label className="mb-2 block text-[9px] font-bold uppercase tracking-[0.04em] text-[#c29d5f]">
                   Comensales
                 </label>
                 <select className="w-full bg-transparent font-light text-white outline-none">
@@ -394,7 +394,7 @@ export function DemoRestauranteLanding() {
             </div>
             <div className="space-y-8">
               <div className="border-b border-white/10 pb-4">
-                <label className="mb-2 block text-[9px] font-bold uppercase tracking-widest text-[#c29d5f]">
+                <label className="mb-2 block text-[9px] font-bold uppercase tracking-[0.04em] text-[#c29d5f]">
                   Nombre completo
                 </label>
                 <input
@@ -405,13 +405,13 @@ export function DemoRestauranteLanding() {
               </div>
               <button
                 type="submit"
-                className="lumina-btn-signature mt-4 w-full py-6 text-[10px] font-black uppercase tracking-[0.4em]"
+                className="lumina-btn-signature mt-4 w-full py-6 text-[10px] font-black uppercase tracking-[0.04em]"
               >
                 Confirmar disponibilidad
               </button>
             </div>
           </form>
-          <p className="mt-10 text-center text-[9px] uppercase tracking-widest text-white/20 md:mt-12">
+          <p className="mt-10 text-center text-[9px] uppercase tracking-[0.04em] text-white/20 md:mt-12">
             Las reservas se mantienen por 15 minutos de tolerancia.
           </p>
         </div>

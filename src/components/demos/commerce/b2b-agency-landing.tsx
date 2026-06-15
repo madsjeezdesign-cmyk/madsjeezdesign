@@ -155,7 +155,7 @@ export function B2bAgencyLanding({ slug }: Props) {
           <div className="mt-12 overflow-x-auto">
             <table className="w-full min-w-[640px] border-collapse">
               <thead>
-                <tr className="border-y border-[#d4d4d4] text-left font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-wider text-[#4d4d4d]">
+                <tr className="border-y border-[#d4d4d4] text-left font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-[0.04em] text-[#4d4d4d]">
                   <th className="py-3 pr-6">Cliente</th>
                   <th className="py-3 pr-6">Sector</th>
                   <th className="py-3 pr-6">Año</th>

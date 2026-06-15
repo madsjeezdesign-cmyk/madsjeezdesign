@@ -83,7 +83,7 @@ export function DemoHeladeriaLanding() {
             Artesanal italiano
           </span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-stone-400 md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.04em] text-stone-400 md:flex">
           {["Sabores", "Formatos", "Delivery", "Eventos"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-rose-500 transition-colors">{n}</span>
           ))}
@@ -178,13 +178,13 @@ export function DemoHeladeriaLanding() {
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <FadeUp>
-              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-rose-500 ${H}`}>Carta de sabores</p>
+              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-rose-500 ${H}`}>Carta de sabores</p>
               <h2 className={`text-3xl font-bold text-[#1c0a18] md:text-5xl ${H}`}>Sabores<br />de esta semana</h2>
             </FadeUp>
             <div className="flex gap-2">
               {(["Todos", "Leche", "Agua"] as const).map((b) => (
                 <button key={b} type="button" onClick={() => setActiveBase(b)}
-                  className={`rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider transition-colors ${
+                  className={`rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.04em] transition-colors ${
                     activeBase === b ? "bg-rose-500 text-white" : "border border-rose-200 text-stone-400 hover:border-rose-300"
                   }`}>
                   {b}
@@ -199,7 +199,7 @@ export function DemoHeladeriaLanding() {
                 <div className={`group flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-semibold transition-all hover:shadow-md ${f.color} border-transparent`}>
                   {f.badge && <span className="text-[10px] font-black">{f.badge}</span>}
                   {f.name}
-                  <span className="rounded-full bg-black/5 px-2 py-0.5 text-[9px] uppercase tracking-wider">{f.base}</span>
+                  <span className="rounded-full bg-black/5 px-2 py-0.5 text-[9px] uppercase tracking-[0.04em]">{f.base}</span>
                 </div>
               </FadeUp>
             ))}
@@ -211,7 +211,7 @@ export function DemoHeladeriaLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-5xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-rose-500 ${H}`}>Formatos</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-rose-500 ${H}`}>Formatos</p>
             <h2 className={`text-3xl font-bold text-[#1c0a18] md:text-5xl ${H}`}>Para cada ocasión</h2>
           </FadeUp>
           <div className="mt-10 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -251,7 +251,7 @@ export function DemoHeladeriaLanding() {
             </div>
           </FadeUp>
           <FadeUp delay={0.12}>
-            <p className={`mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-rose-400 ${H}`}>Nuestra historia</p>
+            <p className={`mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-rose-400 ${H}`}>Nuestra historia</p>
             <h2 className={`text-4xl font-bold text-white md:text-5xl ${H}`}>Receta italiana.<br />Ingredientes locales.</h2>
             <div className="mt-6 space-y-4 text-sm leading-loose text-stone-400">
               <p>Aprendimos la técnica del gelato en Bolonia. Volvimos con la receta y empezamos a adaptarla con fruta local de temporada.</p>
@@ -261,7 +261,7 @@ export function DemoHeladeriaLanding() {
               {[["24", "sabores"], ["0", "conservantes"], ["100%", "artesanal"]].map(([v, l]) => (
                 <div key={l} className="text-center">
                   <p className={`text-2xl font-black text-rose-400 ${H}`}>{v}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-widest text-stone-500">{l}</p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.04em] text-stone-500">{l}</p>
                 </div>
               ))}
             </div>

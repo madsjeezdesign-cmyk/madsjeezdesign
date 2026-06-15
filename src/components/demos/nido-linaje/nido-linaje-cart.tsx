@@ -46,7 +46,7 @@ export function NidoLinajeCart({ open, onClose, items, onUpdateQty, onRemove, on
           <div className="flex items-center justify-between border-b border-stone-100 px-8 py-7">
             <div>
               <h3 className="font-serif text-xl font-light text-stone-900">Tu selección</h3>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
+              <p className="text-[10px] uppercase tracking-[0.04em] text-stone-400">
                 {count} {count === 1 ? "pieza" : "piezas"}
               </p>
             </div>
@@ -73,7 +73,7 @@ export function NidoLinajeCart({ open, onClose, items, onUpdateQty, onRemove, on
                   </div>
                   <div className="min-w-0 flex-1">
                     <h4 className="font-serif text-base font-light text-stone-900 line-clamp-2">{item.name}</h4>
-                    <p className="mt-1 text-[10px] uppercase tracking-wider text-stone-400">
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.04em] text-stone-400">
                       {item.size.label} · {item.color.label}
                     </p>
                     <p className="mt-2 text-sm text-stone-700">{formatLinajePrice(item.unitPrice)}</p>
@@ -100,7 +100,7 @@ export function NidoLinajeCart({ open, onClose, items, onUpdateQty, onRemove, on
                       <button
                         type="button"
                         onClick={() => onRemove(item.key)}
-                        className="text-[10px] uppercase tracking-wider text-stone-400 hover:text-stone-800"
+                        className="text-[10px] uppercase tracking-[0.04em] text-stone-400 hover:text-stone-800"
                       >
                         Quitar
                       </button>
@@ -128,7 +128,7 @@ export function NidoLinajeCart({ open, onClose, items, onUpdateQty, onRemove, on
               <button
                 type="button"
                 onClick={onCheckout}
-                className="w-full rounded-sm bg-stone-900 py-4 text-[11px] font-medium uppercase tracking-[0.35em] text-white transition hover:bg-stone-700"
+                className="w-full rounded-sm bg-stone-900 py-4 text-[11px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-stone-700"
               >
                 Proceder al pago
               </button>

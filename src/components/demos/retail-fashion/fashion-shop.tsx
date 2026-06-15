@@ -42,7 +42,7 @@ export function FashionShop({ config }: Props) {
       <section id="shop" className="bg-[#fafafa] py-32">
         <div className="mx-auto max-w-[90%]">
           <div className="rf-reveal mb-16 flex flex-col items-center text-center md:mb-20">
-            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.35em] text-gray-500">
+            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-gray-500">
               {config.seasonBadge}
             </p>
             <h2 className="font-serif text-5xl tracking-tighter text-black md:text-7xl">
@@ -51,7 +51,7 @@ export function FashionShop({ config }: Props) {
             <p className="mt-4 max-w-xl text-sm font-light leading-relaxed text-gray-600">
               {config.shopSubtitle}
             </p>
-            <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+            <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.04em] text-gray-400">
               Agregá al carrito · Comprá por WhatsApp
             </p>
           </div>
@@ -73,7 +73,7 @@ export function FashionShop({ config }: Props) {
                     sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
                   />
                   {product.badge ? (
-                    <span className="absolute left-3 top-3 bg-black px-2 py-1 text-[9px] font-bold uppercase tracking-widest text-white">
+                    <span className="absolute left-3 top-3 bg-black px-2 py-1 text-[9px] font-bold uppercase tracking-[0.04em] text-white">
                       {product.badge}
                     </span>
                   ) : null}
@@ -82,7 +82,7 @@ export function FashionShop({ config }: Props) {
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="font-serif text-lg italic leading-snug text-black">{product.name}</h3>
                   {product.sizeHint ? (
-                    <p className="mt-1 text-[10px] uppercase tracking-wider text-gray-400">
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.04em] text-gray-400">
                       {product.sizeHint}
                     </p>
                   ) : null}
@@ -92,7 +92,7 @@ export function FashionShop({ config }: Props) {
                     <button
                       type="button"
                       onClick={() => addToCart(product)}
-                      className="flex w-full items-center justify-center gap-2 border border-black bg-black py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-white hover:text-black"
+                      className="flex w-full items-center justify-center gap-2 border border-black bg-black py-3 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-white hover:text-black"
                     >
                       <ShoppingBag className="h-3.5 w-3.5" aria-hidden />
                       Agregar al carrito
@@ -101,7 +101,7 @@ export function FashionShop({ config }: Props) {
                       href={whatsappProductUrl(config, product)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex w-full items-center justify-center border border-black/20 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-black transition-colors hover:border-black"
+                      className="flex w-full items-center justify-center border border-black/20 py-3 text-[10px] font-bold uppercase tracking-[0.04em] text-black transition-colors hover:border-black"
                     >
                       Comprar por WhatsApp
                     </a>
@@ -179,7 +179,7 @@ export function FashionShop({ config }: Props) {
                       <button
                         type="button"
                         onClick={() => removeFromCart(item.id)}
-                        className="text-[10px] font-bold uppercase tracking-wider text-gray-400 hover:text-black"
+                        className="text-[10px] font-bold uppercase tracking-[0.04em] text-gray-400 hover:text-black"
                       >
                         Quitar
                       </button>
@@ -187,7 +187,7 @@ export function FashionShop({ config }: Props) {
                         href={whatsappProductUrl(config, item)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[10px] font-bold uppercase tracking-wider text-black underline"
+                        className="text-[10px] font-bold uppercase tracking-[0.04em] text-black underline"
                       >
                         Solo esta
                       </a>
@@ -200,14 +200,14 @@ export function FashionShop({ config }: Props) {
         </div>
 
         <div className="border-t border-black/10 p-6">
-          <p className="mb-4 text-center text-[10px] uppercase tracking-[0.2em] text-gray-500">
+          <p className="mb-4 text-center text-[10px] uppercase tracking-[0.04em] text-gray-500">
             {cartCount} {cartCount === 1 ? "artículo" : "artículos"} · Envío por WhatsApp
           </p>
           <a
             href={checkoutUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-2 bg-[#25D366] py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90"
+            className="flex w-full items-center justify-center gap-2 bg-[#25D366] py-4 text-[11px] font-bold uppercase tracking-[0.04em] text-white transition-opacity hover:opacity-90"
           >
             <MessageCircleIcon />
             Finalizar en WhatsApp

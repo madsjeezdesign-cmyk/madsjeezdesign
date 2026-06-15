@@ -57,7 +57,7 @@ export function RaicesCriollasBoxBuilder({ onAddBox }: Props) {
         <div className="flex items-start gap-3">
           <Gift className="mt-1 h-6 w-6 text-amber-800" strokeWidth={1.25} />
           <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-amber-800">Experiencia premium</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-amber-800">Experiencia premium</p>
             <h2 className="mt-2 font-serif text-2xl text-stone-900 sm:text-3xl">Armá tu caja regalo / tabla</h2>
             <p className="mt-2 max-w-xl text-sm text-stone-600">
               Elegí el tamaño, sumá productos regionales y agregá todo al carrito en un solo paso.
@@ -72,7 +72,7 @@ export function RaicesCriollasBoxBuilder({ onAddBox }: Props) {
               setMode("regalo");
               setPicks([]);
             }}
-            className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider ${
+            className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.04em] ${
               mode === "regalo" ? "bg-amber-800 text-amber-50" : "border border-stone-300 text-stone-600"
             }`}
           >
@@ -84,7 +84,7 @@ export function RaicesCriollasBoxBuilder({ onAddBox }: Props) {
               setMode("picada");
               setPicks([]);
             }}
-            className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider ${
+            className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.04em] ${
               mode === "picada" ? "bg-amber-800 text-amber-50" : "border border-stone-300 text-stone-600"
             }`}
           >
@@ -125,7 +125,7 @@ export function RaicesCriollasBoxBuilder({ onAddBox }: Props) {
             </div>
 
             <div className="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">Productos regionales</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.04em] text-amber-800">Productos regionales</p>
               <div className="mt-4 grid gap-2 sm:grid-cols-2">
                 {RAICES_BOX_PICKS.map((pick) => {
                   const sel = isSelected(pick.id);
@@ -203,7 +203,7 @@ export function RaicesCriollasBoxBuilder({ onAddBox }: Props) {
                 onAddBox({ sizeId, label, items: picks, totalPrice: total });
                 setPicks([]);
               }}
-              className="mt-4 w-full rounded-full bg-amber-800 py-3.5 text-xs font-semibold uppercase tracking-wider text-amber-50 disabled:opacity-40 hover:bg-orange-900"
+              className="mt-4 w-full rounded-full bg-amber-800 py-3.5 text-xs font-semibold uppercase tracking-[0.04em] text-amber-50 disabled:opacity-40 hover:bg-orange-900"
             >
               Agregar caja al carrito
             </button>

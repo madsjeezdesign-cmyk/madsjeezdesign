@@ -44,7 +44,7 @@ export function PizzeriaNapolesNavbar({ cartCount, cartTotal, onOpenCart }: Prop
         </button>
       </div>
       {cfg.ovenOn ? (
-        <p className="border-t border-zinc-800 py-1 text-center text-[9px] font-bold uppercase tracking-wider text-green-400 sm:hidden">
+        <p className="border-t border-zinc-800 py-1 text-center text-[9px] font-bold uppercase tracking-[0.04em] text-green-400 sm:hidden">
           Horno encendido — Tomando pedidos
         </p>
       ) : null}

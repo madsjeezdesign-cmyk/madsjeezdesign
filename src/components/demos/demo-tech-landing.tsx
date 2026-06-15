@@ -61,7 +61,7 @@ function NavItem({
     <button
       type="button"
       onClick={onClick}
-      className={`relative py-2 text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300 ${
+      className={`relative py-2 text-[10px] font-bold uppercase tracking-[0.04em] transition-all duration-300 ${
         active ? "text-cyan-400" : "text-white/40 hover:text-white"
       }`}
     >
@@ -93,7 +93,7 @@ function TechButton({
       }`}
     >
       <div className="absolute inset-0 translate-x-[-100%] bg-white/20 transition-transform duration-700 group-hover:translate-x-[100%]" />
-      <span className="relative z-10 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em]">
+      <span className="relative z-10 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em]">
         {children}
         {Icon ? <Icon size={14} className="transition-transform group-hover:translate-x-1" /> : null}
       </span>
@@ -118,7 +118,7 @@ function MetricCard({
       <div className="absolute right-0 top-0 p-2 opacity-10 transition-opacity group-hover:opacity-20">
         <Icon size={40} />
       </div>
-      <div className="mb-2 font-mono text-[9px] uppercase tracking-widest text-white/30">{label}</div>
+      <div className="mb-2 font-mono text-[9px] uppercase tracking-[0.04em] text-white/30">{label}</div>
       <div className="flex items-baseline gap-2 font-mono text-3xl font-bold text-white">
         {value}
         <span className={`text-[10px] ${trendUp ? "text-emerald-400" : "text-cyan-400"}`}>{trend}</span>
@@ -216,7 +216,7 @@ export function DemoTechLanding() {
               <span className="font-[family-name:var(--font-demo-h-tech)] text-xl font-black uppercase italic tracking-tighter text-white md:text-2xl">
                 Vanguardia<span className="text-cyan-400">.</span>Tech
               </span>
-              <span className="text-[7px] font-black uppercase tracking-[0.6em] text-white/30">
+              <span className="text-[7px] font-black uppercase tracking-[0.04em] text-white/30">
                 Infraestructura Sistémica
               </span>
             </div>
@@ -245,7 +245,7 @@ export function DemoTechLanding() {
         <div className="flex items-center gap-4 md:gap-8">
           <div className="hidden flex-col text-right md:flex">
             <div className="font-mono text-[10px] font-bold text-cyan-400">{formatTime(currentTime)}</div>
-            <div className="text-[8px] font-bold uppercase tracking-widest text-white/20">UTC_GLOBAL_SYNC</div>
+            <div className="text-[8px] font-bold uppercase tracking-[0.04em] text-white/20">UTC_GLOBAL_SYNC</div>
           </div>
           <TechButton primary onClick={scrollToLead}>
             Consultar Alpha
@@ -303,7 +303,7 @@ export function DemoTechLanding() {
           <div className="relative z-20 max-w-6xl px-6 text-center">
             <div className="vt-hero-reveal mb-10 inline-flex items-center gap-3 rounded-full border border-cyan-500/30 bg-cyan-500/5 px-4 py-2">
               <span className="h-2 w-2 animate-ping rounded-full bg-cyan-400" />
-              <span className="text-[10px] font-black uppercase tracking-[0.5em] text-cyan-400">
+              <span className="text-[10px] font-black uppercase tracking-[0.04em] text-cyan-400">
                 SISTEMA TRIPLE A ONLINE
               </span>
             </div>
@@ -333,14 +333,14 @@ export function DemoTechLanding() {
           <div className="absolute bottom-12 z-20 hidden w-full items-end justify-between px-12 lg:flex">
             <div className="flex gap-16">
               <div className="space-y-1">
-                <div className="text-[8px] font-bold uppercase tracking-[0.3em] text-white/20">Estado del Core</div>
+                <div className="text-[8px] font-bold uppercase tracking-[0.04em] text-white/20">Estado del Core</div>
                 <div className="flex items-center gap-2 font-mono text-lg text-cyan-400">
                   <div className="h-2 w-2 rounded-full bg-emerald-500" />
                   OPTIMAL_V2
                 </div>
               </div>
               <div className="space-y-1 border-l border-white/10 pl-16">
-                <div className="text-[8px] font-bold uppercase tracking-[0.3em] text-white/20">Uptime Semestral</div>
+                <div className="text-[8px] font-bold uppercase tracking-[0.04em] text-white/20">Uptime Semestral</div>
                 <div className="font-mono text-lg italic text-white">99.9998%</div>
               </div>
             </div>
@@ -358,7 +358,7 @@ export function DemoTechLanding() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="vt-scroll-reveal mb-24 flex flex-col items-start justify-between gap-12 lg:flex-row">
               <div className="max-w-2xl">
-                <h5 className="mb-6 font-mono text-[10px] font-black uppercase tracking-[0.6em] text-cyan-500">
+                <h5 className="mb-6 font-mono text-[10px] font-black uppercase tracking-[0.04em] text-cyan-500">
                   Panel de Control Operativo
                 </h5>
                 <h2 className="mb-8 font-[family-name:var(--font-demo-h-tech)] text-5xl font-bold italic tracking-tighter text-white md:text-7xl">
@@ -381,7 +381,7 @@ export function DemoTechLanding() {
                 <div className="mb-12 flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <Network className="text-cyan-400" />
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.04em] text-white/60">
                       Tráfico de Red Global
                     </span>
                   </div>
@@ -400,7 +400,7 @@ export function DemoTechLanding() {
                     />
                   ))}
                 </div>
-                <div className="mt-12 flex justify-between font-mono text-[10px] uppercase tracking-widest text-white/20">
+                <div className="mt-12 flex justify-between font-mono text-[10px] uppercase tracking-[0.04em] text-white/20">
                   <span>00:00:00</span>
                   <span>Sincronizando con Cluster Omega...</span>
                   <span>23:59:59</span>
@@ -416,7 +416,7 @@ export function DemoTechLanding() {
                   </p>
                   <button
                     type="button"
-                    className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] transition-all group-hover:gap-4"
+                    className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.04em] transition-all group-hover:gap-4"
                   >
                     Ver Mapa de Red <ChevronRight size={14} />
                   </button>
@@ -444,7 +444,7 @@ export function DemoTechLanding() {
         <section id="soluciones" className="border-t border-white/5 bg-slate-950 py-28 md:py-40">
           <div className="mx-auto max-w-7xl px-6">
             <div className="vt-scroll-reveal mb-16 max-w-2xl">
-              <h5 className="mb-4 font-mono text-[10px] font-black uppercase tracking-[0.5em] text-cyan-500">
+              <h5 className="mb-4 font-mono text-[10px] font-black uppercase tracking-[0.04em] text-cyan-500">
                 Protocolos
               </h5>
               <h2 className="font-[family-name:var(--font-demo-h-tech)] text-4xl font-bold italic text-white md:text-5xl">
@@ -459,10 +459,10 @@ export function DemoTechLanding() {
                 >
                   <div className="absolute left-0 top-0 h-[2px] w-full bg-cyan-500 opacity-0 transition-opacity group-hover:opacity-100" />
                   <item.icon className="mb-10 h-8 w-8 text-cyan-400 transition-transform group-hover:scale-110" />
-                  <div className="mb-2 font-mono text-[10px] tracking-widest text-cyan-500">{item.subtitle}</div>
+                  <div className="mb-2 font-mono text-[10px] tracking-[0.04em] text-cyan-500">{item.subtitle}</div>
                   <h3 className="mb-6 text-2xl font-bold italic text-white">{item.title}</h3>
                   <p className="mb-10 min-h-[80px] text-xs leading-loose text-white/30">{item.desc}</p>
-                  <div className="text-[9px] font-black tracking-[0.5em] text-white/10">{item.tech}</div>
+                  <div className="text-[9px] font-black tracking-[0.04em] text-white/10">{item.tech}</div>
                 </div>
               ))}
             </div>
@@ -487,7 +487,7 @@ export function DemoTechLanding() {
               <h2 className="mb-4 text-4xl font-bold italic">
                 Interfaz de <span className="text-cyan-400">Comando.</span>
               </h2>
-              <p className="font-mono text-xs uppercase tracking-widest text-white/30">
+              <p className="font-mono text-xs uppercase tracking-[0.04em] text-white/30">
                 Protocolo de comunicación directa con ingenieros_
               </p>
             </div>
@@ -499,7 +499,7 @@ export function DemoTechLanding() {
                   <div className="h-3 w-3 rounded-full bg-yellow-500" />
                   <div className="h-3 w-3 rounded-full bg-emerald-500" />
                 </div>
-                <div className="flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.3em] text-white/20">
+                <div className="flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.04em] text-white/20">
                   <TerminalIcon size={12} /> session@vanguardia-kernel:~/alpha
                 </div>
                 <div className="w-10" />
@@ -528,7 +528,7 @@ export function DemoTechLanding() {
                   ].map((m) => (
                     <div key={m.label} className="border border-white/5 bg-white/[0.02] p-4 text-center">
                       <div className="mb-1 text-[8px] font-bold uppercase text-white/20">{m.label}</div>
-                      <div className="text-xs font-bold tracking-widest text-cyan-400">{m.val}</div>
+                      <div className="text-xs font-bold tracking-[0.04em] text-cyan-400">{m.val}</div>
                     </div>
                   ))}
                 </div>
@@ -590,7 +590,7 @@ export function DemoTechLanding() {
             </div>
 
             <div className="space-y-10">
-              <h5 className="text-[10px] font-black uppercase tracking-[0.5em] text-white/20">Ecosistema</h5>
+              <h5 className="text-[10px] font-black uppercase tracking-[0.04em] text-white/20">Ecosistema</h5>
               <ul className="space-y-5 text-sm font-medium text-white/50">
                 <li className="cursor-pointer transition-all hover:text-cyan-400">Alpha Consulting</li>
                 <li className="cursor-pointer transition-all hover:text-cyan-400">Infrastructure-as-Code</li>
@@ -600,7 +600,7 @@ export function DemoTechLanding() {
             </div>
 
             <div className="space-y-10">
-              <h5 className="text-[10px] font-black uppercase tracking-[0.5em] text-white/20">Contacto</h5>
+              <h5 className="text-[10px] font-black uppercase tracking-[0.04em] text-white/20">Contacto</h5>
               <ul className="space-y-5 font-mono text-sm font-medium text-white/50">
                 <li className="flex items-center gap-3">
                   <span className="text-cyan-400">@</span> HQ_SAN_FRANCISCO
@@ -616,7 +616,7 @@ export function DemoTechLanding() {
           </div>
 
           <div className="flex flex-col items-center justify-between gap-8 border-t border-white/5 py-12 md:flex-row">
-            <div className="flex flex-col items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] text-white/20 md:flex-row md:gap-8">
+            <div className="flex flex-col items-center gap-4 text-[10px] font-black uppercase tracking-[0.04em] text-white/20 md:flex-row md:gap-8">
               <span>© {new Date().getFullYear()} VANGUARDIA TECH SYSTEMS</span>
               <span className="hidden md:block">ALL_RIGHTS_RESERVED</span>
             </div>

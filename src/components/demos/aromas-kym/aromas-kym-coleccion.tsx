@@ -100,7 +100,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
         {/* Header */}
         <div className="mb-12 flex flex-col items-start gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.42em] text-[#8d8074]">
+            <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
               IV — Colección
             </p>
             <h2
@@ -116,7 +116,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
               <em className="text-[#b85a3c]">listo para tu mesa.</em>
             </h2>
           </div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#8d8074]">
+          <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
             {filtered.length} {filtered.length === 1 ? "pieza" : "piezas"}
           </p>
         </div>
@@ -130,7 +130,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
                 key={c.id}
                 type="button"
                 onClick={() => changeCategory(c.id)}
-                className={`relative rounded-full border px-4 py-2 font-mono text-[10px] uppercase tracking-[0.24em] transition-all duration-300 ${
+                className={`relative rounded-full border px-4 py-2 font-mono text-[10px] uppercase tracking-[0.04em] transition-all duration-300 ${
                   category === c.id
                     ? "border-[#1c1814] bg-[#1c1814] text-[#fbf8f1]"
                     : "border-[#e8e1d4] text-[#5a4e44] hover:border-[#b85a3c]/60 hover:text-[#1c1814]"
@@ -143,7 +143,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
 
           {/* Aroma families — secondary */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#e8e1d4] pt-4">
-            <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#8d8074]">
+            <span className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
               Familia
             </span>
             {AK_FAMILIES.map((f) => (
@@ -151,7 +151,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
                 key={f.id}
                 type="button"
                 onClick={() => changeFamily(f.id)}
-                className={`relative font-mono text-[10px] uppercase tracking-[0.24em] transition ${
+                className={`relative font-mono text-[10px] uppercase tracking-[0.04em] transition ${
                   family === f.id
                     ? "text-[#b85a3c] underline underline-offset-[6px]"
                     : "text-[#5a4e44] hover:text-[#1c1814]"
@@ -181,7 +181,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
               >
                 No encontramos piezas con ese filtro.
               </p>
-              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.32em] text-[#8d8074]">
+              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
                 Probá con otra familia aromática.
               </p>
             </div>
@@ -201,7 +201,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
                     sizes="(max-width:768px) 100vw, 33vw"
                   />
                   {p.badge ? (
-                    <span className="absolute left-3 top-3 rounded-full border border-[#fbf8f1]/40 bg-[#fbf8f1]/85 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.28em] text-[#1c1814] backdrop-blur-md">
+                    <span className="absolute left-3 top-3 rounded-full border border-[#fbf8f1]/40 bg-[#fbf8f1]/85 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.04em] text-[#1c1814] backdrop-blur-md">
                       {p.badge}
                     </span>
                   ) : null}
@@ -209,7 +209,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
                   <button
                     type="button"
                     onClick={() => onAdd(p)}
-                    className="absolute bottom-3 right-3 flex h-11 items-center gap-2 rounded-full bg-[#1c1814] px-4 font-mono text-[10px] uppercase tracking-[0.28em] text-[#fbf8f1] opacity-0 transition-all duration-500 translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#b85a3c]"
+                    className="absolute bottom-3 right-3 flex h-11 items-center gap-2 rounded-full bg-[#1c1814] px-4 font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1] opacity-0 transition-all duration-500 translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#b85a3c]"
                   >
                     <Plus className="h-3.5 w-3.5" strokeWidth={2} />
                     Agregar
@@ -218,7 +218,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
 
                 <div className="mt-5 flex items-start justify-between gap-4">
                   <div className="min-w-0 flex-1">
-                    <p className="font-mono text-[9px] uppercase tracking-[0.32em] text-[#8d8074]">
+                    <p className="font-mono text-[9px] uppercase tracking-[0.04em] text-[#8d8074]">
                       {p.notesShort}
                     </p>
                     <h3
@@ -247,7 +247,7 @@ export function AromasKymColeccion({ onAdd, externalCategory }: Props) {
                 <button
                   type="button"
                   onClick={() => onAdd(p)}
-                  className="mt-4 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.28em] text-[#b85a3c] hover:text-[#1c1814] md:hidden"
+                  className="mt-4 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.04em] text-[#b85a3c] hover:text-[#1c1814] md:hidden"
                 >
                   <Plus className="h-3 w-3" strokeWidth={2} />
                   Agregar al carrito

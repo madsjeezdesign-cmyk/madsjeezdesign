@@ -43,7 +43,7 @@ export function DemoSlugPageShell({
 
       <div className="relative z-10 border-b border-white/10 bg-gradient-to-b from-zinc-950/95 via-black/80 to-black/60 px-4 py-5 backdrop-blur-xl md:px-10 md:py-6">
         <div className="mx-auto max-w-[1400px]">
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3 text-[10px] font-bold uppercase tracking-[0.28em] text-[color:var(--muted-body)] md:text-[11px]">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3 text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)] md:text-[11px]">
             <span>
               Showroom {year} · <span className="text-zinc-400">{industry}</span>
             </span>

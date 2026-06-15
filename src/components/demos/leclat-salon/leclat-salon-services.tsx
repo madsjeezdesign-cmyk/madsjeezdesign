@@ -26,7 +26,7 @@ export function LeclatSalonServices({ selectedIds, onToggle }: Props) {
     <section id="servicios" className="scroll-mt-20 border-t border-rose-100/80 bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
-          <p className="text-[10px] font-medium uppercase tracking-[0.4em] text-rose-400">Menú de servicios</p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-rose-400">Menú de servicios</p>
           <h2 className="mt-2 font-serif text-3xl font-light text-stone-900 sm:text-4xl">Tu ritual, a medida</h2>
         </div>
 
@@ -36,7 +36,7 @@ export function LeclatSalonServices({ selectedIds, onToggle }: Props) {
               key={c.id}
               type="button"
               onClick={() => setCategory(c.id)}
-              className={`rounded-full px-4 py-2 text-[10px] font-medium uppercase tracking-wider transition ${
+              className={`rounded-full px-4 py-2 text-[10px] font-medium uppercase tracking-[0.04em] transition ${
                 category === c.id
                   ? "bg-rose-500 text-white shadow-md shadow-rose-200"
                   : "bg-stone-50 text-stone-500 hover:bg-rose-50 hover:text-rose-600"

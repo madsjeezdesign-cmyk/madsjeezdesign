@@ -90,7 +90,7 @@ export function ProductCard({
         </button>
       </div>
       <div className="p-4">
-        <p className="font-mono text-[10px] uppercase tracking-wider text-[color:var(--muted-body)]">
+        <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
           {product.brand} · {product.sku}
         </p>
         <h3 className="mt-1 line-clamp-2 text-sm font-semibold text-white">{product.name}</h3>

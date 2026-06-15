@@ -27,7 +27,7 @@ export function NidoLinajeEditorial() {
       <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.45em] text-stone-400">Editorial</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-stone-400">Editorial</p>
             <h2 className="mt-4 font-serif text-3xl font-light leading-snug text-stone-900 sm:text-4xl">
               Filosofía de marca y sostenibilidad
             </h2>

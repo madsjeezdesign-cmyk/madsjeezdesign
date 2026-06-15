@@ -57,7 +57,7 @@ export function NidoLinajeCatalog({ onOpenDetail, onAdd }: Props) {
     <section id="colecciones" className="scroll-mt-28 bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <div className="mb-14 text-center">
-          <p className="text-[10px] font-medium uppercase tracking-[0.45em] text-stone-400">Couture</p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-stone-400">Couture</p>
           <h2 className="mt-3 font-serif text-3xl font-light text-stone-900 sm:text-4xl">Colecciones</h2>
         </div>
 
@@ -67,7 +67,7 @@ export function NidoLinajeCatalog({ onOpenDetail, onAdd }: Props) {
               key={c.id}
               type="button"
               onClick={() => setCategory(c.id)}
-              className={`rounded-sm px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.2em] transition duration-300 ${
+              className={`rounded-sm px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.04em] transition duration-300 ${
                 category === c.id
                   ? "bg-stone-900 text-white"
                   : "text-stone-500 hover:bg-stone-50 hover:text-stone-800"
@@ -97,7 +97,7 @@ export function NidoLinajeCatalog({ onOpenDetail, onAdd }: Props) {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   {product.badge ? (
-                    <span className="absolute left-4 top-4 bg-white/90 px-3 py-1 text-[9px] font-medium uppercase tracking-[0.25em] text-stone-600 backdrop-blur">
+                    <span className="absolute left-4 top-4 bg-white/90 px-3 py-1 text-[9px] font-medium uppercase tracking-[0.04em] text-stone-600 backdrop-blur">
                       {product.badge}
                     </span>
                   ) : null}
@@ -113,7 +113,7 @@ export function NidoLinajeCatalog({ onOpenDetail, onAdd }: Props) {
                   </button>
                   <p className="mt-1 line-clamp-1 text-xs text-stone-500">{product.composition}</p>
 
-                  <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.25em] text-stone-400">Tamaño</p>
+                  <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.04em] text-stone-400">Tamaño</p>
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     {LINAJE_SIZES.map((s) => (
                       <button
@@ -131,7 +131,7 @@ export function NidoLinajeCatalog({ onOpenDetail, onAdd }: Props) {
                     ))}
                   </div>
 
-                  <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.25em] text-stone-400">Color</p>
+                  <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.04em] text-stone-400">Color</p>
                   <div className="mt-2 flex gap-2">
                     {LINAJE_COLORS.map((c) => (
                       <button
@@ -155,7 +155,7 @@ export function NidoLinajeCatalog({ onOpenDetail, onAdd }: Props) {
                     type="button"
                     disabled={st.adding}
                     onClick={() => handleAdd(product)}
-                    className="mt-4 w-full border border-stone-800 py-3 text-[10px] font-medium uppercase tracking-[0.3em] text-stone-900 transition hover:bg-stone-900 hover:text-white disabled:opacity-50"
+                    className="mt-4 w-full border border-stone-800 py-3 text-[10px] font-medium uppercase tracking-[0.04em] text-stone-900 transition hover:bg-stone-900 hover:text-white disabled:opacity-50"
                   >
                     {st.adding ? (
                       <span className="nl-add-loading inline-block">Añadiendo…</span>

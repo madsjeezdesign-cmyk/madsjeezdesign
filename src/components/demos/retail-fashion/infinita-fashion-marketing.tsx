@@ -58,7 +58,7 @@ export function InfinitaFashionMarketing({ config }: Props) {
           variants={fade}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.45em] text-gray-400"
+          className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.04em] text-gray-400"
         >
           {config.seasonBadge}
         </motion.p>
@@ -93,7 +93,7 @@ export function InfinitaFashionMarketing({ config }: Props) {
         >
           <a
             href="#shop"
-            className="group inline-flex items-center gap-3 bg-black px-10 py-5 text-[11px] font-bold uppercase tracking-[0.25em] text-white transition-transform hover:scale-[1.02]"
+            className="group inline-flex items-center gap-3 bg-black px-10 py-5 text-[11px] font-bold uppercase tracking-[0.04em] text-white transition-transform hover:scale-[1.02]"
           >
             Explorar tienda
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -102,7 +102,7 @@ export function InfinitaFashionMarketing({ config }: Props) {
             href={wa}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 border border-black px-10 py-5 text-[11px] font-bold uppercase tracking-[0.25em] text-black transition-colors hover:bg-black hover:text-white"
+            className="inline-flex items-center gap-3 border border-black px-10 py-5 text-[11px] font-bold uppercase tracking-[0.04em] text-black transition-colors hover:bg-black hover:text-white"
           >
             WhatsApp directo
           </a>
@@ -133,7 +133,7 @@ export function InfinitaFashionMarketing({ config }: Props) {
           className="rf-marketing-glow mt-24 border border-black/10 bg-[#fafafa] px-8 py-14 text-center md:px-16 md:py-20"
         >
           <Infinity className="mx-auto mb-6 h-8 w-8 text-black/30" strokeWidth={1} />
-          <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400">
+          <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-gray-400">
             Limited drop · Otoño Invierno
           </p>
           <p
@@ -146,7 +146,7 @@ export function InfinitaFashionMarketing({ config }: Props) {
             href={config.instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-block text-[11px] font-bold uppercase tracking-[0.3em] text-black underline-offset-4 hover:underline"
+            className="mt-10 inline-block text-[11px] font-bold uppercase tracking-[0.04em] text-black underline-offset-4 hover:underline"
           >
             @{config.instagramHandle} →
           </a>

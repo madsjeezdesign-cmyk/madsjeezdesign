@@ -68,7 +68,7 @@ export function Hero({ onOrder }: Props) {
             <div className="mt-8 flex flex-wrap gap-4">
               <MagneticButton
                 onClick={onOrder}
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-red-500 to-orange-500 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-red-500/40"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-red-500 to-orange-500 px-8 py-4 text-sm font-bold uppercase tracking-[0.04em] text-white shadow-xl shadow-red-500/40"
               >
                 Pedir smash ahora
                 <ArrowRight className="h-4 w-4" />

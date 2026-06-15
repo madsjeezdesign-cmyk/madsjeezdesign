@@ -8,7 +8,7 @@ export function LunaTestimonials() {
 
   return (
     <section className="overflow-hidden bg-[#F8F6F2] py-16 md:py-20">
-      <p className="text-center text-[10px] font-medium uppercase tracking-[0.4em] text-neutral-500">Familias</p>
+      <p className="text-center text-[10px] font-medium uppercase tracking-[0.04em] text-neutral-500">Familias</p>
       <h2 className="mt-2 text-center font-serif text-2xl text-neutral-900 md:text-3xl">Lo que dicen</h2>
       <div className="relative mt-10">
         <div className="lp-marquee flex w-max gap-4">

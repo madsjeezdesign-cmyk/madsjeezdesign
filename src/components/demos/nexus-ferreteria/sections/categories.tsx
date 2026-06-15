@@ -18,7 +18,7 @@ export function Categories({ active, onSelect }: Props) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.4em] text-orange-400">
+          <p className="font-mono text-xs uppercase tracking-[0.04em] text-orange-400">
             Sectores
           </p>
           <h2 className="mt-2 text-4xl font-bold text-white sm:text-5xl">

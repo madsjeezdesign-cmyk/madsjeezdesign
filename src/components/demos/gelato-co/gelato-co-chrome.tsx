@@ -5,7 +5,7 @@ export function GelatoCoChrome() {
     <div className="pointer-events-none fixed inset-x-0 top-0 z-[60] flex justify-between px-3 py-3 md:px-6">
       <Link
         href="/demos"
-        className="pointer-events-auto rounded-full border border-stone-200 bg-white/95 px-3 py-2 text-[9px] font-semibold uppercase tracking-widest text-stone-600 shadow-sm hover:border-rose-200"
+        className="pointer-events-auto rounded-full border border-stone-200 bg-white/95 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.04em] text-stone-600 shadow-sm hover:border-rose-200"
       >
         ← Demos
       </Link>

@@ -31,7 +31,7 @@ export function DemoYogaLanding() {
         titleColorClass="text-violet-950"
         leadColorClass="text-violet-900/70"
         kicker={
-          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-violet-600">
+          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-violet-600">
             <Wind className="h-4 w-4" /> Respiración · alineación · datos de bienestar
           </p>
         }
@@ -57,7 +57,7 @@ export function DemoYogaLanding() {
 
       <section className="mx-auto max-w-5xl px-4 py-12 md:px-10">
         <div className="overflow-hidden rounded-3xl border border-violet-200 bg-white/80 shadow-lg">
-          <div className="grid grid-cols-5 gap-px bg-violet-100 text-[10px] font-bold uppercase tracking-wider text-violet-600">
+          <div className="grid grid-cols-5 gap-px bg-violet-100 text-[10px] font-bold uppercase tracking-[0.04em] text-violet-600">
             {["Lun", "Mar", "Mié", "Jue", "Vie"].map((d) => (
               <div key={d} className="bg-violet-50 py-3 text-center">
                 {d}
@@ -75,7 +75,7 @@ export function DemoYogaLanding() {
               <div key={c.t} className="border-t border-violet-100 p-4 sm:border-t-0 sm:border-l sm:first:border-l-0">
                 <p className={`${h} text-base text-violet-950`}>{c.t}</p>
                 <p className="mt-1 text-xs text-violet-600/70">{c.s}</p>
-                <button type="button" className="mt-3 text-[10px] font-bold uppercase tracking-wider text-violet-500 underline-offset-4 hover:underline">
+                <button type="button" className="mt-3 text-[10px] font-bold uppercase tracking-[0.04em] text-violet-500 underline-offset-4 hover:underline">
                   reservar demo
                 </button>
               </div>

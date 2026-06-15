@@ -82,7 +82,7 @@ export function LunaMiniCart({ open, items, onClose, onUpdateQty, onRemove }: Pr
                 </div>
                 <button
                   type="button"
-                  className="mt-4 w-full rounded-full bg-neutral-900 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[#F8F6F2]"
+                  className="mt-4 w-full rounded-full bg-neutral-900 py-4 text-[11px] font-medium uppercase tracking-[0.04em] text-[#F8F6F2]"
                 >
                   Finalizar compra
                 </button>

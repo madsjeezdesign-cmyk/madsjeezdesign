@@ -65,7 +65,7 @@ export function ProductCard({
           }}
         />
         {product.badge ? (
-          <span className="absolute left-3 top-3 rounded-full border border-white/30 bg-white/80 px-2.5 py-1 text-[9px] font-medium uppercase tracking-widest text-neutral-700 backdrop-blur-md">
+          <span className="absolute left-3 top-3 rounded-full border border-white/30 bg-white/80 px-2.5 py-1 text-[9px] font-medium uppercase tracking-[0.04em] text-neutral-700 backdrop-blur-md">
             {product.badge === "new" ? "Nuevo" : "Best seller"}
           </span>
         ) : null}
@@ -84,7 +84,7 @@ export function ProductCard({
           type="button"
           initial={{ opacity: 0, y: 8 }}
           whileHover={{ scale: 1.02 }}
-          className="absolute bottom-3 left-3 right-3 rounded-full bg-neutral-900/90 py-2.5 text-[10px] font-medium uppercase tracking-[0.2em] text-white opacity-0 backdrop-blur-md transition group-hover:opacity-100"
+          className="absolute bottom-3 left-3 right-3 rounded-full bg-neutral-900/90 py-2.5 text-[10px] font-medium uppercase tracking-[0.04em] text-white opacity-0 backdrop-blur-md transition group-hover:opacity-100"
           onClick={(e) => {
             e.stopPropagation();
             onQuickView();

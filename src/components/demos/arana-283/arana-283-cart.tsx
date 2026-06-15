@@ -21,7 +21,7 @@ export function Arana283Cart({ open, onClose, cart, onRemove }: Props) {
         <div className="flex items-center justify-between border-b border-slate-800 p-6">
           <div className="flex items-center gap-2">
             <ShoppingBag className="h-5 w-5 text-purple-400" />
-            <h3 className="text-sm font-black uppercase tracking-wider text-white">Bolsa de reserva</h3>
+            <h3 className="text-sm font-black uppercase tracking-[0.04em] text-white">Bolsa de reserva</h3>
             <span className="rounded bg-purple-600/20 px-2 py-0.5 text-[10px] font-black text-purple-400">
               {cart.length}
             </span>
@@ -77,7 +77,7 @@ export function Arana283Cart({ open, onClose, cart, onRemove }: Props) {
               href={aranaCartWhatsApp(cart)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 py-4 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-purple-500/15"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 py-4 text-xs font-black uppercase tracking-[0.04em] text-white shadow-lg shadow-purple-500/15"
             >
               Confirmar por WhatsApp
             </a>

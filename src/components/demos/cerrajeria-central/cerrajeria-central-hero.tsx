@@ -18,7 +18,7 @@ export function CerrajeriaCentralHero({ onUrgency, onCatalog }: Props) {
         <Image src={cfg.heroImage} alt="Llaves y seguridad" fill priority className="object-cover opacity-50" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/90 to-zinc-950/60" />
         <div className="relative z-10 mx-auto flex min-h-[50vh] max-w-7xl flex-col justify-center px-3 py-14 sm:min-h-[58vh] sm:px-4">
-          <p className="text-xs font-black uppercase tracking-[0.3em] text-amber-400">24 hs · GBA sur</p>
+          <p className="text-xs font-black uppercase tracking-[0.04em] text-amber-400">24 hs · GBA sur</p>
           <h1 className="mt-4 max-w-xl text-3xl font-black uppercase leading-tight text-white sm:text-5xl">
             Rapidez y seguridad para tu hogar y tu auto
           </h1>

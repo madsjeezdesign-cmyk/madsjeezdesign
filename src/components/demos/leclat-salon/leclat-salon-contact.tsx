@@ -9,12 +9,12 @@ export function LeclatSalonContact() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.4em] text-rose-400">Visitanos</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-rose-400">Visitanos</p>
             <h2 className="mt-2 font-serif text-3xl font-light text-stone-900">Ubicación & horarios</h2>
 
             <div className="mt-8 space-y-4">
               <div className="rounded-2xl border-2 border-rose-200 bg-rose-50/50 p-5">
-                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-rose-600">
+                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.04em] text-rose-600">
                   <Clock className="h-4 w-4" />
                   Jueves a sábados — días estrella
                 </p>

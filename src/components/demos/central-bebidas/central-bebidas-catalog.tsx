@@ -50,7 +50,7 @@ export function CentralBebidasCatalog({ mode, search, onAdd }: Props) {
     <section id="catalogo" className="scroll-mt-4 border-b border-zinc-800 bg-zinc-950 py-6">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-3 sm:flex-row sm:px-4">
         <aside className="shrink-0 sm:w-52">
-          <p className="mb-3 text-[10px] font-black uppercase tracking-widest text-[color:var(--muted-body)]">Categorías</p>
+          <p className="mb-3 text-[10px] font-black uppercase tracking-[0.04em] text-[color:var(--muted-body)]">Categorías</p>
           <nav className="flex gap-2 overflow-x-auto pb-2 sm:flex-col sm:overflow-visible sm:pb-0">
             {BEBIDA_CATEGORIES.map((c) => (
               <button

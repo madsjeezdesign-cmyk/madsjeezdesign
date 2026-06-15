@@ -73,7 +73,7 @@ export function LeclatSalonBooking({ selectedServiceIds, onConfirmed }: Props) {
     <section id="turnos" className="scroll-mt-20 bg-gradient-to-b from-rose-50/40 to-stone-50 py-16 sm:py-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <div className="text-center">
-          <p className="text-[10px] font-medium uppercase tracking-[0.4em] text-rose-400">Reservas online</p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-rose-400">Reservas online</p>
           <h2 className="mt-2 font-serif text-3xl font-light text-stone-900">Agendá tu turno</h2>
           {activeIds.length > 0 ? (
             <p className="mt-2 text-sm text-stone-500">
@@ -95,7 +95,7 @@ export function LeclatSalonBooking({ selectedServiceIds, onConfirmed }: Props) {
               }`}
             >
               <s.icon className="h-4 w-4" strokeWidth={1.5} />
-              <span className="text-[9px] font-medium uppercase tracking-wider">{s.label}</span>
+              <span className="text-[9px] font-medium uppercase tracking-[0.04em]">{s.label}</span>
             </div>
           ))}
         </div>
@@ -149,7 +149,7 @@ export function LeclatSalonBooking({ selectedServiceIds, onConfirmed }: Props) {
           {step === 3 && (
             <div className="space-y-6">
               <div>
-                <p className="mb-2 text-xs font-medium uppercase tracking-wider text-stone-400">Día</p>
+                <p className="mb-2 text-xs font-medium uppercase tracking-[0.04em] text-stone-400">Día</p>
                 <div className="flex flex-wrap gap-2">
                   {days.map((d) => (
                     <button
@@ -169,7 +169,7 @@ export function LeclatSalonBooking({ selectedServiceIds, onConfirmed }: Props) {
                 </div>
               </div>
               <div>
-                <p className="mb-2 text-xs font-medium uppercase tracking-wider text-stone-400">Turno</p>
+                <p className="mb-2 text-xs font-medium uppercase tracking-[0.04em] text-stone-400">Turno</p>
                 <div className="flex gap-2">
                   <button
                     type="button"
@@ -250,7 +250,7 @@ export function LeclatSalonBooking({ selectedServiceIds, onConfirmed }: Props) {
               type="button"
               disabled={!canNext}
               onClick={() => setStep((s) => s + 1)}
-              className="flex items-center gap-1 rounded-full bg-rose-500 px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white disabled:opacity-40"
+              className="flex items-center gap-1 rounded-full bg-rose-500 px-5 py-2 text-xs font-semibold uppercase tracking-[0.04em] text-white disabled:opacity-40"
             >
               Siguiente <ChevronRight className="h-4 w-4" />
             </button>
@@ -258,7 +258,7 @@ export function LeclatSalonBooking({ selectedServiceIds, onConfirmed }: Props) {
             <button
               type="button"
               onClick={confirm}
-              className="rounded-full bg-stone-900 px-6 py-2 text-xs font-semibold uppercase tracking-wider text-white"
+              className="rounded-full bg-stone-900 px-6 py-2 text-xs font-semibold uppercase tracking-[0.04em] text-white"
             >
               Confirmar reserva
             </button>

@@ -30,7 +30,7 @@ export function PizzeriaNapolesHalfBuilder({ onAdd }: Props) {
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="text-[10px] font-bold uppercase tracking-wider text-red-400">Mitad A</label>
+          <label className="text-[10px] font-bold uppercase tracking-[0.04em] text-red-400">Mitad A</label>
           <select
             value={halfAId}
             onChange={(e) => setHalfAId(e.target.value)}
@@ -45,7 +45,7 @@ export function PizzeriaNapolesHalfBuilder({ onAdd }: Props) {
           <p className="mt-2 text-[11px] text-stone-500">{halfA.description}</p>
         </div>
         <div>
-          <label className="text-[10px] font-bold uppercase tracking-wider text-orange-400">Mitad B</label>
+          <label className="text-[10px] font-bold uppercase tracking-[0.04em] text-orange-400">Mitad B</label>
           <select
             value={halfBId}
             onChange={(e) => setHalfBId(e.target.value)}

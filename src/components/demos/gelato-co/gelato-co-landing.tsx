@@ -92,13 +92,13 @@ export function GelatoCoLanding() {
         theme={{
           section: "bg-stone-900 text-stone-100",
           invert: false,
-          label: "text-[10px] font-semibold uppercase tracking-widest text-stone-500",
+          label: "text-[10px] font-semibold uppercase tracking-[0.04em] text-stone-500",
           input:
             "mt-2 w-full rounded-xl border border-stone-600 bg-stone-950 px-4 py-3 text-sm text-white focus:border-rose-400 focus:outline-none",
           focus: "focus:border-rose-400",
           card: "rounded-2xl border border-stone-700 bg-stone-950 p-8",
           button:
-            "rounded-full bg-rose-400 px-8 py-3 text-xs font-bold uppercase tracking-widest text-stone-900",
+            "rounded-full bg-rose-400 px-8 py-3 text-xs font-bold uppercase tracking-[0.04em] text-stone-900",
         }}
       />
 

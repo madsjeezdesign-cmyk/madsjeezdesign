@@ -299,7 +299,7 @@ export function TradeWorkerLanding({ slug }: Props) {
                 <>
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/55 to-transparent" />
                   <div className="absolute bottom-5 left-5 right-5 text-white">
-                    <p className="text-[10px] uppercase tracking-wider opacity-80">{gallery[0]?.meta}</p>
+                    <p className="text-[10px] uppercase tracking-[0.04em] opacity-80">{gallery[0]?.meta}</p>
                     <p className="mt-1 text-lg font-medium">{gallery[0]?.caption}</p>
                   </div>
                 </>
@@ -309,7 +309,7 @@ export function TradeWorkerLanding({ slug }: Props) {
               className="absolute -bottom-5 -left-5 hidden border bg-white px-5 py-4 shadow-md md:block"
               style={{ borderColor: hairline, borderRadius: isRestraint ? 2 : 6 }}
             >
-              <p className="text-[10px] uppercase tracking-wider" style={{ color: muted }}>
+              <p className="text-[10px] uppercase tracking-[0.04em]" style={{ color: muted }}>
                 {isRestraint ? "Próxima entrega" : "Disponibilidad"}
               </p>
               <p
@@ -339,7 +339,7 @@ export function TradeWorkerLanding({ slug }: Props) {
             >
               <item.icon className="mt-0.5 h-4 w-4 shrink-0" style={{ color: ink }} />
               <div>
-                <p className="text-[10px] uppercase tracking-wider" style={{ color: muted }}>{item.label}</p>
+                <p className="text-[10px] uppercase tracking-[0.04em]" style={{ color: muted }}>{item.label}</p>
                 <p className="mt-1 text-sm font-medium" style={{ color: "#171717" }}>{item.value}</p>
               </div>
             </div>

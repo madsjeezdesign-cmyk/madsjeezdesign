@@ -15,7 +15,7 @@ export function DemoCerrajeriaLanding() {
 
   return (
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
-      <div className="bg-yellow-500 px-4 py-2 text-center text-[11px] font-black uppercase tracking-wider text-black">
+      <div className="bg-yellow-500 px-4 py-2 text-center text-[11px] font-black uppercase tracking-[0.04em] text-black">
         <Timer className="mx-auto mb-1 h-4 w-4 md:inline md:mr-2" />
         Urgencias 24 h — promedio llegada 35 min (radio demo)
       </div>
@@ -36,7 +36,7 @@ export function DemoCerrajeriaLanding() {
         titleColorClass="text-yellow-50"
         leadColorClass="text-yellow-100/55"
         kicker={
-          <p className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-yellow-500">
+          <p className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-yellow-500">
             <ScanLine className="h-4 w-4" />
             Cilindros · RFID · control accesos
           </p>

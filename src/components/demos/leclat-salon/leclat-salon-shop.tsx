@@ -16,7 +16,7 @@ export function LeclatSalonShop({ onAdd, cartCount, onOpenCart }: Props) {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.4em] text-rose-400">Shop express</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-rose-400">Shop express</p>
             <h2 className="mt-2 font-serif text-3xl font-light text-stone-900">Cuidado en casa</h2>
           </div>
           <button
@@ -45,7 +45,7 @@ export function LeclatSalonShop({ onAdd, cartCount, onOpenCart }: Props) {
                 <button
                   type="button"
                   onClick={() => onAdd(p)}
-                  className="mt-3 w-full rounded-full border border-rose-300 py-2 text-[10px] font-semibold uppercase tracking-wider text-rose-600 hover:bg-rose-50"
+                  className="mt-3 w-full rounded-full border border-rose-300 py-2 text-[10px] font-semibold uppercase tracking-[0.04em] text-rose-600 hover:bg-rose-50"
                 >
                   Añadir
                 </button>

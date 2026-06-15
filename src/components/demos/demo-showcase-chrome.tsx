@@ -45,14 +45,14 @@ export function ShowcaseSiteNav({
         href="/demos"
         className="flex min-w-0 flex-col transition-opacity hover:opacity-90"
       >
-        <span className="text-[11px] font-black uppercase tracking-[0.45em] text-white md:text-xs">
+        <span className="text-[11px] font-black uppercase tracking-[0.04em] text-white md:text-xs">
           MADSJEEZ
         </span>
-        <span className="text-[8px] uppercase tracking-[0.35em] text-[color:var(--muted-body)] md:text-[9px]">
+        <span className="text-[8px] uppercase tracking-[0.04em] text-[color:var(--muted-body)] md:text-[9px]">
           {demoTitle ? `${demoTitle.slice(0, 28)}${demoTitle.length > 28 ? "…" : ""}` : "Design Studio"}
         </span>
         {industry ? (
-          <span className="mt-0.5 hidden truncate text-[8px] uppercase tracking-[0.25em] text-[color:var(--muted-body)] sm:block">
+          <span className="mt-0.5 hidden truncate text-[8px] uppercase tracking-[0.04em] text-[color:var(--muted-body)] sm:block">
             {industry}
           </span>
         ) : null}
@@ -61,7 +61,7 @@ export function ShowcaseSiteNav({
         {showDemosIndexLink ? (
           <a
             href="#demo-capacidades"
-            className="hidden rounded-full border border-white/10 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-400 backdrop-blur-md transition-all hover:border-white/20 hover:text-white lg:inline-flex"
+            className="hidden rounded-full border border-white/10 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.04em] text-zinc-400 backdrop-blur-md transition-all hover:border-white/20 hover:text-white lg:inline-flex"
           >
             Módulos
           </a>
@@ -69,20 +69,20 @@ export function ShowcaseSiteNav({
         {showDemosIndexLink ? (
           <Link
             href="/demos"
-            className="inline-flex rounded-full border border-white/10 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-300 backdrop-blur-md transition-all hover:border-white/20 hover:text-white"
+            className="inline-flex rounded-full border border-white/10 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.04em] text-zinc-300 backdrop-blur-md transition-all hover:border-white/20 hover:text-white"
           >
             Todos los demos
           </Link>
         ) : null}
         <Link
           href="/"
-          className="hidden rounded-full border border-white/10 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-400 backdrop-blur-md transition-all hover:border-white/20 hover:text-white sm:inline-flex"
+          className="hidden rounded-full border border-white/10 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.04em] text-zinc-400 backdrop-blur-md transition-all hover:border-white/20 hover:text-white sm:inline-flex"
         >
           Sitio
         </Link>
         <Link
           href="/#nexo"
-          className="rounded-full border border-white/10 px-5 py-2.5 text-[9px] font-bold uppercase tracking-[0.2em] backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black md:text-[10px]"
+          className="rounded-full border border-white/10 px-5 py-2.5 text-[9px] font-bold uppercase tracking-[0.04em] backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black md:text-[10px]"
         >
           Contacto directo
         </Link>
@@ -97,10 +97,10 @@ export function ShowcaseSiteFooter() {
   return (
     <footer className="relative z-10 border-t border-white/5 px-6 py-16 md:px-12 lg:px-16">
       <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-8 md:flex-row">
-        <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)] md:text-left">
+        <p className="text-center text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)] md:text-left">
           © {year} {site.name} · Creative solutions
         </p>
-        <div className="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)]">
+        <div className="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
           <a
             href={site.whatsapp}
             target="_blank"

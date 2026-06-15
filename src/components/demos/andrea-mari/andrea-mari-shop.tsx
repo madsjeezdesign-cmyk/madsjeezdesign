@@ -76,7 +76,7 @@ export function AndreaMariShop({ onToast }: Props) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="am-reveal mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--am-accent)]">
+              <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.04em] text-[var(--am-accent)]">
                 <Sparkles className="h-4 w-4" /> Recién ingresados
               </span>
               <h2 className="mt-3 font-serif text-5xl font-black text-[var(--am-dark)]">
@@ -85,7 +85,7 @@ export function AndreaMariShop({ onToast }: Props) {
             </div>
             <a
               href="#categorias"
-              className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--am-primary)] hover:text-[var(--am-dark)]"
+              className="group flex items-center gap-2 text-sm font-bold uppercase tracking-[0.04em] text-[var(--am-primary)] hover:text-[var(--am-dark)]"
             >
               Ver categorías
               <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -101,11 +101,11 @@ export function AndreaMariShop({ onToast }: Props) {
               >
                 <div className="relative aspect-[3/4] cursor-pointer overflow-hidden rounded-3xl bg-stone-100 shadow-sm transition-shadow group-hover:shadow-xl">
                   {product.badge ? (
-                    <span className="absolute left-4 top-4 z-10 rounded-full bg-[var(--am-primary)] px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-white am-shadow-glow">
+                    <span className="absolute left-4 top-4 z-10 rounded-full bg-[var(--am-primary)] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.04em] text-white am-shadow-glow">
                       {product.badge}
                     </span>
                   ) : product.isNew ? (
-                    <span className="absolute left-4 top-4 z-10 rounded-full bg-[var(--am-dark)] px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-[var(--am-secondary)]">
+                    <span className="absolute left-4 top-4 z-10 rounded-full bg-[var(--am-dark)] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.04em] text-[var(--am-secondary)]">
                       Nuevo
                     </span>
                   ) : null}
@@ -120,14 +120,14 @@ export function AndreaMariShop({ onToast }: Props) {
                     <button
                       type="button"
                       onClick={() => addToCart(product)}
-                      className="flex w-full items-center justify-center gap-2 rounded-full bg-white/95 py-4 text-sm font-bold uppercase tracking-widest text-[var(--am-dark)] shadow-lg backdrop-blur transition-colors hover:bg-[var(--am-primary)] hover:text-white"
+                      className="flex w-full items-center justify-center gap-2 rounded-full bg-white/95 py-4 text-sm font-bold uppercase tracking-[0.04em] text-[var(--am-dark)] shadow-lg backdrop-blur transition-colors hover:bg-[var(--am-primary)] hover:text-white"
                     >
                       Lo quiero
                     </button>
                   </div>
                 </div>
                 <div className="flex flex-1 flex-col px-2 pt-5">
-                  <span className="mb-1.5 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                  <span className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.04em] text-gray-400">
                     {product.category}
                   </span>
                   <h3 className="font-serif text-xl font-bold leading-tight text-[var(--am-dark)]">
@@ -135,7 +135,7 @@ export function AndreaMariShop({ onToast }: Props) {
                   </h3>
                   <div className="mt-auto flex items-center justify-between pt-4">
                     <span className="text-xl font-black">{formatAndreaPrice(product.price)}</span>
-                    <span className="rounded-full bg-[var(--am-soft)] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[var(--am-primary)]">
+                    <span className="rounded-full bg-[var(--am-soft)] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.04em] text-[var(--am-primary)]">
                       {sizesLabel(product.sizes)}
                     </span>
                   </div>
@@ -143,7 +143,7 @@ export function AndreaMariShop({ onToast }: Props) {
                     href={andreaProductWhatsApp(product)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 text-center text-[10px] font-bold uppercase tracking-widest text-gray-500 underline hover:text-[var(--am-primary)]"
+                    className="mt-3 text-center text-[10px] font-bold uppercase tracking-[0.04em] text-gray-500 underline hover:text-[var(--am-primary)]"
                   >
                     Consultar por WhatsApp
                   </a>
@@ -204,7 +204,7 @@ export function AndreaMariShop({ onToast }: Props) {
               <button
                 type="button"
                 onClick={() => setDrawerOpen(false)}
-                className="mt-6 rounded-full bg-[var(--am-dark)] px-8 py-3 text-xs font-bold uppercase tracking-widest text-white hover:bg-[var(--am-primary)]"
+                className="mt-6 rounded-full bg-[var(--am-dark)] px-8 py-3 text-xs font-bold uppercase tracking-[0.04em] text-white hover:bg-[var(--am-primary)]"
               >
                 Ver colección
               </button>
@@ -224,7 +224,7 @@ export function AndreaMariShop({ onToast }: Props) {
                       <h4 className="pr-8 font-serif font-bold leading-snug text-[var(--am-dark)]">
                         {item.name}
                       </h4>
-                      <p className="mt-1 text-[11px] font-bold uppercase tracking-wider text-gray-400">
+                      <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.04em] text-gray-400">
                         Talle: <span className="text-[var(--am-dark)]">{item.selectedSize}</span>
                       </p>
                     </div>
@@ -277,7 +277,7 @@ export function AndreaMariShop({ onToast }: Props) {
               href={checkoutUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-green-500 to-green-600 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-lg transition-transform hover:-translate-y-0.5"
+              className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-green-500 to-green-600 py-4 text-sm font-bold uppercase tracking-[0.04em] text-white shadow-lg transition-transform hover:-translate-y-0.5"
             >
               Pedir por WhatsApp
             </a>

@@ -12,7 +12,7 @@ export function Categories({ active, onSelect }: Props) {
   return (
     <section id="categorias" className="bg-zinc-950 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <p className="text-xs font-bold uppercase tracking-[0.4em] text-red-500">Menú</p>
+        <p className="text-xs font-bold uppercase tracking-[0.04em] text-red-500">Menú</p>
         <h2 className="mt-2 font-[family-name:var(--font-gu-display)] text-4xl uppercase text-white sm:text-5xl">
           Elegí tu vicio
         </h2>

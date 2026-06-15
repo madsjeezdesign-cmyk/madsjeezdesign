@@ -111,7 +111,7 @@ export function RaicesCriollasCart({
 
         {lines.length > 0 ? (
           <div className="space-y-4 border-t border-stone-200 bg-white p-4">
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-800">Entrega</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.04em] text-amber-800">Entrega</p>
             <div className="space-y-2">
               {DELIVERY_OPTIONS.map((opt) => (
                 <button

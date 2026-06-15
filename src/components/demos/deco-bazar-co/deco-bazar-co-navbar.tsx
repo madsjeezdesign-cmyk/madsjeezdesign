@@ -48,7 +48,7 @@ export function DecoBazarCoNavbar({
           className="shrink-0 text-left"
         >
           <span className="block text-sm font-light tracking-wide text-zinc-800">{cfg.brand}</span>
-          <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-zinc-400">Nordic home</span>
+          <span className="text-[9px] font-medium uppercase tracking-[0.04em] text-zinc-400">Nordic home</span>
         </button>
 
         <nav className="relative hidden lg:block">
@@ -145,7 +145,7 @@ export function DecoBazarCoNavbar({
 
       {menuOpen ? (
         <nav className="border-t border-zinc-100 px-3 py-3 lg:hidden">
-          <p className="mb-2 text-[10px] font-medium uppercase tracking-widest text-zinc-400">Categorías</p>
+          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.04em] text-zinc-400">Categorías</p>
           <div className="flex flex-wrap gap-2">
             {DECO_NAV_CATEGORIES.map((c) => (
               <button

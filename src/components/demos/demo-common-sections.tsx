@@ -12,7 +12,7 @@ export function DemoStatsStrip({
   sectionClass = "border-y border-white/5 bg-zinc-900/40",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-950/80 p-6",
   valueClass = "text-3xl font-black text-white",
-  labelClass = "mt-2 text-[11px] font-bold uppercase tracking-wider text-[color:var(--muted-body)]",
+  labelClass = "mt-2 text-[11px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]",
   hintClass = "mt-1 text-xs text-[color:var(--muted-body)]",
 }: {
   eyebrow?: string;
@@ -27,7 +27,7 @@ export function DemoStatsStrip({
     <section className={`${demoSection} ${sectionClass}`}>
       <div className={demoContainer}>
         {eyebrow ? (
-          <p className="mb-8 text-center text-[10px] font-bold uppercase tracking-[0.35em] opacity-80 md:text-left">
+          <p className="mb-8 text-center text-[10px] font-bold uppercase tracking-[0.04em] opacity-80 md:text-left">
             {eyebrow}
           </p>
         ) : null}
@@ -188,7 +188,7 @@ export function DemoTestimonials({
   titleClass = "text-white",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-950/60 p-6",
   quoteClass = "text-sm italic leading-relaxed text-zinc-300",
-  authorClass = "mt-4 text-xs font-bold uppercase tracking-wider text-[color:var(--muted-body)]",
+  authorClass = "mt-4 text-xs font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]",
 }: {
   title: string;
   quotes: { text: string; author: string; role: string }[];
@@ -243,7 +243,7 @@ export function DemoLongStory({
     <section className={`${demoSection} ${sectionClass}`}>
       <div className={demoContainerNarrow}>
         {kicker ? (
-          <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${kickerClass}`}>
+          <p className={`text-[10px] font-bold uppercase tracking-[0.04em] ${kickerClass}`}>
             {kicker}
           </p>
         ) : null}

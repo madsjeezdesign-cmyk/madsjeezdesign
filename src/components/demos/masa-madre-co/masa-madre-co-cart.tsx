@@ -124,7 +124,7 @@ export function MasaMadreCoCart({ open, onClose, items, onUpdateQty, onRemove, o
 
           {items.length > 0 ? (
             <div className="space-y-4 border-t border-stone-200 bg-white p-6">
-              <p className="text-[10px] font-black uppercase tracking-widest text-stone-500">Tipo de entrega</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.04em] text-stone-500">Tipo de entrega</p>
               <div className="grid grid-cols-2 gap-2">
                 <button
                   type="button"
@@ -174,7 +174,7 @@ export function MasaMadreCoCart({ open, onClose, items, onUpdateQty, onRemove, o
               <button
                 type="button"
                 onClick={finish}
-                className="w-full rounded-xl bg-orange-700 py-4 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-orange-200 transition hover:bg-orange-800"
+                className="w-full rounded-xl bg-orange-700 py-4 text-xs font-black uppercase tracking-[0.04em] text-white shadow-lg shadow-orange-200 transition hover:bg-orange-800"
               >
                 Finalizar pedido
               </button>

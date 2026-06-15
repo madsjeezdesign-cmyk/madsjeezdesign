@@ -23,7 +23,7 @@ export function LunaFooter() {
             <iframe title="Mapa" src={cfg.mapsEmbedUrl} className="h-[220px] w-full opacity-80" loading="lazy" />
           </div>
         </div>
-        <p className="mt-12 text-center text-[10px] uppercase tracking-widest text-neutral-600">
+        <p className="mt-12 text-center text-[10px] uppercase tracking-[0.04em] text-neutral-600">
           © {new Date().getFullYear()} {cfg.brand} — Demo
         </p>
       </div>

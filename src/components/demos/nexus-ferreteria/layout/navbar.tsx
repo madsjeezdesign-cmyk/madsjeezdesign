@@ -58,7 +58,7 @@ export function Navbar({
               <Zap className="h-4 w-4 text-orange-400" aria-hidden />
             </span>
             <div>
-              <span className="block font-mono text-xs tracking-[0.3em] text-orange-400">
+              <span className="block font-mono text-xs tracking-[0.04em] text-orange-400">
                 {cfg.brand}
               </span>
               <span className="block text-sm font-semibold text-white">
@@ -116,7 +116,7 @@ export function Navbar({
             </button>
             <MagneticButton
               onClick={onOpenQuote}
-              className="hidden rounded-lg bg-gradient-to-r from-orange-600 to-amber-500 px-4 py-2 text-xs font-bold uppercase tracking-wider text-black shadow-lg shadow-orange-500/20 lg:inline-flex"
+              className="hidden rounded-lg bg-gradient-to-r from-orange-600 to-amber-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.04em] text-black shadow-lg shadow-orange-500/20 lg:inline-flex"
             >
               Cotizar obra
             </MagneticButton>

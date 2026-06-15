@@ -93,7 +93,7 @@ export function QuickView({ product, onClose, onAdd }: Props) {
                     onClose();
                   }}
                   disabled={product.stock === "out"}
-                  className="flex-1 rounded-lg bg-gradient-to-r from-orange-600 to-amber-500 py-3 font-bold uppercase tracking-wider text-black disabled:opacity-40"
+                  className="flex-1 rounded-lg bg-gradient-to-r from-orange-600 to-amber-500 py-3 font-bold uppercase tracking-[0.04em] text-black disabled:opacity-40"
                 >
                   Agregar al carrito
                 </button>

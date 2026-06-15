@@ -80,7 +80,7 @@ export function DemoOpticaLanding() {
             <span className="ml-2 hidden text-[10px] text-blue-500 md:inline">Óptica & Audiología</span>
           </div>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-zinc-400 md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.04em] text-zinc-400 md:flex">
           {["Servicios", "Lentes", "Audiología", "Examen"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-blue-600 transition-colors">{n}</span>
           ))}
@@ -101,7 +101,7 @@ export function DemoOpticaLanding() {
               className="mb-5 inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-1.5"
             >
               <Sparkles className="h-3.5 w-3.5 text-blue-600" />
-              <span className={`text-[10px] font-bold uppercase tracking-[0.25em] text-blue-700 ${H}`}>
+              <span className={`text-[10px] font-bold uppercase tracking-[0.04em] text-blue-700 ${H}`}>
                 Examen visual · sin turno · sin costo
               </span>
             </motion.div>
@@ -177,7 +177,7 @@ export function DemoOpticaLanding() {
             <FadeUp key={l} delay={i * 0.07}>
               <div className="px-8 py-7 text-center">
                 <p className={`text-3xl font-black text-white ${H}`}>{v}</p>
-                <p className="mt-1 text-[11px] uppercase tracking-wider text-blue-200">{l}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.04em] text-blue-200">{l}</p>
               </div>
             </FadeUp>
           ))}
@@ -188,7 +188,7 @@ export function DemoOpticaLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-blue-600 ${H}`}>Servicios</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-blue-600 ${H}`}>Servicios</p>
             <h2 className={`text-3xl font-black text-[#08143a] md:text-5xl ${H}`}>Todo lo que<br />necesita tu visión</h2>
           </FadeUp>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -224,10 +224,10 @@ export function DemoOpticaLanding() {
       <section className="border-y border-blue-100 bg-[#f0f4ff] px-5 py-12 md:px-10">
         <FadeUp>
           <div className="mx-auto max-w-6xl">
-            <p className={`mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 ${H}`}>Marcas que representamos</p>
+            <p className={`mb-6 text-center text-[10px] font-bold uppercase tracking-[0.04em] text-zinc-400 ${H}`}>Marcas que representamos</p>
             <div className="flex flex-wrap items-center justify-center gap-8">
               {BRANDS.map((b) => (
-                <span key={b} className={`text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-blue-600 transition-colors cursor-pointer ${H}`}>
+                <span key={b} className={`text-sm font-bold uppercase tracking-[0.04em] text-zinc-400 hover:text-blue-600 transition-colors cursor-pointer ${H}`}>
                   {b}
                 </span>
               ))}
@@ -241,7 +241,7 @@ export function DemoOpticaLanding() {
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <FadeUp>
-              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-blue-600 ${H}`}>Tu visita</p>
+              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-blue-600 ${H}`}>Tu visita</p>
               <h2 className={`text-3xl font-black text-[#08143a] md:text-5xl ${H}`}>De la puerta<br />a los lentes</h2>
               <div className="mt-8 space-y-5">
                 {STEPS.map((s) => (

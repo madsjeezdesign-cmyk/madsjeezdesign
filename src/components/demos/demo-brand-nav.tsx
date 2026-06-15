@@ -91,8 +91,8 @@ export function DemoBrandNav({
   const menuBtn = isLight ? "border-stone-200 text-stone-700" : "border-white/15 text-zinc-300";
 
   const defaultCta = isLight
-    ? "rounded-full bg-stone-900 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-white"
-    : "rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm hover:bg-white/20";
+    ? "rounded-full bg-stone-900 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white"
+    : "rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white backdrop-blur-sm hover:bg-white/20";
 
   return (
     <header
@@ -110,7 +110,7 @@ export function DemoBrandNav({
           ) : null}
           <span className="min-w-0">
             <span className="block truncate text-sm font-bold tracking-tight md:text-base">{brand}</span>
-            <span className={`block truncate text-[9px] uppercase tracking-[0.28em] ${muted}`}>{sub}</span>
+            <span className={`block truncate text-[9px] uppercase tracking-[0.04em] ${muted}`}>{sub}</span>
           </span>
         </a>
 
@@ -119,7 +119,7 @@ export function DemoBrandNav({
             <a
               key={l.href + l.label}
               href={l.href}
-              className={`text-[10px] font-bold uppercase tracking-[0.22em] transition-colors ${linkCls}`}
+              className={`text-[10px] font-bold uppercase tracking-[0.04em] transition-colors ${linkCls}`}
             >
               {l.label}
             </a>
@@ -156,7 +156,7 @@ export function DemoBrandNav({
                 <a
                   href={l.href}
                   onClick={close}
-                  className={`block py-2 text-xs font-bold uppercase tracking-[0.2em] ${linkCls}`}
+                  className={`block py-2 text-xs font-bold uppercase tracking-[0.04em] ${linkCls}`}
                 >
                   {l.label}
                 </a>

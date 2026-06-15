@@ -29,7 +29,7 @@ export function LunaCategories({ onSelect }: Props) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-[10px] font-medium uppercase tracking-[0.4em] text-neutral-500"
+          className="text-center text-[10px] font-medium uppercase tracking-[0.04em] text-neutral-500"
         >
           Universos
         </motion.p>

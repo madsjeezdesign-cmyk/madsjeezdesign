@@ -175,7 +175,7 @@ export function DemoFerreteriaLanding() {
 
         <div className="flex-1 space-y-6 overflow-y-auto pr-2">
           {cart.length === 0 ? (
-            <p className="py-20 text-center font-mono text-xs uppercase italic tracking-widest text-[color:var(--muted-body)]">
+            <p className="py-20 text-center font-mono text-xs uppercase italic tracking-[0.04em] text-[color:var(--muted-body)]">
               Esperando materiales...
             </p>
           ) : (
@@ -185,7 +185,7 @@ export function DemoFerreteriaLanding() {
                 className="flex items-center justify-between rounded-3xl border border-white/5 bg-white/5 p-6"
               >
                 <div>
-                  <h5 className="text-xs font-bold uppercase tracking-widest text-zinc-300">{item.name}</h5>
+                  <h5 className="text-xs font-bold uppercase tracking-[0.04em] text-zinc-300">{item.name}</h5>
                   <p className="font-black italic text-[#ff5e00]">{formatPrice(item.price * item.qty)}</p>
                   <p className="mt-1 text-[9px] font-bold uppercase text-[color:var(--muted-body)]">Cant: {item.qty}</p>
                 </div>
@@ -204,12 +204,12 @@ export function DemoFerreteriaLanding() {
 
         <div className="mt-10 border-t border-white/5 pt-10">
           <div className="mb-8 flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[color:var(--muted-body)]">Total estimado</span>
+            <span className="text-xs font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">Total estimado</span>
             <span className="font-[family-name:var(--font-demo-h-ferreteria)] text-5xl font-black text-white">
               {formatPrice(cartTotal)}
             </span>
           </div>
-          <button type="button" className="ferre-btn-premium w-full py-7 text-sm font-black uppercase tracking-[0.2em]">
+          <button type="button" className="ferre-btn-premium w-full py-7 text-sm font-black uppercase tracking-[0.04em]">
             Confirmar con el ferretero
           </button>
         </div>
@@ -228,12 +228,12 @@ export function DemoFerreteriaLanding() {
               </h1>
             </div>
             <div className="hidden h-6 w-px bg-white/10 xl:block" />
-            <span className="hidden text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)] xl:block">
+            <span className="hidden text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)] xl:block">
               Est. 1984 Â· GBA Sur
             </span>
           </div>
 
-          <div className="hidden items-center gap-8 font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-400 lg:flex">
+          <div className="hidden items-center gap-8 font-mono text-[10px] font-bold uppercase tracking-[0.04em] text-zinc-400 lg:flex">
             <a href="#shop" className="transition-colors hover:text-orange-500">
               Catálogo
             </a>
@@ -264,7 +264,7 @@ export function DemoFerreteriaLanding() {
             <div className="lg:col-span-7">
               <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-orange-600/20 bg-orange-600/10 px-4 py-2">
                 <span className="h-2 w-2 animate-ping rounded-full bg-orange-500" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-orange-500">
+                <span className="text-[10px] font-black uppercase tracking-[0.04em] text-orange-500">
                   Envíos en el día activos
                 </span>
               </div>
@@ -280,14 +280,14 @@ export function DemoFerreteriaLanding() {
               <div className="flex flex-wrap items-center gap-6">
                 <a
                   href="#shop"
-                  className="ferre-btn-premium inline-flex px-10 py-5 text-xs font-black uppercase tracking-widest md:px-12 md:py-6"
+                  className="ferre-btn-premium inline-flex px-10 py-5 text-xs font-black uppercase tracking-[0.04em] md:px-12 md:py-6"
                 >
                   Explorar catálogo
                 </a>
                 <div className="flex items-center gap-4 border-l border-white/10 pl-6 md:pl-8">
                   <div>
                     <p className="font-mono text-2xl font-bold">4.9/5</p>
-                    <p className="text-[9px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">Google reviews</p>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">Google reviews</p>
                   </div>
                 </div>
               </div>
@@ -367,7 +367,7 @@ export function DemoFerreteriaLanding() {
                 <div className="h-0.5 w-4 bg-white/10" />
               </div>
             </div>
-            <div className="flex flex-wrap gap-3 font-mono text-[10px] uppercase tracking-widest">
+            <div className="flex flex-wrap gap-3 font-mono text-[10px] uppercase tracking-[0.04em]">
               {(
                 [
                   ["all", "Todo"],
@@ -396,7 +396,7 @@ export function DemoFerreteriaLanding() {
               <div key={product.id} className="ferre-product-card group flex flex-col p-8 md:p-10">
                 <div className="mb-8 flex items-start justify-between">
                   <div
-                    className={`flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-wider ${
+                    className={`flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.04em] ${
                       product.stock === "stock" ? "text-green-500" : "text-orange-500"
                     }`}
                   >
@@ -430,7 +430,7 @@ export function DemoFerreteriaLanding() {
                 </div>
                 <div className="flex items-center justify-between border-t border-white/5 pt-8">
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">Precio final</p>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">Precio final</p>
                     <p className="font-[family-name:var(--font-demo-h-ferreteria)] text-3xl font-black italic text-white">
                       {formatPrice(product.price)}
                     </p>
@@ -457,7 +457,7 @@ export function DemoFerreteriaLanding() {
             <h3 className="mb-4 font-[family-name:var(--font-demo-h-ferreteria)] text-4xl font-black uppercase italic text-white">
               Consejos del <span className="text-orange-600">experto</span>
             </h3>
-            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[color:var(--muted-body)]">
+            <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
               No solo te vendemos, te enseñamos.
             </p>
           </div>
@@ -477,7 +477,7 @@ export function DemoFerreteriaLanding() {
                   />
                 </div>
                 <div>
-                  <span className="mb-2 block text-[9px] font-black uppercase tracking-widest text-orange-500">
+                  <span className="mb-2 block text-[9px] font-black uppercase tracking-[0.04em] text-orange-500">
                     {g.tag}
                   </span>
                   <h5 className="mb-3 text-xl font-black text-white md:text-2xl">{g.title}</h5>
@@ -520,10 +520,10 @@ export function DemoFerreteriaLanding() {
             </div>
           </div>
           <div>
-            <h6 className="mb-8 font-mono text-[10px] font-bold uppercase tracking-[0.4em] text-white">
+            <h6 className="mb-8 font-mono text-[10px] font-bold uppercase tracking-[0.04em] text-white">
               Explorar
             </h6>
-            <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-[color:var(--muted-body)]">
+            <ul className="space-y-4 text-xs font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
               <li>
                 <a href="#shop" className="hover:text-orange-500">
                   Máquinas PRO
@@ -542,7 +542,7 @@ export function DemoFerreteriaLanding() {
             </ul>
           </div>
           <div>
-            <h6 className="mb-8 font-mono text-[10px] font-bold uppercase tracking-[0.4em] text-white">
+            <h6 className="mb-8 font-mono text-[10px] font-bold uppercase tracking-[0.04em] text-white">
               Contacto
             </h6>
             <div className="space-y-4 text-xs font-bold text-zinc-400">

@@ -55,7 +55,7 @@ function NavItem({ label, active, onClick }: { label: string; active: boolean; o
     <button
       type="button"
       onClick={onClick}
-      className={`relative py-2 text-xs font-medium uppercase tracking-[0.2em] transition-all duration-300 ${
+      className={`relative py-2 text-xs font-medium uppercase tracking-[0.04em] transition-all duration-300 ${
         active ? "text-amber-500" : "text-slate-400 hover:text-white"
       }`}
     >
@@ -79,7 +79,7 @@ function ActionButton({
     <button
       type="button"
       onClick={onClick}
-      className={`group relative flex items-center gap-3 px-8 py-4 text-[10px] font-semibold uppercase tracking-widest transition-all duration-300 ${
+      className={`group relative flex items-center gap-3 px-8 py-4 text-[10px] font-semibold uppercase tracking-[0.04em] transition-all duration-300 ${
         primary
           ? "bg-amber-600 text-white shadow-lg hover:bg-amber-500"
           : "border border-slate-700 bg-transparent text-slate-300 hover:border-amber-500 hover:text-white"
@@ -115,7 +115,7 @@ function PracticeAreaCard({
         </div>
         <h3 className="mb-4 font-serif-display text-xl font-bold tracking-tight text-white">{title}</h3>
         <p className="mb-8 text-sm font-light leading-relaxed text-slate-400">{description}</p>
-        <button type="button" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-amber-600 transition-colors hover:text-white">
+        <button type="button" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-600 transition-colors hover:text-white">
           Consultar área <ChevronRight size={14} />
         </button>
       </div>
@@ -210,7 +210,7 @@ export function DemoAbogadosLanding() {
               <span className="font-serif-display text-xl font-light uppercase tracking-[0.1em] text-white md:text-2xl">
                 Varela <span className="font-bold italic text-amber-500">&</span> Asociados
               </span>
-              <span className="mt-1 text-[7px] font-bold uppercase tracking-[0.6em] text-slate-500">
+              <span className="mt-1 text-[7px] font-bold uppercase tracking-[0.04em] text-slate-500">
                 Gabinete de Abogados Consultores
               </span>
             </div>
@@ -225,11 +225,11 @@ export function DemoAbogadosLanding() {
         <div className="flex items-center gap-6 md:gap-8">
           <button type="button" className="hidden items-center gap-2 text-amber-600 transition-colors hover:text-white sm:flex">
             <Globe size={14} />
-            <span className="text-[9px] font-bold uppercase tracking-widest">ESP | ENG</span>
+            <span className="text-[9px] font-bold uppercase tracking-[0.04em]">ESP | ENG</span>
           </button>
           <button
             type="button"
-            className="hidden border border-amber-600/30 bg-amber-600/10 px-6 py-2 text-[10px] font-bold uppercase tracking-widest text-amber-500 transition-all hover:bg-amber-600 hover:text-white md:block"
+            className="hidden border border-amber-600/30 bg-amber-600/10 px-6 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500 transition-all hover:bg-amber-600 hover:text-white md:block"
           >
             Portal Cliente
           </button>
@@ -273,7 +273,7 @@ export function DemoAbogadosLanding() {
           <div className="container relative z-10 mx-auto grid items-center gap-12 px-6 lg:grid-cols-2">
             <div className="space-y-10">
               <div className="inline-flex items-center gap-3 border-l-2 border-amber-600 bg-amber-600/5 px-4 py-1.5">
-                <span className="text-[10px] font-bold italic uppercase tracking-[0.5em] text-amber-500">
+                <span className="text-[10px] font-bold italic uppercase tracking-[0.04em] text-amber-500">
                   Desde 1985 · Prestigio & Ética
                 </span>
               </div>
@@ -309,7 +309,7 @@ export function DemoAbogadosLanding() {
                   <div className="text-center">
                     <Award size={32} className="mx-auto mb-2 text-amber-500" />
                     <p className="font-serif-display text-2xl text-white">Top Tier</p>
-                    <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500">Legal Ranking 2026</p>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.04em] text-slate-500">Legal Ranking 2026</p>
                   </div>
                 </div>
               </div>
@@ -336,7 +336,7 @@ export function DemoAbogadosLanding() {
         <section id="areas" className="bg-[#0a0f18] py-28 md:py-32">
           <div className="container mx-auto px-6">
             <div className="mb-24 max-w-2xl">
-              <h5 className="mb-4 text-[10px] font-bold uppercase tracking-[0.4em] text-amber-600">Especializaciones</h5>
+              <h5 className="mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-600">Especializaciones</h5>
               <h2 className="font-serif-display text-4xl leading-tight text-white md:text-5xl">
                 Áreas de Práctica <br />
                 <span className="font-light italic text-slate-500">Donde marcamos la diferencia.</span>
@@ -356,7 +356,7 @@ export function DemoAbogadosLanding() {
                 <div key={item.t} className="flex gap-4">
                   <item.icon className="mt-1 shrink-0 text-amber-600" size={22} />
                   <div>
-                    <p className="font-bold uppercase tracking-wider text-white">{item.t}</p>
+                    <p className="font-bold uppercase tracking-[0.04em] text-white">{item.t}</p>
                     <p className="mt-1 text-sm text-slate-500">{item.d}</p>
                   </div>
                 </div>
@@ -372,8 +372,8 @@ export function DemoAbogadosLanding() {
               &ldquo;La atención al detalle y la capacidad estratégica del equipo superó todas nuestras expectativas. Son, sin duda, los mejores aliados legales en el sector corporativo.&rdquo;
             </p>
             <div>
-              <p className="mb-1 text-xs font-bold uppercase tracking-widest text-white">Dr. Alejandro Varela</p>
-              <p className="text-[10px] font-bold italic uppercase tracking-widest text-amber-600">CEO, Varela International Group</p>
+              <p className="mb-1 text-xs font-bold uppercase tracking-[0.04em] text-white">Dr. Alejandro Varela</p>
+              <p className="text-[10px] font-bold italic uppercase tracking-[0.04em] text-amber-600">CEO, Varela International Group</p>
             </div>
           </div>
           <div className="absolute left-0 top-1/2 h-px w-full bg-gradient-to-r from-transparent via-slate-800 to-transparent" aria-hidden />
@@ -389,13 +389,13 @@ export function DemoAbogadosLanding() {
                   </div>
                   <div className="bg-amber-600 p-8 text-white">
                     <p className="mb-1 font-serif-display text-4xl italic">35+</p>
-                    <p className="text-[9px] font-black uppercase tracking-widest">Años de Trayectoria</p>
+                    <p className="text-[9px] font-black uppercase tracking-[0.04em]">Años de Trayectoria</p>
                   </div>
                 </div>
                 <div className="space-y-4 pt-12">
                   <div className="border border-slate-800 bg-slate-900 p-8">
                     <p className="mb-1 font-serif-display text-4xl italic">98%</p>
-                    <p className="text-[9px] font-black uppercase tracking-widest text-slate-500">Resoluciones Exitosas</p>
+                    <p className="text-[9px] font-black uppercase tracking-[0.04em] text-slate-500">Resoluciones Exitosas</p>
                   </div>
                   <div className="relative h-64 overflow-hidden">
                     <Image src={v.b} alt="Consulta legal" fill className="object-cover grayscale" sizes="50vw" />
@@ -403,7 +403,7 @@ export function DemoAbogadosLanding() {
                 </div>
               </div>
               <div className="va-scroll-reveal space-y-8">
-                <h5 className="text-[10px] font-bold uppercase italic tracking-[0.4em] text-amber-600">Nuestra Misión</h5>
+                <h5 className="text-[10px] font-bold uppercase italic tracking-[0.04em] text-amber-600">Nuestra Misión</h5>
                 <h2 className="font-serif-display text-5xl italic leading-tight text-white">
                   Excelencia que inspira <br />
                   <span className="text-slate-500 not-italic">tranquilidad.</span>
@@ -432,7 +432,7 @@ export function DemoAbogadosLanding() {
         <section id="equipo" className="bg-[#0a0f18] py-28 md:py-32">
           <div className="container mx-auto px-6">
             <div className="va-scroll-reveal mb-16 max-w-2xl">
-              <h5 className="mb-4 text-[10px] font-bold uppercase tracking-[0.4em] text-amber-600">Socios y asociados</h5>
+              <h5 className="mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-600">Socios y asociados</h5>
               <h2 className="font-serif-display text-4xl text-white md:text-5xl">
                 Equipo <span className="italic text-slate-500">director.</span>
               </h2>
@@ -450,7 +450,7 @@ export function DemoAbogadosLanding() {
                     />
                   </div>
                   <h3 className="font-serif-display text-xl text-white">{member.name}</h3>
-                  <p className="mt-2 text-[10px] font-bold uppercase tracking-widest text-amber-600">{member.role}</p>
+                  <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-600">{member.role}</p>
                   <p className="mt-2 text-sm text-slate-500">{member.cred}</p>
                 </article>
               ))}
@@ -462,19 +462,19 @@ export function DemoAbogadosLanding() {
           <div className="container mx-auto px-6">
             <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <h5 className="mb-4 text-[10px] font-bold uppercase tracking-[0.4em] text-amber-600">Insights</h5>
+                <h5 className="mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-600">Insights</h5>
                 <h2 className="font-serif-display text-3xl text-white md:text-4xl">Publicaciones recientes</h2>
               </div>
-              <button type="button" className="text-[10px] font-bold uppercase tracking-widest text-amber-500 hover:text-white">
+              <button type="button" className="text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500 hover:text-white">
                 Ver archivo completo →
               </button>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {publications.map((pub) => (
                 <article key={pub.title} className="va-scroll-reveal group border border-slate-800 bg-slate-900/30 p-6 transition-colors hover:border-amber-600/30">
-                  <span className="text-[9px] font-black uppercase tracking-widest text-amber-600">{pub.tag}</span>
+                  <span className="text-[9px] font-black uppercase tracking-[0.04em] text-amber-600">{pub.tag}</span>
                   <h3 className="mt-4 font-serif-display text-lg text-white group-hover:text-amber-500">{pub.title}</h3>
-                  <p className="mt-4 text-[10px] uppercase tracking-widest text-slate-500">{pub.date}</p>
+                  <p className="mt-4 text-[10px] uppercase tracking-[0.04em] text-slate-500">{pub.date}</p>
                 </article>
               ))}
             </div>
@@ -491,11 +491,11 @@ export function DemoAbogadosLanding() {
               <div className="space-y-6">
                 <div className="flex items-center gap-4 text-slate-300">
                   <Phone size={18} className="text-amber-600" />
-                  <span className="text-sm font-medium tracking-widest">+54 11 4321 8800</span>
+                  <span className="text-sm font-medium tracking-[0.04em]">+54 11 4321 8800</span>
                 </div>
                 <div className="flex items-center gap-4 text-slate-300">
                   <Mail size={18} className="text-amber-600" />
-                  <span className="text-sm font-medium tracking-widest">contacto@varelaasociados.demo</span>
+                  <span className="text-sm font-medium tracking-[0.04em]">contacto@varelaasociados.demo</span>
                 </div>
               </div>
               <div className="mt-12">
@@ -520,7 +520,7 @@ export function DemoAbogadosLanding() {
                 { q: "¿Cómo se facturan los honorarios?", a: "Fee fijo, hora o success fee según complejidad; presupuesto escrito antes de iniciar." },
               ].map((item) => (
                 <details key={item.q} className="border border-slate-800 bg-slate-900/40 p-5">
-                  <summary className="cursor-pointer font-bold uppercase tracking-wider text-white">{item.q}</summary>
+                  <summary className="cursor-pointer font-bold uppercase tracking-[0.04em] text-white">{item.q}</summary>
                   <p className="mt-3 text-sm text-slate-500">{item.a}</p>
                 </details>
               ))}
@@ -544,11 +544,11 @@ export function DemoAbogadosLanding() {
             <div className="space-y-8">
               <div className="flex items-center gap-3">
                 <Scale className="text-amber-600" size={24} />
-                <span className="font-serif-display text-xl uppercase tracking-widest text-white">
+                <span className="font-serif-display text-xl uppercase tracking-[0.04em] text-white">
                   VARELA <span className="text-amber-600">&</span> ASOC.
                 </span>
               </div>
-              <p className="text-[10px] font-medium uppercase leading-relaxed tracking-[0.2em] text-slate-400">
+              <p className="text-[10px] font-medium uppercase leading-relaxed tracking-[0.04em] text-slate-400">
                 Defensa integral y consultoría estratégica de alto nivel. Comprometidos con la justicia y el éxito de nuestros representados.
               </p>
               <div className="flex gap-6 border-t border-slate-900 pt-4">
@@ -558,7 +558,7 @@ export function DemoAbogadosLanding() {
               </div>
             </div>
             <div>
-              <h4 className="mb-10 inline-block border-b border-amber-600/20 pb-2 text-[9px] font-bold uppercase tracking-[0.3em] text-white">
+              <h4 className="mb-10 inline-block border-b border-amber-600/20 pb-2 text-[9px] font-bold uppercase tracking-[0.04em] text-white">
                 Áreas Elite
               </h4>
               <ul className="space-y-5 text-[10px] font-bold uppercase tracking-[0.15em]">
@@ -570,10 +570,10 @@ export function DemoAbogadosLanding() {
               </ul>
             </div>
             <div>
-              <h4 className="mb-10 inline-block border-b border-amber-600/20 pb-2 text-[9px] font-bold uppercase tracking-[0.3em] text-white">
+              <h4 className="mb-10 inline-block border-b border-amber-600/20 pb-2 text-[9px] font-bold uppercase tracking-[0.04em] text-white">
                 Sedes
               </h4>
-              <ul className="space-y-6 text-[10px] font-medium tracking-widest">
+              <ul className="space-y-6 text-[10px] font-medium tracking-[0.04em]">
                 <li className="flex items-start gap-4">
                   <MapPin size={18} className="shrink-0 text-amber-700" />
                   <span>
@@ -591,24 +591,24 @@ export function DemoAbogadosLanding() {
               </ul>
             </div>
             <div>
-              <h4 className="mb-10 inline-block border-b border-amber-600/20 pb-2 text-[9px] font-bold uppercase tracking-[0.3em] text-white">
+              <h4 className="mb-10 inline-block border-b border-amber-600/20 pb-2 text-[9px] font-bold uppercase tracking-[0.04em] text-white">
                 Legal Tech
               </h4>
               <div className="border border-slate-800 bg-slate-900/50 p-6">
-                <p className="mb-4 text-[10px] uppercase leading-relaxed tracking-widest text-slate-400">
+                <p className="mb-4 text-[10px] uppercase leading-relaxed tracking-[0.04em] text-slate-400">
                   Acceda a documentos seguros con encriptación de grado empresarial.
                 </p>
-                <button type="button" className="w-full border border-amber-600/20 bg-amber-600/10 py-3 text-[9px] font-black uppercase tracking-[0.2em] text-amber-500 transition-all hover:bg-amber-600 hover:text-white">
+                <button type="button" className="w-full border border-amber-600/20 bg-amber-600/10 py-3 text-[9px] font-black uppercase tracking-[0.04em] text-amber-500 transition-all hover:bg-amber-600 hover:text-white">
                   Entrar al Vault
                 </button>
               </div>
             </div>
           </div>
           <div className="flex flex-col items-center justify-between gap-6 border-t border-slate-900 pt-12 md:flex-row">
-            <p className="text-[8px] font-bold uppercase tracking-[0.4em] text-slate-600">
+            <p className="text-[8px] font-bold uppercase tracking-[0.04em] text-slate-600">
               © {new Date().getFullYear()} VARELA & ASOCIADOS · TODOS LOS DERECHOS RESERVADOS
             </p>
-            <div className="flex gap-8 text-[8px] font-bold uppercase tracking-[0.2em] text-slate-700">
+            <div className="flex gap-8 text-[8px] font-bold uppercase tracking-[0.04em] text-slate-700">
               <span className="cursor-pointer hover:text-amber-500">Privacidad</span>
               <span className="cursor-pointer hover:text-amber-500">Aviso Legal</span>
               <span className="cursor-pointer hover:text-amber-500">Cookies</span>

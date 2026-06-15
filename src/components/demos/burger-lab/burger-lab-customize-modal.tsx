@@ -76,7 +76,7 @@ export function BurgerLabCustomizeModal({ product, onClose, onAdd }: Props) {
           <h3 className="text-xl font-black uppercase text-white">{product.name}</h3>
           <p className="mt-1 text-xs text-[color:var(--muted-body)]">{product.description}</p>
 
-          <p className="mt-6 text-[10px] font-black uppercase tracking-widest text-amber-400">Tipo de combo</p>
+          <p className="mt-6 text-[10px] font-black uppercase tracking-[0.04em] text-amber-400">Tipo de combo</p>
           <div className="mt-2 space-y-2">
             {BURGER_COMBO_OPTIONS.map((c) => (
               <button
@@ -97,7 +97,7 @@ export function BurgerLabCustomizeModal({ product, onClose, onAdd }: Props) {
             ))}
           </div>
 
-          <p className="mt-6 text-[10px] font-black uppercase tracking-widest text-amber-400">Agregar extra</p>
+          <p className="mt-6 text-[10px] font-black uppercase tracking-[0.04em] text-amber-400">Agregar extra</p>
           <div className="mt-2 space-y-2">
             {BURGER_EXTRAS.map((e) => (
               <label

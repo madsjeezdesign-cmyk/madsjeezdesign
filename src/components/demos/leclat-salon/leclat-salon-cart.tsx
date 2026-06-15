@@ -54,7 +54,7 @@ export function LeclatSalonCart({ open, onClose, items, onRemove }: Props) {
             <button
               type="button"
               onClick={onClose}
-              className="mt-4 w-full rounded-full bg-stone-900 py-3 text-[10px] font-semibold uppercase tracking-wider text-white"
+              className="mt-4 w-full rounded-full bg-stone-900 py-3 text-[10px] font-semibold uppercase tracking-[0.04em] text-white"
             >
               Retirar en salón (demo)
             </button>

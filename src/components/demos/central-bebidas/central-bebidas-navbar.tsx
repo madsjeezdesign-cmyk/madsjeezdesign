@@ -43,7 +43,7 @@ export function CentralBebidasNavbar({
       <div className="border-b border-zinc-900 bg-zinc-900/80 py-1.5">
         <div className="cdb-ticker flex whitespace-nowrap">
           {[...cfg.deliveryZones, ...cfg.deliveryZones].map((z, i) => (
-            <span key={`${z}-${i}`} className="mx-6 text-[10px] font-bold uppercase tracking-wider text-[color:var(--muted-body)]">
+            <span key={`${z}-${i}`} className="mx-6 text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
               {z}
             </span>
           ))}

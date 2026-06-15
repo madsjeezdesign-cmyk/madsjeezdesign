@@ -66,7 +66,7 @@ export function AromasKymHero() {
           style={{ animationDelay: "60ms" }}
         >
           <span className="h-px w-8 bg-[#1c1814]/40" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.42em] text-[#5a4e44]">
+          <span className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#5a4e44]">
             Hecho a mano · Buenos Aires
           </span>
           <span className="h-px w-8 bg-[#1c1814]/40" />
@@ -117,7 +117,7 @@ export function AromasKymHero() {
         >
           <a
             href="#coleccion"
-            className="group relative inline-flex items-center gap-3 rounded-full bg-[#1c1814] px-8 py-4 font-mono text-[11px] uppercase tracking-[0.32em] text-[#fbf8f1] transition hover:bg-[#b85a3c]"
+            className="group relative inline-flex items-center gap-3 rounded-full bg-[#1c1814] px-8 py-4 font-mono text-[11px] uppercase tracking-[0.04em] text-[#fbf8f1] transition hover:bg-[#b85a3c]"
           >
             Ver colección
             <span className="inline-block transition-transform duration-500 group-hover:translate-x-1.5">
@@ -143,7 +143,7 @@ export function AromasKymHero() {
               {i > 0 ? (
                 <span className="hidden h-1 w-1 rounded-full bg-[#8d8074] md:inline" />
               ) : null}
-              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-[#5a4e44]">
+              <span className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#5a4e44]">
                 {v}
               </span>
             </div>
@@ -154,7 +154,7 @@ export function AromasKymHero() {
       {/* Bottom scroll cue */}
       <div className="pointer-events-none absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
         <div className="flex flex-col items-center gap-2 opacity-60">
-          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-[#5a4e44]">
+          <span className="font-mono text-[9px] uppercase tracking-[0.04em] text-[#5a4e44]">
             Scroll
           </span>
           <span className="h-8 w-px bg-[#5a4e44]/50" />

@@ -9,7 +9,7 @@
  *
  * Banlist enforced:
  *  - No glassmorphism, no clip-path skew buttons.
- *  - No ALL-CAPS tracking-[0.3em]+ everywhere.
+ *  - No ALL-CAPS tracking-[0.04em]+ everywhere.
  *  - No "EN VIVO · viewers · subs" badge on non-streamer formats; on streamer
  *    only when isLive === true.
  *  - No lg:grid-cols-2 desktop split for tiktoker (phone stays the lead).
@@ -586,7 +586,7 @@ function StreamerHero(props: HeroBase & {
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
             <div className="absolute inset-x-4 bottom-4 flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-wider text-white/80">
+                <p className="text-xs uppercase tracking-[0.04em] text-white/80">
                   {isLive ? "En vivo" : "Próximo stream"}
                 </p>
                 <p className="mt-0.5 text-base font-semibold text-white">{config.industryLabel}</p>
@@ -679,7 +679,7 @@ function YoutuberHero(props: HeroBase & {
                 />
                 <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/85 via-transparent to-transparent p-5">
                   <div>
-                    <span className="rounded bg-white/10 px-2 py-0.5 text-[10px] uppercase tracking-wider text-white">Latest</span>
+                    <span className="rounded bg-white/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.04em] text-white">Latest</span>
                     <p className="mt-2 text-lg font-semibold leading-tight text-white md:text-xl">{latest?.title}</p>
                     <p className="mt-1 text-xs text-white/70">{latest?.meta}</p>
                   </div>
@@ -911,7 +911,7 @@ function ComunicadoresHero(props: HeroBase & { schedule: string }) {
             className="absolute -bottom-5 -left-5 hidden rounded-xl border bg-white px-5 py-4 shadow-md md:block"
             style={{ borderColor: hairline }}
           >
-            <p className="text-[10px] uppercase tracking-wider" style={{ color: muted }}>Suscriptores</p>
+            <p className="text-[10px] uppercase tracking-[0.04em]" style={{ color: muted }}>Suscriptores</p>
             <p className="mt-1 text-2xl font-semibold tabular-nums" style={{ color: ink }}>{config.statFollowers}</p>
           </div>
         </motion.div>

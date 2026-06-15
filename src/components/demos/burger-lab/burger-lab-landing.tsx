@@ -122,13 +122,13 @@ export function BurgerLabLanding() {
         theme={{
           section: "bg-zinc-900 text-zinc-100",
           invert: false,
-          label: "text-[10px] font-black uppercase tracking-widest text-[color:var(--muted-body)]",
+          label: "text-[10px] font-black uppercase tracking-[0.04em] text-[color:var(--muted-body)]",
           input:
             "mt-2 w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none",
           focus: "focus:border-amber-500",
           card: "rounded-xl border border-zinc-800 bg-zinc-950 p-8",
           button:
-            "rounded-xl bg-amber-500 px-8 py-3 text-xs font-black uppercase tracking-widest text-zinc-950",
+            "rounded-xl bg-amber-500 px-8 py-3 text-xs font-black uppercase tracking-[0.04em] text-zinc-950",
         }}
       />
 

@@ -44,7 +44,7 @@ export function CerrajeriaCentralEmergency({ modalOpen, onOpenModal, onCloseModa
             >
               <X className="h-6 w-6" />
             </button>
-            <p className="text-xs font-black uppercase tracking-widest text-amber-400">Acción inmediata</p>
+            <p className="text-xs font-black uppercase tracking-[0.04em] text-amber-400">Acción inmediata</p>
             <h3 className="mt-2 text-2xl font-black uppercase text-white">Urgencia 24 horas</h3>
             <p className="mt-3 text-sm text-zinc-400">
               Apertura de puertas · autos · persianas · cambio de cerradura en el momento.

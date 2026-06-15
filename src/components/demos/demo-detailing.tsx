@@ -87,7 +87,7 @@ export function DemoDetailingLanding() {
           <Sparkles className="h-5 w-5 text-sky-400" />
           <span className={`text-sm font-black uppercase tracking-[0.15em] text-white ${H}`}>SHINE AUTODETAIL</span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.04em] text-[color:var(--muted-body)] md:flex">
           {["Servicios", "Ceramic", "PPF", "Galería"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-sky-400 transition-colors">{n}</span>
           ))}
@@ -166,7 +166,7 @@ export function DemoDetailingLanding() {
             className="flex whitespace-nowrap"
           >
             {[...Array(6)].map((_, i) => (
-              <span key={i} className={`mr-12 text-[11px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)] ${H}`}>
+              <span key={i} className={`mr-12 text-[11px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)] ${H}`}>
                 CERAMIC PRO 9H &nbsp;·&nbsp; PPF XPEL &nbsp;·&nbsp; PAINT CORRECTION &nbsp;·&nbsp; WINDOW TINTING &nbsp;·&nbsp; VINYL WRAP &nbsp;
               </span>
             ))}
@@ -178,7 +178,7 @@ export function DemoDetailingLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-sky-500 ${H}`}>El proceso</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-sky-500 ${H}`}>El proceso</p>
             <h2 className={`text-3xl font-black uppercase text-white md:text-5xl ${H}`}>Cuatro etapas.<br />Un resultado perfecto.</h2>
           </FadeUp>
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -204,7 +204,7 @@ export function DemoDetailingLanding() {
       <section className="border-y border-white/[0.06] bg-[#050505] px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-sky-500 ${H}`}>Paquetes</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-sky-500 ${H}`}>Paquetes</p>
             <h2 className={`text-3xl font-black uppercase text-white md:text-5xl ${H}`}>Protección a tu medida</h2>
           </FadeUp>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -218,11 +218,11 @@ export function DemoDetailingLanding() {
                   }`}
                 >
                   {pkg.featured && (
-                    <span className={`absolute -top-3 left-6 rounded-full bg-sky-500 px-4 py-1 text-[10px] font-black uppercase tracking-widest text-black ${H}`}>
+                    <span className={`absolute -top-3 left-6 rounded-full bg-sky-500 px-4 py-1 text-[10px] font-black uppercase tracking-[0.04em] text-black ${H}`}>
                       Más popular
                     </span>
                   )}
-                  <p className={`text-[11px] font-bold uppercase tracking-widest text-[color:var(--muted-body)] ${H}`}>{pkg.name}</p>
+                  <p className={`text-[11px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)] ${H}`}>{pkg.name}</p>
                   <p className={`mt-2 text-4xl font-black text-white ${H}`}>{pkg.price}</p>
                   <p className="text-[11px] text-[color:var(--muted-body)]">{pkg.time} de trabajo</p>
 
@@ -258,7 +258,7 @@ export function DemoDetailingLanding() {
         <div className="absolute inset-0 flex items-center px-5 md:px-10">
           <FadeUp>
             <div className="max-w-lg">
-              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-sky-400 ${H}`}>Ceramic Pro 9H</p>
+              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-sky-400 ${H}`}>Ceramic Pro 9H</p>
               <h2 className={`text-3xl font-black text-white md:text-5xl ${H}`}>Dureza 9H.<br />Brillo de por vida.</h2>
               <p className="mt-4 text-sm text-zinc-400">La única protección permanente con garantía registrada. Resistencia química, UV y rayones superficiales.</p>
               <button type="button" className={`mt-6 flex items-center gap-2 rounded border border-sky-400/50 px-6 py-3 font-bold text-sky-400 hover:bg-sky-500/10 transition-colors ${H}`}>

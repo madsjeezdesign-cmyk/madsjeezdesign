@@ -49,7 +49,7 @@ export function GelatoCoFlavorPicker({ size, onClose, onAdd }: Props) {
       <div className="relative flex max-h-[92vh] w-full flex-col rounded-t-3xl border border-stone-200 bg-white shadow-2xl sm:max-w-lg sm:rounded-3xl">
         <div className="flex items-center justify-between border-b border-stone-100 px-4 py-4">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-stone-400">Paso 2</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.04em] text-stone-400">Paso 2</p>
             <h3 className="font-serif text-xl text-stone-900">{size.label}</h3>
             <p className="text-xs text-stone-500">{size.subtitle}</p>
           </div>
@@ -131,7 +131,7 @@ export function GelatoCoFlavorPicker({ size, onClose, onAdd }: Props) {
               onAdd(selected);
               setSelected([]);
             }}
-            className="w-full rounded-full bg-stone-900 py-4 text-sm font-bold uppercase tracking-wider text-white disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:bg-stone-800"
+            className="w-full rounded-full bg-stone-900 py-4 text-sm font-bold uppercase tracking-[0.04em] text-white disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:bg-stone-800"
           >
             Agregar al carrito
           </button>

@@ -38,13 +38,13 @@ export function Arana283Catalog({ onAddToCart, onSelectProduct }: Props) {
   }, [search, category, size, brand, sort]);
 
   const selectClass =
-    "appearance-none cursor-pointer rounded-xl border border-slate-800 bg-slate-950 py-2.5 pl-4 pr-8 text-xs font-black uppercase tracking-wider text-slate-300 hover:border-slate-700 focus:border-purple-500 focus:outline-none";
+    "appearance-none cursor-pointer rounded-xl border border-slate-800 bg-slate-950 py-2.5 pl-4 pr-8 text-xs font-black uppercase tracking-[0.04em] text-slate-300 hover:border-slate-700 focus:border-purple-500 focus:outline-none";
 
   return (
     <section className="arana-fade-in mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
-          <span className="mb-1 block text-xs font-black uppercase tracking-widest text-pink-400">
+          <span className="mb-1 block text-xs font-black uppercase tracking-[0.04em] text-pink-400">
             Stock exclusivo del local
           </span>
           <h2 className="text-3xl font-black text-white">La vidriera de joyas únicas</h2>
@@ -130,7 +130,7 @@ export function Arana283Catalog({ onAddToCart, onSelectProduct }: Props) {
                     className="object-cover opacity-75 transition-transform duration-500 group-hover:scale-105"
                     sizes="33vw"
                   />
-                  <span className="absolute left-3 top-3 rounded-full border border-slate-800 bg-slate-950/90 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-pink-400 backdrop-blur-md">
+                  <span className="absolute left-3 top-3 rounded-full border border-slate-800 bg-slate-950/90 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.04em] text-pink-400 backdrop-blur-md">
                     {product.brand}
                   </span>
                   <span className="absolute bottom-3 right-3 rounded-md bg-purple-600 px-2.5 py-1 text-[10px] font-black uppercase text-white">
@@ -142,7 +142,7 @@ export function Arana283Catalog({ onAddToCart, onSelectProduct }: Props) {
                     {product.title}
                   </h3>
                   <p className="line-clamp-2 text-xs leading-relaxed text-slate-400">{product.desc}</p>
-                  <span className="inline-flex items-center gap-1 rounded border border-slate-800 bg-slate-950 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-lime-400">
+                  <span className="inline-flex items-center gap-1 rounded border border-slate-800 bg-slate-950 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.04em] text-lime-400">
                     ✨ {product.condition}
                   </span>
                 </div>
@@ -163,7 +163,7 @@ export function Arana283Catalog({ onAddToCart, onSelectProduct }: Props) {
                   <button
                     type="button"
                     onClick={() => onAddToCart(product)}
-                    className="flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-2.5 text-xs font-black uppercase tracking-wider text-white shadow-md shadow-purple-500/15"
+                    className="flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-2.5 text-xs font-black uppercase tracking-[0.04em] text-white shadow-md shadow-purple-500/15"
                   >
                     <Plus className="h-4 w-4" /> Bolsa
                   </button>

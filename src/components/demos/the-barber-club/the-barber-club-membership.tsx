@@ -12,7 +12,7 @@ export function TheBarberClubMembership({ onJoin }: Props) {
     <section id="club" className="border-t border-zinc-800 bg-zinc-900/40 py-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="mb-12 text-center">
-          <span className="text-xs font-black uppercase tracking-widest text-amber-500">Club de miembros</span>
+          <span className="text-xs font-black uppercase tracking-[0.04em] text-amber-500">Club de miembros</span>
           <h2 className="mt-2 font-serif text-3xl font-bold text-white">Suscripciones mensuales</h2>
           <p className="mt-2 text-sm text-[color:var(--muted-body)]">Beneficios exclusivos para clientes frecuentes.</p>
         </div>
@@ -48,7 +48,7 @@ export function TheBarberClubMembership({ onJoin }: Props) {
               <button
                 type="button"
                 onClick={() => onJoin(plan.name)}
-                className={`mt-8 w-full rounded-xl py-4 text-xs font-black uppercase tracking-widest ${
+                className={`mt-8 w-full rounded-xl py-4 text-xs font-black uppercase tracking-[0.04em] ${
                   plan.id === "vip"
                     ? "bg-gradient-to-r from-amber-500 to-amber-600 text-zinc-950"
                     : "border border-zinc-700 text-white hover:border-amber-500/40"

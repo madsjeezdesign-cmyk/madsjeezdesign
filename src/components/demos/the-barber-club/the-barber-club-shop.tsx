@@ -13,7 +13,7 @@ export function TheBarberClubShop({ onAdd }: Props) {
     <section id="shop" className="border-t border-zinc-800 bg-zinc-900/30 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-12 text-center">
-          <span className="text-xs font-black uppercase tracking-widest text-amber-500">Barber shop</span>
+          <span className="text-xs font-black uppercase tracking-[0.04em] text-amber-500">Barber shop</span>
           <h2 className="mt-2 font-serif text-3xl font-bold text-white">Productos premium</h2>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

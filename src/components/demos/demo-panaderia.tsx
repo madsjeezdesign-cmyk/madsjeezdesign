@@ -77,7 +77,7 @@ export function DemoPanaderiaLanding() {
             <span className="ml-2 hidden text-[10px] text-amber-700 md:inline">Panadería artesanal</span>
           </div>
         </div>
-        <div className="hidden items-center gap-6 text-[11px] font-semibold uppercase tracking-widest text-stone-400 md:flex">
+        <div className="hidden items-center gap-6 text-[11px] font-semibold uppercase tracking-[0.04em] text-stone-400 md:flex">
           {["Menú", "Horarios", "Pedidos corp.", "Nosotros"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-amber-800 transition-colors">{n}</span>
           ))}
@@ -192,14 +192,14 @@ export function DemoPanaderiaLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-6xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-700 ${H}`}>Lo que horneamos</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-700 ${H}`}>Lo que horneamos</p>
             <h2 className={`text-3xl font-bold text-[#1a1208] md:text-5xl ${H}`}>El menú de<br />hoy</h2>
           </FadeUp>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {MENU.map((section, i) => (
               <FadeUp key={section.cat} delay={i * 0.08}>
                 <div className="rounded-2xl border border-[#e8e0d0] bg-[#f5f0e8] p-6">
-                  <p className={`mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-700 ${H}`}>{section.cat}</p>
+                  <p className={`mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-700 ${H}`}>{section.cat}</p>
                   <ul className="space-y-2">
                     {section.items.map((item) => (
                       <li key={item} className="flex items-center justify-between border-b border-[#e8e0d0] pb-2 text-sm text-[#1a1208]">
@@ -234,7 +234,7 @@ export function DemoPanaderiaLanding() {
             </div>
           </FadeUp>
           <FadeUp delay={0.15}>
-            <p className={`mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-700 ${H}`}>Nuestra historia</p>
+            <p className={`mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-700 ${H}`}>Nuestra historia</p>
             <h2 className={`text-4xl font-bold text-[#1a1208] md:text-5xl ${H}`}>Ocho años de levadura, fuego y oficio</h2>
             <div className="mt-6 space-y-4 text-sm leading-loose text-stone-500">
               <p>Empezamos en casa, con una madre de levadura que viajó desde San Francisco. Hoy horneamos más de 200 kg de pan por día sin perder ni un gramo de artesanía.</p>
@@ -244,7 +244,7 @@ export function DemoPanaderiaLanding() {
               {[["8+", "años"], ["200 kg", "diarios"], ["0", "congelados"]].map(([v, l]) => (
                 <div key={l} className="text-center">
                   <p className={`text-2xl font-black text-amber-700 ${H}`}>{v}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-widest text-stone-400">{l}</p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.04em] text-stone-400">{l}</p>
                 </div>
               ))}
             </div>
@@ -257,7 +257,7 @@ export function DemoPanaderiaLanding() {
         <div className="mx-auto max-w-4xl">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <FadeUp>
-              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-700 ${H}`}>Horarios</p>
+              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-700 ${H}`}>Horarios</p>
               <h2 className={`text-3xl font-bold text-[#1a1208] ${H}`}>Primera hornada<br />a las 6 AM</h2>
               <div className="mt-6 space-y-3">
                 {HOURS.map((h) => (

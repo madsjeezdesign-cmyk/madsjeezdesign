@@ -35,7 +35,7 @@ export function LeclatSalonHero() {
 
       <div className="relative z-10 mx-auto flex min-h-[calc(88vh-4rem)] max-w-6xl flex-col justify-center px-4 py-20 sm:px-6">
         <div key={index} className="leclat-hero max-w-xl">
-          <p className="text-[10px] font-medium uppercase tracking-[0.45em] text-rose-400">Belleza con alma</p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-rose-400">Belleza con alma</p>
           <h1 className="mt-4 font-serif text-4xl font-light leading-tight text-stone-900 sm:text-5xl md:text-6xl">
             {slide.title}
           </h1>
@@ -44,7 +44,7 @@ export function LeclatSalonHero() {
           <button
             type="button"
             onClick={() => document.querySelector("#turnos")?.scrollIntoView({ behavior: "smooth" })}
-            className="mt-8 rounded-full border border-rose-300 bg-white px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-rose-600 shadow-sm transition hover:bg-rose-50"
+            className="mt-8 rounded-full border border-rose-300 bg-white px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.04em] text-rose-600 shadow-sm transition hover:bg-rose-50"
           >
             Reservar tu experiencia
           </button>

@@ -32,7 +32,7 @@ const NAV_ITEMS = ["Tratamientos", "Tecnología", "Especialistas", "Sedes"] as c
 
 function DentalBadge({ children }: { children: ReactNode }) {
   return (
-    <Div className="inline-flex animate-pulse items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-blue-700 shadow-sm">
+    <Div className="inline-flex animate-pulse items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-5 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-blue-700 shadow-sm">
       <Sparkles size={12} />
       {children}
     </Div>
@@ -61,7 +61,7 @@ function NavButton({
       }`}
     >
       <Icon size={18} className={active ? "" : "group-hover:text-blue-600"} />
-      <span className="hidden text-xs font-bold uppercase tracking-widest md:block">{label}</span>
+      <span className="hidden text-xs font-bold uppercase tracking-[0.04em] md:block">{label}</span>
     </button>
   );
 }
@@ -120,7 +120,7 @@ function ServiceCard({
         <Div className="mt-10 h-0 overflow-hidden transition-all duration-500 group-hover:h-12">
           <button
             type="button"
-            className={`flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] ${
+            className={`flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.04em] ${
               dark ? "text-blue-400" : "text-blue-600"
             }`}
           >
@@ -182,7 +182,7 @@ export function DemoOdontologiaLanding() {
                 <span className="block font-[family-name:var(--font-demo-h-odontologia)] text-xl font-black uppercase leading-none tracking-tighter">
                   Galénica
                 </span>
-                <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-blue-600">Dental Elite</span>
+                <span className="text-[9px] font-bold uppercase tracking-[0.04em] text-blue-600">Dental Elite</span>
               </Div>
             </Link>
             <Div className="hidden items-center gap-10 lg:flex">
@@ -190,7 +190,7 @@ export function DemoOdontologiaLanding() {
                 <a
                   key={item}
                   href="#tratamientos"
-                  className="group relative text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 transition-colors hover:text-blue-600"
+                  className="group relative text-[10px] font-black uppercase tracking-[0.04em] text-slate-500 transition-colors hover:text-blue-600"
                 >
                   {item}
                   <span className="absolute -bottom-2 left-0 h-0.5 w-0 bg-blue-600 transition-all duration-500 group-hover:w-full" />
@@ -220,7 +220,7 @@ export function DemoOdontologiaLanding() {
               key={item}
               href="#tratamientos"
               onClick={() => setMobileNav(false)}
-              className="font-[family-name:var(--font-demo-h-odontologia)] text-lg font-black uppercase tracking-widest"
+              className="font-[family-name:var(--font-demo-h-odontologia)] text-lg font-black uppercase tracking-[0.04em]"
             >
               {item}
             </a>
@@ -253,7 +253,7 @@ export function DemoOdontologiaLanding() {
                 <button
                   type="button"
                   onClick={scrollToLead}
-                  className="group flex items-center gap-4 rounded-[28px] bg-slate-950 px-10 py-5 text-xs font-black uppercase tracking-[0.2em] text-white shadow-2xl transition-all hover:-translate-y-2 hover:bg-blue-600 md:px-12 md:py-6"
+                  className="group flex items-center gap-4 rounded-[28px] bg-slate-950 px-10 py-5 text-xs font-black uppercase tracking-[0.04em] text-white shadow-2xl transition-all hover:-translate-y-2 hover:bg-blue-600 md:px-12 md:py-6"
                 >
                   Consulta de diagnóstico <ChevronRight size={18} />
                 </button>
@@ -264,7 +264,7 @@ export function DemoOdontologiaLanding() {
                     </Div>
                   </Div>
                   <Div>
-                    <p className="text-xs font-black uppercase tracking-widest">Simulación AI</p>
+                    <p className="text-xs font-black uppercase tracking-[0.04em]">Simulación AI</p>
                     <p className="text-[10px] font-bold uppercase tracking-tighter text-slate-400">
                       Mirá tu sonrisa antes de empezar
                     </p>
@@ -286,7 +286,7 @@ export function DemoOdontologiaLanding() {
                 <Div className="absolute bottom-8 left-6 right-6 rounded-[32px] border border-white/20 bg-white/10 p-6 backdrop-blur-2xl md:bottom-12 md:left-10 md:right-10 md:rounded-[40px] md:p-8">
                   <Div className="flex items-end justify-between gap-4">
                     <Div className="space-y-1">
-                      <p className="text-[10px] font-black uppercase tracking-widest text-blue-400">Procedimiento</p>
+                      <p className="text-[10px] font-black uppercase tracking-[0.04em] text-blue-400">Procedimiento</p>
                       <p className="font-[family-name:var(--font-demo-h-odontologia)] text-xl font-black uppercase tracking-tighter text-white md:text-2xl">
                         Implante zirconia
                       </p>
@@ -358,7 +358,7 @@ export function DemoOdontologiaLanding() {
               <Div className="space-y-10 md:space-y-12">
                 <Div className="flex items-center gap-4 text-blue-500">
                   <ShieldCheck size={32} />
-                  <span className="text-xs font-black uppercase tracking-[0.5em]">Seguridad y biocompatibilidad</span>
+                  <span className="text-xs font-black uppercase tracking-[0.04em]">Seguridad y biocompatibilidad</span>
                 </Div>
                 <h3 className="font-[family-name:var(--font-demo-h-odontologia)] text-4xl font-black uppercase leading-[0.9] tracking-tighter text-white md:text-6xl lg:text-7xl">
                   Tecnología que <br />
@@ -374,7 +374,7 @@ export function DemoOdontologiaLanding() {
                   ].map((stat) => (
                     <Div key={stat.lab} className="border-l-2 border-blue-600 pl-6">
                       <p className="text-3xl font-black text-white md:text-4xl">{stat.val}</p>
-                      <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{stat.lab}</p>
+                      <p className="text-[10px] font-black uppercase tracking-[0.04em] text-slate-500">{stat.lab}</p>
                     </Div>
                   ))}
                 </Div>
@@ -413,7 +413,7 @@ export function DemoOdontologiaLanding() {
                   Galénica Dental
                 </span>
               </Div>
-              <p className="max-w-sm text-[11px] font-medium uppercase leading-relaxed tracking-widest text-slate-400">
+              <p className="max-w-sm text-[11px] font-medium uppercase leading-relaxed tracking-[0.04em] text-slate-400">
                 Redefiniendo el estándar de salud bucodental con innovación tecnológica y arte médico.
               </p>
               <Div className="flex gap-4">
@@ -435,13 +435,13 @@ export function DemoOdontologiaLanding() {
               { t: "Pacientes", links: ["Turnos online", "Financiación", "Blog salud", "Contacto"] },
             ].map((col) => (
               <Div key={col.t}>
-                <h4 className="mb-8 text-[11px] font-black uppercase tracking-[0.4em] text-slate-950 md:mb-10">{col.t}</h4>
+                <h4 className="mb-8 text-[11px] font-black uppercase tracking-[0.04em] text-slate-950 md:mb-10">{col.t}</h4>
                 <ul className="space-y-5 md:space-y-6">
                   {col.links.map((link) => (
                     <li key={link}>
                       <a
                         href="#tratamientos"
-                        className="text-[10px] font-bold uppercase tracking-widest text-slate-400 transition-colors hover:text-blue-600"
+                        className="text-[10px] font-bold uppercase tracking-[0.04em] text-slate-400 transition-colors hover:text-blue-600"
                       >
                         {link}
                       </a>
@@ -452,12 +452,12 @@ export function DemoOdontologiaLanding() {
             ))}
           </Div>
           <Div className="flex flex-col items-center justify-between gap-8 border-t border-slate-100 pt-12 md:flex-row md:gap-10 md:pt-16">
-            <p className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 md:text-left">
+            <p className="text-center text-[10px] font-black uppercase tracking-[0.04em] text-slate-400 md:text-left">
               © {new Date().getFullYear()} Galénica Dental Elite · Demo MadsJeez Design
             </p>
             <Div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-emerald-500" />
-              <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">
+              <span className="text-[9px] font-black uppercase tracking-[0.04em] text-slate-400">
                 Status: sistemas online
               </span>
             </Div>
@@ -473,7 +473,7 @@ export function DemoOdontologiaLanding() {
           aria-label="Chat médico"
         >
           <MessageCircle size={24} />
-          <span className="pointer-events-none absolute right-20 whitespace-nowrap rounded-xl bg-slate-950 px-4 py-2 text-[10px] font-black uppercase tracking-widest text-white opacity-0 transition-opacity group-hover:opacity-100">
+          <span className="pointer-events-none absolute right-20 whitespace-nowrap rounded-xl bg-slate-950 px-4 py-2 text-[10px] font-black uppercase tracking-[0.04em] text-white opacity-0 transition-opacity group-hover:opacity-100">
             Chat médico
           </span>
         </button>

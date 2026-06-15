@@ -103,16 +103,16 @@ export function Arana283Landing() {
               A
             </div>
             <div>
-              <span className="block bg-gradient-to-r from-white via-slate-100 to-purple-400 bg-clip-text text-lg font-black tracking-widest text-transparent">
+              <span className="block bg-gradient-to-r from-white via-slate-100 to-purple-400 bg-clip-text text-lg font-black tracking-[0.04em] text-transparent">
                 {cfg.brand}
               </span>
-              <span className="-mt-1 block text-[9px] font-extrabold uppercase tracking-[0.25em] text-pink-500">
+              <span className="-mt-1 block text-[9px] font-extrabold uppercase tracking-[0.04em] text-pink-500">
                 {cfg.brandTag}
               </span>
             </div>
           </button>
 
-          <nav className="hidden space-x-8 text-xs font-bold uppercase tracking-wider md:flex">
+          <nav className="hidden space-x-8 text-xs font-bold uppercase tracking-[0.04em] md:flex">
             {NAV.map((n) => (
               <button key={n.id} type="button" onClick={() => setTab(n.id)} className={navBtn(n.id)}>
                 {n.label}
@@ -138,7 +138,7 @@ export function Arana283Landing() {
               href={aranaWhatsAppLink(cfg.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-lg sm:flex"
+              className="hidden rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-3 text-xs font-black uppercase tracking-[0.04em] text-white shadow-lg sm:flex"
             >
               WhatsApp
             </a>
@@ -192,13 +192,13 @@ export function Arana283Landing() {
         theme={{
           section: "bg-slate-950 text-slate-100",
           invert: false,
-          label: "text-[10px] font-bold uppercase tracking-widest text-slate-500",
+          label: "text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500",
           input:
             "mt-2 w-full rounded-xl border border-slate-700 bg-[#09090b] px-4 py-3 text-sm text-white focus:border-purple-500 focus:outline-none",
           focus: "focus:border-purple-500",
           card: "rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10",
           button:
-            "rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-xs font-bold uppercase tracking-widest text-white",
+            "rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-xs font-bold uppercase tracking-[0.04em] text-white",
         }}
       />
 
@@ -206,13 +206,13 @@ export function Arana283Landing() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 grid grid-cols-1 gap-8 border-b border-slate-900 pb-12 md:grid-cols-4">
             <div className="md:col-span-2">
-              <span className="block bg-gradient-to-r from-white to-purple-400 bg-clip-text text-lg font-black tracking-widest text-transparent">
+              <span className="block bg-gradient-to-r from-white to-purple-400 bg-clip-text text-lg font-black tracking-[0.04em] text-transparent">
                 {cfg.brand}
               </span>
               <p className="mt-4 max-w-sm text-xs leading-relaxed text-slate-400">{cfg.tagline}</p>
             </div>
             <div>
-              <h4 className="mb-3 text-xs font-black uppercase tracking-widest text-white">Secciones</h4>
+              <h4 className="mb-3 text-xs font-black uppercase tracking-[0.04em] text-white">Secciones</h4>
               <ul className="space-y-2 text-[11px] text-slate-400">
                 {NAV.map((n) => (
                   <li key={n.id}>
@@ -224,7 +224,7 @@ export function Arana283Landing() {
               </ul>
             </div>
             <div>
-              <h4 className="mb-3 text-xs font-black uppercase tracking-widest text-white">Contacto</h4>
+              <h4 className="mb-3 text-xs font-black uppercase tracking-[0.04em] text-white">Contacto</h4>
               <p className="text-[11px] leading-relaxed text-slate-400">
                 {cfg.addressLines[0]}
                 <br />

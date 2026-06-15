@@ -306,7 +306,7 @@ export function RetailGridLanding({ slug }: Props) {
                 </div>
                 <div className="flex items-start justify-between gap-2 p-3.5">
                   <div>
-                    <p className="text-[10px] uppercase tracking-wider text-white/45">{p.tag}</p>
+                    <p className="text-[10px] uppercase tracking-[0.04em] text-white/45">{p.tag}</p>
                     <p className="mt-1 text-sm leading-tight text-white">{p.name}</p>
                     <p className="mt-1 text-sm font-medium text-white">{p.price}</p>
                   </div>

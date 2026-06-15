@@ -25,7 +25,7 @@ export function RaicesCriollasNavbar({ cartCount, cartTotal, onOpenCart, onCateg
       <div className="overflow-hidden border-b border-amber-900/10 bg-gradient-to-r from-amber-900/90 via-orange-900/85 to-amber-900/90 py-1.5">
         <div className="rc-ticker flex whitespace-nowrap">
           {[cfg.topBanner, cfg.topBanner].map((text, i) => (
-            <span key={i} className="mx-8 text-[10px] font-medium tracking-[0.2em] text-amber-50/95">
+            <span key={i} className="mx-8 text-[10px] font-medium tracking-[0.04em] text-amber-50/95">
               {text}
             </span>
           ))}
@@ -39,7 +39,7 @@ export function RaicesCriollasNavbar({ cartCount, cartTotal, onOpenCart, onCateg
           className="shrink-0 text-left"
         >
           <span className="font-serif text-lg text-stone-900">{cfg.brand}</span>
-          <span className="block text-[9px] font-medium uppercase tracking-[0.25em] text-amber-800/80">
+          <span className="block text-[9px] font-medium uppercase tracking-[0.04em] text-amber-800/80">
             Pulpería premium
           </span>
         </button>

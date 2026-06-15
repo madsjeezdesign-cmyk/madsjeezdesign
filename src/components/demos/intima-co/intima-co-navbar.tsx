@@ -18,7 +18,7 @@ export function IntimaCoNavbar({ cartCount, cartTotal, onOpenCart, onNav }: Prop
       <div className="overflow-hidden border-b border-rose-100/50 bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 py-1.5">
         <div className="ic-ticker flex whitespace-nowrap">
           {[cfg.topBanner, cfg.topBanner].map((text, i) => (
-            <span key={i} className="mx-10 text-[10px] font-light tracking-[0.25em] text-stone-200">
+            <span key={i} className="mx-10 text-[10px] font-light tracking-[0.04em] text-stone-200">
               {text}
             </span>
           ))}
@@ -44,7 +44,7 @@ export function IntimaCoNavbar({ cartCount, cartTotal, onOpenCart, onNav }: Prop
               key={link.href}
               type="button"
               onClick={() => onNav(link.href)}
-              className="text-xs font-light uppercase tracking-[0.2em] text-stone-500 transition hover:text-stone-900"
+              className="text-xs font-light uppercase tracking-[0.04em] text-stone-500 transition hover:text-stone-900"
             >
               {link.label}
             </button>

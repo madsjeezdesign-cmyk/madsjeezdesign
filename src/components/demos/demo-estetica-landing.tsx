@@ -125,15 +125,15 @@ export function DemoEsteticaLanding() {
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between">
           <div className="flex flex-col">
-            <h1 className="font-[family-name:var(--font-demo-h-estetica)] text-2xl leading-none tracking-[0.2em] text-[#c48e58] md:text-3xl">
+            <h1 className="font-[family-name:var(--font-demo-h-estetica)] text-2xl leading-none tracking-[0.04em] text-[#c48e58] md:text-3xl">
               AURA
             </h1>
-            <span className="mt-1 text-[8px] uppercase tracking-[0.5em] opacity-60">
+            <span className="mt-1 text-[8px] uppercase tracking-[0.04em] opacity-60">
               Advanced skin clinic
             </span>
           </div>
 
-          <div className="hidden items-center gap-10 text-[10px] font-bold uppercase tracking-[0.3em] lg:flex">
+          <div className="hidden items-center gap-10 text-[10px] font-bold uppercase tracking-[0.04em] lg:flex">
             <a href="#filosofia" className="transition-colors hover:text-[#c48e58]">
               Nuestra visión
             </a>
@@ -151,7 +151,7 @@ export function DemoEsteticaLanding() {
           <button
             type="button"
             onClick={toggleBooking}
-            className="aura-btn px-6 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] md:px-8 md:py-3"
+            className="aura-btn px-6 py-2.5 text-[10px] font-bold uppercase tracking-[0.04em] md:px-8 md:py-3"
           >
             Agendar diagnóstico
           </button>
@@ -162,7 +162,7 @@ export function DemoEsteticaLanding() {
       <section className="relative z-10 flex min-h-screen items-center px-6 pb-16 pt-28 md:px-8 md:pt-20">
         <div className="mx-auto grid max-w-[1400px] items-center gap-12 lg:grid-cols-12">
           <div className="aura-reveal lg:col-span-6">
-            <h5 className="mb-8 flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.6em] text-[#c48e58]">
+            <h5 className="mb-8 flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.04em] text-[#c48e58]">
               <span className="h-px w-8 bg-[#c48e58]" />
               Pioneros en dermocosmética
             </h5>
@@ -178,7 +178,7 @@ export function DemoEsteticaLanding() {
               <button
                 type="button"
                 onClick={toggleBooking}
-                className="aura-btn px-10 py-5 text-[11px] font-bold uppercase tracking-[0.3em] shadow-lg md:px-12"
+                className="aura-btn px-10 py-5 text-[11px] font-bold uppercase tracking-[0.04em] shadow-lg md:px-12"
               >
                 Comenzar proceso
               </button>
@@ -193,7 +193,7 @@ export function DemoEsteticaLanding() {
                     </span>
                   ))}
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                <span className="text-[10px] font-bold uppercase tracking-[0.04em] text-gray-400">
                   +2.500 pacientes felices
                 </span>
               </div>
@@ -216,7 +216,7 @@ export function DemoEsteticaLanding() {
                 <p className="font-[family-name:var(--font-demo-h-estetica)] text-3xl leading-none text-[#c48e58]">
                   98%
                 </p>
-                <p className="mt-2 text-[8px] font-bold uppercase tracking-widest">
+                <p className="mt-2 text-[8px] font-bold uppercase tracking-[0.04em]">
                   Efectividad en <br />
                   rejuvenecimiento
                 </p>
@@ -232,7 +232,7 @@ export function DemoEsteticaLanding() {
         className="relative z-10 border-y border-gray-100 bg-white/60 px-6 py-24 md:px-8 md:py-32"
       >
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#c48e58]">
+          <span className="text-[10px] font-bold uppercase tracking-[0.04em] text-[#c48e58]">
             Nuestra visión
           </span>
           <h3 className="mt-6 font-[family-name:var(--font-demo-h-estetica)] text-4xl text-gray-800 md:text-5xl">
@@ -258,7 +258,7 @@ export function DemoEsteticaLanding() {
                 <span className="font-[family-name:var(--font-demo-h-estetica)] text-4xl italic text-[#c48e58]">
                   {step.n}
                 </span>
-                <h4 className="text-lg font-bold uppercase tracking-widest">{step.title}</h4>
+                <h4 className="text-lg font-bold uppercase tracking-[0.04em]">{step.title}</h4>
                 <p className="text-sm font-light leading-relaxed text-gray-400">{step.text}</p>
               </div>
             ))}
@@ -313,7 +313,7 @@ export function DemoEsteticaLanding() {
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                     sizes="(max-width: 1024px) 100vw, 33vw"
                   />
-                  <div className="absolute left-6 top-6 bg-white/90 px-4 py-2 text-[8px] font-black uppercase tracking-widest">
+                  <div className="absolute left-6 top-6 bg-white/90 px-4 py-2 text-[8px] font-black uppercase tracking-[0.04em]">
                     {t.badge}
                   </div>
                 </div>
@@ -342,7 +342,7 @@ export function DemoEsteticaLanding() {
                     <button
                       type="button"
                       onClick={toggleBooking}
-                      className="border-b border-[#c48e58] pb-1 text-[10px] font-black uppercase tracking-widest"
+                      className="border-b border-[#c48e58] pb-1 text-[10px] font-black uppercase tracking-[0.04em]"
                     >
                       Reservar
                     </button>
@@ -371,7 +371,7 @@ export function DemoEsteticaLanding() {
                   className="group w-full border-b border-white/10 pb-6 text-left"
                 >
                   <div className="mb-4 flex items-center justify-between gap-4">
-                    <h5 className="text-sm font-bold uppercase tracking-widest">{item.q}</h5>
+                    <h5 className="text-sm font-bold uppercase tracking-[0.04em]">{item.q}</h5>
                     <Plus
                       className={`h-4 w-4 shrink-0 text-[#c48e58] transition-transform ${open ? "rotate-45" : "group-hover:rotate-45"}`}
                     />
@@ -412,7 +412,7 @@ export function DemoEsteticaLanding() {
             </div>
           </div>
           <div>
-            <h5 className="mb-8 text-[9px] font-black uppercase tracking-[0.4em] text-[#c48e58]">
+            <h5 className="mb-8 text-[9px] font-black uppercase tracking-[0.04em] text-[#c48e58]">
               Navegación
             </h5>
             <ul className="space-y-4 text-xs text-gray-400">
@@ -434,7 +434,7 @@ export function DemoEsteticaLanding() {
             </ul>
           </div>
           <div>
-            <h5 className="mb-8 text-[9px] font-black uppercase tracking-[0.4em] text-[#c48e58]">
+            <h5 className="mb-8 text-[9px] font-black uppercase tracking-[0.04em] text-[#c48e58]">
               Ubicación
             </h5>
             <p className="text-xs leading-loose text-gray-400">
@@ -446,7 +446,7 @@ export function DemoEsteticaLanding() {
             </p>
           </div>
           <div>
-            <h5 className="mb-8 text-[9px] font-black uppercase tracking-[0.4em] text-[#c48e58]">
+            <h5 className="mb-8 text-[9px] font-black uppercase tracking-[0.04em] text-[#c48e58]">
               Newsletter
             </h5>
             <p className="mb-6 text-xs text-gray-400">
@@ -483,7 +483,7 @@ export function DemoEsteticaLanding() {
               <h3 className="font-[family-name:var(--font-demo-h-estetica)] text-4xl italic leading-none md:text-5xl">
                 Mi turno
               </h3>
-              <p className="mt-4 text-[9px] uppercase tracking-widest text-[#c48e58]">
+              <p className="mt-4 text-[9px] uppercase tracking-[0.04em] text-[#c48e58]">
                 Completá tu solicitud de diagnóstico
               </p>
             </div>
@@ -507,7 +507,7 @@ export function DemoEsteticaLanding() {
           >
             <div className="grid gap-8 md:grid-cols-2">
               <div className="border-b border-gray-100 pb-4">
-                <label className="mb-2 block text-[8px] font-black uppercase tracking-widest text-[#c48e58]">
+                <label className="mb-2 block text-[8px] font-black uppercase tracking-[0.04em] text-[#c48e58]">
                   Nombre
                 </label>
                 <input
@@ -516,7 +516,7 @@ export function DemoEsteticaLanding() {
                 />
               </div>
               <div className="border-b border-gray-100 pb-4">
-                <label className="mb-2 block text-[8px] font-black uppercase tracking-widest text-[#c48e58]">
+                <label className="mb-2 block text-[8px] font-black uppercase tracking-[0.04em] text-[#c48e58]">
                   WhatsApp
                 </label>
                 <input
@@ -527,7 +527,7 @@ export function DemoEsteticaLanding() {
             </div>
 
             <div className="border-b border-gray-100 pb-4">
-              <label className="mb-2 block text-[8px] font-black uppercase tracking-widest text-[#c48e58]">
+              <label className="mb-2 block text-[8px] font-black uppercase tracking-[0.04em] text-[#c48e58]">
                 Tratamiento de interés
               </label>
               <select className="w-full bg-transparent text-sm font-medium outline-none">
@@ -540,7 +540,7 @@ export function DemoEsteticaLanding() {
             </div>
 
             <div className="border-b border-gray-100 pb-4">
-              <label className="mb-2 block text-[8px] font-black uppercase tracking-widest text-[#c48e58]">
+              <label className="mb-2 block text-[8px] font-black uppercase tracking-[0.04em] text-[#c48e58]">
                 Preocupación principal
               </label>
               <textarea
@@ -559,7 +559,7 @@ export function DemoEsteticaLanding() {
 
             <button
               type="submit"
-              className="aura-btn w-full py-6 text-[11px] font-black uppercase tracking-[0.4em] shadow-xl"
+              className="aura-btn w-full py-6 text-[11px] font-black uppercase tracking-[0.04em] shadow-xl"
             >
               Solicitar turno ahora
             </button>

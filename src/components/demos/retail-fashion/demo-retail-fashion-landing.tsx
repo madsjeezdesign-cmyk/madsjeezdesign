@@ -36,7 +36,7 @@ function BrandMark({ monogram, className }: { monogram: string; className?: stri
     return <Infinity size={36} strokeWidth={1} className={className} aria-hidden />;
   }
   return (
-    <span className={`font-serif text-2xl font-light tracking-widest ${className ?? ""}`}>
+    <span className={`font-serif text-2xl font-light tracking-[0.04em] ${className ?? ""}`}>
       {monogram}
     </span>
   );
@@ -114,7 +114,7 @@ export function RetailFashionLanding({ slug }: Props) {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="group relative text-[11px] font-medium uppercase tracking-[0.2em] transition-colors duration-300"
+                  className="group relative text-[11px] font-medium uppercase tracking-[0.04em] transition-colors duration-300"
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-current transition-all duration-500 ease-out group-hover:w-full" />
@@ -126,7 +126,7 @@ export function RetailFashionLanding({ slug }: Props) {
               className={`flex w-1/3 items-center justify-center gap-4 transition-colors duration-700 ${navMuted}`}
             >
               <BrandMark monogram={config.monogram} className="hidden md:block" />
-              <span className="font-serif text-2xl font-light uppercase tracking-[0.3em] md:text-3xl">
+              <span className="font-serif text-2xl font-light uppercase tracking-[0.04em] md:text-3xl">
                 {config.brand}
               </span>
             </div>
@@ -134,7 +134,7 @@ export function RetailFashionLanding({ slug }: Props) {
             <div className={`hidden w-1/3 items-center justify-end space-x-10 md:flex ${navMuted}`}>
               <a
                 href="#boutique"
-                className="group relative text-[11px] font-medium uppercase tracking-[0.2em]"
+                className="group relative text-[11px] font-medium uppercase tracking-[0.04em]"
               >
                 Boutique
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-current transition-all duration-500 ease-out group-hover:w-full" />
@@ -221,7 +221,7 @@ export function RetailFashionLanding({ slug }: Props) {
         </div>
 
         <div className="relative z-20 mx-auto mt-16 max-w-[95vw] px-4 text-center">
-          <p className="rf-hero-kicker mb-4 text-sm font-semibold uppercase tracking-[0.45em] text-white md:text-base">
+          <p className="rf-hero-kicker mb-4 text-sm font-semibold uppercase tracking-[0.04em] text-white md:text-base">
             {config.heroKicker}
           </p>
           <h1
@@ -238,13 +238,13 @@ export function RetailFashionLanding({ slug }: Props) {
           <div className="rf-hero-kicker mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href="#shop"
-              className="inline-flex items-center gap-2 bg-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.25em] text-black transition-transform hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 bg-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.04em] text-black transition-transform hover:scale-[1.02]"
             >
               Comprar ahora <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href={isInfinita ? "#coleccion" : "#collections"}
-              className="inline-flex items-center gap-2 border border-white/80 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.25em] text-white transition-colors hover:bg-white hover:text-black"
+              className="inline-flex items-center gap-2 border border-white/80 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-white hover:text-black"
             >
               Ver colección
             </a>
@@ -252,7 +252,7 @@ export function RetailFashionLanding({ slug }: Props) {
         </div>
 
         <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center text-white/60">
-          <span className="mb-4 text-[9px] uppercase tracking-[0.3em]">Découvrir</span>
+          <span className="mb-4 text-[9px] uppercase tracking-[0.04em]">Découvrir</span>
           <div className="h-16 w-px overflow-hidden bg-white/30">
             <div className="rf-scroll-line-inner h-full w-full bg-white" />
           </div>
@@ -263,7 +263,7 @@ export function RetailFashionLanding({ slug }: Props) {
         {[0, 1].map((dup) => (
           <div
             key={dup}
-            className="rf-marquee-track flex shrink-0 items-center text-xs font-light uppercase tracking-[0.3em]"
+            className="rf-marquee-track flex shrink-0 items-center text-xs font-light uppercase tracking-[0.04em]"
             aria-hidden={dup === 1}
           >
             {config.marqueeItems.map((label) => (
@@ -303,7 +303,7 @@ export function RetailFashionLanding({ slug }: Props) {
 
             <div className="space-y-12">
               <div className="group">
-                <h4 className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">
+                <h4 className="mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-white/50">
                   Adresse
                 </h4>
                 <p className="flex items-start gap-4 text-lg font-light tracking-wide">
@@ -319,7 +319,7 @@ export function RetailFashionLanding({ slug }: Props) {
               </div>
 
               <div className="group">
-                <h4 className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">
+                <h4 className="mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-white/50">
                   Contact
                 </h4>
                 <a
@@ -339,13 +339,13 @@ export function RetailFashionLanding({ slug }: Props) {
                 href={wa}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block border border-[#25D366] bg-[#25D366] px-10 py-5 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90"
+                className="inline-block border border-[#25D366] bg-[#25D366] px-10 py-5 text-center text-[11px] font-bold uppercase tracking-[0.04em] text-white transition-opacity hover:opacity-90"
               >
                 WhatsApp · Comprar
               </a>
               <a
                 href="#shop"
-                className="inline-block border border-white px-10 py-5 text-center text-[11px] font-bold uppercase tracking-[0.2em] transition-colors hover:bg-white hover:text-black"
+                className="inline-block border border-white px-10 py-5 text-center text-[11px] font-bold uppercase tracking-[0.04em] transition-colors hover:bg-white hover:text-black"
               >
                 Ver tienda
               </a>
@@ -374,12 +374,12 @@ export function RetailFashionLanding({ slug }: Props) {
         theme={{
           section: "bg-white text-black",
           invert: true,
-          label: "text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500",
+          label: "text-[10px] font-bold uppercase tracking-[0.04em] text-gray-500",
           input:
             "mt-2 w-full border-0 border-b border-black/20 bg-transparent px-0 py-3 text-sm text-black outline-none",
           focus: "focus:border-black",
           card: "border border-black/10 bg-[#fafafa] p-8 md:p-10",
-          button: "bg-black px-6 py-3 text-[11px] uppercase tracking-[0.2em] text-white hover:bg-zinc-800",
+          button: "bg-black px-6 py-3 text-[11px] uppercase tracking-[0.04em] text-white hover:bg-zinc-800",
         }}
       />
 
@@ -387,13 +387,13 @@ export function RetailFashionLanding({ slug }: Props) {
         <div className="mx-auto flex max-w-[90%] flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex items-center gap-4">
             <BrandMark monogram={config.monogram} />
-            <span className="font-serif text-xl uppercase tracking-[0.2em]">{config.brand}</span>
+            <span className="font-serif text-xl uppercase tracking-[0.04em]">{config.brand}</span>
           </div>
-          <div className="flex gap-8 text-[9px] font-bold uppercase tracking-[0.3em] text-gray-400">
+          <div className="flex gap-8 text-[9px] font-bold uppercase tracking-[0.04em] text-gray-400">
             <span>Mentions Légales</span>
             <span>Confidentialité</span>
           </div>
-          <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-400">
+          <div className="text-[9px] font-bold uppercase tracking-[0.04em] text-gray-400">
             &copy; 2026 {config.footerLocation}
           </div>
         </div>
@@ -405,7 +405,7 @@ export function RetailFashionLanding({ slug }: Props) {
         rel="noopener noreferrer"
         className="group fixed bottom-8 right-8 z-50 flex items-center gap-4"
       >
-        <span className="-translate-x-4 border border-black/10 bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-black opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
+        <span className="-translate-x-4 border border-black/10 bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-black opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
           Service Client
         </span>
         <div className="bg-[#25D366] p-4 text-white shadow-2xl transition-transform duration-500 hover:scale-110">
