@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
+import { SpotlightCard } from "@/components/primitives";
 
 const SLUG = "foto" as const;
 const H = DEMO_HEADING_CLASS[SLUG];
@@ -144,7 +145,7 @@ export function DemoFotoLanding() {
 
         {/* shooting ticker */}
         <div className="absolute top-6 right-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-4 py-2 backdrop-blur-md">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
+          <span className="live-ping-dot" aria-hidden />
           <span className={`text-[10px] font-bold uppercase tracking-[0.04em] text-white/70 ${H}`}>Shooting disponible</span>
         </div>
       </section>
@@ -204,16 +205,18 @@ export function DemoFotoLanding() {
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {packages.map((p, i) => (
               <FadeUp key={p.name} delay={i * 0.1}>
-                <div
-                  onClick={() => setActive(i)}
-                  className={`cursor-pointer rounded-2xl border p-6 transition-all ${
+                <SpotlightCard
+                  variant="transparent"
+                  glowColor="rgba(245,158,11,0.4)"
+                  className={`!cursor-pointer !rounded-2xl !border !p-6 transition-all h-full ${
                     active === i
-                      ? "border-amber-500 bg-amber-500/[0.06] shadow-[0_0_30px_rgba(245,158,11,0.1)]"
+                      ? "!border-amber-500 !bg-amber-500/[0.06] shadow-[0_0_30px_rgba(245,158,11,0.1)]"
                       : p.featured
-                        ? "border-white/20 bg-[#0d0c0c]"
-                        : "border-white/[0.07] bg-[#0d0c0c] hover:border-white/20"
+                        ? "!border-white/20 !bg-[#0d0c0c]"
+                        : "!border-white/[0.07] !bg-[#0d0c0c] hover:!border-white/20"
                   }`}
                 >
+                <div onClick={() => setActive(i)} role="button" tabIndex={0}>
                   {p.featured && (
                     <span className={`mb-3 inline-block rounded-full bg-amber-500/20 px-3 py-1 text-[10px] font-bold text-amber-400 ${H}`}>
                       Más elegido
@@ -234,6 +237,7 @@ export function DemoFotoLanding() {
                     Consultar
                   </button>
                 </div>
+                </SpotlightCard>
               </FadeUp>
             ))}
           </div>
