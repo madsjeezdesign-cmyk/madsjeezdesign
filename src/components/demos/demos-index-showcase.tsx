@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -228,71 +228,171 @@ export function DemosIndexShowcase({ items }: { items: DemosShowcaseItem[] }) {
   const sections = groupBySector(items);
   let cardIndex = 0;
 
+  const totalDemos = items.length;
+  const totalCategories = sections.length;
+
   return (
     <div className="showcase-page-noise relative min-h-screen overflow-x-hidden bg-[#050505] font-[family-name:var(--font-demo-jakarta)] text-zinc-100 selection:bg-white selection:text-black">
       <CinematicBackdrop />
       <ShowcaseSiteNav />
 
+      {/* HERO — brand-cyan accent, animated stats, no extreme tracking */}
       <header className="relative z-10 mx-auto max-w-[1400px] px-6 pb-16 pt-8 text-left md:px-12 md:pb-20 lg:px-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.85 }}
         >
-          <motion.div className="mb-8 flex w-full items-center gap-4 md:mb-10">
-            <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.42em] text-zinc-500">
-              Showroom {year}
+          {/* Live badge + section meta */}
+          <div className="mb-8 flex w-full items-center gap-4 md:mb-10">
+            <span
+              className="inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1"
+              style={{
+                background: "color-mix(in srgb, var(--brand-cyan) 10%, transparent)",
+                border: "1px solid color-mix(in srgb, var(--brand-cyan) 30%, transparent)",
+                fontFamily: "var(--font-mono), monospace",
+                fontSize: "0.6875rem",
+                letterSpacing: "var(--tracking-micro)",
+                color: "var(--brand-cyan)",
+              }}
+            >
+              <span aria-hidden className="live-ping-dot" />
+              Showroom · {year}
             </span>
-            <motion.div className="h-px flex-1 bg-white/15" />
-          </motion.div>
+            <div className="h-px flex-1" style={{ background: "color-mix(in srgb, var(--brand-cyan) 20%, transparent)" }} />
+            <span
+              className="shrink-0"
+              style={{
+                fontFamily: "var(--font-mono), monospace",
+                fontSize: "0.6875rem",
+                letterSpacing: "var(--tracking-micro)",
+                color: "var(--muted-body)",
+              }}
+            >
+              madsjeezdesign.com / demos
+            </span>
+          </div>
 
           <h1 className="mb-10 flex w-full flex-col items-start leading-[0.82]">
             <span className="font-[family-name:var(--font-demo-bebas)] text-[clamp(3.4rem,14vw,11rem)] uppercase tracking-[-0.02em] text-white">
               Landing
             </span>
-            <span className="-mt-2 font-[family-name:var(--font-demo-playfair)] text-[clamp(2.25rem,9vw,6.75rem)] font-normal italic leading-none tracking-tight text-zinc-400 md:-mt-4">
+            <span
+              className="-mt-2 font-[family-name:var(--font-demo-playfair)] text-[clamp(2.25rem,9vw,6.75rem)] font-normal italic leading-none tracking-tight md:-mt-4"
+              style={{ color: "var(--brand-cyan)" }}
+            >
               demo
             </span>
           </h1>
 
-          <motion.div className="grid grid-cols-1 items-end gap-10 md:grid-cols-3">
-            <motion.div className="md:col-span-2">
-              <p className="max-w-3xl text-lg font-light leading-relaxed text-zinc-400 md:text-xl">
+          <div className="grid grid-cols-1 items-end gap-10 md:grid-cols-3">
+            <div className="md:col-span-2">
+              <p
+                className="max-w-3xl text-lg font-light leading-relaxed md:text-xl"
+                style={{ color: "var(--muted-body)" }}
+              >
                 Modelos de alta fidelidad por industria.{" "}
-                <span className="text-white">Estrategia visual, performance y conversión</span> en cada
-                bloque: galería, video, e‑commerce simulado y captación de leads.
+                <span className="text-white font-medium">
+                  Estrategia visual, performance y conversión
+                </span>{" "}
+                en cada bloque: galería, video, e-commerce simulado y captación de leads.
               </p>
-            </motion.div>
-            <motion.div className="flex flex-col items-start gap-3 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-500 md:items-end md:text-[10px]">
-              <motion.div className="flex items-center gap-2">
-                <Zap className="h-3.5 w-3.5 text-yellow-500" aria-hidden />
+            </div>
+            <div className="flex flex-col items-start gap-3 md:items-end">
+              <div
+                className="flex items-center gap-2"
+                style={{
+                  fontFamily: "var(--font-mono), monospace",
+                  fontSize: "0.6875rem",
+                  letterSpacing: "var(--tracking-micro)",
+                  color: "var(--muted-body)",
+                }}
+              >
+                <Zap
+                  className="h-3.5 w-3.5"
+                  style={{ color: "var(--brand-cyan)" }}
+                  aria-hidden
+                />
                 Core Web Vitals aware
-              </motion.div>
-              <motion.div className="flex items-center gap-2">
-                <Monitor className="h-3.5 w-3.5 text-blue-500" aria-hidden />
+              </div>
+              <div
+                className="flex items-center gap-2"
+                style={{
+                  fontFamily: "var(--font-mono), monospace",
+                  fontSize: "0.6875rem",
+                  letterSpacing: "var(--tracking-micro)",
+                  color: "var(--muted-body)",
+                }}
+              >
+                <Monitor
+                  className="h-3.5 w-3.5"
+                  style={{ color: "var(--brand-cyan)" }}
+                  aria-hidden
+                />
                 SEO-ready structure
-              </motion.div>
-            </motion.div>
-          </motion.div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats strip — animated count-up */}
+          <div
+            className="mt-12 grid grid-cols-2 gap-6 border-y py-6 md:mt-16 md:grid-cols-4 md:gap-8 md:py-8"
+            style={{ borderColor: "color-mix(in srgb, var(--brand-cyan) 18%, transparent)" }}
+          >
+            <ShowcaseStat value={totalDemos} suffix="" label="Demos disponibles" />
+            <ShowcaseStat value={totalCategories} suffix="" label="Categorías" />
+            <ShowcaseStat value={100} suffix="%" label="A medida · sin templates" />
+            <ShowcaseStat value={17} suffix=" años" label="Estudio · Buenos Aires" />
+          </div>
         </motion.div>
       </header>
 
       <main className="relative z-10 mx-auto max-w-[1400px] space-y-20 px-6 pb-28 md:px-12 md:pb-40 lg:px-16">
         {sections.map((section) => (
-          <section key={section.id} aria-labelledby={`sector-${section.id}`}>
-            <div className="mb-10 border-b border-white/10 pb-8">
-              <h2
-                id={`sector-${section.id}`}
-                className="font-[family-name:var(--font-demo-bebas)] text-4xl uppercase tracking-wide text-white md:text-5xl"
+          <motion.section
+            key={section.id}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-8%" }}
+            transition={{ duration: 0.55, ease: [0.19, 1, 0.22, 1] }}
+            aria-labelledby={`sector-${section.id}`}
+          >
+            <div
+              className="mb-10 flex flex-wrap items-end justify-between gap-4 border-b pb-8"
+              style={{ borderColor: "color-mix(in srgb, var(--brand-cyan) 14%, transparent)" }}
+            >
+              <div>
+                <h2
+                  id={`sector-${section.id}`}
+                  className="font-[family-name:var(--font-demo-bebas)] text-4xl uppercase tracking-wide text-white md:text-5xl"
+                >
+                  {section.label}
+                </h2>
+                <p
+                  className="mt-3 max-w-3xl text-sm font-light leading-relaxed md:text-base"
+                  style={{ color: "var(--muted-body)" }}
+                >
+                  {section.description}
+                </p>
+              </div>
+              <span
+                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1"
+                style={{
+                  background: "color-mix(in srgb, var(--brand-cyan) 8%, transparent)",
+                  border: "1px solid color-mix(in srgb, var(--brand-cyan) 25%, transparent)",
+                  fontFamily: "var(--font-mono), monospace",
+                  fontSize: "0.6875rem",
+                  letterSpacing: "var(--tracking-micro)",
+                  color: "var(--brand-cyan)",
+                }}
               >
-                {section.label}
-              </h2>
-              <p className="mt-3 max-w-3xl text-sm font-light leading-relaxed text-zinc-500 md:text-base">
-                {section.description}
-              </p>
-              <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.28em] text-zinc-600">
+                <span
+                  aria-hidden
+                  className="inline-block h-1 w-1 rounded-full"
+                  style={{ background: "var(--brand-cyan)", boxShadow: "0 0 6px var(--brand-cyan)" }}
+                />
                 {section.items.length} modelos
-              </p>
+              </span>
             </div>
             <ul className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
               {section.items.map((item) => {
@@ -300,11 +400,91 @@ export function DemosIndexShowcase({ items }: { items: DemosShowcaseItem[] }) {
                 return <DemoCard key={item.slug} item={item} index={index} />;
               })}
             </ul>
-          </section>
+          </motion.section>
         ))}
       </main>
 
       <ShowcaseSiteFooter />
+    </div>
+  );
+}
+
+/** Stat counter for the showcase hero strip. */
+function ShowcaseStat({
+  value,
+  suffix,
+  label,
+}: {
+  value: number;
+  suffix: string;
+  label: string;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const reduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      setDisplay(value);
+      return;
+    }
+    let raf = 0;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            obs.unobserve(node);
+            const start = performance.now();
+            const dur = 1400;
+            const animate = (t: number) => {
+              const k = Math.min(1, (t - start) / dur);
+              const eased = 1 - Math.pow(1 - k, 4);
+              setDisplay(Math.round(value * eased));
+              if (k < 1) raf = requestAnimationFrame(animate);
+            };
+            raf = requestAnimationFrame(animate);
+          }
+        }
+      },
+      { threshold: 0.4 }
+    );
+    obs.observe(node);
+    return () => {
+      cancelAnimationFrame(raf);
+      obs.disconnect();
+    };
+  }, [value]);
+
+  return (
+    <div ref={ref}>
+      <div
+        className="font-[family-name:var(--font-demo-bebas)]"
+        style={{
+          fontSize: "clamp(2.25rem, 5vw, 3.5rem)",
+          lineHeight: 1,
+          color: "white",
+          letterSpacing: "-0.02em",
+        }}
+      >
+        {display}
+        <span style={{ color: "var(--brand-cyan)" }}>{suffix}</span>
+      </div>
+      <p
+        className="mt-2"
+        style={{
+          fontFamily: "var(--font-mono), monospace",
+          fontSize: "0.6875rem",
+          letterSpacing: "var(--tracking-micro)",
+          color: "var(--muted-body)",
+          textTransform: "uppercase",
+        }}
+      >
+        {label}
+      </p>
     </div>
   );
 }
