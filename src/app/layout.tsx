@@ -7,6 +7,7 @@ import {
   Space_Grotesk,
 } from "next/font/google";
 import { SiteEffects } from "@/components/site-effects";
+import { SitePageTransition } from "@/components/site-page-transition";
 import { ThemeProvider } from "@/components/theme-provider";
 import { THEME_INIT_SCRIPT } from "@/lib/theme-script";
 import { site, yearsExperience } from "@/lib/data";
@@ -165,7 +166,7 @@ export default function RootLayout({
         <ThemeProvider>
           <SiteEffects />
           <main id="main" tabIndex={-1} className="focus:outline-none">
-            {children}
+            <SitePageTransition>{children}</SitePageTransition>
           </main>
         </ThemeProvider>
       </body>

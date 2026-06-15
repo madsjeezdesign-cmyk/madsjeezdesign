@@ -101,7 +101,7 @@ export function AdminDashboard() {
               onClick={() => changeFilter(id)}
               className={`rounded-lg px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition-colors ${
                 filter === id
-                  ? "bg-[#1de0b1] text-black"
+                  ? "bg-[var(--brand-cyan)] text-black"
                   : "border border-white/10 bg-white/5 text-zinc-400 hover:text-white"
               }`}
             >
@@ -119,7 +119,7 @@ export function AdminDashboard() {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <Loader2 className="h-8 w-8 animate-spin text-[#1de0b1]" aria-hidden />
+          <Loader2 className="h-8 w-8 animate-spin text-[var(--brand-cyan)]" aria-hidden />
         </div>
       ) : leads.length === 0 ? (
         <p className="rounded-xl border border-white/10 bg-white/[0.02] py-16 text-center text-sm text-zinc-500">
@@ -221,7 +221,10 @@ function LeadCard({
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             {isNew && (
-              <span className="rounded-full bg-[#1de0b1]/20 px-2 py-0.5 font-[family-name:var(--font-jetbrains)] text-[10px] font-bold uppercase tracking-wide text-[#1de0b1]">
+              <span
+                className="rounded-full px-2 py-0.5 font-[family-name:var(--font-jetbrains)] text-[10px] font-bold uppercase tracking-wide text-[var(--brand-cyan)]"
+                style={{ background: "color-mix(in srgb, var(--brand-cyan) 18%, transparent)" }}
+              >
                 Nuevo
               </span>
             )}
@@ -232,7 +235,7 @@ function LeadCard({
             )}
             <span className="font-semibold text-white">{lead.name}</span>
             <span className="text-zinc-500">·</span>
-            <span className="truncate text-sm text-[#1de0b1]">{lead.email}</span>
+            <span className="truncate text-sm text-[var(--brand-cyan)]">{lead.email}</span>
           </div>
           <p className="mt-1 font-[family-name:var(--font-jetbrains)] text-xs text-zinc-500">
             {lead.service} · {fmt(lead.created_at)}
@@ -271,7 +274,7 @@ function LeadCard({
               onChange={(e) => setNotes(e.target.value)}
               rows={3}
               disabled={saving}
-              className="mt-1 w-full resize-y rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none focus:border-[#1de0b1]/40"
+              className="mt-1 w-full resize-y rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none focus:border-[color-mix(in_srgb,var(--brand-cyan)_50%,transparent)]"
               placeholder="Seguimiento comercial, recordatorios…"
             />
             <button
@@ -324,7 +327,7 @@ function LeadCard({
             )}
             <a
               href={`mailto:${lead.email}?subject=${encodeURIComponent(`Re: ${lead.service}`)}`}
-              className="rounded-lg border border-[#1de0b1]/40 px-3 py-2 text-xs font-bold text-[#1de0b1]"
+              className="rounded-lg border border-[color-mix(in_srgb,var(--brand-cyan)_45%,transparent)] px-3 py-2 text-xs font-bold text-[var(--brand-cyan)]"
             >
               Responder por mail
             </a>
