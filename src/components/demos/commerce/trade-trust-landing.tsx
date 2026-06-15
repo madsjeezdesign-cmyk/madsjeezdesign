@@ -14,6 +14,7 @@ import { ShieldCheck, Phone, MapPin, Clock, ArrowRight, Award } from "lucide-rea
 import { getCommerceConfig } from "@/lib/commerce-demos";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
+import { ScrollReveal, SpotlightCard, MagneticButton } from "@/components/primitives";
 import { DemoLeadForm } from "../demo-lead-form";
 
 type Props = { slug: string };
@@ -94,6 +95,12 @@ export function TradeTrustLanding({ slug }: Props) {
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#d8d3c6] bg-white px-3 py-1.5 text-xs text-[#3a3a36]">
               <ShieldCheck className="h-3.5 w-3.5" style={{ color: ink }} />
               <span>{meta.matricula}</span>
+              <span
+                className="live-ping-dot ml-1"
+                style={{ background: ink, "--brand-cyan": ink } as React.CSSProperties}
+                aria-hidden
+              />
+              <span className="text-[10px] text-[#7a7568]">disponible</span>
             </div>
             <h1 className="font-[family-name:var(--font-demo-h-commerce)] text-4xl font-medium leading-[1.05] tracking-tight text-[#171717] md:text-6xl">
               {config.heroTitle}
@@ -166,8 +173,8 @@ export function TradeTrustLanding({ slug }: Props) {
       </section>
 
       {/* SERVICES — long table-like rows, NOT cards */}
-      <section id="servicios" className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-5xl">
+      <ScrollReveal as="section" className="px-5 py-20 md:px-8 md:py-28">
+        <div id="servicios" className="mx-auto max-w-5xl">
           <div className="mb-10 flex items-end justify-between gap-4">
             <h2 className="font-[family-name:var(--font-demo-h-commerce)] text-3xl font-medium tracking-tight text-[#171717] md:text-5xl">
               Servicios
@@ -176,28 +183,53 @@ export function TradeTrustLanding({ slug }: Props) {
               Trabajo certificado, presupuesto sin cargo y garantía escrita.
             </p>
           </div>
-          <ul className="divide-y divide-[#e6e3dc] border-t border-[#e6e3dc]">
-            {config.features.map((feature, i) => (
-              <li
-                key={feature}
-                className="group flex items-center justify-between gap-4 py-5 transition-colors hover:bg-white"
-              >
+          {config.features[0] && (
+            <SpotlightCard
+              variant="transparent"
+              glowColor={ink}
+              className="mb-3 border border-[#e6e3dc] bg-white px-5 py-5 md:px-6"
+            >
+              <div className="flex items-center justify-between gap-4">
                 <div className="flex items-baseline gap-5">
-                  <span className="w-7 text-xs tabular-nums text-[#9c9684]">
-                    {String(i + 1).padStart(2, "0")}
+                  <span
+                    className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.04em] text-white"
+                    style={{ background: ink }}
+                  >
+                    Destacado
                   </span>
-                  <span className="text-base font-medium text-[#171717] md:text-lg">{feature}</span>
+                  <span className="text-base font-medium text-[#171717] md:text-lg">
+                    {config.features[0]}
+                  </span>
                 </div>
-                <span className="text-xs text-[#6f6a5e]">{config.categories[i % config.categories.length]}</span>
-              </li>
-            ))}
+                <span className="text-xs text-[#6f6a5e]">{config.categories[0]}</span>
+              </div>
+            </SpotlightCard>
+          )}
+          <ul className="divide-y divide-[#e6e3dc] border-t border-[#e6e3dc]">
+            {config.features.slice(1).map((feature, idx) => {
+              const i = idx + 1;
+              return (
+                <li
+                  key={feature}
+                  className="group flex items-center justify-between gap-4 py-5 transition-colors hover:bg-white"
+                >
+                  <div className="flex items-baseline gap-5">
+                    <span className="w-7 text-xs tabular-nums text-[#9c9684]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-base font-medium text-[#171717] md:text-lg">{feature}</span>
+                  </div>
+                  <span className="text-xs text-[#6f6a5e]">{config.categories[i % config.categories.length]}</span>
+                </li>
+              );
+            })}
           </ul>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* BEFORE/AFTER GALLERY — 3 photos full width with caption hairline */}
-      <section id="trabajos" className="border-t border-[#e6e3dc] bg-white px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <ScrollReveal as="section" className="border-t border-[#e6e3dc] bg-white px-5 py-20 md:px-8 md:py-24">
+        <div id="trabajos" className="mx-auto max-w-6xl">
           <h2 className="mb-10 font-[family-name:var(--font-demo-h-commerce)] text-3xl font-medium tracking-tight text-[#171717] md:text-4xl">
             Trabajos recientes
           </h2>
@@ -215,7 +247,7 @@ export function TradeTrustLanding({ slug }: Props) {
             ))}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* TESTIMONIALS — single sliding row */}
       <section id="testimonios" className="px-5 py-20 md:px-8 md:py-24">
@@ -256,13 +288,15 @@ export function TradeTrustLanding({ slug }: Props) {
               Llamanos al WhatsApp y coordinamos la visita. Presupuesto sin cargo en {meta.zone}.
             </p>
           </div>
-          <a
+          <MagneticButton
             href="#contacto"
-            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-[#171717] transition-transform hover:scale-[1.02]"
-            style={{ background: accent }}
+            variant="primary"
+            strength={7}
+            className="text-[#171717]"
+            ariaLabel="Pedir visita"
           >
             <Phone className="h-4 w-4" /> Pedir visita
-          </a>
+          </MagneticButton>
         </div>
       </section>
 

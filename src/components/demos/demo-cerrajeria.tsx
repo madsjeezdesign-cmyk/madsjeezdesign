@@ -1,6 +1,7 @@
 import { Key, PhoneCall, ScanLine, Timer } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
+import { ScrollReveal, SpotlightCard } from "@/components/primitives";
 import { DemoLongStory, DemoProcessSteps, DemoTestimonials } from "./demo-common-sections";
 import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
@@ -17,7 +18,14 @@ export function DemoCerrajeriaLanding() {
     <div style={demoBodyStyle(SLUG)} className={art.pageRoot}>
       <div className="bg-yellow-500 px-4 py-2 text-center text-[11px] font-black uppercase tracking-[0.04em] text-black">
         <Timer className="mx-auto mb-1 h-4 w-4 md:inline md:mr-2" />
-        Urgencias 24 h — promedio llegada 35 min (radio demo)
+        <span className="inline-flex items-center gap-2">
+          <span
+            className="live-ping-dot"
+            style={{ background: "#0a0a0a", "--brand-cyan": "#0a0a0a" } as React.CSSProperties}
+            aria-hidden
+          />
+          Urgencias 24 h — promedio llegada 35 min (radio demo)
+        </span>
       </div>
       <DemoBrandNav
         slug="cerrajeria"
@@ -61,23 +69,37 @@ export function DemoCerrajeriaLanding() {
         }
       />
 
-      <section className="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-3 md:px-10">
+      <ScrollReveal as="section" className="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-3 md:px-10">
         {[
           {
             icon: PhoneCall,
             t: "Derivación inteligente",
             d: "Si el móvil más cercano está ocupado, el sistema propone el siguiente técnico demo.",
+            featured: true,
           },
-          { icon: Key, t: "Cadena de custodia", d: "Registro fotográfico de cilindros retirados y reinstalados." },
-          { icon: ScanLine, t: "Pases biométricos", d: "Integración con lectores existentes sin tumbar red." },
-        ].map(({ icon: I, t, d }) => (
-          <div key={t} className={`p-7 ${art.cardShell}`}>
-            <I className="h-7 w-7 text-yellow-400" />
-            <h3 className={`mt-4 ${h} text-xl text-white`}>{t}</h3>
-            <p className="mt-2 text-sm text-yellow-100/55">{d}</p>
-          </div>
-        ))}
-      </section>
+          { icon: Key, t: "Cadena de custodia", d: "Registro fotográfico de cilindros retirados y reinstalados.", featured: false },
+          { icon: ScanLine, t: "Pases biométricos", d: "Integración con lectores existentes sin tumbar red.", featured: false },
+        ].map(({ icon: I, t, d, featured }) =>
+          featured ? (
+            <SpotlightCard
+              key={t}
+              variant="transparent"
+              glowColor="#facc15"
+              className={`p-7 ${art.cardShell}`}
+            >
+              <I className="h-7 w-7 text-yellow-400" />
+              <h3 className={`mt-4 ${h} text-xl text-white`}>{t}</h3>
+              <p className="mt-2 text-sm text-yellow-100/55">{d}</p>
+            </SpotlightCard>
+          ) : (
+            <div key={t} className={`p-7 ${art.cardShell}`}>
+              <I className="h-7 w-7 text-yellow-400" />
+              <h3 className={`mt-4 ${h} text-xl text-white`}>{t}</h3>
+              <p className="mt-2 text-sm text-yellow-100/55">{d}</p>
+            </div>
+          )
+        )}
+      </ScrollReveal>
 
       <DemoProcessSteps
         sectionHeadingClass={h}

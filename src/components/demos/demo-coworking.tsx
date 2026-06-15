@@ -1,6 +1,7 @@
 import { Coffee, EthernetPort, Users, Wifi } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle, getDemoArtDirection } from "@/lib/demo-art-direction";
+import { ScrollReveal, SpotlightCard } from "@/components/primitives";
 import { DemoDetailGrid, DemoFaqList, DemoStatsStrip } from "./demo-common-sections";
 import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
@@ -52,27 +53,48 @@ export function DemoCoworkingLanding() {
         }
       />
 
-      <section className="px-4 py-14 md:px-10">
+      <ScrollReveal as="section" className="px-4 py-14 md:px-10">
         <h2 className="sr-only">Servicios Hub</h2>
         <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-4 md:grid-rows-2">
           {[
-            { icon: Wifi, t: "Internet", d: "Simétrico dedicado por piso demo.", span: "md:col-span-2 md:row-span-2" },
-            { icon: EthernetPort, t: "AV 4K", d: "HDMI + USBC + barra sonido.", span: "md:col-span-2" },
-            { icon: Coffee, t: "Café terceros", d: "Convenio tostadores locales.", span: "md:col-span-1" },
-            { icon: Users, t: "Community", d: "Afters tech los jueves.", span: "md:col-span-3" },
-          ].map((b) => (
-            <div key={b.t} className={`rounded-2xl border border-sky-500/15 bg-slate-900/50 p-6 ${b.span}`}>
-              <b.icon className="h-6 w-6 text-sky-400" />
-              <p className={`mt-3 ${h} text-lg text-white`}>{b.t}</p>
-              <p className="mt-1 text-sm text-slate-500">{b.d}</p>
-            </div>
-          ))}
+            { icon: Wifi, t: "Internet", d: "Simétrico dedicado por piso demo.", span: "md:col-span-2 md:row-span-2", featured: true },
+            { icon: EthernetPort, t: "AV 4K", d: "HDMI + USBC + barra sonido.", span: "md:col-span-2", featured: false },
+            { icon: Coffee, t: "Café terceros", d: "Convenio tostadores locales.", span: "md:col-span-1", featured: false },
+            { icon: Users, t: "Community", d: "Afters tech los jueves.", span: "md:col-span-3", featured: false },
+          ].map((b) =>
+            b.featured ? (
+              <SpotlightCard
+                key={b.t}
+                variant="transparent"
+                glowColor="#38bdf8"
+                className={`rounded-2xl border border-sky-500/15 bg-slate-900/50 p-6 ${b.span}`}
+              >
+                <b.icon className="h-6 w-6 text-sky-400" />
+                <p className={`mt-3 ${h} text-lg text-white`}>{b.t}</p>
+                <p className="mt-1 text-sm text-slate-500">{b.d}</p>
+              </SpotlightCard>
+            ) : (
+              <div key={b.t} className={`rounded-2xl border border-sky-500/15 bg-slate-900/50 p-6 ${b.span}`}>
+                <b.icon className="h-6 w-6 text-sky-400" />
+                <p className={`mt-3 ${h} text-lg text-white`}>{b.t}</p>
+                <p className="mt-1 text-sm text-slate-500">{b.d}</p>
+              </div>
+            )
+          )}
         </div>
-      </section>
+      </ScrollReveal>
 
       <section className="border-y border-white/5 bg-slate-900/40 px-4 py-12 md:px-10">
         <div className={`mx-auto max-w-5xl p-8 text-center ${art.cardShell}`}>
-          <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-sky-500">Planta tipo</p>
+          <p className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-sky-500">
+            Planta tipo
+            <span
+              className="live-ping-dot"
+              style={{ background: "#38bdf8", "--brand-cyan": "#38bdf8" } as React.CSSProperties}
+              aria-hidden
+            />
+            <span className="font-medium text-slate-400">live</span>
+          </p>
           <div className="mx-auto mt-6 grid max-w-3xl grid-cols-4 gap-2 rounded-xl border border-dashed border-sky-500/30 bg-slate-950/60 p-6 text-[10px] text-slate-500">
             {Array.from({ length: 8 }).map((_, i) => (
               <div

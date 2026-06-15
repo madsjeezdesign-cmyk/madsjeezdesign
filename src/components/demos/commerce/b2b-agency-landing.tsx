@@ -11,6 +11,7 @@ import { ArrowUpRight } from "lucide-react";
 import { getCommerceConfig } from "@/lib/commerce-demos";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
+import { ScrollReveal, AnimatedStats, MagneticButton } from "@/components/primitives";
 import { DemoLeadForm } from "../demo-lead-form";
 
 type Props = { slug: string };
@@ -119,8 +120,8 @@ export function B2bAgencyLanding({ slug }: Props) {
       </section>
 
       {/* CÓMO TRABAJAMOS — hairline rows, NO numbered scaffolding visible as 01/02/03 */}
-      <section id="proceso" className="border-t border-[#e5e5e5] px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-5xl">
+      <ScrollReveal as="section" className="border-t border-[#e5e5e5] px-6 py-24 md:px-12 md:py-32">
+        <div id="proceso" className="mx-auto max-w-5xl">
           <p className="font-[family-name:var(--font-jetbrains)] text-xs text-[#4d4d4d]">cómo trabajamos</p>
           <h2 className="mt-4 max-w-2xl font-[family-name:var(--font-instrument)] text-3xl leading-tight text-[#0d0d0d] md:text-5xl">
             Un proceso simple, conversado y entregable a tiempo.
@@ -140,6 +141,25 @@ export function B2bAgencyLanding({ slug }: Props) {
               </div>
             ))}
           </dl>
+        </div>
+      </ScrollReveal>
+
+      {/* OPERATING NUMBERS — editorial stats strip */}
+      <section className="border-t border-[#e5e5e5] px-6 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="font-[family-name:var(--font-jetbrains)] text-xs text-[#4d4d4d]">
+            en números
+          </p>
+          <AnimatedStats
+            className="mt-10"
+            layout="grid-4"
+            items={[
+              { value: meta.clients.length * 9, label: "proyectos entregados", suffix: "+" },
+              { value: 96, label: "on-time delivery", suffix: "%" },
+              { value: 12, label: "años de práctica" },
+              { value: 24, label: "h primera respuesta" },
+            ]}
+          />
         </div>
       </section>
 
@@ -199,18 +219,24 @@ export function B2bAgencyLanding({ slug }: Props) {
       </section>
 
       {/* CTA — single line at bottom */}
-      <section className="border-y border-[#e5e5e5] px-6 py-20 md:px-12 md:py-28">
+      <section
+        className="border-y border-[#e5e5e5] px-6 py-20 md:px-12 md:py-28"
+        style={{ "--accent": "#0d0d0d" } as React.CSSProperties}
+      >
         <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-6 md:flex-row md:items-baseline">
           <p className="font-[family-name:var(--font-instrument)] text-2xl text-[#0d0d0d] md:text-4xl">
             ¿Trabajamos juntos?
           </p>
-          <a
+          <MagneticButton
             href="#contacto"
-            className="group inline-flex items-baseline gap-2 border-b border-[#0d0d0d] pb-1 font-[family-name:var(--font-jetbrains)] text-sm text-[#0d0d0d]"
+            variant="primary"
+            strength={6}
+            className="font-[family-name:var(--font-jetbrains)] text-white"
+            ariaLabel="Escribinos"
           >
             <span>Escribinos</span>
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+            <ArrowUpRight className="h-4 w-4" />
+          </MagneticButton>
         </div>
       </section>
 
