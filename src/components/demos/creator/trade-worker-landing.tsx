@@ -27,6 +27,11 @@ import { getCommerceConfig } from "@/lib/commerce-demos";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
 import { DemoLeadForm } from "../demo-lead-form";
+import {
+  ScrollReveal,
+  SpotlightCard,
+  MagneticButton,
+} from "@/components/primitives";
 
 type Props = { slug: string };
 
@@ -167,6 +172,7 @@ export function TradeWorkerLanding({ slug }: Props) {
           background: surface,
           color: "#171717",
           "--tw-accent": ink,
+          "--accent": ink,
         } as React.CSSProperties
       }
     >
@@ -244,14 +250,15 @@ export function TradeWorkerLanding({ slug }: Props) {
               {config.heroSub}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
+              <MagneticButton
                 href="#contacto"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white transition-transform hover:scale-[1.02]"
-                style={{ background: ink }}
+                variant="primary"
+                strength={9}
+                className="shadow-[0_10px_30px_-12px_rgba(0,0,0,0.35)]"
               >
                 {isRestraint ? "Solicitar reunión" : "Pedir visita"}
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </MagneticButton>
               <a
                 href="#obras"
                 className="inline-flex items-center gap-2 rounded-full border bg-white px-6 py-3 text-sm font-medium hover:border-black"
@@ -309,7 +316,14 @@ export function TradeWorkerLanding({ slug }: Props) {
               className="absolute -bottom-5 -left-5 hidden border bg-white px-5 py-4 shadow-md md:block"
               style={{ borderColor: hairline, borderRadius: isRestraint ? 2 : 6 }}
             >
-              <p className="text-[10px] uppercase tracking-[0.04em]" style={{ color: muted }}>
+              <p className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.04em]" style={{ color: muted }}>
+                {!isRestraint && (
+                  <span
+                    className="live-ping-dot"
+                    style={{ background: ink, "--brand-cyan": ink } as React.CSSProperties}
+                    aria-hidden
+                  />
+                )}
                 {isRestraint ? "Próxima entrega" : "Disponibilidad"}
               </p>
               <p
@@ -393,12 +407,11 @@ export function TradeWorkerLanding({ slug }: Props) {
       </section>
 
       {/* OBRAS / PROYECTOS — 21:9 cropped pairs */}
-      <section
-        id="obras"
+      <ScrollReveal
+        as="section"
         className="border-t bg-white px-5 py-20 md:px-8 md:py-24"
-        style={{ borderColor: hairline }}
       >
-        <div className="mx-auto max-w-6xl">
+        <div id="obras" className="mx-auto max-w-6xl" style={{ borderColor: hairline }}>
           <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <h2
               className="text-3xl font-medium tracking-tight md:text-4xl"
@@ -416,41 +429,49 @@ export function TradeWorkerLanding({ slug }: Props) {
             {gallery.map((item, i) => {
               const sources = [v.a, v.b, v.c];
               return (
-                <figure key={`${item.caption}-${i}`} className="space-y-3">
-                  <div
-                    className="relative aspect-[21/9] overflow-hidden border bg-[#f3efe6] md:aspect-[4/5]"
-                    style={{ borderColor: hairline, borderRadius: isRestraint ? 2 : 4 }}
-                  >
-                    <Image
-                      src={sources[i] ?? v.cover}
-                      alt={item.caption}
-                      fill
-                      className={`object-cover ${isRestraint ? "saturate-[0.7]" : ""}`}
-                      sizes="33vw"
-                    />
-                  </div>
-                  <figcaption className="space-y-1">
-                    <p
-                      className="text-base font-medium"
-                      style={{
-                        fontFamily: isRestraint ? titleFamily : undefined,
-                        color: "#171717",
-                      }}
+                <SpotlightCard
+                  key={`${item.caption}-${i}`}
+                  glowColor={ink}
+                  size={280}
+                  variant="transparent"
+                  className="group !rounded-none border bg-white p-0 transition-colors hover:border-black/40"
+                >
+                  <figure className="space-y-3">
+                    <div
+                      className="relative aspect-[21/9] overflow-hidden border bg-[#f3efe6] md:aspect-[4/5]"
+                      style={{ borderColor: hairline, borderRadius: isRestraint ? 2 : 4 }}
                     >
-                      {item.caption}
-                    </p>
-                    <p className="text-xs" style={{ color: muted }}>{item.meta}</p>
-                  </figcaption>
-                </figure>
+                      <Image
+                        src={sources[i] ?? v.cover}
+                        alt={item.caption}
+                        fill
+                        className={`object-cover transition-transform duration-500 group-hover:scale-[1.02] ${isRestraint ? "saturate-[0.7]" : ""}`}
+                        sizes="33vw"
+                      />
+                    </div>
+                    <figcaption className="space-y-1 px-1 pb-1">
+                      <p
+                        className="text-base font-medium"
+                        style={{
+                          fontFamily: isRestraint ? titleFamily : undefined,
+                          color: "#171717",
+                        }}
+                      >
+                        {item.caption}
+                      </p>
+                      <p className="text-xs" style={{ color: muted }}>{item.meta}</p>
+                    </figcaption>
+                  </figure>
+                </SpotlightCard>
               );
             })}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* TESTIMONIALS — single-quote serif italic */}
-      <section id="testimonios" className="px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto max-w-3xl">
+      <ScrollReveal as="section" className="px-5 py-20 md:px-8 md:py-24">
+        <div id="testimonios" className="mx-auto max-w-3xl">
           <h2
             className="mb-10 text-3xl font-medium tracking-tight md:text-4xl"
             style={{ fontFamily: titleFamily, color: "#171717" }}
@@ -491,7 +512,7 @@ export function TradeWorkerLanding({ slug }: Props) {
             )}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* CTA BAND */}
       <section
