@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
+import { MagneticButton, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "limpieza" as const;
 const H = DEMO_HEADING_CLASS[SLUG];
@@ -165,9 +166,13 @@ export function DemoLimpiezaLanding() {
               transition={{ delay: 0.38, duration: 0.5 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              <button type="button" className={`flex items-center gap-2 rounded bg-emerald-600 px-7 py-3.5 font-bold text-white hover:bg-emerald-500 transition-colors ${H}`}>
-                Pedir presupuesto <ArrowRight className="h-4 w-4" />
-              </button>
+              <MagneticButton
+                strength={8}
+                className={`!rounded !bg-emerald-600 hover:!bg-emerald-500 !px-7 !py-3.5 !font-bold ${H}`}
+                ariaLabel="Pedir presupuesto"
+              >
+                <span className="text-white">Pedir presupuesto</span> <ArrowRight className="h-4 w-4 text-white" />
+              </MagneticButton>
               <button type="button" className="flex items-center gap-2 rounded border border-emerald-200 px-7 py-3.5 text-sm font-semibold text-[color:var(--muted-body)] hover:bg-emerald-50 transition-colors">
                 Ver sectores
               </button>
@@ -220,13 +225,17 @@ export function DemoLimpiezaLanding() {
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => (
               <FadeUp key={s.title} delay={i * 0.07}>
-                <div className="group rounded-xl border border-emerald-100 bg-white p-6 shadow-sm hover:border-emerald-300 hover:shadow-md transition-all">
+                <SpotlightCard
+                  variant="transparent"
+                  glowColor="rgba(16,185,129,0.35)"
+                  className="!rounded-xl !border-emerald-100 !bg-white !p-6 shadow-sm hover:!border-emerald-300 hover:shadow-md transition-all h-full"
+                >
                   <div className={`inline-flex h-10 w-10 items-center justify-center rounded-lg ${s.color}`}>
                     <s.icon className="h-5 w-5" />
                   </div>
                   <h3 className={`mt-4 font-bold text-[#0a1a14] ${H}`}>{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted-body)]">{s.desc}</p>
-                </div>
+                </SpotlightCard>
               </FadeUp>
             ))}
           </div>
