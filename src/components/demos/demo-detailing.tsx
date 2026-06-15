@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
+import { MagneticButton, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "detailing" as const;
 const H = DEMO_HEADING_CLASS[SLUG];
@@ -76,7 +77,6 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 
 export function DemoDetailingLanding() {
   getDemoVisuals(SLUG);
-  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <div style={demoBodyStyle(SLUG)} className="min-h-screen bg-black text-white">
@@ -210,11 +210,11 @@ export function DemoDetailingLanding() {
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {PACKAGES.map((pkg, i) => (
               <FadeUp key={pkg.name} delay={i * 0.1}>
-                <div
-                  onMouseEnter={() => setHovered(i)}
-                  onMouseLeave={() => setHovered(null)}
-                  className={`relative flex flex-col rounded-2xl border bg-[#0a0a0a] p-7 transition-all duration-300 ${
-                    pkg.featured ? "border-sky-500 shadow-[0_0_40px_rgba(14,165,233,0.15)]" : hovered === i ? "border-zinc-600" : "border-white/[0.07]"
+                <SpotlightCard
+                  variant="transparent"
+                  glowColor="rgba(56,189,248,0.4)"
+                  className={`relative flex h-full flex-col rounded-2xl border bg-[#0a0a0a] p-7 transition-all duration-300 ${
+                    pkg.featured ? "border-sky-500 shadow-[0_0_40px_rgba(14,165,233,0.15)]" : "border-white/[0.07] hover:border-zinc-600"
                   }`}
                 >
                   {pkg.featured && (
@@ -244,7 +244,7 @@ export function DemoDetailingLanding() {
                   >
                     Consultar disponibilidad <ChevronRight className="h-4 w-4" />
                   </button>
-                </div>
+                </SpotlightCard>
               </FadeUp>
             ))}
           </div>
@@ -276,9 +276,13 @@ export function DemoDetailingLanding() {
             <h2 className={`text-3xl font-black uppercase text-white md:text-5xl ${H}`}>Agenda cerrada.<br />Cupos muy limitados.</h2>
             <p className="mt-4 text-sm text-[color:var(--muted-body)]">Presupuesto sin cargo · respuesta en menos de 2 horas</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <button type="button" className={`flex items-center gap-2 rounded bg-sky-500 px-8 py-3.5 font-bold text-black hover:bg-sky-400 transition-colors ${H}`}>
+              <MagneticButton
+                variant="primary"
+                className={`!bg-sky-500 hover:!bg-sky-400 flex items-center gap-2 rounded px-8 py-3.5 font-bold !text-black ${H}`}
+                ariaLabel="WhatsApp directo"
+              >
                 <MessageCircle className="h-4 w-4" /> WhatsApp directo
-              </button>
+              </MagneticButton>
               <button type="button" className="rounded border border-white/10 px-8 py-3.5 text-sm font-semibold text-zinc-400 hover:border-white/20 hover:text-white transition-colors">
                 Ver galería de trabajos
               </button>
