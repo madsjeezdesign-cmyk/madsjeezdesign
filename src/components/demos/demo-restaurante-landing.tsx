@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Flame, Globe, Quote, Share2, Sparkles, Users, Wine, X } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
+import { MagneticButton, ScrollReveal } from "@/components/primitives";
 import { DemoLeadForm } from "./demo-lead-form";
 import "./demo-restaurante-premium.css";
 
@@ -110,13 +111,14 @@ export function DemoRestauranteLanding() {
             </a>
           </div>
         </div>
-        <button
-          type="button"
+        <MagneticButton
           onClick={toggleRes}
-          className="lumina-btn-signature px-6 py-2.5 text-[10px] font-bold uppercase tracking-[0.04em] md:px-8 md:py-3"
+          variant="ghost"
+          strength={8}
+          className="lumina-btn-signature !rounded-full !px-6 !py-2.5 !text-[10px] !font-bold uppercase tracking-[0.04em] !text-white md:!px-8 md:!py-3"
         >
           Reservar mesa
-        </button>
+        </MagneticButton>
       </nav>
 
       {/* Hero */}
@@ -152,7 +154,7 @@ export function DemoRestauranteLanding() {
 
       {/* Experiencia */}
       <section id="experiencia" className="relative z-10 border-b border-white/5 bg-[#0a0a0a] px-6 py-24 md:px-8 md:py-32">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
+        <ScrollReveal className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
           {EXPERIENCE.map(({ icon: Icon, title, text }) => (
             <div
               key={title}
@@ -165,7 +167,7 @@ export function DemoRestauranteLanding() {
               <p className="text-sm font-light leading-relaxed text-white/40">{text}</p>
             </div>
           ))}
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Menú */}
