@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DemoLeadForm } from "./demo-lead-form";
+import { AnimatedStats, ScrollReveal, SpotlightCard } from "@/components/primitives";
 import "./demo-taller-premium.css";
 
 const SLUG = "taller" as const;
@@ -104,7 +105,12 @@ function ServiceCard({
   index: number;
 }) {
   return (
-    <article className="group relative border border-zinc-800 bg-zinc-900/50 p-8 transition-all duration-500 hover:border-orange-500/50">
+    <SpotlightCard
+      variant="transparent"
+      glowColor="rgb(234, 88, 12)"
+      size={260}
+      className="group relative border border-zinc-800 bg-zinc-900/50 p-8 transition-all duration-500 hover:border-orange-500/50"
+    >
       <div className="absolute right-4 top-0 text-6xl font-black italic text-zinc-800 transition-colors group-hover:text-orange-500/10">
         0{index + 1}
       </div>
@@ -118,7 +124,7 @@ function ServiceCard({
           Ver detalles <ChevronRight size={14} />
         </button>
       </div>
-    </article>
+    </SpotlightCard>
   );
 }
 
@@ -292,7 +298,7 @@ export function DemoTallerLanding() {
           </div>
         </section>
 
-        <section className="border-y border-zinc-800 bg-zinc-950 py-12">
+        <ScrollReveal as="section" className="border-y border-zinc-800 bg-zinc-950 py-12">
           <div className="container mx-auto grid grid-cols-2 gap-8 px-6 md:grid-cols-4">
             {[
               { label: "Caballos de Fuerza", val: "+50k", icon: Zap },
@@ -309,7 +315,7 @@ export function DemoTallerLanding() {
               </div>
             ))}
           </div>
-        </section>
+        </ScrollReveal>
 
         <section id="servicios" className="bg-black py-28 md:py-32">
           <div className="container mx-auto px-6">

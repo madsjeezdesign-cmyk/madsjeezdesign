@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DemoLeadForm } from "./demo-lead-form";
+import { AnimatedStats, ScrollReveal } from "@/components/primitives";
 import "./demo-inmobiliaria-premium.css";
 
 const SLUG = "inmobiliaria" as const;
@@ -332,22 +333,16 @@ export function DemoInmobiliariaLanding() {
                 privacidad y exclusividad que el alto nivel requiere.
               </p>
             </div>
-            <div className="mt-12 grid grid-cols-3 gap-8 border-t border-white/10 pt-10 md:mt-16 md:gap-12 md:pt-12">
-              {[
-                { v: "15+", l: "Años de excelencia" },
-                { v: "€2B+", l: "Activos gestionados" },
-                { v: "98%", l: "Clientela recurrente" },
-              ].map((s) => (
-                <div key={s.l}>
-                  <div className="mb-2 font-[family-name:var(--font-demo-h-inmobiliaria)] text-2xl text-[#a68966] md:text-3xl">
-                    {s.v}
-                  </div>
-                  <div className="text-[9px] uppercase tracking-[0.04em] text-white/30">
-                    {s.l}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <ScrollReveal as="div" className="mt-12 border-t border-white/10 pt-10 md:mt-16 md:pt-12">
+              <AnimatedStats
+                layout="grid-3"
+                items={[
+                  { value: 15, suffix: "+", label: "Años de excelencia" },
+                  { value: 2, prefix: "€", suffix: "B+", label: "Activos gestionados" },
+                  { value: 98, suffix: "%", label: "Clientela recurrente" },
+                ]}
+              />
+            </ScrollReveal>
           </div>
           <div className="van-scroll-reveal relative" style={{ transitionDelay: "0.3s" }}>
             <div className="relative aspect-[4/5] overflow-hidden">
@@ -372,7 +367,7 @@ export function DemoInmobiliariaLanding() {
       {/* Portfolio */}
       <section id="proyectos" className="py-24 md:py-40">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="mb-16 flex flex-col items-end justify-between gap-8 md:mb-32 md:flex-row">
+          <ScrollReveal as="div" className="mb-16 flex flex-col items-end justify-between gap-8 md:mb-32 md:flex-row">
             <h2 className="font-[family-name:var(--font-demo-h-inmobiliaria)] text-4xl text-white md:text-7xl">
               Residencias <br />
               <span className="italic text-[#a68966]">destacadas.</span>
@@ -399,7 +394,7 @@ export function DemoInmobiliariaLanding() {
                 <ChevronRight className="h-5 w-5" />
               </button>
             </div>
-          </div>
+          </ScrollReveal>
 
           <div className="grid gap-12 md:grid-cols-2 md:gap-20">
             {visibleProperties.map((prop, idx) => (

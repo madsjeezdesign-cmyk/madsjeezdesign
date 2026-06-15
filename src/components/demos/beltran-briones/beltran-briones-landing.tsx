@@ -31,6 +31,7 @@ import {
   BELTRAN_TESTIMONIALS,
 } from "@/lib/beltran-briones";
 import { BrickWallTitle } from "./brick-wall-title";
+import { SpotlightCard } from "@/components/primitives";
 import "./beltran-briones.css";
 
 /* ─── Helpers ─────────────────────────────────────────────────────────────── */
@@ -432,14 +433,17 @@ export function BeltranBrionesLanding() {
       <section className="bg-[#080808] py-20 md:py-32">
         <div className="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-3">
           {BELTRAN_LEGACY_PILLARS.map((pillar, i) => (
-            <article
+            <SpotlightCard
               key={pillar.title}
-              className={`bb-reveal bb-reveal-delay-${i + 1} cursor-pointer rounded-2xl border border-white/6 p-10 transition-all duration-500 hover:border-amber-500/25 hover:bg-white/[0.02] md:p-12`}
+              variant="transparent"
+              glowColor="rgb(245, 158, 11)"
+              size={260}
+              className={`bb-reveal bb-reveal-delay-${i + 1} cursor-pointer border border-white/6 p-10 transition-all duration-500 hover:border-amber-500/25 hover:bg-white/[0.02] md:p-12`}
             >
               <span className="mb-6 block text-3xl font-black text-amber-500/30">{pillar.number}</span>
               <h3 className="mb-4 text-2xl font-black tracking-tight md:text-3xl">{pillar.title}</h3>
               <p className="text-sm leading-relaxed text-[color:var(--muted-body)]">{pillar.text}</p>
-            </article>
+            </SpotlightCard>
           ))}
         </div>
       </section>
@@ -759,7 +763,8 @@ export function BeltranBrionesLanding() {
               Calculá tu ROI primero
             </a>
           </div>
-          <p className="mt-8 text-[10px] font-bold uppercase tracking-[0.04em] text-zinc-700">
+          <p className="mt-8 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-zinc-700">
+            <span className="live-ping-dot" aria-hidden />
             Sin compromiso · Respuesta en menos de 24 h · +1.200 inversores confían en el método
           </p>
         </div>

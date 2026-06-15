@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DemoLeadForm } from "./demo-lead-form";
+import { ScrollReveal, SpotlightCard } from "@/components/primitives";
 import "./demo-tech-premium.css";
 
 const SLUG = "tech" as const;
@@ -453,8 +454,11 @@ export function DemoTechLanding() {
             </div>
             <div className="grid gap-1 lg:grid-cols-4">
               {solutions.map((item) => (
-                <div
+                <SpotlightCard
                   key={item.title}
+                  variant="transparent"
+                  glowColor="rgb(34, 211, 238)"
+                  size={240}
                   className="vt-scroll-reveal group relative border border-white/5 bg-slate-900/20 p-12 transition-all duration-500 hover:bg-white/5"
                 >
                   <div className="absolute left-0 top-0 h-[2px] w-full bg-cyan-500 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -463,7 +467,7 @@ export function DemoTechLanding() {
                   <h3 className="mb-6 text-2xl font-bold italic text-white">{item.title}</h3>
                   <p className="mb-10 min-h-[80px] text-xs leading-loose text-white/30">{item.desc}</p>
                   <div className="text-[9px] font-black tracking-[0.04em] text-white/10">{item.tech}</div>
-                </div>
+                </SpotlightCard>
               ))}
             </div>
             <div className="vt-scroll-reveal mt-12 grid gap-4 md:grid-cols-3">
@@ -544,6 +548,10 @@ export function DemoTechLanding() {
         <section className="relative overflow-hidden bg-slate-950 py-40 md:py-60">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-900/10" />
           <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+            <ScrollReveal as="div" className="mb-6 inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase tracking-[0.04em] text-cyan-400">
+              <span className="live-ping-dot" aria-hidden />
+              SLOTS Q1 LIMITADOS · RESPUESTA &lt; 24H
+            </ScrollReveal>
             <h2 className="vt-scroll-reveal mb-12 font-[family-name:var(--font-demo-h-tech)] text-5xl font-black italic tracking-tighter md:text-8xl">
               ¿LISTO PARA EL <br /> <span className="text-cyan-400">SIGUIENTE NIVEL?</span>
             </h2>

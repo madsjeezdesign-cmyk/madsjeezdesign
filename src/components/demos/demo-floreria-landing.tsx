@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DemoLeadForm } from "./demo-lead-form";
+import { SpotlightCard } from "@/components/primitives";
 import "./demo-floreria-premium.css";
 
 const SLUG = "floreria" as const;
@@ -394,13 +395,19 @@ export function DemoFloreriaLanding() {
               { icon: Droplets, title: "Cuidado Experto", desc: "Cada ejemplar incluye guía personalizada de riego y mantenimiento botánico." },
               { icon: Sun, title: "Luz y Vida", desc: "Especies adaptadas a distintos niveles de iluminación para tu hogar u oficina." },
             ].map((feat) => (
-              <div key={feat.title} className="je-scroll-reveal space-y-4 text-center">
+              <SpotlightCard
+                key={feat.title}
+                variant="transparent"
+                glowColor="rgb(6, 95, 70)"
+                size={220}
+                className="je-scroll-reveal space-y-4 rounded-3xl p-8 text-center"
+              >
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white text-emerald-800 shadow-sm">
                   <feat.icon size={28} />
                 </div>
                 <h3 className="font-serif-display text-xl italic text-stone-800">{feat.title}</h3>
                 <p className="mx-auto max-w-xs text-sm leading-relaxed text-stone-500">{feat.desc}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </section>
@@ -408,7 +415,10 @@ export function DemoFloreriaLanding() {
         {/* Entrega */}
         <section className="border-y border-emerald-800/10 bg-emerald-800/5 py-8">
           <div className="container mx-auto flex flex-wrap items-center justify-center gap-8 px-6 text-center text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-800 md:gap-16">
-            <span>Envío mismo día CABA</span>
+            <span className="inline-flex items-center gap-2">
+              <span className="live-ping-dot" aria-hidden />
+              Envío mismo día CABA
+            </span>
             <span className="hidden h-4 w-px bg-emerald-800/20 md:block" />
             <span>Eventos & bodas</span>
             <span className="hidden h-4 w-px bg-emerald-800/20 md:block" />
