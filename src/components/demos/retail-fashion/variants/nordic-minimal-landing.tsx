@@ -27,6 +27,7 @@ import {
 } from "@/lib/fashion-whatsapp";
 import { DemoLeadForm } from "../../demo-lead-form";
 import { FashionPhoto } from "../fashion-photo";
+import { ScrollReveal } from "@/components/primitives";
 
 type Props = { slug: string };
 
@@ -98,7 +99,7 @@ function NordicHero({ config }: { config: RetailFashionConfig }) {
 function NordicQuote({ config }: { config: RetailFashionConfig }) {
   return (
     <section id="editorial" className="border-y border-[#e3e1dc] bg-[#fbf9f5] py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-6 text-left">
+      <ScrollReveal className="mx-auto max-w-3xl px-6 text-left">
         <p className="text-[11px] tracking-[0.08em] text-[#7d8475]">Nota del estudio</p>
         <p className="mt-6 text-[clamp(1.5rem,2.6vw,2.25rem)] font-light leading-[1.4] tracking-[-0.01em] text-[#1a1a1a]">
           "{config.collectionTitle}. {config.collectionSubtitle}. Cada pieza, una pausa."
@@ -106,7 +107,7 @@ function NordicQuote({ config }: { config: RetailFashionConfig }) {
         <p className="mt-8 text-[12px] tracking-[0.04em] text-[#5b5a55]">
           — Atelier {config.brand}
         </p>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }
@@ -226,7 +227,7 @@ function NordicShop({
 function NordicStudio({ config }: { config: RetailFashionConfig }) {
   return (
     <section id="estudio" className="bg-[#1a1a1a] py-24 text-[#f6f4ef] md:py-32">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 md:grid-cols-2">
+      <ScrollReveal className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 md:grid-cols-2">
         <div>
           <p className="text-[11px] tracking-[0.08em] text-[#9aa093]">Estudio</p>
           <h3 className="mt-3 text-[clamp(1.5rem,2.6vw,2.25rem)] font-light leading-tight tracking-[-0.02em]">
@@ -263,7 +264,7 @@ function NordicStudio({ config }: { config: RetailFashionConfig }) {
             sizes="(max-width:768px) 100vw, 50vw"
           />
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }
