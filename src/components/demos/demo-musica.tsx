@@ -76,10 +76,10 @@ export function DemoMusicaLanding() {
       <nav className="sticky top-0 z-40 flex items-center justify-between border-b border-white/[0.07] bg-[#12082a]/90 px-5 py-4 backdrop-blur-xl md:px-10">
         <div className="flex items-center gap-3">
           <Music2 className="h-5 w-5 text-violet-400" />
-          <span className={`text-sm font-bold tracking-widest text-white uppercase ${H}`}>Pentagrama</span>
-          <span className="hidden rounded-sm bg-violet-500/20 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-violet-400 md:block">Escuela de música</span>
+          <span className={`text-sm font-bold tracking-[0.04em] text-white uppercase ${H}`}>Pentagrama</span>
+          <span className="hidden rounded-sm bg-violet-500/20 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.04em] text-violet-400 md:block">Escuela de música</span>
         </div>
-        <div className="hidden items-center gap-6 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
+        <div className="hidden items-center gap-6 text-[11px] font-semibold uppercase tracking-[0.04em] text-[color:var(--muted-body)] md:flex">
           {["Cursos", "Horarios", "Exámenes", "Contacto"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-violet-300 transition-colors">{n}</span>
           ))}
@@ -158,7 +158,7 @@ export function DemoMusicaLanding() {
             <FadeUp key={s.label} delay={i * 0.08}>
               <div className="px-8 py-8 text-center">
                 <p className={`text-3xl font-bold text-violet-300 md:text-4xl ${H}`}>{s.val}</p>
-                <p className="mt-2 text-[12px] uppercase tracking-widest text-[color:var(--muted-body)]">{s.label}</p>
+                <p className="mt-2 text-[12px] uppercase tracking-[0.04em] text-[color:var(--muted-body)]">{s.label}</p>
               </div>
             </FadeUp>
           ))}
@@ -171,7 +171,7 @@ export function DemoMusicaLanding() {
           <FadeUp>
             <div className="flex items-end justify-between">
               <div>
-                <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-violet-500 ${H}`}>Cursos 2026</p>
+                <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-violet-500 ${H}`}>Cursos 2026</p>
                 <h2 className={`text-3xl font-bold text-white md:text-5xl ${H}`}>Un instrumento<br />o todos a la vez</h2>
               </div>
               <button type="button" className="hidden items-center gap-2 text-sm font-semibold text-violet-400 hover:text-violet-300 transition-colors md:flex">
@@ -214,7 +214,7 @@ export function DemoMusicaLanding() {
             </div>
           </FadeUp>
           <FadeUp delay={0.15}>
-            <p className={`mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-violet-500 ${H}`}>Metodología</p>
+            <p className={`mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-violet-500 ${H}`}>Metodología</p>
             <h2 className={`text-4xl font-bold text-white md:text-5xl ${H}`}>Teoría que<br />se aprende tocando</h2>
             <div className="mt-6 space-y-4 text-sm leading-relaxed text-zinc-400">
               <p>No separamos la teoría de la práctica. Desde el primer día el alumno toca, escucha y crea — el solfeo aparece como herramienta cuando el oído ya entendió el concepto.</p>

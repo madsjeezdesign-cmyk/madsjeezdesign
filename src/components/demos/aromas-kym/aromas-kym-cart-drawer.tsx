@@ -75,7 +75,7 @@ export function AromasKymCartDrawer({
           {/* Header */}
           <div className="flex items-center justify-between border-b border-[#e8e1d4] px-7 py-6">
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#8d8074]">
+              <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
                 Tu selección
               </p>
               <h3
@@ -124,7 +124,7 @@ export function AromasKymCartDrawer({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="mt-7 rounded-full bg-[#1c1814] px-6 py-3 font-mono text-[10px] uppercase tracking-[0.3em] text-[#fbf8f1] transition hover:bg-[#b85a3c]"
+                  className="mt-7 rounded-full bg-[#1c1814] px-6 py-3 font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1] transition hover:bg-[#b85a3c]"
                 >
                   Explorar colección
                 </button>
@@ -146,7 +146,7 @@ export function AromasKymCartDrawer({
                       />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-[#8d8074]">
+                      <p className="font-mono text-[9px] uppercase tracking-[0.04em] text-[#8d8074]">
                         {item.notesShort}
                       </p>
                       <h4
@@ -190,7 +190,7 @@ export function AromasKymCartDrawer({
                       <button
                         type="button"
                         onClick={() => onRemove(item.id)}
-                        className="mt-2 font-mono text-[9px] uppercase tracking-[0.28em] text-[#8d8074] hover:text-[#b85a3c]"
+                        className="mt-2 font-mono text-[9px] uppercase tracking-[0.04em] text-[#8d8074] hover:text-[#b85a3c]"
                       >
                         Quitar
                       </button>
@@ -230,12 +230,12 @@ export function AromasKymCartDrawer({
               <button
                 type="button"
                 onClick={onCheckout}
-                className="group mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#1c1814] py-4 font-mono text-[11px] uppercase tracking-[0.32em] text-[#fbf8f1] transition hover:bg-[#b85a3c]"
+                className="group mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#1c1814] py-4 font-mono text-[11px] uppercase tracking-[0.04em] text-[#fbf8f1] transition hover:bg-[#b85a3c]"
               >
                 Ir a checkout
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1" />
               </button>
-              <p className="mt-3 text-center font-mono text-[9px] uppercase tracking-[0.28em] text-[#8d8074]">
+              <p className="mt-3 text-center font-mono text-[9px] uppercase tracking-[0.04em] text-[#8d8074]">
                 Pago seguro · MercadoPago + transferencia
               </p>
             </div>

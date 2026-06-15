@@ -102,7 +102,7 @@ export function DemoGimnasioLanding() {
             PULSE<span className="text-[#dfff00]">.</span>
           </span>
         </div>
-        <div className="hidden gap-10 text-[10px] font-bold uppercase tracking-[0.4em] lg:flex">
+        <div className="hidden gap-10 text-[10px] font-bold uppercase tracking-[0.04em] lg:flex">
           <a href="#about" className="transition-colors hover:text-[#dfff00]">
             La instalación
           </a>
@@ -136,7 +136,7 @@ export function DemoGimnasioLanding() {
         </p>
 
         <div className="relative z-10 px-6 text-center">
-          <h5 className="mb-10 text-xs font-black uppercase tracking-[0.8em] text-[#dfff00]">
+          <h5 className="mb-10 text-xs font-black uppercase tracking-[0.04em] text-[#dfff00]">
             Establecido en 2024
           </h5>
           <h1 className="mb-12 font-[family-name:var(--font-demo-h-gimnasio)] text-5xl uppercase leading-none md:text-8xl lg:text-[8.75rem]">
@@ -147,7 +147,7 @@ export function DemoGimnasioLanding() {
             <button type="button" onClick={toggleJoin} className="iron-btn-triple-a text-sm">
               Obtener membresía
             </button>
-            <p className="max-w-[250px] text-left text-[10px] font-bold uppercase leading-relaxed tracking-widest text-gray-400">
+            <p className="max-w-[250px] text-left text-[10px] font-bold uppercase leading-relaxed tracking-[0.04em] text-gray-400">
               Sistemas de entrenamiento basados en datos para atletas de alto rendimiento.
             </p>
           </div>
@@ -167,7 +167,7 @@ export function DemoGimnasioLanding() {
 
         <div className="absolute bottom-10 left-6 flex items-center gap-4 md:left-10">
           <span className="h-2 w-2 animate-pulse rounded-full bg-[#dfff00]" />
-          <span className="text-[9px] font-black uppercase tracking-widest text-white/40">
+          <span className="text-[9px] font-black uppercase tracking-[0.04em] text-white/40">
             Status: entrenando ahora (42 atletas)
           </span>
         </div>
@@ -296,7 +296,7 @@ export function DemoGimnasioLanding() {
       {/* Coaches */}
       <section id="coaches" className="px-6 py-24 md:px-10 md:py-40">
         <div className="mx-auto max-w-[1400px]">
-          <h5 className="mb-4 text-[10px] font-black tracking-[0.5em] text-[#dfff00]">
+          <h5 className="mb-4 text-[10px] font-black tracking-[0.04em] text-[#dfff00]">
             COACHING STAFF
           </h5>
           <h2 className="mb-16 font-[family-name:var(--font-demo-h-gimnasio)] text-4xl uppercase md:mb-24 md:text-5xl">
@@ -323,7 +323,7 @@ export function DemoGimnasioLanding() {
                 <h4 className="font-[family-name:var(--font-demo-sub-gimnasio)] text-xl uppercase md:text-2xl">
                   {coach.name}
                 </h4>
-                <p className="mt-2 text-[10px] font-black tracking-widest text-[#dfff00]">
+                <p className="mt-2 text-[10px] font-black tracking-[0.04em] text-[#dfff00]">
                   {coach.role}
                 </p>
               </div>
@@ -352,7 +352,7 @@ export function DemoGimnasioLanding() {
             </h2>
             <div className="mt-12 flex flex-col gap-10 md:mt-20 md:flex-row md:gap-12">
               <div>
-                <h5 className="mb-4 text-[10px] font-black tracking-widest text-[#dfff00]">
+                <h5 className="mb-4 text-[10px] font-black tracking-[0.04em] text-[#dfff00]">
                   UBICACIÓN
                 </h5>
                 <p className="text-sm text-gray-400">
@@ -362,7 +362,7 @@ export function DemoGimnasioLanding() {
                 </p>
               </div>
               <div>
-                <h5 className="mb-4 text-[10px] font-black tracking-widest text-[#dfff00]">
+                <h5 className="mb-4 text-[10px] font-black tracking-[0.04em] text-[#dfff00]">
                   CONTACTO
                 </h5>
                 <p className="text-sm text-gray-400">
@@ -389,11 +389,11 @@ export function DemoGimnasioLanding() {
               <input
                 type="email"
                 placeholder="Tu e-mail para newsletter elite"
-                className="w-full bg-transparent text-[10px] font-black uppercase tracking-widest outline-none placeholder:text-white/30"
+                className="w-full bg-transparent text-[10px] font-black uppercase tracking-[0.04em] outline-none placeholder:text-white/30"
               />
               <ArrowRight className="h-5 w-5 shrink-0 cursor-pointer text-[#dfff00]" />
             </div>
-            <p className="mt-8 text-[8px] font-bold uppercase tracking-widest text-gray-600 md:mt-10">
+            <p className="mt-8 text-[8px] font-bold uppercase tracking-[0.04em] text-gray-600 md:mt-10">
               © {new Date().getFullYear()} {BRAND}. Demo MadsJeez. No se admiten excusas.
             </p>
           </div>
@@ -438,7 +438,7 @@ export function DemoGimnasioLanding() {
             }}
           >
             <div className="border-b border-white/10 pb-4 transition-colors focus-within:border-[#dfff00]">
-              <label className="mb-2 block text-[9px] font-black uppercase tracking-[0.4em] text-[#dfff00]">
+              <label className="mb-2 block text-[9px] font-black uppercase tracking-[0.04em] text-[#dfff00]">
                 Full identity
               </label>
               <input
@@ -448,7 +448,7 @@ export function DemoGimnasioLanding() {
               />
             </div>
             <div className="border-b border-white/10 pb-4 transition-colors focus-within:border-[#dfff00]">
-              <label className="mb-2 block text-[9px] font-black uppercase tracking-[0.4em] text-[#dfff00]">
+              <label className="mb-2 block text-[9px] font-black uppercase tracking-[0.04em] text-[#dfff00]">
                 Comms channel
               </label>
               <input
@@ -458,7 +458,7 @@ export function DemoGimnasioLanding() {
               />
             </div>
             <div className="border-b border-white/10 pb-4 transition-colors focus-within:border-[#dfff00]">
-              <label className="mb-2 block text-[9px] font-black uppercase tracking-[0.4em] text-[#dfff00]">
+              <label className="mb-2 block text-[9px] font-black uppercase tracking-[0.04em] text-[#dfff00]">
                 Objetivo actual
               </label>
               <div className="mt-4 flex flex-wrap gap-3">

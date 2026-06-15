@@ -54,7 +54,7 @@ export function CerrajeriaCentralNavbar({
               key={l.id}
               type="button"
               onClick={() => onNav(l.id)}
-              className="text-xs font-bold uppercase tracking-wider text-zinc-400 transition hover:text-amber-400"
+              className="text-xs font-bold uppercase tracking-[0.04em] text-zinc-400 transition hover:text-amber-400"
             >
               {l.label}
             </button>

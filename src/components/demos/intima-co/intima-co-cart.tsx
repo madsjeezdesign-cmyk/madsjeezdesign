@@ -108,7 +108,7 @@ export function IntimaCoCart({
 
         {lines.length > 0 ? (
           <div className="space-y-4 border-t border-stone-200/60 bg-white/80 p-4 backdrop-blur">
-            <p className="text-[10px] font-light uppercase tracking-[0.25em] text-stone-400">Entrega</p>
+            <p className="text-[10px] font-light uppercase tracking-[0.04em] text-stone-400">Entrega</p>
             <div className="grid gap-2">
               <button
                 type="button"
@@ -162,7 +162,7 @@ export function IntimaCoCart({
             <button
               type="button"
               onClick={() => onCheckout(mode)}
-              className="w-full rounded-full bg-stone-900 py-4 text-xs font-light uppercase tracking-[0.2em] text-stone-50 transition hover:bg-stone-800"
+              className="w-full rounded-full bg-stone-900 py-4 text-xs font-light uppercase tracking-[0.04em] text-stone-50 transition hover:bg-stone-800"
             >
               Proceder al pago
             </button>

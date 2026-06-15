@@ -54,7 +54,7 @@ export function Hero({ onCta, inventoryCount }: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.4em] text-orange-400">
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.04em] text-orange-400">
               Spegazzini · GBA Sur · Stock en vivo
             </p>
             <h1
@@ -70,7 +70,7 @@ export function Hero({ onCta, inventoryCount }: Props) {
             <div className="mt-8 flex flex-wrap gap-4">
               <MagneticButton
                 onClick={onCta}
-                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-orange-600 to-amber-500 px-8 py-4 text-sm font-bold uppercase tracking-wider text-black shadow-lg shadow-orange-500/30"
+                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-orange-600 to-amber-500 px-8 py-4 text-sm font-bold uppercase tracking-[0.04em] text-black shadow-lg shadow-orange-500/30"
               >
                 Explorar catálogo
                 <ArrowRight className="h-4 w-4" />
@@ -156,7 +156,7 @@ function BentoPanel({
       whileHover={{ borderColor: "rgba(249,115,22,0.4)" }}
     >
       {icon}
-      <p className="mt-2 text-xs uppercase tracking-wider text-[color:var(--muted-body)]">{label}</p>
+      <p className="mt-2 text-xs uppercase tracking-[0.04em] text-[color:var(--muted-body)]">{label}</p>
       <p className="font-mono text-2xl font-bold text-white">
         {value}
         <span className="text-sm font-normal text-[color:var(--muted-body)]">{suffix}</span>

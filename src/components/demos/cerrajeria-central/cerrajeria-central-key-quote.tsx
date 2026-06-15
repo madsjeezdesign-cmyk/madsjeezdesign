@@ -25,7 +25,7 @@ export function CerrajeriaCentralKeyQuote({ onAddService, onReserve }: Props) {
   return (
     <section id="cotizador" className="scroll-mt-20 border-y border-zinc-800 bg-zinc-900 py-12 sm:py-16">
       <div className="mx-auto max-w-3xl px-3 sm:px-4">
-        <p className="text-xs font-black uppercase tracking-widest text-amber-400">Cotizador en vivo</p>
+        <p className="text-xs font-black uppercase tracking-[0.04em] text-amber-400">Cotizador en vivo</p>
         <h2 className="mt-2 text-2xl font-black uppercase text-white sm:text-3xl">Copias de llaves</h2>
         <p className="mt-2 text-sm text-zinc-400">Precio estimado en ARS · actualización instantánea</p>
 

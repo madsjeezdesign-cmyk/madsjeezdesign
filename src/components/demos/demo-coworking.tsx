@@ -30,7 +30,7 @@ export function DemoCoworkingLanding() {
         titleColorClass="text-sky-50"
         leadColorClass="text-slate-400"
         kicker={
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-sky-400">Fibra · cabinas fono · caffe lab</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-sky-400">Fibra · cabinas fono · caffe lab</p>
         }
         title={
           <>
@@ -72,7 +72,7 @@ export function DemoCoworkingLanding() {
 
       <section className="border-y border-white/5 bg-slate-900/40 px-4 py-12 md:px-10">
         <div className={`mx-auto max-w-5xl p-8 text-center ${art.cardShell}`}>
-          <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-sky-500">Planta tipo</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-sky-500">Planta tipo</p>
           <div className="mx-auto mt-6 grid max-w-3xl grid-cols-4 gap-2 rounded-xl border border-dashed border-sky-500/30 bg-slate-950/60 p-6 text-[10px] text-slate-500">
             {Array.from({ length: 8 }).map((_, i) => (
               <div

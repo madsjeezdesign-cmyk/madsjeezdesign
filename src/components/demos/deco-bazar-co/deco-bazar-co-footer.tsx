@@ -13,7 +13,7 @@ export function DecoBazarCoFooter() {
             <p className="mt-2 text-sm font-light text-[color:var(--muted-body)]">Showroom y punto de retiro</p>
             <div className="mt-6 space-y-4">
               <div className="rounded-2xl border border-zinc-100 bg-zinc-50 p-4">
-                <p className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-[color:var(--muted-body)]">
+                <p className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
                   <Clock className="h-4 w-4" />
                   Atención al público
                 </p>

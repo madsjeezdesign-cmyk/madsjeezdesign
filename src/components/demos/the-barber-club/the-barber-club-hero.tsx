@@ -15,7 +15,7 @@ export function TheBarberClubHero() {
       />
       <div className="tbc-hero-overlay absolute inset-0" />
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-        <p className="mb-4 text-xs font-black uppercase tracking-[0.35em] text-amber-400">Premium grooming · Palermo</p>
+        <p className="mb-4 text-xs font-black uppercase tracking-[0.04em] text-amber-400">Premium grooming · Palermo</p>
         <h1 className="font-serif text-4xl font-bold leading-tight text-white sm:text-6xl md:text-7xl">
           El arte del <span className="tbc-gold-text">corte perfecto</span>
         </h1>
@@ -26,7 +26,7 @@ export function TheBarberClubHero() {
         <button
           type="button"
           onClick={() => document.getElementById("turnos")?.scrollIntoView({ behavior: "smooth" })}
-          className="mt-10 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-10 py-4 text-sm font-black uppercase tracking-widest text-zinc-950 shadow-xl shadow-amber-500/25 transition-transform hover:scale-[1.02]"
+          className="mt-10 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-10 py-4 text-sm font-black uppercase tracking-[0.04em] text-zinc-950 shadow-xl shadow-amber-500/25 transition-transform hover:scale-[1.02]"
         >
           Reservar mi turno
         </button>

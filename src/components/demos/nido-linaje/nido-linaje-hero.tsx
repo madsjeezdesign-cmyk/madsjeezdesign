@@ -38,7 +38,7 @@ export function NidoLinajeHero() {
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl flex-col justify-end px-4 pb-20 pt-32 sm:px-8 sm:pb-28">
         <div key={index} className="nl-hero-fade max-w-2xl">
-          <p className="text-[10px] font-medium uppercase tracking-[0.45em] text-stone-500">
+          <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-stone-500">
             Colección {index + 1} · {slides.length}
           </p>
           <h1 className="mt-4 font-serif text-4xl font-light leading-[1.1] text-stone-900 sm:text-6xl md:text-7xl">
@@ -51,7 +51,7 @@ export function NidoLinajeHero() {
           <button
             type="button"
             onClick={() => document.querySelector("#colecciones")?.scrollIntoView({ behavior: "smooth" })}
-            className="group mt-10 inline-flex items-center gap-3 border-b border-stone-800 pb-1 text-[11px] font-medium uppercase tracking-[0.35em] text-stone-900 transition hover:border-stone-500 hover:text-stone-600"
+            className="group mt-10 inline-flex items-center gap-3 border-b border-stone-800 pb-1 text-[11px] font-medium uppercase tracking-[0.04em] text-stone-900 transition hover:border-stone-500 hover:text-stone-600"
           >
             Explorar las colecciones
             <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>

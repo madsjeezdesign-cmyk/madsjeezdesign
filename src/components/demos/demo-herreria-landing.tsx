@@ -50,7 +50,7 @@ const img = (id: string, w = 1200) =>
 
 function ForgeBadge({ children }: { children: React.ReactNode }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-[#FF4D00]">
+    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.04em] text-[#FF4D00]">
       <Flame size={12} className="animate-pulse" />
       {children}
     </div>
@@ -81,14 +81,14 @@ function ForgeCard({
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent" />
       </div>
       <div className="absolute bottom-0 left-0 right-0 p-6 transition-transform duration-500 group-hover:-translate-y-1 md:p-8">
-        <p className="mb-2 text-[9px] font-black uppercase tracking-[0.3em] text-[#FF4D00]">{category}</p>
+        <p className="mb-2 text-[9px] font-black uppercase tracking-[0.04em] text-[#FF4D00]">{category}</p>
         <h3 className="mb-3 font-[family-name:var(--font-demo-h-herreria)] text-xl font-bold uppercase tracking-tighter text-white md:text-2xl">
           {title}
         </h3>
         <p className="max-w-[260px] text-xs leading-relaxed text-gray-400 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
           {description}
         </p>
-        <span className="mt-5 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white transition-colors group-hover:text-[#FF4D00]">
+        <span className="mt-5 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.04em] text-white transition-colors group-hover:text-[#FF4D00]">
           Ver proyecto <ArrowUpRight size={14} />
         </span>
       </div>
@@ -328,7 +328,7 @@ export function DemoHerreriaLanding() {
               <span className="block font-[family-name:var(--font-demo-h-herreria)] text-xl font-black uppercase leading-none tracking-tighter text-white md:text-2xl">
                 {BRAND}
               </span>
-              <span className="text-[8px] font-bold uppercase tracking-[0.4em] text-gray-500">{TAGLINE}</span>
+              <span className="text-[8px] font-bold uppercase tracking-[0.04em] text-gray-500">{TAGLINE}</span>
             </div>
           </Link>
 
@@ -337,7 +337,7 @@ export function DemoHerreriaLanding() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 transition-colors hover:text-[#FF4D00]"
+                className="text-[10px] font-black uppercase tracking-[0.04em] text-gray-400 transition-colors hover:text-[#FF4D00]"
               >
                 {item.label}
               </a>
@@ -348,7 +348,7 @@ export function DemoHerreriaLanding() {
             <button
               type="button"
               onClick={scrollToLead}
-              className="hidden rounded-full border border-white/10 bg-white/5 px-6 py-3 text-[10px] font-black uppercase tracking-widest shadow-lg transition-all hover:bg-[#FF4D00] hover:text-white md:inline-flex"
+              className="hidden rounded-full border border-white/10 bg-white/5 px-6 py-3 text-[10px] font-black uppercase tracking-[0.04em] shadow-lg transition-all hover:bg-[#FF4D00] hover:text-white md:inline-flex"
             >
               Pedir presupuesto
             </button>
@@ -385,7 +385,7 @@ export function DemoHerreriaLanding() {
             <button
               type="button"
               onClick={scrollToLead}
-              className="mt-6 rounded-xl bg-[#FF4D00] py-4 text-sm font-black uppercase tracking-widest text-black"
+              className="mt-6 rounded-xl bg-[#FF4D00] py-4 text-sm font-black uppercase tracking-[0.04em] text-black"
             >
               Pedir presupuesto
             </button>
@@ -423,7 +423,7 @@ export function DemoHerreriaLanding() {
               <button
                 type="button"
                 onClick={() => document.getElementById("obras")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center gap-4 rounded-xl bg-[#FF4D00] px-8 py-4 text-[11px] font-black uppercase tracking-widest text-black shadow-[0_20px_40px_-10px_rgba(255,77,0,0.4)] transition-all hover:bg-white md:px-10 md:py-5"
+                className="inline-flex items-center gap-4 rounded-xl bg-[#FF4D00] px-8 py-4 text-[11px] font-black uppercase tracking-[0.04em] text-black shadow-[0_20px_40px_-10px_rgba(255,77,0,0.4)] transition-all hover:bg-white md:px-10 md:py-5"
               >
                 Ver proyectos <ChevronRight size={18} />
               </button>
@@ -431,7 +431,7 @@ export function DemoHerreriaLanding() {
                 href={site.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-8 py-4 text-[11px] font-black uppercase tracking-widest text-white backdrop-blur-sm transition-all hover:bg-white/10 md:px-10 md:py-5"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-8 py-4 text-[11px] font-black uppercase tracking-[0.04em] text-white backdrop-blur-sm transition-all hover:bg-white/10 md:px-10 md:py-5"
               >
                 WhatsApp directo
               </a>
@@ -442,7 +442,7 @@ export function DemoHerreriaLanding() {
                   <p className="font-[family-name:var(--font-demo-h-herreria)] text-2xl font-black text-[#FF4D00] md:text-3xl">
                     {h.val}
                   </p>
-                  <p className="mt-1 text-[9px] font-bold uppercase tracking-widest text-gray-500">{h.label}</p>
+                  <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.04em] text-gray-500">{h.label}</p>
                 </div>
               ))}
             </div>
@@ -514,7 +514,7 @@ export function DemoHerreriaLanding() {
                 Obras a medida
               </h2>
             </div>
-            <p className="max-w-xs border-l-2 border-[#FF4D00] pl-6 text-sm font-bold uppercase tracking-widest text-gray-400">
+            <p className="max-w-xs border-l-2 border-[#FF4D00] pl-6 text-sm font-bold uppercase tracking-[0.04em] text-gray-400">
               El equilibrio exacto entre la frialdad del metal y la calidez de la madera.
             </p>
           </div>
@@ -552,7 +552,7 @@ export function DemoHerreriaLanding() {
                       <item.icon size={24} />
                     </div>
                     <div>
-                      <h4 className="text-sm font-black uppercase tracking-widest text-white">{item.title}</h4>
+                      <h4 className="text-sm font-black uppercase tracking-[0.04em] text-white">{item.title}</h4>
                       <p className="mt-1 text-sm leading-relaxed text-gray-500">{item.desc}</p>
                     </div>
                   </div>
@@ -561,7 +561,7 @@ export function DemoHerreriaLanding() {
               <button
                 type="button"
                 onClick={scrollToLead}
-                className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#FF4D00] hover:text-white"
+                className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.04em] text-[#FF4D00] hover:text-white"
               >
                 Pedir asesoría de materiales <ArrowRight size={14} />
               </button>
@@ -598,11 +598,11 @@ export function DemoHerreriaLanding() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-black/70 p-5 backdrop-blur-md">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#FF4D00]">Taller operativo</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-[#FF4D00]">Taller operativo</p>
                 <p className="mt-1 text-sm font-semibold text-white">400 m² · TIG/MIG · Pintura electrostática</p>
                 <div className="mt-3 flex items-center gap-2">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-[#FF4D00]" />
-                  <span className="text-[9px] font-black uppercase tracking-widest text-gray-400">
+                  <span className="text-[9px] font-black uppercase tracking-[0.04em] text-gray-400">
                     Turnos de visita demo
                   </span>
                 </div>
@@ -726,7 +726,7 @@ export function DemoHerreriaLanding() {
       >
         <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-16">
           <div className="herr-scroll-reveal mb-12 rounded-2xl border border-[#FF4D00]/30 bg-[#FF4D00]/10 p-6 text-center md:p-8">
-            <p className="text-[10px] font-black uppercase tracking-[0.35em] text-[#FF4D00]">Oferta demo</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.04em] text-[#FF4D00]">Oferta demo</p>
             <p className="mt-2 font-[family-name:var(--font-demo-h-herreria)] text-xl font-black uppercase text-white md:text-2xl">
               Presupuesto PDF + visita técnica sin cargo
             </p>
@@ -743,7 +743,7 @@ export function DemoHerreriaLanding() {
                 Medidas, fotos del espacio y tipo de pieza. Te devolvemos rango de inversión y cronograma antes de la
                 visita.
               </p>
-              <ul className="mt-8 space-y-4 text-sm font-bold uppercase tracking-widest text-gray-400">
+              <ul className="mt-8 space-y-4 text-sm font-bold uppercase tracking-[0.04em] text-gray-400">
                 <li className="flex items-center gap-4">
                   <MapPin size={18} className="text-[#FF4D00]" />
                   Buenos Aires · GBA norte y sur
@@ -802,14 +802,14 @@ export function DemoHerreriaLanding() {
                   {BRAND}
                 </span>
               </div>
-              <p className="max-w-md text-sm font-medium uppercase leading-loose tracking-widest text-gray-500">
+              <p className="max-w-md text-sm font-medium uppercase leading-loose tracking-[0.04em] text-gray-500">
                 Maestros en la fusión de hierro, aluminio y madera. Diseños industriales creados para resistir una vida
                 entera.
               </p>
             </div>
             <div>
-              <h5 className="mb-6 text-[10px] font-black uppercase tracking-[0.4em] text-white">Fabricación</h5>
-              <ul className="space-y-3 text-xs font-bold uppercase tracking-widest text-gray-500">
+              <h5 className="mb-6 text-[10px] font-black uppercase tracking-[0.04em] text-white">Fabricación</h5>
+              <ul className="space-y-3 text-xs font-bold uppercase tracking-[0.04em] text-gray-500">
                 {["Portones automatizados", "Parrillas de alto rendimiento", "Mesas industriales", "Escaleras a medida"].map(
                   (item) => (
                     <li key={item} className="cursor-default transition-colors hover:text-white">
@@ -820,19 +820,19 @@ export function DemoHerreriaLanding() {
               </ul>
             </div>
             <div>
-              <h5 className="mb-6 text-[10px] font-black uppercase tracking-[0.4em] text-white">Zona de obra</h5>
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">
+              <h5 className="mb-6 text-[10px] font-black uppercase tracking-[0.04em] text-white">Zona de obra</h5>
+              <p className="text-xs font-bold uppercase tracking-[0.04em] text-gray-500">
                 CABA · Zona Norte · Zona Sur · La Plata
               </p>
             </div>
           </div>
           <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
-            <p className="text-[9px] font-bold uppercase tracking-[0.4em] text-gray-600">
+            <p className="text-[9px] font-bold uppercase tracking-[0.04em] text-gray-600">
               © {new Date().getFullYear()} {BRAND} · Demo {site.name}
             </p>
             <div className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5">
               <span className="h-2 w-2 animate-pulse rounded-full bg-[#FF4D00]" />
-              <span className="text-[9px] font-black uppercase tracking-widest text-white">Taller operativo</span>
+              <span className="text-[9px] font-black uppercase tracking-[0.04em] text-white">Taller operativo</span>
             </div>
           </div>
         </div>

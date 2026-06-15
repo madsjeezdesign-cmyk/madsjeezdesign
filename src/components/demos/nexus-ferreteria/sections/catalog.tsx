@@ -39,7 +39,7 @@ export function Catalog({ category, wishlist, onWishlist, onQuickView, onAdd }: 
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.4em] text-orange-400">
+            <p className="font-mono text-xs uppercase tracking-[0.04em] text-orange-400">
               Catálogo
             </p>
             <h2 className="mt-2 text-4xl font-bold text-white">Equipamiento pro</h2>
@@ -58,7 +58,7 @@ export function Catalog({ category, wishlist, onWishlist, onQuickView, onAdd }: 
             className={`w-56 shrink-0 space-y-6 ${sidebarOpen ? "block" : "hidden lg:block"}`}
           >
             <div className="rounded-xl border border-white/10 bg-zinc-900/50 p-4">
-              <p className="text-xs font-medium uppercase tracking-wider text-[color:var(--muted-body)]">
+              <p className="text-xs font-medium uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
                 Ordenar
               </p>
               {(

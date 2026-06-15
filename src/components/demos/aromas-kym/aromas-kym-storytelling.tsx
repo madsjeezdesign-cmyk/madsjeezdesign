@@ -51,7 +51,7 @@ export function AromasKymStorytelling() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         {/* Section header */}
         <div className="ak-reveal mx-auto max-w-3xl text-center">
-          <p className="font-mono text-[10px] uppercase tracking-[0.42em] text-[#8d8074]">
+          <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
             III — Atelier
           </p>
           <h2
@@ -114,7 +114,7 @@ export function AromasKymStorytelling() {
 
                 {/* Body */}
                 <div className="flex w-full flex-col justify-center md:w-1/2">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#b85a3c]">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#b85a3c]">
                     {STEP_KICKERS[i]}
                   </p>
                   <h3
@@ -134,7 +134,7 @@ export function AromasKymStorytelling() {
                   </p>
 
                   {/* Small ingredient list per step */}
-                  <ul className="mt-8 space-y-2 border-t border-[#e8e1d4] pt-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[#8d8074]">
+                  <ul className="mt-8 space-y-2 border-t border-[#e8e1d4] pt-6 font-mono text-[11px] uppercase tracking-[0.04em] text-[#8d8074]">
                     {i === 0
                       ? ["Cera de soja en pellets", "Mecha de algodón trenzada", "Frasco vidrio 200 ml"]
                       : i === 1
@@ -165,7 +165,7 @@ export function AromasKymStorytelling() {
             “La diferencia entre una vela hecha y una vela bien hecha está en los
             catorce días que nadie ve.”
           </p>
-          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.42em] text-[#8d8074]">
+          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
             Karina &amp; Mariano · Fundadores
           </p>
         </div>

@@ -40,7 +40,7 @@ export function AromasKymFooter() {
 
           <a
             href="#coleccion"
-            className="group inline-flex items-center gap-3 rounded-full border border-[#fbf8f1]/30 px-6 py-3 font-mono text-[11px] uppercase tracking-[0.3em] text-[#fbf8f1] transition hover:border-[#b85a3c] hover:bg-[#b85a3c]"
+            className="group inline-flex items-center gap-3 rounded-full border border-[#fbf8f1]/30 px-6 py-3 font-mono text-[11px] uppercase tracking-[0.04em] text-[#fbf8f1] transition hover:border-[#b85a3c] hover:bg-[#b85a3c]"
           >
             Comprar ahora
             <span className="inline-block transition-transform duration-500 group-hover:translate-x-1">
@@ -53,7 +53,7 @@ export function AromasKymFooter() {
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-4 md:gap-14">
           {/* Col 1: Catálogo */}
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#fbf8f1]/45">
+            <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/45">
               Catálogo
             </p>
             <ul className="mt-5 space-y-3">
@@ -78,7 +78,7 @@ export function AromasKymFooter() {
 
           {/* Col 2: Información */}
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#fbf8f1]/45">
+            <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/45">
               Información
             </p>
             <ul className="mt-5 space-y-3">
@@ -97,7 +97,7 @@ export function AromasKymFooter() {
 
           {/* Col 3: Contacto */}
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#fbf8f1]/45">
+            <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/45">
               Contacto
             </p>
             <ul className="mt-5 space-y-3 text-sm text-[#fbf8f1]/80">
@@ -125,7 +125,7 @@ export function AromasKymFooter() {
             </ul>
             <a
               href="https://instagram.com/aromaskym"
-              className="mt-5 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-[#fbf8f1]/80 transition hover:text-[#b85a3c]"
+              className="mt-5 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/80 transition hover:text-[#b85a3c]"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -147,18 +147,18 @@ export function AromasKymFooter() {
 
           {/* Col 4: Atelier hours */}
           <div className="col-span-2 sm:col-span-1">
-            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#fbf8f1]/45">
+            <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/45">
               Atelier
             </p>
             <ul className="mt-5 space-y-3 text-sm text-[#fbf8f1]/80">
               <li>
-                <span className="block font-mono text-[10px] uppercase tracking-[0.25em] text-[#fbf8f1]/45">
+                <span className="block font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/45">
                   Lunes a viernes
                 </span>
                 10 — 19 h
               </li>
               <li>
-                <span className="block font-mono text-[10px] uppercase tracking-[0.25em] text-[#fbf8f1]/45">
+                <span className="block font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/45">
                   Sábados
                 </span>
                 10 — 14 h
@@ -172,11 +172,11 @@ export function AromasKymFooter() {
 
         {/* Bottom strip */}
         <div className="mt-20 flex flex-col items-start justify-between gap-6 border-t border-[#fbf8f1]/10 pt-8 md:flex-row md:items-center">
-          <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#fbf8f1]/45">
+          <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/45">
             © {new Date().getFullYear()} {cfg.brand} · Todos los derechos reservados
           </p>
 
-          <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.28em] text-[#fbf8f1]/45">
+          <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/45">
             {PAYMENT_METHODS.map((m, i) => (
               <span key={m} className="flex items-center gap-4">
                 {i > 0 ? <span className="h-1 w-1 rounded-full bg-[#fbf8f1]/30" /> : null}
@@ -185,7 +185,7 @@ export function AromasKymFooter() {
             ))}
           </div>
 
-          <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#fbf8f1]/45">
+          <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1]/45">
             Hecho en Buenos Aires
           </p>
         </div>

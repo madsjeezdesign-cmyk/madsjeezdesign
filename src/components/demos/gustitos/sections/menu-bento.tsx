@@ -20,7 +20,7 @@ export function MenuBento({ filter, onQuick, onAdd }: Props) {
   return (
     <section id="menu" className="bg-zinc-950 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <p className="text-xs font-bold uppercase tracking-[0.4em] text-red-500">Showcase</p>
+        <p className="text-xs font-bold uppercase tracking-[0.04em] text-red-500">Showcase</p>
         <h2 className="mt-2 font-[family-name:var(--font-gu-display)] text-4xl uppercase text-white sm:text-5xl">
           Menú cinematográfico
         </h2>

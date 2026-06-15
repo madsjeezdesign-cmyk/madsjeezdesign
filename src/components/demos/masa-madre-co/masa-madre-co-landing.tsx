@@ -84,13 +84,13 @@ export function MasaMadreCoLanding() {
         theme={{
           section: "bg-stone-900 text-stone-100",
           invert: false,
-          label: "text-[10px] font-bold uppercase tracking-widest text-stone-500",
+          label: "text-[10px] font-bold uppercase tracking-[0.04em] text-stone-500",
           input:
             "mt-2 w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white focus:border-orange-500 focus:outline-none",
           focus: "focus:border-orange-500",
           card: "rounded-3xl border border-stone-700 bg-stone-950 p-8",
           button:
-            "rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 px-8 py-3 text-xs font-bold uppercase tracking-widest text-white",
+            "rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 px-8 py-3 text-xs font-bold uppercase tracking-[0.04em] text-white",
         }}
       />
 
@@ -114,7 +114,7 @@ export function MasaMadreCoLanding() {
                 href={waModal}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-xl bg-green-600 py-3.5 text-xs font-black uppercase tracking-widest text-white hover:bg-green-700"
+                className="flex items-center justify-center gap-2 rounded-xl bg-green-600 py-3.5 text-xs font-black uppercase tracking-[0.04em] text-white hover:bg-green-700"
               >
                 <MessageCircle className="h-5 w-5" />
                 Abrir WhatsApp

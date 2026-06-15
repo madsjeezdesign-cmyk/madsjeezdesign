@@ -30,7 +30,7 @@ export function DemoCateringLanding() {
         titleColorClass="text-red-50"
         leadColorClass="text-red-100/55"
         kicker={
-          <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-red-500">Banquetes · cóctel · plant based</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-red-500">Banquetes · cóctel · plant based</p>
         }
         title={
           <>

@@ -11,7 +11,7 @@ export function Services() {
         aria-hidden
       />
       <motion.div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <p className="font-mono text-xs uppercase tracking-[0.4em] text-orange-400">
+        <p className="font-mono text-xs uppercase tracking-[0.04em] text-orange-400">
           Servicios
         </p>
         <h2 className="mt-2 text-4xl font-bold text-white">Más que un mostrador</h2>

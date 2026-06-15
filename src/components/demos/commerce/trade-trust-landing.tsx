@@ -136,7 +136,7 @@ export function TradeTrustLanding({ slug }: Props) {
               />
             </div>
             <div className="absolute -bottom-5 -left-5 hidden rounded-sm border border-[#e6e3dc] bg-white px-5 py-4 shadow-md md:block">
-              <p className="text-[10px] uppercase tracking-wider text-[#7a7568]">Garantía escrita</p>
+              <p className="text-[10px] uppercase tracking-[0.04em] text-[#7a7568]">Garantía escrita</p>
               <p className="mt-1 font-[family-name:var(--font-demo-h-commerce)] text-2xl font-medium text-[#171717]">
                 {meta.emergency}
               </p>
@@ -157,7 +157,7 @@ export function TradeTrustLanding({ slug }: Props) {
             <div key={item.label} className="flex items-start gap-3 px-5 py-6 md:px-7">
               <item.icon className="mt-0.5 h-4 w-4 shrink-0" style={{ color: ink }} />
               <div>
-                <p className="text-[10px] uppercase tracking-wider text-[#7a7568]">{item.label}</p>
+                <p className="text-[10px] uppercase tracking-[0.04em] text-[#7a7568]">{item.label}</p>
                 <p className="mt-1 text-sm font-medium text-[#171717]">{item.value}</p>
               </div>
             </div>

@@ -33,7 +33,7 @@ export function MasaMadreCoMenu({ onAdd }: Props) {
     <section id="menu" className="scroll-mt-20 bg-gradient-to-b from-orange-50/80 to-stone-100 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-10 text-center">
-          <span className="text-xs font-black uppercase tracking-widest text-orange-700">Tienda online</span>
+          <span className="text-xs font-black uppercase tracking-[0.04em] text-orange-700">Tienda online</span>
           <h2 className="mt-2 font-serif text-3xl font-bold text-stone-900 sm:text-4xl">Menú del día</h2>
           <p className="mx-auto mt-3 max-w-lg text-sm text-stone-600">
             Ingredientes nobles, precios en pesos argentinos. Elegí cantidad y sumá al carrito.
@@ -106,7 +106,7 @@ export function MasaMadreCoMenu({ onAdd }: Props) {
                   <button
                     type="button"
                     onClick={() => onAdd(product, getQty(product.id))}
-                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-orange-700 py-2.5 text-[10px] font-black uppercase tracking-wider text-white transition hover:bg-orange-800"
+                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-orange-700 py-2.5 text-[10px] font-black uppercase tracking-[0.04em] text-white transition hover:bg-orange-800"
                   >
                     <ShoppingCart className="h-4 w-4" />
                     Añadir

@@ -20,7 +20,7 @@ export function DemoHotelLanding() {
         brand="Posada 9 Luces"
         iconKey="Wine"
         primaryCta="Reservar suite"
-        primaryCtaClass="rounded-sm border border-amber-600/60 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-amber-100 hover:bg-amber-900/40"
+        primaryCtaClass="rounded-sm border border-amber-600/60 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-100 hover:bg-amber-900/40"
       />
 
       <DemoThemedHero
@@ -29,7 +29,7 @@ export function DemoHotelLanding() {
         headingClass={h}
         titleColorClass="text-amber-50"
         leadColorClass="text-amber-100/60"
-        kicker={<p className="text-[10px] font-bold uppercase tracking-[0.35em] text-amber-400">Relais · viñedo · cocina a leña</p>}
+        kicker={<p className="text-[10px] font-bold uppercase tracking-[0.04em] text-amber-400">Relais · viñedo · cocina a leña</p>}
         title={
           <>
             Noches que
@@ -66,7 +66,7 @@ export function DemoHotelLanding() {
           ].map((room) => (
             <article key={room.title} className={`flex flex-col p-8 ${art.cardShell}`}>
               <h3 className={`${h} text-2xl text-amber-50`}>{room.title}</h3>
-              <p className="mt-1 text-xs font-bold uppercase tracking-wider text-amber-500/80">{room.meta}</p>
+              <p className="mt-1 text-xs font-bold uppercase tracking-[0.04em] text-amber-500/80">{room.meta}</p>
               <p className="mt-4 flex-1 text-sm text-amber-100/55">{room.body}</p>
               <button type="button" className={`mt-6 w-fit ${art.secondaryCta}`}>
                 Ficha PDF demo

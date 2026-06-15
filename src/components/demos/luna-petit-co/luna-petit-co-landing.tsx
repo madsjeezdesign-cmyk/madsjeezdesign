@@ -143,12 +143,12 @@ export function LunaPetitCoLanding() {
         theme={{
           section: "bg-neutral-900 text-neutral-100",
           invert: false,
-          label: "text-[10px] font-medium uppercase tracking-widest text-neutral-500",
+          label: "text-[10px] font-medium uppercase tracking-[0.04em] text-neutral-500",
           input:
             "mt-2 w-full rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm text-white focus:border-neutral-400 focus:outline-none",
           focus: "focus:border-neutral-400",
           card: "rounded-2xl border border-neutral-800 bg-neutral-950 p-8",
-          button: "rounded-full bg-[#F8F6F2] px-8 py-3 text-xs font-medium uppercase tracking-widest text-neutral-900",
+          button: "rounded-full bg-[#F8F6F2] px-8 py-3 text-xs font-medium uppercase tracking-[0.04em] text-neutral-900",
         }}
       />
 

@@ -49,7 +49,7 @@ export function IntimaCoPackBuilder({ onAddPack }: Props) {
   return (
     <section id="packs" className="scroll-mt-24 border-t border-stone-200/60 bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-3 sm:px-4">
-        <p className="text-[10px] font-light uppercase tracking-[0.35em] text-rose-400/90">Multi-buy</p>
+        <p className="text-[10px] font-light uppercase tracking-[0.04em] text-rose-400/90">Multi-buy</p>
         <h2 className="mt-2 font-serif text-2xl text-stone-900 sm:text-3xl">
           Armá tu pack con {cfg.packDiscountPct}% off
         </h2>
@@ -74,7 +74,7 @@ export function IntimaCoPackBuilder({ onAddPack }: Props) {
 
         <div className="mt-8 grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl border border-stone-200/80 bg-stone-50/50 p-5">
-            <p className="text-xs font-light uppercase tracking-wider text-stone-400">Modelo</p>
+            <p className="text-xs font-light uppercase tracking-[0.04em] text-stone-400">Modelo</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {INTIMA_PACK_ITEMS.map((p) => (
                 <button
@@ -95,7 +95,7 @@ export function IntimaCoPackBuilder({ onAddPack }: Props) {
               ))}
             </div>
 
-            <p className="mt-6 text-xs font-light uppercase tracking-wider text-stone-400">Color</p>
+            <p className="mt-6 text-xs font-light uppercase tracking-[0.04em] text-stone-400">Color</p>
             <div className="mt-2 flex gap-2">
               {item.colors.map((c) => (
                 <button
@@ -119,7 +119,7 @@ export function IntimaCoPackBuilder({ onAddPack }: Props) {
               type="button"
               disabled={atMax}
               onClick={addToPack}
-              className="mt-4 rounded-full border border-stone-900 px-6 py-2.5 text-xs font-light uppercase tracking-wider text-stone-900 transition hover:bg-stone-900 hover:text-stone-50 disabled:opacity-40"
+              className="mt-4 rounded-full border border-stone-900 px-6 py-2.5 text-xs font-light uppercase tracking-[0.04em] text-stone-900 transition hover:bg-stone-900 hover:text-stone-50 disabled:opacity-40"
             >
               Sumar al pack
             </button>
@@ -146,7 +146,7 @@ export function IntimaCoPackBuilder({ onAddPack }: Props) {
                     <button
                       type="button"
                       onClick={() => removeAt(i)}
-                      className="text-[10px] uppercase tracking-wider text-stone-400 hover:text-rose-500"
+                      className="text-[10px] uppercase tracking-[0.04em] text-stone-400 hover:text-rose-500"
                     >
                       Quitar
                     </button>
@@ -180,7 +180,7 @@ export function IntimaCoPackBuilder({ onAddPack }: Props) {
                     onAddPack(selections, discountAmount);
                     setSelections([]);
                   }}
-                  className="mt-4 w-full rounded-full bg-stone-900 py-3.5 text-xs font-light uppercase tracking-[0.2em] text-stone-50 disabled:opacity-40 hover:bg-stone-800"
+                  className="mt-4 w-full rounded-full bg-stone-900 py-3.5 text-xs font-light uppercase tracking-[0.04em] text-stone-50 disabled:opacity-40 hover:bg-stone-800"
                 >
                   Agregar pack al carrito
                 </button>

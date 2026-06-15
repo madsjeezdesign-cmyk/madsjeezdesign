@@ -30,7 +30,7 @@ export function DemoTattooLanding() {
         titleColorClass="text-rose-50"
         leadColorClass="text-rose-100/55"
         kicker={
-          <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-rose-500">
+          <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-rose-500">
             <Pen className="h-4 w-4" /> Guest artists · bio-seguridad · merch
           </span>
         }
@@ -79,7 +79,7 @@ export function DemoTattooLanding() {
               <p className="text-sm text-rose-200/50">Menores acompañados · documentación demo · derecho a pausar sesión.</p>
             </div>
           </div>
-          <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-rose-500">
+          <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.04em] text-rose-500">
             <Clock className="h-4 w-4" /> Depósito no reembolsable 40%
           </span>
         </div>

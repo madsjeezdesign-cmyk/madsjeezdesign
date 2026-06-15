@@ -16,7 +16,7 @@ export function FashionInstagramGallery({ config }: Props) {
       <div className="mx-auto max-w-[90%]">
         <div className="rf-reveal mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-gray-500">
               @{config.instagramHandle}
             </p>
             <h2 className="font-serif text-4xl leading-tight tracking-tighter text-black md:text-5xl">
@@ -39,7 +39,7 @@ export function FashionInstagramGallery({ config }: Props) {
               href={config.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-gray-500 transition-colors hover:text-black"
+              className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.04em] text-gray-500 transition-colors hover:text-black"
             >
               Ver perfil completo <ArrowRight size={14} />
             </a>
@@ -93,7 +93,7 @@ export function FashionInstagramGallery({ config }: Props) {
         >
           <button
             type="button"
-            className="absolute right-6 top-6 text-xs font-bold uppercase tracking-widest text-white"
+            className="absolute right-6 top-6 text-xs font-bold uppercase tracking-[0.04em] text-white"
             onClick={() => {
               setActiveVideo(null);
               videoRef.current?.pause();

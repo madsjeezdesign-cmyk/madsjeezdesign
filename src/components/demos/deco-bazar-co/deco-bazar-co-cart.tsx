@@ -102,7 +102,7 @@ export function DecoBazarCoCart({
         {items.length > 0 ? (
           <div className="space-y-4 border-t border-zinc-100 p-4">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-widest text-zinc-400">Entrega</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-zinc-400">Entrega</p>
               <div className="mt-2 grid gap-2">
                 <button
                   type="button"
@@ -133,7 +133,7 @@ export function DecoBazarCoCart({
 
             {mode === "shipping" ? (
               <div>
-                <p className="text-[10px] font-medium uppercase tracking-widest text-zinc-400">Región</p>
+                <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-zinc-400">Región</p>
                 <select
                   value={region}
                   onChange={(e) => setRegion(e.target.value as DecoRegionId)}

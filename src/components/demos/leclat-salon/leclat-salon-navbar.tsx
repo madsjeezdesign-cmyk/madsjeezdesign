@@ -43,7 +43,7 @@ export function LeclatSalonNavbar() {
           <Sparkles className="h-4 w-4 text-rose-400" strokeWidth={1.5} />
           <span>
             <span className="block font-serif text-lg text-stone-800">{cfg.brand}</span>
-            <span className="block text-[9px] font-medium uppercase tracking-[0.35em] text-rose-400">
+            <span className="block text-[9px] font-medium uppercase tracking-[0.04em] text-rose-400">
               {cfg.brandSub}
             </span>
           </span>
@@ -66,7 +66,7 @@ export function LeclatSalonNavbar() {
           <button
             type="button"
             onClick={() => go("#turnos")}
-            className="hidden rounded-full bg-gradient-to-r from-rose-400 to-rose-500 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-md shadow-rose-200 transition hover:from-rose-500 hover:to-rose-600 sm:inline-block"
+            className="hidden rounded-full bg-gradient-to-r from-rose-400 to-rose-500 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.04em] text-white shadow-md shadow-rose-200 transition hover:from-rose-500 hover:to-rose-600 sm:inline-block"
           >
             Reservar turno online
           </button>
@@ -91,7 +91,7 @@ export function LeclatSalonNavbar() {
           <button
             type="button"
             onClick={() => go("#turnos")}
-            className="mt-3 w-full rounded-full bg-rose-500 py-3 text-xs font-semibold uppercase tracking-wider text-white"
+            className="mt-3 w-full rounded-full bg-rose-500 py-3 text-xs font-semibold uppercase tracking-[0.04em] text-white"
           >
             Reservar turno online
           </button>

@@ -128,7 +128,7 @@ function Badge({ children, variant = "primary" }: { children: React.ReactNode; v
   };
   return (
     <span
-      className={`rounded-full border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${styles[variant]}`}
+      className={`rounded-full border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.04em] ${styles[variant]}`}
     >
       {children}
     </span>
@@ -166,7 +166,7 @@ function ProductCard({
         />
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-cyan-600">{product.category}</p>
+        <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.04em] text-cyan-600">{product.category}</p>
         <h3 className="mb-3 min-h-[40px] line-clamp-2 text-sm font-semibold leading-snug text-slate-800">
           {product.name}
         </h3>
@@ -364,7 +364,7 @@ export function DemoFarmaciaLanding() {
               <p className="font-[family-name:var(--font-demo-h-farmacia)] text-lg font-bold tracking-tight text-slate-900 md:text-xl">
                 Galénica
               </p>
-              <p className="text-[9px] font-bold uppercase tracking-[0.35em] text-cyan-600">Medical Hub</p>
+              <p className="text-[9px] font-bold uppercase tracking-[0.04em] text-cyan-600">Medical Hub</p>
             </div>
           </Link>
 
@@ -373,7 +373,7 @@ export function DemoFarmaciaLanding() {
               <a
                 key={item}
                 href={item === "Ofertas" ? "#catalogo" : item === "Consultas" ? "#servicios" : "#catalogo"}
-                className="text-[11px] font-bold uppercase tracking-widest text-slate-500 transition-colors hover:text-cyan-600"
+                className="text-[11px] font-bold uppercase tracking-[0.04em] text-slate-500 transition-colors hover:text-cyan-600"
               >
                 {item}
               </a>
@@ -466,7 +466,7 @@ export function DemoFarmaciaLanding() {
                   Buscar <ArrowRight size={18} />
                 </button>
               </form>
-              <div className="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-500">
+              <div className="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold uppercase tracking-[0.04em] text-slate-500">
                 <span className="flex items-center gap-2">
                   <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                   4.9 · 12k reseñas
@@ -490,7 +490,7 @@ export function DemoFarmaciaLanding() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/20 bg-white/90 p-4 backdrop-blur-md md:bottom-6 md:left-6 md:right-6">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-cyan-600">Retiro en 45 min</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-cyan-600">Retiro en 45 min</p>
                   <p className="mt-1 text-sm font-semibold text-slate-800">12 sucursales activas en CABA y GBA</p>
                 </div>
               </div>
@@ -512,7 +512,7 @@ export function DemoFarmaciaLanding() {
                   <feat.icon size={22} strokeWidth={1.75} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-900">{feat.label}</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.04em] text-slate-900">{feat.label}</p>
                   <p className="text-[11px] text-slate-500">{feat.sub}</p>
                 </div>
               </div>
@@ -525,7 +525,7 @@ export function DemoFarmaciaLanding() {
           <div className="mx-auto max-w-7xl px-4 md:px-8">
             <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-cyan-600">Catálogo premium</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-cyan-600">Catálogo premium</p>
                 <h2 className="mt-2 font-[family-name:var(--font-demo-h-farmacia)] text-3xl font-bold tracking-tight text-slate-900 md:text-5xl">
                   Productos destacados
                 </h2>
@@ -599,7 +599,7 @@ export function DemoFarmaciaLanding() {
         <section className="bg-slate-50 py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-4 md:px-8">
             <div className="mb-12 text-center">
-              <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-cyan-600">Servicios integrados</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-cyan-600">Servicios integrados</p>
               <h2 className="mt-2 font-[family-name:var(--font-demo-h-farmacia)] text-3xl font-bold text-slate-900 md:text-4xl">
                 Todo el ecosistema de salud
               </h2>
@@ -634,7 +634,7 @@ export function DemoFarmaciaLanding() {
           <div className="mx-auto max-w-7xl px-4 md:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-cyan-600">Sucursales</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-cyan-600">Sucursales</p>
                 <h2 className="mt-2 font-[family-name:var(--font-demo-h-farmacia)] text-3xl font-bold text-slate-900 md:text-4xl">
                   Encontrá tu farmacia más cercana
                 </h2>
@@ -673,7 +673,7 @@ export function DemoFarmaciaLanding() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl bg-white/95 p-4 backdrop-blur-sm">
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Cerca tuyo</p>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500">Cerca tuyo</p>
                     <p className="text-sm font-bold text-slate-900">3 sucursales a menos de 2 km</p>
                   </div>
                   <button
@@ -709,7 +709,7 @@ export function DemoFarmaciaLanding() {
                 </div>
                 <div>
                   <p className="font-[family-name:var(--font-demo-h-farmacia)] text-lg font-bold text-white">Galénica</p>
-                  <p className="text-[9px] font-bold uppercase tracking-[0.35em] text-cyan-500">Medical Hub</p>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.04em] text-cyan-500">Medical Hub</p>
                 </div>
               </div>
               <p className="mt-4 max-w-sm text-sm leading-relaxed">
@@ -717,7 +717,7 @@ export function DemoFarmaciaLanding() {
               </p>
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Enlaces</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500">Enlaces</p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <a href="#catalogo" className="hover:text-cyan-400">
@@ -742,7 +742,7 @@ export function DemoFarmaciaLanding() {
               </ul>
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Compartir demo</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500">Compartir demo</p>
               <button
                 type="button"
                 className="mt-4 inline-flex items-center gap-2 rounded-xl border border-slate-700 px-4 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:border-cyan-600/50 hover:text-white"

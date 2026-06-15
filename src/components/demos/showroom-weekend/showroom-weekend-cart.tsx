@@ -138,7 +138,7 @@ export function ShowroomWeekendCart({ open, onClose, cart, onUpdateQty, onRemove
                 href={weekendCartWhatsApp(cart, totals, discount, deliveryMethod)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-2 rounded-2xl bg-emerald-600 py-4 text-xs font-black uppercase tracking-widest text-white hover:bg-emerald-500"
+                className="flex w-full items-center justify-center gap-2 rounded-2xl bg-emerald-600 py-4 text-xs font-black uppercase tracking-[0.04em] text-white hover:bg-emerald-500"
               >
                 💬 Pedir por WhatsApp
               </a>

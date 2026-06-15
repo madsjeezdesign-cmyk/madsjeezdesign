@@ -316,7 +316,7 @@ export function MmoMedievalLanding({ slug }: Props) {
               >
                 {plan.popular ? (
                   <span
-                    className="absolute -top-3 left-6 border border-[color:var(--mmo-gold)] px-3 py-0.5 font-serif text-[10px] tracking-widest"
+                    className="absolute -top-3 left-6 border border-[color:var(--mmo-gold)] px-3 py-0.5 font-serif text-[10px] tracking-[0.04em]"
                     style={{ background: parchment, color: oxblood }}
                   >
                     Casa preferida

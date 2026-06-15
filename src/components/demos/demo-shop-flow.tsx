@@ -130,7 +130,7 @@ export function DemoShopFlow({
     shop.products.length >= 1 ? (
       <div className="mt-10 grid gap-4 md:grid-cols-2 md:grid-rows-2">
         <div className={`rounded-2xl p-8 md:row-span-2 ${cardClass}`}>
-          <p className={`text-[10px] font-bold uppercase tracking-widest ${sub}`}>Destacado</p>
+          <p className={`text-[10px] font-bold uppercase tracking-[0.04em] ${sub}`}>Destacado</p>
           {productChrome(shop.products[0]!)}
         </div>
         {shop.products.slice(1).map((p) => (
@@ -183,7 +183,7 @@ export function DemoShopFlow({
       <div className={demoContainer}>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${light ? "text-stone-500" : "text-[color:var(--muted-body)]"}`}>
+            <p className={`text-[10px] font-bold uppercase tracking-[0.04em] ${light ? "text-stone-500" : "text-[color:var(--muted-body)]"}`}>
               {shopEyebrow}
             </p>
             <h2
@@ -196,7 +196,7 @@ export function DemoShopFlow({
           <button
             type="button"
             onClick={() => setStep(step === "cart" ? "browse" : "cart")}
-            className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider ${btnGhost}`}
+            className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.04em] ${btnGhost}`}
           >
             <ShoppingBag className="h-4 w-4" />
             {step === "cart" ? "Seguir comprando" : `Ver carrito (${totalUnits})`}
@@ -221,7 +221,7 @@ export function DemoShopFlow({
                 setStep("browse");
                 setQty(Object.fromEntries(shop.products.map((p) => [p.id, 0])));
               }}
-              className={`mt-6 rounded-xl px-6 py-3 text-xs font-bold uppercase tracking-wider ${light ? "border border-stone-400 text-stone-800 hover:bg-stone-200/50" : "border border-white/20 text-white hover:bg-white/5"}`}
+              className={`mt-6 rounded-xl px-6 py-3 text-xs font-bold uppercase tracking-[0.04em] ${light ? "border border-stone-400 text-stone-800 hover:bg-stone-200/50" : "border border-white/20 text-white hover:bg-white/5"}`}
             >
               Reiniciar demo
             </button>
@@ -250,7 +250,7 @@ export function DemoShopFlow({
                 type="button"
                 disabled={lineItems.length === 0}
                 onClick={fakePay}
-                className={`rounded-xl px-6 py-3 text-xs font-black uppercase tracking-wider disabled:opacity-40 ${accentClass}`}
+                className={`rounded-xl px-6 py-3 text-xs font-black uppercase tracking-[0.04em] disabled:opacity-40 ${accentClass}`}
               >
                 Finalizar compra (simulado)
               </button>

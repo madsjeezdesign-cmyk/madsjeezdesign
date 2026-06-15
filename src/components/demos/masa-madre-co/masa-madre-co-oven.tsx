@@ -47,7 +47,7 @@ export function MasaMadreCoOven() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <span className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-orange-400">
+            <span className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.04em] text-orange-400">
               <Flame className="h-4 w-4" />
               En vivo
             </span>
@@ -87,7 +87,7 @@ export function MasaMadreCoOven() {
         </div>
 
         <div className="mmc-marquee mt-10 overflow-hidden whitespace-nowrap border-t border-stone-800 pt-6">
-          <div className="inline-flex gap-12 text-xs font-bold uppercase tracking-[0.3em] text-stone-500">
+          <div className="inline-flex gap-12 text-xs font-bold uppercase tracking-[0.04em] text-stone-500">
             <span>Masa madre 48h · Croissants laminados · Facturas de crema · Pan de campo · Brownies 70% cacao ·</span>
             <span>Masa madre 48h · Croissants laminados · Facturas de crema · Pan de campo · Brownies 70% cacao ·</span>
           </div>

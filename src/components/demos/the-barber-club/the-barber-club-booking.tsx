@@ -63,7 +63,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
     <section id="turnos" className="border-t border-zinc-800 bg-zinc-950 py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="mb-12 text-center">
-          <span className="text-xs font-black uppercase tracking-widest text-amber-500">Reservas online</span>
+          <span className="text-xs font-black uppercase tracking-[0.04em] text-amber-500">Reservas online</span>
           <h2 className="mt-2 font-serif text-3xl font-bold text-white sm:text-4xl">Reservá tu turno</h2>
         </div>
 
@@ -76,7 +76,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
               }`}
             >
               <s.icon className="h-4 w-4" />
-              <span className="text-[9px] font-bold uppercase tracking-wider">{s.label}</span>
+              <span className="text-[9px] font-bold uppercase tracking-[0.04em]">{s.label}</span>
             </div>
           ))}
         </div>
@@ -84,7 +84,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
         <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 sm:p-8">
           {step === 1 ? (
             <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-zinc-400">Elegí tu servicio</h3>
+              <h3 className="text-sm font-bold uppercase tracking-[0.04em] text-zinc-400">Elegí tu servicio</h3>
               <div className="grid gap-4 sm:grid-cols-3">
                 {BARBER_SERVICES.map((s) => (
                   <button
@@ -109,7 +109,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
 
           {step === 2 ? (
             <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-zinc-400">Elegí tu barbero</h3>
+              <h3 className="text-sm font-bold uppercase tracking-[0.04em] text-zinc-400">Elegí tu barbero</h3>
               <div className="grid gap-4 sm:grid-cols-3">
                 {BARBER_PROS.map((b) => (
                   <button
@@ -136,7 +136,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
 
           {step === 3 ? (
             <div className="space-y-6">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-zinc-400">Fecha y hora</h3>
+              <h3 className="text-sm font-bold uppercase tracking-[0.04em] text-zinc-400">Fecha y hora</h3>
               <div className="flex flex-wrap gap-2">
                 {days.map((d) => (
                   <button
@@ -185,7 +185,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
 
           {step === 4 ? (
             <div className="space-y-6 text-center">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-zinc-400">Confirmá tu reserva</h3>
+              <h3 className="text-sm font-bold uppercase tracking-[0.04em] text-zinc-400">Confirmá tu reserva</h3>
               <div className="mx-auto max-w-sm rounded-xl border border-zinc-800 bg-zinc-950 p-6 text-left text-sm">
                 <p>
                   <span className="text-[color:var(--muted-body)]">Servicio:</span> <strong className="text-white">{service?.name}</strong>
@@ -206,7 +206,7 @@ export function TheBarberClubBooking({ onConfirmed }: Props) {
               <button
                 type="button"
                 onClick={confirm}
-                className="rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-10 py-4 text-sm font-black uppercase tracking-widest text-zinc-950 shadow-lg"
+                className="rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-10 py-4 text-sm font-black uppercase tracking-[0.04em] text-zinc-950 shadow-lg"
               >
                 Confirmar turno
               </button>

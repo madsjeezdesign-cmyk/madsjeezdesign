@@ -79,7 +79,7 @@ export function DemoFotoLanding() {
           <span className={`text-sm font-bold tracking-[0.1em] text-white uppercase ${H}`}>Lúmenes</span>
           <span className={`text-[10px] text-[color:var(--muted-body)] ${H}`}>Estudio fotográfico</span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.04em] text-[color:var(--muted-body)] md:flex">
           {["Portfolio", "Servicios", "Packs", "Contacto"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-amber-400 transition-colors">{n}</span>
           ))}
@@ -104,7 +104,7 @@ export function DemoFotoLanding() {
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className={`mb-4 text-[10px] font-bold uppercase tracking-[0.35em] text-amber-400 ${H}`}
+              className={`mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-400 ${H}`}
             >
               Fotografía · Video · Buenos Aires
             </motion.p>
@@ -145,7 +145,7 @@ export function DemoFotoLanding() {
         {/* shooting ticker */}
         <div className="absolute top-6 right-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-4 py-2 backdrop-blur-md">
           <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
-          <span className={`text-[10px] font-bold uppercase tracking-widest text-white/70 ${H}`}>Shooting disponible</span>
+          <span className={`text-[10px] font-bold uppercase tracking-[0.04em] text-white/70 ${H}`}>Shooting disponible</span>
         </div>
       </section>
 
@@ -153,7 +153,7 @@ export function DemoFotoLanding() {
       <section className="px-5 py-16 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500 ${H}`}>Portfolio</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500 ${H}`}>Portfolio</p>
             <h2 className={`text-3xl font-bold text-white md:text-5xl ${H}`}>Trabajos recientes</h2>
           </FadeUp>
           <div className="mt-10 grid grid-cols-1 gap-3 md:grid-cols-3">
@@ -173,7 +173,7 @@ export function DemoFotoLanding() {
       <section className="border-y border-white/[0.06] bg-[#0d0c0c] px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500 ${H}`}>Especialidades</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500 ${H}`}>Especialidades</p>
             <h2 className={`text-3xl font-bold text-white md:text-5xl ${H}`}>Lo que hacemos<br />mejor</h2>
           </FadeUp>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -198,7 +198,7 @@ export function DemoFotoLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-5xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500 ${H}`}>Packs</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500 ${H}`}>Packs</p>
             <h2 className={`text-3xl font-bold text-white md:text-5xl ${H}`}>Precios transparentes</h2>
           </FadeUp>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -219,7 +219,7 @@ export function DemoFotoLanding() {
                       Más elegido
                     </span>
                   )}
-                  <p className={`text-[11px] font-bold uppercase tracking-widest text-[color:var(--muted-body)] ${H}`}>{p.name}</p>
+                  <p className={`text-[11px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)] ${H}`}>{p.name}</p>
                   <p className={`mt-1 text-3xl font-black text-white ${H}`}>{p.price}</p>
                   <ul className="mt-5 space-y-2">
                     {p.items.map((item) => (

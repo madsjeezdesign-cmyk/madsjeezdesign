@@ -149,7 +149,7 @@ function DemoCard({ item, index }: { item: DemosShowcaseItem; index: number }) {
                 }}
               />
               <span
-                className="truncate text-[10px] font-bold uppercase tracking-[0.2em]"
+                className="truncate text-[10px] font-bold uppercase tracking-[0.04em]"
                 style={{ color: theme.accentHex }}
               >
                 {theme.badge}
@@ -166,7 +166,7 @@ function DemoCard({ item, index }: { item: DemosShowcaseItem; index: number }) {
               {item.title}
             </h2>
             <p
-              className="mb-4 mt-3 text-xs font-semibold uppercase italic tracking-widest"
+              className="mb-4 mt-3 text-xs font-semibold uppercase italic tracking-[0.04em]"
               style={{ color: `${theme.accentHex}cc` }}
             >
               {theme.subtitle}
@@ -189,7 +189,7 @@ function DemoCard({ item, index }: { item: DemosShowcaseItem; index: number }) {
           <motion.div className="mt-auto shrink-0 space-y-3">
             <Link
               href="/#contacto"
-              className={`showcase-btn-shimmer flex w-full items-center justify-center gap-2 rounded-2xl py-4 text-xs font-bold uppercase tracking-widest transition-all active:scale-95 ${
+              className={`showcase-btn-shimmer flex w-full items-center justify-center gap-2 rounded-2xl py-4 text-xs font-bold uppercase tracking-[0.04em] transition-all active:scale-95 ${
                 theme.primaryBtnDarkText ? "text-black hover:opacity-90" : "text-white hover:opacity-90"
               }`}
               style={{ backgroundColor: theme.accentHex }}
@@ -199,7 +199,7 @@ function DemoCard({ item, index }: { item: DemosShowcaseItem; index: number }) {
             </Link>
             <Link
               href={`/demos/${item.slug}`}
-              className="flex w-full items-center justify-center rounded-2xl border border-white/10 py-3 text-[10px] font-bold uppercase tracking-widest text-zinc-400 transition-all hover:bg-white/5 hover:text-white"
+              className="flex w-full items-center justify-center rounded-2xl border border-white/10 py-3 text-[10px] font-bold uppercase tracking-[0.04em] text-zinc-400 transition-all hover:bg-white/5 hover:text-white"
             >
               Ver preview en vivo
             </Link>

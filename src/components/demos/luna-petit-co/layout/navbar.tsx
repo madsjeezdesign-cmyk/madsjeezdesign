@@ -48,7 +48,7 @@ export function LunaNavbar({ cartCount, cartTotal, wishCount, onOpenCart, onOpen
                 key={l.id}
                 type="button"
                 onClick={() => onNav(l.id)}
-                className="relative text-[11px] font-medium uppercase tracking-[0.25em] text-neutral-600 transition hover:text-neutral-900"
+                className="relative text-[11px] font-medium uppercase tracking-[0.04em] text-neutral-600 transition hover:text-neutral-900"
               >
                 {l.label}
               </button>

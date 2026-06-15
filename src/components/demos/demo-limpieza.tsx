@@ -107,11 +107,11 @@ export function DemoLimpiezaLanding() {
             <Sparkles className="h-4 w-4 text-white" />
           </div>
           <span className={`text-sm font-bold text-[#0a1a14] ${H}`}>ProLimpio</span>
-          <span className="hidden rounded bg-emerald-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-emerald-700 md:block">
+          <span className="hidden rounded bg-emerald-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.04em] text-emerald-700 md:block">
             Facility Management
           </span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-zinc-400 md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.04em] text-zinc-400 md:flex">
           {["Servicios", "Sectores", "Empresa", "Contacto"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-emerald-600 transition-colors">{n}</span>
           ))}
@@ -132,7 +132,7 @@ export function DemoLimpiezaLanding() {
               className="mb-5 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-1.5"
             >
               <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
-              <span className={`text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-700 ${H}`}>
+              <span className={`text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-700 ${H}`}>
                 ISO 9001 · 15 años de trayectoria
               </span>
             </motion.div>
@@ -203,7 +203,7 @@ export function DemoLimpiezaLanding() {
               <div className="flex flex-col items-center gap-1.5 px-8 py-8 text-center">
                 <m.icon className="h-5 w-5 text-emerald-500" />
                 <p className={`text-3xl font-black text-[#0a1a14] ${H}`}>{m.val}</p>
-                <p className="text-[11px] uppercase tracking-wider text-zinc-400">{m.label}</p>
+                <p className="text-[11px] uppercase tracking-[0.04em] text-zinc-400">{m.label}</p>
               </div>
             </FadeUp>
           ))}
@@ -214,7 +214,7 @@ export function DemoLimpiezaLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-600 ${H}`}>Servicios</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-600 ${H}`}>Servicios</p>
             <h2 className={`text-3xl font-black text-[#0a1a14] md:text-5xl ${H}`}>Cobertura integral<br />por sector</h2>
           </FadeUp>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -237,7 +237,7 @@ export function DemoLimpiezaLanding() {
       <section className="border-y border-emerald-100 bg-emerald-50 px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-600 ${H}`}>Sectores</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-600 ${H}`}>Sectores</p>
             <h2 className={`text-3xl font-black text-[#0a1a14] md:text-4xl ${H}`}>Donde operamos</h2>
           </FadeUp>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -258,7 +258,7 @@ export function DemoLimpiezaLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-4xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-600 ${H}`}>Proceso</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-600 ${H}`}>Proceso</p>
             <h2 className={`text-3xl font-black text-[#0a1a14] md:text-5xl ${H}`}>Del relevamiento<br />al reporte</h2>
           </FadeUp>
           <div className="mt-10 space-y-0">

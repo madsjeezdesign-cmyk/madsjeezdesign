@@ -110,13 +110,13 @@ export function AromasKymLanding() {
           section: "bg-[#1c1814] text-[#fbf8f1]",
           invert: false,
           label:
-            "text-[10px] font-medium uppercase tracking-[0.32em] text-[#fbf8f1]/55 font-mono",
+            "text-[10px] font-medium uppercase tracking-[0.04em] text-[#fbf8f1]/55 font-mono",
           input:
             "mt-2 w-full rounded-full border border-[#fbf8f1]/20 bg-[#fbf8f1]/5 px-5 py-3 text-sm text-[#fbf8f1] placeholder:text-[#fbf8f1]/40 focus:border-[#b85a3c] focus:outline-none",
           focus: "focus:border-[#b85a3c]",
           card: "rounded-sm border border-[#fbf8f1]/15 bg-[#fbf8f1]/[0.03] p-8",
           button:
-            "rounded-full bg-[#b85a3c] px-8 py-3 text-[10px] font-medium uppercase tracking-[0.32em] text-[#fbf8f1] hover:bg-[#9c4828] font-mono",
+            "rounded-full bg-[#b85a3c] px-8 py-3 text-[10px] font-medium uppercase tracking-[0.04em] text-[#fbf8f1] hover:bg-[#9c4828] font-mono",
         }}
       />
 
@@ -125,7 +125,7 @@ export function AromasKymLanding() {
       {/* Toast */}
       {toast ? (
         <div
-          className="fixed bottom-8 left-1/2 z-[70] -translate-x-1/2 rounded-full border border-[#e8e1d4] bg-[#fbf8f1] px-6 py-3 font-mono text-[10px] uppercase tracking-[0.3em] text-[#5a4e44] shadow-[0_12px_40px_rgba(28,24,20,0.18)]"
+          className="fixed bottom-8 left-1/2 z-[70] -translate-x-1/2 rounded-full border border-[#e8e1d4] bg-[#fbf8f1] px-6 py-3 font-mono text-[10px] uppercase tracking-[0.04em] text-[#5a4e44] shadow-[0_12px_40px_rgba(28,24,20,0.18)]"
           role="status"
           aria-live="polite"
         >
@@ -163,7 +163,7 @@ export function AromasKymLanding() {
               Simulación de pasarela. Tu pedido se registró con éxito y vas a recibir
               un mail con el tracking apenas despachemos.
             </p>
-            <div className="mt-6 flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-[#5a4e44]">
+            <div className="mt-6 flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.04em] text-[#5a4e44]">
               <Check className="h-4 w-4 text-[#7d8e6f]" />
               SSL · Demo
             </div>
@@ -173,7 +173,7 @@ export function AromasKymLanding() {
                 setPaymentOpen(false);
                 setCart([]);
               }}
-              className="mt-8 w-full rounded-full bg-[#1c1814] py-3.5 font-mono text-[10px] uppercase tracking-[0.32em] text-[#fbf8f1] transition hover:bg-[#b85a3c]"
+              className="mt-8 w-full rounded-full bg-[#1c1814] py-3.5 font-mono text-[10px] uppercase tracking-[0.04em] text-[#fbf8f1] transition hover:bg-[#b85a3c]"
             >
               Seguir comprando
             </button>

@@ -41,7 +41,7 @@ export function MasaMadreCoNavbar({ cartCount, onOpenCart }: Props) {
               key={l.href}
               type="button"
               onClick={() => scrollTo(l.href)}
-              className="text-xs font-bold uppercase tracking-widest text-stone-500 transition-colors hover:text-orange-700"
+              className="text-xs font-bold uppercase tracking-[0.04em] text-stone-500 transition-colors hover:text-orange-700"
             >
               {l.label}
             </button>
@@ -65,7 +65,7 @@ export function MasaMadreCoNavbar({ cartCount, onOpenCart }: Props) {
           <button
             type="button"
             onClick={() => scrollTo("#menu")}
-            className="hidden rounded-full bg-orange-700 px-4 py-2 text-xs font-black uppercase tracking-wider text-white shadow-md shadow-orange-200 sm:block"
+            className="hidden rounded-full bg-orange-700 px-4 py-2 text-xs font-black uppercase tracking-[0.04em] text-white shadow-md shadow-orange-200 sm:block"
           >
             Hacer pedido
           </button>

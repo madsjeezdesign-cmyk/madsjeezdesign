@@ -32,7 +32,7 @@ export function DemoPaisajismoLanding() {
         titleColorClass="text-lime-50"
         leadColorClass="text-lime-100/60"
         kicker={
-          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-lime-400">
+          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-lime-400">
             <Leaf className="h-4 w-4" /> Nativas · riego · compostaje
           </p>
         }

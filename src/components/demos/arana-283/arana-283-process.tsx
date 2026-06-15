@@ -25,7 +25,7 @@ export function Arana283Process({ onTab }: Props) {
   return (
     <section className="arana-fade-in mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mb-12 text-center">
-        <span className="mb-2 block text-xs font-black uppercase tracking-widest text-purple-400">Simplicidad</span>
+        <span className="mb-2 block text-xs font-black uppercase tracking-[0.04em] text-purple-400">Simplicidad</span>
         <h2 className="text-3xl font-black text-white">¿Cómo funciona el ciclo?</h2>
       </div>
       <div className="space-y-8">
@@ -48,7 +48,7 @@ export function Arana283Process({ onTab }: Props) {
         <button
           type="button"
           onClick={() => onTab("cotizador")}
-          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-4 text-xs font-black uppercase tracking-wider text-white"
+          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-4 text-xs font-black uppercase tracking-[0.04em] text-white"
         >
           Simular cotización <ArrowRight className="h-4 w-4" />
         </button>

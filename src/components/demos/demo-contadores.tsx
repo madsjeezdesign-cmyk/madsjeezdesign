@@ -114,7 +114,7 @@ export function DemoContadoresLanding() {
           </div>
           <span className={`text-sm font-bold tracking-tight text-white ${H}`}>NÚMERO EXACTO</span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.04em] text-[color:var(--muted-body)] md:flex">
           <span className="cursor-pointer hover:text-white transition-colors">Servicios</span>
           <span className="cursor-pointer hover:text-white transition-colors">Proceso</span>
           <span className="cursor-pointer hover:text-white transition-colors">Equipo</span>
@@ -144,7 +144,7 @@ export function DemoContadoresLanding() {
                 className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-4 py-1.5"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
-                <span className={`text-[10px] font-bold uppercase tracking-[0.25em] text-amber-400 ${H}`}>
+                <span className={`text-[10px] font-bold uppercase tracking-[0.04em] text-amber-400 ${H}`}>
                   Estudio contable · cloud · desde 2012
                 </span>
               </motion.div>
@@ -250,7 +250,7 @@ export function DemoContadoresLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500 ${H}`}>Servicios</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500 ${H}`}>Servicios</p>
             <h2 className={`text-3xl font-black text-white md:text-4xl ${H}`}>Menos improvisación,<br />más previsibilidad fiscal</h2>
           </FadeUp>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -277,7 +277,7 @@ export function DemoContadoresLanding() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <FadeUp>
-              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500 ${H}`}>Onboarding</p>
+              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500 ${H}`}>Onboarding</p>
               <h2 className={`text-3xl font-black text-white md:text-4xl ${H}`}>En dos semanas tenés balances normalizados</h2>
               <div className="mt-10 space-y-6">
                 {STEPS.map((s) => (
@@ -309,7 +309,7 @@ export function DemoContadoresLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500 ${H}`}>Referencias</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500 ${H}`}>Referencias</p>
             <h2 className={`text-3xl font-black text-white md:text-4xl ${H}`}>Lo que dicen<br />nuestros clientes</h2>
           </FadeUp>
           <div className="mt-10 grid gap-5 md:grid-cols-3">

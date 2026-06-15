@@ -40,7 +40,7 @@ export function NidoLinajeNavbar({ cartCount, cartBump, onOpenCart }: Props) {
           {[...cfg.ticker, ...cfg.ticker].map((text, i) => (
             <span
               key={`${text}-${i}`}
-              className="mx-8 text-[10px] font-medium uppercase tracking-[0.35em] text-stone-500"
+              className="mx-8 text-[10px] font-medium uppercase tracking-[0.04em] text-stone-500"
             >
               {text}
             </span>
@@ -58,7 +58,7 @@ export function NidoLinajeNavbar({ cartCount, cartBump, onOpenCart }: Props) {
             <span className="block font-serif text-lg tracking-wide text-stone-900 md:text-xl">
               {cfg.brand}
             </span>
-            <span className="block text-[9px] font-medium uppercase tracking-[0.4em] text-stone-400">
+            <span className="block text-[9px] font-medium uppercase tracking-[0.04em] text-stone-400">
               {cfg.brandSub}
             </span>
           </button>
@@ -69,7 +69,7 @@ export function NidoLinajeNavbar({ cartCount, cartBump, onOpenCart }: Props) {
                 key={l.href}
                 type="button"
                 onClick={() => scrollTo(l.href)}
-                className="text-[11px] font-medium uppercase tracking-[0.2em] text-stone-500 transition hover:text-stone-900"
+                className="text-[11px] font-medium uppercase tracking-[0.04em] text-stone-500 transition hover:text-stone-900"
               >
                 {l.label}
               </button>

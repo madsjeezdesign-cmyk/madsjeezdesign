@@ -124,7 +124,7 @@ export function AndreaMariLanding() {
       ref={rootRef}
       className={`am-demo ${playfair.variable} ${montserrat.variable} min-h-screen scroll-smooth bg-white antialiased selection:bg-[var(--am-primary)] selection:text-white`}
     >
-      <div className="bg-gradient-to-r from-[var(--am-primary)] via-[var(--am-accent)] to-[var(--am-primary)] py-2.5 text-center text-xs font-bold uppercase tracking-widest text-white md:text-sm">
+      <div className="bg-gradient-to-r from-[var(--am-primary)] via-[var(--am-accent)] to-[var(--am-primary)] py-2.5 text-center text-xs font-bold uppercase tracking-[0.04em] text-white md:text-sm">
         🔥 Envíos a todo el país · Celebramos tus curvas con estilo 🔥
       </div>
 
@@ -160,7 +160,7 @@ export function AndreaMariLanding() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--am-dark)] transition-colors hover:text-[var(--am-primary)]"
+                  className="text-[11px] font-bold uppercase tracking-[0.04em] text-[var(--am-dark)] transition-colors hover:text-[var(--am-primary)]"
                 >
                   {item.label}
                 </a>
@@ -241,7 +241,7 @@ export function AndreaMariLanding() {
         <div className="am-hero-overlay absolute inset-0" />
         <div className="relative z-10 mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="mb-6 inline-block -rotate-2 rounded-full bg-[var(--am-secondary)] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[var(--am-dark)] shadow-lg">
+            <span className="mb-6 inline-block -rotate-2 rounded-full bg-[var(--am-secondary)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.04em] text-[var(--am-dark)] shadow-lg">
               Moda sin límite de edad
             </span>
             <h1 className="font-serif text-5xl font-black leading-[1.1] text-white drop-shadow-xl md:text-7xl lg:text-8xl">
@@ -254,7 +254,7 @@ export function AndreaMariLanding() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#nueva-coleccion"
-                className="rounded-full bg-[var(--am-primary)] px-10 py-4 text-center text-sm font-bold uppercase tracking-widest text-white am-shadow-glow transition-transform hover:-translate-y-1 hover:scale-105 hover:bg-[var(--am-accent)]"
+                className="rounded-full bg-[var(--am-primary)] px-10 py-4 text-center text-sm font-bold uppercase tracking-[0.04em] text-white am-shadow-glow transition-transform hover:-translate-y-1 hover:scale-105 hover:bg-[var(--am-accent)]"
               >
                 Ver nueva colección
               </a>
@@ -262,7 +262,7 @@ export function AndreaMariLanding() {
                 href={cfg.instagramUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2 rounded-full border border-white/50 bg-white/20 px-10 py-4 text-sm font-bold uppercase tracking-widest text-white backdrop-blur-md transition-colors hover:bg-white hover:text-[var(--am-dark)]"
+                className="flex items-center justify-center gap-2 rounded-full border border-white/50 bg-white/20 px-10 py-4 text-sm font-bold uppercase tracking-[0.04em] text-white backdrop-blur-md transition-colors hover:bg-white hover:text-[var(--am-dark)]"
               >
                 <IgIcon className="h-5 w-5" /> Instagram
               </a>
@@ -340,7 +340,7 @@ export function AndreaMariLanding() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--am-dark)]/90 via-[var(--am-dark)]/40 to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
               <div className="absolute inset-0 flex flex-col justify-end p-10 text-white">
-                <span className="mb-4 w-max rounded-full bg-[var(--am-primary)] px-3 py-1 text-xs font-bold uppercase tracking-widest">
+                <span className="mb-4 w-max rounded-full bg-[var(--am-primary)] px-3 py-1 text-xs font-bold uppercase tracking-[0.04em]">
                   Temporada
                 </span>
                 <h3 className="font-serif text-4xl font-black">Colores vivos</h3>
@@ -362,7 +362,7 @@ export function AndreaMariLanding() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--am-dark)]/90 via-[var(--am-dark)]/40 to-transparent opacity-80" />
               <div className="absolute inset-0 flex flex-col justify-end p-10 text-white">
-                <span className="mb-4 w-max rounded-full bg-[var(--am-secondary)] px-3 py-1 text-xs font-bold uppercase tracking-widest text-[var(--am-dark)]">
+                <span className="mb-4 w-max rounded-full bg-[var(--am-secondary)] px-3 py-1 text-xs font-bold uppercase tracking-[0.04em] text-[var(--am-dark)]">
                   Básicos premium
                 </span>
                 <h3 className="font-serif text-4xl font-black">Comodidad total</h3>
@@ -378,7 +378,7 @@ export function AndreaMariLanding() {
       <section id="instagram-feed" className="bg-[var(--am-soft)] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="am-reveal mb-12 text-center">
-            <span className="text-sm font-bold uppercase tracking-widest text-[var(--am-accent)]">
+            <span className="text-sm font-bold uppercase tracking-[0.04em] text-[var(--am-accent)]">
               @{cfg.instagramHandle}
             </span>
             <h2 className="mt-2 font-serif text-4xl font-black text-[var(--am-dark)] md:text-5xl">
@@ -435,7 +435,7 @@ export function AndreaMariLanding() {
                 </div>
               </div>
               <div className="flex flex-col justify-center p-10 md:p-16 lg:w-1/2">
-                <span className="text-sm font-bold uppercase tracking-widest text-[var(--am-secondary)]">
+                <span className="text-sm font-bold uppercase tracking-[0.04em] text-[var(--am-secondary)]">
                   Nuestra esencia
                 </span>
                 <h2 className="mt-3 font-serif text-4xl font-black leading-tight text-white md:text-5xl">
@@ -480,7 +480,7 @@ export function AndreaMariLanding() {
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex w-max items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-sm font-bold uppercase tracking-widest"
+              className="mt-8 inline-flex w-max items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-sm font-bold uppercase tracking-[0.04em]"
             >
               <MessageCircle className="h-5 w-5" /> WhatsApp
             </a>
@@ -507,13 +507,13 @@ export function AndreaMariLanding() {
         theme={{
           section: "bg-[var(--am-soft)] text-[var(--am-dark)]",
           invert: false,
-          label: "text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500",
+          label: "text-[10px] font-bold uppercase tracking-[0.04em] text-gray-500",
           input:
             "mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-[var(--am-primary)]",
           focus: "focus:border-[var(--am-primary)]",
           card: "rounded-3xl border border-gray-100 bg-white p-8 am-shadow-card md:p-10",
           button:
-            "rounded-full bg-[var(--am-primary)] px-8 py-3 text-[11px] font-bold uppercase tracking-widest text-white hover:bg-[var(--am-accent)]",
+            "rounded-full bg-[var(--am-primary)] px-8 py-3 text-[11px] font-bold uppercase tracking-[0.04em] text-white hover:bg-[var(--am-accent)]",
         }}
       />
 

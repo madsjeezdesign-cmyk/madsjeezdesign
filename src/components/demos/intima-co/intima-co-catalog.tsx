@@ -114,7 +114,7 @@ export function IntimaCoCatalog({
                     <p className="mt-3 text-lg font-light text-stone-800">{formatIntimaPrice(product.price)}</p>
 
                     <div className="mt-4">
-                      <p className="text-[10px] font-light uppercase tracking-wider text-stone-400">Color</p>
+                      <p className="text-[10px] font-light uppercase tracking-[0.04em] text-stone-400">Color</p>
                       <div className="mt-2 flex gap-2">
                         {product.colors.map((c) => (
                           <button
@@ -135,7 +135,7 @@ export function IntimaCoCatalog({
                     </div>
 
                     <div className="mt-4">
-                      <p className="text-[10px] font-light uppercase tracking-wider text-stone-400">Talle</p>
+                      <p className="text-[10px] font-light uppercase tracking-[0.04em] text-stone-400">Talle</p>
                       <div className="mt-2 flex flex-wrap gap-1.5">
                         {product.sizes.map((sz) => (
                           <button
@@ -159,7 +159,7 @@ export function IntimaCoCatalog({
                     <button
                       type="button"
                       onClick={() => handleAdd(product)}
-                      className={`mt-5 flex w-full items-center justify-center gap-2 rounded-full py-3 text-[10px] font-light uppercase tracking-[0.2em] transition ${
+                      className={`mt-5 flex w-full items-center justify-center gap-2 rounded-full py-3 text-[10px] font-light uppercase tracking-[0.04em] transition ${
                         justAdded
                           ? "ic-add-pop bg-rose-100 text-stone-900"
                           : "bg-stone-900 text-stone-50 hover:bg-stone-800"

@@ -36,7 +36,7 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div className="space-y-6 text-center lg:col-span-7 lg:text-left">
-              <span className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/90 px-4 py-2 text-xs font-black uppercase tracking-widest text-purple-400">
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/90 px-4 py-2 text-xs font-black uppercase tracking-[0.04em] text-purple-400">
                 <Sparkles className="h-4 w-4" /> La evolución de la moda circular
               </span>
               <h1 className="text-4xl font-black leading-none tracking-tight text-white sm:text-6xl">
@@ -53,14 +53,14 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
                 <button
                   type="button"
                   onClick={() => onTab("catalogo")}
-                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-4 text-sm font-extrabold uppercase tracking-wider text-white shadow-lg hover:shadow-purple-500/20"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-4 text-sm font-extrabold uppercase tracking-[0.04em] text-white shadow-lg hover:shadow-purple-500/20"
                 >
                   <ShoppingBag className="h-4 w-4" /> Explorar catálogo
                 </button>
                 <button
                   type="button"
                   onClick={() => onTab("cotizador")}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-900 px-8 py-4 text-sm font-extrabold uppercase tracking-wider text-slate-100 hover:border-slate-700"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-900 px-8 py-4 text-sm font-extrabold uppercase tracking-[0.04em] text-slate-100 hover:border-slate-700"
                 >
                   <Calculator className="h-4 w-4" /> Cotizar mi ropa
                 </button>
@@ -118,7 +118,7 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
           ].map(([n, l]) => (
             <div key={l}>
               <h3 className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-3xl font-black text-transparent">{n}</h3>
-              <p className="text-[11px] font-extrabold uppercase tracking-widest text-slate-500">{l}</p>
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.04em] text-slate-500">{l}</p>
             </div>
           ))}
         </div>
@@ -127,7 +127,7 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
       <section className="bg-[#09090b] py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <span className="mb-2 block text-xs font-black uppercase tracking-widest text-pink-500">Tu closet inteligente</span>
+            <span className="mb-2 block text-xs font-black uppercase tracking-[0.04em] text-pink-500">Tu closet inteligente</span>
             <h2 className="text-3xl font-black text-white">¿Qué querés hacer hoy?</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -141,7 +141,7 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
                   Prendas únicas de marcas nacionales e internacionales. Reservá online y retirá en Ezeiza.
                 </p>
               </div>
-              <button type="button" onClick={() => onTab("catalogo")} className="mt-8 flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-purple-400">
+              <button type="button" onClick={() => onTab("catalogo")} className="mt-8 flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.04em] text-purple-400">
                 Explorar stock <ArrowRight className="h-4 w-4" />
               </button>
             </div>
@@ -155,7 +155,7 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
                   Traé lotes miércoles y sábados. Efectivo al instante o crédito con 20% extra.
                 </p>
               </div>
-              <button type="button" onClick={() => onTab("cotizador")} className="mt-8 flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-pink-400">
+              <button type="button" onClick={() => onTab("cotizador")} className="mt-8 flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.04em] text-pink-400">
                 Calcular valuación <ArrowRight className="h-4 w-4" />
               </button>
             </div>
@@ -164,7 +164,7 @@ export function Arana283Home({ storeStatus, onTab }: Props) {
       </section>
 
       <div className="overflow-hidden border-y border-slate-900 bg-slate-950 py-5">
-        <div className="arana-marquee-track flex w-max whitespace-nowrap font-serif text-lg italic tracking-widest text-purple-400/80">
+        <div className="arana-marquee-track flex w-max whitespace-nowrap font-serif text-lg italic tracking-[0.04em] text-purple-400/80">
           {[0, 1].map((dup) => (
             <span key={dup} className="mx-8">
               {cfg.marqueeText}

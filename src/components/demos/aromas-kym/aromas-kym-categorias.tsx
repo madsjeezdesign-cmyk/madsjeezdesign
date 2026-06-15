@@ -50,7 +50,7 @@ export function AromasKymCategorias({ onSelectCategory }: Props) {
         {/* Header */}
         <div className="mb-16 flex flex-col items-start gap-6 md:mb-20 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
-            <p className="font-mono text-[10px] uppercase tracking-[0.42em] text-[#8d8074]">
+            <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
               I — Categorías
             </p>
             <h2
@@ -118,7 +118,7 @@ export function AromasKymCategorias({ onSelectCategory }: Props) {
                 {/* Content */}
                 <div className="relative flex h-full flex-col justify-between p-6 md:p-8">
                   <div className="flex items-start justify-between">
-                    <span className="font-mono text-[9px] uppercase tracking-[0.35em] text-[#fbf8f1]/85">
+                    <span className="font-mono text-[9px] uppercase tracking-[0.04em] text-[#fbf8f1]/85">
                       0{i + 1} · {cat.count} productos
                     </span>
                     <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#fbf8f1]/40 bg-[#fbf8f1]/10 text-[#fbf8f1] backdrop-blur-sm transition-all duration-500 group-hover:bg-[#b85a3c] group-hover:border-[#b85a3c]">

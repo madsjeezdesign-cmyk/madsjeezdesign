@@ -101,13 +101,13 @@ export function GameServerLanding({ slug }: Props) {
               <Server className="h-5 w-5" />
             </div>
             <div>
-              <p className="font-[family-name:var(--font-demo-h-gameserver)] text-lg font-bold uppercase tracking-wider text-white md:text-xl">
+              <p className="font-[family-name:var(--font-demo-h-gameserver)] text-lg font-bold uppercase tracking-[0.04em] text-white md:text-xl">
                 {config.brand}
               </p>
-              <p className="text-[9px] uppercase tracking-[0.35em] text-slate-500">{config.gameLabel}</p>
+              <p className="text-[9px] uppercase tracking-[0.04em] text-slate-500">{config.gameLabel}</p>
             </div>
           </div>
-          <nav className="hidden items-center gap-8 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 lg:flex">
+          <nav className="hidden items-center gap-8 text-[10px] font-bold uppercase tracking-[0.04em] text-slate-400 lg:flex">
             <a href="#planes" className="hover:text-[color:var(--gs-accent)]">
               Planes
             </a>
@@ -136,7 +136,7 @@ export function GameServerLanding({ slug }: Props) {
       <section className="relative flex min-h-screen items-center pt-24">
         <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 md:px-10 lg:grid-cols-2 lg:gap-16">
           <div className="relative z-10">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.04em]">
               <span className="gs-pulse-dot h-2 w-2 rounded-full" style={{ background: config.accent }} />
               {config.heroKicker}
             </div>
@@ -156,7 +156,7 @@ export function GameServerLanding({ slug }: Props) {
                 Ver planes <ArrowRight className="h-4 w-4" />
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+            <div className="mt-12 flex flex-wrap gap-6 text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500">
               <span className="flex items-center gap-2">
                 <Zap className="h-4 w-4" style={{ color: config.accent }} />
                 Ping {config.pingMs}
@@ -184,7 +184,7 @@ export function GameServerLanding({ slug }: Props) {
               <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent" />
               <div className="gs-glass absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl p-4 md:bottom-6 md:left-6 md:right-6 md:p-5">
                 <div>
-                  <p className="text-[9px] uppercase tracking-widest text-slate-500">Estado del nodo</p>
+                  <p className="text-[9px] uppercase tracking-[0.04em] text-slate-500">Estado del nodo</p>
                   <p className="text-sm font-bold text-white">Operativo · {config.industryLabel}</p>
                 </div>
                 <span
@@ -198,7 +198,7 @@ export function GameServerLanding({ slug }: Props) {
             <div className="absolute -right-4 -top-4 hidden rounded-xl border border-white/10 bg-[#0b1220] p-4 md:block">
               <Cpu className="mb-2 h-5 w-5" style={{ color: config.accent }} />
               <p className="text-2xl font-black">99.98%</p>
-              <p className="text-[9px] uppercase tracking-widest text-slate-500">Uptime 30d</p>
+              <p className="text-[9px] uppercase tracking-[0.04em] text-slate-500">Uptime 30d</p>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@ export function GameServerLanding({ slug }: Props) {
               {config.locations.map((loc) => (
                 <span
                   key={`${dup}-${loc}`}
-                  className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.35em] text-slate-500"
+                  className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500"
                 >
                   <Globe className="h-3 w-3" style={{ color: config.accent }} />
                   {loc}
@@ -238,7 +238,7 @@ export function GameServerLanding({ slug }: Props) {
               >
                 {plan.popular ? (
                   <span
-                    className="mb-4 inline-block rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-widest"
+                    className="mb-4 inline-block rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.04em]"
                     style={{ background: accentDim, color: config.accent }}
                   >
                     Más elegido
@@ -246,7 +246,7 @@ export function GameServerLanding({ slug }: Props) {
                 ) : (
                   <span className="mb-4 block h-6" />
                 )}
-                <h3 className="text-xl font-black uppercase tracking-wider">{plan.name}</h3>
+                <h3 className="text-xl font-black uppercase tracking-[0.04em]">{plan.name}</h3>
                 <p className="mt-6 font-[family-name:var(--font-demo-h-gameserver)] text-4xl font-bold md:text-5xl">
                   {plan.price}
                   <span className="text-sm font-normal text-slate-500">/mes</span>
@@ -271,7 +271,7 @@ export function GameServerLanding({ slug }: Props) {
                     setSelectedPlan(plan.name);
                     toggleDeploy();
                   }}
-                  className={`mt-10 w-full py-3 text-[10px] font-black uppercase tracking-widest ${
+                  className={`mt-10 w-full py-3 text-[10px] font-black uppercase tracking-[0.04em] ${
                     plan.popular ? "gs-btn-primary" : "gs-btn-ghost"
                   }`}
                 >
@@ -319,7 +319,7 @@ export function GameServerLanding({ slug }: Props) {
             {config.mods.map((mod) => (
               <span
                 key={mod}
-                className="rounded-lg border border-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 transition-colors hover:border-[color:var(--gs-accent)] hover:text-white"
+                className="rounded-lg border border-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-slate-400 transition-colors hover:border-[color:var(--gs-accent)] hover:text-white"
               >
                 {mod}
               </span>
@@ -347,7 +347,7 @@ export function GameServerLanding({ slug }: Props) {
           <div className="flex items-start gap-4">
             <Headphones className="h-10 w-10 shrink-0" style={{ color: config.accent }} />
             <div>
-              <h3 className="text-xl font-black uppercase tracking-wider">Soporte gamer 24/7</h3>
+              <h3 className="text-xl font-black uppercase tracking-[0.04em]">Soporte gamer 24/7</h3>
               <p className="mt-2 max-w-lg text-sm text-slate-400">
                 Ingenieros que juegan {config.gameLabel}: te ayudamos con plugins, crashes y optimización de TPS.
               </p>
@@ -375,7 +375,7 @@ export function GameServerLanding({ slug }: Props) {
                   className="gs-glass w-full rounded-xl p-6 text-left"
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-sm font-bold uppercase tracking-wider">{item.q}</span>
+                    <span className="text-sm font-bold uppercase tracking-[0.04em]">{item.q}</span>
                     <ChevronDown
                       className={`h-5 w-5 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
                       style={{ color: config.accent }}
@@ -400,7 +400,7 @@ export function GameServerLanding({ slug }: Props) {
         />
       </div>
 
-      <footer className="border-t border-white/5 px-4 py-12 text-center text-[10px] uppercase tracking-[0.4em] text-slate-600 md:px-10">
+      <footer className="border-t border-white/5 px-4 py-12 text-center text-[10px] uppercase tracking-[0.04em] text-slate-600 md:px-10">
         © {new Date().getFullYear()} {config.brand} · Demo {config.gameLabel} · {config.brand} no está afiliado al
         editor del juego
       </footer>
@@ -419,7 +419,7 @@ export function GameServerLanding({ slug }: Props) {
           <button type="button" onClick={closeDeploy} className="absolute right-6 top-6 text-slate-500 hover:text-white">
             <X className="h-8 w-8" />
           </button>
-          <p className="text-[10px] font-bold uppercase tracking-[0.4em]" style={{ color: config.accent }}>
+          <p className="text-[10px] font-bold uppercase tracking-[0.04em]" style={{ color: config.accent }}>
             Deploy · {config.gameLabel}
           </p>
           <h3 className="mt-4 font-[family-name:var(--font-demo-h-gameserver)] text-3xl font-black uppercase">

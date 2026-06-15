@@ -13,7 +13,7 @@ export function Arana283Contact() {
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
         <div className="space-y-8 lg:col-span-5">
           <div>
-            <span className="mb-1 block text-xs font-black uppercase tracking-widest text-pink-500">
+            <span className="mb-1 block text-xs font-black uppercase tracking-[0.04em] text-pink-500">
               Ubicación estratégica
             </span>
             <h2 className="text-3xl font-black text-white">Vení a conocernos en Ezeiza</h2>
@@ -28,7 +28,7 @@ export function Arana283Contact() {
                 <MapPin className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-white">Dirección</h4>
+                <h4 className="text-xs font-black uppercase tracking-[0.04em] text-white">Dirección</h4>
                 <p className="mt-1 text-xs text-slate-400">{cfg.addressLines.join(", ")}</p>
               </div>
             </div>
@@ -37,9 +37,9 @@ export function Arana283Contact() {
                 <Clock className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-white">Horarios</h4>
+                <h4 className="text-xs font-black uppercase tracking-[0.04em] text-white">Horarios</h4>
                 <p className="mt-1 text-xs text-slate-400">{cfg.hoursGeneral}</p>
-                <span className="mt-1.5 inline-block rounded-md border border-purple-500/25 bg-purple-600/10 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-purple-400">
+                <span className="mt-1.5 inline-block rounded-md border border-purple-500/25 bg-purple-600/10 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-[0.04em] text-purple-400">
                   {cfg.hoursReception}
                 </span>
               </div>
@@ -49,7 +49,7 @@ export function Arana283Contact() {
                 <Share2 className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-white">Instagram</h4>
+                <h4 className="text-xs font-black uppercase tracking-[0.04em] text-white">Instagram</h4>
                 <a
                   href={cfg.instagramUrl}
                   target="_blank"
@@ -77,7 +77,7 @@ export function Arana283Contact() {
               href={cfg.mapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-4 left-4 right-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 py-3 text-center text-xs font-black uppercase tracking-widest text-white shadow-lg sm:left-auto sm:right-4 sm:px-8"
+              className="absolute bottom-4 left-4 right-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 py-3 text-center text-xs font-black uppercase tracking-[0.04em] text-white shadow-lg sm:left-auto sm:right-4 sm:px-8"
             >
               Abrir en Google Maps
             </a>
@@ -93,7 +93,7 @@ export function Arana283Contact() {
               <button
                 type="button"
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                className="flex w-full items-center justify-between px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-slate-200 hover:bg-slate-800/40"
+                className="flex w-full items-center justify-between px-6 py-4 text-left text-xs font-bold uppercase tracking-[0.04em] text-slate-200 hover:bg-slate-800/40"
               >
                 {faq.q}
                 <ChevronDown className={`h-4 w-4 text-purple-400 transition-transform ${openFaq === idx ? "rotate-180" : ""}`} />

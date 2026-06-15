@@ -13,7 +13,7 @@ export function RaicesCriollasFooter() {
             <p className="mt-2 text-sm text-stone-600">Raíces locales · atención personalizada</p>
             <div className="mt-6 space-y-4">
               <div className="rounded-2xl border border-stone-200 bg-white p-4">
-                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-800">
+                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.04em] text-amber-800">
                   <Clock className="h-4 w-4" />
                   Showroom y almacén
                 </p>

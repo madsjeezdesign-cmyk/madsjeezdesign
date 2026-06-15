@@ -26,7 +26,7 @@ export function Arana283ProductModal({ product, onClose, onAddToCart }: Props) {
         </button>
         <div className="relative h-64 bg-slate-950">
           <Image src={product.image} alt={product.title} fill className="object-cover opacity-80" sizes="500px" />
-          <span className="absolute bottom-4 left-4 rounded-md border border-slate-800 bg-slate-950/90 px-3 py-1 text-xs font-black uppercase tracking-wider text-pink-400">
+          <span className="absolute bottom-4 left-4 rounded-md border border-slate-800 bg-slate-950/90 px-3 py-1 text-xs font-black uppercase tracking-[0.04em] text-pink-400">
             {product.brand}
           </span>
         </div>
@@ -38,11 +38,11 @@ export function Arana283ProductModal({ product, onClose, onAddToCart }: Props) {
           <p className="text-xs leading-relaxed text-slate-400">{product.desc}</p>
           <div className="grid grid-cols-2 gap-4 border-y border-slate-800 py-4 text-xs">
             <div>
-              <span className="block text-[9px] font-extrabold uppercase tracking-wider text-slate-500">Talle</span>
+              <span className="block text-[9px] font-extrabold uppercase tracking-[0.04em] text-slate-500">Talle</span>
               <strong className="text-sm text-white">{product.size}</strong>
             </div>
             <div>
-              <span className="block text-[9px] font-extrabold uppercase tracking-wider text-slate-500">Estado</span>
+              <span className="block text-[9px] font-extrabold uppercase tracking-[0.04em] text-slate-500">Estado</span>
               <strong className="text-sm text-lime-400">{product.condition}</strong>
             </div>
           </div>
@@ -53,7 +53,7 @@ export function Arana283ProductModal({ product, onClose, onAddToCart }: Props) {
                 onAddToCart(product);
                 onClose();
               }}
-              className="flex-1 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 py-4 text-xs font-black uppercase tracking-wider text-white"
+              className="flex-1 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 py-4 text-xs font-black uppercase tracking-[0.04em] text-white"
             >
               Agregar a bolsa
             </button>
@@ -61,7 +61,7 @@ export function Arana283ProductModal({ product, onClose, onAddToCart }: Props) {
               href={aranaSingleProductWhatsApp(product)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center rounded-xl border border-slate-800 bg-slate-950 py-4 text-xs font-black uppercase tracking-wider text-white hover:bg-slate-900"
+              className="flex flex-1 items-center justify-center rounded-xl border border-slate-800 bg-slate-950 py-4 text-xs font-black uppercase tracking-[0.04em] text-white hover:bg-slate-900"
             >
               Reservar directo
             </a>

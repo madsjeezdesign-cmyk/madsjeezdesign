@@ -34,7 +34,7 @@ export function LunaProductBento({ filter, wishlist, onWishlist, onQuickView, on
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-neutral-500">Colección</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-neutral-500">Colección</p>
             <h2 className="mt-2 font-serif text-3xl text-neutral-900">Piezas seleccionadas</h2>
           </div>
           <select

@@ -28,7 +28,7 @@ export function ShowroomWeekendFittingRoom({ onFilterSize }: Props) {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-rose-950/5 to-transparent" />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-indigo-400">
+          <span className="rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.04em] text-indigo-400">
             ⚡ Inteligencia de talles
           </span>
           <h2 className="mt-4 text-3xl font-black text-white sm:text-5xl">
@@ -51,7 +51,7 @@ export function ShowroomWeekendFittingRoom({ onFilterSize }: Props) {
                 { label: "Cadera", value: cadera, set: setCadera, color: "accent-indigo-500", text: "text-indigo-400" },
               ].map((s) => (
                 <div key={s.label} className="mb-6">
-                  <div className="mb-2 flex justify-between text-xs font-bold uppercase tracking-wider text-slate-400">
+                  <div className="mb-2 flex justify-between text-xs font-bold uppercase tracking-[0.04em] text-slate-400">
                     <span>{s.label}</span>
                     <span className={`font-black text-sm ${s.text}`}>{s.value} cm</span>
                   </div>
@@ -73,7 +73,7 @@ export function ShowroomWeekendFittingRoom({ onFilterSize }: Props) {
 
           <div className="relative flex flex-col items-center justify-between gap-8 overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-900/30 p-8 sm:flex-row lg:col-span-7">
             <div className="flex w-full flex-col items-center sm:w-1/2">
-              <span className="mb-4 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+              <span className="mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500">
                 Simulación de silueta
               </span>
               <div className="flex aspect-[3/4] w-48 items-center justify-center rounded-2xl border border-slate-800 bg-slate-900 p-6">
@@ -99,14 +99,14 @@ export function ShowroomWeekendFittingRoom({ onFilterSize }: Props) {
 
             <div className="w-full space-y-6 sm:w-1/2">
               <div>
-                <span className="mb-1 block text-xs font-bold uppercase tracking-widest text-rose-400">
+                <span className="mb-1 block text-xs font-bold uppercase tracking-[0.04em] text-rose-400">
                   Tu talle sugerido
                 </span>
                 <p className="text-4xl font-black text-white">Talle {result.size}</p>
                 <p className="mt-1 text-xs text-slate-400">Con rebote elástico real.</p>
               </div>
               <div className="border-t border-slate-800 pt-4">
-                <span className="mb-1 block text-xs font-bold uppercase tracking-widest text-indigo-400">
+                <span className="mb-1 block text-xs font-bold uppercase tracking-[0.04em] text-indigo-400">
                   Silueta
                 </span>
                 <p className="text-lg font-extrabold text-slate-200">{result.shape.name}</p>
@@ -121,7 +121,7 @@ export function ShowroomWeekendFittingRoom({ onFilterSize }: Props) {
                   onFilterSize(sizeFilter);
                   document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-500/30 bg-slate-900 py-3 text-xs font-bold uppercase tracking-widest text-slate-200 transition-colors hover:bg-rose-500 hover:text-white"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-500/30 bg-slate-900 py-3 text-xs font-bold uppercase tracking-[0.04em] text-slate-200 transition-colors hover:bg-rose-500 hover:text-white"
               >
                 🔍 Ver ropa en mi talle
               </button>

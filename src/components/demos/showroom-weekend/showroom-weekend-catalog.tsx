@@ -42,7 +42,7 @@ export function ShowroomWeekendCatalog({ sizeFilter, onSizeFilterChange, onAddTo
     <section id="catalogo" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <div className="mb-12 flex flex-col justify-between gap-6 border-b border-slate-900 pb-8 md:flex-row md:items-end">
         <div>
-          <span className="mb-1 block text-xs font-bold uppercase tracking-widest text-rose-400">
+          <span className="mb-1 block text-xs font-bold uppercase tracking-[0.04em] text-rose-400">
             ✦ Moda premium sin barreras
           </span>
           <h2 className="text-3xl font-black text-white sm:text-5xl">Nuestras joyitas</h2>
@@ -66,7 +66,7 @@ export function ShowroomWeekendCatalog({ sizeFilter, onSizeFilterChange, onAddTo
               key={c.id}
               type="button"
               onClick={() => setCategory(c.id)}
-              className={`rounded-full border px-5 py-2.5 text-[11px] font-black uppercase tracking-wider transition-all ${
+              className={`rounded-full border px-5 py-2.5 text-[11px] font-black uppercase tracking-[0.04em] transition-all ${
                 category === c.id
                   ? "border-rose-500 bg-rose-500 text-white shadow-md shadow-rose-500/25"
                   : "border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700"
@@ -117,13 +117,13 @@ export function ShowroomWeekendCatalog({ sizeFilter, onSizeFilterChange, onAddTo
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-slate-950">
                 {prod.badge ? (
-                  <span className="absolute left-4 top-4 z-10 rounded-full bg-rose-500 px-3 py-1.5 text-[9px] font-black uppercase tracking-widest text-white">
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-rose-500 px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.04em] text-white">
                     {prod.badge}
                   </span>
                 ) : null}
                 <Image src={prod.image} alt={prod.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />
                 <div className="absolute inset-0 flex flex-col justify-end bg-slate-950/60 p-5 opacity-0 transition-opacity group-hover:opacity-100">
-                  <p className="mb-2 text-center text-[10px] font-extrabold uppercase tracking-wider text-rose-400">
+                  <p className="mb-2 text-center text-[10px] font-extrabold uppercase tracking-[0.04em] text-rose-400">
                     Talles
                   </p>
                   <div className="flex flex-wrap justify-center gap-1.5">
@@ -142,7 +142,7 @@ export function ShowroomWeekendCatalog({ sizeFilter, onSizeFilterChange, onAddTo
               </div>
               <div className="flex flex-1 flex-col justify-between p-5">
                 <div>
-                  <span className="mb-1 block text-[9px] font-extrabold uppercase tracking-widest text-rose-500">
+                  <span className="mb-1 block text-[9px] font-extrabold uppercase tracking-[0.04em] text-rose-500">
                     {prod.category}
                   </span>
                   <h3 className="line-clamp-1 text-lg font-extrabold text-slate-100 group-hover:text-rose-400">
@@ -154,7 +154,7 @@ export function ShowroomWeekendCatalog({ sizeFilter, onSizeFilterChange, onAddTo
                 </div>
                 <div className="mt-5 flex items-center justify-between border-t border-slate-900 pt-5">
                   <span className="text-xl font-black text-white">{formatWeekendPrice(prod.price)}</span>
-                  <span className="rounded-lg border border-indigo-500/20 bg-indigo-950 px-2.5 py-1.5 text-[9px] font-black uppercase tracking-wider text-indigo-300">
+                  <span className="rounded-lg border border-indigo-500/20 bg-indigo-950 px-2.5 py-1.5 text-[9px] font-black uppercase tracking-[0.04em] text-indigo-300">
                     Súper flex
                   </span>
                 </div>

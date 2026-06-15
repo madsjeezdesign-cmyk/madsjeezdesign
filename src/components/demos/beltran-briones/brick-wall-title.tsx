@@ -220,7 +220,7 @@ export function BrickWallTitle({
         <button
           type="button"
           onClick={runConstruction}
-          className="bb-brick-rebuild mx-auto mt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-amber-500/80 transition hover:text-amber-400"
+          className="bb-brick-rebuild mx-auto mt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500/80 transition hover:text-amber-400"
         >
           <RotateCcw className="h-3.5 w-3.5" />
           Reconstruir

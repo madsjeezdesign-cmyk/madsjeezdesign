@@ -36,7 +36,7 @@ export function Arana283Calculator({ onToast }: Props) {
   return (
     <section className="arana-fade-in mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-10 text-center">
-        <span className="mb-1 block text-xs font-black uppercase tracking-widest text-pink-500">
+        <span className="mb-1 block text-xs font-black uppercase tracking-[0.04em] text-pink-500">
           Simulador virtual
         </span>
         <h2 className="text-3xl font-black text-white">Calculá el valor de tu ropa</h2>
@@ -47,7 +47,7 @@ export function Arana283Calculator({ onToast }: Props) {
           <div className="space-y-4">
             <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
               <Calculator className="h-5 w-5 text-purple-400" />
-              <h3 className="text-xs font-black uppercase tracking-widest text-slate-300">Atributos</h3>
+              <h3 className="text-xs font-black uppercase tracking-[0.04em] text-slate-300">Atributos</h3>
             </div>
             <div className="space-y-2">
               <label className="block text-xs font-extrabold uppercase tracking-wide text-slate-400">Tipo de prenda</label>
@@ -81,7 +81,7 @@ export function Arana283Calculator({ onToast }: Props) {
             type="button"
             onClick={handleCalculate}
             disabled={loading}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 py-4 text-xs font-black uppercase tracking-widest text-white shadow-md disabled:opacity-50"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 py-4 text-xs font-black uppercase tracking-[0.04em] text-white shadow-md disabled:opacity-50"
           >
             {loading ? (
               <>
@@ -97,7 +97,7 @@ export function Arana283Calculator({ onToast }: Props) {
 
         <div className="flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900 p-6 sm:p-8 md:col-span-5">
           <div>
-            <h3 className="mb-6 text-xs font-black uppercase tracking-widest text-slate-500">Resultado</h3>
+            <h3 className="mb-6 text-xs font-black uppercase tracking-[0.04em] text-slate-500">Resultado</h3>
             {!result ? (
               <div className="py-16 text-center text-slate-500">
                 <Calculator className="mx-auto mb-4 h-12 w-12 text-slate-700" />
@@ -158,7 +158,7 @@ export function Arana283Calculator({ onToast }: Props) {
                   href={aranaCotizacionWhatsApp(calcType, calcBrand, calcCondition, result)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center rounded-xl border border-slate-800 bg-slate-950 py-3.5 text-xs font-black uppercase tracking-widest text-white hover:bg-slate-900"
+                  className="flex w-full items-center justify-center rounded-xl border border-slate-800 bg-slate-950 py-3.5 text-xs font-black uppercase tracking-[0.04em] text-white hover:bg-slate-900"
                 >
                   Ofrecer lote por WhatsApp
                 </a>

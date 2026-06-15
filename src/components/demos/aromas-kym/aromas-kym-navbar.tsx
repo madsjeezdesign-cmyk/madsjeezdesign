@@ -51,7 +51,7 @@ export function AromasKymNavbar({ cartCount, cartBump, onOpenCart, onSelectCateg
             .map((text, i) => (
               <span
                 key={`${text}-${i}`}
-                className="mx-8 font-mono text-[10px] uppercase tracking-[0.32em] text-[#8d8074]"
+                className="mx-8 font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]"
               >
                 · {text}
               </span>
@@ -80,7 +80,7 @@ export function AromasKymNavbar({ cartCount, cartBump, onOpenCart, onSelectCateg
             >
               {cfg.brand}
             </span>
-            <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.38em] text-[#8d8074]">
+            <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.04em] text-[#8d8074]">
               Apothecary · est. 2017
             </span>
           </button>
@@ -92,7 +92,7 @@ export function AromasKymNavbar({ cartCount, cartBump, onOpenCart, onSelectCateg
                 key={l.id}
                 type="button"
                 onClick={() => goCategory(l.id)}
-                className="group relative text-[11px] font-medium uppercase tracking-[0.2em] text-[#5a4e44] transition hover:text-[#1c1814]"
+                className="group relative text-[11px] font-medium uppercase tracking-[0.04em] text-[#5a4e44] transition hover:text-[#1c1814]"
               >
                 {l.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#b85a3c] transition-all duration-500 group-hover:w-full" />

@@ -13,7 +13,7 @@ export function IntimaCoFooter() {
             <p className="mt-2 text-sm font-light text-stone-500">Showroom · asesoramiento de talles</p>
             <div className="mt-6 space-y-4">
               <div className="rounded-2xl border border-stone-200/60 bg-white/80 p-4">
-                <p className="flex items-center gap-2 text-xs font-light uppercase tracking-wider text-stone-500">
+                <p className="flex items-center gap-2 text-xs font-light uppercase tracking-[0.04em] text-stone-500">
                   <Clock className="h-4 w-4" strokeWidth={1.25} />
                   Atención
                 </p>

@@ -25,7 +25,7 @@ export function BurgerLabHero() {
         <button
           type="button"
           onClick={() => document.querySelector("#menu")?.scrollIntoView({ behavior: "smooth" })}
-          className="bl-pulse-cta mt-8 w-full max-w-xs rounded-xl bg-orange-500 py-4 text-sm font-black uppercase tracking-wider text-zinc-950 sm:w-auto sm:px-10"
+          className="bl-pulse-cta mt-8 w-full max-w-xs rounded-xl bg-orange-500 py-4 text-sm font-black uppercase tracking-[0.04em] text-zinc-950 sm:w-auto sm:px-10"
         >
           ¡Pedir ahora!
         </button>

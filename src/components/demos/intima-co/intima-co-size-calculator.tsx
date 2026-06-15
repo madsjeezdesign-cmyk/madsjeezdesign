@@ -56,7 +56,7 @@ export function IntimaCoSizeCalculator({ onViewSize }: Props) {
       <div className="mx-auto max-w-3xl px-3 sm:px-4">
         <div className="flex items-center justify-center gap-2 text-rose-400/80">
           <Ruler className="h-5 w-5" strokeWidth={1.25} />
-          <p className="text-[10px] font-light uppercase tracking-[0.35em]">Asistente de confianza</p>
+          <p className="text-[10px] font-light uppercase tracking-[0.04em]">Asistente de confianza</p>
         </div>
         <h2 className="mt-3 text-center font-serif text-2xl text-stone-900 sm:text-3xl">
           Calculadora de talles
@@ -73,7 +73,7 @@ export function IntimaCoSizeCalculator({ onViewSize }: Props) {
               setResult(null);
               setError(null);
             }}
-            className={`rounded-full px-4 py-2 text-xs font-light uppercase tracking-wider transition ${
+            className={`rounded-full px-4 py-2 text-xs font-light uppercase tracking-[0.04em] transition ${
               mode === "bra" ? "bg-stone-900 text-stone-50" : "border border-stone-200 text-stone-600"
             }`}
           >
@@ -86,7 +86,7 @@ export function IntimaCoSizeCalculator({ onViewSize }: Props) {
               setResult(null);
               setError(null);
             }}
-            className={`rounded-full px-4 py-2 text-xs font-light uppercase tracking-wider transition ${
+            className={`rounded-full px-4 py-2 text-xs font-light uppercase tracking-[0.04em] transition ${
               mode === "apparel" ? "bg-stone-900 text-stone-50" : "border border-stone-200 text-stone-600"
             }`}
           >
@@ -98,7 +98,7 @@ export function IntimaCoSizeCalculator({ onViewSize }: Props) {
           {mode === "bra" ? (
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="block">
-                <span className="text-xs font-light uppercase tracking-wider text-stone-500">
+                <span className="text-xs font-light uppercase tracking-[0.04em] text-stone-500">
                   Contorno de busto (cm)
                 </span>
                 <input
@@ -110,7 +110,7 @@ export function IntimaCoSizeCalculator({ onViewSize }: Props) {
                 />
               </label>
               <label className="block">
-                <span className="text-xs font-light uppercase tracking-wider text-stone-500">
+                <span className="text-xs font-light uppercase tracking-[0.04em] text-stone-500">
                   Bajo busto (cm)
                 </span>
                 <input
@@ -124,7 +124,7 @@ export function IntimaCoSizeCalculator({ onViewSize }: Props) {
             </div>
           ) : (
             <label className="block">
-              <span className="text-xs font-light uppercase tracking-wider text-stone-500">
+              <span className="text-xs font-light uppercase tracking-[0.04em] text-stone-500">
                 Contorno de cadera (cm)
               </span>
               <input
@@ -140,7 +140,7 @@ export function IntimaCoSizeCalculator({ onViewSize }: Props) {
           <button
             type="button"
             onClick={calculate}
-            className="mt-6 w-full rounded-full bg-stone-900 py-3.5 text-xs font-light uppercase tracking-[0.2em] text-stone-50 transition hover:bg-stone-800"
+            className="mt-6 w-full rounded-full bg-stone-900 py-3.5 text-xs font-light uppercase tracking-[0.04em] text-stone-50 transition hover:bg-stone-800"
           >
             Calcular mi talle
           </button>
@@ -149,12 +149,12 @@ export function IntimaCoSizeCalculator({ onViewSize }: Props) {
 
           {result ? (
             <div className="ic-fade-in mt-6 rounded-2xl border border-rose-100 bg-rose-50/30 p-6 text-center">
-              <p className="text-xs font-light uppercase tracking-widest text-stone-500">Tu talle recomendado</p>
+              <p className="text-xs font-light uppercase tracking-[0.04em] text-stone-500">Tu talle recomendado</p>
               <p className="mt-2 font-serif text-4xl text-stone-900">{result}</p>
               <button
                 type="button"
                 onClick={() => onViewSize(result, mode)}
-                className="mt-4 rounded-full border border-stone-900 px-6 py-2.5 text-xs font-light uppercase tracking-wider text-stone-900 transition hover:bg-stone-900 hover:text-stone-50"
+                className="mt-4 rounded-full border border-stone-900 px-6 py-2.5 text-xs font-light uppercase tracking-[0.04em] text-stone-900 transition hover:bg-stone-900 hover:text-stone-50"
               >
                 Ver productos en mi talle
               </button>

@@ -35,7 +35,7 @@ export function DemoEnhancements({
   extraTestimonialsTitle = "Más opiniones",
   titleClass = "text-white",
   quoteClass = "text-sm italic text-zinc-300",
-  authorClass = "mt-4 text-xs font-bold uppercase tracking-wider text-[color:var(--muted-body)]",
+  authorClass = "mt-4 text-xs font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]",
   cardClass = "rounded-2xl border border-white/10 bg-zinc-950/60 p-6",
   sectionClass = "bg-zinc-950/40",
 }: Props) {
@@ -79,7 +79,7 @@ export function DemoEnhancements({
                 <div
                   className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${meta.color} to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-50`}
                 />
-                <p className="absolute bottom-3 left-4 right-4 text-[10px] font-bold uppercase tracking-widest text-white/90 md:bottom-4">
+                <p className="absolute bottom-3 left-4 right-4 text-[10px] font-bold uppercase tracking-[0.04em] text-white/90 md:bottom-4">
                   {brandLabel} · referencia visual · {industry}
                 </p>
               </div>
@@ -90,7 +90,7 @@ export function DemoEnhancements({
 
       <section id="demo-galeria" className={demoSectionTight}>
         <div className={demoContainer}>
-          <p className="mb-6 text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)]">
+          <p className="mb-6 text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
             Galería de trabajos y ambientes
           </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -120,7 +120,7 @@ export function DemoEnhancements({
 
       <section className={`${demoSectionTight} pb-12`}>
         <div className={`${demoContainer} ${cardChrome} p-4 md:p-6`}>
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[color:var(--muted-body)]">Video promocional (demo)</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">Video promocional (demo)</p>
           <p className="mt-1 text-sm text-[color:var(--muted-body)]">
             Reemplazalo por tu filmación de marca. Si un CDN falla, el reproductor prueba una segunda fuente.
           </p>

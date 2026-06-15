@@ -58,7 +58,7 @@ export function AromasKymDestacados({ onAdd }: Props) {
         {/* Header */}
         <div className="mb-14 flex items-end justify-between md:mb-18">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.42em] text-[#8d8074]">
+            <p className="font-mono text-[10px] uppercase tracking-[0.04em] text-[#8d8074]">
               II — Lo más pedido
             </p>
             <h2
@@ -75,7 +75,7 @@ export function AromasKymDestacados({ onAdd }: Props) {
           </div>
           <a
             href="#coleccion"
-            className="hidden font-mono text-[11px] uppercase tracking-[0.3em] text-[#5a4e44] underline-offset-[6px] transition hover:text-[#b85a3c] hover:underline md:inline"
+            className="hidden font-mono text-[11px] uppercase tracking-[0.04em] text-[#5a4e44] underline-offset-[6px] transition hover:text-[#b85a3c] hover:underline md:inline"
           >
             Ver toda la colección →
           </a>
@@ -111,7 +111,7 @@ export function AromasKymDestacados({ onAdd }: Props) {
 
                 {/* Badge */}
                 {p.badge ? (
-                  <span className="absolute left-4 top-4 z-10 rounded-full border border-[#fbf8f1]/40 bg-[#fbf8f1]/15 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.28em] text-[#fbf8f1] backdrop-blur-md">
+                  <span className="absolute left-4 top-4 z-10 rounded-full border border-[#fbf8f1]/40 bg-[#fbf8f1]/15 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.04em] text-[#fbf8f1] backdrop-blur-md">
                     {p.badge}
                   </span>
                 ) : null}
@@ -119,7 +119,7 @@ export function AromasKymDestacados({ onAdd }: Props) {
                 {/* Content */}
                 <div className="relative flex h-full flex-col justify-end p-5 md:p-7">
                   <div>
-                    <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-[#fbf8f1]/70">
+                    <p className="font-mono text-[9px] uppercase tracking-[0.04em] text-[#fbf8f1]/70">
                       {p.notesShort}
                     </p>
                     <h3
@@ -151,7 +151,7 @@ export function AromasKymDestacados({ onAdd }: Props) {
                           e.preventDefault();
                           onAdd(p);
                         }}
-                        className="inline-flex items-center gap-2 rounded-full bg-[#fbf8f1] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.28em] text-[#1c1814] transition hover:bg-[#b85a3c] hover:text-[#fbf8f1]"
+                        className="inline-flex items-center gap-2 rounded-full bg-[#fbf8f1] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.04em] text-[#1c1814] transition hover:bg-[#b85a3c] hover:text-[#fbf8f1]"
                       >
                         <Plus className="h-3 w-3" strokeWidth={2} />
                         Agregar
@@ -167,7 +167,7 @@ export function AromasKymDestacados({ onAdd }: Props) {
         <div className="mt-10 text-center md:hidden">
           <a
             href="#coleccion"
-            className="inline-block font-mono text-[11px] uppercase tracking-[0.3em] text-[#5a4e44] underline-offset-[6px] hover:text-[#b85a3c] hover:underline"
+            className="inline-block font-mono text-[11px] uppercase tracking-[0.04em] text-[#5a4e44] underline-offset-[6px] hover:text-[#b85a3c] hover:underline"
           >
             Ver toda la colección →
           </a>

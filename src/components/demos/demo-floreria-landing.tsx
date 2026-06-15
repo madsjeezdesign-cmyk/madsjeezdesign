@@ -65,7 +65,7 @@ function NavItem({ label, active, onClick }: { label: string; active: boolean; o
     <button
       type="button"
       onClick={onClick}
-      className={`relative py-2 text-xs font-medium uppercase tracking-[0.2em] transition-all duration-500 ${
+      className={`relative py-2 text-xs font-medium uppercase tracking-[0.04em] transition-all duration-500 ${
         active ? "text-emerald-800" : "text-stone-400 hover:text-emerald-700"
       }`}
     >
@@ -136,11 +136,11 @@ function ProductCard({
           </button>
         </div>
         <div className="absolute bottom-0 left-0 w-full translate-y-full bg-gradient-to-t from-emerald-950/60 to-transparent p-4 transition-transform duration-500 group-hover:translate-y-0">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">Añadir al carrito</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-white">Añadir al carrito</p>
         </div>
       </div>
       <div className="text-center">
-        <p className="mb-1 text-[10px] uppercase tracking-widest text-stone-400">{category}</p>
+        <p className="mb-1 text-[10px] uppercase tracking-[0.04em] text-stone-400">{category}</p>
         <h3 className="font-serif-display text-lg italic text-stone-800">{title}</h3>
         <p className="mt-1 text-sm font-medium text-emerald-800">{formatPrice(price)}</p>
       </div>
@@ -234,7 +234,7 @@ export function DemoFloreriaLanding() {
               <span className="font-serif-display text-xl font-bold italic tracking-tight text-stone-900">
                 Jardín<span className="text-emerald-800">Ensueño</span>
               </span>
-              <span className="text-[8px] font-bold uppercase tracking-[0.4em] text-stone-400">Florería & Vivero</span>
+              <span className="text-[8px] font-bold uppercase tracking-[0.04em] text-stone-400">Florería & Vivero</span>
             </div>
           </button>
 
@@ -353,7 +353,7 @@ export function DemoFloreriaLanding() {
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-800/10 bg-emerald-800/5 px-4 py-1.5">
                 <Leaf size={14} className="text-emerald-700" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-800">Temporada de Orquídeas</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-800">Temporada de Orquídeas</span>
               </div>
               <h1 className="font-serif-display text-6xl leading-[1.1] tracking-tight text-stone-900 md:text-[5.5rem]">
                 Cultivamos <br /> <span className="italic text-emerald-800">emociones</span> que florecen.
@@ -378,7 +378,7 @@ export function DemoFloreriaLanding() {
                   <Sun size={24} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-stone-400">Felicidad Diaria</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-stone-400">Felicidad Diaria</p>
                   <p className="font-serif-display text-xl italic text-stone-800">100% Frescura</p>
                 </div>
               </div>
@@ -407,7 +407,7 @@ export function DemoFloreriaLanding() {
 
         {/* Entrega */}
         <section className="border-y border-emerald-800/10 bg-emerald-800/5 py-8">
-          <div className="container mx-auto flex flex-wrap items-center justify-center gap-8 px-6 text-center text-[10px] font-bold uppercase tracking-[0.35em] text-emerald-800 md:gap-16">
+          <div className="container mx-auto flex flex-wrap items-center justify-center gap-8 px-6 text-center text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-800 md:gap-16">
             <span>Envío mismo día CABA</span>
             <span className="hidden h-4 w-px bg-emerald-800/20 md:block" />
             <span>Eventos & bodas</span>
@@ -423,7 +423,7 @@ export function DemoFloreriaLanding() {
           <div className="container mx-auto px-6">
             <div className="je-scroll-reveal mb-16 flex flex-col items-end justify-between gap-8 md:flex-row">
               <div className="max-w-xl">
-                <h5 className="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-800">Favoritos de la Casa</h5>
+                <h5 className="mb-4 text-[11px] font-bold uppercase tracking-[0.04em] text-emerald-800">Favoritos de la Casa</h5>
                 <h2 className="font-serif-display text-5xl leading-tight text-stone-900">
                   Nuestra Colección <br /> <span className="italic">de Temporada.</span>
                 </h2>
@@ -440,7 +440,7 @@ export function DemoFloreriaLanding() {
                     key={key}
                     type="button"
                     onClick={() => setShopFilter(key)}
-                    className={`px-6 py-2 text-[10px] font-bold uppercase tracking-widest ${
+                    className={`px-6 py-2 text-[10px] font-bold uppercase tracking-[0.04em] ${
                       shopFilter === key ? "border-b-2 border-emerald-800 text-emerald-800" : "text-stone-400 hover:text-emerald-800"
                     }`}
                   >
@@ -456,7 +456,7 @@ export function DemoFloreriaLanding() {
             </div>
             {v.shop ? (
               <div className="je-scroll-reveal mt-20 rounded-3xl border border-emerald-800/10 bg-white p-8 md:p-12">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-800">{v.shop.eyebrow ?? "Delivery"}</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-800">{v.shop.eyebrow ?? "Delivery"}</p>
                 <h3 className="mt-2 font-serif-display text-3xl italic text-stone-900">{v.shop.headline}</h3>
                 <p className="mt-3 max-w-2xl text-sm text-stone-500">{v.shop.sub}</p>
                 <ul className="mt-8 grid gap-4 md:grid-cols-3">
@@ -477,7 +477,7 @@ export function DemoFloreriaLanding() {
         <section id="talleres" className="bg-white py-28 md:py-32">
           <div className="container mx-auto px-6">
             <div className="je-scroll-reveal mb-16 max-w-2xl">
-              <h5 className="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-800">Experiencias vivas</h5>
+              <h5 className="mb-4 text-[11px] font-bold uppercase tracking-[0.04em] text-emerald-800">Experiencias vivas</h5>
               <h2 className="font-serif-display text-5xl text-stone-900">
                 Talleres <span className="italic">botánicos.</span>
               </h2>
@@ -489,14 +489,14 @@ export function DemoFloreriaLanding() {
                   key={w.title}
                   className="je-scroll-reveal rounded-3xl border border-stone-100 bg-stone-50 p-8 transition-shadow hover:shadow-lg"
                 >
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-800">{w.spots}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-800">{w.spots}</span>
                   <h3 className="mt-4 font-serif-display text-2xl italic text-stone-900">{w.title}</h3>
                   <p className="mt-2 text-sm font-medium text-stone-600">{w.date}</p>
                   <p className="mt-4 text-sm leading-relaxed text-stone-500">{w.desc}</p>
                   <button
                     type="button"
                     onClick={() => document.getElementById(`lead-${SLUG}`)?.scrollIntoView({ behavior: "smooth" })}
-                    className="mt-6 text-[10px] font-bold uppercase tracking-widest text-emerald-800 hover:underline"
+                    className="mt-6 text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-800 hover:underline"
                   >
                     Reservar lugar →
                   </button>
@@ -530,7 +530,7 @@ export function DemoFloreriaLanding() {
               </div>
             </div>
             <div className="je-scroll-reveal space-y-8">
-              <h5 className="text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-800">Legado Botánico</h5>
+              <h5 className="text-[11px] font-bold uppercase tracking-[0.04em] text-emerald-800">Legado Botánico</h5>
               <h2 className="font-serif-display text-5xl leading-tight text-stone-900">
                 Tradición que <span className="italic">echa raíces.</span>
               </h2>
@@ -570,7 +570,7 @@ export function DemoFloreriaLanding() {
                   <p className="text-sm italic leading-relaxed text-stone-600">&ldquo;{t.q}&rdquo;</p>
                   <footer className="mt-6">
                     <p className="font-medium text-stone-800">{t.a}</p>
-                    <p className="text-[10px] uppercase tracking-widest text-stone-400">{t.r}</p>
+                    <p className="text-[10px] uppercase tracking-[0.04em] text-stone-400">{t.r}</p>
                   </footer>
                 </blockquote>
               ))}
@@ -600,7 +600,7 @@ export function DemoFloreriaLanding() {
               />
               <button
                 type="submit"
-                className="rounded-full bg-amber-100 px-10 py-4 text-[10px] font-bold uppercase tracking-widest text-emerald-900 transition-colors hover:bg-white"
+                className="rounded-full bg-amber-100 px-10 py-4 text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-900 transition-colors hover:bg-white"
               >
                 Suscribirme
               </button>
@@ -641,7 +641,7 @@ export function DemoFloreriaLanding() {
               </div>
             </div>
             <div>
-              <h4 className="mb-8 text-[11px] font-bold uppercase tracking-[0.3em] text-white">Navegación</h4>
+              <h4 className="mb-8 text-[11px] font-bold uppercase tracking-[0.04em] text-white">Navegación</h4>
               <ul className="space-y-4 text-sm">
                 {["Catálogo de Flores", "Plantas de Exterior", "Cuidado Botánico", "Preguntas Frecuentes"].map((item) => (
                   <li key={item} className="cursor-pointer transition-colors hover:text-emerald-400">
@@ -651,7 +651,7 @@ export function DemoFloreriaLanding() {
               </ul>
             </div>
             <div>
-              <h4 className="mb-8 text-[11px] font-bold uppercase tracking-[0.3em] text-white">Contacto</h4>
+              <h4 className="mb-8 text-[11px] font-bold uppercase tracking-[0.04em] text-white">Contacto</h4>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-center gap-3">
                   <MapPin size={16} className="shrink-0 text-emerald-500" /> Av. del Libertador 4200, CABA
@@ -665,7 +665,7 @@ export function DemoFloreriaLanding() {
               </ul>
             </div>
             <div>
-              <h4 className="mb-8 text-[11px] font-bold uppercase tracking-[0.3em] text-white">Horario</h4>
+              <h4 className="mb-8 text-[11px] font-bold uppercase tracking-[0.04em] text-white">Horario</h4>
               <ul className="space-y-4 text-sm">
                 <li className="flex justify-between">
                   <span>Lunes - Viernes:</span> <span className="text-stone-100">09:00 - 20:00</span>
@@ -680,7 +680,7 @@ export function DemoFloreriaLanding() {
             </div>
           </div>
           <div className="border-t border-stone-800 pt-12 text-center">
-            <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-stone-600">
+            <p className="text-[10px] font-bold uppercase tracking-[0.04em] text-stone-600">
               © {new Date().getFullYear()} JARDÍN ENSUEÑO · HECHO CON AMOR Y CLOROFILA
             </p>
             <p className="mt-4 text-[10px] text-stone-600">

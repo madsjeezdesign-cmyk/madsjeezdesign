@@ -104,10 +104,10 @@ export function CreatorLanding({ slug }: Props) {
               <p className="font-[family-name:var(--font-demo-h-creator)] text-xl font-normal uppercase tracking-wide text-white md:text-2xl">
                 {config.brand}
               </p>
-              <p className="text-[9px] uppercase tracking-[0.35em] text-slate-500">{config.platformLabel}</p>
+              <p className="text-[9px] uppercase tracking-[0.04em] text-slate-500">{config.platformLabel}</p>
             </div>
           </div>
-          <nav className="hidden items-center gap-8 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 lg:flex">
+          <nav className="hidden items-center gap-8 text-[10px] font-bold uppercase tracking-[0.04em] text-slate-400 lg:flex">
             <a href="#planes" className="hover:text-[color:var(--cr-accent)]">
               Paquetes
             </a>
@@ -136,7 +136,7 @@ export function CreatorLanding({ slug }: Props) {
       <section className="relative flex min-h-screen items-center pt-24">
         <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 md:px-10 lg:grid-cols-2 lg:gap-16">
           <div className="relative z-10">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.04em]">
               <span className="cr-pulse-dot h-2 w-2 rounded-full" style={{ background: config.accent }} />
               {config.heroKicker}
             </div>
@@ -156,7 +156,7 @@ export function CreatorLanding({ slug }: Props) {
                 Ver paquetes <ArrowRight className="h-4 w-4" />
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+            <div className="mt-12 flex flex-wrap gap-6 text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500">
               <span className="flex items-center gap-2">
                 <Zap className="h-4 w-4" style={{ color: config.accent }} />
                 {config.statLive}
@@ -184,7 +184,7 @@ export function CreatorLanding({ slug }: Props) {
               <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-transparent" />
               <div className="cr-glass absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl p-4 md:bottom-6 md:left-6 md:right-6 md:p-5">
                 <div>
-                  <p className="text-[9px] uppercase tracking-widest text-slate-500">Estado del hub</p>
+                  <p className="text-[9px] uppercase tracking-[0.04em] text-slate-500">Estado del hub</p>
                   <p className="text-sm font-bold text-white">{config.industryLabel}</p>
                 </div>
                 <span
@@ -198,7 +198,7 @@ export function CreatorLanding({ slug }: Props) {
             <div className="absolute -right-4 -top-4 hidden rounded-xl border border-white/10 bg-[#0c0c12] p-4 md:block">
               <Video className="mb-2 h-5 w-5" style={{ color: config.accent }} />
               <p className="text-2xl font-black">4.9</p>
-              <p className="text-[9px] uppercase tracking-widest text-slate-500">Rating marcas</p>
+              <p className="text-[9px] uppercase tracking-[0.04em] text-slate-500">Rating marcas</p>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@ export function CreatorLanding({ slug }: Props) {
               {config.platforms.map((plat) => (
                 <span
                   key={`${dup}-${plat}`}
-                  className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.35em] text-slate-500"
+                  className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500"
                 >
                   <Share2 className="h-3 w-3" style={{ color: config.accent }} />
                   {plat}
@@ -238,7 +238,7 @@ export function CreatorLanding({ slug }: Props) {
               >
                 {plan.popular ? (
                   <span
-                    className="mb-4 inline-block rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-widest"
+                    className="mb-4 inline-block rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.04em]"
                     style={{ background: accentDim, color: config.accent }}
                   >
                     Más elegido
@@ -246,7 +246,7 @@ export function CreatorLanding({ slug }: Props) {
                 ) : (
                   <span className="mb-4 block h-6" />
                 )}
-                <h3 className="text-xl font-black uppercase tracking-wider">{plan.name}</h3>
+                <h3 className="text-xl font-black uppercase tracking-[0.04em]">{plan.name}</h3>
                 <p className="mt-6 font-[family-name:var(--font-demo-h-creator)] text-4xl font-normal md:text-5xl">
                   {plan.price}
                   <span className="text-sm font-normal text-slate-500">/mes</span>
@@ -271,7 +271,7 @@ export function CreatorLanding({ slug }: Props) {
                     setSelectedPlan(plan.name);
                     toggleBooking();
                   }}
-                  className={`mt-10 w-full py-3 text-[10px] font-black uppercase tracking-widest ${
+                  className={`mt-10 w-full py-3 text-[10px] font-black uppercase tracking-[0.04em] ${
                     plan.popular ? "cr-btn-primary" : "cr-btn-ghost"
                   }`}
                 >
@@ -319,7 +319,7 @@ export function CreatorLanding({ slug }: Props) {
             {config.integrations.map((tool) => (
               <span
                 key={tool}
-                className="rounded-lg border border-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 transition-colors hover:border-[color:var(--cr-accent)] hover:text-white"
+                className="rounded-lg border border-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-slate-400 transition-colors hover:border-[color:var(--cr-accent)] hover:text-white"
               >
                 {tool}
               </span>
@@ -347,7 +347,7 @@ export function CreatorLanding({ slug }: Props) {
           <div className="flex items-start gap-4">
             <Headphones className="h-10 w-10 shrink-0" style={{ color: config.accent }} />
             <div>
-              <h3 className="text-xl font-black uppercase tracking-wider">Soporte creator 24/7</h3>
+              <h3 className="text-xl font-black uppercase tracking-[0.04em]">Soporte creator 24/7</h3>
               <p className="mt-2 max-w-lg text-sm text-slate-400">
                 Te acompañamos con media kit, collabs, monetización y optimización mobile para {config.platformLabel}.
               </p>
@@ -375,7 +375,7 @@ export function CreatorLanding({ slug }: Props) {
                   className="cr-glass w-full rounded-xl p-6 text-left"
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-sm font-bold uppercase tracking-wider">{item.q}</span>
+                    <span className="text-sm font-bold uppercase tracking-[0.04em]">{item.q}</span>
                     <ChevronDown
                       className={`h-5 w-5 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
                       style={{ color: config.accent }}
@@ -400,7 +400,7 @@ export function CreatorLanding({ slug }: Props) {
         />
       </div>
 
-      <footer className="border-t border-white/5 px-4 py-12 text-center text-[10px] uppercase tracking-[0.4em] text-slate-600 md:px-10">
+      <footer className="border-t border-white/5 px-4 py-12 text-center text-[10px] uppercase tracking-[0.04em] text-slate-600 md:px-10">
         © {new Date().getFullYear()} {config.brand} · Demo {config.industryLabel} · Marcas de terceros son referencia
         ilustrativa
       </footer>
@@ -419,7 +419,7 @@ export function CreatorLanding({ slug }: Props) {
           <button type="button" onClick={closeBooking} className="absolute right-6 top-6 text-slate-500 hover:text-white">
             <X className="h-8 w-8" />
           </button>
-          <p className="text-[10px] font-bold uppercase tracking-[0.4em]" style={{ color: config.accent }}>
+          <p className="text-[10px] font-bold uppercase tracking-[0.04em]" style={{ color: config.accent }}>
             Reserva · {config.platformLabel}
           </p>
           <h3 className="mt-4 font-[family-name:var(--font-demo-h-creator)] text-3xl font-normal uppercase">

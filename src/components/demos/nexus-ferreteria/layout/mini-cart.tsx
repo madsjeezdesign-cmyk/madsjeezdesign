@@ -41,7 +41,7 @@ export function MiniCart({ open, items, total, onClose, onUpdateQty, onRemove }:
             aria-label="Carrito"
           >
             <div className="flex items-center justify-between border-b border-white/10 p-5">
-              <h2 className="font-mono text-sm uppercase tracking-widest text-orange-400">
+              <h2 className="font-mono text-sm uppercase tracking-[0.04em] text-orange-400">
                 Carrito industrial
               </h2>
               <button type="button" onClick={onClose} aria-label="Cerrar">
@@ -111,7 +111,7 @@ export function MiniCart({ open, items, total, onClose, onUpdateQty, onRemove }:
                 href={items.length ? nexusCartWhatsApp(items, total) : "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block w-full rounded-lg py-3 text-center text-sm font-bold uppercase tracking-wider ${
+                className={`block w-full rounded-lg py-3 text-center text-sm font-bold uppercase tracking-[0.04em] ${
                   items.length
                     ? "bg-gradient-to-r from-orange-600 to-amber-500 text-black"
                     : "pointer-events-none bg-zinc-800 text-[color:var(--muted-body)]"

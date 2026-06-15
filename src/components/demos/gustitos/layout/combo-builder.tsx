@@ -68,7 +68,7 @@ export function ComboBuilder({ product, onClose, onAdd }: Props) {
                 <p className="text-sm text-[color:var(--muted-body)]">{product.description}</p>
               </div>
             </div>
-            <p className="mt-6 text-xs font-bold uppercase tracking-widest text-red-400">
+            <p className="mt-6 text-xs font-bold uppercase tracking-[0.04em] text-red-400">
               Armá tu combo
             </p>
             <div className="mt-3 space-y-2">

@@ -20,7 +20,7 @@ export function NexusFooter() {
           viewport={{ once: true }}
           className="max-w-2xl"
         >
-          <p className="font-mono text-xs uppercase tracking-[0.4em] text-orange-400">
+          <p className="font-mono text-xs uppercase tracking-[0.04em] text-orange-400">
             {cfg.brand}
           </p>
           <h2 className="mt-2 text-3xl font-bold text-white">{cfg.brandSub}</h2>

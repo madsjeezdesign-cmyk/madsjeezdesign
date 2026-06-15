@@ -12,7 +12,7 @@ export function LeclatSalonGallery() {
     <section id="galeria" className="scroll-mt-20 border-t border-rose-100 bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
-          <p className="text-[10px] font-medium uppercase tracking-[0.4em] text-rose-400">Portafolio</p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-rose-400">Portafolio</p>
           <h2 className="mt-2 font-serif text-3xl font-light text-stone-900">Antes & después · Tendencias</h2>
         </div>
 
@@ -28,7 +28,7 @@ export function LeclatSalonGallery() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <span className="text-[10px] font-medium uppercase tracking-widest text-rose-200">{item.tag}</span>
+              <span className="text-[10px] font-medium uppercase tracking-[0.04em] text-rose-200">{item.tag}</span>
               <p className="mt-1 font-serif text-2xl">{item.title}</p>
             </div>
           </div>

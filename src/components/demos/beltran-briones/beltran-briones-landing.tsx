@@ -231,7 +231,7 @@ export function BeltranBrionesLanding() {
           BELTRÁN <span className="text-amber-500">BRIONES</span>
         </span>
         <div className="flex items-center gap-3">
-          <a href="#calculadora" className="hidden text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-amber-500 transition-colors md:block">
+          <a href="#calculadora" className="hidden text-[10px] font-bold uppercase tracking-[0.04em] text-zinc-400 hover:text-amber-500 transition-colors md:block">
             Calculadora ROI
           </a>
           <a href={waInvest} target="_blank" rel="noopener noreferrer" className="bb-btn-primary py-2.5 px-5 text-[10px]">
@@ -264,7 +264,7 @@ export function BeltranBrionesLanding() {
         <div className="sticky top-[14vh] z-10 px-4 text-center">
           <div className="bb-reveal mb-5 inline-flex items-center gap-2.5 rounded-full border border-amber-500/25 bg-amber-500/8 px-5 py-2 is-visible">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-500" />
-            <span className="text-[10px] font-black uppercase tracking-[0.6em] text-amber-400">
+            <span className="text-[10px] font-black uppercase tracking-[0.04em] text-amber-400">
               {cfg.eliteKicker}
             </span>
           </div>
@@ -272,12 +272,12 @@ export function BeltranBrionesLanding() {
           {/* H1 construido ladrillo por ladrillo (código de referencia) */}
           <div className="relative inline-block px-2 md:px-8">
             <BrickWallTitle word={cfg.heroTitle} brickDelayMs={40} autoStartDelayMs={800} />
-            <div className="bb-hero-title mt-4 text-[clamp(1.2rem,5vw,4rem)] font-black leading-none tracking-[0.25em] text-amber-500 drop-shadow-[0_0_40px_rgba(245,158,11,0.35)]">
+            <div className="bb-hero-title mt-4 text-[clamp(1.2rem,5vw,4rem)] font-black leading-none tracking-[0.04em] text-amber-500 drop-shadow-[0_0_40px_rgba(245,158,11,0.35)]">
               {cfg.heroSubtitle}
             </div>
           </div>
 
-          <p className="mt-8 max-w-xl mx-auto text-base font-light tracking-widest text-gray-400 italic md:text-xl">
+          <p className="mt-8 max-w-xl mx-auto text-base font-light tracking-[0.04em] text-gray-400 italic md:text-xl">
             {cfg.legacyTagline}
           </p>
 
@@ -293,7 +293,7 @@ export function BeltranBrionesLanding() {
           </div>
 
           {/* Trust badges */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">
             <span className="flex items-center gap-1.5"><Shield className="h-3.5 w-3.5 text-amber-600" />Operaciones verificadas</span>
             <span className="flex items-center gap-1.5"><Star className="h-3.5 w-3.5 text-amber-600" />4.9★ en Google</span>
             <span className="flex items-center gap-1.5"><Users className="h-3.5 w-3.5 text-amber-600" />+1.200 inversores</span>
@@ -314,7 +314,7 @@ export function BeltranBrionesLanding() {
                   decimals={"prefix" in stat ? 0 : stat.suffix === "★" ? 1 : 0}
                 />
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">{stat.label}</div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -324,7 +324,7 @@ export function BeltranBrionesLanding() {
       <section className="px-4 py-24 md:py-36">
         <div className="mx-auto max-w-6xl">
           <div className="bb-reveal mb-14 text-center">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.6em] text-amber-500">¿Cuál es tu objetivo?</p>
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">¿Cuál es tu objetivo?</p>
             <h2 className="text-4xl font-black tracking-tight md:text-6xl">
               Elegí tu camino<br />
               <span className="bb-gold-shimmer">al Real Estate.</span>
@@ -336,7 +336,7 @@ export function BeltranBrionesLanding() {
               <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20">
                 <Building2 className="h-7 w-7 text-amber-500" />
               </div>
-              <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-amber-500">Track A</p>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">Track A</p>
               <h3 className="mb-4 text-3xl font-black text-white md:text-4xl">Quiero invertir<br />mi capital</h3>
               <p className="mb-8 leading-relaxed text-zinc-400">
                 Tenés dólares y querés que trabajen en ladrillos. Te guío desde la selección de la propiedad, la estructura de la operación y la gestión del activo para maximizar tu rentabilidad anual.
@@ -358,7 +358,7 @@ export function BeltranBrionesLanding() {
               <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 border border-white/10">
                 <BookOpen className="h-7 w-7 text-white" />
               </div>
-              <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted-body)]">Track B</p>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--muted-body)]">Track B</p>
               <h3 className="mb-4 text-3xl font-black text-white md:text-4xl">Quiero vender<br />propiedades</h3>
               <p className="mb-8 leading-relaxed text-zinc-400">
                 Aprendé el método completo para hacer tus primeras operaciones, dominar el cierre de alto ticket y construir una cartera de clientes que te genere comisiones consistentes.
@@ -393,7 +393,7 @@ export function BeltranBrionesLanding() {
           <p className="bb-reveal max-w-lg text-base leading-relaxed text-zinc-400">
             {cfg.subtitle}
           </p>
-          <a href="#calculadora" className="bb-reveal inline-flex items-center gap-2 text-sm font-bold tracking-wider text-amber-500 uppercase hover:text-amber-400">
+          <a href="#calculadora" className="bb-reveal inline-flex items-center gap-2 text-sm font-bold tracking-[0.04em] text-amber-500 uppercase hover:text-amber-400">
             Calcular mi ROI <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -448,7 +448,7 @@ export function BeltranBrionesLanding() {
       <section className="px-4 py-24 md:py-36">
         <div className="mx-auto max-w-5xl">
           <div className="bb-reveal mb-16 text-center">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.6em] text-amber-500">Cómo trabajamos</p>
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">Cómo trabajamos</p>
             <h2 className="text-4xl font-black tracking-tight md:text-5xl">
               El método <span className="text-amber-500">Beltrán Briones</span>
             </h2>
@@ -487,7 +487,7 @@ export function BeltranBrionesLanding() {
       <section id="calculadora" className="px-4 py-24 md:py-36">
         <div className="mx-auto max-w-5xl">
           <div className="bb-reveal mb-12 text-center">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.6em] text-amber-500">Herramienta gratuita</p>
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">Herramienta gratuita</p>
             <h2 className="text-4xl font-black tracking-tight md:text-5xl">Calculadora de<br />rentabilidad (ROI)</h2>
             <p className="mx-auto mt-4 max-w-md text-[color:var(--muted-body)]">
               Ajustá los valores y descubrí cuánto puede rendir tu propiedad. Comparalo con un plazo fijo.
@@ -555,7 +555,7 @@ export function BeltranBrionesLanding() {
               <div className="flex flex-col gap-6">
                 <div className="bb-roi-result flex flex-col items-center justify-center rounded-2xl p-8 text-center">
                   <Calculator className="mb-3 h-6 w-6 text-amber-500/60" />
-                  <span className="mb-1 text-[10px] font-bold uppercase tracking-widest text-amber-500">Tu rentabilidad anual</span>
+                  <span className="mb-1 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">Tu rentabilidad anual</span>
                   <span className="text-7xl font-black text-amber-400 md:text-8xl">{roiDisplay}%</span>
                   <span className="mt-2 text-xs text-[color:var(--muted-body)] italic">sobre precio de compra</span>
                 </div>
@@ -599,7 +599,7 @@ export function BeltranBrionesLanding() {
       <section className="bg-[#080808] px-4 py-24 md:py-36">
         <div className="mx-auto max-w-6xl">
           <div className="bb-reveal mb-14 text-center">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.6em] text-amber-500">Resultados reales</p>
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">Resultados reales</p>
             <h2 className="text-4xl font-black tracking-tight md:text-5xl">
               Casos de éxito
             </h2>
@@ -612,7 +612,7 @@ export function BeltranBrionesLanding() {
                 </div>
                 <div className="bb-case-content p-8">
                   <div className="mb-5 flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-amber-500">{c.zona}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">{c.zona}</span>
                     <span className="rounded-full border border-amber-500/25 bg-amber-500/10 px-3 py-1 text-[10px] font-black text-amber-400">ROI {c.roi}%</span>
                   </div>
                   <h3 className="mb-2 font-bold text-white">{c.persona}</h3>
@@ -631,7 +631,7 @@ export function BeltranBrionesLanding() {
       <section className="px-4 py-24 md:py-36">
         <div className="mx-auto max-w-4xl">
           <div className="bb-reveal mb-14 text-center">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.6em] text-amber-500">Lo que dicen nuestros inversores</p>
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">Lo que dicen nuestros inversores</p>
             <h2 className="text-4xl font-black tracking-tight md:text-5xl">Testimonios</h2>
           </div>
 
@@ -698,7 +698,7 @@ export function BeltranBrionesLanding() {
             <div className="grid gap-10 p-10 md:grid-cols-2 md:gap-0 md:p-0">
               {/* Text */}
               <div className="flex flex-col justify-center md:p-14">
-                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.6em] text-amber-500">Lead magnet · Descarga gratis</p>
+                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">Lead magnet · Descarga gratis</p>
                 <h2 className="mb-4 text-3xl font-black md:text-4xl">{cfg.leadMagnetTitle}</h2>
                 <p className="mb-8 leading-relaxed text-zinc-400">{cfg.leadMagnetSub}</p>
                 {leadSent ? (
@@ -741,7 +741,7 @@ export function BeltranBrionesLanding() {
       {/* ── CTA final ───────────────────────────────────────────────────────── */}
       <section className="bb-cta-final px-4 py-28 md:py-40">
         <div className="bb-reveal mx-auto max-w-3xl text-center">
-          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.6em] text-amber-500">¿Listo para dar el primer paso?</p>
+          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-500">¿Listo para dar el primer paso?</p>
           <h2 className="mb-6 text-5xl font-black leading-[0.92] tracking-tighter md:text-7xl">
             Tu portafolio<br />
             <span className="text-amber-500">empieza hoy.</span>
@@ -759,7 +759,7 @@ export function BeltranBrionesLanding() {
               Calculá tu ROI primero
             </a>
           </div>
-          <p className="mt-8 text-[10px] font-bold uppercase tracking-widest text-zinc-700">
+          <p className="mt-8 text-[10px] font-bold uppercase tracking-[0.04em] text-zinc-700">
             Sin compromiso · Respuesta en menos de 24 h · +1.200 inversores confían en el método
           </p>
         </div>
@@ -791,7 +791,7 @@ export function BeltranBrionesLanding() {
             </div>
           </div>
           <div>
-            <h6 className="mb-6 text-[10px] font-bold uppercase tracking-[0.4em] text-white">Servicios</h6>
+            <h6 className="mb-6 text-[10px] font-bold uppercase tracking-[0.04em] text-white">Servicios</h6>
             <ul className="space-y-3 text-sm text-[color:var(--muted-body)]">
               {["Asesoría de inversión", "Gestión de activos", "Formación para agentes", "Calculadora ROI"].map((item) => (
                 <li key={item}><a href={waInvest} className="hover:text-amber-500 transition-colors">{item}</a></li>
@@ -799,7 +799,7 @@ export function BeltranBrionesLanding() {
             </ul>
           </div>
           <div>
-            <h6 className="mb-6 text-[10px] font-bold uppercase tracking-[0.4em] text-white">Zonas</h6>
+            <h6 className="mb-6 text-[10px] font-bold uppercase tracking-[0.04em] text-white">Zonas</h6>
             <ul className="space-y-3 text-sm text-[color:var(--muted-body)]">
               {["Palermo · CABA", "Belgrano · CABA", "Villa Crespo · CABA", "GBA Norte", "GBA Sur"].map((item) => (
                 <li key={item} className="flex items-center gap-2">

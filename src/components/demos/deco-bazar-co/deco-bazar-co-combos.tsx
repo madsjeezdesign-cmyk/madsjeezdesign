@@ -21,7 +21,7 @@ export function DecoBazarCoCombos({ onAddCombo }: Props) {
       <div className="mx-auto max-w-7xl px-3 sm:px-4">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-zinc-400">Promos</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.04em] text-zinc-400">Promos</p>
             <h2 className="mt-2 text-2xl font-light text-zinc-900">Sets y combos</h2>
             <p className="mt-1 text-sm font-light text-[color:var(--muted-body)]">Cajas armadas · un clic al carrito</p>
           </div>
@@ -75,7 +75,7 @@ export function DecoBazarCoCombos({ onAddCombo }: Props) {
                 <button
                   type="button"
                   onClick={() => onAddCombo(combo)}
-                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-zinc-800 py-3 text-[10px] font-medium uppercase tracking-wider text-white hover:bg-zinc-700"
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-zinc-800 py-3 text-[10px] font-medium uppercase tracking-[0.04em] text-white hover:bg-zinc-700"
                 >
                   <PackagePlus className="h-4 w-4" />
                   Agregar set completo

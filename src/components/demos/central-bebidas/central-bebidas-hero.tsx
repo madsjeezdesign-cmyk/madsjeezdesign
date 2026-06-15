@@ -54,7 +54,7 @@ export function CentralBebidasHero() {
           <button
             type="button"
             onClick={() => document.querySelector("#catalogo")?.scrollIntoView({ behavior: "smooth" })}
-            className="mt-6 w-fit rounded-xl bg-amber-500 px-6 py-3 text-xs font-black uppercase tracking-wider text-zinc-950 hover:bg-amber-400"
+            className="mt-6 w-fit rounded-xl bg-amber-500 px-6 py-3 text-xs font-black uppercase tracking-[0.04em] text-zinc-950 hover:bg-amber-400"
           >
             Ver catálogo
           </button>
@@ -85,7 +85,7 @@ function FlashCard({ title, endsAt }: { title: string; endsAt: number }) {
       <div className="flex items-center gap-2">
         <Zap className="h-5 w-5 text-amber-400" />
         <div>
-          <p className="text-[10px] font-black uppercase tracking-wider text-amber-400">Oferta relámpago</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.04em] text-amber-400">Oferta relámpago</p>
           <p className="text-sm font-bold text-white">{title}</p>
         </div>
       </div>

@@ -36,7 +36,7 @@ export function RaicesCriollasCatalog({ categoryFilter, onCategoryFilter, onAdd 
           <p className="mb-4 font-serif text-lg text-stone-900">Filtros</p>
 
           <div className="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">Categoría</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.04em] text-amber-800">Categoría</p>
             <div className="mt-3 space-y-1">
               {RAICES_CATEGORIES.map((c) => (
                 <button
@@ -56,7 +56,7 @@ export function RaicesCriollasCatalog({ categoryFilter, onCategoryFilter, onAdd 
           </div>
 
           <div className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">Material / Tipo</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.04em] text-amber-800">Material / Tipo</p>
             <div className="mt-3 space-y-1">
               {RAICES_MATERIALS.map((m) => (
                 <button
@@ -95,7 +95,7 @@ export function RaicesCriollasCatalog({ categoryFilter, onCategoryFilter, onAdd 
                     <Image src={product.image} alt={product.name} fill className="object-cover" sizes="33vw" />
                   </div>
                   <div className="flex flex-1 flex-col p-4">
-                    <p className="flex items-center gap-1 text-[10px] font-medium uppercase tracking-wider text-amber-800">
+                    <p className="flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.04em] text-amber-800">
                       <MapPin className="h-3 w-3" />
                       {product.origin}
                     </p>
@@ -105,7 +105,7 @@ export function RaicesCriollasCatalog({ categoryFilter, onCategoryFilter, onAdd 
                     <button
                       type="button"
                       onClick={() => onAdd(product)}
-                      className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border-2 border-amber-800 py-3 text-[10px] font-semibold uppercase tracking-wider text-amber-800 transition hover:bg-amber-800 hover:text-amber-50 active:scale-[0.98]"
+                      className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border-2 border-amber-800 py-3 text-[10px] font-semibold uppercase tracking-[0.04em] text-amber-800 transition hover:bg-amber-800 hover:text-amber-50 active:scale-[0.98]"
                     >
                       <Plus className="h-4 w-4" />
                       Añadir al carrito

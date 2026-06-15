@@ -35,7 +35,7 @@ export function DemoSeguridadLanding() {
         titleColorClass="text-white"
         leadColorClass="text-emerald-100/60"
         kicker={
-          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.35em] text-emerald-300">
+          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-300">
             <Camera className="h-4 w-4" /> Videovigilancia · alarmas · respuesta
           </p>
         }
@@ -60,7 +60,7 @@ export function DemoSeguridadLanding() {
       />
 
       <section className="px-4 py-12 md:px-10">
-        <p className="mx-auto mb-6 max-w-5xl text-center text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-500">
+        <p className="mx-auto mb-6 max-w-5xl text-center text-[10px] font-bold uppercase tracking-[0.04em] text-emerald-500">
           Panel demo · pulsos en vivo
         </p>
         <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-4">
@@ -79,7 +79,7 @@ export function DemoSeguridadLanding() {
             >
               <I className="h-5 w-5 text-emerald-400" />
               <p className="mt-3 text-2xl font-bold text-white">{val}</p>
-              <p className="text-[11px] uppercase tracking-wider text-emerald-200/50">{label}</p>
+              <p className="text-[11px] uppercase tracking-[0.04em] text-emerald-200/50">{label}</p>
             </motion.div>
           ))}
         </div>

@@ -102,7 +102,7 @@ export function NidoLinajeLanding() {
         <p className="font-serif text-xl font-light text-stone-900">
           {cfg.brand} <span className="text-stone-400">|</span> {cfg.brandSub}
         </p>
-        <p className="mt-3 text-[10px] uppercase tracking-[0.35em] text-stone-400">
+        <p className="mt-3 text-[10px] uppercase tracking-[0.04em] text-stone-400">
           © {new Date().getFullYear()} — Demo interactiva couture
         </p>
       </footer>
@@ -116,18 +116,18 @@ export function NidoLinajeLanding() {
         theme={{
           section: "bg-stone-900 text-stone-100",
           invert: false,
-          label: "text-[10px] font-medium uppercase tracking-widest text-stone-500",
+          label: "text-[10px] font-medium uppercase tracking-[0.04em] text-stone-500",
           input:
             "mt-2 w-full rounded-sm border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white focus:border-stone-400 focus:outline-none",
           focus: "focus:border-stone-400",
           card: "rounded-sm border border-stone-700 bg-stone-950 p-8",
           button:
-            "rounded-sm bg-white px-8 py-3 text-[10px] font-medium uppercase tracking-widest text-stone-900",
+            "rounded-sm bg-white px-8 py-3 text-[10px] font-medium uppercase tracking-[0.04em] text-stone-900",
         }}
       />
 
       {toast ? (
-        <div className="fixed bottom-8 left-1/2 z-[70] -translate-x-1/2 rounded-sm border border-stone-200 bg-white px-6 py-3 text-xs font-medium uppercase tracking-wider text-stone-700 shadow-lg">
+        <div className="fixed bottom-8 left-1/2 z-[70] -translate-x-1/2 rounded-sm border border-stone-200 bg-white px-6 py-3 text-xs font-medium uppercase tracking-[0.04em] text-stone-700 shadow-lg">
           {toast}
         </div>
       ) : null}
@@ -160,7 +160,7 @@ export function NidoLinajeLanding() {
                 setPaymentOpen(false);
                 setCart([]);
               }}
-              className="mt-8 w-full rounded-sm bg-stone-900 py-3.5 text-[10px] font-medium uppercase tracking-[0.35em] text-white"
+              className="mt-8 w-full rounded-sm bg-stone-900 py-3.5 text-[10px] font-medium uppercase tracking-[0.04em] text-white"
             >
               Continuar comprando
             </button>

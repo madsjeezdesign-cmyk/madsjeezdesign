@@ -81,7 +81,7 @@ export function DemoViajesLanding() {
           <Compass className="h-5 w-5 text-teal-400" />
           <span className={`text-sm font-bold tracking-wide text-white ${H}`}>ATLAS EXPERIENCIAS</span>
         </div>
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-[color:var(--muted-body)] md:flex">
+        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.04em] text-[color:var(--muted-body)] md:flex">
           {["Destinos", "Cruceros", "Grupos", "Contacto"].map((n) => (
             <span key={n} className="cursor-pointer hover:text-teal-400 transition-colors">{n}</span>
           ))}
@@ -109,7 +109,7 @@ export function DemoViajesLanding() {
               className="mb-5 inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-4 py-1.5"
             >
               <Globe className="h-3.5 w-3.5 text-teal-400" />
-              <span className={`text-[10px] font-bold uppercase tracking-[0.25em] text-teal-400 ${H}`}>
+              <span className={`text-[10px] font-bold uppercase tracking-[0.04em] text-teal-400 ${H}`}>
                 Agencia boutique · desde 2010
               </span>
             </motion.div>
@@ -159,7 +159,7 @@ export function DemoViajesLanding() {
               {[["3.000+", "viajeros"], ["100+", "destinos"], ["24/7", "asistencia"]].map(([v, l]) => (
                 <div key={l} className="text-center">
                   <p className={`text-2xl font-black text-teal-400 ${H}`}>{v}</p>
-                  <p className="text-[10px] uppercase tracking-widest text-[color:var(--muted-body)]">{l}</p>
+                  <p className="text-[10px] uppercase tracking-[0.04em] text-[color:var(--muted-body)]">{l}</p>
                 </div>
               ))}
             </motion.div>
@@ -183,7 +183,7 @@ export function DemoViajesLanding() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <FadeUp>
-              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-teal-500 ${H}`}>Destinos</p>
+              <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-teal-500 ${H}`}>Destinos</p>
               <h2 className={`text-3xl font-black text-white md:text-5xl ${H}`}>Favoritos<br />de esta temporada</h2>
             </FadeUp>
             {/* tab filters */}
@@ -193,7 +193,7 @@ export function DemoViajesLanding() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider transition-colors ${
+                  className={`rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.04em] transition-colors ${
                     activeTab === tab
                       ? "bg-teal-500 text-black"
                       : "border border-white/10 text-[color:var(--muted-body)] hover:border-teal-500/30 hover:text-teal-400"
@@ -245,7 +245,7 @@ export function DemoViajesLanding() {
       <section className="border-y border-white/[0.07] bg-[#06111e] px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-teal-500 ${H}`}>Lo que hacemos</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-teal-500 ${H}`}>Lo que hacemos</p>
             <h2 className={`text-3xl font-black text-white md:text-5xl ${H}`}>Cada viaje es<br />una historia única</h2>
           </FadeUp>
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -270,7 +270,7 @@ export function DemoViajesLanding() {
       <section className="px-5 py-20 md:px-10">
         <div className="mx-auto max-w-4xl">
           <FadeUp>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-teal-500 ${H}`}>Cómo funciona</p>
+            <p className={`mb-2 text-[10px] font-bold uppercase tracking-[0.04em] text-teal-500 ${H}`}>Cómo funciona</p>
             <h2 className={`text-3xl font-black text-white md:text-5xl ${H}`}>De la idea<br />al pasaje</h2>
           </FadeUp>
           <div className="mt-12 space-y-6">

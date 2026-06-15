@@ -35,7 +35,7 @@ export function LunaHero({ onShop }: Props) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="text-[10px] font-medium uppercase tracking-[0.45em] text-neutral-500"
+            className="text-[10px] font-medium uppercase tracking-[0.04em] text-neutral-500"
           >
             Otoño 2026 · edición limitada
           </motion.p>
@@ -65,7 +65,7 @@ export function LunaHero({ onShop }: Props) {
           >
             <MagneticButton
               onClick={onShop}
-              className="rounded-full bg-neutral-900 px-8 py-4 text-[11px] font-medium uppercase tracking-[0.25em] text-[#F8F6F2] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.35)]"
+              className="rounded-full bg-neutral-900 px-8 py-4 text-[11px] font-medium uppercase tracking-[0.04em] text-[#F8F6F2] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.35)]"
             >
               Explorar colección
             </MagneticButton>
@@ -84,7 +84,7 @@ export function LunaHero({ onShop }: Props) {
             transition={{ delay: 0.7, type: "spring", stiffness: 200 }}
             className="absolute -bottom-4 left-4 max-w-[200px] rounded-2xl border border-white/30 bg-white/75 p-4 shadow-xl backdrop-blur-xl md:-left-8 md:bottom-12"
           >
-            <p className="text-[9px] uppercase tracking-widest text-neutral-500">Nuevo</p>
+            <p className="text-[9px] uppercase tracking-[0.04em] text-neutral-500">Nuevo</p>
             <p className="mt-1 font-serif text-lg text-neutral-900">Abrigo lana merino</p>
             <p className="text-xs text-neutral-600">Desde $78.900</p>
           </motion.div>
@@ -94,7 +94,7 @@ export function LunaHero({ onShop }: Props) {
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="absolute right-4 top-8 hidden rounded-2xl border border-white/20 bg-white/60 px-4 py-3 backdrop-blur-lg md:block"
           >
-            <p className="text-[9px] font-medium uppercase tracking-widest text-neutral-500">Envío gratis</p>
+            <p className="text-[9px] font-medium uppercase tracking-[0.04em] text-neutral-500">Envío gratis</p>
             <p className="text-xs text-neutral-700">Compras +$85.000</p>
           </motion.div>
         </div>

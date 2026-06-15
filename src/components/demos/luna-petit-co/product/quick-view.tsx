@@ -50,7 +50,7 @@ export function QuickView({ product, onClose, onAdd }: Props) {
               <div className="p-8">
                 <h3 className="font-serif text-2xl text-neutral-900">{product.name}</h3>
                 <p className="mt-4 text-xl font-medium">{formatLunaPrice(product.price)}</p>
-                <p className="mt-6 text-[10px] uppercase tracking-widest text-neutral-500">Talle</p>
+                <p className="mt-6 text-[10px] uppercase tracking-[0.04em] text-neutral-500">Talle</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {product.sizes.map((s) => (
                     <button
@@ -65,7 +65,7 @@ export function QuickView({ product, onClose, onAdd }: Props) {
                     </button>
                   ))}
                 </div>
-                <p className="mt-6 text-[10px] uppercase tracking-widest text-neutral-500">Color</p>
+                <p className="mt-6 text-[10px] uppercase tracking-[0.04em] text-neutral-500">Color</p>
                 <div className="mt-2 flex gap-2">
                   {product.colors.map((c) => (
                     <button
@@ -85,7 +85,7 @@ export function QuickView({ product, onClose, onAdd }: Props) {
                     onAdd(product, activeSize, activeColor);
                     onClose();
                   }}
-                  className="mt-8 w-full rounded-full bg-neutral-900 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white"
+                  className="mt-8 w-full rounded-full bg-neutral-900 py-4 text-[11px] font-medium uppercase tracking-[0.04em] text-white"
                 >
                   Agregar al carrito
                 </MagneticButton>

@@ -143,13 +143,13 @@ export function PizzeriaNapolesLanding() {
         theme={{
           section: "bg-zinc-950 text-stone-100",
           invert: false,
-          label: "text-[10px] font-bold uppercase tracking-widest text-stone-500",
+          label: "text-[10px] font-bold uppercase tracking-[0.04em] text-stone-500",
           input:
             "mt-2 w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm text-white focus:border-red-500 focus:outline-none",
           focus: "focus:border-red-500",
           card: "rounded-xl border border-zinc-800 bg-zinc-900 p-8",
           button:
-            "rounded-xl bg-red-600 px-8 py-3 text-xs font-bold uppercase tracking-widest text-white",
+            "rounded-xl bg-red-600 px-8 py-3 text-xs font-bold uppercase tracking-[0.04em] text-white",
         }}
       />
 

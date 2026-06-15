@@ -103,7 +103,7 @@ export function ShowroomWeekendLanding() {
 
   return (
     <div ref={rootRef} className="sw-demo min-h-screen scroll-smooth bg-slate-950 font-sans text-slate-100 antialiased selection:bg-rose-500 selection:text-white">
-      <div className="relative z-40 bg-gradient-to-r from-rose-600 via-pink-500 to-indigo-600 py-2 text-center text-[11px] font-bold uppercase tracking-widest text-white md:text-xs">
+      <div className="relative z-40 bg-gradient-to-r from-rose-600 via-pink-500 to-indigo-600 py-2 text-center text-[11px] font-bold uppercase tracking-[0.04em] text-white md:text-xs">
         ✦ Probá todo en el local · Paso de la Patria 324, Ezeiza · Talles 44 al 60 ✦
       </div>
 
@@ -116,7 +116,7 @@ export function ShowroomWeekendLanding() {
             <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text font-serif text-2xl font-black italic text-transparent">
               {cfg.brand}
             </span>
-            <span className="rounded-full border border-rose-500/20 bg-slate-800 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-widest text-rose-400">
+            <span className="rounded-full border border-rose-500/20 bg-slate-800 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.04em] text-rose-400">
               {cfg.brandTag}
             </span>
           </a>
@@ -156,7 +156,7 @@ export function ShowroomWeekendLanding() {
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div className="space-y-8 text-center lg:col-span-7 lg:text-left">
-              <span className="inline-flex items-center gap-2 rounded-full border border-rose-500/20 bg-rose-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-rose-400">
+              <span className="inline-flex items-center gap-2 rounded-full border border-rose-500/20 bg-rose-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.04em] text-rose-400">
                 <span className="h-2.5 w-2.5 animate-ping rounded-full bg-rose-500" />
                 Showroom exclusivo · Ezeiza
               </span>
@@ -172,10 +172,10 @@ export function ShowroomWeekendLanding() {
                 Urbano, casual y sin límites de edad.
               </p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-                <a href="#catalogo" className="rounded-2xl bg-gradient-to-r from-rose-600 to-pink-500 px-8 py-4 text-center text-xs font-extrabold uppercase tracking-wider text-white shadow-lg shadow-rose-500/25 hover:scale-[1.02]">
+                <a href="#catalogo" className="rounded-2xl bg-gradient-to-r from-rose-600 to-pink-500 px-8 py-4 text-center text-xs font-extrabold uppercase tracking-[0.04em] text-white shadow-lg shadow-rose-500/25 hover:scale-[1.02]">
                   Explorar colección
                 </a>
-                <a href="#probador" className="rounded-2xl border border-slate-800 bg-slate-900 px-8 py-4 text-center text-xs font-extrabold uppercase tracking-wider text-slate-200 hover:border-rose-500/30">
+                <a href="#probador" className="rounded-2xl border border-slate-800 bg-slate-900 px-8 py-4 text-center text-xs font-extrabold uppercase tracking-[0.04em] text-slate-200 hover:border-rose-500/30">
                   Probador inteligente
                 </a>
               </div>
@@ -195,7 +195,7 @@ export function ShowroomWeekendLanding() {
       </section>
 
       <div className="overflow-hidden border-y border-rose-500/10 bg-rose-950/20 py-5">
-        <div className="sw-marquee-track flex w-max whitespace-nowrap font-serif text-lg italic tracking-widest text-rose-400/80">
+        <div className="sw-marquee-track flex w-max whitespace-nowrap font-serif text-lg italic tracking-[0.04em] text-rose-400/80">
           {[0, 1].map((dup) => (
             <span key={dup} className="mx-8">
               {cfg.marqueeText}
@@ -212,7 +212,7 @@ export function ShowroomWeekendLanding() {
           <div className="overflow-hidden rounded-[2.5rem] border border-slate-800 bg-slate-900 p-8 md:p-12">
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
               <div className="space-y-6 lg:col-span-5">
-                <span className="inline-block rounded-full border border-rose-500/20 bg-rose-500/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-rose-400">
+                <span className="inline-block rounded-full border border-rose-500/20 bg-rose-500/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.04em] text-rose-400">
                   📍 Te esperamos
                 </span>
                 <h2 className="text-3xl font-black text-white sm:text-5xl">Vení a probártelo en vivo</h2>
@@ -238,7 +238,7 @@ export function ShowroomWeekendLanding() {
                   href={cfg.mapsDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-rose-500 px-6 py-3.5 text-xs font-extrabold uppercase tracking-wider text-white hover:bg-rose-600"
+                  className="inline-flex items-center gap-2 rounded-xl bg-rose-500 px-6 py-3.5 text-xs font-extrabold uppercase tracking-[0.04em] text-white hover:bg-rose-600"
                 >
                   🧭 Cómo llegar
                 </a>
@@ -291,11 +291,11 @@ export function ShowroomWeekendLanding() {
         theme={{
           section: "bg-slate-900 text-slate-100",
           invert: false,
-          label: "text-[10px] font-bold uppercase tracking-widest text-slate-500",
+          label: "text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500",
           input: "mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white focus:border-rose-500 focus:outline-none",
           focus: "focus:border-rose-500",
           card: "rounded-3xl border border-slate-800 bg-slate-950 p-8 md:p-10",
-          button: "rounded-xl bg-gradient-to-r from-rose-600 to-pink-500 px-8 py-3 text-xs font-bold uppercase tracking-widest text-white",
+          button: "rounded-xl bg-gradient-to-r from-rose-600 to-pink-500 px-8 py-3 text-xs font-bold uppercase tracking-[0.04em] text-white",
         }}
       />
 
