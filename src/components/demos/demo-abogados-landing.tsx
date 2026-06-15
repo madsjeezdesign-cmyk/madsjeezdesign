@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DemoLeadForm } from "./demo-lead-form";
+import { ScrollReveal, SpotlightCard } from "@/components/primitives";
 import "./demo-abogados-premium.css";
 
 const SLUG = "abogados" as const;
@@ -105,7 +106,12 @@ function PracticeAreaCard({
   index: number;
 }) {
   return (
-    <article className="group relative border border-slate-800/50 bg-slate-900/40 p-10 transition-all duration-700 hover:border-amber-600/30 hover:bg-slate-900/60">
+    <SpotlightCard
+      variant="transparent"
+      glowColor="rgb(217, 119, 6)"
+      size={260}
+      className="group relative border border-slate-800/50 bg-slate-900/40 p-10 transition-all duration-700 hover:border-amber-600/30 hover:bg-slate-900/60"
+    >
       <div className="absolute right-6 top-0 font-serif text-7xl italic text-slate-800/20 transition-colors group-hover:text-amber-500/10">
         {index + 1}
       </div>
@@ -119,7 +125,7 @@ function PracticeAreaCard({
           Consultar área <ChevronRight size={14} />
         </button>
       </div>
-    </article>
+    </SpotlightCard>
   );
 }
 
@@ -335,13 +341,16 @@ export function DemoAbogadosLanding() {
 
         <section id="areas" className="bg-[#0a0f18] py-28 md:py-32">
           <div className="container mx-auto px-6">
-            <div className="mb-24 max-w-2xl">
-              <h5 className="mb-4 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-600">Especializaciones</h5>
+            <ScrollReveal as="div" className="mb-24 max-w-2xl">
+              <h5 className="mb-4 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-amber-600">
+                <span className="live-ping-dot" aria-hidden />
+                Especializaciones
+              </h5>
               <h2 className="font-serif-display text-4xl leading-tight text-white md:text-5xl">
                 Áreas de Práctica <br />
                 <span className="font-light italic text-slate-500">Donde marcamos la diferencia.</span>
               </h2>
-            </div>
+            </ScrollReveal>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {practiceAreas.map((area, i) => (
                 <PracticeAreaCard key={area.title} {...area} index={i} />
