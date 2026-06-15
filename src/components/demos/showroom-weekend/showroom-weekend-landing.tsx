@@ -14,6 +14,7 @@ import { ShowroomWeekendCart, ShowroomWeekendCartButton } from "./showroom-weeke
 import { ShowroomWeekendCatalog } from "./showroom-weekend-catalog";
 import { ShowroomWeekendFittingRoom } from "./showroom-weekend-fitting-room";
 import { ShowroomWeekendSizeGuide } from "./showroom-weekend-size-guide";
+import { ScrollReveal } from "@/components/primitives";
 import "./showroom-weekend.css";
 
 const NAV = [
@@ -270,7 +271,7 @@ export function ShowroomWeekendLanding() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 py-24 sm:px-6">
+      <ScrollReveal as="section" className="mx-auto max-w-4xl px-4 py-24 sm:px-6">
         <h2 className="mb-10 text-center text-3xl font-black">Preguntas frecuentes</h2>
         <div className="space-y-4">
           {FAQ.map((item) => (
@@ -280,7 +281,7 @@ export function ShowroomWeekendLanding() {
             </details>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
 
       <DemoLeadForm
         slug={cfg.slug}
