@@ -1,5 +1,6 @@
 "use client";
 
+import { SpotlightCard } from "@/components/primitives";
 import { GUSTITOS_TESTIMONIALS } from "@/lib/gustitos";
 
 export function Testimonials() {
@@ -12,9 +13,12 @@ export function Testimonials() {
       </p>
       <div className="gu-marquee flex w-max gap-6">
         {items.map((t, i) => (
-          <article
+          <SpotlightCard
             key={`${t.name}-${i}`}
-            className="w-80 shrink-0 rounded-2xl border border-red-500/10 bg-zinc-900/80 p-6 backdrop-blur-xl"
+            variant="transparent"
+            glowColor="rgba(239, 68, 68, 0.45)"
+            size={260}
+            className="w-80 shrink-0 !rounded-2xl border border-red-500/10 bg-zinc-900/80 p-6 backdrop-blur-xl"
           >
             <div className="flex gap-1 text-amber-400">
               {Array.from({ length: t.rating }).map((_, j) => (
@@ -23,7 +27,7 @@ export function Testimonials() {
             </div>
             <p className="mt-4 text-sm text-zinc-300">&ldquo;{t.text}&rdquo;</p>
             <p className="mt-4 text-xs font-bold uppercase tracking-[0.04em] text-red-400">{t.name}</p>
-          </article>
+          </SpotlightCard>
         ))}
       </div>
     </section>

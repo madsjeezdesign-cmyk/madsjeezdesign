@@ -14,6 +14,7 @@ import {
   type DecoProduct,
   type DecoRegionId,
 } from "@/lib/deco-bazar-co";
+import { ScrollReveal } from "@/components/primitives";
 import { DemoLeadForm } from "../demo-lead-form";
 import { DecoBazarCoCart } from "./deco-bazar-co-cart";
 import { DecoBazarCoCatalog } from "./deco-bazar-co-catalog";
@@ -114,7 +115,9 @@ export function DecoBazarCoLanding() {
         onCategoryFilter={setCategoryFilter}
         onAdd={addProduct}
       />
-      <DecoBazarCoCombos onAddCombo={addCombo} />
+      <ScrollReveal>
+        <DecoBazarCoCombos onAddCombo={addCombo} />
+      </ScrollReveal>
       <DecoBazarCoFooter />
 
       <DemoLeadForm
