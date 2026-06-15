@@ -2,6 +2,7 @@
 
 import { Bell, CheckCircle2 } from "lucide-react";
 import { useCallback, useState } from "react";
+import { ScrollReveal } from "@/components/primitives";
 import { LECLAT_CONFIG, type SalonProduct } from "@/lib/leclat-salon";
 import { DemoLeadForm } from "../demo-lead-form";
 import { LeclatSalonBooking } from "./leclat-salon-booking";
@@ -53,7 +54,9 @@ export function LeclatSalonLanding() {
     <div className="leclat-demo min-h-screen bg-stone-50 font-sans text-stone-800 antialiased selection:bg-rose-200">
       <LeclatSalonNavbar />
       <LeclatSalonHero />
-      <LeclatSalonServices selectedIds={selectedServices} onToggle={toggleService} />
+      <ScrollReveal as="section">
+        <LeclatSalonServices selectedIds={selectedServices} onToggle={toggleService} />
+      </ScrollReveal>
       <LeclatSalonBooking
         selectedServiceIds={selectedServices}
         onConfirmed={(summary) => {
@@ -61,7 +64,9 @@ export function LeclatSalonLanding() {
           notify("Recordatorio enviado 24 hs antes (simulado)");
         }}
       />
-      <LeclatSalonGallery />
+      <ScrollReveal as="section">
+        <LeclatSalonGallery />
+      </ScrollReveal>
       <LeclatSalonShop onAdd={addProduct} cartCount={cartCount} onOpenCart={() => setCartOpen(true)} />
       <LeclatSalonContact />
 

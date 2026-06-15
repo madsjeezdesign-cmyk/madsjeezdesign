@@ -2,6 +2,7 @@
 
 import { Check, Lock, X } from "lucide-react";
 import { useCallback, useState } from "react";
+import { ScrollReveal } from "@/components/primitives";
 import {
   buildCartKey,
   getLinajeUnitPrice,
@@ -96,7 +97,9 @@ export function NidoLinajeLanding() {
         onOpenDetail={openDetail}
         onAdd={(product, size, color, onDone) => addToCart(product, size, color, onDone)}
       />
-      <NidoLinajeEditorial />
+      <ScrollReveal as="section">
+        <NidoLinajeEditorial />
+      </ScrollReveal>
 
       <footer className="border-t border-stone-100 py-14 text-center">
         <p className="font-serif text-xl font-light text-stone-900">

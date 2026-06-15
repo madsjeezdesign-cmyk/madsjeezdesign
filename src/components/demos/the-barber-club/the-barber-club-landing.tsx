@@ -2,6 +2,7 @@
 
 import { Bell, CheckCircle2, Crown } from "lucide-react";
 import { useCallback, useState } from "react";
+import { ScrollReveal } from "@/components/primitives";
 import { BARBER_CLUB_CONFIG, type BarberProduct } from "@/lib/the-barber-club";
 import { DemoLeadForm } from "../demo-lead-form";
 import { TheBarberClubBooking } from "./the-barber-club-booking";
@@ -40,14 +41,18 @@ export function TheBarberClubLanding() {
     <div className="tbc-demo min-h-screen bg-zinc-950 font-sans text-zinc-100 antialiased selection:bg-amber-500/30">
       <TheBarberClubNavbar cartCount={cart.length} onOpenCart={() => setCartOpen(true)} />
       <TheBarberClubHero />
-      <TheBarberClubBooking
-        onConfirmed={(summary) => {
-          setBookingSuccess(summary);
-          showToast("Recordatorio programado para 24 hs antes");
-        }}
-      />
+      <ScrollReveal as="section">
+        <TheBarberClubBooking
+          onConfirmed={(summary) => {
+            setBookingSuccess(summary);
+            showToast("Recordatorio programado para 24 hs antes");
+          }}
+        />
+      </ScrollReveal>
       <TheBarberClubShop onAdd={addToCart} />
-      <TheBarberClubGallery />
+      <ScrollReveal as="section">
+        <TheBarberClubGallery />
+      </ScrollReveal>
       <TheBarberClubMembership onJoin={(plan) => setMemberSuccess(plan)} />
 
       <footer className="border-t border-zinc-800 bg-black py-12 text-center text-xs text-[color:var(--muted-body)]">
