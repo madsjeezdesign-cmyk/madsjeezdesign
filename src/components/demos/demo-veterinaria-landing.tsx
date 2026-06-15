@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
+import { MagneticButton, ScrollReveal } from "@/components/primitives";
 import { DemoLeadForm } from "./demo-lead-form";
 
 const SLUG = "veterinaria" as const;
@@ -227,16 +228,16 @@ export function DemoVeterinariaLanding() {
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a
+              <MagneticButton
                 href={WA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-[0.95rem] font-medium transition-transform hover:scale-[1.02]"
-                style={{ background: INK, color: PAPER }}
+                variant="ghost"
+                strength={8}
+                className="!gap-2 !rounded-full !px-5 !py-3 !text-[0.95rem] !font-medium bg-[#1c2421] !text-[#fbfaf6]"
+                ariaLabel="Pedir turno por WhatsApp"
               >
                 <MessageCircle className="h-4 w-4" />
                 Pedir turno por WhatsApp
-              </a>
+              </MagneticButton>
               <a
                 href="#servicios"
                 className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-[0.95rem]"
@@ -303,7 +304,7 @@ export function DemoVeterinariaLanding() {
 
       <section id="servicios" className="py-20 md:py-28" style={{ background: CREAM }}>
         <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <div className="max-w-2xl">
+          <ScrollReveal className="max-w-2xl">
             <p className="text-[0.82rem]" style={{ color: SAGE_DARK }}>
               Lo que hacemos
             </p>
@@ -322,7 +323,7 @@ export function DemoVeterinariaLanding() {
               Nuestro principio: te decimos lo que tu mascota realmente
               necesita. Si no hace falta un estudio, no lo pedimos.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div
             className="mt-12 grid gap-px overflow-hidden rounded-3xl"
