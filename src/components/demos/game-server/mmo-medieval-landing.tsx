@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Crown, Scroll, ShieldCheck, Swords } from "lucide-react";
 import { getGameServerConfig } from "@/lib/game-server-demos";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
+import { MagneticButton, ScrollReveal } from "@/components/primitives";
 import { DemoLeadForm } from "../demo-lead-form";
 
 type Props = { slug: string };
@@ -217,7 +217,12 @@ export function MmoMedievalLanding({ slug }: Props) {
                   {config.industryLabel}
                 </p>
               </div>
-              <p className="font-serif text-[12px] italic" style={{ color: "rgba(58,21,23,0.7)" }}>
+              <p className="flex items-center gap-2 font-serif text-[12px] italic" style={{ color: "rgba(58,21,23,0.7)" }}>
+                <span
+                  className="live-ping-dot"
+                  style={{ background: gold, ["--brand-cyan" as string]: gold } as React.CSSProperties}
+                  aria-hidden
+                />
                 {config.onlinePlayers} héroes en campo
               </p>
             </div>
@@ -244,17 +249,24 @@ export function MmoMedievalLanding({ slug }: Props) {
 
       <section id="wipe" className="relative border-y border-[color:var(--mmo-gold)]/40 py-12 md:py-14">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <div>
-              <p className="font-serif text-[12px] italic" style={{ color: "rgba(58,21,23,0.7)" }}>
-                calendario del reino
+          <ScrollReveal>
+            <div className="mb-6 flex items-end justify-between gap-4">
+              <div>
+                <p className="flex items-center gap-2 font-serif text-[12px] italic" style={{ color: "rgba(58,21,23,0.7)" }}>
+                  <span
+                    className="live-ping-dot"
+                    style={{ background: gold, ["--brand-cyan" as string]: gold } as React.CSSProperties}
+                    aria-hidden
+                  />
+                  próxima siege: miércoles
+                </p>
+                <h2 className="mt-1 font-serif text-[26px] leading-tight md:text-[32px]">Sieges y eventos</h2>
+              </div>
+              <p className="hidden font-serif text-[12px] italic md:block" style={{ color: gold }}>
+                GMT-3 · hora local
               </p>
-              <h2 className="font-serif text-[26px] leading-tight md:text-[32px]">Sieges y eventos</h2>
             </div>
-            <p className="hidden font-serif text-[12px] italic md:block" style={{ color: gold }}>
-              GMT-3 · hora local
-            </p>
-          </div>
+          </ScrollReveal>
           <ol className="grid gap-2 md:gap-3">
             {[
               { when: "Mié 21:00", what: "Castle Siege · semanal", note: "Recompensas dobles para clanes" },
@@ -454,14 +466,15 @@ export function MmoMedievalLanding({ slug }: Props) {
 
       <section className="relative pb-16 pt-4 md:pb-20">
         <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
-          <Link
+          <MagneticButton
             href="#demo-contacto"
-            className="inline-flex items-center gap-3 border border-[color:var(--mmo-oxblood)] bg-[color:var(--mmo-oxblood)] px-7 py-3.5 font-serif text-[14px] tracking-wide transition-opacity hover:opacity-90"
-            style={{ color: parchment }}
+            variant="primary"
+            strength={6}
+            className="!rounded-none border border-[color:var(--mmo-oxblood)] !bg-[color:var(--mmo-oxblood)] !px-7 !py-3.5 font-serif !text-[14px] tracking-wide"
           >
             <Swords className="h-4 w-4" />
-            Abrir mi reino
-          </Link>
+            <span style={{ color: parchment }}>Abrir mi reino</span>
+          </MagneticButton>
         </div>
       </section>
 

@@ -19,6 +19,7 @@ import {
 import { getGameServerConfig } from "@/lib/game-server-demos";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
+import { AnimatedStats } from "@/components/primitives";
 import { DemoLeadForm } from "../demo-lead-form";
 
 type Props = { slug: string };
@@ -267,8 +268,8 @@ export function TacticalFpsLanding({ slug }: Props) {
               >
                 <div className="flex items-center gap-3">
                   <span
-                    className="block h-2 w-2 rounded-full"
-                    style={{ background: accent }}
+                    className="live-ping-dot"
+                    style={{ background: accent, ["--brand-cyan" as string]: accent } as React.CSSProperties}
                     aria-hidden
                   />
                   <span className="text-white">{node.name}</span>
@@ -387,6 +388,18 @@ export function TacticalFpsLanding({ slug }: Props) {
 
       <section id="schedule" className="relative py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <div className="mb-10 border border-white/10 bg-white/[0.02] p-6 md:p-8">
+            <p className="mb-6 font-mono text-[11px] uppercase text-[color:var(--muted-body)]">{"// signal report · últimos 30 días"}</p>
+            <AnimatedStats
+              layout="grid-4"
+              items={[
+                { value: 9998, format: (v) => `${(v / 100).toFixed(2)}%`, label: "uptime medido" },
+                { value: 12, suffix: " min", label: "respuesta soporte" },
+                { value: 4, label: "nodos AR · BR · US · EU" },
+                { value: 24, suffix: "/7", label: "monitoreo activo" },
+              ]}
+            />
+          </div>
           <div className="mb-8 flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="font-mono text-[11px] uppercase text-[color:var(--muted-body)]">{"// schedule"}</p>

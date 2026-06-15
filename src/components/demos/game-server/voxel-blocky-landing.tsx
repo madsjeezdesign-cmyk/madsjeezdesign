@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Boxes, Cpu, Gamepad2, HardDrive, Pickaxe, ShieldCheck, Users } from "lucide-react";
 import { getGameServerConfig } from "@/lib/game-server-demos";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
+import { AnimatedStats, MagneticButton, ScrollReveal } from "@/components/primitives";
 import { DemoLeadForm } from "../demo-lead-form";
 
 type Props = { slug: string };
@@ -147,7 +147,11 @@ export function VoxelBlockyLanding({ slug }: Props) {
                 Ping {config.pingMs}
               </li>
               <li className="flex items-center gap-2 border-2 border-[#1a1a1a] bg-white px-3 py-2">
-                <span className="block h-2 w-2" style={{ background: accent }} />
+                <span
+                  className="live-ping-dot"
+                  style={{ background: accent, ["--brand-cyan" as string]: accent } as React.CSSProperties}
+                  aria-hidden
+                />
                 {config.onlinePlayers} jugando
               </li>
               <li className="flex items-center gap-2 border-2 border-[#1a1a1a] bg-white px-3 py-2">
@@ -337,6 +341,22 @@ export function VoxelBlockyLanding({ slug }: Props) {
 
       <section className="relative border-y-2 border-[#1a1a1a] bg-white py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <ScrollReveal>
+            <div
+              className="mb-10 grid gap-6 border-2 border-[#1a1a1a] bg-[#f4efe4] p-6 md:grid-cols-3 md:p-8"
+              style={{ boxShadow: "6px 6px 0 #1a1a1a" }}
+            >
+              <AnimatedStats
+                layout="grid-3"
+                className="md:col-span-3"
+                items={[
+                  { value: 9998, format: (v) => `${(v / 100).toFixed(2)}%`, label: "uptime 30 días" },
+                  { value: 60, suffix: " s", label: "deploy promedio" },
+                  { value: 4, prefix: "c/", suffix: " h", label: "backup automático" },
+                ]}
+              />
+            </div>
+          </ScrollReveal>
           <div className="mb-10">
             <p className="font-mono text-[12px] font-semibold text-[#555]">incluido en todos los planes</p>
             <h2 className="mt-1 font-mono text-[28px] font-black md:text-[40px]">Sin letra chica.</h2>
@@ -418,12 +438,14 @@ export function VoxelBlockyLanding({ slug }: Props) {
                 </p>
               </div>
             </div>
-            <Link
+            <MagneticButton
               href="#demo-contacto"
-              className="inline-flex shrink-0 items-center gap-2 border-2 border-[#1a1a1a] bg-[#1a1a1a] px-5 py-3 font-mono text-[12px] font-bold text-[#f4efe4] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              variant="primary"
+              strength={6}
+              className="!rounded-none border-2 border-[#1a1a1a] !bg-[#1a1a1a] !px-5 !py-3 font-mono !text-[12px] !font-bold !text-[#f4efe4]"
             >
               Crear mi servidor
-            </Link>
+            </MagneticButton>
           </div>
         </div>
       </section>
