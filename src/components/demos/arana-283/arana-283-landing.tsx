@@ -16,6 +16,7 @@ import { Arana283Contact } from "./arana-283-contact";
 import { Arana283Home } from "./arana-283-home";
 import { Arana283Process } from "./arana-283-process";
 import { Arana283ProductModal } from "./arana-283-product-modal";
+import { ScrollReveal } from "@/components/primitives";
 import "./arana-283.css";
 
 export type AranaTab = "inicio" | "proceso" | "catalogo" | "cotizador" | "contacto";
@@ -183,24 +184,26 @@ export function Arana283Landing() {
       {tab === "cotizador" ? <Arana283Calculator onToast={addToast} /> : null}
       {tab === "contacto" ? <Arana283Contact /> : null}
 
-      <DemoLeadForm
-        slug={cfg.slug}
-        brandLabel={cfg.brand}
-        kicker="Consultá esta demo"
-        title="¿Te gusta este modelo para tu tienda circular?"
-        sub="Catálogo, cotizador, carrito WhatsApp y mapa — adaptamos a tu marca."
-        theme={{
-          section: "bg-slate-950 text-slate-100",
-          invert: false,
-          label: "text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500",
-          input:
-            "mt-2 w-full rounded-xl border border-slate-700 bg-[#09090b] px-4 py-3 text-sm text-white focus:border-purple-500 focus:outline-none",
-          focus: "focus:border-purple-500",
-          card: "rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10",
-          button:
-            "rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-xs font-bold uppercase tracking-[0.04em] text-white",
-        }}
-      />
+      <ScrollReveal>
+        <DemoLeadForm
+          slug={cfg.slug}
+          brandLabel={cfg.brand}
+          kicker="Consultá esta demo"
+          title="¿Te gusta este modelo para tu tienda circular?"
+          sub="Catálogo, cotizador, carrito WhatsApp y mapa — adaptamos a tu marca."
+          theme={{
+            section: "bg-slate-950 text-slate-100",
+            invert: false,
+            label: "text-[10px] font-bold uppercase tracking-[0.04em] text-slate-500",
+            input:
+              "mt-2 w-full rounded-xl border border-slate-700 bg-[#09090b] px-4 py-3 text-sm text-white focus:border-purple-500 focus:outline-none",
+            focus: "focus:border-purple-500",
+            card: "rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10",
+            button:
+              "rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-xs font-bold uppercase tracking-[0.04em] text-white",
+          }}
+        />
+      </ScrollReveal>
 
       <footer className="border-t border-slate-900 bg-slate-950 py-16 pb-24 text-xs text-slate-500 md:pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

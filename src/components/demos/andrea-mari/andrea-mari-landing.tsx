@@ -33,6 +33,7 @@ import {
 } from "@/lib/andrea-mari";
 import { DemoLeadForm } from "../demo-lead-form";
 import { AndreaMariShop } from "./andrea-mari-shop";
+import { ScrollReveal } from "@/components/primitives";
 import "./andrea-mari.css";
 
 const playfair = Playfair_Display({
@@ -324,8 +325,8 @@ export function AndreaMariLanding() {
 
       <AndreaMariShop onToast={showToast} />
 
-      <section id="categorias" className="py-4">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <ScrollReveal as="section" className="py-4">
+        <div id="categorias" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <a
               href="#nueva-coleccion"
@@ -373,7 +374,7 @@ export function AndreaMariLanding() {
             </a>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       <section id="instagram-feed" className="bg-[var(--am-soft)] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
