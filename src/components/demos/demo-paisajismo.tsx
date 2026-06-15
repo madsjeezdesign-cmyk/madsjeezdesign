@@ -7,6 +7,7 @@ import { demoContainer, demoSectionTight } from "./demo-layout";
 import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
+import { MagneticButton, ScrollReveal, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "paisajismo" as const;
 
@@ -46,9 +47,9 @@ export function DemoPaisajismoLanding() {
         lead="Constructoras y consorcios buscan cronogramas de manutención, especies con bajo riego y dashboards de humedad. Esta demo combina fichas técnicas, SLA anuales y carrito tipo lista para insumos recurrentes."
         ctas={
           <>
-            <button type="button" className={art.primaryCta}>
+            <MagneticButton variant="primary" className={art.primaryCta}>
               Portfolio obras
-            </button>
+            </MagneticButton>
             <button type="button" className={art.secondaryCta}>
               Plan de riego PDF
             </button>
@@ -95,28 +96,35 @@ export function DemoPaisajismoLanding() {
             { icon: Shovel, t: "Tierra viva", d: "Compostaje on-site para reducir retiros." },
             { icon: Leaf, t: "Biodiversidad", d: "Índices demo de aves y polinizadores." },
           ].map(({ icon: I, t, d }) => (
-            <div key={t} className={`border-t-4 border-lime-500 p-6 pt-8 ${art.cardShell}`}>
+            <SpotlightCard
+              key={t}
+              variant="transparent"
+              glowColor="rgba(132,204,22,0.18)"
+              className={`border-t-4 border-lime-500 p-6 pt-8 ${art.cardShell}`}
+            >
               <I className="h-6 w-6 text-lime-400" />
               <h3 className={`mt-4 ${h} text-lg text-white`}>{t}</h3>
               <p className="mt-2 text-sm text-lime-100/60">{d}</p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </section>
 
-      <DemoLongStory
-        sectionHeadingClass={h}
-        kicker="Smart irrigation"
-        title="Contenido para buscadores y facility managers"
-        paragraphs={[
-          "Landing con FAQs sobre caudal, fugas y ROI hídrico — palabras clave que importan en licitaciones verdes.",
-          "Sección descargable de fichas de especies en CSV para arquitectos y renders colaborativos demo.",
-        ]}
-        kickerClass="text-lime-400"
-        titleClass="text-lime-50"
-        pClass="mt-4 text-sm text-lime-100/65"
-        sectionClass="border-y border-green-800/40"
-      />
+      <ScrollReveal>
+        <DemoLongStory
+          sectionHeadingClass={h}
+          kicker="Smart irrigation"
+          title="Contenido para buscadores y facility managers"
+          paragraphs={[
+            "Landing con FAQs sobre caudal, fugas y ROI hídrico — palabras clave que importan en licitaciones verdes.",
+            "Sección descargable de fichas de especies en CSV para arquitectos y renders colaborativos demo.",
+          ]}
+          kickerClass="text-lime-400"
+          titleClass="text-lime-50"
+          pClass="mt-4 text-sm text-lime-100/65"
+          sectionClass="border-y border-green-800/40"
+        />
+      </ScrollReveal>
 
       <DemoFaqList
         sectionHeadingClass={h}

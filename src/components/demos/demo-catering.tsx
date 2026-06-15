@@ -5,6 +5,7 @@ import { DemoDetailGrid, DemoFaqList, DemoStatsStrip } from "./demo-common-secti
 import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
+import { MagneticButton, ScrollReveal } from "@/components/primitives";
 
 const SLUG = "catering" as const;
 
@@ -42,9 +43,9 @@ export function DemoCateringLanding() {
         lead="Marcas B2B buscan pricing por persona, matrices dietéticas en PDF y storytelling de brigada en sitio. Esta demo separa propuesta gourmet de logística: timelines por hora, checklist HACCP visible y carrito tipo destacado para packs corporativos."
         ctas={
           <>
-            <button type="button" className={art.primaryCta}>
+            <MagneticButton variant="primary" className={art.primaryCta}>
               Armá tu menú
-            </button>
+            </MagneticButton>
             <button type="button" className={art.secondaryCta}>
               Ver casos
             </button>
@@ -108,18 +109,21 @@ export function DemoCateringLanding() {
         ]}
       />
 
-      <section className="px-4 py-16 md:px-10">
+      <ScrollReveal as="section" className="px-4 py-16 md:px-10">
         <div className={`mx-auto flex max-w-5xl flex-col items-center gap-6 p-10 text-center ${art.cardShell}`}>
           <ChefHat className="h-10 w-10 text-red-500" />
           <p className={`${h} text-2xl text-red-50`}>Chef ejecutivo disponible 20 min</p>
           <p className="max-w-xl text-sm text-red-100/55">
             Call to action típico de alto ticket: combina valor percibido y mínima fricción antes del formulario final.
           </p>
+          <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.04em] text-red-400">
+            <span aria-hidden className="live-ping-dot" /> 3 chefs disponibles ahora
+          </span>
           <button type="button" className={art.primaryCta}>
             Coordinar videollamada
           </button>
         </div>
-      </section>
+      </ScrollReveal>
 
       <DemoFaqList
         sectionHeadingClass={h}

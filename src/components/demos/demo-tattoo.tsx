@@ -6,6 +6,7 @@ import { DemoDetailGrid, DemoFaqList, DemoLongStory } from "./demo-common-sectio
 import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
+import { ScrollReveal } from "@/components/primitives";
 
 const SLUG = "tattoo" as const;
 
@@ -100,19 +101,21 @@ export function DemoTattooLanding() {
         ]}
       />
 
-      <DemoLongStory
-        sectionHeadingClass={h}
-        kicker="SEO local"
-        title="Ranking sin caer en clichés de calaveras"
-        paragraphs={[
-          "Copy orientado a estilos (ornamental, neo trad, fine line) con schema FAQ para preguntas de dolor y precios orientativos.",
-          "Map embed limpio y horarios sincronizados con Google Business para no desinformar antes de la seña.",
-        ]}
-        kickerClass="text-rose-500"
-        titleClass="text-rose-50"
-        pClass="mt-4 text-sm text-rose-100/60"
-        sectionClass="bg-rose-950/20"
-      />
+      <ScrollReveal>
+        <DemoLongStory
+          sectionHeadingClass={h}
+          kicker="SEO local"
+          title="Ranking sin caer en clichés de calaveras"
+          paragraphs={[
+            "Copy orientado a estilos (ornamental, neo trad, fine line) con schema FAQ para preguntas de dolor y precios orientativos.",
+            "Map embed limpio y horarios sincronizados con Google Business para no desinformar antes de la seña.",
+          ]}
+          kickerClass="text-rose-500"
+          titleClass="text-rose-50"
+          pClass="mt-4 text-sm text-rose-100/60"
+          sectionClass="bg-rose-950/20"
+        />
+      </ScrollReveal>
 
       <DemoFaqList
         sectionHeadingClass={h}

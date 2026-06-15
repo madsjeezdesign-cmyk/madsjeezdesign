@@ -5,6 +5,7 @@ import { DemoFaqList, DemoLongStory, DemoTestimonials } from "./demo-common-sect
 import { DemoBrandNav } from "./demo-brand-nav";
 import { DemoEnhancements } from "./demo-enhancements";
 import { DemoThemedHero } from "./demo-themed-hero";
+import { MagneticButton, ScrollReveal, SpotlightCard } from "@/components/primitives";
 
 const SLUG = "yoga" as const;
 
@@ -45,9 +46,9 @@ export function DemoYogaLanding() {
         lead="Los centros de movement buscan web accesible, agenda legible y propuestas B2B HR. Esta demo mezcla tipografía aireada, tabla semanal táctil y storytelling sobre límites de aforo — sin sensación spa genérico."
         ctas={
           <>
-            <button type="button" className={art.primaryCta}>
+            <MagneticButton variant="primary" className={art.primaryCta}>
               Ver grilla semanal
-            </button>
+            </MagneticButton>
             <button type="button" className={art.secondaryCta}>
               Plan wellness corp
             </button>
@@ -91,28 +92,35 @@ export function DemoYogaLanding() {
             { icon: Moon, t: "After-office", d: "Clases dim light con lista de espera transparente." },
             { icon: Flower2, t: "Retiros", d: "Landing modular con itinerario descargable." },
           ].map(({ icon: I, t, d }) => (
-            <div key={t} className={`p-8 ${art.cardShell}`}>
+            <SpotlightCard
+              key={t}
+              variant="transparent"
+              glowColor="rgba(139,92,246,0.18)"
+              className={`p-8 ${art.cardShell}`}
+            >
               <I className="h-8 w-8 text-violet-500" />
               <h3 className={`mt-4 ${h} text-xl text-violet-950`}>{t}</h3>
               <p className="mt-2 text-sm text-violet-900/65">{d}</p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </section>
 
-      <DemoLongStory
-        sectionHeadingClass={h}
-        kicker="Contenidos wellness"
-        title="Educación sin saturar al alumno nuevo"
-        paragraphs={[
-          "Bloques acordeón con FAQs de lesiones, props de apoyo y reglas de estudio — SEO long tail para principiantes curiosos.",
-          "Video vertical embebido solo tras consentimiento de cookies marketing: muestra compliance sin romper estética.",
-        ]}
-        kickerClass="text-violet-600"
-        titleClass="text-violet-950"
-        pClass="mt-4 text-sm leading-relaxed text-violet-900/75"
-        sectionClass="border-y border-violet-200 bg-violet-50/50"
-      />
+      <ScrollReveal>
+        <DemoLongStory
+          sectionHeadingClass={h}
+          kicker="Contenidos wellness"
+          title="Educación sin saturar al alumno nuevo"
+          paragraphs={[
+            "Bloques acordeón con FAQs de lesiones, props de apoyo y reglas de estudio — SEO long tail para principiantes curiosos.",
+            "Video vertical embebido solo tras consentimiento de cookies marketing: muestra compliance sin romper estética.",
+          ]}
+          kickerClass="text-violet-600"
+          titleClass="text-violet-950"
+          pClass="mt-4 text-sm leading-relaxed text-violet-900/75"
+          sectionClass="border-y border-violet-200 bg-violet-50/50"
+        />
+      </ScrollReveal>
 
       <DemoTestimonials
         sectionHeadingClass={h}
