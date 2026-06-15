@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { MagneticButton } from "@/components/primitives";
 import { DECO_BAZAR_CO_CONFIG } from "@/lib/deco-bazar-co";
 
 export function DecoBazarCoHero() {
@@ -17,13 +18,15 @@ export function DecoBazarCoHero() {
             Diseño que ordena, objetos que perduran.
           </h1>
           <p className="mt-4 max-w-md text-sm font-light leading-relaxed text-[color:var(--muted-body)]">{cfg.tagline}</p>
-          <button
-            type="button"
-            onClick={() => document.querySelector("#catalogo")?.scrollIntoView({ behavior: "smooth" })}
-            className="mt-8 w-full max-w-xs rounded-full bg-zinc-800 px-8 py-4 text-xs font-medium uppercase tracking-[0.04em] text-white transition hover:bg-zinc-700 sm:w-auto"
-          >
-            Explorar el catálogo
-          </button>
+          <div className="mt-8">
+            <MagneticButton
+              variant="ghost"
+              onClick={() => document.querySelector("#catalogo")?.scrollIntoView({ behavior: "smooth" })}
+              className="!bg-zinc-800 !text-white !px-8 !py-4 !text-xs !font-medium !uppercase !tracking-[0.04em] hover:!bg-zinc-700"
+            >
+              Explorar el catálogo
+            </MagneticButton>
+          </div>
         </div>
       </div>
     </section>

@@ -14,6 +14,7 @@ import {
   type DeliveryMethod,
   type PurchaseMode,
 } from "@/lib/central-bebidas";
+import { ScrollReveal } from "@/components/primitives";
 import { DemoLeadForm } from "../demo-lead-form";
 import { CentralBebidasCart } from "./central-bebidas-cart";
 import { CentralBebidasCatalog } from "./central-bebidas-catalog";
@@ -112,7 +113,9 @@ export function CentralBebidasLanding() {
         onOpenCart={() => setCartOpen(true)}
       />
       <CentralBebidasHero />
-      <CentralBebidasCombos onAddCombo={addCombo} />
+      <ScrollReveal>
+        <CentralBebidasCombos onAddCombo={addCombo} />
+      </ScrollReveal>
       <CentralBebidasCatalog mode={mode} search={search} onAdd={addProduct} />
       <CentralBebidasFooter />
 

@@ -85,7 +85,10 @@ function FlashCard({ title, endsAt }: { title: string; endsAt: number }) {
       <div className="flex items-center gap-2">
         <Zap className="h-5 w-5 text-amber-400" />
         <div>
-          <p className="text-[10px] font-black uppercase tracking-[0.04em] text-amber-400">Oferta relámpago</p>
+          <p className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.04em] text-amber-400">
+            <span className="live-ping-dot" aria-hidden style={{ background: "#fbbf24" }} />
+            Oferta relámpago
+          </p>
           <p className="text-sm font-bold text-white">{title}</p>
         </div>
       </div>
