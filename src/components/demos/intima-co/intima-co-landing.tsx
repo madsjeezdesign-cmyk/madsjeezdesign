@@ -2,6 +2,7 @@
 
 import { CheckCircle2, X } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
+import { ScrollReveal } from "@/components/primitives";
 import {
   buildIntimaOrderSummary,
   calcIntimaTotals,
@@ -141,7 +142,9 @@ export function IntimaCoLanding() {
           scrollTo("#catalogo");
         }}
       />
-      <IntimaCoPackBuilder onAddPack={addPack} />
+      <ScrollReveal as="section">
+        <IntimaCoPackBuilder onAddPack={addPack} />
+      </ScrollReveal>
       <IntimaCoFooter />
 
       <DemoLeadForm
