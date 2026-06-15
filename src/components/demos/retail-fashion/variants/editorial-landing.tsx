@@ -28,6 +28,7 @@ import {
 import { useMotionTransition } from "@/lib/motion";
 import { DemoLeadForm } from "../../demo-lead-form";
 import { FashionPhoto } from "../fashion-photo";
+import { ScrollReveal, SpotlightCard } from "@/components/primitives";
 
 type Props = { slug: string };
 
@@ -194,7 +195,7 @@ function EditorialLookbook({ config }: { config: RetailFashionConfig }) {
   const media = config.instagramMedia ?? [];
   return (
     <section className="overflow-hidden bg-[#1c1612] py-24 text-[#fbf5ec] md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+      <ScrollReveal className="mx-auto max-w-6xl px-6">
         <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-[11px] tracking-[0.06em] text-[#c1a986]">
@@ -213,7 +214,7 @@ function EditorialLookbook({ config }: { config: RetailFashionConfig }) {
             Ver completo en @{config.instagramHandle}
           </a>
         </div>
-      </div>
+      </ScrollReveal>
 
       <div className="relative">
         <div className="flex gap-6 overflow-x-auto scroll-smooth px-6 pb-6 [scrollbar-width:none] md:px-[max(1.5rem,calc((100vw-72rem)/2))] [&::-webkit-scrollbar]:hidden">
@@ -223,21 +224,28 @@ function EditorialLookbook({ config }: { config: RetailFashionConfig }) {
               href={m.postUrl}
               target="_blank"
               rel="noreferrer"
-              className="relative block aspect-[3/4] w-[70vw] shrink-0 overflow-hidden bg-black/40 md:w-[28rem]"
+              className="block w-[70vw] shrink-0 md:w-[28rem]"
             >
-              <FashionPhoto
-                src={m.image}
-                fallbackSrc={m.fallbackImage}
-                alt={m.alt}
-                fill
-                className="object-cover transition-transform duration-700 hover:scale-[1.02]"
-                sizes="(max-width:768px) 70vw, 28rem"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-5 py-4">
-                <p className="font-serif text-[14px] italic text-[#fbf5ec]">
-                  Look N°{String(i + 1).padStart(2, "0")}
-                </p>
-              </div>
+              <SpotlightCard
+                variant="transparent"
+                glowColor="rgba(233,217,196,0.18)"
+                size={260}
+                className="relative aspect-[3/4] w-full overflow-hidden !rounded-none bg-black/40"
+              >
+                <FashionPhoto
+                  src={m.image}
+                  fallbackSrc={m.fallbackImage}
+                  alt={m.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-[1.02]"
+                  sizes="(max-width:768px) 70vw, 28rem"
+                />
+                <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/70 to-transparent px-5 py-4">
+                  <p className="font-serif text-[14px] italic text-[#fbf5ec]">
+                    Look N°{String(i + 1).padStart(2, "0")}
+                  </p>
+                </div>
+              </SpotlightCard>
             </a>
           ))}
         </div>
@@ -249,7 +257,7 @@ function EditorialLookbook({ config }: { config: RetailFashionConfig }) {
 function EditorialBoutique({ config }: { config: RetailFashionConfig }) {
   return (
     <section className="bg-[#fbf5ec] py-24 md:py-32">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 md:grid-cols-2">
+      <ScrollReveal className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 md:grid-cols-2">
         <div>
           <p className="text-[11px] tracking-[0.06em] text-[#8b6c4a]">Maison</p>
           <h3 className="mt-3 font-serif text-[clamp(1.75rem,3vw,2.5rem)] italic text-[#1c1612]">
@@ -286,7 +294,7 @@ function EditorialBoutique({ config }: { config: RetailFashionConfig }) {
             title={`Ubicación ${config.brand}`}
           />
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }
