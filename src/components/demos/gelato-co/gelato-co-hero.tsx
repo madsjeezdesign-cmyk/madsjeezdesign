@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { MagneticButton } from "@/components/primitives";
 import { GELATO_CO_CONFIG } from "@/lib/gelato-co";
 
 export function GelatoCoHero() {
@@ -17,13 +18,14 @@ export function GelatoCoHero() {
             El placer del gelato hecho a mano.
           </h1>
           <p className="mt-4 max-w-sm text-sm text-stone-600">{cfg.tagline}</p>
-          <button
-            type="button"
+          <MagneticButton
             onClick={() => document.querySelector("#menu")?.scrollIntoView({ behavior: "smooth" })}
-            className="mt-8 w-full max-w-xs rounded-full bg-rose-400 px-8 py-4 text-sm font-bold uppercase tracking-[0.04em] text-white shadow-lg shadow-rose-200/50 transition hover:bg-rose-500 sm:w-auto"
+            variant="primary"
+            strength={6}
+            className="mt-8 w-full max-w-xs justify-center !rounded-full !bg-rose-400 !px-8 !py-4 !text-sm !font-bold !uppercase !tracking-[0.04em] !text-white shadow-lg shadow-rose-200/50 hover:!bg-rose-500 sm:w-auto"
           >
             ¡Pedir mi helado!
-          </button>
+          </MagneticButton>
         </div>
       </div>
     </section>
