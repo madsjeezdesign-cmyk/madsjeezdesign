@@ -40,6 +40,12 @@ import { getCreatorConfig, type CreatorDemoConfig } from "@/lib/creator-demos";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { useMotionTransition } from "@/lib/motion";
 import { DemoLeadForm } from "../demo-lead-form";
+import {
+  ScrollReveal,
+  SpotlightCard,
+  MagneticButton,
+  AnimatedStats,
+} from "@/components/primitives";
 
 type Format = "streamer" | "youtuber" | "tiktoker" | "comunicadores";
 type Props = { slug: string; format: Format };
@@ -86,7 +92,6 @@ const SCHEDULE: Record<Format, string> = {
 export function StreamerVodLanding({ slug, format }: Props) {
   const config = getCreatorConfig(slug);
   const v = config ? getDemoVisuals(slug) : null;
-  const tSnap = useMotionTransition("snap");
   const tDisplay = useMotionTransition("display");
 
   const isLive = false;
@@ -122,6 +127,7 @@ export function StreamerVodLanding({ slug, format }: Props) {
           background: surface,
           color: ink,
           "--accent": accent,
+          "--brand-cyan": accent,
         } as React.CSSProperties
       }
     >
@@ -158,13 +164,14 @@ export function StreamerVodLanding({ slug, format }: Props) {
             <a href="#stack" className="hover:text-[color:var(--accent)]">Stack</a>
             <a href="#contacto" className="hover:text-[color:var(--accent)]">Contacto</a>
           </nav>
-          <a
+          <MagneticButton
             href="#contacto"
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white shadow-sm transition-transform hover:scale-[1.02]"
-            style={{ background: accent }}
+            variant="primary"
+            strength={6}
+            className="!px-4 !py-2 !text-sm shadow-sm"
           >
             {format === "comunicadores" ? "Bookear charla" : "Trabajar conmigo"}
-          </a>
+          </MagneticButton>
         </div>
       </header>
 
@@ -225,29 +232,33 @@ export function StreamerVodLanding({ slug, format }: Props) {
 
       {/* CONTENIDO per-format */}
       {format === "streamer" && (
-        <section
-          id="contenido"
+        <ScrollReveal
+          as="section"
           className="border-y px-5 py-16 md:px-8 md:py-20"
-          style={{ borderColor: hairline }}
         >
-          <div className="mx-auto max-w-6xl">
+          <div id="contenido" className="mx-auto max-w-6xl" style={{ borderColor: hairline }}>
             <div className="mb-8 flex items-end justify-between gap-4">
-              <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Últimos VODs</h2>
+              <h2 className="inline-flex items-center gap-3 text-2xl font-semibold tracking-tight md:text-3xl">
+                Últimos VODs
+                <span
+                  className="live-ping-dot"
+                  style={{ background: accent, "--brand-cyan": accent } as React.CSSProperties}
+                  aria-hidden
+                />
+              </h2>
               <a href="#contenido" className="text-sm hover:text-[color:var(--accent)]" style={{ color: muted }}>
                 Ver archivo →
               </a>
             </div>
             <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:thin]">
               {VOD_LIBRARY.streamer.map((vod, i) => (
-                <motion.a
+                <SpotlightCard
                   key={vod.title}
+                  glowColor={accent}
+                  size={300}
+                  variant="transparent"
                   href="#contenido"
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={tSnap}
-                  className="group relative aspect-video min-w-[280px] shrink-0 snap-start overflow-hidden rounded-lg border bg-black md:min-w-[360px]"
-                  style={{ borderColor: hairline }}
+                  className="group relative aspect-video min-w-[280px] shrink-0 snap-start overflow-hidden !rounded-lg border bg-black md:min-w-[360px]"
                 >
                   <Image
                     src={[v.a, v.b, v.c, v.cover][i % 4]}
@@ -267,20 +278,19 @@ export function StreamerVodLanding({ slug, format }: Props) {
                     <p className="text-sm font-medium text-white">{vod.title}</p>
                     <p className="mt-0.5 text-[11px] text-white/70">{vod.meta}</p>
                   </div>
-                </motion.a>
+                </SpotlightCard>
               ))}
             </div>
           </div>
-        </section>
+        </ScrollReveal>
       )}
 
       {format === "youtuber" && (
-        <section
-          id="contenido"
+        <ScrollReveal
+          as="section"
           className="border-y bg-white px-5 py-16 md:px-8 md:py-20"
-          style={{ borderColor: hairline }}
         >
-          <div className="mx-auto max-w-6xl">
+          <div id="contenido" className="mx-auto max-w-6xl" style={{ borderColor: hairline }}>
             <div className="mb-8 flex items-end justify-between gap-4">
               <h2 className="text-2xl font-semibold tracking-tight md:text-3xl" style={{ color: "#171717" }}>
                 Biblioteca de videos
@@ -291,74 +301,84 @@ export function StreamerVodLanding({ slug, format }: Props) {
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {VOD_LIBRARY.youtuber.map((vid, i) => (
-                <motion.article
+                <SpotlightCard
                   key={vid.title}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-10% 0px" }}
-                  transition={tSnap}
-                  className="group"
+                  glowColor={accent}
+                  size={260}
+                  variant="transparent"
+                  className="group !rounded-md bg-white p-0 transition-colors hover:!border-[color:var(--accent)]"
                 >
-                  <div className="relative aspect-video overflow-hidden rounded-md border" style={{ borderColor: hairline }}>
-                    <Image
-                      src={[v.cover, v.a, v.b, v.c][i % 4]}
-                      alt={vid.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <span
-                      className="absolute bottom-2 right-2 rounded px-1.5 py-0.5 text-[10px] font-medium text-white"
-                      style={{ background: "rgba(0,0,0,0.75)" }}
+                  <article>
+                    <div
+                      className="relative aspect-video overflow-hidden rounded-md border"
+                      style={{ borderColor: hairline }}
                     >
-                      {vid.duration}
-                    </span>
-                  </div>
-                  <h3 className="mt-3 line-clamp-2 text-sm font-medium leading-snug md:text-base" style={{ color: "#171717" }}>
-                    {vid.title}
-                  </h3>
-                  <p className="mt-1 text-xs" style={{ color: muted }}>{vid.meta}</p>
-                </motion.article>
+                      <Image
+                        src={[v.cover, v.a, v.b, v.c][i % 4]}
+                        alt={vid.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <span
+                        className="absolute bottom-2 right-2 rounded px-1.5 py-0.5 text-[10px] font-medium text-white"
+                        style={{ background: "rgba(0,0,0,0.75)" }}
+                      >
+                        {vid.duration}
+                      </span>
+                    </div>
+                    <h3 className="mt-3 line-clamp-2 px-2 text-sm font-medium leading-snug md:text-base" style={{ color: "#171717" }}>
+                      {vid.title}
+                    </h3>
+                    <p className="mt-1 px-2 pb-2 text-xs" style={{ color: muted }}>{vid.meta}</p>
+                  </article>
+                </SpotlightCard>
               ))}
             </div>
           </div>
-        </section>
+        </ScrollReveal>
       )}
 
       {format === "tiktoker" && (
-        <section
-          id="calendario"
+        <ScrollReveal
+          as="section"
           className="border-y px-5 py-14 md:px-8 md:py-16"
-          style={{ borderColor: hairline }}
         >
-          <div className="mx-auto max-w-md">
-            <h2 className="mb-6 text-center text-xl font-semibold tracking-tight">Lo que pasa en mi feed</h2>
-            <dl className="grid grid-cols-3 gap-4 text-center">
-              {[
-                { label: "Seguidores", value: config.statFollowers.split(" ")[0] ?? "1.2M" },
-                { label: "Likes", value: "84M" },
-                { label: "Views 30d", value: "120M" },
-              ].map((stat) => (
-                <div key={stat.label} className="rounded-xl border p-4" style={{ borderColor: hairline }}>
-                  <dd className="text-2xl font-semibold tabular-nums" style={{ color: accent }}>{stat.value}</dd>
-                  <dt className="mt-1 text-[11px]" style={{ color: muted }}>{stat.label}</dt>
-                </div>
-              ))}
-            </dl>
+          <div id="calendario" className="mx-auto max-w-2xl" style={{ borderColor: hairline }}>
+            <h2 className="mb-8 inline-flex items-center gap-3 text-xl font-semibold tracking-tight">
+              <span
+                className="live-ping-dot"
+                style={{ background: accent, "--brand-cyan": accent } as React.CSSProperties}
+                aria-hidden
+              />
+              Lo que pasa en mi feed
+            </h2>
+            <AnimatedStats
+              layout="grid-3"
+              items={[
+                { value: 1200000, label: "Seguidores", format: (v) => (v / 1_000_000).toFixed(1) + "M" },
+                { value: 84, label: "Likes totales", suffix: "M" },
+                { value: 120, label: "Views 30 días", suffix: "M" },
+              ]}
+            />
           </div>
-        </section>
+        </ScrollReveal>
       )}
 
       {format === "comunicadores" && (
-        <section
-          id="contenido"
+        <ScrollReveal
+          as="section"
           className="border-y bg-white px-5 py-16 md:px-8 md:py-20"
-          style={{ borderColor: hairline }}
         >
-          <div className="mx-auto max-w-4xl">
+          <div id="contenido" className="mx-auto max-w-4xl" style={{ borderColor: hairline }}>
             <div className="mb-8 flex items-end justify-between gap-4">
-              <h2 className="text-2xl font-semibold tracking-tight md:text-3xl" style={{ color: "#171717" }}>
+              <h2 className="inline-flex items-center gap-3 text-2xl font-semibold tracking-tight md:text-3xl" style={{ color: "#171717" }}>
                 Episodios recientes
+                <span
+                  className="live-ping-dot"
+                  style={{ background: accent, "--brand-cyan": accent } as React.CSSProperties}
+                  aria-hidden
+                />
               </h2>
               <a href="#contenido" className="text-sm hover:text-[color:var(--accent)]" style={{ color: muted }}>
                 Archivo completo →
@@ -366,11 +386,11 @@ export function StreamerVodLanding({ slug, format }: Props) {
             </div>
             <ul className="divide-y border-y" style={{ borderColor: hairline }}>
               {VOD_LIBRARY.comunicadores.map((ep, i) => (
-                <li key={ep.title} className="flex items-center gap-4 py-5">
+                <li key={ep.title} className="group flex items-center gap-4 py-5 transition-colors hover:bg-[color:var(--accent)]/[0.03]">
                   <button
                     type="button"
                     aria-label={`Reproducir ${ep.title}`}
-                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full transition-transform hover:scale-105"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full transition-transform group-hover:scale-110"
                     style={{ background: accentDim, color: accent }}
                   >
                     <PlayCircle className="h-6 w-6" aria-hidden />
@@ -388,7 +408,7 @@ export function StreamerVodLanding({ slug, format }: Props) {
               ))}
             </ul>
           </div>
-        </section>
+        </ScrollReveal>
       )}
 
       {/* STACK */}
@@ -419,7 +439,7 @@ export function StreamerVodLanding({ slug, format }: Props) {
         className="border-y px-5 py-16 md:px-8 md:py-20"
         style={{ borderColor: hairline, background: dark ? "rgba(255,255,255,0.02)" : "white" }}
       >
-        <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-[1fr_1.4fr]">
+        <ScrollReveal className="mx-auto max-w-6xl grid gap-10 md:grid-cols-[1fr_1.4fr]">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight md:text-3xl" style={{ color: ink }}>
               {format === "comunicadores" ? "Tu programa, listo para crecer" : "Tu marca como creador, ordenada"}
@@ -442,7 +462,7 @@ export function StreamerVodLanding({ slug, format }: Props) {
               </li>
             ))}
           </ul>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* CONTACT BAND */}
@@ -552,13 +572,14 @@ function StreamerHero(props: HeroBase & {
           </h1>
           <p className="mt-6 max-w-lg text-base leading-relaxed" style={{ color: muted }}>{config.heroSub}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
+            <MagneticButton
               href="#contenido"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white transition-transform hover:scale-[1.02]"
-              style={{ background: accent }}
+              variant="primary"
+              strength={9}
+              className="shadow-[0_10px_30px_-12px_rgba(0,0,0,0.5)]"
             >
               Ver últimos VODs <ArrowRight className="h-4 w-4" />
-            </a>
+            </MagneticButton>
             <a
               href="#stack"
               className="inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-medium hover:border-[color:var(--accent)]"
@@ -645,13 +666,14 @@ function YoutuberHero(props: HeroBase & {
               </div>
             </dl>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
+              <MagneticButton
                 href="#contenido"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white"
-                style={{ background: accent }}
+                variant="primary"
+                strength={9}
+                className="shadow-[0_10px_30px_-12px_rgba(0,0,0,0.3)]"
               >
                 Ver canal <ArrowRight className="h-4 w-4" />
-              </a>
+              </MagneticButton>
               <a
                 href="#contacto"
                 className="inline-flex items-center gap-2 rounded-full border bg-white px-6 py-3 text-sm font-medium hover:border-[color:var(--accent)]"
@@ -849,13 +871,14 @@ function ComunicadoresHero(props: HeroBase & { schedule: string }) {
           </h1>
           <p className="mt-6 max-w-lg text-base leading-relaxed" style={{ color: "#3a3a36" }}>{config.heroSub}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
+            <MagneticButton
               href="#contenido"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white"
-              style={{ background: accent }}
+              variant="primary"
+              strength={9}
+              className="shadow-[0_10px_30px_-12px_rgba(0,0,0,0.3)]"
             >
               Escuchar último episodio <ArrowRight className="h-4 w-4" />
-            </a>
+            </MagneticButton>
             <a
               href="#contacto"
               className="inline-flex items-center gap-2 rounded-full border bg-white px-6 py-3 text-sm font-medium hover:border-[color:var(--accent)]"
