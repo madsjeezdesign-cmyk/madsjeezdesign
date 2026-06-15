@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Award, ArrowRight, X } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
+import { MagneticButton, SpotlightCard } from "@/components/primitives";
 import { DemoLeadForm } from "./demo-lead-form";
 import "./demo-gimnasio-premium.css";
 
@@ -144,9 +145,14 @@ export function DemoGimnasioLanding() {
             <span className="italic text-[#dfff00]">FICTION.</span>
           </h1>
           <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
-            <button type="button" onClick={toggleJoin} className="iron-btn-triple-a text-sm">
+            <MagneticButton
+              onClick={toggleJoin}
+              variant="ghost"
+              strength={10}
+              className="iron-btn-triple-a !text-sm !rounded-none"
+            >
               Obtener membresía
-            </button>
+            </MagneticButton>
             <p className="max-w-[250px] text-left text-[10px] font-bold uppercase leading-relaxed tracking-[0.04em] text-gray-400">
               Sistemas de entrenamiento basados en datos para atletas de alto rendimiento.
             </p>
@@ -306,27 +312,31 @@ export function DemoGimnasioLanding() {
           </h2>
           <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4 md:gap-12">
             {COACHES.map((coach, i) => (
-              <div
+              <SpotlightCard
                 key={coach.name}
-                className="iron-scroll-reveal group"
-                style={{ transitionDelay: `${i * 0.2}s` }}
+                variant="transparent"
+                glowColor="rgba(223,255,0,0.18)"
+                size={260}
+                className="iron-scroll-reveal group !p-3 !bg-transparent !border-white/5"
               >
-                <div className="relative mb-8 aspect-[3/4] overflow-hidden grayscale transition-all duration-500 group-hover:grayscale-0">
-                  <Image
-                    src={coachImages[i] ?? v.cover}
-                    alt={coach.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
+                <div style={{ transitionDelay: `${i * 0.2}s` }}>
+                  <div className="relative mb-8 aspect-[3/4] overflow-hidden grayscale transition-all duration-500 group-hover:grayscale-0">
+                    <Image
+                      src={coachImages[i] ?? v.cover}
+                      alt={coach.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                  <h4 className="font-[family-name:var(--font-demo-sub-gimnasio)] text-xl uppercase md:text-2xl">
+                    {coach.name}
+                  </h4>
+                  <p className="mt-2 text-[10px] font-black tracking-[0.04em] text-[#dfff00]">
+                    {coach.role}
+                  </p>
                 </div>
-                <h4 className="font-[family-name:var(--font-demo-sub-gimnasio)] text-xl uppercase md:text-2xl">
-                  {coach.name}
-                </h4>
-                <p className="mt-2 text-[10px] font-black tracking-[0.04em] text-[#dfff00]">
-                  {coach.role}
-                </p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

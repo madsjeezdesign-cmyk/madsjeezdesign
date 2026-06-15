@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
+import { MagneticButton, ScrollReveal } from "@/components/primitives";
 import { DemoLeadForm } from "./demo-lead-form";
 import "./demo-estetica-premium.css";
 
@@ -175,13 +176,14 @@ export function DemoEsteticaLanding() {
               propia piel. Diagnóstico digital y tratamientos de grado médico.
             </p>
             <div className="flex flex-wrap items-center gap-8">
-              <button
-                type="button"
+              <MagneticButton
                 onClick={toggleBooking}
-                className="aura-btn px-10 py-5 text-[11px] font-bold uppercase tracking-[0.04em] shadow-lg md:px-12"
+                variant="ghost"
+                strength={10}
+                className="aura-btn !rounded-full !px-10 !py-5 !text-[11px] !font-bold uppercase tracking-[0.04em] shadow-lg md:!px-12"
               >
                 Comenzar proceso
-              </button>
+              </MagneticButton>
               <div className="flex items-center gap-4">
                 <div className="flex -space-x-3">
                   {["A", "M", "L"].map((initial) => (
@@ -252,7 +254,7 @@ export function DemoEsteticaLanding() {
         className="relative z-10 border-y border-gray-100 bg-white/50 px-6 py-24 md:px-8 md:py-40"
       >
         <div className="mx-auto max-w-[1400px]">
-          <div className="grid gap-16 lg:grid-cols-3 lg:gap-20">
+          <ScrollReveal className="grid gap-16 lg:grid-cols-3 lg:gap-20">
             {METHOD.map((step) => (
               <div key={step.n} className="space-y-6">
                 <span className="font-[family-name:var(--font-demo-h-estetica)] text-4xl italic text-[#c48e58]">
@@ -262,7 +264,7 @@ export function DemoEsteticaLanding() {
                 <p className="text-sm font-light leading-relaxed text-gray-400">{step.text}</p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

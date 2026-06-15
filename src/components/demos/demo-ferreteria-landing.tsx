@@ -20,6 +20,7 @@ import {
   Mail,
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
+import { ScrollReveal, SpotlightCard } from "@/components/primitives";
 import { DemoLeadForm } from "./demo-lead-form";
 import "./demo-ferreteria-premium.css";
 
@@ -320,36 +321,43 @@ export function DemoFerreteriaLanding() {
       </section>
 
       {/* Servicios */}
-      <section id="servicios" className="bg-[#0d0d0d] px-4 py-20 md:px-8 md:py-32">
-        <div className="mx-auto grid max-w-[1600px] gap-8 md:grid-cols-3">
-          {[
-            {
-              icon: Key,
-              title: "Copia de llaves",
-              text: "Duplicado computarizado en el acto. Trabajamos con llaves multipunto, doble paleta y de seguridad.",
-            },
-            {
-              icon: Paintbrush,
-              title: "Centro de color",
-              text: "Sistema tintométrico digital. Creamos el color exacto que buscás en base a una muestra o código.",
-            },
-            {
-              icon: Drill,
-              title: "Alquiler de máquinas",
-              text: "Rotomartillos, andamios y hormigoneras por día. No compres lo que podés alquilar por un solo uso.",
-            },
-          ].map(({ icon: Icon, title, text }) => (
-            <div key={title} className="ferre-info-pill group">
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 transition-colors group-hover:bg-orange-600">
-                <Icon className="h-7 w-7 text-orange-500 group-hover:text-white" />
-              </div>
-              <h4 className="mb-4 font-[family-name:var(--font-demo-h-ferreteria)] text-2xl font-bold uppercase text-white">
-                {title}
-              </h4>
-              <p className="text-sm leading-relaxed text-[color:var(--muted-body)]">{text}</p>
-            </div>
-          ))}
-        </div>
+      <section className="bg-[#0d0d0d] px-4 py-20 md:px-8 md:py-32">
+        <ScrollReveal>
+          <div id="servicios" className="mx-auto grid max-w-[1600px] gap-8 md:grid-cols-3">
+            {[
+              {
+                icon: Key,
+                title: "Copia de llaves",
+                text: "Duplicado computarizado en el acto. Trabajamos con llaves multipunto, doble paleta y de seguridad.",
+              },
+              {
+                icon: Paintbrush,
+                title: "Centro de color",
+                text: "Sistema tintométrico digital. Creamos el color exacto que buscás en base a una muestra o código.",
+              },
+              {
+                icon: Drill,
+                title: "Alquiler de máquinas",
+                text: "Rotomartillos, andamios y hormigoneras por día. No compres lo que podés alquilar por un solo uso.",
+              },
+            ].map(({ icon: Icon, title, text }) => (
+              <SpotlightCard
+                key={title}
+                variant="transparent"
+                glowColor="rgba(255,94,0,0.18)"
+                className="ferre-info-pill group !bg-transparent"
+              >
+                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 transition-colors group-hover:bg-orange-600">
+                  <Icon className="h-7 w-7 text-orange-500 group-hover:text-white" />
+                </div>
+                <h4 className="mb-4 font-[family-name:var(--font-demo-h-ferreteria)] text-2xl font-bold uppercase text-white">
+                  {title}
+                </h4>
+                <p className="text-sm leading-relaxed text-[color:var(--muted-body)]">{text}</p>
+              </SpotlightCard>
+            ))}
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* Shop */}

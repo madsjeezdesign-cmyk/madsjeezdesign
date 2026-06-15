@@ -28,6 +28,7 @@ import {
   X,
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
+import { MagneticButton } from "@/components/primitives";
 import { site } from "@/lib/data";
 import { DemoLeadForm } from "./demo-lead-form";
 import "./demo-herreria-premium.css";
@@ -558,13 +559,14 @@ export function DemoHerreriaLanding() {
                   </div>
                 ))}
               </div>
-              <button
-                type="button"
+              <MagneticButton
                 onClick={scrollToLead}
-                className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.04em] text-[#FF4D00] hover:text-white"
+                variant="ghost"
+                strength={6}
+                className="!text-[10px] !font-black uppercase tracking-[0.04em] !text-[#FF4D00] hover:!text-white !px-0 !py-2"
               >
                 Pedir asesoría de materiales <ArrowRight size={14} />
-              </button>
+              </MagneticButton>
             </div>
             <div className="herr-scroll-reveal relative min-h-[480px] overflow-hidden rounded-[40px] lg:min-h-[720px]">
               <div className="absolute inset-0 grid grid-rows-3 gap-4">
