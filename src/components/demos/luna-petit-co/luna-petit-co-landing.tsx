@@ -22,6 +22,7 @@ import { LunaTrust } from "./sections/trust";
 import { LunaTestimonials } from "./sections/testimonials";
 import { LunaFooter } from "./sections/footer";
 import { QuickView } from "./product/quick-view";
+import { ScrollReveal } from "@/components/primitives";
 import "./luna-petit-co.css";
 
 const serif = Cormorant_Garamond({
@@ -131,7 +132,9 @@ export function LunaPetitCoLanding() {
         onAdd={defaultAdd}
       />
       <LunaTrust />
-      <LunaTestimonials />
+      <ScrollReveal>
+        <LunaTestimonials />
+      </ScrollReveal>
       <LunaFooter />
 
       <DemoLeadForm

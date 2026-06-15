@@ -19,6 +19,7 @@ import { AromasKymHero } from "./aromas-kym-hero";
 import { AromasKymNavbar } from "./aromas-kym-navbar";
 import { AromasKymNewsletter } from "./aromas-kym-newsletter";
 import { AromasKymStorytelling } from "./aromas-kym-storytelling";
+import { ScrollReveal } from "@/components/primitives";
 import "./aromas-kym.css";
 
 export function AromasKymLanding() {
@@ -97,7 +98,9 @@ export function AromasKymLanding() {
       <AromasKymDestacados onAdd={addToCart} />
       <AromasKymStorytelling />
       <AromasKymColeccion onAdd={addToCart} externalCategory={externalCategory} />
-      <AromasKymNewsletter />
+      <ScrollReveal>
+        <AromasKymNewsletter />
+      </ScrollReveal>
 
       {/* Lead form — kept consistent with other premium demos */}
       <DemoLeadForm
