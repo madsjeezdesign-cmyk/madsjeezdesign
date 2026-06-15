@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DEMO_HEADING_CLASS, demoBodyStyle } from "@/lib/demo-art-direction";
+import { SpotlightCard, MagneticButton } from "@/components/primitives";
 
 const SLUG = "contadores" as const;
 const H = DEMO_HEADING_CLASS[SLUG];
@@ -256,7 +257,11 @@ export function DemoContadoresLanding() {
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => (
               <FadeUp key={s.title} delay={i * 0.07}>
-                <div className="group flex flex-col gap-4 rounded-xl border border-white/[0.07] bg-[#0d0d16] p-6 transition-all hover:border-amber-500/30 hover:bg-[#111118]">
+                <SpotlightCard
+                  variant="transparent"
+                  glowColor="rgba(251,191,36,0.4)"
+                  className="group flex h-full flex-col gap-4 rounded-xl border border-white/[0.07] bg-[#0d0d16] p-6 transition-all hover:border-amber-500/30 hover:bg-[#111118]"
+                >
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-400 group-hover:bg-amber-500/20 transition-colors">
                     <s.icon className="h-5 w-5" />
                   </div>
@@ -265,7 +270,7 @@ export function DemoContadoresLanding() {
                     <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted-body)]">{s.desc}</p>
                   </div>
                   <ChevronRight className="mt-auto h-4 w-4 text-[color:var(--muted-body)] group-hover:text-amber-500 transition-colors" />
-                </div>
+                </SpotlightCard>
               </FadeUp>
             ))}
           </div>
@@ -342,9 +347,13 @@ export function DemoContadoresLanding() {
             <h2 className={`text-3xl font-black text-black md:text-5xl ${H}`}>Primera consulta sin costo.<br />Cupos disponibles este mes.</h2>
             <p className="mt-4 text-sm text-black/70">30 minutos · sin compromiso · respuesta en 24 h hábiles</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <button type="button" className={`flex items-center gap-2 rounded bg-black px-8 py-3 font-bold text-white hover:bg-zinc-800 transition-colors ${H}`}>
+              <MagneticButton
+                variant="primary"
+                className={`!bg-black hover:!bg-zinc-800 flex items-center gap-2 rounded px-8 py-3 font-bold ${H}`}
+                ariaLabel="Agendar por WhatsApp"
+              >
                 <MessageCircle className="h-4 w-4" /> Agendar por WhatsApp
-              </button>
+              </MagneticButton>
               <button type="button" className="rounded border border-black/20 px-8 py-3 text-sm font-semibold text-black/70 hover:border-black/40 hover:text-black transition-colors">
                 Ver planes y precios
               </button>

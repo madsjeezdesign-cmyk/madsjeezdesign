@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { getDemoVisuals } from "@/lib/demo-assets";
 import { DemoLeadForm } from "./demo-lead-form";
+import { ScrollReveal, MagneticButton } from "@/components/primitives";
 import "./demo-odontologia-premium.css";
 
 const SLUG = "odontologia" as const;
@@ -250,13 +251,15 @@ export function DemoOdontologiaLanding() {
                 Combinamos arte, biología y escaneo 3D para crear sonrisas que cambian vidas.
               </p>
               <Div className="flex flex-wrap items-center gap-6 md:gap-8">
-                <button
-                  type="button"
+                <MagneticButton
                   onClick={scrollToLead}
-                  className="group flex items-center gap-4 rounded-[28px] bg-slate-950 px-10 py-5 text-xs font-black uppercase tracking-[0.04em] text-white shadow-2xl transition-all hover:-translate-y-2 hover:bg-blue-600 md:px-12 md:py-6"
+                  variant="primary"
+                  strength={10}
+                  className="!bg-slate-950 hover:!bg-blue-600 group flex items-center gap-4 rounded-[28px] px-10 py-5 text-xs font-black uppercase tracking-[0.04em] text-white shadow-2xl md:px-12 md:py-6"
+                  ariaLabel="Reservar consulta de diagnóstico"
                 >
                   Consulta de diagnóstico <ChevronRight size={18} />
-                </button>
+                </MagneticButton>
                 <Div className="flex items-center gap-5">
                   <Div className="flex h-16 w-16 items-center justify-center rounded-full border border-slate-200 p-1">
                     <Div className="flex h-full w-full items-center justify-center rounded-full bg-blue-50 text-blue-600">
@@ -315,36 +318,38 @@ export function DemoOdontologiaLanding() {
               &ldquo;La odontología no es solo salud, es la arquitectura de la confianza.&rdquo;
             </p>
           </Div>
-          <Div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
-            <ServiceCard
-              title="Estética dental"
-              description="Carillas de porcelana ultra-finas y blanqueamiento láser de última generación."
-              icon={Sparkles}
-              image={v.a}
-              span="md:col-span-2 lg:col-span-2"
-            />
-            <ServiceCard
-              title="Ortodoncia invisible"
-              description="Alineadores transparentes con seguimiento digital semanal sin brackets."
-              icon={Eye}
-              image={v.b}
-              dark
-            />
-            <ServiceCard
-              title="Implantología 3D"
-              description="Cirugía guiada por computadora para una recuperación dos veces más rápida."
-              icon={Microscope}
-              image={v.c}
-              dark
-            />
-            <ServiceCard
-              title="Diseño digital"
-              description="Escaneamos tu boca en 3D para proyectar tu sonrisa final antes del tratamiento."
-              icon={Camera}
-              image={v.d ?? v.cover}
-              span="md:col-span-2 lg:col-span-2"
-            />
-          </Div>
+          <ScrollReveal>
+            <Div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
+              <ServiceCard
+                title="Estética dental"
+                description="Carillas de porcelana ultra-finas y blanqueamiento láser de última generación."
+                icon={Sparkles}
+                image={v.a}
+                span="md:col-span-2 lg:col-span-2"
+              />
+              <ServiceCard
+                title="Ortodoncia invisible"
+                description="Alineadores transparentes con seguimiento digital semanal sin brackets."
+                icon={Eye}
+                image={v.b}
+                dark
+              />
+              <ServiceCard
+                title="Implantología 3D"
+                description="Cirugía guiada por computadora para una recuperación dos veces más rápida."
+                icon={Microscope}
+                image={v.c}
+                dark
+              />
+              <ServiceCard
+                title="Diseño digital"
+                description="Escaneamos tu boca en 3D para proyectar tu sonrisa final antes del tratamiento."
+                icon={Camera}
+                image={v.d ?? v.cover}
+                span="md:col-span-2 lg:col-span-2"
+              />
+            </Div>
+          </ScrollReveal>
         </Div>
       </section>
 
@@ -456,7 +461,7 @@ export function DemoOdontologiaLanding() {
               © {new Date().getFullYear()} Galénica Dental Elite · Demo MadsJeez Design
             </p>
             <Div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="live-ping-dot" />
               <span className="text-[9px] font-black uppercase tracking-[0.04em] text-slate-400">
                 Status: sistemas online
               </span>
