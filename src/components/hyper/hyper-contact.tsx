@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Loader2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { site, websiteModels } from "@/lib/data";
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address.mapsQuery)}`;
 
@@ -137,6 +138,15 @@ export function HyperContact() {
         return;
       }
       setSent(true);
+      // Conversion events — no PII: only the chosen service, never name/email.
+      trackEvent(ANALYTICS_EVENTS.FORMULARIO_ENVIADO, {
+        form: "contacto",
+        service: String(data.get("service") ?? ""),
+      });
+      trackEvent(ANALYTICS_EVENTS.LEAD_GENERADO, {
+        source: "contact_form",
+        service: String(data.get("service") ?? ""),
+      });
       setService(DEFAULT_SERVICE);
       form.reset();
     } catch {
