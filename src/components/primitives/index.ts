@@ -47,3 +47,8 @@ export type { EmptyStateProps } from "./empty-state";
 
 export { Skeleton, LoadingState } from "./loading-state";
 export type { SkeletonProps, LoadingStateProps } from "./loading-state";
+
+export { ScrollProgress } from "./scroll-progress";
+
+export { Marquee } from "./marquee";
+export type { MarqueeProps } from "./marquee";
