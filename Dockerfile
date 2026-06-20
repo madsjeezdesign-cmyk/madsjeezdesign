@@ -45,6 +45,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-cert
 RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
+# Blog seed data — committed posts ship in the image. Runtime publishes
+# (via /api/blog) write here too but are ephemeral on Railway's FS.
+COPY --from=builder --chown=nextjs:nodejs /app/data ./data
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
