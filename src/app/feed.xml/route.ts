@@ -1,4 +1,4 @@
-import { getAllPostsSync } from "@/lib/blog/store";
+import { getAllPosts } from "@/lib/blog/store";
 import { site } from "@/lib/data";
 
 /** RSS 2.0 feed at /feed.xml. Revalidates with the blog (60s). */
@@ -13,9 +13,9 @@ function esc(s: string): string {
     .replace(/'/g, "&apos;");
 }
 
-export function GET() {
+export async function GET() {
   const base = site.siteUrl.replace(/\/$/, "");
-  const posts = getAllPostsSync();
+  const posts = await getAllPosts();
   const updated = posts[0]?.updatedAt ?? new Date().toISOString();
 
   const items = posts
