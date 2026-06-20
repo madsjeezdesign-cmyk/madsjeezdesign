@@ -5,7 +5,32 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import pg from "pg";
+import { createRequire } from "node:module";
+
+// `pg` lives in /app/schema-deps/node_modules on the Railway standalone
+// runner (kept out of Next's node_modules). NODE_PATH does NOT work for ESM
+// imports, so resolve pg explicitly with createRequire — trying the
+// schema-deps path first, then normal resolution for local dev where pg is a
+// top-level dependency.
+const require = createRequire(import.meta.url);
+function loadPg() {
+  const candidates = [
+    process.env.PG_MODULE_PATH,
+    "/app/schema-deps/node_modules/pg",
+    "pg",
+  ].filter(Boolean);
+  for (const candidate of candidates) {
+    try {
+      return require(candidate);
+    } catch {
+      /* try next */
+    }
+  }
+  throw new Error(
+    "No se pudo cargar 'pg'. Instalá pg o seteá PG_MODULE_PATH al directorio del paquete.",
+  );
+}
+const pg = loadPg();
 
 const connectionString = (
   process.env.DATABASE_URL ??
