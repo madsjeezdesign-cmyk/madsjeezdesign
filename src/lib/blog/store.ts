@@ -120,10 +120,14 @@ export async function getAllPosts(): Promise<BlogPost[]> {
   const client = createSupabaseAdmin();
   if (!client) return sortNewestFirst(fileSeed());
 
-  let { data } = await client
+  let { data, error } = await client
     .from(TABLE)
     .select("*")
     .order("published_at", { ascending: false });
+
+  // Table missing / DB unreachable → serve the bundled seed so /blog never
+  // breaks. (Happens until the blog_posts table is created in Supabase.)
+  if (error) return sortNewestFirst(fileSeed());
 
   // First-run seed: populate from the bundled file when the table is empty.
   if (!data || data.length === 0) {
