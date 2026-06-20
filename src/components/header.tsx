@@ -31,6 +31,12 @@ export function Header() {
               {link.label}
             </a>
           ))}
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+          >
+            Blog
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3">
@@ -65,6 +71,13 @@ export function Header() {
                 {link.label}
               </a>
             ))}
+            <Link
+              href="/blog"
+              className="text-sm font-medium text-foreground"
+              onClick={() => setOpen(false)}
+            >
+              Blog
+            </Link>
             <a
               href="#contacto"
               className="mt-2 inline-flex justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white"
