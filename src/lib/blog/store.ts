@@ -1,36 +1,39 @@
 import "server-only";
-import { promises as fs } from "node:fs";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { createSupabaseAdmin } from "@/lib/supabase/server";
 
 /**
- * File-based blog store.
+ * Blog store — Supabase-backed with a file fallback.
  *
- * Posts live in `data/blog.json` (an array). Seed posts committed to git
- * ship inside the Docker image and always render. Posts published at runtime
- * via the API are written to the same file, but Railway's container FS is
- * EPHEMERAL — they survive restarts within a deploy but are wiped on the next
- * deploy. For durable runtime publishing, migrate `publishPost` to Supabase
- * (already wired in this project). See POSTHOG-style docs in the PR.
+ * Production: posts live in the `blog_posts` table (durable across deploys).
+ * The table is created on boot by `scripts/ensure-schema.mjs` (DDL in
+ * `supabase/schema.sql`). On the first read, if the table is empty, the
+ * seed posts bundled in `data/blog.json` are inserted via the service-role
+ * REST client (idempotent upsert on slug).
+ *
+ * Local dev without Supabase configured: reads/writes fall back to the
+ * `data/blog.json` file so the blog still works offline.
  */
 
 export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
-  /** HTML or plain text. Rendered inside a `.prose` container. */
   content: string;
   coverImage: string | null;
   author: string;
   tags: string[];
-  publishedAt: string; // ISO
-  updatedAt: string; // ISO
-  readingTime: number; // minutes
+  publishedAt: string;
+  updatedAt: string;
+  readingTime: number;
 };
 
+const TABLE = "blog_posts";
 const DATA_FILE = path.join(process.cwd(), "data", "blog.json");
 
-/** Convert a title into a URL-safe slug. */
+/* ---------------- helpers ---------------- */
+
 export function slugify(input: string): string {
   return input
     .toString()
@@ -44,37 +47,10 @@ export function slugify(input: string): string {
     .replace(/^-|-$/g, "");
 }
 
-/** Estimate reading time in minutes (~200 wpm), min 1. */
 export function calcReadingTime(content: string): number {
-  const text = content.replace(/<[^>]+>/g, " "); // drop HTML tags
+  const text = content.replace(/<[^>]+>/g, " ");
   const words = text.trim().split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 200));
-}
-
-/** Synchronous read for use in sitemap/RSS/build contexts. Safe on missing file. */
-function readPostsSync(): BlogPost[] {
-  try {
-    const raw = readFileSync(DATA_FILE, "utf8");
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as BlogPost[]) : [];
-  } catch {
-    return [];
-  }
-}
-
-async function readPosts(): Promise<BlogPost[]> {
-  try {
-    const raw = await fs.readFile(DATA_FILE, "utf8");
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as BlogPost[]) : [];
-  } catch {
-    return [];
-  }
-}
-
-async function writePosts(posts: BlogPost[]): Promise<void> {
-  await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
-  await fs.writeFile(DATA_FILE, JSON.stringify(posts, null, 2) + "\n", "utf8");
 }
 
 function sortNewestFirst(posts: BlogPost[]): BlogPost[] {
@@ -84,20 +60,103 @@ function sortNewestFirst(posts: BlogPost[]): BlogPost[] {
   );
 }
 
-/** All posts, newest first. Async (route handlers, ISR pages). */
-export async function getAllPosts(): Promise<BlogPost[]> {
-  return sortNewestFirst(await readPosts());
+/** Bundled seed posts (committed to git, copied into the image). */
+function fileSeed(): BlogPost[] {
+  try {
+    const parsed = JSON.parse(readFileSync(DATA_FILE, "utf8"));
+    return Array.isArray(parsed) ? (parsed as BlogPost[]) : [];
+  } catch {
+    return [];
+  }
 }
 
-/** All posts, newest first. Sync (sitemap / RSS). */
-export function getAllPostsSync(): BlogPost[] {
-  return sortNewestFirst(readPostsSync());
+type Row = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  cover_image: string | null;
+  author: string;
+  tags: string[] | null;
+  reading_time: number;
+  published_at: string;
+  updated_at: string;
+};
+
+function fromRow(r: Row): BlogPost {
+  return {
+    slug: r.slug,
+    title: r.title,
+    excerpt: r.excerpt,
+    content: r.content,
+    coverImage: r.cover_image,
+    author: r.author,
+    tags: r.tags ?? [],
+    publishedAt: r.published_at,
+    updatedAt: r.updated_at,
+    readingTime: r.reading_time,
+  };
+}
+
+function toRow(p: BlogPost): Row {
+  return {
+    slug: p.slug,
+    title: p.title,
+    excerpt: p.excerpt,
+    content: p.content,
+    cover_image: p.coverImage,
+    author: p.author,
+    tags: p.tags,
+    reading_time: p.readingTime,
+    published_at: p.publishedAt,
+    updated_at: p.updatedAt,
+  };
+}
+
+/* ---------------- public API ---------------- */
+
+/** All posts, newest first. */
+export async function getAllPosts(): Promise<BlogPost[]> {
+  const client = createSupabaseAdmin();
+  if (!client) return sortNewestFirst(fileSeed());
+
+  let { data } = await client
+    .from(TABLE)
+    .select("*")
+    .order("published_at", { ascending: false });
+
+  // First-run seed: populate from the bundled file when the table is empty.
+  if (!data || data.length === 0) {
+    const seed = fileSeed();
+    if (seed.length > 0) {
+      await client
+        .from(TABLE)
+        .upsert(seed.map(toRow), { onConflict: "slug", ignoreDuplicates: true });
+      const re = await client
+        .from(TABLE)
+        .select("*")
+        .order("published_at", { ascending: false });
+      data = re.data ?? [];
+    }
+  }
+
+  return (data ?? []).map((r) => fromRow(r as Row));
 }
 
 /** A single post by slug, or null. */
 export async function getPost(slug: string): Promise<BlogPost | null> {
-  const posts = await readPosts();
-  return posts.find((p) => p.slug === slug) ?? null;
+  const client = createSupabaseAdmin();
+  if (!client) {
+    return fileSeed().find((p) => p.slug === slug) ?? null;
+  }
+  const { data } = await client
+    .from(TABLE)
+    .select("*")
+    .eq("slug", slug)
+    .maybeSingle();
+  if (data) return fromRow(data as Row);
+  // Fallback in case the table hasn't seeded yet.
+  return fileSeed().find((p) => p.slug === slug) ?? null;
 }
 
 export type PublishInput = {
@@ -110,20 +169,27 @@ export type PublishInput = {
 };
 
 /**
- * Create + persist a post. Generates slug (de-duplicated), reading time and
- * timestamps. If the slug already exists the post is UPDATED in place.
- * Returns the stored post.
+ * Create or update a post (keyed by slug). Returns the stored post.
+ * Persists to Supabase; falls back to a no-DB error only if unconfigured.
  */
 export async function publishPost(input: PublishInput): Promise<BlogPost> {
-  const posts = await readPosts();
-
+  const client = createSupabaseAdmin();
   const baseSlug = slugify(input.title);
   const now = new Date().toISOString();
   const excerpt =
     input.excerpt?.trim() ||
     input.content.replace(/<[^>]+>/g, " ").trim().slice(0, 160).trim();
 
-  const existingIdx = posts.findIndex((p) => p.slug === baseSlug);
+  // Preserve original publishedAt if the slug already exists.
+  let publishedAt = now;
+  if (client) {
+    const { data: existing } = await client
+      .from(TABLE)
+      .select("published_at")
+      .eq("slug", baseSlug)
+      .maybeSingle();
+    if (existing?.published_at) publishedAt = existing.published_at as string;
+  }
 
   const post: BlogPost = {
     slug: baseSlug,
@@ -133,17 +199,23 @@ export async function publishPost(input: PublishInput): Promise<BlogPost> {
     coverImage: input.coverImage ?? null,
     author: input.author?.trim() || "MadsJeez Design",
     tags: (input.tags ?? []).map((t) => t.trim()).filter(Boolean),
-    publishedAt: existingIdx >= 0 ? posts[existingIdx].publishedAt : now,
+    publishedAt,
     updatedAt: now,
     readingTime: calcReadingTime(input.content),
   };
 
-  if (existingIdx >= 0) {
-    posts[existingIdx] = post;
-  } else {
-    posts.unshift(post);
+  if (!client) {
+    throw new Error(
+      "Supabase no configurado: no se puede publicar sin SUPABASE_SERVICE_ROLE_KEY.",
+    );
   }
 
-  await writePosts(posts);
+  const { error } = await client
+    .from(TABLE)
+    .upsert(toRow(post), { onConflict: "slug" });
+  if (error) {
+    throw new Error(`No se pudo guardar el post: ${error.message}`);
+  }
+
   return post;
 }

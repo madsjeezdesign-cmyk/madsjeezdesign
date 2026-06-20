@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/data";
-import { getAllPostsSync } from "@/lib/blog/store";
+import { getAllPosts } from "@/lib/blog/store";
 
 // Demos are noindex (see src/app/demos/[slug]/page.tsx) so they must not
 // appear in the sitemap — listing 93 dead URLs hurts crawl budget.
 // Blog posts ARE indexable and are appended dynamically.
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = site.siteUrl.replace(/\/$/, "");
   const now = new Date();
 
@@ -30,7 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const postRoutes: MetadataRoute.Sitemap = getAllPostsSync().map((p) => ({
+  const posts = await getAllPosts();
+  const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
     url: `${base}/blog/${p.slug}`,
     lastModified: new Date(p.updatedAt),
     changeFrequency: "monthly",

@@ -30,3 +30,29 @@ alter table public.contact_inquiries enable row level security;
 -- Sin políticas públicas: solo el service role (API en Railway) inserta filas.
 
 comment on table public.contact_inquiries is 'Consultas del formulario de contacto — MadsJeez Design landing';
+
+create table if not exists public.blog_posts (
+  slug text primary key,
+  title text not null,
+  excerpt text not null default '',
+  content text not null,
+  cover_image text,
+  author text not null default 'MadsJeez Design',
+  tags text[] not null default '{}',
+  reading_time integer not null default 1,
+  published_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create index if not exists blog_posts_published_at_idx
+  on public.blog_posts (published_at desc);
+
+alter table public.blog_posts enable row level security;
+
+drop policy if exists "blog_posts public read" on public.blog_posts;
+
+create policy "blog_posts public read"
+  on public.blog_posts for select
+  using (true);
+
+comment on table public.blog_posts is 'Posts del blog — MadsJeez Design. Escritura solo service role; lectura publica.';
